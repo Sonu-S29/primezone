@@ -5,6 +5,8 @@ import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone,
 import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import BrochureDownloadForm from "@/components/brochure-download-form";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const featuredCourses = [
   {
@@ -277,56 +279,61 @@ export default function Home() {
               Kickstart your career with our most popular courses.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCourses.map((course, index) => (
-                <div key={index} className="flip-card h-96">
-                    <div className="flip-card-inner">
-                        <div className="flip-card-front">
-                            <Card className="overflow-hidden group glass-effect h-full flex flex-col">
-                                <Image 
-                                src={course.image} 
-                                alt={course.title}
-                                width={600}
-                                height={400}
-                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint={course.hint}
-                                />
-                                <CardHeader>
-                                <CardTitle>{course.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                  <div className="flex items-center text-sm text-muted-foreground">
-                                    <Calendar className="mr-2 h-4 w-4" />
-                                    <span>{course.duration}</span>
-                                  </div>
-                                </CardContent>
-                                <CardFooter>
-                                    <p className="text-sm text-accent font-semibold">Hover to learn more &rarr;</p>
-                                </CardFooter>
-                            </Card>
-                        </div>
-                        <div className="flip-card-back">
-                            <Card className="glass-effect h-full flex flex-col justify-between">
-                                <CardHeader>
+          <Dialog>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredCourses.map((course, index) => (
+                    <div key={index} className="flip-card h-96">
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front">
+                                <Card className="overflow-hidden group glass-effect h-full flex flex-col">
+                                    <Image 
+                                    src={course.image} 
+                                    alt={course.title}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                                    data-ai-hint={course.hint}
+                                    />
+                                    <CardHeader>
                                     <CardTitle>{course.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-muted-foreground">{course.description}</p>
-                                </CardContent>
-                                <CardFooter className="flex flex-col items-stretch gap-2">
-                                    <Button asChild>
-                                        <a href="tel:+919769730087"><Phone className="mr-2"/> Call Now</a>
-                                    </Button>
-                                    <Button asChild variant="secondary">
-                                        <a href="/brochure.pdf" download><Download className="mr-2"/> Download Brochure</a>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                    <div className="flex items-center text-sm text-muted-foreground">
+                                        <Calendar className="mr-2 h-4 w-4" />
+                                        <span>{course.duration}</span>
+                                    </div>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <p className="text-sm text-accent font-semibold">Hover to learn more &rarr;</p>
+                                    </CardFooter>
+                                </Card>
+                            </div>
+                            <div className="flip-card-back">
+                                <Card className="glass-effect h-full flex flex-col justify-between">
+                                    <CardHeader>
+                                        <CardTitle>{course.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-muted-foreground">{course.description}</p>
+                                    </CardContent>
+                                    <CardFooter className="flex flex-col items-stretch gap-2">
+                                        <Button asChild>
+                                            <a href="tel:+919769730087"><Phone className="mr-2"/> Call Now</a>
+                                        </Button>
+                                        <DialogTrigger asChild>
+                                            <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
+                                        </DialogTrigger>
+                                    </CardFooter>
+                                </Card>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-          </div>
+                ))}
+            </div>
+            <DialogContent>
+                <BrochureDownloadForm />
+            </DialogContent>
+          </Dialog>
            <div className="text-center mt-12">
             <Button asChild>
               <Link href="/courses/diploma">View All Courses</Link>
@@ -366,17 +373,23 @@ export default function Home() {
       
        {/* Call to Action for Brochure */}
        <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 py-16 text-center">
-            <h2 className="text-3xl font-bold mb-4 font-headline">Ready to Start Your Journey?</h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-                Download our brochure to get detailed information about all our courses, fee structures, and admission process.
-            </p>
-            <Button size="lg" variant="secondary">
-                <a href="/brochure.pdf" download>Download Brochure</a>
-            </Button>
-        </div>
+        <Dialog>
+            <div className="container mx-auto px-4 py-16 text-center">
+                <h2 className="text-3xl font-bold mb-4 font-headline">Ready to Start Your Journey?</h2>
+                <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+                    Download our brochure to get detailed information about all our courses, fee structures, and admission process.
+                </p>
+                <DialogTrigger asChild>
+                    <Button size="lg" variant="secondary">Download Brochure</Button>
+                </DialogTrigger>
+            </div>
+            <DialogContent>
+                <BrochureDownloadForm />
+            </DialogContent>
+        </Dialog>
        </section>
 
     </div>
   );
 }
+    

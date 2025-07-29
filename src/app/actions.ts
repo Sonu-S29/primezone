@@ -25,3 +25,21 @@ export async function getCourseRecommendations(
     return { success: false, data: null, error: "An unexpected error occurred. Please try again." };
   }
 }
+
+export async function sendOtp(phone: string): Promise<{ success: boolean, message: string }> {
+  console.log(`Sending OTP to ${phone}`);
+  // In a real app, you would integrate with an SMS gateway like Twilio here.
+  // For this demo, we'll just simulate a success response.
+  return { success: true, message: "OTP sent successfully. Check your phone." };
+}
+
+export async function verifyOtp(otp: string): Promise<{ success: boolean, message: string }> {
+    console.log(`Verifying OTP ${otp}`);
+    // In a real app, you'd check the OTP against a stored value.
+    // For this demo, we'll accept any 6-digit code.
+    if (/^\d{6}$/.test(otp)) {
+        return { success: true, message: "Verification successful." };
+    }
+    return { success: false, message: "Invalid OTP." };
+}
+    
