@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Briefcase, Target, Users, BookOpen, Handshake } from "lucide-react";
+import { Award, Briefcase, Target, Users, BookOpen, Handshake, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,6 +20,27 @@ const services = [
       description: "We help our students find job opportunities through our network of partner companies."
     }
 ];
+
+const whyChooseUsItems = [
+    {
+      icon: <Target className="h-8 w-8" />,
+      title: 'Our Commitment',
+      description: 'We are dedicated to providing the highest quality education and fostering a learning environment where students can thrive and achieve their career goals.',
+      details: ['Quality First', 'Student Success', 'Continuous Improvement']
+    },
+    {
+      icon: <Briefcase className="h-8 w-8" />,
+      title: 'Our Focus',
+      description: 'Our focus is on practical, hands-on training that equips students with the skills and knowledge demanded by the industry today.',
+      details: ['Industry Aligned', 'Practical Skills', 'Project-based Learning']
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      title: 'Our Goal',
+      description: 'Our goal is to empower our students to become skilled professionals and leaders in the tech industry, ready to take on new challenges.',
+      details: ['Empowerment', 'Leadership', 'Future-Ready']
+    }
+  ];
 
 export default function AboutUs() {
   return (
@@ -70,39 +91,42 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center glass-effect">
-              <CardHeader>
-                <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
-                  <Target className="h-8 w-8" />
+            {whyChooseUsItems.map((item, index) => (
+                <div key={index} className="flip-card h-80">
+                    <div className="flip-card-inner">
+                        <div className="flip-card-front">
+                            <Card className="text-center glass-effect h-full flex flex-col justify-center">
+                                <CardHeader>
+                                    <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
+                                        {item.icon}
+                                    </div>
+                                    <CardTitle className="mt-4">{item.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p>{item.description}</p>
+                                </CardContent>
+                            </Card>
+                        </div>
+                        <div className="flip-card-back">
+                            <Card className="text-center glass-effect h-full flex flex-col justify-center">
+                                <CardHeader>
+                                    <CardTitle className="mt-4">{item.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2 text-left">
+                                        {item.details.map((detail, i) => (
+                                            <li key={i} className="flex items-center">
+                                                <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                                                <span>{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
                 </div>
-                <CardTitle className="mt-4">Our Commitment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>We are dedicated to providing the highest quality education and fostering a learning environment where students can thrive and achieve their career goals.</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center glass-effect">
-              <CardHeader>
-                <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
-                  <Briefcase className="h-8 w-8" />
-                </div>
-                <CardTitle className="mt-4">Our Focus</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Our focus is on practical, hands-on training that equips students with the skills and knowledge demanded by the industry today.</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center glass-effect">
-              <CardHeader>
-                <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
-                  <Award className="h-8 w-8" />
-                </div>
-                <CardTitle className="mt-4">Our Goal</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Our goal is to empower our students to become skilled professionals and leaders in the tech industry, ready to take on new challenges.</p>
-              </CardContent>
-            </Card>
+            ))}
           </div>
         </div>
       </section>
