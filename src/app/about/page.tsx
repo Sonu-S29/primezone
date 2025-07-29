@@ -159,7 +159,7 @@ export default function AboutUs() {
        <section className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <p className="text-accent font-semibold">TEAM MEMBERS</p>
-                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Professional Staff Ready to Help Your Business</h2>
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Our Founding Member</h2>
                 <div className="w-24 h-1 bg-accent mx-auto mt-2"></div>
             </div>
             <div className="grid md:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto">
