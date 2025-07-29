@@ -268,7 +268,7 @@ export default function ShortTermCoursesPage() {
           <Button
             onClick={() => setActiveFilter(null)}
             variant={activeFilter === null ? "default" : "outline"}
-            size="lg"
+            className="h-20"
           >
             All Courses
           </Button>
@@ -277,7 +277,7 @@ export default function ShortTermCoursesPage() {
               key={category.id}
               onClick={() => setActiveFilter(category.id)}
               variant={activeFilter === category.id ? "default" : "outline"}
-              className="h-auto"
+              className="h-20"
             >
               <div className="flex items-center gap-3 p-2">
                 {category.icon}
