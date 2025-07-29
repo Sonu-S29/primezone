@@ -5,9 +5,11 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
-import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, ArrowRight } from "lucide-react";
+import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, ArrowRight, Phone, Download } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import BrochureDownloadForm from "@/components/brochure-download-form";
+
 
 const courseData = [
   {
@@ -277,7 +279,7 @@ export default function ShortTermCoursesPage() {
               key={category.id}
               onClick={() => setActiveFilter(category.id)}
               variant={activeFilter === category.id ? "default" : "outline"}
-              className="h-10"
+              className="h-auto"
             >
               <div className="flex items-center gap-3 p-2">
                 {category.icon}
@@ -291,45 +293,78 @@ export default function ShortTermCoursesPage() {
         </div>
 
         {/* Course Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCourses.map((course) => (
-            <Card key={course.title} className="flex flex-col overflow-hidden group glass-effect">
-              <CardHeader>
-                <CardTitle>{course.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow space-y-4">
-                <p className="text-muted-foreground">{course.description}</p>
-                 <Dialog>
-                    <DialogTrigger asChild>
-                        <Button variant="outline" className="w-full">Topics Covered</Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                        <DialogHeader>
-                            <DialogTitle>{course.title}</DialogTitle>
-                            <DialogDescription>
-                                Key topics you will learn in this course.
-                            </DialogDescription>
-                        </DialogHeader>
-                        <ul className="space-y-2 pt-2">
-                            {course.topics.map(topic => (
-                                <li key={topic} className="flex items-center text-sm">
-                                    <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
-                                    <span>{topic}</span>
-                                </li>
-                            ))}
-                       </ul>
-                    </DialogContent>
-                </Dialog>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="/enroll">Enroll Now <ArrowRight className="ml-2 h-4 w-4"/></Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        <Dialog>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredCourses.map((course) => (
+                <div key={course.title} className="flip-card h-96">
+                <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                        <Card className="flex flex-col overflow-hidden group glass-effect h-full">
+                            <CardHeader>
+                                <CardTitle>{course.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <p className="text-muted-foreground">{course.description}</p>
+                            </CardContent>
+                             <CardFooter>
+                                <p className="text-sm text-accent font-semibold">Hover to learn more &rarr;</p>
+                            </CardFooter>
+                        </Card>
+                    </div>
+                    <div className="flip-card-back">
+                         <Card className="glass-effect h-full flex flex-col justify-between p-6">
+                            <CardHeader>
+                                <CardTitle>{course.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Button variant="outline" className="w-full">Topics Covered</Button>
+                                    </DialogTrigger>
+                                    <DialogContent>
+                                        <DialogHeader>
+                                            <DialogTitle>{course.title}</DialogTitle>
+                                            <DialogDescription>
+                                                Key topics you will learn in this course.
+                                            </DialogDescription>
+                                        </DialogHeader>
+                                        <ul className="space-y-2 pt-2">
+                                            {course.topics.map(topic => (
+                                                <li key={topic} className="flex items-center text-sm">
+                                                    <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
+                                                    <span>{topic}</span>
+                                                </li>
+                                            ))}
+                                    </ul>
+                                    </DialogContent>
+                                </Dialog>
+                            </CardContent>
+                            <CardFooter className="flex flex-col items-stretch gap-2 p-0">
+                                <Button asChild>
+                                    <a href="tel:+919769730087"><Phone className="mr-2"/> Call Now</a>
+                                </Button>
+                                <DialogTrigger asChild>
+                                    <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
+                                </DialogTrigger>
+                            </CardFooter>
+                        </Card>
+                    </div>
+                </div>
+                </div>
+            ))}
+            </div>
+             <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Download Brochure</DialogTitle>
+                    <DialogDescription>
+                        Please provide your details to receive the brochure.
+                    </DialogDescription>
+                </DialogHeader>
+                <BrochureDownloadForm />
+            </DialogContent>
+        </Dialog>
       </section>
     </div>
   );
 }
+
