@@ -381,17 +381,17 @@ export default function ShortTermCoursesPage() {
                         <Image
                             src={course.image}
                             alt={course.title}
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            style={{objectFit: "cover"}}
                             data-ai-hint={course.hint}
                         />
                     </div>
                     <CardHeader>
                         <div className="flex justify-between items-start">
                             <p className="text-sm text-muted-foreground">Short Term</p>
-                             <Button variant="ghost" size="icon" className="w-8 h-8">
-                                <MoreVertical className="w-4 h-4"/>
-                            </Button>
+                            <DialogTrigger asChild>
+                                 <Button variant="outline" size="sm">View Topics</Button>
+                            </DialogTrigger>
                         </div>
                         <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
                         <CardDescription>{course.description}</CardDescription>
@@ -399,48 +399,45 @@ export default function ShortTermCoursesPage() {
                     <CardContent className="flex-grow">
                     </CardContent>
                     <CardFooter className="flex justify-end items-center">
-                        <Dialog>
-                            <DialogTrigger asChild>
-                                 <Button variant="outline" size="sm">View Topics</Button>
-                            </DialogTrigger>
-                             <DialogContent>
-                                <DialogHeader>
-                                    <DialogTitle>{course.title}</DialogTitle>
-                                    <DialogDescription>
-                                        Key topics you will learn in this course.
-                                    </DialogDescription>
-                                </DialogHeader>
-                                <ul className="space-y-2 pt-2">
-                                    {course.topics.map(topic => (
-                                        <li key={topic} className="flex items-center text-sm">
-                                            <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
-                                            <span>{topic}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
-                                     <Button asChild>
-                                        <a href="tel:+919769730087"><Clock className="mr-2"/> Enroll Now</a>
-                                    </Button>
-                                    <DialogTrigger asChild>
-                                        <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
-                                    </DialogTrigger>
-                                </CardFooter>
-                            </DialogContent>
-                        </Dialog>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>{course.title}</DialogTitle>
+                                <DialogDescription>
+                                    Key topics you will learn in this course.
+                                </DialogDescription>
+                            </DialogHeader>
+                            <ul className="space-y-2 pt-2">
+                                {course.topics.map(topic => (
+                                    <li key={topic} className="flex items-center text-sm">
+                                        <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
+                                        <span>{topic}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
+                                    <Button asChild>
+                                    <a href="tel:+919769730087"><Clock className="mr-2"/> Enroll Now</a>
+                                </Button>
+                                <Dialog>
+                                <DialogTrigger asChild>
+                                    <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle>Download Brochure</DialogTitle>
+                                        <DialogDescription>
+                                            Please provide your details to receive the brochure.
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                    <BrochureDownloadForm />
+                                </DialogContent>
+                                </Dialog>
+                            </CardFooter>
+                        </DialogContent>
                     </CardFooter>
                 </Card>
             ))}
             </div>
-             <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Download Brochure</DialogTitle>
-                    <DialogDescription>
-                        Please provide your details to receive the brochure.
-                    </DialogDescription>
-                </DialogHeader>
-                <BrochureDownloadForm />
-            </DialogContent>
         </Dialog>
       </section>
     </div>
