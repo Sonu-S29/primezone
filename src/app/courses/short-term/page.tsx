@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -299,21 +299,27 @@ export default function ShortTermCoursesPage() {
               </CardHeader>
               <CardContent className="flex-grow space-y-4">
                 <p className="text-muted-foreground">{course.description}</p>
-                <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                        <AccordionTrigger>Topics Covered</AccordionTrigger>
-                        <AccordionContent>
-                           <ul className="space-y-2 pt-2">
-                                {course.topics.map(topic => (
-                                    <li key={topic} className="flex items-center text-sm">
-                                        <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
-                                        <span>{topic}</span>
-                                    </li>
-                                ))}
-                           </ul>
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
+                 <Dialog>
+                    <DialogTrigger asChild>
+                        <Button variant="outline" className="w-full">Topics Covered</Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>{course.title}</DialogTitle>
+                            <DialogDescription>
+                                Key topics you will learn in this course.
+                            </DialogDescription>
+                        </DialogHeader>
+                        <ul className="space-y-2 pt-2">
+                            {course.topics.map(topic => (
+                                <li key={topic} className="flex items-center text-sm">
+                                    <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
+                                    <span>{topic}</span>
+                                </li>
+                            ))}
+                       </ul>
+                    </DialogContent>
+                </Dialog>
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full">
@@ -327,5 +333,3 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
-
-    
