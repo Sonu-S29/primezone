@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone } from "lucide-react";
+import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -9,42 +9,42 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const featuredCourses = [
   {
     title: "Diploma in Computer Application",
-    description: "A comprehensive course covering the fundamentals of computer applications.",
+    description: "A comprehensive course covering the fundamentals of computer applications, office automation, and basic programming.",
     duration: "12 Months",
     image: "https://placehold.co/600x400.png",
     hint: "computer code"
   },
   {
     title: "Advanced Tally Prime with GST",
-    description: "Master accounting with Tally Prime and understand the GST framework.",
+    description: "Master accounting with Tally Prime, from basic principles to advanced GST compliance and financial reporting.",
     duration: "6 Months",
     image: "https://placehold.co/600x400.png",
     hint: "accounting software"
   },
   {
     title: "Web Development",
-    description: "Learn to build modern, responsive websites and web applications.",
+    description: "Learn to build modern, responsive websites and web applications using HTML, CSS, JavaScript, and popular frameworks.",
     duration: "6 Months",
     image: "https://placehold.co/600x400.png",
     hint: "web development"
   },
   {
     title: "Diploma in Graphic Designing",
-    description: "Unleash your creativity with graphic design principles and software.",
+    description: "Unleash your creativity with graphic design principles and software like Adobe Photoshop, Illustrator, and CorelDRAW.",
     duration: "6 Months",
     image: "https://placehold.co/600x400.png",
     hint: "graphic design"
   },
   {
     title: "C & C++ Programming",
-    description: "Build a strong foundation in programming with two powerful languages.",
+    description: "Build a strong foundation in programming with two of the most powerful and widely-used languages in the industry.",
     duration: "3 Months",
     image: "https://placehold.co/600x400.png",
     hint: "c++ code"
   },
   {
     title: "Python for Data Science",
-    description: "An introduction to Python for data analysis and visualization.",
+    description: "An introduction to Python programming, focusing on libraries and techniques for data analysis, manipulation, and visualization.",
     duration: "4 Months",
     image: "https://placehold.co/600x400.png",
     hint: "data science dashboard"
@@ -279,26 +279,52 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredCourses.map((course, index) => (
-              <Card key={index} className="overflow-hidden group glass-effect">
-                <Image 
-                  src={course.image} 
-                  alt={course.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={course.hint}
-                />
-                <CardHeader>
-                  <CardTitle>{course.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{course.description}</p>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    <span>{course.duration}</span>
-                  </div>
-                </CardContent>
-              </Card>
+                <div key={index} className="flip-card h-96">
+                    <div className="flip-card-inner">
+                        <div className="flip-card-front">
+                            <Card className="overflow-hidden group glass-effect h-full flex flex-col">
+                                <Image 
+                                src={course.image} 
+                                alt={course.title}
+                                width={600}
+                                height={400}
+                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint={course.hint}
+                                />
+                                <CardHeader>
+                                <CardTitle>{course.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                  <div className="flex items-center text-sm text-muted-foreground">
+                                    <Calendar className="mr-2 h-4 w-4" />
+                                    <span>{course.duration}</span>
+                                  </div>
+                                </CardContent>
+                                <CardFooter>
+                                    <p className="text-sm text-accent font-semibold">Hover to learn more &rarr;</p>
+                                </CardFooter>
+                            </Card>
+                        </div>
+                        <div className="flip-card-back">
+                            <Card className="glass-effect h-full flex flex-col justify-between">
+                                <CardHeader>
+                                    <CardTitle>{course.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-muted-foreground">{course.description}</p>
+                                </CardContent>
+                                <CardFooter className="flex flex-col items-stretch gap-2">
+                                    <Button asChild>
+                                        <a href="tel:+919769730087"><Phone className="mr-2"/> Call Now</a>
+                                    </Button>
+                                    <Button asChild variant="secondary">
+                                        <a href="/brochure.pdf" download><Download className="mr-2"/> Download Brochure</a>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
             ))}
           </div>
            <div className="text-center mt-12">
