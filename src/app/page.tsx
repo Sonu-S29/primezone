@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download } from "lucide-react";
+import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download, Reply, Clock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BrochureDownloadForm from "@/components/brochure-download-form";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 const featuredCourses = [
   {
@@ -52,6 +56,17 @@ const featuredCourses = [
     hint: "data science dashboard"
   },
 ];
+
+const allCourses = [
+    "Diploma in Computer Application & Programming (DCAP)",
+    "Diploma in Financial Accounting (DFA)",
+    "Diploma in Web Development (DWD)",
+    "Diploma in Graphic Designing (DGD)",
+    "Advanced Tally Prime with GST",
+    "Certificate in Web Designing",
+    "C & C++ Programming",
+    "Python for Data Science",
+  ];
 
 const testimonials = [
   {
@@ -331,7 +346,10 @@ export default function Home() {
                 ))}
             </div>
             <DialogContent>
-                <DialogTitle className="sr-only">Download Brochure</DialogTitle>
+                <DialogTitle>Download Brochure</DialogTitle>
+                <DialogDescription>
+                    Please provide your details to receive the brochure.
+                </DialogDescription>
                 <BrochureDownloadForm />
             </DialogContent>
           </Dialog>
@@ -340,6 +358,72 @@ export default function Home() {
               <Link href="/courses/diploma">View All Courses</Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Request a Quote Section */}
+      <section className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+                <p className="font-semibold text-accent">REQUEST A QUOTE</p>
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Need A Free Quote? Please Feel Free to Contact Us</h2>
+                <div className="w-24 h-1 bg-accent"></div>
+
+                <div className="flex items-center gap-4">
+                    <Reply className="h-6 w-6 text-accent"/>
+                    <p className="font-semibold">Reply within 24 hours</p>
+                </div>
+                <div className="flex items-center gap-4">
+                    <Clock className="h-6 w-6 text-accent"/>
+                    <p className="font-semibold">24 hrs telephone support</p>
+                </div>
+
+                <p className="text-muted-foreground leading-relaxed">
+                    It might be helpful to include information like the date you want your course, the date you want to ensure suitability, and the reason you're choosing this course. This can help in the class to respond accurately to your request. You can also provide a list of questions and include your contact information so that any course query we can contact you.
+                </p>
+
+                <div className="flex items-center gap-4 pt-4">
+                    <div className="p-4 bg-accent text-accent-foreground rounded-lg">
+                       <Phone className="h-8 w-8" />
+                    </div>
+                    <div>
+                        <p className="text-muted-foreground">Call to ask any question</p>
+                        <a href="tel:+919769730087" className="text-2xl font-bold text-primary hover:underline">+91 9769730087</a>
+                    </div>
+                </div>
+            </div>
+            <Card className="bg-accent/20 p-8 rounded-2xl">
+                <CardContent className="p-0">
+                    <form className="space-y-4">
+                        <div className="space-y-2">
+                           <Label htmlFor="quoteName" className="sr-only">Your Name</Label>
+                           <Input id="quoteName" placeholder="Your Name" className="bg-background"/>
+                        </div>
+                         <div className="space-y-2">
+                           <Label htmlFor="quoteEmail" className="sr-only">Your Email</Label>
+                           <Input id="quoteEmail" type="email" placeholder="Your Email" className="bg-background"/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="quoteCourse" className="sr-only">Select a Course</Label>
+                            <Select>
+                                <SelectTrigger id="quoteCourse" className="bg-background">
+                                    <SelectValue placeholder="Select a Course" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {allCourses.map((course) => (
+                                        <SelectItem key={course} value={course}>{course}</SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </div>
+                         <div className="space-y-2">
+                           <Label htmlFor="quoteMessage" className="sr-only">Message</Label>
+                           <Textarea id="quoteMessage" placeholder="Message" rows={4} className="bg-background"/>
+                        </div>
+                        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg">Request A Quote</Button>
+                    </form>
+                </CardContent>
+            </Card>
         </div>
       </section>
 
@@ -385,7 +469,10 @@ export default function Home() {
                 </DialogTrigger>
             </div>
             <DialogContent>
-                <DialogTitle className="sr-only">Download Brochure</DialogTitle>
+                <DialogTitle>Download Brochure</DialogTitle>
+                 <DialogDescription>
+                    Please provide your details to receive the brochure.
+                </DialogDescription>
                 <BrochureDownloadForm />
             </DialogContent>
         </Dialog>
