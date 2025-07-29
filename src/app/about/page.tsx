@@ -22,6 +22,21 @@ const services = [
     }
 ];
 
+const teamMembers = [
+    {
+        name: "Vedika Karan Singh",
+        role: "Managing Director",
+        image: "https://placehold.co/400x500.png",
+        hint: "professional woman"
+    },
+    {
+        name: "Karan Singh",
+        role: "Founder & Chief Executive Officer",
+        image: "https://placehold.co/400x500.png",
+        hint: "professional man"
+    }
+]
+
 const whyChooseUsItems = [
     {
       icon: <Target className="h-8 w-8" />,
@@ -139,6 +154,37 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
+       {/* Team Members Section */}
+       <section className="container mx-auto px-4">
+            <div className="text-center mb-12">
+                <p className="text-accent font-semibold">TEAM MEMBERS</p>
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Professional Staff Ready to Help Your Business</h2>
+                <div className="w-24 h-1 bg-accent mx-auto mt-2"></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto">
+                {teamMembers.map((member) => (
+                    <Card key={member.name} className="text-center overflow-hidden">
+                        <div className="bg-muted">
+                           <Image 
+                             src={member.image}
+                             alt={member.name}
+                             width={400}
+                             height={500}
+                             className="w-full object-cover object-top h-96"
+                             data-ai-hint={member.hint}
+                           />
+                        </div>
+                        <CardHeader>
+                            <CardTitle>{member.name}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-accent font-semibold">{member.role}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </section>
 
       {/* Why Choose Us Section */}
       <section className="py-16">
