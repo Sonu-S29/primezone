@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download, Reply, Clock } from "lucide-react";
+import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download, Reply, Clock, Users, Star, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -143,6 +143,29 @@ const welcomeFeatures = [
     "Free Counseling",
     "Fair Prices"
 ];
+
+const empoweringFeatures = [
+    {
+      icon: <Briefcase className="h-6 w-6" />,
+      title: "Best In Industry",
+      description: "Primezone Computer Education, established in 2020, is committed to delivering industry-leading computer education. We focus on providing cutting-edge courses that align with current market demands, ensuring our students are well-prepared for successful careers in the ever-evolving tech industry."
+    },
+    {
+      icon: <Award className="h-6 w-6" />,
+      title: "Award Winning",
+      description: "Primezone's commitment to excellence has been recognized through numerous awards and accolades. Our innovative teaching methods, state-of-the-art facilities, and outstanding student outcomes have positioned us as a leader in computer education, earning us recognition from industry experts and educational institutions alike."
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Professional Staff",
+      description: "Primezone boasts a team of highly qualified and experienced professionals who are passionate about teaching. Our instructors are industry experts with practical knowledge, ensuring that students receive not just theoretical education but also valuable insights into real-world applications and current industry practices."
+    },
+    {
+      icon: <MessageSquare className="h-6 w-6" />,
+      title: "Free Counseling",
+      description: "Primezone offers free career counseling to all students and prospective learners. Our experienced counselors provide personalized guidance to help you choose the right course, understand career paths in the tech industry, and make informed decisions about your educational journey. We're committed to supporting your success every step of the way."
+    }
+  ];
 
 export default function Home() {
   return (
@@ -424,6 +447,57 @@ export default function Home() {
                     </form>
                 </CardContent>
             </Card>
+        </div>
+      </section>
+
+      {/* Empowering Your Career Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+            <p className="font-semibold text-accent">WHY CHOOSE US</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mt-2">Empowering your career journey with in-demand skills and knowledge</h2>
+            <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
+        </div>
+        <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4 space-y-8">
+                {empoweringFeatures.slice(0, 2).map((feature, index) => (
+                    <div key={index} className="text-right">
+                        <div className="inline-flex items-center gap-4">
+                           <div className="text-right">
+                               <h3 className="font-bold text-lg">{feature.title}</h3>
+                               <p className="text-muted-foreground text-sm">{feature.description}</p>
+                           </div>
+                           <div className="p-3 bg-accent text-accent-foreground rounded-lg">
+                               {feature.icon}
+                           </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <div className="md:col-span-4">
+                <Image 
+                    src="https://placehold.co/400x500.png" 
+                    alt="Computer lab"
+                    width={400}
+                    height={500}
+                    className="rounded-lg shadow-xl mx-auto"
+                    data-ai-hint="computer lab"
+                />
+            </div>
+            <div className="md:col-span-4 space-y-8">
+                {empoweringFeatures.slice(2, 4).map((feature, index) => (
+                    <div key={index} className="text-left">
+                        <div className="inline-flex items-center gap-4">
+                           <div className="p-3 bg-accent text-accent-foreground rounded-lg">
+                               {feature.icon}
+                           </div>
+                           <div>
+                               <h3 className="font-bold text-lg">{feature.title}</h3>
+                               <p className="text-muted-foreground text-sm">{feature.description}</p>
+                           </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
       </section>
 
