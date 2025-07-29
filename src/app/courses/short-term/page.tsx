@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, MoreVertical, Clock, Users, BookOpen, Download } from "lucide-react";
@@ -378,3 +378,5 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
+
+    
