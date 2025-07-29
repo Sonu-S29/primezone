@@ -9,10 +9,7 @@ import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, MoreVertical, Clo
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import BrochureDownloadForm from "@/components/brochure-download-form";
-import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 
 
 const courseData = [
@@ -25,42 +22,58 @@ const courseData = [
         {
           title: 'Office Automation',
           description: 'Master essential office tools',
-          topics: ['Word Processing', 'Spreadsheet Management', 'Presentation Software', 'Email Communication', 'Basic IT Skills']
+          topics: ['Word Processing', 'Spreadsheet Management', 'Presentation Software', 'Email Communication', 'Basic IT Skills'],
+          image: "https://placehold.co/600x400.png",
+          hint: "office software"
         },
         {
           title: 'Advanced Excel',
           description: 'Master advanced Excel functions',
-          topics: ['Formulas and Functions', 'Pivot Tables', 'Data Analysis Tools', 'Macros and VBA', 'Advanced Charting']
+          topics: ['Formulas and Functions', 'Pivot Tables', 'Data Analysis Tools', 'Macros and VBA', 'Advanced Charting'],
+          image: "https://placehold.co/600x400.png",
+          hint: "excel spreadsheet"
         },
         {
           title: 'Tally Prime',
           description: 'Learn Tally ERP 9 basics',
-          topics: ['Accounting Basics', 'Inventory Management', 'GST Compliance', 'Financial Reporting', 'Payroll Management']
+          topics: ['Accounting Basics', 'Inventory Management', 'GST Compliance', 'Financial Reporting', 'Payroll Management'],
+          image: "https://placehold.co/600x400.png",
+          hint: "accounting software"
         },
         {
           title: 'Tally Prime GST',
           description: 'Learn GST compliance',
-          topics: ['GST Registration', 'Filing GST Returns', 'Input Tax Credit', 'GST Audit', 'Compliance Management']
+          topics: ['GST Registration', 'Filing GST Returns', 'Input Tax Credit', 'GST Audit', 'Compliance Management'],
+          image: "https://placehold.co/600x400.png",
+          hint: "tax document"
         },
         {
           title: 'Taxation Auditing',
           description: 'Understand tax laws and auditing',
-          topics: ['Tax Laws Overview', 'Auditing Techniques', 'Tax Returns Preparation', 'Compliance and Regulations', 'Tax Planning Strategies']
+          topics: ['Tax Laws Overview', 'Auditing Techniques', 'Tax Returns Preparation', 'Compliance and Regulations', 'Tax Planning Strategies'],
+          image: "https://placehold.co/600x400.png",
+          hint: "auditing report"
         },
         {
           title: 'Management Skill',
           description: 'Develop leadership and team management',
-          topics: ['Leadership Skills', 'Team Management', 'Conflict Resolution', 'Time Management', 'Decision Making']
+          topics: ['Leadership Skills', 'Team Management', 'Conflict Resolution', 'Time Management', 'Decision Making'],
+          image: "https://placehold.co/600x400.png",
+          hint: "team management"
         },
         {
           title: 'Share Market',
           description: 'Understand the basics of share trading',
-          topics: ['Introduction to Share Market', 'Types of Shares', 'Stock Market Analysis', 'Trading Strategies', 'Risk Management']
+          topics: ['Introduction to Share Market', 'Types of Shares', 'Stock Market Analysis', 'Trading Strategies', 'Risk Management'],
+          image: "https://placehold.co/600x400.png",
+          hint: "stock market chart"
         },
         {
           title: 'CCC',
           description: 'Learn computer fundamentals',
-          topics: ['Computer Fundamentals', 'Internet and Web Technologies', 'Word Processing', 'Spreadsheet Applications', 'Presentation Software']
+          topics: ['Computer Fundamentals', 'Internet and Web Technologies', 'Word Processing', 'Spreadsheet Applications', 'Presentation Software'],
+          image: "https://placehold.co/600x400.png",
+          hint: "computer basics"
         }
     ]
   },
@@ -73,82 +86,114 @@ const courseData = [
         {
             title: 'Web Development',
             description: 'Build modern web applications',
-            topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Backend Integration']
+            topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Backend Integration'],
+            image: "https://placehold.co/600x400.png",
+            hint: "web development"
         },
         {
             title: 'Web Designing',
             description: 'Create visually appealing websites',
-            topics: ['UI/UX Principles', 'Color Theory', 'Typography', 'Design Tools', 'Prototyping']
+            topics: ['UI/UX Principles', 'Color Theory', 'Typography', 'Design Tools', 'Prototyping'],
+            image: "https://placehold.co/600x400.png",
+            hint: "web design"
         },
         {
             title: 'DSA',
             description: 'Master data structures and algorithms',
-            topics: ['Data Structures', 'Algorithms', 'Problem Solving', 'Complexity Analysis', 'Coding Challenges']
+            topics: ['Data Structures', 'Algorithms', 'Problem Solving', 'Complexity Analysis', 'Coding Challenges'],
+            image: "https://placehold.co/600x400.png",
+            hint: "data structures"
         },
         {
             title: 'C & C++',
             description: 'Learn C and C++ programming',
-            topics: ['Syntax and Semantics', 'Object-Oriented Programming', 'Memory Management', 'File Handling', 'Data Structures in C/C++']
+            topics: ['Syntax and Semantics', 'Object-Oriented Programming', 'Memory Management', 'File Handling', 'Data Structures in C/C++'],
+            image: "https://placehold.co/600x400.png",
+            hint: "c++ code"
         },
         {
             title: 'Python',
             description: 'Learn Python programming',
-            topics: ['Python Basics', 'Data Types and Structures', 'Functions and Modules', 'File I/O', 'Libraries and Frameworks']
+            topics: ['Python Basics', 'Data Types and Structures', 'Functions and Modules', 'File I/O', 'Libraries and Frameworks'],
+            image: "https://placehold.co/600x400.png",
+            hint: "python code"
         },
         {
             title: 'Front-End Development',
             description: 'Build front-end web applications',
-            topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Version Control with Git']
+            topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Version Control with Git'],
+            image: "https://placehold.co/600x400.png",
+            hint: "front end code"
         },
         {
             title: 'Back-End Development',
             description: 'Build back-end web applications',
-            topics: ['Server-Side Programming', 'Database Management', 'API Development', 'Authentication and Security', 'Deployment Strategies']
+            topics: ['Server-Side Programming', 'Database Management', 'API Development', 'Authentication and Security', 'Deployment Strategies'],
+            image: "https://placehold.co/600x400.png",
+            hint: "back end code"
         },
         {
             title: 'Database',
             description: 'Learn database management',
-            topics: ['SQL Basics', 'Database Design', 'Data Normalization', 'Query Optimization', 'NoSQL Databases']
+            topics: ['SQL Basics', 'Database Design', 'Data Normalization', 'Query Optimization', 'NoSQL Databases'],
+            image: "https://placehold.co/600x400.png",
+            hint: "database diagram"
         },
         {
             title: 'Angular',
             description: 'Learn Angular framework',
-            topics: ['Angular Basics', 'Components and Modules', 'Services and Dependency Injection', 'Routing and Navigation', 'State Management']
+            topics: ['Angular Basics', 'Components and Modules', 'Services and Dependency Injection', 'Routing and Navigation', 'State Management'],
+            image: "https://placehold.co/600x400.png",
+            hint: "angular code"
         },
         {
             title: 'HTML-CSS',
             description: 'Master HTML and CSS',
-            topics: ['HTML Structure', 'CSS Styling', 'Responsive Design', 'CSS Frameworks', 'Accessibility']
+            topics: ['HTML Structure', 'CSS Styling', 'Responsive Design', 'CSS Frameworks', 'Accessibility'],
+            image: "https://placehold.co/600x400.png",
+            hint: "html css code"
         },
         {
             title: 'JavaScript',
             description: 'Learn JavaScript',
-            topics: ['JavaScript Basics', 'DOM Manipulation', 'Event Handling', 'AJAX and Fetch API', 'ES6 Features']
+            topics: ['JavaScript Basics', 'DOM Manipulation', 'Event Handling', 'AJAX and Fetch API', 'ES6 Features'],
+            image: "https://placehold.co/600x400.png",
+            hint: "javascript code"
         },
         {
             title: 'Core Java',
             description: 'Learn Java programming',
-            topics: ['Java Basics', 'Object-Oriented Programming', 'Exception Handling', 'Collections Framework', 'Multithreading']
+            topics: ['Java Basics', 'Object-Oriented Programming', 'Exception Handling', 'Collections Framework', 'Multithreading'],
+            image: "https://placehold.co/600x400.png",
+            hint: "java code"
         },
         {
             title: 'C#',
             description: 'Learn C# programming',
-            topics: ['C# Basics', 'Object-Oriented Programming', 'LINQ Queries', 'Asynchronous Programming', '.NET Framework']
+            topics: ['C# Basics', 'Object-Oriented Programming', 'LINQ Queries', 'Asynchronous Programming', '.NET Framework'],
+            image: "https://placehold.co/600x400.png",
+            hint: "c# code"
         },
         {
             title: 'React',
             description: 'Learn React framework',
-            topics: ['React Basics', 'Components and Props', 'State Management', 'React Router', 'Hooks']
+            topics: ['React Basics', 'Components and Props', 'State Management', 'React Router', 'Hooks'],
+            image: "https://placehold.co/600x400.png",
+            hint: "react code"
         },
         {
             title: 'Advanced Java',
             description: 'Learn advanced Java',
-            topics: ['Java EE', 'Spring Framework', 'Hibernate', 'RESTful Services', 'Microservices']
+            topics: ['Java EE', 'Spring Framework', 'Hibernate', 'RESTful Services', 'Microservices'],
+            image: "https://placehold.co/600x400.png",
+            hint: "java ee code"
         },
         {
             title: 'PowerBI',
             description: 'Learn PowerBI for data visualization',
-            topics: ['Data Visualization', 'DAX Functions', 'Power Query', 'Report Sharing', 'Dashboard Creation']
+            topics: ['Data Visualization', 'DAX Functions', 'Power Query', 'Report Sharing', 'Dashboard Creation'],
+            image: "https://placehold.co/600x400.png",
+            hint: "powerbi dashboard"
         }
     ]
   },
@@ -161,42 +206,58 @@ const courseData = [
         {
             title: 'SEO',
             description: 'Optimize websites for search engines',
-            topics: ['Keyword Research', 'On-Page SEO', 'Off-Page SEO', 'Technical SEO', 'SEO Tools']
+            topics: ['Keyword Research', 'On-Page SEO', 'Off-Page SEO', 'Technical SEO', 'SEO Tools'],
+            image: "https://placehold.co/600x400.png",
+            hint: "seo analysis"
         },
         {
             title: 'SMM',
             description: 'Manage social media marketing',
-            topics: ['Social Media Strategy', 'Content Creation', 'Engagement Techniques', 'Analytics', 'Community Management']
+            topics: ['Social Media Strategy', 'Content Creation', 'Engagement Techniques', 'Analytics', 'Community Management'],
+            image: "https://placehold.co/600x400.png",
+            hint: "social media marketing"
         },
         {
             title: 'SEM',
             description: 'Manage search engine marketing',
-            topics: ['PPC Campaigns', 'Ad Copywriting', 'Bid Management', 'Conversion Tracking', 'A/B Testing']
+            topics: ['PPC Campaigns', 'Ad Copywriting', 'Bid Management', 'Conversion Tracking', 'A/B Testing'],
+            image: "https://placehold.co/600x400.png",
+            hint: "search engine marketing"
         },
         {
             title: 'WordPress',
             description: 'Build and manage WordPress websites',
-            topics: ['WordPress Setup', 'Theme Customization', 'Plugin Management', 'SEO for WordPress', 'Security Best Practices']
+            topics: ['WordPress Setup', 'Theme Customization', 'Plugin Management', 'SEO for WordPress', 'Security Best Practices'],
+            image: "https://placehold.co/600x400.png",
+            hint: "wordpress dashboard"
         },
         {
             title: 'Content Creation',
             description: 'Create engaging content',
-            topics: ['Blogging', 'Video Content', 'Social Media Posts', 'Copywriting', 'Content Strategy']
+            topics: ['Blogging', 'Video Content', 'Social Media Posts', 'Copywriting', 'Content Strategy'],
+            image: "https://placehold.co/600x400.png",
+            hint: "content creation"
         },
         {
             title: 'Email Marketing',
             description: 'Manage email campaigns',
-            topics: ['Email Campaigns', 'List Building', 'A/B Testing', 'Analytics and Reporting', 'Automation']
+            topics: ['Email Campaigns', 'List Building', 'A/B Testing', 'Analytics and Reporting', 'Automation'],
+            image: "https://placehold.co/600x400.png",
+            hint: "email marketing"
         },
         {
             title: 'SMO',
             description: 'Manage social media optimization',
-            topics: ['Social Media Strategy', 'Content Planning', 'Engagement Techniques', 'Analytics', 'Community Management']
+            topics: ['Social Media Strategy', 'Content Planning', 'Engagement Techniques', 'Analytics', 'Community Management'],
+            image: "https://placehold.co/600x400.png",
+            hint: "social media optimization"
         },
         {
             title: 'Google Analytics',
             description: 'Track website performance',
-            topics: ['Setting Up Google Analytics', 'Understanding Metrics', 'Tracking Conversions', 'Reporting', 'Data Interpretation']
+            topics: ['Setting Up Google Analytics', 'Understanding Metrics', 'Tracking Conversions', 'Reporting', 'Data Interpretation'],
+            image: "https://placehold.co/600x400.png",
+            hint: "analytics dashboard"
         }
     ]
   },
@@ -209,42 +270,58 @@ const courseData = [
         {
           title: 'CorelDRAW',
           description: 'Learn vector graphics design',
-          topics: ['Vector Graphics', 'Logo Design', 'Layout Design', 'Typography', 'Color Management']
+          topics: ['Vector Graphics', 'Logo Design', 'Layout Design', 'Typography', 'Color Management'],
+          image: "https://placehold.co/600x400.png",
+          hint: "vector design"
         },
         {
           title: 'Adobe Photoshop',
           description: 'Master photo editing',
-          topics: ['Photo Editing', 'Retouching Techniques', 'Layer Management', 'Color Correction', 'Graphic Design']
+          topics: ['Photo Editing', 'Retouching Techniques', 'Layer Management', 'Color Correction', 'Graphic Design'],
+          image: "https://placehold.co/600x400.png",
+          hint: "photoshop editing"
         },
         {
           title: 'Adobe Illustrator',
           description: 'Create vector illustrations',
-          topics: ['Vector Illustration', 'Logo Creation', 'Infographics', 'Icon Design', 'Print Design']
+          topics: ['Vector Illustration', 'Logo Creation', 'Infographics', 'Icon Design', 'Print Design'],
+          image: "https://placehold.co/600x400.png",
+          hint: "illustrator art"
         },
         {
           title: 'Adobe InDesign',
           description: 'Learn layout design',
-          topics: ['Layout Design', 'Typography', 'Print Production', 'Interactive PDFs', 'Book Design']
+          topics: ['Layout Design', 'Typography', 'Print Production', 'Interactive PDFs', 'Book Design'],
+          image: "https://placehold.co/600x400.png",
+          hint: "indesign layout"
         },
         {
           title: 'Video|Sound Editing',
           description: 'Edit videos and audio',
-          topics: ['Video Editing Basics', 'Audio Editing Techniques', 'Color Grading', 'Motion Graphics', 'Exporting and Compression']
+          topics: ['Video Editing Basics', 'Audio Editing Techniques', 'Color Grading', 'Motion Graphics', 'Exporting and Compression'],
+          image: "https://placehold.co/600x400.png",
+          hint: "video editing"
         },
         {
           title: 'Adobe Animation',
           description: 'Create animations',
-          topics: ['Animation Principles', 'Character Animation', 'Motion Graphics', 'Storyboarding', 'Exporting Animations']
+          topics: ['Animation Principles', 'Character Animation', 'Motion Graphics', 'Storyboarding', 'Exporting Animations'],
+          image: "https://placehold.co/600x400.png",
+          hint: "character animation"
         },
         {
           title: '3D MAX',
           description: 'Learn 3D modeling',
-          topics: ['3D Modeling', 'Texturing', 'Lighting Techniques', 'Animation', 'Rendering']
+          topics: ['3D Modeling', 'Texturing', 'Lighting Techniques', 'Animation', 'Rendering'],
+          image: "https://placehold.co/600x400.png",
+          hint: "3d modeling"
         },
         {
           title: 'Canva Design',
           description: 'Create designs for social media',
-          topics: ['Graphic Design Basics', 'Social Media Graphics', 'Presentation Design', 'Branding', 'Marketing Materials']
+          topics: ['Graphic Design Basics', 'Social Media Graphics', 'Presentation Design', 'Branding', 'Marketing Materials'],
+          image: "https://placehold.co/600x400.png",
+          hint: "canva design"
         }
     ]
   },
@@ -299,7 +376,16 @@ export default function ShortTermCoursesPage() {
         <Dialog>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredCourses.map((course) => (
-                <Card key={course.title} className="bg-card/60 flex flex-col justify-between">
+                <Card key={course.title} className="bg-card/60 flex flex-col justify-between overflow-hidden">
+                    <div className="relative h-40 w-full">
+                        <Image
+                            src={course.image}
+                            alt={course.title}
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint={course.hint}
+                        />
+                    </div>
                     <CardHeader>
                         <div className="flex justify-between items-start">
                             <p className="text-sm text-muted-foreground">Short Term</p>
