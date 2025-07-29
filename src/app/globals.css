@@ -68,5 +68,12 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   }
+}
+
+@layer components {
+    .glass-effect {
+        @apply bg-white/30 backdrop-blur-lg border border-white/20 shadow-lg;
+    }
 }

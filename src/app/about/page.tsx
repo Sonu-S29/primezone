@@ -25,7 +25,7 @@ export default function AboutUs() {
   return (
     <div className="space-y-16 md:space-y-24 pb-16">
       {/* Page Header */}
-      <section className="bg-card py-12">
+      <section className="py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">About Primezone</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -61,7 +61,7 @@ export default function AboutUs() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="bg-card py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Why Choose Us?</h2>
@@ -70,7 +70,7 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center">
+            <Card className="text-center glass-effect">
               <CardHeader>
                 <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
                   <Target className="h-8 w-8" />
@@ -81,7 +81,7 @@ export default function AboutUs() {
                 <p>We are dedicated to providing the highest quality education and fostering a learning environment where students can thrive and achieve their career goals.</p>
               </CardContent>
             </Card>
-            <Card className="text-center">
+            <Card className="text-center glass-effect">
               <CardHeader>
                 <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
                   <Briefcase className="h-8 w-8" />
@@ -92,7 +92,7 @@ export default function AboutUs() {
                 <p>Our focus is on practical, hands-on training that equips students with the skills and knowledge demanded by the industry today.</p>
               </CardContent>
             </Card>
-            <Card className="text-center">
+            <Card className="text-center glass-effect">
               <CardHeader>
                 <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
                   <Award className="h-8 w-8" />
@@ -117,7 +117,7 @@ export default function AboutUs() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-                <Card key={index}>
+                <Card key={index} className="glass-effect">
                     <CardHeader className="flex flex-row items-center gap-4">
                         <div className="bg-accent text-accent-foreground p-3 rounded-lg">
                             {service.icon}
