@@ -5,10 +5,14 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
-import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, ArrowRight, Phone, Download } from "lucide-react";
+import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, MoreVertical, Clock, Users, BookOpen, Download } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import BrochureDownloadForm from "@/components/brochure-download-form";
+import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 
 
 const courseData = [
@@ -294,63 +298,70 @@ export default function ShortTermCoursesPage() {
 
         {/* Course Grid */}
         <Dialog>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredCourses.map((course) => (
-                <div key={course.title} className="flip-card h-96">
-                <div className="flip-card-inner">
-                    <div className="flip-card-front">
-                        <Card className="flex flex-col overflow-hidden group glass-effect h-full">
-                            <CardHeader>
-                                <CardTitle>{course.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <p className="text-muted-foreground">{course.description}</p>
-                            </CardContent>
-                             <CardFooter>
-                                <p className="text-sm text-accent font-semibold">Hover to learn more &rarr;</p>
-                            </CardFooter>
-                        </Card>
-                    </div>
-                    <div className="flip-card-back">
-                         <Card className="glass-effect h-full flex flex-col justify-between p-6">
-                            <CardHeader>
-                                <CardTitle>{course.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <Dialog>
+                <Card key={course.title} className="bg-card/60 flex flex-col justify-between">
+                    <CardHeader>
+                        <div className="flex justify-between items-start">
+                            <p className="text-sm text-muted-foreground">Short Term</p>
+                             <Button variant="ghost" size="icon" className="w-8 h-8">
+                                <MoreVertical className="w-4 h-4"/>
+                            </Button>
+                        </div>
+                        <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
+                        <CardDescription>{course.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                       <div className="space-y-2">
+                            <div className="flex justify-between items-center text-sm text-muted-foreground">
+                                <span>Progress</span>
+                                <span>20%</span>
+                            </div>
+                           <Progress value={20} className="h-2"/>
+                       </div>
+                    </CardContent>
+                    <CardFooter className="flex justify-between items-center">
+                        <div className="flex -space-x-2">
+                            <Avatar className="border-2 border-card">
+                                <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="professional man"/>
+                                <AvatarFallback>V</AvatarFallback>
+                            </Avatar>
+                             <Avatar className="border-2 border-card">
+                                <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="professional woman"/>
+                                <AvatarFallback>K</AvatarFallback>
+                            </Avatar>
+                        </div>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                 <Button variant="outline" size="sm">View Topics</Button>
+                            </DialogTrigger>
+                             <DialogContent>
+                                <DialogHeader>
+                                    <DialogTitle>{course.title}</DialogTitle>
+                                    <DialogDescription>
+                                        Key topics you will learn in this course.
+                                    </DialogDescription>
+                                </DialogHeader>
+                                <ul className="space-y-2 pt-2">
+                                    {course.topics.map(topic => (
+                                        <li key={topic} className="flex items-center text-sm">
+                                            <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
+                                            <span>{topic}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
+                                     <Button asChild>
+                                        <a href="tel:+919769730087"><Clock className="mr-2"/> Enroll Now</a>
+                                    </Button>
                                     <DialogTrigger asChild>
-                                        <Button variant="outline" className="w-full">Topics Covered</Button>
+                                        <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
                                     </DialogTrigger>
-                                    <DialogContent>
-                                        <DialogHeader>
-                                            <DialogTitle>{course.title}</DialogTitle>
-                                            <DialogDescription>
-                                                Key topics you will learn in this course.
-                                            </DialogDescription>
-                                        </DialogHeader>
-                                        <ul className="space-y-2 pt-2">
-                                            {course.topics.map(topic => (
-                                                <li key={topic} className="flex items-center text-sm">
-                                                    <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
-                                                    <span>{topic}</span>
-                                                </li>
-                                            ))}
-                                    </ul>
-                                    </DialogContent>
-                                </Dialog>
-                            </CardContent>
-                            <CardFooter className="flex flex-col items-stretch gap-2 p-0">
-                                <Button asChild>
-                                    <a href="tel:+919769730087"><Phone className="mr-2"/> Call Now</a>
-                                </Button>
-                                <DialogTrigger asChild>
-                                    <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
-                                </DialogTrigger>
-                            </CardFooter>
-                        </Card>
-                    </div>
-                </div>
-                </div>
+                                </CardFooter>
+                            </DialogContent>
+                        </Dialog>
+                    </CardFooter>
+                </Card>
             ))}
             </div>
              <DialogContent>
@@ -367,4 +378,3 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
-
