@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BrochureDownloadForm from "@/components/brochure-download-form";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription, DialogHeader } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -90,6 +90,27 @@ const testimonials = [
     hint: "happy person",
     story: "The Tally Prime course was incredibly practical. I was able to apply what I learned directly to my business. The hands-on approach is excellent."
   },
+  {
+    name: "Emily White",
+    course: "Diploma in Graphic Designing",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "creative designer",
+    story: "The graphic design course was amazing! The instructors were so supportive and I learned so much. I now have a professional portfolio I'm proud of."
+  },
+  {
+    name: "Michael Brown",
+    course: "Python for Data Science",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "data analyst",
+    story: "I had no programming experience, but the Python course was very beginner-friendly. I'm now able to analyze data and create visualizations with ease."
+  },
+  {
+    name: "Sarah Johnson",
+    course: "C & C++ Programming",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "software developer",
+    story: "A fantastic course for anyone looking to get into software development. The concepts were explained clearly and the projects were challenging and fun."
+  }
 ];
 
 const sliderImages = [
@@ -368,11 +389,13 @@ export default function Home() {
                     </div>
                 ))}
             </div>
-            <DialogContent>
-                <DialogTitle>Download Brochure</DialogTitle>
-                <DialogDescription>
-                    Please provide your details to receive the brochure.
-                </DialogDescription>
+             <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Download Brochure</DialogTitle>
+                    <DialogDescription>
+                        Please provide your details to receive the brochure.
+                    </DialogDescription>
+                </DialogHeader>
                 <BrochureDownloadForm />
             </DialogContent>
           </Dialog>
@@ -502,31 +525,33 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4">
+      <section className="w-full py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Success Stories</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
             Hear what our students have to say about their journey with us.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="glass-effect">
-              <CardContent className="pt-6">
-                <div className="flex items-center mb-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
-                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <div className="ml-4">
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.course}</p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground italic">"{testimonial.story}"</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="relative w-full overflow-hidden">
+            <div className="flex animate-scroll">
+                {[...testimonials, ...testimonials].map((testimonial, index) => (
+                    <Card key={index} className="glass-effect flex-shrink-0 w-80 md:w-96 mx-4">
+                        <CardContent className="pt-6">
+                            <div className="flex items-center mb-4">
+                                <Avatar>
+                                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
+                                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div className="ml-4">
+                                    <p className="font-semibold">{testimonial.name}</p>
+                                    <p className="text-sm text-muted-foreground">{testimonial.course}</p>
+                                </div>
+                            </div>
+                            <p className="text-muted-foreground italic">"{testimonial.story}"</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
         </div>
       </section>
       
@@ -543,10 +568,12 @@ export default function Home() {
                 </DialogTrigger>
             </div>
             <DialogContent>
-                <DialogTitle>Download Brochure</DialogTitle>
-                 <DialogDescription>
-                    Please provide your details to receive the brochure.
-                </DialogDescription>
+                <DialogHeader>
+                    <DialogTitle>Download Brochure</DialogTitle>
+                    <DialogDescription>
+                        Please provide your details to receive the brochure.
+                    </DialogDescription>
+                </DialogHeader>
                 <BrochureDownloadForm />
             </DialogContent>
         </Dialog>

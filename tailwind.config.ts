@@ -96,6 +96,10 @@ export default {
         'fade-in': {
             '0%': { opacity: '0' },
             '100%': { opacity: '1' },
+        },
+        'scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
         }
       },
       animation: {
@@ -104,6 +108,7 @@ export default {
         'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
         'fade-in-up': 'fade-in-up 0.5s ease-out 0.2s forwards',
         'fade-in': 'fade-in 0.5s ease-out forwards',
+        'scroll': 'scroll 40s linear infinite',
       },
     },
   },
