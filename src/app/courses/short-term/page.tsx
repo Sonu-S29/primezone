@@ -10,11 +10,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import BrochureDownloadForm from "@/components/brochure-download-form";
 import Image from "next/image";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
 
 
 const courseData = [
@@ -420,78 +415,80 @@ export default function ShortTermCoursesPage() {
         {/* Course Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredCourses.map((course) => (
-                <Collapsible key={course.title} asChild>
-                    <Card className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
-                        <div className="relative h-40 w-full">
-                            <Image
-                                src={course.image}
-                                alt={course.title}
-                                fill
-                                style={{objectFit: "cover"}}
-                                data-ai-hint={course.hint}
-                                className="rounded-t-2xl"
-                            />
-                        </div>
-                        <CardHeader>
-                            <div className="flex justify-between items-start">
-                                <p className="text-sm text-blue-500 font-semibold">Short Term</p>
-                                <CollapsibleTrigger asChild>
+                <Card key={course.title} className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
+                    <div className="relative h-40 w-full">
+                        <Image
+                            src={course.image}
+                            alt={course.title}
+                            fill
+                            style={{objectFit: "cover"}}
+                            data-ai-hint={course.hint}
+                            className="rounded-t-2xl"
+                        />
+                    </div>
+                    <CardHeader>
+                        <div className="flex justify-between items-start">
+                            <p className="text-sm text-blue-500 font-semibold">Short Term</p>
+                            <Dialog>
+                                <DialogTrigger asChild>
                                     <Button variant="outline" size="sm">View Topics</Button>
-                                </CollapsibleTrigger>
-                            </div>
-                            <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
-                            <CardDescription>{course.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                        </CardContent>
-                        <CardFooter className="bg-blue-50 text-blue-900 p-4 rounded-b-2xl flex justify-between items-center text-sm font-medium">
-                            <div className="flex items-center gap-2">
-                                <BookOpen className="h-4 w-4" />
-                                <span>{course.modules} Modules</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle className="h-4 w-4" />
-                                <span>{course.topics.length} Total Topics</span>
-                            </div>
-                        </CardFooter>
-
-                        <CollapsibleContent>
-                            <div className="p-4 border-t">
-                                <h4 className="font-semibold mb-2">Key topics you will learn:</h4>
-                                <ul className="space-y-2 pt-2">
-                                    {course.topics.map(topic => (
-                                        <li key={topic} className="flex items-center text-sm">
-                                            <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
-                                            <span>{topic}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
-                                        <Button asChild>
-                                        <a href="tel:+919769730087"><Clock className="mr-2"/> Enroll Now</a>
-                                    </Button>
-                                    <Dialog>
-                                    <DialogTrigger asChild>
-                                        <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
-                                    </DialogTrigger>
-                                    <DialogContent>
-                                        <DialogHeader>
-                                            <DialogTitle>Download Brochure</DialogTitle>
-                                            <DialogDescription>
-                                                Please provide your details to receive the brochure.
-                                            </DialogDescription>
-                                        </DialogHeader>
-                                        <BrochureDownloadForm />
-                                    </DialogContent>
-                                    </Dialog>
-                                </CardFooter>
-                            </div>
-                        </CollapsibleContent>
-                    </Card>
-                </Collapsible>
+                                </DialogTrigger>
+                                <DialogContent className="bg-white/80 backdrop-blur-sm">
+                                    <DialogHeader>
+                                        <DialogTitle>{course.title}</DialogTitle>
+                                        <DialogDescription>Key topics you will learn:</DialogDescription>
+                                    </DialogHeader>
+                                    <ul className="space-y-2 pt-2">
+                                        {course.topics.map(topic => (
+                                            <li key={topic} className="flex items-center text-sm">
+                                                <CheckCircle className="h-4 w-4 mr-2 text-accent flex-shrink-0" />
+                                                <span>{topic}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
+                                            <Button asChild>
+                                            <a href="tel:+919769730087"><Clock className="mr-2"/> Enroll Now</a>
+                                        </Button>
+                                        <Dialog>
+                                        <DialogTrigger asChild>
+                                            <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
+                                        </DialogTrigger>
+                                        <DialogContent>
+                                            <DialogHeader>
+                                                <DialogTitle>Download Brochure</DialogTitle>
+                                                <DialogDescription>
+                                                    Please provide your details to receive the brochure.
+                                                </DialogDescription>
+                                            </DialogHeader>
+                                            <BrochureDownloadForm />
+                                        </DialogContent>
+                                        </Dialog>
+                                    </CardFooter>
+                                </DialogContent>
+                            </Dialog>
+                        </div>
+                        <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
+                        <CardDescription>{course.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                    </CardContent>
+                    <CardFooter className="bg-blue-50 text-blue-900 p-4 rounded-b-2xl flex justify-between items-center text-sm font-medium">
+                        <div className="flex items-center gap-2">
+                            <BookOpen className="h-4 w-4" />
+                            <span>{course.modules} Modules</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <CheckCircle className="h-4 w-4" />
+                            <span>{course.topics.length} Total Topics</span>
+                        </div>
+                    </CardFooter>
+                </Card>
             ))}
             </div>
       </section>
     </div>
   );
 }
+
+    
