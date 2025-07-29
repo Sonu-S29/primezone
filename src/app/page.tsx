@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BrochureDownloadForm from "@/components/brochure-download-form";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 
 const featuredCourses = [
   {
@@ -331,6 +331,7 @@ export default function Home() {
                 ))}
             </div>
             <DialogContent>
+                <DialogTitle className="sr-only">Download Brochure</DialogTitle>
                 <BrochureDownloadForm />
             </DialogContent>
           </Dialog>
@@ -384,6 +385,7 @@ export default function Home() {
                 </DialogTrigger>
             </div>
             <DialogContent>
+                <DialogTitle className="sr-only">Download Brochure</DialogTitle>
                 <BrochureDownloadForm />
             </DialogContent>
         </Dialog>
