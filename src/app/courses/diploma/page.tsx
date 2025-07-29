@@ -1,41 +1,69 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, Briefcase } from "lucide-react";
+import { Calendar, Briefcase, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const diplomaCourses = [
   {
-    title: "Diploma in Computer Application & Programming (DCAP)",
-    description: "A comprehensive course covering computer fundamentals, office automation, programming concepts with C & C++, and web designing.",
-    duration: "12 Months",
-    careerPaths: "Data Entry Operator, Office Assistant, Junior Programmer, Web Designer.",
+    title: "DIA (Diploma In Accounting)",
+    description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
     image: "https://placehold.co/600x400.png",
-    hint: "programming code",
+    hint: "accounting collage",
   },
   {
-    title: "Diploma in Financial Accounting (DFA)",
-    description: "Master the art of accounting with Tally Prime, covering everything from basic accounting principles to advanced GST compliance.",
-    duration: "6 Months",
-    careerPaths: "Accountant, Finance Executive, Tally Operator, Tax Consultant.",
+    title: "DFA (Diploma In Financial Accounting)",
+    description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
     image: "https://placehold.co/600x400.png",
-    hint: "financial charts",
+    hint: "financial report",
   },
   {
-    title: "Diploma in Web Development (DWD)",
-    description: "Learn to build dynamic websites and applications with HTML, CSS, JavaScript, React, Node.js, and database management.",
-    duration: "12 Months",
-    careerPaths: "Front-end Developer, Back-end Developer, Full-stack Developer, Webmaster.",
+    title: "DCA (Diploma In Computer Application)",
+    description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
     image: "https://placehold.co/600x400.png",
-    hint: "website design",
+    hint: "computer application",
   },
   {
-    title: "Diploma in Graphic Designing (DGD)",
-    description: "Unleash your creativity. This course covers graphic design principles, Adobe Photoshop, Illustrator, and CorelDRAW.",
-    duration: "6 Months",
-    careerPaths: "Graphic Designer, UI/UX Designer, Brand Identity Designer, Illustrator.",
+    title: "DFAM (Diploma In Financial & Management)",
+    description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
     image: "https://placehold.co/600x400.png",
-    hint: "graphic design",
+    hint: "financial management",
+  },
+  {
+    title: "DPC (Diploma In Programming Course)",
+    description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
+    image: "https://placehold.co/600x400.png",
+    hint: "programming course",
+  },
+  {
+    title: "DGA (Diploma In Graphic & Animation)",
+    description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
+    image: "https://placehold.co/600x400.png",
+    hint: "graphic animation",
+  },
+  {
+    title: "DEH (Diploma In Ethical Hacking)",
+    description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
+    image: "https://placehold.co/600x400.png",
+    hint: "ethical hacking",
+  },
+  {
+    title: "DDM (Diploma In Digital Marketing)",
+    description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
+    image: "https://placehold.co/600x400.png",
+    hint: "digital marketing",
+  },
+  {
+    title: "Full-Stack Development",
+    description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
+    image: "https://placehold.co/600x400.png",
+    hint: "full stack",
+  },
+  {
+    title: "Data Analytics",
+    description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
+    image: "https://placehold.co/600x400.png",
+    hint: "data analytics",
   },
 ];
 
@@ -44,18 +72,15 @@ export default function DiplomaCoursesPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">Diploma Courses</h1>
-          <p className="mt-4 text-lg text-primary-foreground/80 max-w-3xl mx-auto">
-            Comprehensive programs designed to build a strong foundation for a successful career in technology.
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline">Diploma Courses for your Better Career</h1>
         </div>
       </section>
 
       <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
           {diplomaCourses.map((course) => (
-            <Card key={course.title} className="flex flex-col md:flex-row overflow-hidden group">
-              <div className="md:w-1/3">
+            <Card key={course.title} className="flex flex-col md:flex-row overflow-hidden group glass-effect">
+              <div className="md:w-2/5 relative">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -65,26 +90,15 @@ export default function DiplomaCoursesPage() {
                   data-ai-hint={course.hint}
                 />
               </div>
-              <div className="md:w-2/3 flex flex-col">
-                <CardHeader>
-                  <CardTitle>{course.title}</CardTitle>
-                  <CardDescription>{course.description}</CardDescription>
+              <div className="md:w-3/5 flex flex-col p-6">
+                <CardHeader className="p-0">
+                  <CardTitle className="text-xl">{course.title.split('(')[0]}</CardTitle>
+                  <CardTitle className="text-2xl font-bold">{course.title}</CardTitle>
+                  <CardDescription className="pt-2">{course.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex items-center text-sm text-muted-foreground mb-2">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    <strong>Duration:</strong> <span className="ml-2">{course.duration}</span>
-                  </div>
-                  <div className="flex items-start text-sm text-muted-foreground">
-                    <Briefcase className="mr-2 h-4 w-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <strong>Career Paths:</strong> <span className="ml-2">{course.careerPaths}</span>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter>
+                <CardFooter className="p-0 mt-auto pt-6">
                   <Button asChild>
-                    <Link href="/enroll">Enroll Now</Link>
+                    <Link href="/enroll">Learn More <ChevronRight className="ml-2 h-4 w-4"/></Link>
                   </Button>
                 </CardFooter>
               </div>
