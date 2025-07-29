@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle } from "lucide-react";
+import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -99,6 +99,13 @@ const whyChooseUsItems = [
     }
   ];
 
+const welcomeFeatures = [
+    "Award Winning",
+    "Professional Staff",
+    "Free Counseling",
+    "Fair Prices"
+];
+
 export default function Home() {
   return (
     <div className="space-y-16 md:space-y-24">
@@ -191,6 +198,53 @@ export default function Home() {
                     </div>
                 ))}
             </div>
+        </section>
+
+        {/* Welcome Section */}
+        <section className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+                <div>
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Welcome to Primezone Computer Education</h2>
+                    <div className="w-24 h-1 bg-accent mt-2"></div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                    PRIMEZONE COMPUTER EDUCATION was founded in 2020. It was instrumental in bringing computer education within the reach of common people, supporting students to add professional skills and achieve higher goals in life.
+                </p>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                    {welcomeFeatures.map(feature => (
+                        <div key={feature} className="flex items-center">
+                            <CheckCircle className="h-5 w-5 mr-2 text-accent flex-shrink-0" />
+                            <span className="font-medium">{feature}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className="flex flex-wrap gap-6 items-center pt-4">
+                    <div className="flex items-center gap-4">
+                        <div className="p-3 bg-accent text-accent-foreground rounded-full">
+                           <Phone className="h-6 w-6" />
+                        </div>
+                        <div>
+                            <p className="text-muted-foreground">Call to ask any question</p>
+                            <a href="tel:+919769730087" className="text-lg font-bold text-primary hover:underline">+91 9769730087</a>
+                        </div>
+                    </div>
+                    <Button asChild size="lg">
+                        <Link href="/contact">Request A Quote</Link>
+                    </Button>
+                </div>
+            </div>
+            <div>
+              <Image 
+                src="https://placehold.co/600x600.png"
+                alt="Primezone Education Crest"
+                width={600}
+                height={600}
+                className="rounded-lg shadow-xl mx-auto"
+                data-ai-hint="education logo"
+              />
+            </div>
+          </div>
         </section>
 
       {/* Featured Courses Section */}
