@@ -426,7 +426,7 @@ export default function ShortTermCoursesPage() {
                             className="rounded-t-2xl"
                         />
                     </div>
-                    <CardHeader>
+                    <CardHeader className="space-y-1">
                         <div className="flex justify-between items-start">
                             <p className="text-sm text-blue-500 font-semibold">Short Term</p>
                             <Dialog>
@@ -473,7 +473,7 @@ export default function ShortTermCoursesPage() {
                     </CardHeader>
                     <CardContent className="flex-grow">
                     </CardContent>
-                    <CardFooter className="bg-blue-50 text-blue-900 p-4 rounded-b-2xl flex justify-between items-center text-sm font-medium">
+                    <CardFooter className="bg-blue-50 text-blue-900 p-3 rounded-b-2xl flex justify-between items-center text-sm font-medium">
                         <div className="flex items-center gap-2">
                             <BookOpen className="h-4 w-4" />
                             <span>{course.modules} Modules</span>
@@ -490,5 +490,3 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
-
-    
