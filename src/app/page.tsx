@@ -28,6 +28,27 @@ const featuredCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "web development"
   },
+  {
+    title: "Diploma in Graphic Designing",
+    description: "Unleash your creativity with graphic design principles and software.",
+    duration: "6 Months",
+    image: "https://placehold.co/600x400.png",
+    hint: "graphic design"
+  },
+  {
+    title: "C & C++ Programming",
+    description: "Build a strong foundation in programming with two powerful languages.",
+    duration: "3 Months",
+    image: "https://placehold.co/600x400.png",
+    hint: "c++ code"
+  },
+  {
+    title: "Python for Data Science",
+    description: "An introduction to Python for data analysis and visualization.",
+    duration: "4 Months",
+    image: "https://placehold.co/600x400.png",
+    hint: "data science dashboard"
+  },
 ];
 
 const testimonials = [
