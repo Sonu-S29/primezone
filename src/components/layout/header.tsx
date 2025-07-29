@@ -11,14 +11,7 @@ import React from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  {
-    href: "/courses",
-    label: "Courses",
-    subLinks: [
-      { href: "/courses/diploma", label: "Diploma Courses" },
-      { href: "/courses/short-term", label: "Short-Term Courses" },
-    ],
-  },
+  { href: "/courses", label: "Courses" },
   { href: "/gallery", label: "Gallery" },
   { href: "/recommendations", label: "AI Recommender" },
   { href: "/contact", label: "Contact Us" },
