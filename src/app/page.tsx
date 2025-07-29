@@ -1,3 +1,217 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Briefcase, Target, Award, BookOpen, User, Calendar } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+
+const featuredCourses = [
+  {
+    title: "Diploma in Computer Application",
+    description: "A comprehensive course covering the fundamentals of computer applications.",
+    duration: "12 Months",
+    image: "https://placehold.co/600x400.png",
+    hint: "computer code"
+  },
+  {
+    title: "Advanced Tally Prime with GST",
+    description: "Master accounting with Tally Prime and understand the GST framework.",
+    duration: "6 Months",
+    image: "https://placehold.co/600x400.png",
+    hint: "accounting software"
+  },
+  {
+    title: "Web Development",
+    description: "Learn to build modern, responsive websites and web applications.",
+    duration: "6 Months",
+    image: "https://placehold.co/600x400.png",
+    hint: "web development"
+  },
+];
+
+const testimonials = [
+  {
+    name: "John Doe",
+    course: "Web Development",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "smiling student",
+    story: "Primezone provided me with the skills I needed to land my dream job as a web developer. The instructors are fantastic and the curriculum is top-notch."
+  },
+  {
+    name: "Jane Smith",
+    course: "Diploma in Computer Application",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "professional woman",
+    story: "The diploma course gave me a solid foundation in computer applications. I feel much more confident in my technical abilities now. Highly recommended!"
+  },
+  {
+    name: "Samuel Green",
+    course: "Advanced Tally Prime",
+    avatar: "https://placehold.co/100x100.png",
+    hint: "happy person",
+    story: "The Tally Prime course was incredibly practical. I was able to apply what I learned directly to my business. The hands-on approach is excellent."
+  },
+];
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="space-y-16 md:space-y-24">
+      {/* Hero Section */}
+      <section className="relative py-20 md:py-32 bg-primary text-primary-foreground">
+        <Image
+          src="https://placehold.co/1920x1080.png"
+          alt="Abstract background"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-10"
+          data-ai-hint="abstract technology"
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-headline animate-fade-in-down">
+            Primezone Computer Education
+          </h1>
+          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto animate-fade-in-up">
+            Unlock your potential in the digital world. We provide world-class training to shape your future in technology.
+          </p>
+          <div className="space-x-4 animate-fade-in-up">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="/courses/diploma">Explore Courses</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+      
+      {/* Why Choose Us Section */}
+      <section className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">Why Choose Us?</h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+            Our commitment to excellence and student success sets us apart.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="text-center">
+            <CardHeader>
+              <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
+                <Target className="h-8 w-8" />
+              </div>
+              <CardTitle className="mt-4">Our Commitment</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>We are dedicated to providing the highest quality education and fostering a learning environment where students can thrive and achieve their career goals.</p>
+            </CardContent>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
+              <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
+                <Briefcase className="h-8 w-8" />
+              </div>
+              <CardTitle className="mt-4">Our Focus</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Our focus is on practical, hands-on training that equips students with the skills and knowledge demanded by the industry today.</p>
+            </CardContent>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
+              <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
+                <Award className="h-8 w-8" />
+              </div>
+              <CardTitle className="mt-4">Our Goal</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Our goal is to empower our students to become skilled professionals and leaders in the tech industry, ready to take on new challenges.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Featured Courses Section */}
+      <section className="bg-card py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Featured Courses</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Kickstart your career with our most popular courses.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredCourses.map((course, index) => (
+              <Card key={index} className="overflow-hidden group">
+                <Image 
+                  src={course.image} 
+                  alt={course.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  data-ai-hint={course.hint}
+                />
+                <CardHeader>
+                  <CardTitle>{course.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">{course.description}</p>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="mr-2 h-4 w-4" />
+                    <span>{course.duration}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+           <div className="text-center mt-12">
+            <Button asChild>
+              <Link href="/courses/diploma">View All Courses</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">Success Stories</h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+            Hear what our students have to say about their journey with us.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index}>
+              <CardContent className="pt-6">
+                <div className="flex items-center mb-4">
+                  <Avatar>
+                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
+                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="ml-4">
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.course}</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground italic">"{testimonial.story}"</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+      
+       {/* Call to Action for Brochure */}
+       <section className="bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 py-16 text-center">
+            <h2 className="text-3xl font-bold mb-4 font-headline">Ready to Start Your Journey?</h2>
+            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+                Download our brochure to get detailed information about all our courses, fee structures, and admission process.
+            </p>
+            <Button size="lg" variant="secondary">
+                <a href="/brochure.pdf" download>Download Brochure</a>
+            </Button>
+        </div>
+       </section>
+
+    </div>
+  );
 }
