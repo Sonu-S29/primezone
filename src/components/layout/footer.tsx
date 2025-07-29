@@ -38,6 +38,7 @@ export default function Footer() {
               <li><Link href="/about" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>About Us</Link></li>
               <li><Link href="/courses/diploma" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Courses</Link></li>
               <li><Link href="/contact" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Contact us</Link></li>
+              <li><Link href="/recommendations" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>AI Recommender</Link></li>
             </ul>
           </div>
 
