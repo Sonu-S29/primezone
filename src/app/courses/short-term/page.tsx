@@ -283,13 +283,12 @@ export default function ShortTermCoursesPage() {
               key={category.id}
               onClick={() => setActiveFilter(category.id)}
               variant={activeFilter === category.id ? "default" : "outline"}
-              className="h-auto"
+              className="h-10"
             >
               <div className="flex items-center gap-3 p-2">
                 {category.icon}
                 <div className="text-left">
                   <p className="font-bold">{category.name}</p>
-                  <p className="text-xs font-normal">{category.description}</p>
                 </div>
               </div>
             </Button>
@@ -311,26 +310,9 @@ export default function ShortTermCoursesPage() {
                         <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
                         <CardDescription>{course.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                       <div className="space-y-2">
-                            <div className="flex justify-between items-center text-sm text-muted-foreground">
-                                <span>Progress</span>
-                                <span>20%</span>
-                            </div>
-                           <Progress value={20} className="h-2"/>
-                       </div>
+                    <CardContent className="flex-grow">
                     </CardContent>
-                    <CardFooter className="flex justify-between items-center">
-                        <div className="flex -space-x-2">
-                            <Avatar className="border-2 border-card">
-                                <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="professional man"/>
-                                <AvatarFallback>V</AvatarFallback>
-                            </Avatar>
-                             <Avatar className="border-2 border-card">
-                                <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="professional woman"/>
-                                <AvatarFallback>K</AvatarFallback>
-                            </Avatar>
-                        </div>
+                    <CardFooter className="flex justify-end items-center">
                         <Dialog>
                             <DialogTrigger asChild>
                                  <Button variant="outline" size="sm">View Topics</Button>
@@ -378,5 +360,3 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
-
-    
