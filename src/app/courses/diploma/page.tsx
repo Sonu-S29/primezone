@@ -189,6 +189,8 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
         const scrollContainer = scrollRef.current;
         if (scrollContainer) {
             scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+            // Initial check
+            handleScroll();
         }
         return () => {
             if (scrollContainer) {
@@ -303,7 +305,7 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-2xl">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-3xl">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
