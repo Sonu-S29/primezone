@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
@@ -159,24 +159,46 @@ const diplomaCourses = [
 
 const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     const [activeModule, setActiveModule] = useState(0);
-    const moduleRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        moduleRefs.current[activeModule]?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'center'
-        });
-    }, [activeModule]);
+    const moduleRefs = useRef<(HTMLButtonElement | null)[]>([]);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleNext = useCallback(() => {
         setActiveModule((prev) => (prev + 1) % course.modules.length);
     }, [course.modules.length]);
 
+    const handlePrev = useCallback(() => {
+        setActiveModule((prev) => (prev - 1 + course.modules.length) % course.modules.length);
+    }, [course.modules.length]);
+
+    const resetTimer = useCallback(() => {
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+        }
+        timerRef.current = setInterval(handleNext, 3000);
+    }, [handleNext]);
+
+    useEffect(() => {
+        resetTimer();
+        return () => {
+            if (timerRef.current) {
+                clearInterval(timerRef.current);
+            }
+        };
+    }, [resetTimer]);
+    
+    useEffect(() => {
+        moduleRefs.current[activeModule]?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+    }, [activeModule]);
+
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-[800px] h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex">
-                <div className="w-2/5 p-6 overflow-hidden">
+            <CardBody className="bg-card relative group/card w-full md:w-[800px] h-auto md:h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
+                {/* Desktop: Left Panel */}
+                <div className="hidden md:block w-2/5 p-6 overflow-hidden">
                     <CardItem
                         translateZ="40"
                         className="text-lg font-bold text-primary"
@@ -190,7 +212,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                 <div className="absolute left-6 top-0 h-full w-0.5 bg-border -z-10"></div>
                                 
                                 {course.modules.map((module, index) => (
-                                    <div key={index} ref={el => moduleRefs.current[index] = el} className="flex items-center gap-4 mb-6">
+                                    <div key={index} className="flex items-center gap-4 mb-6">
                                         <div className={`flex-shrink-0 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground scale-110' : 'bg-accent text-accent-foreground'}`}>
                                             {module.icon}
                                         </div>
@@ -204,7 +226,41 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </ScrollArea>
                     </CardItem>
                 </div>
-                 <div className="w-3/5 p-6 bg-muted rounded-r-xl flex flex-col relative">
+                
+                {/* Mobile: Top Carousel */}
+                <div className="md:hidden w-full p-4 bg-muted/50">
+                    <h3 className="text-lg font-bold text-primary mb-2 px-2">Course Modules</h3>
+                    <div className="relative">
+                        <ScrollArea className="w-full whitespace-nowrap" onPointerEnter={() => { if(timerRef.current) clearInterval(timerRef.current)}} onPointerLeave={resetTimer}>
+                             <div className="flex space-x-4 p-2">
+                                {course.modules.map((module, index) => (
+                                    <button 
+                                        key={index}
+                                        ref={el => moduleRefs.current[index] = el}
+                                        onClick={() => {setActiveModule(index); resetTimer();}}
+                                        className={`flex-shrink-0 flex items-center gap-2 p-3 rounded-lg transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground' : 'bg-background'}`}>
+                                        <div className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${activeModule === index ? 'bg-primary-foreground text-primary' : 'bg-accent text-accent-foreground'}`}>
+                                            {module.icon}
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-xs">{`0${index + 1}`}</p>
+                                            <p className="font-medium text-xs text-left">{module.title}</p>
+                                        </div>
+                                    </button>
+                                ))}
+                             </div>
+                             <ScrollBar orientation="horizontal" />
+                        </ScrollArea>
+                        <Button variant="outline" size="icon" className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8" onClick={() => {handlePrev(); resetTimer();}}>
+                            <ArrowLeft className="h-4 w-4" />
+                        </Button>
+                         <Button variant="outline" size="icon" className="absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8" onClick={() => {handleNext(); resetTimer();}}>
+                            <ArrowRight className="h-4 w-4" />
+                        </Button>
+                    </div>
+                </div>
+
+                 <div className="w-full md:w-3/5 p-6 bg-muted md:rounded-r-xl flex flex-col relative">
                     <CardItem translateZ="50" className="w-full flex-grow flex flex-col">
                         <div className="flex justify-between items-start mb-4">
                             <div>
@@ -217,7 +273,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                 Module {activeModule + 1} of {course.modules.length}
                             </p>
                         </div>
-                        <div className="flex-grow overflow-y-auto h-48">
+                        <div className="flex-grow overflow-y-auto h-[150px] md:h-48">
                             <ul className="space-y-2 mt-4 text-sm">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
@@ -229,19 +285,19 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </div>
                     </CardItem>
                     <div className="flex justify-end items-center pt-4 mt-auto">
-                        <Button variant="outline" onClick={handleNext}>
-                            Next
-                        </Button>
                         <CardItem
                             translateZ={20}
                             as={Link}
                             href="/enroll"
-                            className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold ml-4"
+                            className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
                         >
                             Enroll Now
                         </CardItem>
                     </div>
                  </div>
+                 <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground hidden md:block">
+                     <X className="h-5 w-5" />
+                 </DialogClose>
             </CardBody>
         </CardContainer>
     )
@@ -283,7 +339,7 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-[90vw] md:w-full rounded-lg">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
@@ -303,5 +359,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
-    
