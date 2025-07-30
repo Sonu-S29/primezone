@@ -190,7 +190,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     }, [activeModule]);
 
     return (
-        <Card className="bg-card relative w-full max-w-lg md:max-w-none md:w-[800px] h-auto max-h-[80vh] md:max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+        <Card className="bg-card relative w-full max-w-sm md:max-w-none md:w-[800px] h-auto max-h-[80vh] md:max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
             {/* Desktop: Left Panel */}
             <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
                 <h3 className="text-lg font-bold text-primary">
@@ -318,7 +318,7 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-auto rounded-lg data-[state=open]:w-auto">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 w-auto max-w-[90vw] sm:max-w-lg md:max-w-4xl rounded-lg data-[state=open]:w-auto">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
