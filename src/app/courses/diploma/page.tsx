@@ -165,10 +165,6 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
         setActiveModule((prev) => (prev + 1) % course.modules.length);
     }, [course.modules.length]);
 
-    const handlePrev = useCallback(() => {
-        setActiveModule((prev) => (prev - 1 + course.modules.length) % course.modules.length);
-    }, [course.modules.length]);
-
     const resetTimer = useCallback(() => {
         if (timerRef.current) {
             clearInterval(timerRef.current);
@@ -194,7 +190,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     }, [activeModule]);
 
     return (
-        <Card className="bg-card relative w-full max-w-sm md:max-w-none md:w-[800px] h-auto max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+        <Card className="bg-card relative w-full max-w-lg md:max-w-none md:w-[800px] h-auto max-h-[80vh] md:max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
             {/* Desktop: Left Panel */}
             <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
                 <h3 className="text-lg font-bold text-primary">
