@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -154,81 +154,47 @@ const diplomaCourses = [
 
 const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     const [activeModule, setActiveModule] = useState(0);
-    const scrollRef = useRef<HTMLDivElement>(null);
     const moduleRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    const handleScroll = useCallback(() => {
-        const scrollContainer = scrollRef.current;
-        if (!scrollContainer) return;
-
-        const { scrollTop, clientHeight } = scrollContainer;
-        const scrollCenter = scrollTop + clientHeight / 2;
-
-        let closestModule = 0;
-        let minDistance = Infinity;
-
-        moduleRefs.current.forEach((ref, index) => {
-            if (ref) {
-                const { offsetTop, offsetHeight } = ref;
-                const moduleCenter = offsetTop + offsetHeight / 2;
-                const distance = Math.abs(scrollCenter - moduleCenter);
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestModule = index;
-                }
-            }
-        });
-
-        setActiveModule(closestModule);
-    }, []);
-
     useEffect(() => {
-        const scrollContainer = scrollRef.current;
-        if (scrollContainer) {
-            scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
-            // Initial check
-            handleScroll();
-        }
-        return () => {
-            if (scrollContainer) {
-                scrollContainer.removeEventListener('scroll', handleScroll);
-            }
-        };
-    }, [handleScroll]);
+        moduleRefs.current[activeModule]?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+        });
+    }, [activeModule]);
+
+    const handleNext = () => {
+        setActiveModule((prev) => (prev + 1) % course.modules.length);
+    };
+
+    const handlePrev = () => {
+        setActiveModule((prev) => (prev - 1 + course.modules.length) % course.modules.length);
+    };
 
     return (
         <CardContainer containerClassName="py-0">
             <CardBody className="bg-card relative group/card w-full h-[400px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex">
-                 <div className="w-1/2 p-6 overflow-hidden">
+                <div className="w-2/5 p-6 overflow-hidden">
                     <CardItem
                         translateZ="40"
-                        className="text-xl font-bold text-primary"
-                    >
-                        {course.title}
-                    </CardItem>
-                    <CardItem
-                        as="p"
-                        translateZ="50"
-                        className="text-muted-foreground text-sm max-w-sm mt-2"
+                        className="text-lg font-bold text-primary"
                     >
                         Course Modules
                     </CardItem>
-                     <CardItem translateZ="60" className="w-full mt-4 h-[250px]">
-                        <ScrollArea ref={scrollRef} className="h-full w-full pr-6">
+                     <CardItem translateZ="60" className="w-full mt-4 h-[280px]">
+                        <ScrollArea className="h-full w-full pr-4">
                             <div className="relative">
+                                {/* Vertical line */}
+                                <div className="absolute left-6 top-0 h-full w-0.5 bg-border -z-10"></div>
+                                
                                 {course.modules.map((module, index) => (
-                                    <div key={index} ref={el => moduleRefs.current[index] = el} className="flex items-start gap-4 mb-4">
-                                        <div className="flex flex-col items-center">
-                                            <div className="flex-shrink-0 bg-accent text-accent-foreground h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300">
-                                                {module.icon}
-                                            </div>
-                                            {index < course.modules.length - 1 &&
-                                                <div className="h-10 w-0.5 bg-border mt-2"></div>
-                                            }
+                                    <div key={index} ref={el => moduleRefs.current[index] = el} className="flex items-center gap-4 mb-6">
+                                        <div className={`flex-shrink-0 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground scale-110' : 'bg-accent text-accent-foreground'}`}>
+                                            {module.icon}
                                         </div>
                                         <div className="pt-2">
-                                            <p className="font-bold text-primary">{`0${index + 1}`}</p>
-                                            <p className="font-medium text-sm">{module.title}</p>
+                                            <p className={`font-bold transition-colors ${activeModule === index ? 'text-primary' : 'text-muted-foreground'}`}>{`0${index + 1}`}</p>
+                                            <p className={`font-medium text-sm transition-colors ${activeModule === index ? 'text-foreground' : 'text-muted-foreground'}`}>{module.title}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -236,28 +202,35 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </ScrollArea>
                     </CardItem>
                 </div>
-                 <div className="w-1/2 p-6 bg-muted rounded-r-xl flex flex-col justify-center">
-                    <CardItem translateZ="50" className="w-full h-full">
-                         <div className="flex flex-col justify-center h-full">
-                            {course.modules.map((module, index) => (
-                                <div key={index} className={`transition-opacity duration-300 ${activeModule === index ? 'opacity-100' : 'opacity-0 absolute'}`}>
-                                    <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
-                                        {module.icon}
-                                    </div>
-                                    <h3 className="text-lg font-bold text-primary">{module.title}</h3>
-                                    <ul className="space-y-2 mt-4">
-                                      {(module.subTopics ?? []).map((topic, i) => (
-                                        <li key={i} className="flex items-center text-sm">
-                                          <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
-                                          <span>{topic}</span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                </div>
-                            ))}
+                 <div className="w-3/5 p-6 bg-muted rounded-r-xl flex flex-col justify-between">
+                    <CardItem translateZ="50" className="w-full h-full flex flex-col">
+                        <div className="flex-grow">
+                            <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
+                                {course.modules[activeModule].icon}
+                            </div>
+                            <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
+                            <ul className="space-y-2 mt-4 text-sm">
+                              {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
+                                <li key={i} className="flex items-center">
+                                  <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
+                                  <span>{topic}</span>
+                                </li>
+                              ))}
+                            </ul>
                         </div>
                     </CardItem>
-                </div>
+                    <div className="flex justify-between items-center pt-4">
+                        <Button variant="ghost" size="icon" onClick={handlePrev}>
+                            <ArrowLeft className="h-4 w-4" />
+                        </Button>
+                        <p className="text-sm font-medium text-muted-foreground">
+                            Module {activeModule + 1} of {course.modules.length}
+                        </p>
+                        <Button variant="ghost" size="icon" onClick={handleNext}>
+                            <ArrowRight className="h-4 w-4" />
+                        </Button>
+                    </div>
+                 </div>
                  <div className="absolute bottom-6 right-6 flex justify-end">
                     <CardItem
                         translateZ={20}
@@ -335,3 +308,4 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
