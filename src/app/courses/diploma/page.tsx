@@ -33,7 +33,7 @@ const diplomaCourses = [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
         { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
-        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "ASSIGNMENTS / PROJECT", "and many more..."] }
+        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
     ],
   },
   {
@@ -58,7 +58,7 @@ const diplomaCourses = [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
         { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "GST, TDS (Tax Deducted at Source)", "ASSIGNMENTS/PROJECT", "and many more..."] },
-        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "ASSIGNMENTS/PROJECT", "and many more..."] },
+        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] },
         { title: "Management Skills", icon: <Users />, subTopics: ["Understanding of Management Skills", "Managing Business Finance", "Practical Work on Project Reports", "Export / Import Management", "Case Study of Successful Employee", "Office & Marketing Management", "and many more..."] },
         { title: "Share Market", icon: <BarChart />, subTopics: ["Primary Markets, Book Building", "IPOS & Listings Trading", "Clearance & Settlements", "Mutual Funds", "Depositories, Derivatives", "Comodity Exchange", "and many more..."] }
     ],
@@ -69,12 +69,11 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "programming course",
     modules: [
-        { title: "C & C++ Programming", icon: <Code />, subTopics: ["Syntax / Operators / Data Types", "Control Statement / Loops", "Structures / Array Types", "String / File Handling / Preprocessor", "Arrays, Structure", "Exceptional Handling", "and many more..."] },
-        { title: "Data Structures", icon: <Settings />, subTopics: ["Algorithms", "Flowcharts, Arrays", "Stack, Queue, Trees", "Graphs, Sorting Techniques", "Searching Techniques", "and many more..."] },
-        { title: "Web Development (HTML, CSS, JS)", icon: <Globe />, subTopics: ["Tags, Attributes, Font, Heading", "Image, Table, Link, Source", "Form, Frames - Target Link", "CSS - Link Styles", "Styles Tags - Attributes", "Methods - Events", "and many more..."] },
-        { title: "My SQL", icon: <Settings />, subTopics: ["Introduction, Administration", "Connection, Create, Drop", "Select Database, Insert Query", "Null Value, Like Clause", "Sub Query", "and many more..."] },
-        { title: "PHP", icon: <Code />, subTopics: ["Variables, Echo / Print", "Data Types, Strings, Constraint", "Operators, If-ELSE-ELSEIF Functions", "Form Handling, Validation Form", "Looping Structure of PHP, Arrays", "and many more..."] },
-        { title: "Python Programming", icon: <Code />, subTopics: ["Setup", "Installation of Python", "Feature", "Data Type", "Variable", "Operators", "and many more..."] }
+        { title: "C, C++ & DSA", icon: <Code />, subTopics: ["Intro Flow Algorithm", "C Syntax, Operators & Data Types", "C++ with OOPS Concepts", "Control Statements & Loops", "Data Structures & Algorithms", "File Handling & Preprocessor", "and many more..."] },
+        { title: "Web Technologies", icon: <Globe />, subTopics: ["HTML, CSS, JavaScript", "PHP for server-side scripting", "Database Management (MySQL/SSMS)", "WordPress basics", "Web Hosting & Deployment", "Building dynamic websites", "and many more..."] },
+        { title: "Python Programming", icon: <Bot />, subTopics: ["Python Setup & Installation", "Core Python Features", "Data Types & Variables", "Operators and Control Flow", "Functions & Modules", "File Handling", "and many more..."] },
+        { title: "Java (Core & Advanced)", icon: <Code />, subTopics: ["Introduction to Java", "Java Class, Inheritances, Polymorphism", "GUI with Swing Controls", "Multithreading & Exception Handling", "Servlet, JSP, JDBC", "Session Management, Cookies", "and many more..."] },
+        { title: ".NET or MERN Stack", icon: <Rocket />, subTopics: ["ASP.NET with C#", "Angular or React", "State Management", "Handling HTTP requests", "Server-side Rendering (SSR)", "API Integration", "and many more..."] }
     ],
   },
   {
@@ -158,7 +157,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
             block: 'center',
             inline: 'center'
         });
-    }, [activeModule, course]);
+    }, [activeModule]);
 
     const handleNext = useCallback(() => {
         setActiveModule((prev) => (prev + 1) % course.modules.length);
@@ -309,4 +308,5 @@ export default function DiplomaCoursesPage() {
     
 
     
+
 
