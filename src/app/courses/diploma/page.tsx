@@ -191,14 +191,14 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-md">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
                                 <DialogTitle>{selectedCourse.title}</DialogTitle>
                             </DialogHeader>
                             <CardContainer containerClassName="py-0">
-                                <CardBody className="bg-card relative group/card w-auto rounded-xl p-6 border-black/[0.1] shadow-2xl">
+                                <CardBody className="bg-card relative group/card w-[300px] h-[400px] rounded-xl p-6 border-black/[0.1] shadow-2xl">
                                     <DialogClose asChild>
                                         <button className="absolute top-4 right-4 z-50 text-muted-foreground hover:text-foreground">
                                             <X className="h-6 w-6" />
@@ -206,42 +206,41 @@ export default function DiplomaCoursesPage() {
                                         </button>
                                     </DialogClose>
                                     <CardItem
-                                    translateZ="50"
-                                    className="text-2xl font-bold text-primary pr-8"
+                                    translateZ="40"
+                                    className="text-xl font-bold text-primary pr-8"
                                     >
                                     {selectedCourse.title}
                                     </CardItem>
                                     <CardItem
                                     as="p"
-                                    translateZ="60"
+                                    translateZ="50"
                                     className="text-muted-foreground text-sm max-w-sm mt-2"
                                     >
                                     Course Modules Roadmap
                                     </CardItem>
-                                    <CardItem translateZ="80" className="w-full mt-6">
-                                        <ScrollArea className="w-full whitespace-nowrap rounded-lg">
-                                            <div className="flex w-max space-x-4 p-4">
+                                    <CardItem translateZ="60" className="w-full mt-4">
+                                        <ScrollArea className="h-56 w-full rounded-lg">
+                                            <div className="space-y-4 p-4">
                                                 {selectedCourse.modules.map((module, index) => (
-                                                    <div key={index} className="flex items-center gap-4 group">
-                                                        <div className="flex flex-col items-center gap-2">
-                                                            <div className="flex-shrink-0 bg-accent text-accent-foreground h-16 w-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                                                    <div key={index} className="flex items-start gap-4 group">
+                                                        <div className="flex flex-col items-center gap-1">
+                                                            <div className="flex-shrink-0 bg-accent text-accent-foreground h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                                                                 {module.icon}
                                                             </div>
-                                                            <div className="text-center w-32">
-                                                                <p className="font-bold text-lg text-primary">{`0${index + 1}`}</p>
-                                                                <p className="font-medium whitespace-normal text-sm">{module.title}</p>
-                                                            </div>
+                                                             {index < selectedCourse.modules.length - 1 && 
+                                                                <div className="h-10 w-0.5 bg-border flex-grow"></div>
+                                                            }
                                                         </div>
-                                                        {index < selectedCourse.modules.length - 1 && 
-                                                            <div className="h-1 w-20 bg-border flex-grow hidden md:block"></div>
-                                                        }
+                                                        <div className="pt-2">
+                                                            <p className="font-bold text-primary">{`0${index + 1}`}</p>
+                                                            <p className="font-medium text-sm">{module.title}</p>
+                                                        </div>
                                                     </div>
                                                 ))}
                                             </div>
-                                            <ScrollBar orientation="horizontal" />
                                         </ScrollArea>
                                     </CardItem>
-                                    <div className="flex justify-end mt-8">
+                                    <div className="flex justify-end mt-4">
                                     <CardItem
                                         translateZ={20}
                                         as={Link}
