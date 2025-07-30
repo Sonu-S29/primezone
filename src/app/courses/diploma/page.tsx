@@ -163,13 +163,9 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
         setActiveModule((prev) => (prev + 1) % course.modules.length);
     }, [course.modules.length]);
 
-    const handlePrev = useCallback(() => {
-        setActiveModule((prev) => (prev - 1 + course.modules.length) % course.modules.length);
-    }, [course.modules.length]);
-
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full h-[400px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex">
+            <CardBody className="bg-card relative group/card w-full h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex">
                 <div className="w-2/5 p-6 overflow-hidden">
                     <CardItem
                         translateZ="40"
@@ -177,7 +173,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                     >
                         Course Modules
                     </CardItem>
-                     <CardItem translateZ="60" className="w-full mt-4 h-[280px]">
+                     <CardItem translateZ="60" className="w-full mt-4 h-[320px]">
                         <ScrollArea className="h-full w-full pr-4">
                             <div className="relative">
                                 {/* Vertical line */}
@@ -198,21 +194,21 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </ScrollArea>
                     </CardItem>
                 </div>
-                 <div className="w-3/5 p-6 bg-muted rounded-r-xl flex flex-col justify-between">
-                    <CardItem translateZ="50" className="w-full h-full flex flex-col">
-                        <div className="flex-grow">
-                            <div className="flex justify-between items-start mb-4">
-                                <div>
-                                    <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
-                                        {course.modules[activeModule].icon}
-                                    </div>
-                                    <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
+                 <div className="w-3/5 p-6 bg-muted rounded-r-xl flex flex-col">
+                    <CardItem translateZ="50" className="w-full flex-grow flex flex-col">
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
+                                    {course.modules[activeModule].icon}
                                 </div>
-                                <p className="text-sm font-medium text-muted-foreground">
-                                    Module {activeModule + 1} of {course.modules.length}
-                                </p>
+                                <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
                             </div>
-                            <ul className="space-y-2 mt-4 text-sm h-48 overflow-y-auto">
+                            <p className="text-sm font-medium text-muted-foreground">
+                                Module {activeModule + 1} of {course.modules.length}
+                            </p>
+                        </div>
+                        <div className="flex-grow overflow-y-auto">
+                            <ul className="space-y-2 mt-4 text-sm">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
                                   <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
@@ -222,7 +218,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             </ul>
                         </div>
                     </CardItem>
-                    <div className="flex justify-between items-center pt-4">
+                    <div className="flex justify-between items-center pt-4 mt-auto">
                         <Button variant="outline" onClick={handleNext}>
                             Next
                         </Button>
