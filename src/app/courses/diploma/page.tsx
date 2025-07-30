@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Virus, Wifi, Bug, ServerCrash, KeyRound } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -95,12 +95,21 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "ethical hacking",
     modules: [
-        { title: "Networking Fundamentals", icon: <Globe />, description: "Understand the basics of computer networks and protocols.", subTopics: [] },
-        { title: "Linux Essentials", icon: <Code />, description: "Learn the command line and administration of Linux systems.", subTopics: [] },
-        { title: "Cryptography", icon: <ShieldCheck />, description: "Understand the principles of encryption and secure communication.", subTopics: [] },
-        { title: "Web Application Hacking", icon: <Code />, description: "Learn to find and exploit vulnerabilities in web applications.", subTopics: [] },
-        { title: "Metasploit Framework", icon: <LayoutTemplate />, description: "Master the Metasploit framework for penetration testing.", subTopics: [] },
-        { title: "Ethical Hacking Labs", icon: <MonitorCheck />, description: "Practice your skills in a safe and legal environment.", subTopics: [] }
+        { title: "Computer Security & Ethical Hacking", icon: <ShieldCheck />, subTopics: [] },
+        { title: "Networking", icon: <Network />, subTopics: [] },
+        { title: "Footprinting & Reconnaissance", icon: <Fingerprint />, subTopics: [] },
+        { title: "Lab Preparation", icon: <TerminalSquare />, subTopics: [] },
+        { title: "Scanning Networks", icon: <Search />, subTopics: [] },
+        { title: "Enumerations", icon: <Mail />, subTopics: [] },
+        { title: "Vulnerability Analysis", icon: <Bug />, subTopics: [] },
+        { title: "Denial Of Service", icon: <ShieldOff />, subTopics: [] },
+        { title: "Malware Threats", icon: <Virus />, subTopics: [] },
+        { title: "System Hacking", icon: <Wifi />, subTopics: [] },
+        { title: "Android Hacking (LAN)", icon: <KeyRound />, subTopics: [] },
+        { title: "Social Engineering", icon: <Users />, subTopics: [] },
+        { title: "SQL INJECTION", icon: <ServerCrash />, subTopics: [] },
+        { title: "Cross Site Scripting", icon: <Code />, subTopics: [] },
+        { title: "Hacking Wireless Networks", icon: <Wifi />, subTopics: [] }
     ],
   },
   {
@@ -207,7 +216,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                 Module {activeModule + 1} of {course.modules.length}
                             </p>
                         </div>
-                        <div className="flex-grow overflow-y-auto">
+                        <div className="flex-grow overflow-y-auto h-48">
                             <ul className="space-y-2 mt-4 text-sm">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
@@ -218,7 +227,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             </ul>
                         </div>
                     </CardItem>
-                    <div className="flex justify-between items-center pt-4 mt-auto">
+                    <div className="flex justify-end items-center pt-4 mt-auto">
                         <Button variant="outline" onClick={handleNext}>
                             Next
                         </Button>
@@ -226,7 +235,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             translateZ={20}
                             as={Link}
                             href="/enroll"
-                            className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
+                            className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold ml-4"
                         >
                             Enroll Now
                         </CardItem>
@@ -299,3 +308,5 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
