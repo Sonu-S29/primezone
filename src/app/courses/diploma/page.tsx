@@ -132,12 +132,14 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "full stack",
     modules: [
-        { title: "Front-End (HTML, CSS, JS)", icon: <Code />, description: "Build the user interface of websites and web applications.", subTopics: [] },
-        { title: "React.js", icon: <Code />, description: "Learn the most popular JavaScript library for building user interfaces.", subTopics: [] },
-        { title: "Node.js & Express", icon: <Code />, description: "Build scalable and high-performance back-end applications.", subTopics: [] },
-        { title: "Databases (SQL/NoSQL)", icon: <Settings />, description: "Learn to work with both relational and non-relational databases.", subTopics: [] },
-        { title: "API Development", icon: <Code />, description: "Build robust and secure APIs for your applications.", subTopics: [] },
-        { title: "Deployment & DevOps", icon: <Rocket />, description: "Learn to deploy and manage your applications in the cloud.", subTopics: [] }
+        { title: "HTML & CSS", icon: <Code />, subTopics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
+        { title: "JavaScript", icon: <Code />, subTopics: ["Developer Essentials", "Language, Events", "Methods, Using Names, Objects", "Validation options, Rollovers & More"] },
+        { title: "AngularJS", icon: <Code />, subTopics: ["Expressions, Modules, Directives", "Model, Data Binding, Controllers", "Scopes, Filters, Services, Http", "Tables, Select, SQL, DOM, Events", "Validation, API, W3.CSS, Animation", "AngularJS Routing, Application"] },
+        { title: "ReactJS", icon: <Code />, subTopics: ["Components in React", "State management Lists & keys", "Handling events, Forms", "Handling HTTP requests", "Server-side rendering (SSR)"] },
+        { title: "Bootstrap", icon: <Code />, subTopics: ["Bootstrap Framework, Features", "Bootstrap Components, Grid", "Responsive web page, Bootstrap Plug-Ins"] },
+        { title: "Back-End Technologies", icon: <ServerCrash />, subTopics: ["Django", "Node.js", "Express.js", "Python", "PHP", "Laravel"] },
+        { title: "Database Technologies", icon: <Settings />, subTopics: ["MySQL", "MongoDB"] },
+        { title: "Java Technology", icon: <Code />, subTopics: ["Core Java", "Advanced Java", "Hibernate", "Spring"] }
     ],
   },
   {
