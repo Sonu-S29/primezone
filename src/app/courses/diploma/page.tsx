@@ -30,10 +30,10 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "financial report",
     modules: [
-        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "ASSIGNMENTS / PROJECT"] },
+        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
         { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
-        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "ASSIGNMENTS / PROJECT"] }
+        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "ASSIGNMENTS / PROJECT", "and many more..."] }
     ],
   },
   {
@@ -42,11 +42,11 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "computer application",
     modules: [
-        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "ASSIGNMENTS / PROJECT"] },
+        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
         { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
-        { title: "Graphic Designing", icon: <Palette />, subTopics: ["CorelDRAW", "Adobe PHOTOSHOP", "Adobe ILLUSTRATOR", "Adobe INDESIGN", "ASSIGNMENTS / PROJECT"] },
-        { title: "Web Designing", icon: <Globe />, subTopics: ["Html / CSS", "Adobe Animate", "Javascript", "Web Hosting", "Adobe Dreamweaver", "Domain, Sub Domain", "ASSIGNMENTS / PROJECT"] }
+        { title: "Graphic Designing", icon: <Palette />, subTopics: ["CorelDRAW", "Adobe PHOTOSHOP", "Adobe ILLUSTRATOR", "Adobe INDESIGN", "ASSIGNMENTS / PROJECT", "and many more..."] },
+        { title: "Web Designing", icon: <Globe />, subTopics: ["Html / CSS", "Adobe Animate", "Javascript", "Web Hosting", "Adobe Dreamweaver", "Domain, Sub Domain", "and many more..."] }
     ],
   },
   {
@@ -55,12 +55,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "financial management",
     modules: [
-        { title: "Financial Management", icon: <Landmark />, description: "Learn to manage the finances of an organization effectively.", subTopics: [] },
-        { title: "Management Accounting", icon: <BarChart />, description: "Use accounting information for managerial decision-making.", subTopics: [] },
-        { title: "Investment Analysis", icon: <Search />, description: "Learn to analyze and value investment proposals.", subTopics: [] },
-        { title: "Portfolio Management", icon: <FileText />, description: "Understand how to construct and manage investment portfolios.", subTopics: [] },
-        { title: "Business Law", icon: <Landmark />, description: "Get an overview of the legal aspects of running a business.", subTopics: [] },
-        { title: "Strategic Management", icon: <Users />, description: "Learn to formulate and implement business strategies.", subTopics: [] }
+        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
+        { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
+        { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "GST, TDS (Tax Deducted at Source)", "ASSIGNMENTS/PROJECT", "and many more..."] },
+        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "ASSIGNMENTS/PROJECT", "and many more..."] },
+        { title: "Management Skills", icon: <Users />, subTopics: ["Understanding of Management Skills", "Managing Business Finance", "Practical Work on Project Reports", "Export / Import Management", "Case Study of Successful Employee", "Office & Marketing Management", "and many more..."] },
+        { title: "Share Market", icon: <BarChart />, subTopics: ["Primary Markets, Book Building", "IPOS & Listings Trading", "Clearance & Settlements", "Mutual Funds", "Depositories, Derivatives", "Comodity Exchange", "and many more..."] }
     ],
   },
   {
@@ -305,5 +305,7 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
