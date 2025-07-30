@@ -196,7 +196,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
 
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full md:w-[800px] h-auto md:h-[450px] max-h-[90vh] md:max-h-full rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
+            <CardBody className="bg-card relative group/card w-full md:w-[800px] h-auto md:h-[450px] max-h-[80vh] md:max-h-full rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
                 {/* Desktop: Left Panel */}
                 <div className="hidden md:block w-2/5 p-6 overflow-hidden">
                     <CardItem
@@ -273,7 +273,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                 Module {activeModule + 1} of {course.modules.length}
                             </p>
                         </div>
-                        <div className="flex-grow overflow-y-auto h-[150px] md:h-48">
+                        <div className="flex-grow overflow-y-auto h-[120px] md:h-48">
                             <ul className="space-y-2 mt-4 text-sm">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
