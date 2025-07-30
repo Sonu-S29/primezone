@@ -19,9 +19,9 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "accounting collage",
     modules: [
-        { title: "Financial Accounting Basics", icon: <Landmark />, description: "Learn the fundamental principles of accounting, including debits, credits, and financial statements.", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
-        { title: "Advanced Excel for Accountants", icon: <BarChart />, description: "Master advanced Excel functions to analyze financial data and create insightful reports.", subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
-        { title: "Tally Prime with GST", icon: <FileText />, description: "Become proficient in Tally Prime for managing accounts, inventory, and GST compliance.", subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
+        { title: "Financial Accounting Basics", icon: <Landmark />, subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
+        { title: "Advanced Excel for Accountants", icon: <BarChart />, subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
+        { title: "Tally Prime with GST", icon: <FileText />, subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
     ],
   },
   {
@@ -69,12 +69,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "programming course",
     modules: [
-        { title: "C & C++ Programming", icon: <Code />, description: "Build a strong foundation in programming with C and C++.", subTopics: [] },
-        { title: "Data Structures & Algorithms", icon: <Settings />, description: "Learn to organize data efficiently and solve complex problems.", subTopics: [] },
-        { title: "Python Programming", icon: <Code />, description: "Master Python for web development, data science, and automation.", subTopics: [] },
-        { title: "Java Core & Advanced", icon: <Code />, description: "Learn Java for building robust and scalable applications.", subTopics: [] },
-        { title: "Web Development (HTML, CSS, JS)", icon: <Globe />, description: "Build modern and responsive websites from scratch.", subTopics: [] },
-        { title: "Database Management (SQL)", icon: <Settings />, description: "Learn to manage and query relational databases using SQL.", subTopics: [] }
+        { title: "C & C++ Programming", icon: <Code />, subTopics: ["Syntax / Operators / Data Types", "Control Statement / Loops", "Structures / Array Types", "String / File Handling / Preprocessor", "Arrays, Structure", "Exceptional Handling", "and many more..."] },
+        { title: "Data Structures", icon: <Settings />, subTopics: ["Algorithms", "Flowcharts, Arrays", "Stack, Queue, Trees", "Graphs, Sorting Techniques", "Searching Techniques", "and many more..."] },
+        { title: "Web Development (HTML, CSS, JS)", icon: <Globe />, subTopics: ["Tags, Attributes, Font, Heading", "Image, Table, Link, Source", "Form, Frames - Target Link", "CSS - Link Styles", "Styles Tags - Attributes", "Methods - Events", "and many more..."] },
+        { title: "My SQL", icon: <Settings />, subTopics: ["Introduction, Administration", "Connection, Create, Drop", "Select Database, Insert Query", "Null Value, Like Clause", "Sub Query", "and many more..."] },
+        { title: "PHP", icon: <Code />, subTopics: ["Variables, Echo / Print", "Data Types, Strings, Constraint", "Operators, If-ELSE-ELSEIF Functions", "Form Handling, Validation Form", "Looping Structure of PHP, Arrays", "and many more..."] },
+        { title: "Python Programming", icon: <Code />, subTopics: ["Setup", "Installation of Python", "Feature", "Data Type", "Variable", "Operators", "and many more..."] }
     ],
   },
   {
@@ -157,16 +157,17 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
         moduleRefs.current[activeModule]?.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
+            inline: 'center'
         });
     }, [activeModule]);
 
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         setActiveModule((prev) => (prev + 1) % course.modules.length);
-    };
+    }, [course.modules.length]);
 
-    const handlePrev = () => {
+    const handlePrev = useCallback(() => {
         setActiveModule((prev) => (prev - 1 + course.modules.length) % course.modules.length);
-    };
+    }, [course.modules.length]);
 
     return (
         <CardContainer containerClassName="py-0">
