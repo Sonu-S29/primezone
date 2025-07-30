@@ -201,11 +201,18 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                  <div className="w-3/5 p-6 bg-muted rounded-r-xl flex flex-col justify-between">
                     <CardItem translateZ="50" className="w-full h-full flex flex-col">
                         <div className="flex-grow">
-                            <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
-                                {course.modules[activeModule].icon}
+                            <div className="flex justify-between items-start mb-4">
+                                <div>
+                                    <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
+                                        {course.modules[activeModule].icon}
+                                    </div>
+                                    <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
+                                </div>
+                                <p className="text-sm font-medium text-muted-foreground">
+                                    Module {activeModule + 1} of {course.modules.length}
+                                </p>
                             </div>
-                            <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
-                            <ul className="space-y-2 mt-4 text-sm">
+                            <ul className="space-y-2 mt-4 text-sm h-48 overflow-y-auto">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
                                   <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
@@ -216,24 +223,19 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </div>
                     </CardItem>
                     <div className="flex justify-between items-center pt-4">
-                        <p className="text-sm font-medium text-muted-foreground">
-                            Module {activeModule + 1} of {course.modules.length}
-                        </p>
                         <Button variant="outline" onClick={handleNext}>
                             Next
                         </Button>
+                        <CardItem
+                            translateZ={20}
+                            as={Link}
+                            href="/enroll"
+                            className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
+                        >
+                            Enroll Now
+                        </CardItem>
                     </div>
                  </div>
-                 <div className="absolute bottom-6 right-6 flex justify-end">
-                    <CardItem
-                        translateZ={20}
-                        as={Link}
-                        href="/enroll"
-                        className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
-                    >
-                        Enroll Now
-                    </CardItem>
-                </div>
             </CardBody>
         </CardContainer>
     )
