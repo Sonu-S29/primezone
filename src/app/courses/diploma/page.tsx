@@ -197,7 +197,7 @@ export default function DiplomaCoursesPage() {
                             <DialogHeader className="sr-only">
                                 <DialogTitle>{selectedCourse.title}</DialogTitle>
                             </DialogHeader>
-                            <CardContainer>
+                            <CardContainer containerClassName="py-0">
                                 <CardBody className="bg-card relative group/card w-auto rounded-xl p-6 border-black/[0.1] shadow-2xl">
                                     <DialogClose asChild>
                                         <button className="absolute top-4 right-4 z-50 text-muted-foreground hover:text-foreground">
@@ -266,4 +266,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
