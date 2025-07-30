@@ -69,7 +69,7 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "programming course",
     modules: [
-        { title: "C, C++ & DSA", icon: <Code />, subTopics: ["Intro Flow Algorithm", "C Syntax, Operators & Data Types", "C++ with OOPS Concepts", "Control Statements & Loops", "Data Structures & Algorithms", "File Handling & Preprocessor", "and many more..."] },
+        { title: "C, C++ & DSA", icon: <Code />, subTopics: ["Intro Flow Algorithm", "C Syntax, Operators & Data Types", "C++ with OOPS Concepts", "Control Statements & Loops", "Data Structures & Algorithms", "File Handling & Preprocessor"] },
         { title: "Web Technologies", icon: <Globe />, subTopics: ["HTML", "CSS", "JavaScript", "PHP for server-side scripting", "Database Management (MySQL/SSMS)", "WordPress basics", "Web Hosting & Deployment"] },
         { title: "Python Programming", icon: <Bot />, subTopics: ["Python Setup & Installation", "Core Python Features", "Data Types & Variables", "Operators and Control Flow", "Functions & Modules", "File Handling", "and many more..."] },
         { title: "Java (Core & Advanced)", icon: <Code />, subTopics: ["Introduction to Java", "Java Class, Inheritances, Polymorphism", "GUI with Swing Controls", "Multithreading & Exception Handling", "Servlet, JSP, JDBC", "and many more..."] },
@@ -118,12 +118,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "digital marketing",
     modules: [
-        { title: "Marketing Fundamentals", icon: <Megaphone />, description: "Understand the core concepts of marketing in the digital age.", subTopics: [] },
-        { title: "SEO & SEM", icon: <Search />, description: "Learn to drive organic and paid traffic to your website.", subTopics: [] },
-        { title: "Social Media Marketing", icon: <Users />, description: "Master the art of marketing on social media platforms.", subTopics: [] },
-        { title: "Content Marketing", icon: <Newspaper />, description: "Learn to create and distribute valuable content to attract and retain customers.", subTopics: [] },
-        { title: "Email Marketing", icon: <Megaphone />, description: "Build and manage effective email marketing campaigns.", subTopics: [] },
-        { title: "Google Analytics", icon: <BarChart />, description: "Learn to measure and analyze website traffic and user behavior.", subTopics: [] }
+        { title: "Marketing Fundamentals", icon: <Megaphone />, subTopics: ["Introduction to Digital Marketing", "Website Analysis", "Google Algorithms", "Duplicate Content Checking", "Web Master Tools"] },
+        { title: "SEO & SEM", icon: <Search />, subTopics: ["On-Page Optimization", "Off-Page Optimization", "Keyword Research", "Meta Tag Optimization", "Search Engine Marketing (SEM)", "PPC Marketing", "Google Analytics"] },
+        { title: "Social Media Marketing", icon: <Users />, subTopics: ["Social Media Marketing (SMM)", "Facebook & Instagram Marketing", "LinkedIn for Business", "Twitter for Business", "Pinterest Marketing", "YouTube Marketing"] },
+        { title: "Content Marketing", icon: <Newspaper />, subTopics: ["Content Creation Strategy", "Blogging for Business", "Website Creation using WordPress", "Post Formats & Comments", "Link Management", "Domain & Hosting"] },
+        { title: "Email Marketing", icon: <Megaphone />, subTopics: ["Introduction to Email Marketing", "Building Mailing Lists", "Creating Email Layouts & Templates", "Types of Forms & Reports", "Campaign Analysis"] },
+        { title: "Google Analytics", icon: <BarChart />, subTopics: ["Introduction to Google Analytics", "Tracking Website Traffic", "Analyzing User Behavior", "Conversion Tracking", "Reporting and Dashboards"] }
     ],
   },
   {
