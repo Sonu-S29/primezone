@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -19,12 +19,9 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "accounting collage",
     modules: [
-        { title: "Financial Accounting Basics", icon: <Landmark />, description: "Learn the fundamental principles of accounting, including debits, credits, and financial statements." },
-        { title: "Advanced Excel for Accountants", icon: <BarChart />, description: "Master advanced Excel functions to analyze financial data and create insightful reports." },
-        { title: "Tally Prime with GST", icon: <FileText />, description: "Become proficient in Tally Prime for managing accounts, inventory, and GST compliance." },
-        { title: "Corporate Accounting", icon: <Landmark />, description: "Understand the accounting practices of corporations, including share capital and debentures." },
-        { title: "Taxation", icon: <Newspaper />, description: "Get a comprehensive overview of direct and indirect taxes in India." },
-        { title: "Auditing", icon: <ShieldCheck />, description: "Learn the principles and techniques of auditing financial statements." }
+        { title: "Financial Accounting Basics", icon: <Landmark />, description: "Learn the fundamental principles of accounting, including debits, credits, and financial statements.", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation"] },
+        { title: "Advanced Excel for Accountants", icon: <BarChart />, description: "Master advanced Excel functions to analyze financial data and create insightful reports.", subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
+        { title: "Tally Prime with GST", icon: <FileText />, description: "Become proficient in Tally Prime for managing accounts, inventory, and GST compliance.", subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
     ],
   },
   {
@@ -33,12 +30,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "financial report",
     modules: [
-        { title: "Principles of Accounting", icon: <Landmark />, description: "Build a strong foundation in accounting principles and concepts." },
-        { title: "Tally ERP 9", icon: <FileText />, description: "Learn to use Tally ERP 9 for complete business management." },
-        { title: "GST & Taxation", icon: <Newspaper />, description: "Understand the GST framework and its implications on businesses." },
-        { title: "Financial Statement Analysis", icon: <BarChart />, description: "Analyze financial statements to make informed business decisions." },
-        { title: "Advanced Excel", icon: <BarChart />, description: "Utilize advanced features of Excel for financial modeling and analysis." },
-        { title: "Payroll Management", icon: <Users />, description: "Learn to process payroll, including statutory deductions and compliance." }
+        { title: "Principles of Accounting", icon: <Landmark />, description: "Build a strong foundation in accounting principles and concepts.", subTopics: [] },
+        { title: "Tally ERP 9", icon: <FileText />, description: "Learn to use Tally ERP 9 for complete business management.", subTopics: [] },
+        { title: "GST & Taxation", icon: <Newspaper />, description: "Understand the GST framework and its implications on businesses.", subTopics: [] },
+        { title: "Financial Statement Analysis", icon: <BarChart />, description: "Analyze financial statements to make informed business decisions.", subTopics: [] },
+        { title: "Advanced Excel", icon: <BarChart />, description: "Utilize advanced features of Excel for financial modeling and analysis.", subTopics: [] },
+        { title: "Payroll Management", icon: <Users />, description: "Learn to process payroll, including statutory deductions and compliance.", subTopics: [] }
     ],
   },
   {
@@ -47,12 +44,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "computer application",
     modules: [
-        { title: "Computer Fundamentals", icon: <MonitorCheck />, description: "Get introduced to the basics of computers, hardware, and software." },
-        { title: "MS Office Suite", icon: <FileText />, description: "Become proficient in MS Word, Excel, and PowerPoint." },
-        { title: "Internet & Web Concepts", icon: <Globe />, description: "Learn about the internet, web browsers, and online safety." },
-        { title: "Introduction to C Programming", icon: <Code />, description: "Start your programming journey with the C language." },
-        { title: "Database Management Systems", icon: <Settings />, description: "Understand the basics of databases and SQL." },
-        { title: "Final Project", icon: <Rocket />, description: "Apply your learned skills to build a real-world application." }
+        { title: "Computer Fundamentals", icon: <MonitorCheck />, description: "Get introduced to the basics of computers, hardware, and software.", subTopics: [] },
+        { title: "MS Office Suite", icon: <FileText />, description: "Become proficient in MS Word, Excel, and PowerPoint.", subTopics: [] },
+        { title: "Internet & Web Concepts", icon: <Globe />, description: "Learn about the internet, web browsers, and online safety.", subTopics: [] },
+        { title: "Introduction to C Programming", icon: <Code />, description: "Start your programming journey with the C language.", subTopics: [] },
+        { title: "Database Management Systems", icon: <Settings />, description: "Understand the basics of databases and SQL.", subTopics: [] },
+        { title: "Final Project", icon: <Rocket />, description: "Apply your learned skills to build a real-world application.", subTopics: [] }
     ],
   },
   {
@@ -61,12 +58,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "financial management",
     modules: [
-        { title: "Financial Management", icon: <Landmark />, description: "Learn to manage the finances of an organization effectively." },
-        { title: "Management Accounting", icon: <BarChart />, description: "Use accounting information for managerial decision-making." },
-        { title: "Investment Analysis", icon: <Search />, description: "Learn to analyze and value investment proposals." },
-        { title: "Portfolio Management", icon: <FileText />, description: "Understand how to construct and manage investment portfolios." },
-        { title: "Business Law", icon: <Landmark />, description: "Get an overview of the legal aspects of running a business." },
-        { title: "Strategic Management", icon: <Users />, description: "Learn to formulate and implement business strategies." }
+        { title: "Financial Management", icon: <Landmark />, description: "Learn to manage the finances of an organization effectively.", subTopics: [] },
+        { title: "Management Accounting", icon: <BarChart />, description: "Use accounting information for managerial decision-making.", subTopics: [] },
+        { title: "Investment Analysis", icon: <Search />, description: "Learn to analyze and value investment proposals.", subTopics: [] },
+        { title: "Portfolio Management", icon: <FileText />, description: "Understand how to construct and manage investment portfolios.", subTopics: [] },
+        { title: "Business Law", icon: <Landmark />, description: "Get an overview of the legal aspects of running a business.", subTopics: [] },
+        { title: "Strategic Management", icon: <Users />, description: "Learn to formulate and implement business strategies.", subTopics: [] }
     ],
   },
   {
@@ -75,12 +72,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "programming course",
     modules: [
-        { title: "C & C++ Programming", icon: <Code />, description: "Build a strong foundation in programming with C and C++." },
-        { title: "Data Structures & Algorithms", icon: <Settings />, description: "Learn to organize data efficiently and solve complex problems." },
-        { title: "Python Programming", icon: <Code />, description: "Master Python for web development, data science, and automation." },
-        { title: "Java Core & Advanced", icon: <Code />, description: "Learn Java for building robust and scalable applications." },
-        { title: "Web Development (HTML, CSS, JS)", icon: <Globe />, description: "Build modern and responsive websites from scratch." },
-        { title: "Database Management (SQL)", icon: <Settings />, description: "Learn to manage and query relational databases using SQL." }
+        { title: "C & C++ Programming", icon: <Code />, description: "Build a strong foundation in programming with C and C++.", subTopics: [] },
+        { title: "Data Structures & Algorithms", icon: <Settings />, description: "Learn to organize data efficiently and solve complex problems.", subTopics: [] },
+        { title: "Python Programming", icon: <Code />, description: "Master Python for web development, data science, and automation.", subTopics: [] },
+        { title: "Java Core & Advanced", icon: <Code />, description: "Learn Java for building robust and scalable applications.", subTopics: [] },
+        { title: "Web Development (HTML, CSS, JS)", icon: <Globe />, description: "Build modern and responsive websites from scratch.", subTopics: [] },
+        { title: "Database Management (SQL)", icon: <Settings />, description: "Learn to manage and query relational databases using SQL.", subTopics: [] }
     ],
   },
   {
@@ -89,12 +86,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "graphic animation",
     modules: [
-        { title: "Design Principles", icon: <Palette />, description: "Learn the fundamental principles of graphic design." },
-        { title: "Adobe Photoshop", icon: <Palette />, description: "Master the world's leading photo editing software." },
-        { title: "Adobe Illustrator", icon: <Palette />, description: "Create stunning vector graphics and illustrations." },
-        { title: "CorelDRAW", icon: <Palette />, description: "Learn to use CorelDRAW for creating professional designs." },
-        { title: "2D Animation", icon: <Bot />, description: "Bring your characters and stories to life with 2D animation." },
-        { title: "Video Editing", icon: <LayoutTemplate />, description: "Learn to edit and produce professional-quality videos." }
+        { title: "Design Principles", icon: <Palette />, description: "Learn the fundamental principles of graphic design.", subTopics: [] },
+        { title: "Adobe Photoshop", icon: <Palette />, description: "Master the world's leading photo editing software.", subTopics: [] },
+        { title: "Adobe Illustrator", icon: <Palette />, description: "Create stunning vector graphics and illustrations.", subTopics: [] },
+        { title: "CorelDRAW", icon: <Palette />, description: "Learn to use CorelDRAW for creating professional designs.", subTopics: [] },
+        { title: "2D Animation", icon: <Bot />, description: "Bring your characters and stories to life with 2D animation.", subTopics: [] },
+        { title: "Video Editing", icon: <LayoutTemplate />, description: "Learn to edit and produce professional-quality videos.", subTopics: [] }
     ],
   },
   {
@@ -103,12 +100,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "ethical hacking",
     modules: [
-        { title: "Networking Fundamentals", icon: <Globe />, description: "Understand the basics of computer networks and protocols." },
-        { title: "Linux Essentials", icon: <Code />, description: "Learn the command line and administration of Linux systems." },
-        { title: "Cryptography", icon: <ShieldCheck />, description: "Understand the principles of encryption and secure communication." },
-        { title: "Web Application Hacking", icon: <Code />, description: "Learn to find and exploit vulnerabilities in web applications." },
-        { title: "Metasploit Framework", icon: <LayoutTemplate />, description: "Master the Metasploit framework for penetration testing." },
-        { title: "Ethical Hacking Labs", icon: <MonitorCheck />, description: "Practice your skills in a safe and legal environment." }
+        { title: "Networking Fundamentals", icon: <Globe />, description: "Understand the basics of computer networks and protocols.", subTopics: [] },
+        { title: "Linux Essentials", icon: <Code />, description: "Learn the command line and administration of Linux systems.", subTopics: [] },
+        { title: "Cryptography", icon: <ShieldCheck />, description: "Understand the principles of encryption and secure communication.", subTopics: [] },
+        { title: "Web Application Hacking", icon: <Code />, description: "Learn to find and exploit vulnerabilities in web applications.", subTopics: [] },
+        { title: "Metasploit Framework", icon: <LayoutTemplate />, description: "Master the Metasploit framework for penetration testing.", subTopics: [] },
+        { title: "Ethical Hacking Labs", icon: <MonitorCheck />, description: "Practice your skills in a safe and legal environment.", subTopics: [] }
     ],
   },
   {
@@ -117,12 +114,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "digital marketing",
     modules: [
-        { title: "Marketing Fundamentals", icon: <Megaphone />, description: "Understand the core concepts of marketing in the digital age." },
-        { title: "SEO & SEM", icon: <Search />, description: "Learn to drive organic and paid traffic to your website." },
-        { title: "Social Media Marketing", icon: <Users />, description: "Master the art of marketing on social media platforms." },
-        { title: "Content Marketing", icon: <Newspaper />, description: "Learn to create and distribute valuable content to attract and retain customers." },
-        { title: "Email Marketing", icon: <Megaphone />, description: "Build and manage effective email marketing campaigns." },
-        { title: "Google Analytics", icon: <BarChart />, description: "Learn to measure and analyze website traffic and user behavior." }
+        { title: "Marketing Fundamentals", icon: <Megaphone />, description: "Understand the core concepts of marketing in the digital age.", subTopics: [] },
+        { title: "SEO & SEM", icon: <Search />, description: "Learn to drive organic and paid traffic to your website.", subTopics: [] },
+        { title: "Social Media Marketing", icon: <Users />, description: "Master the art of marketing on social media platforms.", subTopics: [] },
+        { title: "Content Marketing", icon: <Newspaper />, description: "Learn to create and distribute valuable content to attract and retain customers.", subTopics: [] },
+        { title: "Email Marketing", icon: <Megaphone />, description: "Build and manage effective email marketing campaigns.", subTopics: [] },
+        { title: "Google Analytics", icon: <BarChart />, description: "Learn to measure and analyze website traffic and user behavior.", subTopics: [] }
     ],
   },
   {
@@ -131,12 +128,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "full stack",
     modules: [
-        { title: "Front-End (HTML, CSS, JS)", icon: <Code />, description: "Build the user interface of websites and web applications." },
-        { title: "React.js", icon: <Code />, description: "Learn the most popular JavaScript library for building user interfaces." },
-        { title: "Node.js & Express", icon: <Code />, description: "Build scalable and high-performance back-end applications." },
-        { title: "Databases (SQL/NoSQL)", icon: <Settings />, description: "Learn to work with both relational and non-relational databases." },
-        { title: "API Development", icon: <Code />, description: "Build robust and secure APIs for your applications." },
-        { title: "Deployment & DevOps", icon: <Rocket />, description: "Learn to deploy and manage your applications in the cloud." }
+        { title: "Front-End (HTML, CSS, JS)", icon: <Code />, description: "Build the user interface of websites and web applications.", subTopics: [] },
+        { title: "React.js", icon: <Code />, description: "Learn the most popular JavaScript library for building user interfaces.", subTopics: [] },
+        { title: "Node.js & Express", icon: <Code />, description: "Build scalable and high-performance back-end applications.", subTopics: [] },
+        { title: "Databases (SQL/NoSQL)", icon: <Settings />, description: "Learn to work with both relational and non-relational databases.", subTopics: [] },
+        { title: "API Development", icon: <Code />, description: "Build robust and secure APIs for your applications.", subTopics: [] },
+        { title: "Deployment & DevOps", icon: <Rocket />, description: "Learn to deploy and manage your applications in the cloud.", subTopics: [] }
     ],
   },
   {
@@ -145,12 +142,12 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "data analytics",
     modules: [
-        { title: "Statistics Fundamentals", icon: <BarChart />, description: "Understand the fundamental concepts of statistics." },
-        { title: "Python for Data Science", icon: <Code />, description: "Learn to use Python for data analysis and manipulation." },
-        { title: "Data Wrangling with Pandas", icon: <Settings />, description: "Master the Pandas library for cleaning and transforming data." },
-        { title: "Data Visualization (Matplotlib, Seaborn)", icon: <Palette />, description: "Create compelling visualizations to communicate your findings." },
-        { title: "Machine Learning Basics", icon: <Bot />, description: "Get introduced to the exciting world of machine learning." },
-        { title: "Power BI", icon: <BarChart />, description: "Build interactive dashboards and reports with Power BI." }
+        { title: "Statistics Fundamentals", icon: <BarChart />, description: "Understand the fundamental concepts of statistics.", subTopics: [] },
+        { title: "Python for Data Science", icon: <Code />, description: "Learn to use Python for data analysis and manipulation.", subTopics: [] },
+        { title: "Data Wrangling with Pandas", icon: <Settings />, description: "Master the Pandas library for cleaning and transforming data.", subTopics: [] },
+        { title: "Data Visualization (Matplotlib, Seaborn)", icon: <Palette />, description: "Create compelling visualizations to communicate your findings.", subTopics: [] },
+        { title: "Machine Learning Basics", icon: <Bot />, description: "Get introduced to the exciting world of machine learning.", subTopics: [] },
+        { title: "Power BI", icon: <BarChart />, description: "Build interactive dashboards and reports with Power BI.", subTopics: [] }
     ],
   },
 ];
@@ -248,7 +245,14 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                         {module.icon}
                                     </div>
                                     <h3 className="text-lg font-bold text-primary">{module.title}</h3>
-                                    <p className="text-muted-foreground mt-2">{module.description}</p>
+                                    <ul className="space-y-2 mt-4">
+                                      {(module.subTopics ?? []).map((topic, i) => (
+                                        <li key={i} className="flex items-center text-sm">
+                                          <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
+                                          <span>{topic}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
                                 </div>
                             ))}
                         </div>
