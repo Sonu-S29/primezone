@@ -196,16 +196,16 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
 
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full max-w-sm md:max-w-none md:w-[800px] h-[90vh] max-h-[550px] md:h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
+            <CardBody className="bg-card relative group/card w-full max-w-sm md:max-w-none md:w-[800px] h-auto max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
                 {/* Desktop: Left Panel */}
-                <div className="hidden md:block w-2/5 p-6 overflow-hidden">
+                <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
                     <CardItem
                         translateZ="40"
                         className="text-lg font-bold text-primary"
                     >
                         Course Modules
                     </CardItem>
-                     <CardItem translateZ="60" className="w-full mt-4 h-[320px]">
+                     <CardItem translateZ="60" className="w-full mt-4 h-full">
                         <ScrollArea className="h-full w-full pr-4">
                             <div className="relative">
                                 {/* Vertical line */}
@@ -228,7 +228,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                 </div>
                 
                 {/* Mobile: Top Carousel */}
-                <div className="md:hidden w-full p-4 bg-muted/50">
+                <div className="md:hidden w-full p-4 bg-muted/50 rounded-t-xl">
                     <h3 className="text-lg font-bold text-primary mb-2 px-2">Course Modules</h3>
                     <div className="relative">
                         <ScrollArea className="w-full whitespace-nowrap" onPointerEnter={() => { if(timerRef.current) clearInterval(timerRef.current)}} onPointerLeave={resetTimer}>
@@ -261,6 +261,9 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                 </div>
 
                  <div className="w-full md:w-3/5 p-6 bg-muted md:rounded-r-xl flex flex-col relative">
+                    <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
+                        <X className="h-5 w-5" />
+                    </DialogClose>
                     <CardItem translateZ="50" className="w-full flex-grow flex flex-col">
                         <div className="flex justify-between items-start mb-4">
                             <div>
@@ -273,7 +276,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                 Module {activeModule + 1} of {course.modules.length}
                             </p>
                         </div>
-                        <div className="flex-grow overflow-y-auto h-[120px] md:h-48">
+                        <div className="flex-grow overflow-y-auto h-[180px] md:h-auto">
                             <ul className="space-y-2 mt-4 text-sm">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
@@ -294,9 +297,6 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             Enroll Now
                         </CardItem>
                     </div>
-                    <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
-                        <X className="h-5 w-5" />
-                    </DialogClose>
                  </div>
             </CardBody>
         </CardContainer>
@@ -339,7 +339,7 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-[95vw] md:w-full rounded-lg">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-[95vw] md:w-auto rounded-lg">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
@@ -359,3 +359,5 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
