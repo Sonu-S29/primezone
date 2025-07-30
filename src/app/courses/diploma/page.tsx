@@ -196,7 +196,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
 
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full md:w-[800px] h-auto md:h-[450px] max-h-[80vh] md:max-h-full rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
+            <CardBody className="bg-card relative group/card w-full max-w-sm md:max-w-none md:w-[800px] h-[90vh] max-h-[550px] md:h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
                 {/* Desktop: Left Panel */}
                 <div className="hidden md:block w-2/5 p-6 overflow-hidden">
                     <CardItem
@@ -294,10 +294,10 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             Enroll Now
                         </CardItem>
                     </div>
+                    <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
+                        <X className="h-5 w-5" />
+                    </DialogClose>
                  </div>
-                 <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
-                     <X className="h-5 w-5" />
-                 </DialogClose>
             </CardBody>
         </CardContainer>
     )
