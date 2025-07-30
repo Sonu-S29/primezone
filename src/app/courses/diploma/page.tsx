@@ -8,7 +8,8 @@ import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplat
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
-import { ThreeDCard, CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 
 const diplomaCourses = [
@@ -190,14 +191,14 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-2xl">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
                                 <DialogTitle>{selectedCourse.title}</DialogTitle>
                             </DialogHeader>
                             <CardContainer>
-                                <CardBody className="bg-card relative group/card w-auto h-auto rounded-xl p-6 border-black/[0.1] shadow-2xl">
+                                <CardBody className="bg-card relative group/card w-auto rounded-xl p-6 border-black/[0.1] shadow-2xl">
                                     <DialogClose asChild>
                                         <button className="absolute top-4 right-4 z-50 text-muted-foreground hover:text-foreground">
                                             <X className="h-6 w-6" />
@@ -218,20 +219,27 @@ export default function DiplomaCoursesPage() {
                                     Course Modules Roadmap
                                     </CardItem>
                                     <CardItem translateZ="80" className="w-full mt-6">
-                                        <div className="space-y-4">
-                                            {selectedCourse.modules.map((module, index) => (
-                                                <div key={index} className="flex items-center gap-4 group">
-                                                    <div className="flex-shrink-0 bg-accent text-accent-foreground h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                                                        {module.icon}
+                                        <ScrollArea className="w-full whitespace-nowrap rounded-lg">
+                                            <div className="flex w-max space-x-4 p-4">
+                                                {selectedCourse.modules.map((module, index) => (
+                                                    <div key={index} className="flex items-center gap-4 group">
+                                                        <div className="flex flex-col items-center gap-2">
+                                                            <div className="flex-shrink-0 bg-accent text-accent-foreground h-16 w-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                                                                {module.icon}
+                                                            </div>
+                                                            <div className="text-center w-32">
+                                                                <p className="font-bold text-lg text-primary">{`0${index + 1}`}</p>
+                                                                <p className="font-medium whitespace-normal text-sm">{module.title}</p>
+                                                            </div>
+                                                        </div>
+                                                        {index < selectedCourse.modules.length - 1 && 
+                                                            <div className="h-1 w-20 bg-border flex-grow hidden md:block"></div>
+                                                        }
                                                     </div>
-                                                    <div className="h-px bg-border flex-grow"></div>
-                                                    <div className="text-right">
-                                                        <p className="font-bold text-lg text-primary">{`0${index + 1}`}</p>
-                                                        <p className="font-medium">{module.title}</p>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
+                                                ))}
+                                            </div>
+                                            <ScrollBar orientation="horizontal" />
+                                        </ScrollArea>
                                     </CardItem>
                                     <div className="flex justify-end mt-8">
                                     <CardItem
@@ -258,3 +266,4 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
