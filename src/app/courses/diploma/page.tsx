@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
 import { ThreeDCard, CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 
@@ -122,12 +122,18 @@ export default function DiplomaCoursesPage() {
                         </DialogTrigger>
                         <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-2xl">
                           {selectedCourse && (
+                            <>
+                            <DialogHeader className="sr-only">
+                                <DialogTitle>{selectedCourse.title}</DialogTitle>
+                            </DialogHeader>
                             <CardContainer>
                                 <CardBody className="bg-card relative group/card w-auto h-auto rounded-xl p-6 border-black/[0.1] shadow-2xl">
-                                    <button className="absolute top-4 right-4 z-50 text-muted-foreground hover:text-foreground">
-                                        <X className="h-6 w-6" />
-                                        <span className="sr-only">Close</span>
-                                    </button>
+                                    <DialogClose asChild>
+                                        <button className="absolute top-4 right-4 z-50 text-muted-foreground hover:text-foreground">
+                                            <X className="h-6 w-6" />
+                                            <span className="sr-only">Close</span>
+                                        </button>
+                                    </DialogClose>
                                     <CardItem
                                     translateZ="50"
                                     className="text-2xl font-bold text-primary pr-8"
@@ -164,6 +170,7 @@ export default function DiplomaCoursesPage() {
                                     </div>
                                 </CardBody>
                             </CardContainer>
+                            </>
                           )}
                         </DialogContent>
                     </Dialog>
