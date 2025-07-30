@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
@@ -175,7 +175,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
 
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex">
+            <CardBody className="bg-card relative group/card w-[800px] h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex">
                 <div className="w-2/5 p-6 overflow-hidden">
                     <CardItem
                         translateZ="40"
@@ -205,12 +205,6 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                     </CardItem>
                 </div>
                  <div className="w-3/5 p-6 bg-muted rounded-r-xl flex flex-col relative">
-                    <DialogClose asChild>
-                        <button className="absolute top-4 right-4 z-50 text-muted-foreground hover:text-foreground">
-                            <X className="h-6 w-6" />
-                            <span className="sr-only">Close</span>
-                        </button>
-                    </DialogClose>
                     <CardItem translateZ="50" className="w-full flex-grow flex flex-col">
                         <div className="flex justify-between items-start mb-4">
                             <div>
@@ -223,7 +217,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                                 Module {activeModule + 1} of {course.modules.length}
                             </p>
                         </div>
-                        <div className="flex-grow overflow-y-auto h-40">
+                        <div className="flex-grow overflow-y-auto h-48">
                             <ul className="space-y-2 mt-4 text-sm">
                               {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                                 <li key={i} className="flex items-center">
