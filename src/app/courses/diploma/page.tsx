@@ -42,12 +42,11 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "computer application",
     modules: [
-        { title: "Computer Fundamentals", icon: <MonitorCheck />, description: "Get introduced to the basics of computers, hardware, and software.", subTopics: [] },
-        { title: "MS Office Suite", icon: <FileText />, description: "Become proficient in MS Word, Excel, and PowerPoint.", subTopics: [] },
-        { title: "Internet & Web Concepts", icon: <Globe />, description: "Learn about the internet, web browsers, and online safety.", subTopics: [] },
-        { title: "Introduction to C Programming", icon: <Code />, description: "Start your programming journey with the C language.", subTopics: [] },
-        { title: "Database Management Systems", icon: <Settings />, description: "Understand the basics of databases and SQL.", subTopics: [] },
-        { title: "Final Project", icon: <Rocket />, description: "Apply your learned skills to build a real-world application.", subTopics: [] }
+        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "ASSIGNMENTS / PROJECT"] },
+        { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "Financial Functions, Dashboard Creation", "Advance Data Validation", "Text Functions, Sum Product", "ASSIGNMENTS / PROJECT"] },
+        { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "Model of GST 3, E-Way Bills", "Goods Entry in Tally", "Service Entry in Tally", "Penalties", "GST Invoice Format", "Refunds", "ASSIGNMENTS / PROJECT"] },
+        { title: "Graphic Designing", icon: <Palette />, subTopics: ["CorelDRAW", "Adobe PHOTOSHOP", "Adobe ILLUSTRATOR", "Adobe INDESIGN", "ASSIGNMENTS / PROJECT"] },
+        { title: "Web Designing", icon: <Globe />, subTopics: ["Html / CSS", "Adobe Animate", "Javascript", "Web Hosting", "Adobe Dreamweaver", "Domain, Sub Domain", "ASSIGNMENTS / PROJECT"] }
     ],
   },
   {
@@ -306,4 +305,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
