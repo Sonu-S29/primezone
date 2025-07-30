@@ -8,7 +8,6 @@ import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplat
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 
@@ -95,21 +94,21 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "ethical hacking",
     modules: [
-        { title: "Computer Security & Ethical Hacking", icon: <ShieldCheck />, subTopics: [] },
-        { title: "Networking", icon: <Network />, subTopics: [] },
-        { title: "Footprinting & Reconnaissance", icon: <Fingerprint />, subTopics: [] },
-        { title: "Lab Preparation", icon: <TerminalSquare />, subTopics: [] },
-        { title: "Scanning Networks", icon: <Search />, subTopics: [] },
-        { title: "Enumerations", icon: <Mail />, subTopics: [] },
-        { title: "Vulnerability Analysis", icon: <Bug />, subTopics: [] },
-        { title: "Denial Of Service", icon: <ShieldOff />, subTopics: [] },
-        { title: "Malware Threats", icon: <BugPlay />, subTopics: [] },
-        { title: "System Hacking", icon: <Wifi />, subTopics: [] },
-        { title: "Android Hacking (LAN)", icon: <KeyRound />, subTopics: [] },
-        { title: "Social Engineering", icon: <Users />, subTopics: [] },
-        { title: "SQL INJECTION", icon: <ServerCrash />, subTopics: [] },
-        { title: "Cross Site Scripting", icon: <Code />, subTopics: [] },
-        { title: "Hacking Wireless Networks", icon: <Wifi />, subTopics: [] }
+      { title: "Intro to Ethical Hacking", icon: <ShieldCheck />, subTopics: ["Key terminology", "Penetration testing", "Cyber ethics", "Hacking phases"] },
+      { title: "Footprinting", icon: <Fingerprint />, subTopics: ["Using search engines", "Website footprinting", "Email footprinting", "DNS footprinting", "Network footprinting", "Social engineering"] },
+      { title: "Network Scanning", icon: <Search />, subTopics: ["Checking for live systems", "Checking for open ports", "Scanning techniques", "Scanning beyond an IDS", "Banner grabbing", "Vulnerability scanning", "Drawing network diagrams", "Preparing proxies"] },
+      { title: "Enumeration", icon: <Mail />, subTopics: ["NetBIOS enumeration", "SNMP enumeration", "LDAP enumeration", "NTP enumeration", "SMTP enumeration", "DNS enumeration"] },
+      { title: "Vulnerability Analysis", icon: <Bug />, subTopics: ["Vulnerability classification", "Vulnerability assessment", "Vulnerability-assessment tools"] },
+      { title: "System Hacking", icon: <TerminalSquare />, subTopics: ["Gaining access", "Escalating privileges", "Maintaining access", "Hiding files", "Covering tracks"] },
+      { title: "Malware Threats", icon: <BugPlay />, subTopics: ["Trojan concepts", "Virus and worm concepts", "Malware analysis", "Countermeasures"] },
+      { title: "Sniffing", icon: <Wifi />, subTopics: ["MAC attacks", "DHCP attacks", "ARP poisoning", "Spoofing attacks", "DNS poisoning"] },
+      { title: "Social Engineering", icon: <Users />, subTopics: ["Social engineering concepts", "Social engineering techniques", "Insider threats", "Impersonation on social networking sites"] },
+      { title: "Denial-of-Service", icon: <ShieldOff />, subTopics: ["DoS/DDoS concepts", "DoS/DDoS attack techniques", "Botnets", "DDoS case study", "DoS/DDoS attack tools"] },
+      { title: "Session Hijacking", icon: <ServerCrash />, subTopics: ["Session hijacking concepts", "Application-level session hijacking", "Network-level session hijacking", "Session hijacking tools"] },
+      { title: "Evading IDS, Firewalls, and Honeypots", icon: <ShieldAlert />, subTopics: ["IDS, firewall, and honeypot concepts", "IDS, firewall, and honeypot solutions", "Evading IDS", "Evading firewalls", "Detecting honeypots"] },
+      { title: "Hacking Web Servers", icon: <ServerCrash />, subTopics: ["Web server concepts", "Web server attacks", "Web server attack methodology", "Patch management"] },
+      { title: "Hacking Web Applications", icon: <Code />, subTopics: ["Web app concepts", "Web app threats", "Web app hacking methodology"] },
+      { title: "SQL Injection", icon: <KeyRound />, subTopics: ["SQL injection concepts", "Types of SQL injection", "SQL injection methodology", "SQL injection tools", "Evasion techniques"] }
     ],
   },
   {
@@ -195,111 +194,95 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     }, [activeModule]);
 
     return (
-        <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full max-w-sm md:max-w-none md:w-[800px] h-auto max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
-                {/* Desktop: Left Panel */}
-                <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
-                    <CardItem
-                        translateZ="40"
-                        className="text-lg font-bold text-primary"
-                    >
-                        Course Modules
-                    </CardItem>
-                     <CardItem translateZ="60" className="w-full mt-4 h-full">
-                        <ScrollArea className="h-full w-full pr-4">
-                            <div className="relative">
-                                {/* Vertical line */}
-                                <div className="absolute left-6 top-0 h-full w-0.5 bg-border -z-10"></div>
-                                
-                                {course.modules.map((module, index) => (
-                                    <div key={index} className="flex items-center gap-4 mb-6">
-                                        <div className={`flex-shrink-0 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground scale-110' : 'bg-accent text-accent-foreground'}`}>
-                                            {module.icon}
-                                        </div>
-                                        <div className="pt-2">
-                                            <p className={`font-bold transition-colors ${activeModule === index ? 'text-primary' : 'text-muted-foreground'}`}>{`0${index + 1}`}</p>
-                                            <p className={`font-medium text-sm transition-colors ${activeModule === index ? 'text-foreground' : 'text-muted-foreground'}`}>{module.title}</p>
-                                        </div>
+        <Card className="bg-card relative w-full max-w-sm md:max-w-none md:w-[800px] h-auto max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+            {/* Desktop: Left Panel */}
+            <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
+                <h3 className="text-lg font-bold text-primary">
+                    Course Modules
+                </h3>
+                 <div className="w-full mt-4 h-full">
+                    <ScrollArea className="h-full w-full pr-4">
+                        <div className="relative">
+                            {/* Vertical line */}
+                            <div className="absolute left-6 top-0 h-full w-0.5 bg-border -z-10"></div>
+                            
+                            {course.modules.map((module, index) => (
+                                <div key={index} className="flex items-center gap-4 mb-6">
+                                    <div className={`flex-shrink-0 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground scale-110' : 'bg-accent text-accent-foreground'}`}>
+                                        {module.icon}
                                     </div>
-                                ))}
-                            </div>
-                        </ScrollArea>
-                    </CardItem>
-                </div>
-                
-                {/* Mobile: Top Carousel */}
-                <div className="md:hidden w-full p-4 bg-muted/50 rounded-t-xl">
-                    <h3 className="text-lg font-bold text-primary mb-2 px-2">Course Modules</h3>
-                    <div className="relative">
-                        <ScrollArea className="w-full whitespace-nowrap" onPointerEnter={() => { if(timerRef.current) clearInterval(timerRef.current)}} onPointerLeave={resetTimer}>
-                             <div className="flex space-x-4 p-2">
-                                {course.modules.map((module, index) => (
-                                    <button 
-                                        key={index}
-                                        ref={el => moduleRefs.current[index] = el}
-                                        onClick={() => {setActiveModule(index); resetTimer();}}
-                                        className={`flex-shrink-0 flex items-center gap-2 p-3 rounded-lg transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground' : 'bg-background'}`}>
-                                        <div className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${activeModule === index ? 'bg-primary-foreground text-primary' : 'bg-accent text-accent-foreground'}`}>
-                                            {module.icon}
-                                        </div>
-                                        <div>
-                                            <p className="font-bold text-xs">{`0${index + 1}`}</p>
-                                            <p className="font-medium text-xs text-left">{module.title}</p>
-                                        </div>
-                                    </button>
-                                ))}
-                             </div>
-                             <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                        <Button variant="outline" size="icon" className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8" onClick={() => {handlePrev(); resetTimer();}}>
-                            <ArrowLeft className="h-4 w-4" />
-                        </Button>
-                         <Button variant="outline" size="icon" className="absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8" onClick={() => {handleNext(); resetTimer();}}>
-                            <ArrowRight className="h-4 w-4" />
-                        </Button>
-                    </div>
-                </div>
-
-                 <div className="w-full md:w-3/5 p-6 bg-muted md:rounded-r-xl flex flex-col relative">
-                    <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
-                        <X className="h-5 w-5" />
-                    </DialogClose>
-                    <CardItem translateZ="50" className="w-full flex-grow flex flex-col">
-                        <div className="flex justify-between items-start mb-4">
-                            <div>
-                                <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
-                                    {course.modules[activeModule].icon}
+                                    <div className="pt-2">
+                                        <p className={`font-bold transition-colors ${activeModule === index ? 'text-primary' : 'text-muted-foreground'}`}>{`0${index + 1}`}</p>
+                                        <p className={`font-medium text-sm transition-colors ${activeModule === index ? 'text-foreground' : 'text-muted-foreground'}`}>{module.title}</p>
+                                    </div>
                                 </div>
-                                <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
+                            ))}
+                        </div>
+                    </ScrollArea>
+                </div>
+            </div>
+            
+            {/* Mobile: Top Carousel */}
+            <div className="md:hidden w-full p-4 bg-muted/50 rounded-t-xl">
+                <h3 className="text-lg font-bold text-primary mb-2 px-2">Course Modules</h3>
+                <div className="relative">
+                    <ScrollArea className="w-full whitespace-nowrap" onPointerEnter={() => { if(timerRef.current) clearInterval(timerRef.current)}} onPointerLeave={resetTimer}>
+                         <div className="flex space-x-4 p-2">
+                            {course.modules.map((module, index) => (
+                                <button 
+                                    key={index}
+                                    ref={el => moduleRefs.current[index] = el}
+                                    onClick={() => {setActiveModule(index); resetTimer();}}
+                                    className={`flex-shrink-0 flex items-center gap-2 p-3 rounded-lg transition-all duration-300 ${activeModule === index ? 'bg-primary text-primary-foreground' : 'bg-background'}`}>
+                                    <div className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${activeModule === index ? 'bg-primary-foreground text-primary' : 'bg-accent text-accent-foreground'}`}>
+                                        {module.icon}
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-xs">{`0${index + 1}`}</p>
+                                        <p className="font-medium text-xs text-left">{module.title}</p>
+                                    </div>
+                                </button>
+                            ))}
+                         </div>
+                         <ScrollBar orientation="horizontal" />
+                    </ScrollArea>
+                </div>
+            </div>
+
+             <div className="w-full md:w-3/5 p-6 bg-muted md:rounded-r-xl flex flex-col relative">
+                <div className="w-full flex-grow flex flex-col">
+                    <div className="flex justify-between items-start mb-4">
+                        <div>
+                            <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center mb-4">
+                                {course.modules[activeModule].icon}
                             </div>
-                            <p className="text-sm font-medium text-muted-foreground">
-                                Module {activeModule + 1} of {course.modules.length}
-                            </p>
+                            <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
                         </div>
-                        <div className="flex-grow overflow-y-auto h-[180px] md:h-auto">
-                            <ul className="space-y-2 mt-4 text-sm">
-                              {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
-                                <li key={i} className="flex items-center">
-                                  <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
-                                  <span>{topic}</span>
-                                </li>
-                              ))}
-                            </ul>
-                        </div>
-                    </CardItem>
-                    <div className="flex justify-end items-center pt-4 mt-auto">
-                        <CardItem
-                            translateZ={20}
-                            as={Link}
-                            href="/enroll"
-                            className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
-                        >
-                            Enroll Now
-                        </CardItem>
+                        <p className="text-sm font-medium text-muted-foreground">
+                            Module {activeModule + 1} of {course.modules.length}
+                        </p>
                     </div>
-                 </div>
-            </CardBody>
-        </CardContainer>
+                    <div className="flex-grow overflow-y-auto h-[180px] md:h-auto">
+                        <ul className="space-y-2 mt-4 text-sm">
+                          {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
+                            <li key={i} className="flex items-center">
+                              <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
+                              <span>{topic}</span>
+                            </li>
+                          ))}
+                        </ul>
+                    </div>
+                </div>
+                <div className="flex justify-end items-center pt-4 mt-auto">
+                    <Button
+                        asChild
+                        className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
+                    >
+                        <Link href="/enroll">Enroll Now</Link>
+                    </Button>
+                </div>
+             </div>
+        </Card>
     )
 }
 
@@ -339,7 +322,7 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-[95vw] md:w-auto rounded-lg">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-auto rounded-lg data-[state=open]:w-auto">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
@@ -359,5 +342,7 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
