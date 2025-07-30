@@ -216,9 +216,6 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </div>
                     </CardItem>
                     <div className="flex justify-between items-center pt-4">
-                        <Button variant="outline" onClick={handlePrev}>
-                            Previous
-                        </Button>
                         <p className="text-sm font-medium text-muted-foreground">
                             Module {activeModule + 1} of {course.modules.length}
                         </p>
@@ -304,12 +301,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
-    
-
-    
-
-
-
-
-    
