@@ -83,12 +83,11 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "graphic animation",
     modules: [
-        { title: "Design Principles", icon: <Palette />, description: "Learn the fundamental principles of graphic design.", subTopics: [] },
-        { title: "Adobe Photoshop", icon: <Palette />, description: "Master the world's leading photo editing software.", subTopics: [] },
-        { title: "Adobe Illustrator", icon: <Palette />, description: "Create stunning vector graphics and illustrations.", subTopics: [] },
-        { title: "CorelDRAW", icon: <Palette />, description: "Learn to use CorelDRAW for creating professional designs.", subTopics: [] },
-        { title: "2D Animation", icon: <Bot />, description: "Bring your characters and stories to life with 2D animation.", subTopics: [] },
-        { title: "Video Editing", icon: <LayoutTemplate />, description: "Learn to edit and produce professional-quality videos.", subTopics: [] }
+        { title: "Graphic Designing", icon: <Palette />, subTopics: ["CorelDRAW", "Adobe PHOTOSHOP", "Adobe ILLUSTRATOR", "Adobe INDESIGN", "CANVA DESIGN", "ASSIGNMENTS / PROJECT", "and many more..."] },
+        { title: "Web Designing", icon: <Globe />, subTopics: ["Introduction to Web Page Designing", "Html / CSS", "Adobe Animate", "Web Hosting", "Domain / Sub Domain", "ASSIGNMENTS / PROJECT", "and many more..."] },
+        { title: "Adobe Animate", icon: <Bot />, subTopics: ["Frame By Frame Animation", "Movie Clips, Symbols, Buttons", "Shape Tweening", "Walk Through Animation", "Smoke Animation", "Action Script 2.0", "and many more..."] },
+        { title: "Video / Sound Editing", icon: <LayoutTemplate />, subTopics: ["Introduction", "Workspace, Project, Sequence", "Editing Frame with Tools", "Slow & Fast - Speed Duration", "Transition Effects", "Animation Effects", "and many more..."] },
+        { title: "3DS MAX", icon: <Rocket />, subTopics: ["Interface - 2D Tools - Modifiers", "2D / 3D Interior Designing", "Architecture - Civil", "3D Modelling - Character", "Materials - Camera Walkthrough", "ASSIGNMENTS / PROJECT", "and many more..."] }
     ],
   },
   {
@@ -159,7 +158,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
             block: 'center',
             inline: 'center'
         });
-    }, [activeModule]);
+    }, [activeModule, course]);
 
     const handleNext = useCallback(() => {
         setActiveModule((prev) => (prev + 1) % course.modules.length);
@@ -310,3 +309,4 @@ export default function DiplomaCoursesPage() {
     
 
     
+
