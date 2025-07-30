@@ -148,12 +148,11 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "data analytics",
     modules: [
-        { title: "Statistics Fundamentals", icon: <BarChart />, description: "Understand the fundamental concepts of statistics.", subTopics: [] },
-        { title: "Python for Data Science", icon: <Code />, description: "Learn to use Python for data analysis and manipulation.", subTopics: [] },
-        { title: "Data Wrangling with Pandas", icon: <Settings />, description: "Master the Pandas library for cleaning and transforming data.", subTopics: [] },
-        { title: "Data Visualization (Matplotlib, Seaborn)", icon: <Palette />, description: "Create compelling visualizations to communicate your findings.", subTopics: [] },
-        { title: "Machine Learning Basics", icon: <Bot />, description: "Get introduced to the exciting world of machine learning.", subTopics: [] },
-        { title: "Power BI", icon: <BarChart />, description: "Build interactive dashboards and reports with Power BI.", subTopics: [] }
+        { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Complex Functions, What - if - Analysis", "Working with Macros, MIS Reporting", "Dashboard Creation, Data Validation"] },
+        { title: "Power BI", icon: <BarChart />, subTopics: ["Introducing PowerPivot", "Working with Data", "Enhancing the Data Model", "Analysing Data", "Data Analysis Expressions (DAX)", "Publishing & Managing PowerPivot Models", "Importing Data with Power Query"] },
+        { title: "MY SQL", icon: <Code />, subTopics: ["Introduction to SQL Server", "Database & Types", "Using DDL / DML", "Simple Queries, Sub-Queries", "Queries using Joins", "Constraints", "Using Aggregate Functions"] },
+        { title: "Python", icon: <Bot />, subTopics: ["Basic Python Syntax", "Data Types & Operators", "Decision Making & Looping", "Lists, Tuples, Dictionary", "Functions & Modules", "Files Input & Output", "Exceptional Handling, Class & Object"] },
+        { title: "Tableau", icon: <BarChart />, subTopics: ["Working with Tableau", "Deep Diving with Data & Connections", "Creating Charts", "Calculations in your Workbook", "Data Mapping in Tableau", "Dashboards", "Visualization"] }
     ],
   },
 ];
