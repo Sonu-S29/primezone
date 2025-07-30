@@ -19,7 +19,7 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "accounting collage",
     modules: [
-        { title: "Financial Accounting Basics", icon: <Landmark />, description: "Learn the fundamental principles of accounting, including debits, credits, and financial statements.", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation"] },
+        { title: "Financial Accounting Basics", icon: <Landmark />, description: "Learn the fundamental principles of accounting, including debits, credits, and financial statements.", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
         { title: "Advanced Excel for Accountants", icon: <BarChart />, description: "Master advanced Excel functions to analyze financial data and create insightful reports.", subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
         { title: "Tally Prime with GST", icon: <FileText />, description: "Become proficient in Tally Prime for managing accounts, inventory, and GST compliance.", subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
     ],
@@ -30,12 +30,10 @@ const diplomaCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "financial report",
     modules: [
-        { title: "Principles of Accounting", icon: <Landmark />, description: "Build a strong foundation in accounting principles and concepts.", subTopics: [] },
-        { title: "Tally ERP 9", icon: <FileText />, description: "Learn to use Tally ERP 9 for complete business management.", subTopics: [] },
-        { title: "GST & Taxation", icon: <Newspaper />, description: "Understand the GST framework and its implications on businesses.", subTopics: [] },
-        { title: "Financial Statement Analysis", icon: <BarChart />, description: "Analyze financial statements to make informed business decisions.", subTopics: [] },
-        { title: "Advanced Excel", icon: <BarChart />, description: "Utilize advanced features of Excel for financial modeling and analysis.", subTopics: [] },
-        { title: "Payroll Management", icon: <Users />, description: "Learn to process payroll, including statutory deductions and compliance.", subTopics: [] }
+        { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "ASSIGNMENTS / PROJECT"] },
+        { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "Financial Functions", "Dashboard Creation", "Advance Data Validation", "Text Functions, Sum Product", "ASSIGNMENTS / PROJECT"] },
+        { title: "Tally Prime (GST)", icon: <FileText />, subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "Model of GST 3, E-Way Bills", "Goods Entry in Tally", "Service Entry in Tally", "Penalties", "GST Invoice Format", "Refunds", "ASSIGNMENTS / PROJECT"] },
+        { title: "Taxation Auditing", icon: <Landmark />, subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "ASSIGNMENTS / PROJECT"] }
     ],
   },
   {
