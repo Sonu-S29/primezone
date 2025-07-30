@@ -184,7 +184,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                 clearInterval(timerRef.current);
             }
         };
-    }, [resetTimer]);
+    }, [activeModule, resetTimer]);
     
     useEffect(() => {
         moduleRefs.current[activeModule]?.scrollIntoView({
@@ -196,7 +196,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
 
     return (
         <CardContainer containerClassName="py-0">
-            <CardBody className="bg-card relative group/card w-full md:w-[800px] h-auto md:h-[450px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
+            <CardBody className="bg-card relative group/card w-full md:w-[800px] h-auto md:h-[450px] max-h-[90vh] md:max-h-full rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row">
                 {/* Desktop: Left Panel */}
                 <div className="hidden md:block w-2/5 p-6 overflow-hidden">
                     <CardItem
@@ -295,7 +295,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         </CardItem>
                     </div>
                  </div>
-                 <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground hidden md:block">
+                 <DialogClose className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
                      <X className="h-5 w-5" />
                  </DialogClose>
             </CardBody>
@@ -339,7 +339,7 @@ export default function DiplomaCoursesPage() {
                         <DialogTrigger asChild>
                            <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-[90vw] md:w-full rounded-lg">
+                        <DialogContent className="bg-transparent border-none shadow-none p-0 max-w-4xl w-[95vw] md:w-full rounded-lg">
                           {selectedCourse && (
                             <>
                             <DialogHeader className="sr-only">
