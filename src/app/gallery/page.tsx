@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { useState } from 'react';
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { PlayCircle } from "lucide-react";
 
@@ -93,6 +93,9 @@ export default function GalleryPage() {
         </section>
         {selectedVideo && (
             <DialogContent className="max-w-3xl h-auto p-0">
+                <DialogHeader className="sr-only">
+                  <DialogTitle>Student Project Video</DialogTitle>
+                </DialogHeader>
                 <div className="aspect-video">
                     <iframe
                         src={selectedVideo}
