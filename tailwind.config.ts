@@ -108,7 +108,7 @@ export default {
         'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
         'fade-in-up': 'fade-in-up 0.5s ease-out 0.2s forwards',
         'fade-in': 'fade-in 0.5s ease-out forwards',
-        'scroll': 'scroll 15s linear infinite',
+        'scroll': 'scroll 10s linear infinite',
       },
     },
   },
