@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,21 +20,12 @@ export default function ContactUsPage() {
       </section>
 
       <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Info & Maps */}
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold mb-4 font-headline">Get in Touch</h2>
               <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="p-3 bg-primary text-primary-foreground rounded-full">
-                    <MapPin className="h-6 w-6" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold">Our Address</h3>
-                    <p className="text-muted-foreground">123 Tech Street, Innovation City, 12345</p>
-                  </div>
-                </div>
                 <div className="flex items-center">
                   <div className="p-3 bg-primary text-primary-foreground rounded-full">
                     <Mail className="h-6 w-6" />
@@ -49,20 +41,29 @@ export default function ContactUsPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold">Call Us</h3>
-                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">+1 (234) 567-890</a>
+                    <a href="tel:+919769730087" className="text-muted-foreground hover:text-primary">+91 9769730087</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 md:h-80">
-                <Image 
-                    src="https://placehold.co/800x600.png"
-                    alt="Map location"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
-                    data-ai-hint="city map"
-                />
+            
+            <div className="grid sm:grid-cols-2 gap-8">
+                 <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-2"><MapPin/> Jogeshwari</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241238.81418146254!2d72.54561129453127!3d19.135867299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7337ae704d1%3A0xeb9d18351a79413f!2sPrimezone%20Computer%20Education%20%7C%20Best%20computer%20institute%20%26%20classes%20in%20Jogeshwari%20Mumbai!5e0!3m2!1sen!2sin!4v1753973268532!5m2!1sen!2sin" width="100%" height="250" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    </CardContent>
+                 </Card>
+                 <Card>
+                     <CardHeader>
+                        <CardTitle className="flex items-center gap-2"><MapPin/> Vile Parle</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241238.81418146254!2d72.54561129453127!3d19.135867299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c93b792d5e83%3A0xd7635d0de4b921f1!2sPrimezone%20Computer%20Education%20%7C%20Best%20computer%20institute%20%26%20classes%20in%20Vile%20Parle%20Mumbai!5e0!3m2!1sen!2sin!4v1753973302240!5m2!1sen!2sin" width="100%" height="250" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    </CardContent>
+                 </Card>
             </div>
           </div>
 

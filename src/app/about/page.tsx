@@ -24,16 +24,16 @@ const services = [
 
 const teamMembers = [
     {
-        name: "Vedika Karan Singh",
-        role: "Managing Director",
-        image: "https://placehold.co/400x500.png",
-        hint: "professional woman"
+        "name": "Vedika Karan Singh",
+        "role": "Managing Director",
+        "image": "/images/karan.jpg",
+        "hint": "professional woman"
     },
     {
-        name: "Karan Singh",
-        role: "Founder & Chief Executive Officer",
-        image: "https://placehold.co/400x500.png",
-        hint: "professional man"
+        "name": "Karan Singh",
+        "role": "Founder & Chief Executive Officer",
+        "image": "/images/karan.jpg",
+        "hint": "professional man"
     }
 ]
 
