@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -48,11 +49,11 @@ export default function Footer() {
             <ul className="space-y-3 text-primary-foreground/70">
                 <li className="flex items-start">
                     <MapPin className="h-4 w-4 mr-3 mt-1 shrink-0"/>
-                    <span className="text-sm">Jogeshwari Branch</span>
+                    <a href="https://g.co/kgs/e12TVNF" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground text-sm">Jogeshwari Branch</a>
                 </li>
                  <li className="flex items-start">
                     <MapPin className="h-4 w-4 mr-3 mt-1 shrink-0"/>
-                    <span className="text-sm">Vile Parle Branch</span>
+                    <a href="https://g.co/kgs/rvyVD8w" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground text-sm">Vile Parle Branch</a>
                 </li>
             </ul>
           </div>
