@@ -39,7 +39,7 @@ export default function ContactUsPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold mb-4 font-headline">Get in Touch</h2>
-                  <div className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-center">
                       <div className="p-3 bg-primary text-primary-foreground rounded-full">
                         <Mail className="h-6 w-6" />
