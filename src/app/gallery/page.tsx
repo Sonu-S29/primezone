@@ -60,30 +60,32 @@ export default function GalleryPage() {
       <Dialog open={!!selectedVideo} onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
         <section className="container mx-auto px-4 py-16">
           <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Student Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {studentProjects.map((project, index) => (
-              <DialogTrigger asChild key={index} onClick={() => setSelectedVideo(project.videoUrl)}>
-                <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
-                  <Image
-                    src={project.src}
-                    alt={project.alt}
-                    width={400}
-                    height={600}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-                    data-ai-hint={project.hint}
-                  />
-                  <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4">
-                    <PlayCircle className="h-16 w-16 text-white/80 group-hover:text-white transition-colors" />
-                    <div className="absolute bottom-16 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-center">
-                      <p className="font-bold text-primary">{project.brand}</p>
-                    </div>
-                    <div className="absolute bottom-4 bg-primary/90 rounded-full px-6 py-2">
-                      <p className="text-primary-foreground font-bold tracking-wider">STUDENT PROJECT</p>
+          <div className="relative w-full overflow-hidden">
+            <div className="flex animate-scroll hover:pause">
+              {[...studentProjects, ...studentProjects].map((project, index) => (
+                <DialogTrigger asChild key={index} onClick={() => setSelectedVideo(project.videoUrl)}>
+                  <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer flex-shrink-0 w-80 mx-4">
+                    <Image
+                      src={project.src}
+                      alt={project.alt}
+                      width={400}
+                      height={600}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                      data-ai-hint={project.hint}
+                    />
+                    <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4">
+                      <PlayCircle className="h-16 w-16 text-white/80 group-hover:text-white transition-colors" />
+                      <div className="absolute bottom-16 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-center">
+                        <p className="font-bold text-primary">{project.brand}</p>
+                      </div>
+                      <div className="absolute bottom-4 bg-primary/90 rounded-full px-6 py-2">
+                        <p className="text-primary-foreground font-bold tracking-wider">STUDENT PROJECT</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </DialogTrigger>
-            ))}
+                </DialogTrigger>
+              ))}
+            </div>
           </div>
            <div className="text-center mt-12">
               <Button variant="outline" asChild>
@@ -93,7 +95,7 @@ export default function GalleryPage() {
         </section>
         {selectedVideo && (
             <DialogContent className="max-w-3xl h-auto p-0">
-                <DialogHeader className="sr-only">
+                <DialogHeader>
                   <DialogTitle>Student Project Video</DialogTitle>
                 </DialogHeader>
                 <div className="aspect-video">

@@ -99,7 +99,7 @@ export default {
         },
         'scroll': {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(calc(-100% - 2rem))' },
         }
       },
       animation: {
@@ -112,5 +112,14 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function({ addUtilities }: { addUtilities: any }) {
+        addUtilities({
+            '.pause': {
+                'animation-play-state': 'paused',
+            },
+        });
+    },
+  ],
 } satisfies Config;
