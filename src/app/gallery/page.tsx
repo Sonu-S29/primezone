@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { PlayCircle } from "lucide-react";
-import { Globe } from "@/components/ui/globe";
 
 const studentProjects = [
   {
@@ -131,23 +130,6 @@ export default function GalleryPage() {
             ))}
         </div>
       </section>
-
-      {/* Globe Section */}
-      <section className="pb-16 md:pb-24">
-        <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Global Reach</h2>
-              <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                Explore our student projects from around the world.
-              </p>
-            </div>
-            <div className="relative h-[60vh] w-full">
-              <Globe />
-            </div>
-        </div>
-      </section>
     </div>
   );
 }
-
-    
