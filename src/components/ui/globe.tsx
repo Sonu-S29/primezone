@@ -16,57 +16,66 @@ const GlobeInternal = () => {
   const [selectedPoint, setSelectedPoint] = useState<any | null>(null);
 
   useEffect(() => {
-    // Generate some random points
-    const N = 20;
-    const gData = [...Array(N).keys()].map(() => ({
+    // Generate background dots
+    const N_BGDOTS = 10000;
+    const bgDots = [...Array(N_BGDOTS).keys()].map(() => ({
       lat: (Math.random() - 0.5) * 180,
       lng: (Math.random() - 0.5) * 360,
-      size: 0.25,
-      color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)],
-      // Add project data to the point
-      project: {
-          title: `Project ${Math.round(Math.random() * 100)}`,
-          images: [
-              "https://placehold.co/600x400.png",
-              "https://placehold.co/600x400.png",
-          ],
-          videos: [
-              "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          ]
-      }
+      size: 0.04,
+      color: 'rgba(50, 150, 255, 0.5)',
     }));
     
-    // Add one larger, clickable point
-    gData.push({
-      lat: 20,
-      lng: 77,
-      size: 0.5,
-      color: 'yellow',
-      project: {
-          title: "Showcase Project",
-          images: [
-            "https://placehold.co/600x400.png",
-            "https://placehold.co/600x400.png",
-            "https://placehold.co/600x400.png",
-          ],
-          videos: [
-            "https://www.youtube.com/embed/dQw4w9WgXcQ",
-            "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          ]
-      }
-    })
+    // Interactive project points
+    const projectPoints = [
+        {
+            lat: 20.5937,
+            lng: 78.9629,
+            size: 0.25,
+            color: '#4095c6',
+            project: {
+                title: "India Showcase Project",
+                images: [ "https://placehold.co/600x400.png", "https://placehold.co/600x400.png" ],
+                videos: [ "https://www.youtube.com/embed/dQw4w9WgXcQ" ]
+            }
+        },
+        {
+            lat: 51.5072,
+            lng: -0.1276,
+            size: 0.25,
+            color: '#4095c6',
+            project: {
+                title: "London Showcase Project",
+                images: [ "https://placehold.co/600x400.png" ],
+                videos: []
+            }
+        },
+        {
+            lat: 34.0522,
+            lng: -118.2437,
+            size: 0.25,
+            color: '#4095c6',
+            project: {
+                title: "Los Angeles Showcase Project",
+                images: [],
+                videos: [ "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ" ]
+            }
+        }
+    ];
 
-    setPoints(gData);
+    setPoints([...bgDots, ...projectPoints]);
 
     if (globeEl.current) {
         globeEl.current.controls().autoRotate = true;
         globeEl.current.controls().autoRotateSpeed = 0.2;
-        globeEl.current.pointOfView({ lat: 20, lng: 77, altitude: 2 });
+        globeEl.current.pointOfView({ lat: 20, lng: 77, altitude: 2.5 });
     }
   }, []);
 
   const handlePointClick = (point: any) => {
-    setSelectedPoint(point);
+      // Only open dialog for points that have project data
+    if (point.project) {
+        setSelectedPoint(point);
+    }
   };
 
   return (
@@ -74,13 +83,14 @@ const GlobeInternal = () => {
       <Suspense fallback={<div className="flex items-center justify-center h-full">Loading Globe...</div>}>
         <GlobeComponent
             ref={globeEl}
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
             pointsData={points}
             pointColor="color"
             onPointClick={handlePointClick}
             pointRadius="size"
             pointsMerge={true}
+            pointAltitude={0}
             backgroundColor="rgba(0,0,0,0)"
+            atmosphereColor="rgba(0,0,0,0)"
         />
       </Suspense>
       
