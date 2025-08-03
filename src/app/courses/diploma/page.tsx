@@ -190,7 +190,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     }, [activeModule]);
 
     return (
-        <Card className="bg-card relative w-[95vw] md:w-[1250px] h-auto max-h-[90vh] md:max-h-[600px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+        <Card className="bg-card relative w-[95vw] md:w-[1000px] h-auto max-h-[90vh] md:max-h-[600px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
             {/* Desktop: Left Panel */}
             <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
                 <h3 className="text-lg font-bold text-primary">
