@@ -252,7 +252,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             <div className="flex-shrink-0 bg-primary text-primary-foreground h-14 w-14 rounded-full flex items-center justify-center">
                                 {course.modules[activeModule].icon}
                             </div>
-                            <h3 className="text-lg font-bold text-primary">{course.modules[activeModule].title}</h3>
+                            <h3 className="text-xl font-bold text-primary">{course.modules[activeModule].title}</h3>
                         </div>
                         <p className="text-sm font-medium text-muted-foreground whitespace-nowrap">
                             Module {activeModule + 1} of {course.modules.length}
