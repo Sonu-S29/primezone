@@ -21,7 +21,7 @@ const GlobeInternal = () => {
     const bgDots = [...Array(N_BGDOTS).keys()].map(() => ({
       lat: (Math.random() - 0.5) * 180,
       lng: (Math.random() - 0.5) * 360,
-      size: 0.04,
+      size: 0.06,
       color: 'rgba(50, 150, 255, 0.5)',
     }));
     
@@ -88,9 +88,9 @@ const GlobeInternal = () => {
             onPointClick={handlePointClick}
             pointRadius="size"
             pointsMerge={true}
-            pointAltitude={0}
             backgroundColor="rgba(0,0,0,0)"
             atmosphereColor="rgba(0,0,0,0)"
+            globeColor="rgba(0,0,0,0)"
         />
       </Suspense>
       
