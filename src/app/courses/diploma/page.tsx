@@ -190,7 +190,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
     }, [activeModule]);
 
     return (
-        <Card className="bg-card relative w-full max-w-sm md:max-w-none md:w-[800px] h-auto max-h-[80vh] md:max-h-[90vh] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
+        <Card className="bg-card relative w-full max-w-md md:max-w-none md:w-[800px] h-auto max-h-[90vh] md:max-h-[600px] rounded-xl p-0 border-black/[0.1] shadow-2xl flex flex-col md:flex-row overflow-hidden">
             {/* Desktop: Left Panel */}
             <div className="hidden md:block w-2/5 p-6 overflow-y-auto">
                 <h3 className="text-lg font-bold text-primary">
@@ -258,7 +258,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                             Module {activeModule + 1} of {course.modules.length}
                         </p>
                     </div>
-                    <div className="flex-grow overflow-y-auto h-[180px] md:h-auto">
+                    <div className="flex-grow overflow-y-auto h-[240px] md:h-auto">
                         <ul className="space-y-2 mt-4 text-sm">
                           {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                             <li key={i} className="flex items-center">
@@ -338,6 +338,8 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
 
