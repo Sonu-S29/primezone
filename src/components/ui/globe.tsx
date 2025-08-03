@@ -13,18 +13,27 @@ const GlobeComponent = React.lazy(() => import('react-globe.gl'));
 const GlobeInternal = () => {
   const globeEl = useRef<GlobeMethods>();
   const [points, setPoints] = useState<any[]>([]);
+  const [arcs, setArcs] = useState<any[]>([]);
   const [selectedPoint, setSelectedPoint] = useState<any | null>(null);
 
   useEffect(() => {
-    // Generate background dots
-    const N_BGDOTS = 10000;
-    const bgDots = [...Array(N_BGDOTS).keys()].map(() => ({
-      lat: (Math.random() - 0.5) * 180,
-      lng: (Math.random() - 0.5) * 360,
-      size: 0.04,
-      color: 'rgba(50, 150, 255, 0.5)',
-    }));
-    
+    // Generate arcs for the corona effect
+    const N_ARCS = 5000;
+    const arcsData = [...Array(N_ARCS).keys()].map(() => {
+        const startLat = (Math.random() - 0.5) * 180;
+        const startLng = (Math.random() - 0.5) * 360;
+        const endLat = startLat;
+        const endLng = startLng;
+        return {
+            startLat,
+            startLng,
+            endLat,
+            endLng,
+            color: 'rgba(50, 150, 255, 0.6)',
+        }
+    });
+    setArcs(arcsData);
+
     // Interactive project points
     const projectPoints = [
         {
@@ -62,7 +71,7 @@ const GlobeInternal = () => {
         }
     ];
 
-    setPoints([...bgDots, ...projectPoints]);
+    setPoints(projectPoints);
 
     if (globeEl.current) {
         globeEl.current.controls().autoRotate = true;
@@ -72,7 +81,6 @@ const GlobeInternal = () => {
   }, []);
 
   const handlePointClick = (point: any) => {
-      // Only open dialog for points that have project data
     if (point.project) {
         setSelectedPoint(point);
     }
@@ -88,9 +96,16 @@ const GlobeInternal = () => {
             onPointClick={handlePointClick}
             pointRadius="size"
             pointsMerge={true}
+            arcsData={arcs}
+            arcColor="color"
+            arcDashLength={() => Math.random()}
+            arcDashGap={() => Math.random()}
+            arcDashAnimateTime={() => Math.random() * 4000 + 500}
+            arcStroke={0.1}
+            arcAltitudeAutoScale={0.5}
             backgroundColor="rgba(0,0,0,0)"
             atmosphereColor="rgba(0,0,0,0)"
-            globeColor="transparent"
+            globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
         />
       </Suspense>
       
