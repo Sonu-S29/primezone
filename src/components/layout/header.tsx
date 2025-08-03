@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { GraduationCap, Menu, ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -71,6 +71,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Navigation Menu</SheetTitle>
+              </SheetHeader>
               <nav className="grid gap-4 text-lg font-medium mt-8">
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
