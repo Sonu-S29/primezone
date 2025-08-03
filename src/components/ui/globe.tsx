@@ -21,7 +21,7 @@ const GlobeInternal = () => {
     const bgDots = [...Array(N_BGDOTS).keys()].map(() => ({
       lat: (Math.random() - 0.5) * 180,
       lng: (Math.random() - 0.5) * 360,
-      size: 0.06,
+      size: 0.04,
       color: 'rgba(50, 150, 255, 0.5)',
     }));
     
@@ -90,7 +90,7 @@ const GlobeInternal = () => {
             pointsMerge={true}
             backgroundColor="rgba(0,0,0,0)"
             atmosphereColor="rgba(0,0,0,0)"
-            globeColor="rgba(0,0,0,0)"
+            globeColor="transparent"
         />
       </Suspense>
       
