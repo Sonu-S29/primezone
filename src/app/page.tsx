@@ -1,3 +1,6 @@
+
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -11,6 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { Globe } from "@/components/ui/globe";
+import React from "react";
 
 const featuredCourses = [
   {
@@ -404,6 +409,21 @@ export default function Home() {
               <Link href="/courses/diploma">View All Courses</Link>
             </Button>
           </div>
+        </div>
+      </section>
+      
+      {/* Globe Section */}
+      <section className="pb-16 md:pb-24">
+        <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Global Reach</h2>
+              <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+                Explore our student projects from around the world.
+              </p>
+            </div>
+            <div className="relative h-[60vh] w-full">
+              <Globe />
+            </div>
         </div>
       </section>
 
