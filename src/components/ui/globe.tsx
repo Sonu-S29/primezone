@@ -21,7 +21,7 @@ const GlobeInternal = () => {
     const gData = [...Array(N).keys()].map(() => ({
       lat: (Math.random() - 0.5) * 180,
       lng: (Math.random() - 0.5) * 360,
-      size: Math.random() / 3,
+      size: 0.25,
       color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)],
       // Add project data to the point
       project: {
@@ -40,7 +40,7 @@ const GlobeInternal = () => {
     gData.push({
       lat: 20,
       lng: 77,
-      size: 1,
+      size: 0.5,
       color: 'yellow',
       project: {
           title: "Showcase Project",
@@ -76,10 +76,9 @@ const GlobeInternal = () => {
             ref={globeEl}
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
             pointsData={points}
-            pointAltitude="size"
             pointColor="color"
             onPointClick={handlePointClick}
-            pointRadius={0.5}
+            pointRadius="size"
             pointsMerge={true}
             backgroundColor="rgba(0,0,0,0)"
         />
@@ -140,7 +139,6 @@ const GlobeInternal = () => {
     </>
   );
 };
-
 
 const Globe = () => {
   const [isClient, setIsClient] = useState(false);
