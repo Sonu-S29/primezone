@@ -150,7 +150,7 @@ export default function FeaturedCoursesCarousel() {
                                 />
                                 <div className="course-card-content">
                                     <h3 className="course-card-title">{course.title}</h3>
-                                    <Button asChild variant="secondary">
+                                    <Button asChild variant="secondary" size="sm">
                                         <Link href="/courses/diploma">Learn More</Link>
                                     </Button>
                                 </div>
