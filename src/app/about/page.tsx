@@ -59,12 +59,16 @@ const teamMembers = [
         name: "Vedika Karan Singh",
         role: "Managing Director", 
         image: "/images/karan.jpg",
+        characterImage: "/images/karan.jpg",
+        titleImage: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
         hint: "professional woman"
     },
 	{ 
         name: "Karan Singh", 
         role: "Founder & CEO", 
         image: "/images/karan.jpg",
+        characterImage: "/images/karan.jpg",
+        titleImage: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
         hint: "professional man"
     }
 ];
@@ -175,6 +179,8 @@ export default function AboutUs() {
                             name={member.name}
                             role={member.role}
                             image={member.image}
+                            characterImage={member.characterImage}
+                            titleImage={member.titleImage}
                             hint={member.hint}
                         />
                     ))}
