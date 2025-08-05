@@ -609,6 +609,10 @@ body {
     .team-card:hover .wrapper::after {
         opacity: 1;
     }
+    
+    .team-card:hover .cover-image {
+        opacity: 0.3;
+    }
 
     .team-card:hover .wrapper::after {
         height: 120px;
@@ -645,7 +649,9 @@ body {
     
     .team-card:hover .character {
       opacity: 1;
-      transform: translate3d(0%, -30%, 100px);
+      transform: translate3d(0%, -30%, 100px) scale(1.1);
     }
 
 }
+
+    
