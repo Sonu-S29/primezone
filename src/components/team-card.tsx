@@ -2,8 +2,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Linkedin, Twitter, Facebook } from "lucide-react";
 
 interface TeamCardProps {
     name: string;
