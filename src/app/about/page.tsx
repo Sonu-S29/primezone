@@ -201,11 +201,11 @@ export default function AboutUs() {
                     <div className="p-3 bg-primary text-primary-foreground rounded-lg">
                       {item.icon}
                     </div>
-                    <CardTitle>{item.title}</CardTitle>
+                    <CardTitle className="tracking-in-contract-normal">{item.title}</CardTitle>
                   </>
                 }
                 backContent={
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                  <p className="text-muted-foreground text-sm tracking-in-contract-normal">{item.description}</p>
                 }
               />
             ))}
@@ -230,11 +230,11 @@ export default function AboutUs() {
                     <div className="bg-accent text-accent-foreground p-3 rounded-lg">
                       {service.icon}
                     </div>
-                    <CardTitle>{service.title}</CardTitle>
+                    <CardTitle className="tracking-in-contract-normal">{service.title}</CardTitle>
                   </>
                 }
                 backContent={
-                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                  <p className="text-muted-foreground text-sm tracking-in-contract-normal">{service.description}</p>
                 }
               />
           ))}
