@@ -7,7 +7,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download, Reply, Clock, Users, Star, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import BrochureDownloadForm from "@/components/brochure-download-form";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription, DialogHeader } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -15,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import React from "react";
+import HeroSlider from "@/components/hero-slider";
 
 const featuredCourses = [
   {
@@ -117,30 +117,6 @@ const testimonials = [
   }
 ];
 
-const sliderImages = [
-  {
-    src: "https://placehold.co/1920x1080.png",
-    alt: "Students learning in a modern classroom",
-    hint: "modern classroom students",
-    tagline: "Unlock Your Potential",
-    subline: "World-class training to shape your future in technology."
-  },
-  {
-    src: "https://placehold.co/1920x1080.png",
-    alt: "A student focused on coding",
-    hint: "student coding",
-    tagline: "Learn from the Best",
-    subline: "Industry experts guiding you every step of the way."
-  },
-  {
-    src: "https://placehold.co/1920x1080.png",
-    alt: "A group of students collaborating on a project",
-    hint: "students collaborating",
-    tagline: "Your Future Starts Here",
-    subline: "Join a community of learners and innovators."
-  }
-];
-
 const whyChooseUsItems = [
     {
       icon: <Target className="h-8 w-8" />,
@@ -196,46 +172,8 @@ export default function Home() {
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full">
-        <Carousel className="w-full h-full" opts={{ loop: true }}>
-          <CarouselContent>
-            {sliderImages.map((image, index) => (
-              <CarouselItem key={index}>
-                <div className="relative h-[60vh] md:h-[80vh]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    style={{objectFit: "cover"}}
-                    className="opacity-80"
-                    data-ai-hint={image.hint}
-                  />
-                   <div className="absolute inset-0 bg-primary/60" />
-                   <div className="absolute inset-0 flex items-center justify-center text-center text-primary-foreground z-10">
-                      <div className="container mx-auto px-4">
-                          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-headline animate-fade-in-down">
-                              {image.tagline}
-                          </h1>
-                          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto animate-fade-in-up">
-                              {image.subline}
-                          </p>
-                          <div className="space-x-4 animate-fade-in-up">
-                              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                              <Link href="/courses/diploma">Explore Courses</Link>
-                              </Button>
-                              <Button asChild size="lg" variant="secondary">
-                              <Link href="/contact">Contact Us</Link>
-                              </Button>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
-        </Carousel>
+      <section>
+        <HeroSlider />
       </section>
       
       {/* Why Choose Us Section */}
