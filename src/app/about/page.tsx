@@ -30,20 +30,17 @@ const whyChooseUsItems = [
     {
       icon: <Target className="h-8 w-8" />,
       title: 'Our Commitment',
-      description: 'We are dedicated to providing the highest quality education and fostering a learning environment where students can thrive and achieve their career goals.',
-      details: ['Quality First', 'Student Success', 'Continuous Improvement']
+      description: 'We are dedicated to providing the highest quality education and fostering a learning environment where students can thrive and achieve their career goals.'
     },
     {
       icon: <Briefcase className="h-8 w-8" />,
       title: 'Our Focus',
-      description: 'Our focus is on practical, hands-on training that equips students with the skills and knowledge demanded by the industry today.',
-      details: ['Industry Aligned', 'Practical Skills', 'Project-based Learning']
+      description: 'Our focus is on practical, hands-on training that equips students with the skills and knowledge demanded by the industry today.'
     },
     {
       icon: <Award className="h-8 w-8" />,
       title: 'Our Goal',
-      description: 'Our goal is to empower our students to become skilled professionals and leaders in the tech industry, ready to take on new challenges.',
-      details: ['Empowerment', 'Leadership', 'Future-Ready']
+      description: 'Our goal is to empower our students to become skilled professionals and leaders in the tech industry, ready to take on new challenges.'
     }
   ];
 
@@ -196,40 +193,17 @@ export default function AboutUs() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUsItems.map((item, index) => (
-                <div key={index} className="flip-card h-56">
-                    <div className="flip-card-inner">
-                        <div className="flip-card-front">
-                            <Card className="text-center glass-effect h-full flex flex-col justify-center p-4">
-                                <CardHeader className="p-1">
-                                    <div className="mx-auto bg-primary text-primary-foreground rounded-full p-2 w-fit">
-                                        {item.icon}
-                                    </div>
-                                    <CardTitle className="mt-2 text-xl">{item.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="p-1">
-                                    <p className="text-xs">{item.description}</p>
-                                </CardContent>
-                            </Card>
+                <Card key={index} className="glass-effect">
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <div className="p-3 bg-primary text-primary-foreground rounded-lg">
+                            {item.icon}
                         </div>
-                        <div className="flip-card-back">
-                            <Card className="text-center glass-effect h-full flex flex-col justify-center p-4">
-                                <CardHeader className="p-1">
-                                    <CardTitle className="mt-2 text-xl">{item.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="p-1">
-                                    <ul className="space-y-1 text-left">
-                                        {item.details.map((detail, i) => (
-                                            <li key={i} className="flex items-center">
-                                                <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
-                                                <span className="text-xs">{detail}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </div>
+                        <CardTitle>{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">{item.description}</p>
+                    </CardContent>
+                </Card>
             ))}
           </div>
         </div>
