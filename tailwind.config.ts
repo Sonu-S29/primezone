@@ -100,7 +100,15 @@ export default {
         'scroll': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-50%))' },
-        }
+        },
+         'h-scroll': {
+            '0%': { 'background-position-x': '0' },
+            '100%': { 'background-position-x': '-100px' }
+        },
+        'v-scroll': {
+            '0%': { 'background-position-y': '0' },
+            '100%': { 'background-position-y': '-100px' }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -109,6 +117,8 @@ export default {
         'fade-in-up': 'fade-in-up 0.5s ease-out 0.2s forwards',
         'fade-in': 'fade-in 0.5s ease-out forwards',
         'scroll': 'scroll 10s linear infinite',
+        'h-scroll': 'h-scroll 2s linear infinite',
+        'v-scroll': 'v-scroll 2s linear infinite'
       },
     },
   },

@@ -69,7 +69,7 @@ export default function CoursesPage() {
                         </Card>
                     </div>
                     <div className="flip-card-back">
-                        <Card className="glass-effect h-full flex flex-col justify-between p-6">
+                        <Card className="glass-effect h-full flex flex-col justify-between p-6 animated-network-card">
                             <CardHeader>
                                 <CardTitle>{category.title}</CardTitle>
                             </CardHeader>

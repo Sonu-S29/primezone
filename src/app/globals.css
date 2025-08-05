@@ -101,6 +101,38 @@ body {
         transform: rotateY(180deg);
     }
 
+    /* Animated Network Background */
+    .animated-network-card {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .animated-network-card::before,
+    .animated-network-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-repeat: repeat;
+    }
+    .animated-network-card::before {
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 49px, hsl(var(--primary) / 0.1) 50px),
+            repeating-linear-gradient(90deg, transparent, transparent 49px, hsl(var(--primary) / 0.1) 50px);
+        background-size: 50px 50px;
+        animation: v-scroll 2s linear infinite, h-scroll 2s linear infinite;
+    }
+     .animated-network-card::after {
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 99px, hsl(var(--primary) / 0.05) 100px),
+            repeating-linear-gradient(90deg, transparent, transparent 99px, hsl(var(--primary) / 0.05) 100px);
+        background-size: 100px 100px;
+        animation: v-scroll 4s linear infinite, h-scroll 4s linear infinite;
+    }
+
     /* New Hero Slider CSS */
     .hero-slider-main {
       position: relative;
