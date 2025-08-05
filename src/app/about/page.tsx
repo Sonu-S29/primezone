@@ -59,7 +59,7 @@ const teamMembers = [
         name: "Vedika Karan Singh",
         role: "Managing Director", 
         image: "/images/karan.jpg",
-        characterImage: "/images/karan.jpg",
+        characterImage: "/images/karan-removebg.png",
         titleImage: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
         hint: "professional woman"
     },
@@ -67,7 +67,7 @@ const teamMembers = [
         name: "Karan Singh", 
         role: "Founder & CEO", 
         image: "/images/karan.jpg",
-        characterImage: "/images/karan.jpg",
+        characterImage: "/images/karan-removebg.png",
         titleImage: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
         hint: "professional man"
     }
