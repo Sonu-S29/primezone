@@ -15,51 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import React from "react";
 import HeroSlider from "@/components/hero-slider";
-
-const featuredCourses = [
-  {
-    title: "Diploma in Computer Application",
-    description: "A comprehensive course covering the fundamentals of computer applications, office automation, and basic programming.",
-    duration: "12 Months",
-    image: "https://placehold.co/600x400.png",
-    hint: "computer code"
-  },
-  {
-    title: "Advanced Tally Prime with GST",
-    description: "Master accounting with Tally Prime, from basic principles to advanced GST compliance and financial reporting.",
-    duration: "6 Months",
-    image: "https://placehold.co/600x400.png",
-    hint: "accounting software"
-  },
-  {
-    title: "Web Development",
-    description: "Learn to build modern, responsive websites and web applications using HTML, CSS, JavaScript, and popular frameworks.",
-    duration: "6 Months",
-    image: "https://placehold.co/600x400.png",
-    hint: "web development"
-  },
-  {
-    title: "Diploma in Graphic Designing",
-    description: "Unleash your creativity with graphic design principles and software like Adobe Photoshop, Illustrator, and CorelDRAW.",
-    duration: "6 Months",
-    image: "https://placehold.co/600x400.png",
-    hint: "graphic design"
-  },
-  {
-    title: "C & C++ Programming",
-    description: "Build a strong foundation in programming with two of the most powerful and widely-used languages in the industry.",
-    duration: "3 Months",
-    image: "https://placehold.co/600x400.png",
-    hint: "c++ code"
-  },
-  {
-    title: "Python for Data Science",
-    description: "An introduction to Python programming, focusing on libraries and techniques for data analysis, manipulation, and visualization.",
-    duration: "4 Months",
-    image: "https://placehold.co/600x400.png",
-    hint: "data science dashboard"
-  },
-];
+import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 
 const allCourses = [
     "Diploma in Computer Application & Programming (DCAP)",
@@ -272,7 +228,7 @@ export default function Home() {
         </section>
 
       {/* Featured Courses Section */}
-      <section className="py-16 md:py-24">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Featured Courses</h2>
@@ -280,67 +236,7 @@ export default function Home() {
               Kickstart your career with our most popular courses.
             </p>
           </div>
-          <Dialog>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredCourses.map((course, index) => (
-                    <div key={index} className="flip-card h-96">
-                        <div className="flip-card-inner">
-                            <div className="flip-card-front">
-                                <Card className="overflow-hidden group glass-effect h-full flex flex-col">
-                                    <Image 
-                                    src={course.image} 
-                                    alt={course.title}
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                    data-ai-hint={course.hint}
-                                    />
-                                    <CardHeader>
-                                    <CardTitle>{course.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="flex-grow">
-                                    <div className="flex items-center text-sm text-muted-foreground">
-                                        <Calendar className="mr-2 h-4 w-4" />
-                                        <span>{course.duration}</span>
-                                    </div>
-                                    </CardContent>
-                                    <CardFooter>
-                                        <p className="text-sm text-accent font-semibold">Hover to learn more &rarr;</p>
-                                    </CardFooter>
-                                </Card>
-                            </div>
-                            <div className="flip-card-back">
-                                <Card className="glass-effect h-full flex flex-col justify-between">
-                                    <CardHeader>
-                                        <CardTitle>{course.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <p className="text-muted-foreground">{course.description}</p>
-                                    </CardContent>
-                                    <CardFooter className="flex flex-col items-stretch gap-2">
-                                        <Button asChild>
-                                            <a href="tel:+919769730087"><Phone className="mr-2"/> Call Now</a>
-                                        </Button>
-                                        <DialogTrigger asChild>
-                                            <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
-                                        </DialogTrigger>
-                                    </CardFooter>
-                                </Card>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-             <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Download Brochure</DialogTitle>
-                    <DialogDescription>
-                        Please provide your details to receive the brochure.
-                    </DialogDescription>
-                </DialogHeader>
-                <BrochureDownloadForm />
-            </DialogContent>
-          </Dialog>
+          <FeaturedCoursesCarousel />
            <div className="text-center mt-12">
             <Button asChild>
               <Link href="/courses/diploma">View All Courses</Link>

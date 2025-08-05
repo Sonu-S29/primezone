@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -258,7 +259,7 @@ body {
       .hero-slider .item:nth-child(6) { left: calc(50% + 560px); opacity: 0; }
     }
 
-    /* Team Carousel CSS */
+    /* Team/Courses Carousel CSS */
     .about-title {
         font-size: 7.5rem;
         font-weight: 900;
@@ -279,6 +280,10 @@ body {
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+    }
+    
+    .courses-title {
+      z-index: 10;
     }
 
     .carousel-container {
@@ -301,7 +306,7 @@ body {
         transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .team-card {
+    .team-card, .course-card {
         position: absolute;
         width: 280px;
         height: 380px;
@@ -313,63 +318,85 @@ body {
         cursor: pointer;
     }
 
-    .team-card img {
+    .team-card img, .course-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     
-    .team-card.center {
+    .course-card .course-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+    }
+
+    .course-card:hover .course-card-content, .course-card.center .course-card-content {
+      transform: translateY(0);
+    }
+    
+    .course-card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-card.center, .course-card.center {
         z-index: 10;
         transform: scale(1.1) translateZ(0);
     }
 
-    .team-card.center img {
+    .team-card.center img, .course-card.center img {
         filter: none;
     }
 
-    .team-card.left-2 {
+    .team-card.left-2, .course-card.left-2 {
         z-index: 1;
         transform: translateX(-400px) scale(0.8) translateZ(-300px);
         opacity: 0.7;
     }
 
-    .team-card.left-2 img {
+    .team-card.left-2 img, .course-card.left-2 img {
         filter: grayscale(100%);
     }
 
-    .team-card.left-1 {
+    .team-card.left-1, .course-card.left-1 {
         z-index: 5;
         transform: translateX(-200px) scale(0.9) translateZ(-100px);
         opacity: 0.9;
     }
 
-    .team-card.left-1 img {
+    .team-card.left-1 img, .course-card.left-1 img {
         filter: grayscale(100%);
     }
 
-    .team-card.right-1 {
+    .team-card.right-1, .course-card.right-1 {
         z-index: 5;
         transform: translateX(200px) scale(0.9) translateZ(-100px);
         opacity: 0.9;
     }
 
-    .team-card.right-1 img {
+    .team-card.right-1 img, .course-card.right-1 img {
         filter: grayscale(100%);
     }
 
-    .team-card.right-2 {
+    .team-card.right-2, .course-card.right-2 {
         z-index: 1;
         transform: translateX(400px) scale(0.8) translateZ(-300px);
         opacity: 0.7;
     }
 
-    .team-card.right-2 img {
+    .team-card.right-2 img, .course-card.right-2 img {
         filter: grayscale(100%);
     }
 
-    .team-card.hidden {
+    .team-card.hidden, .course-card.hidden {
         opacity: 0;
         pointer-events: none;
     }
@@ -410,15 +437,17 @@ body {
 
     .member-role {
         color: #848696;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 500;
         opacity: 0.8;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         padding: 10px 0;
         margin-top: -15px;
         position: relative;
         transition: opacity 0.3s ease-out;
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
     }
     .dots {
         display: flex;
@@ -482,24 +511,24 @@ body {
             font-size: 4.5rem;
         }
 
-        .team-card {
+        .team-card, .course-card {
             width: 200px;
             height: 280px;
         }
 
-        .team-card.left-2 {
+        .team-card.left-2, .course-card.left-2 {
             transform: translateX(-250px) scale(0.8) translateZ(-300px);
         }
 
-        .team-card.left-1 {
+        .team-card.left-1, .course-card.left-1 {
             transform: translateX(-120px) scale(0.9) translateZ(-100px);
         }
 
-        .team-card.right-1 {
+        .team-card.right-1, .course-card.right-1 {
             transform: translateX(120px) scale(0.9) translateZ(-100px);
         }
 
-        .team-card.right-2 {
+        .team-card.right-2, .course-card.right-2 {
             transform: translateX(250px) scale(0.8) translateZ(-300px);
         }
 
