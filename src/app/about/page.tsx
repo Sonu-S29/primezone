@@ -58,13 +58,13 @@ const teamMembers = [
 	{ 
         name: "Vedika Karan Singh",
         role: "Managing Director", 
-        image: "https://placehold.co/400x600.png",
+        image: "/images/karan.jpg",
         hint: "professional woman"
     },
 	{ 
         name: "Karan Singh", 
         role: "Founder & CEO", 
-        image: "https://placehold.co/400x600.png",
+        image: "/images/karan.jpg",
         hint: "professional man"
     }
 ];
