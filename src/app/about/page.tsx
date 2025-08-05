@@ -56,16 +56,16 @@ const welcomeFeatures = [
 
 const teamMembers = [
 	{ 
-        name: "Karan Singh", 
-        role: "Founder & CEO", 
+        name: "Zac Cass", 
+        role: "Force Mage", 
         image: "/images/karan.jpg",
         characterImage: "/images/karan-removebg.png",
         titleImage: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
         hint: "professional man"
     },
     { 
-        name: "Vedika Singh",
-        role: "Managing Director", 
+        name: "Chris Mason",
+        role: "The Dark Rider", 
         image: "/images/karan.jpg",
         characterImage: "/images/karan-removebg.png",
         titleImage: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
