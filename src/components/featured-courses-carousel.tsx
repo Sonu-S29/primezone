@@ -134,8 +134,10 @@ export default function FeaturedCoursesCarousel() {
                         if (offset === 0) cardClass = "center";
                         else if (offset === 1) cardClass = "right-1";
                         else if (offset === 2) cardClass = "right-2";
+                        else if (offset === 3) cardClass = "right-3";
                         else if (offset === featuredCourses.length - 1) cardClass = "left-1";
                         else if (offset === featuredCourses.length - 2) cardClass = "left-2";
+                        else if (offset === featuredCourses.length - 3) cardClass = "left-3";
 
                         return (
                             <div key={i} className={cn("course-card", cardClass)} onClick={() => updateCarousel(i)}>
