@@ -237,11 +237,6 @@ export default function Home() {
             </p>
           </div>
           <FeaturedCoursesCarousel />
-           <div className="text-center mt-12">
-            <Button asChild>
-              <Link href="/courses/diploma">View All Courses</Link>
-            </Button>
-          </div>
         </div>
       </section>
 

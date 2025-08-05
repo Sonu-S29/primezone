@@ -190,11 +190,6 @@ export default function FeaturedCoursesCarousel() {
                     ></div>
                 ))}
             </div>
-             <div className="text-center mt-12">
-                <Button asChild>
-                <Link href="/courses/diploma">View All Courses</Link>
-                </Button>
-            </div>
         </div>
     );
 }
