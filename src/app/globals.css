@@ -566,10 +566,7 @@ body {
         transition: all 0.5s;
         position: absolute;
         width: 100%;
-        height: 100%;
-        z-index: 1;
-        border-radius: 20px;
-        overflow: hidden;
+        z-index: -1;
     }
 
     .team-card-container:hover .wrapper {
@@ -586,7 +583,6 @@ body {
         transition: all 0.5s;
         position: absolute;
         left: 0;
-        z-index: 2;
     }
     .team-card-container .wrapper::before {
         top: 0;
@@ -621,10 +617,6 @@ body {
     .team-card-container .team-card-title {
         width: 100%;
         transition: transform 0.5s;
-        position: absolute;
-        bottom: 0;
-        padding: 1rem;
-        z-index: 3;
     }
     
     .team-card-container:hover .team-card-title {
@@ -636,13 +628,11 @@ body {
         opacity: 0;
         transition: all 0.5s;
         position: absolute;
-        bottom: 20px;
-        text-align: center;
-        z-index: 3;
+        z-index: -1;
     }
 
     .team-card-container:hover .team-card-content {
         opacity: 1;
-        transform: translate3d(0%, -40%, 100px);
+        transform: translate3d(0%, -30%, 100px);
     }
 }
