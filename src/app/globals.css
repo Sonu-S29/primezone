@@ -405,6 +405,7 @@ body {
         text-align: center;
         margin-top: 40px;
         transition: all 0.5s ease-out;
+        min-height: 110px;
     }
 
     .member-name {
@@ -415,24 +416,6 @@ body {
         position: relative;
         display: inline-block;
         transition: opacity 0.3s ease-out;
-    }
-
-    .member-name::before,
-    .member-name::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        width: 100px;
-        height: 2px;
-        background: transparent;
-    }
-
-    .member-name::before {
-        left: -120px;
-    }
-
-    .member-name::after {
-        right: -120px;
     }
 
     .member-role {
@@ -453,7 +436,6 @@ body {
         display: flex;
         justify-content: center;
         gap: 10px;
-        margin-top: 60px;
     }
 
     .dot {
@@ -543,19 +525,6 @@ body {
 
         .member-role {
             font-size: 1.2rem;
-        }
-
-        .member-name::before,
-        .member-name::after {
-            width: 50px;
-        }
-
-        .member-name::before {
-            left: -70px;
-        }
-
-        .member-name::after {
-            right: -70px;
         }
     }
 }

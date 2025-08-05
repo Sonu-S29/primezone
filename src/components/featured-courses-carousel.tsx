@@ -50,28 +50,15 @@ const featuredCourses = [
 export default function FeaturedCoursesCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    const courseTitleRef = useRef<HTMLHeadingElement>(null);
-    const courseDescRef = useRef<HTMLParagraphElement>(null);
 
     const updateCarousel = useCallback((newIndex: number) => {
         if (isAnimating) return;
 
         const normalizedIndex = (newIndex + featuredCourses.length) % featuredCourses.length;
         
-        if (courseTitleRef.current) courseTitleRef.current.style.opacity = '0';
-        if (courseDescRef.current) courseDescRef.current.style.opacity = '0';
-        
         setIsAnimating(true);
         setTimeout(() => {
             setCurrentIndex(normalizedIndex);
-            if (courseTitleRef.current) {
-                courseTitleRef.current.innerHTML = featuredCourses[normalizedIndex].title;
-                courseTitleRef.current.style.opacity = '1';
-            }
-            if (courseDescRef.current) {
-                courseDescRef.current.innerHTML = featuredCourses[normalizedIndex].description;
-                courseDescRef.current.style.opacity = '1';
-            }
             setTimeout(() => {
                 setIsAnimating(false);
             }, 400); 
@@ -176,12 +163,7 @@ export default function FeaturedCoursesCarousel() {
                 </button>
             </div>
 
-            <div className="member-info">
-                <h2 className="member-name" ref={courseTitleRef} dangerouslySetInnerHTML={{ __html: featuredCourses[currentIndex].title }}></h2>
-                <p className="member-role" ref={courseDescRef} dangerouslySetInnerHTML={{ __html: featuredCourses[currentIndex].description }}></p>
-            </div>
-
-            <div className="dots">
+            <div className="dots mt-10">
                 {featuredCourses.map((_, i) => (
                     <div 
                         key={i} 
