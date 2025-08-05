@@ -10,37 +10,37 @@ const teamMembers = [
 	{ 
         name: "Vedika Karan Singh",
         role: "Managing Director", 
-        image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1920&auto=format&fit=crop",
+        image: "https://placehold.co/400x600.png",
         hint: "professional woman"
     },
 	{ 
         name: "Karan Singh", 
         role: "Founder & CEO", 
-        image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1920&auto=format&fit=crop",
+        image: "https://placehold.co/400x600.png",
         hint: "professional man"
     },
 	{ 
         name: "Emma Rodriguez", 
         role: "Lead Developer", 
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&auto=format&fit=crop&q=60",
+        image: "https://placehold.co/400x600.png",
         hint: "lead developer"
     },
 	{ 
         name: "Julia Gimmel", 
         role: "UX Designer", 
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&auto=format&fit=crop&q=60",
+        image: "https://placehold.co/400x600.png",
         hint: "ux designer"
     },
 	{ 
         name: "Lisa Anderson", 
         role: "Marketing Manager", 
-        image: "https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60",
+        image: "https://placehold.co/400x600.png",
         hint: "marketing manager"
     },
 	{ 
         name: "James Wilson", 
         role: "Product Manager",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1920&auto=format&fit=crop",
+        image: "https://placehold.co/400x600.png",
         hint: "product manager"
     }
 ];
@@ -56,19 +56,18 @@ export default function TeamCarousel() {
         setIsAnimating(true);
 
         const normalizedIndex = (newIndex + teamMembers.length) % teamMembers.length;
-        setCurrentIndex(normalizedIndex);
-
+        
         if (memberNameRef.current) memberNameRef.current.style.opacity = '0';
         if (memberRoleRef.current) memberRoleRef.current.style.opacity = '0';
-
+        
         setTimeout(() => {
+            setCurrentIndex(normalizedIndex);
             if (memberNameRef.current) memberNameRef.current.style.opacity = '1';
             if (memberRoleRef.current) memberRoleRef.current.style.opacity = '1';
-        }, 300);
-
-        setTimeout(() => {
             setIsAnimating(false);
-        }, 800);
+        }, 400); // sync with transition time
+        
+
     }, [isAnimating]);
 
     useEffect(() => {
