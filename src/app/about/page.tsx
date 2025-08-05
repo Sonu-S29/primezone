@@ -193,17 +193,25 @@ export default function AboutUs() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUsItems.map((item, index) => (
-                <Card key={index} className="glass-effect">
-                    <CardHeader className="flex flex-row items-center gap-4 p-4">
-                        <div className="p-3 bg-primary text-primary-foreground rounded-lg">
-                            {item.icon}
-                        </div>
-                        <CardTitle>{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                        <p className="text-muted-foreground">{item.description}</p>
-                    </CardContent>
-                </Card>
+              <div key={index} className="flip-card h-48">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
+                      <div className="p-3 bg-primary text-primary-foreground rounded-lg">
+                        {item.icon}
+                      </div>
+                      <CardTitle className="mt-4">{item.title}</CardTitle>
+                    </Card>
+                  </div>
+                  <div className="flip-card-back">
+                    <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
+                      <CardContent>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -218,19 +226,27 @@ export default function AboutUs() {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-                <Card key={index} className="glass-effect">
-                    <CardHeader className="flex flex-row items-center gap-4">
-                        <div className="bg-accent text-accent-foreground p-3 rounded-lg">
-                            {service.icon}
-                        </div>
-                        <CardTitle>{service.title}</CardTitle>
-                    </CardHeader>
+          {services.map((service, index) => (
+            <div key={index} className="flip-card h-48">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
+                    <div className="bg-accent text-accent-foreground p-3 rounded-lg">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="mt-4">{service.title}</CardTitle>
+                  </Card>
+                </div>
+                <div className="flip-card-back">
+                  <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
                     <CardContent>
-                        <p className="text-muted-foreground">{service.description}</p>
+                      <p className="text-muted-foreground text-sm">{service.description}</p>
                     </CardContent>
-                </Card>
-            ))}
+                  </Card>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
