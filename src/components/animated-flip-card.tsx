@@ -41,7 +41,7 @@ export default function AnimatedFlipCard({ frontContent, backContent }: Animated
   return (
     <div
       ref={cardRef}
-      className={cn("flip-card h-48", isVisible ? "is-visible" : "")}
+      className={cn("flip-card h-40", isVisible ? "is-visible" : "")}
     >
       <div className="flip-card-inner">
         <div className="flip-card-front">
