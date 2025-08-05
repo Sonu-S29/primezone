@@ -649,9 +649,10 @@ body {
     
     .team-card:hover .character {
       opacity: 1;
-      transform: translate3d(0%, -30%, 100px) scale(1.1);
+      transform: translate3d(0%, -30%, 100px) scale(1.2);
     }
 
 }
 
+    
     
