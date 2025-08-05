@@ -645,10 +645,6 @@ body {
         opacity: 0.3;
     }
 
-    .team-card:hover .wrapper::after {
-        height: 120px;
-    }
-    
     .team-card-title {
         width: 100%;
         transition: transform 0.5s;
@@ -673,3 +669,5 @@ body {
     }
 
 }
+
+    
