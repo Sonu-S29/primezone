@@ -194,13 +194,13 @@ export default function AboutUs() {
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUsItems.map((item, index) => (
                 <Card key={index} className="glass-effect">
-                    <CardHeader className="flex flex-row items-center gap-4">
+                    <CardHeader className="flex flex-row items-center gap-4 p-4">
                         <div className="p-3 bg-primary text-primary-foreground rounded-lg">
                             {item.icon}
                         </div>
                         <CardTitle>{item.title}</CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 pt-0">
                         <p className="text-muted-foreground">{item.description}</p>
                     </CardContent>
                 </Card>
