@@ -1,9 +1,12 @@
 
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, Briefcase, Target, Users, BookOpen, Handshake, CheckCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import TeamCarousel from "@/components/team-carousel";
 
 const services = [
     {
@@ -22,21 +25,6 @@ const services = [
       description: "We help our students find job opportunities through our network of partner companies."
     }
 ];
-
-const teamMembers = [
-    {
-        "name": "Vedika Karan Singh",
-        "role": "Managing Director",
-        "image": "/images/karan.jpg",
-        "hint": "professional woman"
-    },
-    {
-        "name": "Karan Singh",
-        "role": "Founder & Chief Executive Officer",
-        "image": "/images/karan.jpg",
-        "hint": "professional man"
-    }
-]
 
 const whyChooseUsItems = [
     {
@@ -157,34 +145,8 @@ export default function AboutUs() {
       </section>
 
        {/* Team Members Section */}
-       <section className="container mx-auto px-4">
-            <div className="text-center mb-12">
-                <p className="text-accent font-semibold">TEAM MEMBERS</p>
-                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Our Founding Member</h2>
-                <div className="w-24 h-1 bg-accent mx-auto mt-2"></div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto">
-                {teamMembers.map((member) => (
-                    <Card key={member.name} className="text-center overflow-hidden">
-                        <div className="bg-muted">
-                           <Image 
-                             src={member.image}
-                             alt={member.name}
-                             width={400}
-                             height={500}
-                             className="w-full object-cover object-top h-96"
-                             data-ai-hint={member.hint}
-                           />
-                        </div>
-                        <CardHeader>
-                            <CardTitle>{member.name}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-accent font-semibold">{member.role}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+        <section className="relative py-16 overflow-hidden">
+           <TeamCarousel />
         </section>
 
       {/* Why Choose Us Section */}
