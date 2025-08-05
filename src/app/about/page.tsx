@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card";
+import AnimatedFlipCard from "@/components/animated-flip-card";
 
 const services = [
     {
@@ -193,25 +194,20 @@ export default function AboutUs() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUsItems.map((item, index) => (
-              <div key={index} className="flip-card h-48">
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <Card className="glass-effect h-full flex items-center justify-center text-center p-4 gap-4">
-                      <div className="p-3 bg-primary text-primary-foreground rounded-lg">
-                        {item.icon}
-                      </div>
-                      <CardTitle className="tracking-in-contract-normal">{item.title}</CardTitle>
-                    </Card>
-                  </div>
-                  <div className="flip-card-back">
-                    <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
-                      <CardContent>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </div>
+              <AnimatedFlipCard
+                key={index}
+                frontContent={
+                  <>
+                    <div className="p-3 bg-primary text-primary-foreground rounded-lg">
+                      {item.icon}
+                    </div>
+                    <CardTitle>{item.title}</CardTitle>
+                  </>
+                }
+                backContent={
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                }
+              />
             ))}
           </div>
         </div>
@@ -227,25 +223,20 @@ export default function AboutUs() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="flip-card h-48">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <Card className="glass-effect h-full flex items-center justify-center text-center p-4 gap-4">
+             <AnimatedFlipCard
+                key={index}
+                frontContent={
+                  <>
                     <div className="bg-accent text-accent-foreground p-3 rounded-lg">
                       {service.icon}
                     </div>
-                    <CardTitle className="tracking-in-contract-normal">{service.title}</CardTitle>
-                  </Card>
-                </div>
-                <div className="flip-card-back">
-                  <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
-                    <CardContent>
-                      <p className="text-muted-foreground text-sm">{service.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
+                    <CardTitle>{service.title}</CardTitle>
+                  </>
+                }
+                backContent={
+                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                }
+              />
           ))}
         </div>
       </section>

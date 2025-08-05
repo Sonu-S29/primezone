@@ -691,9 +691,15 @@ body {
         100% { letter-spacing: normal; opacity: 1; }
     }
 
-    .tracking-in-contract-normal {
+    .tracking-in-contract-normal { 
+        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both; 
+    }
+
+    .is-visible .tracking-in-contract-normal {
         animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }
+
 }
 
     
+
