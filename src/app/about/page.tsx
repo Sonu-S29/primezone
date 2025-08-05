@@ -60,7 +60,6 @@ const teamMembers = [
         role: "Founder & CEO", 
         image: "/images/karan.jpg",
         characterImage: "/images/karan-removebg.png",
-        titleImage: "https://ggayane.github.io/css-experiments/cards/force_mage-title.png",
         hint: "professional man"
     },
     { 
@@ -68,7 +67,6 @@ const teamMembers = [
         role: "Managing Director", 
         image: "/images/karan.jpg",
         characterImage: "/images/karan-removebg.png",
-        titleImage: "https://ggayane.github.io/css-experiments/cards/dark_rider-title.png",
         hint: "professional woman"
     }
 ];
@@ -180,7 +178,6 @@ export default function AboutUs() {
                             role={member.role}
                             image={member.image}
                             characterImage={member.characterImage}
-                            titleImage={member.titleImage}
                             hint={member.hint}
                         />
                     ))}

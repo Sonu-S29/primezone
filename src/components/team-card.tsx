@@ -8,17 +8,19 @@ interface TeamCardProps {
     role: string;
     image: string;
     characterImage: string;
-    titleImage: string;
     hint: string;
 }
 
-export default function TeamCard({ name, role, image, characterImage, titleImage, hint }: TeamCardProps) {
+export default function TeamCard({ name, role, image, characterImage, hint }: TeamCardProps) {
     return (
-        <div className="card">
+        <div className="team-card">
             <div className="wrapper">
                 <Image src={image} alt={name} width={300} height={450} className="cover-image" data-ai-hint={hint} />
             </div>
-            <Image src={titleImage} alt={`${name} title`} width={300} height={100} className="title" />
+            <div className="team-card-title">
+              <h2>{name}</h2>
+              <p>{role}</p>
+            </div>
             <Image src={characterImage} alt={`${name} character`} width={300} height={500} className="character" data-ai-hint={hint} />
         </div>
     );
