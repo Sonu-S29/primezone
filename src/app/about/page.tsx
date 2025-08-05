@@ -6,7 +6,7 @@ import { Award, Briefcase, Target, Users, BookOpen, Handshake, CheckCircle, Phon
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import TeamCarousel from "@/components/team-carousel";
+import TeamCard from "@/components/team-card";
 
 const services = [
     {
@@ -52,6 +52,21 @@ const welcomeFeatures = [
     "Professional Staff",
     "Free Counseling",
     "Fair Prices"
+];
+
+const teamMembers = [
+	{ 
+        name: "Vedika Karan Singh",
+        role: "Managing Director", 
+        image: "https://placehold.co/400x600.png",
+        hint: "professional woman"
+    },
+	{ 
+        name: "Karan Singh", 
+        role: "Founder & CEO", 
+        image: "https://placehold.co/400x600.png",
+        hint: "professional man"
+    }
 ];
 
 export default function AboutUs() {
@@ -146,7 +161,25 @@ export default function AboutUs() {
 
        {/* Team Members Section */}
         <section className="relative py-16 overflow-hidden">
-           <TeamCarousel />
+             <div className="container mx-auto px-4">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline">Meet Our Team</h2>
+                    <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+                        The driving force behind our success.
+                    </p>
+                </div>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20">
+                    {teamMembers.map(member => (
+                        <TeamCard 
+                            key={member.name}
+                            name={member.name}
+                            role={member.role}
+                            image={member.image}
+                            hint={member.hint}
+                        />
+                    ))}
+                </div>
+            </div>
         </section>
 
       {/* Why Choose Us Section */}

@@ -47,30 +47,11 @@ const teamMembers = [
 
 export default function TeamCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
-    const memberNameRef = useRef<HTMLHeadingElement>(null);
-    const memberRoleRef = useRef<HTMLParagraphElement>(null);
 
     const updateCarousel = useCallback((newIndex: number) => {
-        if (isAnimating) return;
-
         const normalizedIndex = (newIndex + teamMembers.length) % teamMembers.length;
-        
-        if (memberNameRef.current) memberNameRef.current.style.opacity = '0';
-        if (memberRoleRef.current) memberRoleRef.current.style.opacity = '0';
-        
-        setIsAnimating(true);
-        setTimeout(() => {
-            setCurrentIndex(normalizedIndex);
-            if (memberNameRef.current) memberNameRef.current.style.opacity = '1';
-            if (memberRoleRef.current) memberRoleRef.current.style.opacity = '1';
-            setTimeout(() => {
-                setIsAnimating(false);
-            }, 400); // Allow animation to finish
-        }, 400); // sync with transition time
-        
-
-    }, [isAnimating]);
+        setCurrentIndex(normalizedIndex);
+    }, []);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -158,8 +139,8 @@ export default function TeamCarousel() {
             </div>
 
             <div className="member-info">
-                <h2 className="member-name" ref={memberNameRef}>{teamMembers[currentIndex].name}</h2>
-                <p className="member-role" ref={memberRoleRef}>{teamMembers[currentIndex].role}</p>
+                <h2 className="member-name">{teamMembers[currentIndex].name}</h2>
+                <p className="member-role">{teamMembers[currentIndex].role}</p>
             </div>
 
             <div className="dots">

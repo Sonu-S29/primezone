@@ -305,8 +305,8 @@ body {
         transform-style: preserve-3d;
         transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-
-    .team-card, .course-card {
+    
+    .course-card {
         position: absolute;
         width: 220px;
         height: 280px;
@@ -318,7 +318,7 @@ body {
         cursor: pointer;
     }
 
-    .team-card img, .course-card img {
+    .course-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -347,68 +347,68 @@ body {
       margin-bottom: 0.75rem;
     }
 
-    .team-card.center, .course-card.center {
+    .course-card.center {
         z-index: 10;
         transform: scale(1.1) translateZ(0);
     }
 
-    .team-card.center img, .course-card.center img {
+    .course-card.center img {
         filter: none;
     }
 
-    .team-card.left-3, .course-card.left-3 {
+    .course-card.left-3 {
         z-index: 1;
         transform: translateX(-240px) scale(0.7) translateZ(-400px);
         opacity: 0.6;
     }
 
-    .team-card.left-2, .course-card.left-2 {
+    .course-card.left-2 {
         z-index: 2;
         transform: translateX(-160px) scale(0.8) translateZ(-300px);
         opacity: 0.7;
     }
 
-    .team-card.left-2 img, .course-card.left-2 img {
+    .course-card.left-2 img {
         filter: grayscale(100%);
     }
 
-    .team-card.left-1, .course-card.left-1 {
+    .course-card.left-1 {
         z-index: 5;
         transform: translateX(-80px) scale(0.9) translateZ(-100px);
         opacity: 0.9;
     }
 
-    .team-card.left-1 img, .course-card.left-1 img {
+    .course-card.left-1 img {
         filter: grayscale(100%);
     }
     
-    .team-card.right-3, .course-card.right-3 {
+    .course-card.right-3 {
         z-index: 1;
         transform: translateX(240px) scale(0.7) translateZ(-400px);
         opacity: 0.6;
     }
 
-    .team-card.right-1, .course-card.right-1 {
+    .course-card.right-1 {
         z-index: 5;
         transform: translateX(80px) scale(0.9) translateZ(-100px);
         opacity: 0.9;
     }
 
-    .team-card.right-1 img, .course-card.right-1 img {
+    .course-card.right-1 img {
         filter: grayscale(100%);
     }
 
-    .team-card.right-2, .course-card.right-2 {
+    .course-card.right-2 {
         z-index: 2;
         transform: translateX(160px) scale(0.8) translateZ(-300px);
         opacity: 0.7;
     }
 
-    .team-card.right-2 img, .course-card.right-2 img {
+    .course-card.right-2 img {
         filter: grayscale(100%);
     }
 
-    .team-card.hidden, .course-card.hidden {
+    .course-card.hidden {
         opacity: 0;
         pointer-events: none;
     }
@@ -505,7 +505,7 @@ body {
             font-size: 4.5rem;
         }
 
-        .team-card, .course-card {
+        .course-card {
             width: 180px;
             height: 250px;
         }
@@ -515,19 +515,19 @@ body {
             height: 300px;
         }
 
-        .team-card.left-2, .course-card.left-2 {
+        .course-card.left-2 {
             transform: translateX(-150px) scale(0.8) translateZ(-300px);
         }
 
-        .team-card.left-1, .course-card.left-1 {
+        .course-card.left-1 {
             transform: translateX(-75px) scale(0.9) translateZ(-100px);
         }
 
-        .team-card.right-1, .course-card.right-1 {
+        .course-card.right-1 {
             transform: translateX(75px) scale(0.9) translateZ(-100px);
         }
 
-        .team-card.right-2, .course-card.right-2 {
+        .course-card.right-2 {
             transform: translateX(150px) scale(0.8) translateZ(-300px);
         }
 
@@ -539,8 +539,104 @@ body {
             font-size: 1.2rem;
         }
     }
-}
 
+     /* New Team Card CSS */
+    .team-card-container {
+        --card-height: 400px;
+        --card-width: calc(var(--card-height) / 1.5);
+        width: var(--card-width);
+        height: var(--card-height);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0 36px;
+        perspective: 2500px;
+        margin: 0;
+    }
 
+    .team-card-container .cover-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
 
+    .team-card-container .wrapper {
+        transition: all 0.5s;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+        border-radius: 20px;
+    }
+
+    .team-card-container:hover .wrapper {
+        transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+        box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    }
+
+    .team-card-container .wrapper::before,
+    .team-card-container .wrapper::after {
+        content: "";
+        opacity: 0;
+        width: 100%;
+        height: 80px;
+        transition: all 0.5s;
+        position: absolute;
+        left: 0;
+        border-radius: 20px;
+    }
+    .team-card-container .wrapper::before {
+        top: 0;
+        height: 100%;
+        background-image: linear-gradient(
+            to top,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%
+        );
+    }
+    .team-card-container .wrapper::after {
+        bottom: 0;
+        opacity: 1;
+        background-image: linear-gradient(
+            to bottom,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%
+        );
+    }
+
+    .team-card-container:hover .wrapper::before,
+    .team-card-container:hover .wrapper::after {
+        opacity: 1;
+    }
+
+    .team-card-container:hover .wrapper::after {
+        height: 120px;
+    }
     
+    .team-card-container .team-card-title {
+        width: 100%;
+        transition: transform 0.5s;
+    }
+    
+    .team-card-container:hover .team-card-title {
+        transform: translate3d(0%, -50px, 100px);
+    }
+
+    .team-card-container .team-card-content {
+        width: 100%;
+        opacity: 0;
+        transition: all 0.5s;
+        position: absolute;
+        z-index: 1;
+        bottom: 20px;
+        text-align: center;
+    }
+
+    .team-card-container:hover .team-card-content {
+        opacity: 1;
+        transform: translate3d(0%, -40%, 100px);
+    }
+}
