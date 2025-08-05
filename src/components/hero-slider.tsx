@@ -67,7 +67,7 @@ const HeroSlider = () => {
         <main className='hero-slider-main'>
             <ul className='hero-slider'>
                 {items.map((item, index) => (
-                    <li key={index} className='item' style={{ backgroundImage: `url(${item.imageUrl})` }}>
+                    <li key={index} className='item' style={{ backgroundImage: `url(${item.imageUrl})` }} data-ai-hint={item.hint}>
                         <div className='content'>
                             <h2 className='title'>{item.title}</h2>
                             <p className='description'>{item.description}</p>
