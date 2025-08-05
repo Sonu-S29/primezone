@@ -196,11 +196,11 @@ export default function AboutUs() {
               <div key={index} className="flip-card h-48">
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
+                    <Card className="glass-effect h-full flex items-center justify-center text-center p-4 gap-4">
                       <div className="p-3 bg-primary text-primary-foreground rounded-lg">
                         {item.icon}
                       </div>
-                      <CardTitle className="mt-4">{item.title}</CardTitle>
+                      <CardTitle>{item.title}</CardTitle>
                     </Card>
                   </div>
                   <div className="flip-card-back">
@@ -230,11 +230,11 @@ export default function AboutUs() {
             <div key={index} className="flip-card h-48">
               <div className="flip-card-inner">
                 <div className="flip-card-front">
-                  <Card className="glass-effect h-full flex flex-col items-center justify-center text-center p-4">
+                  <Card className="glass-effect h-full flex items-center justify-center text-center p-4 gap-4">
                     <div className="bg-accent text-accent-foreground p-3 rounded-lg">
                       {service.icon}
                     </div>
-                    <CardTitle className="mt-4">{service.title}</CardTitle>
+                    <CardTitle>{service.title}</CardTitle>
                   </Card>
                 </div>
                 <div className="flip-card-back">
