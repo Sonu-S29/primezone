@@ -53,18 +53,20 @@ export default function TeamCarousel() {
 
     const updateCarousel = useCallback((newIndex: number) => {
         if (isAnimating) return;
-        setIsAnimating(true);
 
         const normalizedIndex = (newIndex + teamMembers.length) % teamMembers.length;
         
         if (memberNameRef.current) memberNameRef.current.style.opacity = '0';
         if (memberRoleRef.current) memberRoleRef.current.style.opacity = '0';
         
+        setIsAnimating(true);
         setTimeout(() => {
             setCurrentIndex(normalizedIndex);
             if (memberNameRef.current) memberNameRef.current.style.opacity = '1';
             if (memberRoleRef.current) memberRoleRef.current.style.opacity = '1';
-            setIsAnimating(false);
+            setTimeout(() => {
+                setIsAnimating(false);
+            }, 400); // Allow animation to finish
         }, 400); // sync with transition time
         
 
