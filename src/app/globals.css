@@ -292,7 +292,7 @@ body {
         height: 350px;
         position: relative;
         perspective: 1000px;
-        margin-top: 80px;
+        margin-top: 20px;
     }
 
     .carousel-track {
@@ -559,3 +559,4 @@ body {
         }
     }
 }
+
