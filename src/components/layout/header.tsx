@@ -46,7 +46,7 @@ export default function Header() {
           <GraduationCap className="h-6 w-6 text-primary" />
           <span className="font-headline">Primezone</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
               <NavLink 
                 key={link.href}
@@ -56,7 +56,7 @@ export default function Header() {
               />
             )
           )}
-        </nav>
+        </div>
         <div className="hidden md:flex items-center gap-4">
           <Button asChild>
             <Link href="/enroll">Enroll Now</Link>
