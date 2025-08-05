@@ -186,32 +186,32 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
                 {whyChooseUsItems.map((item, index) => (
-                    <div key={index} className="flip-card h-64">
+                    <div key={index} className="flip-card h-56">
                         <div className="flip-card-inner">
                             <div className="flip-card-front">
                                 <Card className="text-center glass-effect h-full flex flex-col justify-center p-4">
-                                    <CardHeader className="p-2">
-                                        <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit">
+                                    <CardHeader className="p-1">
+                                        <div className="mx-auto bg-primary text-primary-foreground rounded-full p-2 w-fit">
                                             {item.icon}
                                         </div>
-                                        <CardTitle className="mt-4">{item.title}</CardTitle>
+                                        <CardTitle className="mt-2 text-xl">{item.title}</CardTitle>
                                     </CardHeader>
-                                    <CardContent className="p-2">
-                                        <p className="text-sm">{item.description}</p>
+                                    <CardContent className="p-1">
+                                        <p className="text-xs">{item.description}</p>
                                     </CardContent>
                                 </Card>
                             </div>
                             <div className="flip-card-back">
                                 <Card className="text-center glass-effect h-full flex flex-col justify-center p-4">
-                                    <CardHeader className="p-2">
-                                        <CardTitle className="mt-4">{item.title}</CardTitle>
+                                    <CardHeader className="p-1">
+                                        <CardTitle className="mt-2 text-xl">{item.title}</CardTitle>
                                     </CardHeader>
-                                    <CardContent className="p-2">
-                                        <ul className="space-y-2 text-left">
+                                    <CardContent className="p-1">
+                                        <ul className="space-y-1 text-left">
                                             {item.details.map((detail, i) => (
                                                 <li key={i} className="flex items-center">
                                                     <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
-                                                    <span className="text-sm">{detail}</span>
+                                                    <span className="text-xs">{detail}</span>
                                                 </li>
                                             ))}
                                         </ul>
