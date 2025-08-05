@@ -64,8 +64,14 @@ export default function FeaturedCoursesCarousel() {
         setIsAnimating(true);
         setTimeout(() => {
             setCurrentIndex(normalizedIndex);
-            if (courseTitleRef.current) courseTitleRef.current.style.opacity = '1';
-            if (courseDescRef.current) courseDescRef.current.style.opacity = '1';
+            if (courseTitleRef.current) {
+                courseTitleRef.current.innerHTML = featuredCourses[normalizedIndex].title;
+                courseTitleRef.current.style.opacity = '1';
+            }
+            if (courseDescRef.current) {
+                courseDescRef.current.innerHTML = featuredCourses[normalizedIndex].description;
+                courseDescRef.current.style.opacity = '1';
+            }
             setTimeout(() => {
                 setIsAnimating(false);
             }, 400); 
@@ -171,8 +177,8 @@ export default function FeaturedCoursesCarousel() {
             </div>
 
             <div className="member-info">
-                <h2 className="member-name" ref={courseTitleRef}>{featuredCourses[currentIndex].title}</h2>
-                <p className="member-role" ref={courseDescRef}>{featuredCourses[currentIndex].description}</p>
+                <h2 className="member-name" ref={courseTitleRef} dangerouslySetInnerHTML={{ __html: featuredCourses[currentIndex].title }}></h2>
+                <p className="member-role" ref={courseDescRef} dangerouslySetInnerHTML={{ __html: featuredCourses[currentIndex].description }}></p>
             </div>
 
             <div className="dots">
@@ -183,6 +189,11 @@ export default function FeaturedCoursesCarousel() {
                         onClick={() => updateCarousel(i)}
                     ></div>
                 ))}
+            </div>
+             <div className="text-center mt-12">
+                <Button asChild>
+                <Link href="/courses/diploma">View All Courses</Link>
+                </Button>
             </div>
         </div>
     );
