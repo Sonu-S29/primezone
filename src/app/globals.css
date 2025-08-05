@@ -591,7 +591,6 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 20px;
     }
 
     .wrapper {
@@ -599,8 +598,8 @@ body {
         position: absolute;
         width: 100%;
         z-index: -1;
-        border-radius: 20px;
         overflow: hidden;
+        border-radius: 20px;
     }
 
     .team-card:hover .wrapper {
@@ -686,6 +685,15 @@ body {
         transform: translate3d(0%, -30%, 100px) scale(1.2);
     }
 
+    @keyframes tracking-in-contract {
+        0% { letter-spacing: 1em; opacity: 0; }
+        40% { opacity: 0.6; }
+        100% { letter-spacing: normal; opacity: 1; }
+    }
+
+    .tracking-in-contract-normal {
+        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
 }
 
     
