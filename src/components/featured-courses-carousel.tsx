@@ -49,23 +49,11 @@ const featuredCourses = [
 
 export default function FeaturedCoursesCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
 
     const updateCarousel = useCallback((newIndex: number) => {
-        if (isAnimating) return;
-
         const normalizedIndex = (newIndex + featuredCourses.length) % featuredCourses.length;
-        
-        setIsAnimating(true);
-        setTimeout(() => {
-            setCurrentIndex(normalizedIndex);
-            setTimeout(() => {
-                setIsAnimating(false);
-            }, 400); 
-        }, 400); 
-        
-
-    }, [isAnimating]);
+        setCurrentIndex(normalizedIndex);
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
