@@ -568,6 +568,7 @@ body {
         width: 100%;
         z-index: -1;
         border-radius: 20px;
+        overflow: hidden;
     }
 
     .team-card:hover .wrapper {
@@ -594,6 +595,7 @@ body {
             rgba(12, 13, 19, 0.5) 68%,
             rgba(12, 13, 19) 97%
         );
+        border-radius: 20px;
     }
     .wrapper::after {
         bottom: 0;
