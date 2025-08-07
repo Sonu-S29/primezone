@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -97,6 +98,10 @@ export default {
             '0%': { opacity: '0' },
             '100%': { opacity: '1' },
         },
+        'fade-out': {
+            '0%': { opacity: '1' },
+            '100%': { opacity: '0' },
+        },
         'scroll': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-50%))' },
@@ -118,6 +123,7 @@ export default {
         'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
         'fade-in-up': 'fade-in-up 0.5s ease-out 0.2s forwards',
         'fade-in': 'fade-in 0.5s ease-out forwards',
+        'fade-out': 'fade-out 0.5s ease-out forwards',
         'scroll': 'scroll 40s linear infinite',
         'h-scroll': 'h-scroll 4s linear infinite',
         'v-scroll': 'v-scroll 4s linear infinite'

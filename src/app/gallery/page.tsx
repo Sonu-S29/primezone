@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Pilcrow, BookOpenText, Users, Lightbulb, CalendarDays, MountainSnow, PartyPopper, Briefcase, Mic, Drama } from "lucide-react";
+import { Users, Lightbulb } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
-import { cn } from "@/lib/utils";
-import { Card, CardContent } from "@/components/ui/card";
+import EventGallery from "@/components/event-gallery";
+
 
 const studentProjects = [
   {
@@ -34,70 +34,6 @@ const studentProjects = [
   },
 ];
 
-const galleryGlimpses = [
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Team Photo', hint: 'team photo', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Cultural Day', hint: 'cultural event', label: 'Cultural Day', className: 'w-[300px] h-[250px]' },
-    { type: 'card', title: 'Diwali Celebration', icon: <Pilcrow/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group Photo Outdoor', hint: 'outdoor event', className: 'w-[250px] h-[150px] self-start' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group in traditional wear', hint: 'traditional wear', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Event photo', hint: 'event photo', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Candid moment', hint: 'candid moment', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Celebration', hint: 'celebration', className: 'w-[300px] h-[200px]' },
-    { type: 'card', title: "Teacher's Day", icon: <BookOpenText/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Students with teachers', hint: 'students teachers', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Classroom event', hint: 'classroom event', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Happy students', hint: 'happy students', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group activity', hint: 'group activity', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Presentation', hint: 'student presentation', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: '15 Aug', icon: <CalendarDays/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Independence day', hint: 'Indian flag', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Student performance', hint: 'student performance', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Group of students', hint: 'students group', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Campus decoration', hint: 'campus decoration', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Celebrations', hint: 'celebrations', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: '26 Jan', icon: <CalendarDays/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Republic day', hint: 'Indian flag parade', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Student march', hint: 'student march', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Cultural program', hint: 'cultural program', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Students together', hint: 'students together', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Event snapshot', hint: 'event snapshot', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: 'Picnic', icon: <MountainSnow/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group picnic', hint: 'outdoor picnic', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Fun activities', hint: 'fun activities', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Students enjoying', hint: 'students enjoying', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Scenic view', hint: 'scenic view', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Happy faces', hint: 'happy faces', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: 'Resort', icon: <MountainSnow/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Resort trip', hint: 'resort pool', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Team games', hint: 'team games', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Relaxing time', hint: 'relaxing students', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group photo', hint: 'resort group photo', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Fun moments', hint: 'fun moments', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: 'DJ Night', icon: <PartyPopper/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'DJ party', hint: 'dj party dance', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Students dancing', hint: 'students dancing', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Party lights', hint: 'party lights', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Music event', hint: 'music event', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Crowd dancing', hint: 'crowd dancing', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: 'Seminars', icon: <Mic/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Seminar session', hint: 'seminar speaker', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Audience listening', hint: 'seminar audience', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Guest speaker', hint: 'guest speaker', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Interactive session', hint: 'interactive session', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Q&A session', hint: 'q&a session', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: 'Corporate Training', icon: <Briefcase/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Corporate workshop', hint: 'corporate training', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Team building', hint: 'team building', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Professional development', hint: 'professional development', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Training session', hint: 'training session', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Office environment', hint: 'office environment', className: 'w-[200px] h-[250px]' },
-    { type: 'card', title: 'Garba', icon: <Drama/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Garba night', hint: 'garba dance', className: 'w-[300px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Traditional dance', hint: 'traditional dance', className: 'w-[200px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/400x400.png', alt: 'Colorful outfits', hint: 'garba outfits', className: 'w-[250px] h-[250px]' },
-    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Navratri celebration', hint: 'navratri celebration', className: 'w-[300px] h-[200px]' },
-    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Dancing in circle', hint: 'dandiya dance', className: 'w-[200px] h-[250px]' },
-];
 
 export default function GalleryPage() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -177,46 +113,9 @@ export default function GalleryPage() {
       </Dialog>
 
 
-      <section id="photo-gallery" className="py-16">
+      <section id="photo-gallery" className="py-16 bg-muted">
         <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Photo Glimpses</h2>
-        <div className="relative w-full overflow-hidden group">
-            <div className="flex animate-scroll group-hover:pause">
-                {[...galleryGlimpses, ...galleryGlimpses].map((item, index) => (
-                    <div key={index} className={cn("flex-shrink-0 mx-2", item.className)}>
-                        {item.type === 'image' && item.src && (
-                            <Card className="h-full w-full overflow-hidden relative">
-                                <Image
-                                    src={item.src}
-                                    alt={item.alt || 'Gallery image'}
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-full object-cover"
-                                    data-ai-hint={item.hint}
-                                />
-                                {item.label && (
-                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                                        <h3 className="text-white text-xl font-bold">{item.label}</h3>
-                                    </div>
-                                )}
-                            </Card>
-                        )}
-                        {item.type === 'card' && (
-                             <Card className={cn("h-full w-full flex flex-col justify-between p-6", item.className)}>
-                                <div>
-                                    <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                                    {item.icon && <div className="text-6xl opacity-20">{item.icon}</div>}
-                                </div>
-                                <div className="flex justify-end">
-                                    <Button variant="secondary" size="icon" className="rounded-full">
-                                        <ArrowRight />
-                                    </Button>
-                                </div>
-                            </Card>
-                        )}
-                    </div>
-                ))}
-            </div>
-        </div>
+        <EventGallery />
       </section>
     </div>
   );
