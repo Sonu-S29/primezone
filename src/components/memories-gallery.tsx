@@ -21,6 +21,9 @@ const images = [
   { src: "https://placehold.co/160x240.png", hint: "student event" },
   { src: "https://placehold.co/240x160.png", hint: "tech workshop" },
   { src: "https://placehold.co/110x110.png", hint: "graduation day" },
+  { src: "https://placehold.co/150x150.png", hint: "coding on laptop" },
+  { src: "https://placehold.co/100x100.png", hint: "designing on computer" },
+  { src: "https://placehold.co/120x180.png", hint: "team meeting" },
 ];
 
 const gridConfig = [
@@ -40,29 +43,53 @@ const gridConfig = [
     { top: '70%', left: '92%', width: '90px', height: '140px' },
     { top: '40%', left: '85%', width: '120px', height: '120px' },
     { top: '0%', left: '60%', width: '150px', height: '120px' },
+    { top: '0%', left: '0%', width: '90px', height: '90px' },
+    { top: '40%', left: '40%', width: '100px', height: '100px' },
 ];
 
 const MemoriesGallery = () => {
-  const [visibleImages, setVisibleImages] = useState<boolean[]>(
-    new Array(gridConfig.length).fill(false)
-  );
   const [animationState, setAnimationState] = useState<('in' | 'out' | 'idle')[]>(
     new Array(gridConfig.length).fill('idle')
   );
 
   useEffect(() => {
-    const intervals = gridConfig.map((_, index) => {
-      const randomDelay = Math.random() * 3000 + 1000;
-      return setInterval(() => {
-        setAnimationState(prev => {
-            const newState = [...prev];
-            newState[index] = prev[index] === 'in' ? 'out' : 'in';
-            return newState;
-        });
-      }, randomDelay + 500);
+    const timeouts = new Array(gridConfig.length).fill(null);
+
+    const scheduleAnimation = (index: number) => {
+        const randomDelay = Math.random() * 3000 + 1000; // Time spent hidden
+        const holdDuration = 2000; // Time to hold after scaling in
+
+        timeouts[index] = setTimeout(() => {
+            // Scale in
+            setAnimationState(prev => {
+                const newState = [...prev];
+                newState[index] = 'in';
+                return newState;
+            });
+
+            // Schedule scale out after animation + hold
+            timeouts[index] = setTimeout(() => {
+                setAnimationState(prev => {
+                    const newState = [...prev];
+                    newState[index] = 'out';
+                    return newState;
+                });
+                
+                // Schedule next cycle after scale out animation finishes
+                 timeouts[index] = setTimeout(() => {
+                    scheduleAnimation(index);
+                }, 500);
+
+            }, 500 + holdDuration); // 0.5s for scale-in animation + 2s hold
+
+        }, randomDelay);
+    };
+
+    gridConfig.forEach((_, index) => {
+        scheduleAnimation(index);
     });
 
-    return () => intervals.forEach(clearInterval);
+    return () => timeouts.forEach(clearTimeout);
   }, []);
 
   return (
