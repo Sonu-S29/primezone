@@ -118,7 +118,7 @@ export default {
         'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
         'fade-in-up': 'fade-in-up 0.5s ease-out 0.2s forwards',
         'fade-in': 'fade-in 0.5s ease-out forwards',
-        'scroll': 'scroll 10s linear infinite',
+        'scroll': 'scroll 40s linear infinite',
         'h-scroll': 'h-scroll 4s linear infinite',
         'v-scroll': 'v-scroll 4s linear infinite'
       },
@@ -135,5 +135,3 @@ export default {
     },
   ],
 } satisfies Config;
-
-    

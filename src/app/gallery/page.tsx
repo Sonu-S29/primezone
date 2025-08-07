@@ -5,26 +5,28 @@ import Image from "next/image";
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { PlayCircle } from "lucide-react";
+import { ArrowRight, Pilcrow, BookOpenText, Users, Lightbulb } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
+import { cn } from "@/lib/utils";
+import { Card, CardContent } from "@/components/ui/card";
 
 const studentProjects = [
   {
-    src: "https://placehold.co/400x600.png",
+    src: "https://ggayane.github.io/css-experiments/cards/force_magice.png",
     alt: "Student project with Lifebuoy",
     brand: "Lifebuoy",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     hint: "student project"
   },
   {
-    src: "https://placehold.co/400x600.png",
+    src: "https://ggayane.github.io/css-experiments/cards/force_outter.png",
     alt: "Student project with FAE Beauty",
     brand: "FAE BEAUTY",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
   {
-    src: "https://placehold.co/400x600.png",
+    src: "https://ggayane.github.io/css-experiments/cards/force_circle.png",
     alt: "Student project with Allen Solly",
     brand: "Allen Solly",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -32,16 +34,13 @@ const studentProjects = [
   },
 ];
 
-const galleryImages = [
-  { src: "https://placehold.co/600x400.png", alt: "Classroom session in progress", hint: "classroom students" },
-  { src: "https://placehold.co/400x600.png", alt: "Student receiving a certificate", hint: "student certificate" },
-  { src: "https://placehold.co/600x400.png", alt: "Modern computer lab", hint: "computer lab" },
-  { src: "https://placehold.co/600x400.png", alt: "Group of students collaborating", hint: "students collaborating" },
-  { src: "https://placehold.co/400x600.png", alt: "Instructor helping a student", hint: "teacher student" },
-  { src: "https://placehold.co/600x400.png", alt: "Annual tech event", hint: "tech event" },
-  { src: "https://placehold.co/600x400.png", alt: "Seminar on web development", hint: "seminar presentation" },
-  { src: "https://placehold.co/400x600.png", alt: "Student working on a project", hint: "student coding" },
-  { src: "https://placehold.co/600x400.png", alt: "Our institution building", hint: "education building" },
+const galleryGlimpses = [
+    { type: 'image', src: 'https://placehold.co/400x600.png', alt: 'Team Photo', hint: 'team photo', className: 'w-[300px] h-[250px]' },
+    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Cultural Day', hint: 'cultural event', label: 'Cultural Day', className: 'w-[300px] h-[250px]' },
+    { type: 'card', title: 'Diwali Celebration', icon: <Pilcrow/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
+    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group Photo Outdoor', hint: 'outdoor event', className: 'w-[250px] h-[150px] self-start' },
+    { type: 'image', src: 'https://placehold.co/600x400.png', alt: 'Group in traditional wear', hint: 'traditional wear', className: 'w-[300px] h-[250px]' },
+    { type: 'card', title: "Teacher's Day", icon: <BookOpenText/>, className: 'w-[350px] h-[250px] bg-primary text-primary-foreground' },
 ];
 
 export default function GalleryPage() {
@@ -80,7 +79,10 @@ export default function GalleryPage() {
                       data-ai-hint={project.hint}
                     />
                     <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4">
-                      <PlayCircle className="h-16 w-16 text-white/80 group-hover:text-white transition-colors" />
+                      <div className="absolute top-4 w-full flex justify-between px-4">
+                        <Users className="h-8 w-8 text-white/80" />
+                        <Lightbulb className="h-8 w-8 text-white/80" />
+                      </div>
                       <div className="absolute bottom-16 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-center">
                         <p className="font-bold text-primary">{project.brand}</p>
                       </div>
@@ -95,7 +97,7 @@ export default function GalleryPage() {
           </div>
            <div className="text-center mt-12">
               <Button variant="outline" asChild>
-                <a href="#photo-gallery">Explore more Glimps</a>
+                <a href="#photo-gallery">Explore more Glimpses</a>
               </Button>
             </div>
         </section>
@@ -119,21 +121,45 @@ export default function GalleryPage() {
       </Dialog>
 
 
-      <section id="photo-gallery" className="container mx-auto px-4 py-16">
-         <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Photo Glimpses</h2>
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {galleryImages.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-lg shadow-lg break-inside-avoid">
-                    <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={600}
-                        height={600}
-                        className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
-                        data-ai-hint={image.hint}
-                    />
-                </div>
-            ))}
+      <section id="photo-gallery" className="py-16">
+        <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Photo Glimpses</h2>
+        <div className="relative w-full overflow-hidden group">
+            <div className="flex animate-scroll group-hover:pause">
+                {[...galleryGlimpses, ...galleryGlimpses].map((item, index) => (
+                    <div key={index} className={cn("flex-shrink-0 mx-2", item.className)}>
+                        {item.type === 'image' && item.src && (
+                            <Card className="h-full w-full overflow-hidden relative">
+                                <Image
+                                    src={item.src}
+                                    alt={item.alt || 'Gallery image'}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-full object-cover"
+                                    data-ai-hint={item.hint}
+                                />
+                                {item.label && (
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                        <h3 className="text-white text-xl font-bold">{item.label}</h3>
+                                    </div>
+                                )}
+                            </Card>
+                        )}
+                        {item.type === 'card' && (
+                             <Card className="h-full w-full flex flex-col justify-between p-6">
+                                <div>
+                                    <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                                    {item.icon && <div className="text-6xl opacity-20">{item.icon}</div>}
+                                </div>
+                                <div className="flex justify-end">
+                                    <Button variant="secondary" size="icon" className="rounded-full">
+                                        <ArrowRight />
+                                    </Button>
+                                </div>
+                            </Card>
+                        )}
+                    </div>
+                ))}
+            </div>
         </div>
       </section>
     </div>
