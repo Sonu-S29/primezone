@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { PlayCircle } from "lucide-react";
+import MemoriesGallery from "@/components/memories-gallery";
 
 const studentProjects = [
   {
@@ -55,6 +56,11 @@ export default function GalleryPage() {
             A glimpse into life at Primezone Computer Education. Explore our campus, events, and student activities.
           </p>
         </div>
+      </section>
+
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Our Memories</h2>
+        <MemoriesGallery />
       </section>
       
       <Dialog open={!!selectedVideo} onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
