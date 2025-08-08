@@ -1,10 +1,10 @@
 
 "use client";
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Card } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import Cubes from './cubes';
 
 const events = [
     { 
@@ -79,52 +79,20 @@ const events = [
     },
 ];
 
-const HOLD_DURATION = 5000;
-const ANIMATION_DURATION = 500;
-
 export default function EventGallery() {
     const [activeEventIndex, setActiveEventIndex] = useState(0);
-    const [activeImageIndex, setActiveImageIndex] = useState(0);
-    const [animationState, setAnimationState] = useState<'in' | 'out' | 'idle'>('idle');
 
     useEffect(() => {
-        let animationTimeout: NodeJS.Timeout;
-        const scheduleAnimation = () => {
-            setAnimationState('in');
-
-            animationTimeout = setTimeout(() => {
-                setAnimationState('out');
-
-                animationTimeout = setTimeout(() => {
-                    setActiveImageIndex(prev => {
-                        const isLastImage = prev === events[activeEventIndex].images.length - 1;
-                        if (isLastImage) {
-                            setActiveEventIndex(currentEvent => (currentEvent + 1) % events.length);
-                            return 0;
-                        }
-                        return prev + 1;
-                    });
-                }, ANIMATION_DURATION);
-            }, HOLD_DURATION + ANIMATION_DURATION);
-        };
+        const interval = setInterval(() => {
+            setActiveEventIndex(currentEvent => (currentEvent + 1) % events.length);
+        }, 5000); // Change event every 5 seconds
         
-        const timeoutId = scheduleAnimation();
-        
-        return () => {
-             if (animationTimeout) clearTimeout(animationTimeout);
-             if (timeoutId) clearTimeout(timeoutId);
-        }
-
-    }, [activeEventIndex, activeImageIndex]);
-
+        return () => clearInterval(interval);
+    }, []);
 
     const handleEventClick = (index: number) => {
         if (index === activeEventIndex) return;
-        setAnimationState('out');
-        setTimeout(() => {
-            setActiveEventIndex(index);
-            setActiveImageIndex(0);
-        }, ANIMATION_DURATION);
+        setActiveEventIndex(index);
     };
 
     return (
@@ -157,25 +125,21 @@ export default function EventGallery() {
                 ))}
             </div>
             
-            {/* Image Display */}
-            <Card className="overflow-hidden shadow-2xl relative aspect-video max-w-4xl mx-auto">
-                {events[activeEventIndex] && events[activeEventIndex].images[activeImageIndex] && (
-                    <Image
-                        key={`${activeEventIndex}-${activeImageIndex}`}
-                        src={events[activeEventIndex].images[activeImageIndex].src}
-                        alt={events[activeEventIndex].images[activeImageIndex].hint}
-                        data-ai-hint={events[activeEventIndex].images[activeImageIndex].hint}
-                        fill
-                        className={cn(
-                            "object-cover",
-                            animationState === 'in' && 'scale-in-center-normal',
-                            animationState === 'out' && 'scale-out-center-normal',
-                            animationState === 'idle' && 'opacity-0'
-                        )}
-                        style={{ animationDuration: `${ANIMATION_DURATION}ms` }}
-                    />
-                )}
-            </Card>
+            {/* Cube Display */}
+            <div className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
+                 <Cubes
+                    key={activeEventIndex}
+                    gridSize={8}
+                    maxAngle={60}
+                    radius={4}
+                    borderStyle="2px dashed #4095c6"
+                    faceColor="#003049"
+                    rippleColor="#D4E7F0"
+                    rippleSpeed={1.5}
+                    autoAnimate={true}
+                    rippleOnClick={true}
+                />
+            </div>
         </div>
     );
 }
