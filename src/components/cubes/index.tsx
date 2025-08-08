@@ -1,12 +1,15 @@
 
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Image from "next/image";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import "./cubes.css";
 
 const Cubes = ({
   gridSize = 10,
+  images,
   cubeSize,
   maxAngle = 45,
   radius = 3,
@@ -22,6 +25,7 @@ const Cubes = ({
   rippleSpeed = 2,
 }: {
   gridSize?: number;
+  images: { src: string; hint: string }[];
   cubeSize?: number;
   maxAngle?: number;
   radius?: number;
@@ -43,6 +47,7 @@ const Cubes = ({
   const simPosRef = useRef({ x: 0, y: 0 });
   const simTargetRef = useRef({ x: 0, y: 0 });
   const simRAFRef = useRef<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; hint: string } | null>(null);
 
   const colGap =
     typeof cellGap === "number"
@@ -130,7 +135,8 @@ const Cubes = ({
   }, [leaveDur]);
 
   const onClick = useCallback(
-    (e: MouseEvent) => {
+    (e: MouseEvent, image: { src: string; hint: string }) => {
+      setSelectedImage(image);
       if (!rippleOnClick || !sceneRef.current) return;
       const rect = sceneRef.current.getBoundingClientRect();
       const cellW = rect.width / gridSize;
@@ -173,7 +179,7 @@ const Cubes = ({
             ease: "power3.out",
           });
           gsap.to(faces, {
-            backgroundColor: faceColor,
+            backgroundColor: "transparent",
             duration: animDuration,
             delay: delay + animDuration + holdTime,
             ease: "power3.out",
@@ -221,19 +227,18 @@ const Cubes = ({
   useEffect(() => {
     const el = sceneRef.current;
     if (!el) return;
-    el.addEventListener("pointermove", onPointerMove);
+    el.addEventListener("pointermove", onPointerMove as EventListener);
     el.addEventListener("pointerleave", resetAll);
-    el.addEventListener("click", onClick);
+    // Click is handled on individual cubes now
     return () => {
-      el.removeEventListener("pointermove", onPointerMove);
+      el.removeEventListener("pointermove", onPointerMove as EventListener);
       el.removeEventListener("pointerleave", resetAll);
-      el.removeEventListener("click", onClick);
       rafRef.current != null && cancelAnimationFrame(rafRef.current);
       idleTimerRef.current && clearTimeout(idleTimerRef.current);
     };
   }, [onPointerMove, resetAll, onClick]);
 
-  const cells = Array.from({ length: gridSize });
+  const cells = Array.from({ length: gridSize * gridSize });
   const sceneStyle: React.CSSProperties = {
     gridTemplateColumns: cubeSize
       ? `repeat(${gridSize}, ${cubeSize}px)`
@@ -258,26 +263,47 @@ const Cubes = ({
   };
 
   return (
-    <div className="default-animation desktop-only" style={wrapperStyle}>
-      <div
-        ref={sceneRef}
-        className="default-animation--scene"
-        style={sceneStyle}
-      >
-        {cells.map((_, r) =>
-          cells.map((__, c) => (
-            <div key={`${r}-${c}`} className="cube" data-row={r} data-col={c}>
-              <div className="cube-face cube-face--top" />
-              <div className="cube-face cube-face--bottom" />
-              <div className="cube-face cube-face--left" />
-              <div className="cube-face cube-face--right" />
-              <div className="cube-face cube-face--front" />
-              <div className="cube-face cube-face--back" />
-            </div>
-          ))
+    <Dialog open={!!selectedImage} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
+        <div className="default-animation desktop-only" style={wrapperStyle}>
+        <div
+            ref={sceneRef}
+            className="default-animation--scene"
+            style={sceneStyle}
+        >
+            {cells.map((_, i) => {
+                const r = Math.floor(i / gridSize);
+                const c = i % gridSize;
+                const image = images[i % images.length];
+
+                return(
+                    <DialogTrigger asChild key={`${r}-${c}`} >
+                        <div className="cube" data-row={r} data-col={c} onClick={(e) => onClick(e as unknown as MouseEvent, image)}>
+                            <div className="cube-face cube-face--front">
+                                {image && <Image src={image.src} alt={image.hint} layout="fill" objectFit="cover" data-ai-hint={image.hint}/>}
+                            </div>
+                            <div className="cube-face cube-face--back" />
+                            <div className="cube-face cube-face--top" />
+                            <div className="cube-face cube-face--bottom" />
+                            <div className="cube-face cube-face--left" />
+                            <div className="cube-face cube-face--right" />
+                        </div>
+                    </DialogTrigger>
+                )
+            })}
+        </div>
+        </div>
+        {selectedImage && (
+            <DialogContent className="max-w-3xl h-auto p-0">
+                <Image
+                    src={selectedImage.src}
+                    alt={selectedImage.hint}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-contain rounded-lg"
+                />
+            </DialogContent>
         )}
-      </div>
-    </div>
+    </Dialog>
   );
 };
 

@@ -94,6 +94,8 @@ export default function EventGallery() {
         if (index === activeEventIndex) return;
         setActiveEventIndex(index);
     };
+    
+    const currentEventImages = events[activeEventIndex].images;
 
     return (
         <div className="container mx-auto px-4">
@@ -130,6 +132,7 @@ export default function EventGallery() {
                  <Cubes
                     key={activeEventIndex}
                     gridSize={8}
+                    images={currentEventImages}
                     maxAngle={60}
                     radius={4}
                     borderStyle="2px dashed #4095c6"
