@@ -15,6 +15,9 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'independence day event' },
             { src: 'https://placehold.co/600x400.png', hint: 'cultural program' },
             { src: 'https://placehold.co/600x400.png', hint: 'group photo' },
+            { src: 'https://placehold.co/600x400.png', hint: 'patriotic performance' },
+            { src: 'https://placehold.co/600x400.png', hint: 'Tricolour balloons' },
+            { src: 'https://placehold.co/600x400.png', hint: 'Campus decoration' },
         ]
     },
     { 
@@ -25,6 +28,9 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'student performance' },
             { src: 'https://placehold.co/600x400.png', hint: 'campus decoration' },
             { src: 'https://placehold.co/600x400.png', hint: 'students in ethnic wear' },
+            { src: 'https://placehold.co/600x400.png', hint: 'republic day speeches' },
+            { src: 'https://placehold.co/600x400.png', hint: 'cultural dance' },
+            { src: 'https://placehold.co/600x400.png', hint: 'proud students' },
         ]
     },
     { 
@@ -35,6 +41,9 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'group lunch' },
             { src: 'https://placehold.co/600x400.png', hint: 'fun activities' },
             { src: 'https://placehold.co/600x400.png', hint: 'scenic view' },
+            { src: 'https://placehold.co/600x400.png', hint: 'laughing students' },
+            { src: 'https://placehold.co/600x400.png', hint: 'bus journey' },
+            { src: 'https://placehold.co/600x400.png', hint: 'bonfire' },
         ]
     },
     { 
@@ -45,6 +54,9 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'team building games' },
             { src: 'https://placehold.co/600x400.png', hint: 'relaxing by the pool' },
             { src: 'https://placehold.co/600x400.png', hint: 'resort group photo' },
+            { src: 'https://placehold.co/600x400.png', hint: 'adventure sports' },
+            { src: 'https://placehold.co/600x400.png', hint: 'evening party' },
+            { src: 'https://placehold.co/600x400.png', hint: 'luxury rooms' },
         ]
     },
     { 
@@ -55,6 +67,9 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'party lights' },
             { src: 'https://placehold.co/600x400.png', hint: 'crowd enjoying music' },
             { src: 'https://placehold.co/600x400.png', hint: 'fun moments at party' },
+            { src: 'https://placehold.co/600x400.png', hint: 'laser show' },
+            { src: 'https://placehold.co/600x400.png', hint: 'group of friends' },
+            { src: 'https://placehold.co/600x400.png', hint: 'energetic dance floor' },
         ]
     },
     { 
@@ -65,6 +80,9 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'interactive session' },
             { src: 'https://placehold.co/600x400.png', hint: 'q&a session' },
             { src: 'https://placehold.co/600x400.png', hint: 'networking event' },
+            { src: 'https://placehold.co/600x400.png', hint: 'industry experts' },
+            { src: 'https://placehold.co/600x400.png', hint: 'workshop' },
+            { src: 'https://placehold.co/600x400.png', hint: 'certificate distribution' },
         ]
     },
     { 
@@ -75,20 +93,15 @@ const events = [
             { src: 'https://placehold.co/600x400.png', hint: 'team collaboration' },
             { src: 'https://placehold.co/600x400.png', hint: 'presentation' },
             { src: 'https://placehold.co/600x400.png', hint: 'skill development' },
+            { src: 'https://placehold.co/600x400.png', hint: 'business meeting' },
+            { src: 'https://placehold.co/600x400.png', hint: 'office environment' },
+            { src: 'https://placehold.co/600x400.png', hint: 'successful team' },
         ]
     },
 ];
 
 export default function EventGallery() {
     const [activeEventIndex, setActiveEventIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveEventIndex(currentEvent => (currentEvent + 1) % events.length);
-        }, 5000); // Change event every 5 seconds
-        
-        return () => clearInterval(interval);
-    }, []);
 
     const handleEventClick = (index: number) => {
         if (index === activeEventIndex) return;
@@ -131,16 +144,7 @@ export default function EventGallery() {
             <div className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
                  <Cubes
                     key={activeEventIndex}
-                    gridSize={8}
                     images={currentEventImages}
-                    maxAngle={60}
-                    radius={4}
-                    borderStyle="2px dashed #4095c6"
-                    faceColor="#003049"
-                    rippleColor="#D4E7F0"
-                    rippleSpeed={1.5}
-                    autoAnimate={true}
-                    rippleOnClick={true}
                 />
             </div>
         </div>
