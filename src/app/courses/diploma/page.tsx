@@ -13,7 +13,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const diplomaCourses = [
   {
-    title: "DIA (Diploma In Accounting)",
+    title: "Diploma In Accounting",
     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
     image: "/images/courses/dia.jpg",
     hint: "accounting collage",
@@ -24,7 +24,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DFA (Diploma In Financial Accounting)",
+    title: "Diploma In Financial Accounting",
     description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
     image: "https://placehold.co/600x400.png",
     hint: "financial report",
@@ -36,7 +36,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DCA (Diploma In Computer Application)",
+    title: "Diploma In Computer Application",
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
     image: "https://placehold.co/600x400.png",
     hint: "computer application",
@@ -49,7 +49,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DFAM (Diploma In Financial & Management)",
+    title: "Diploma In Financial & Management",
     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
     image: "https://placehold.co/600x400.png",
     hint: "financial management",
@@ -63,7 +63,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DPC (Diploma In Programming Course)",
+    title: "Diploma In Programming Course",
     description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
     image: "https://placehold.co/600x400.png",
     hint: "programming course",
@@ -76,7 +76,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DGA (Diploma In Graphic & Animation)",
+    title: "Diploma In Graphic & Animation",
     description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
     image: "https://placehold.co/600x400.png",
     hint: "graphic animation",
@@ -89,7 +89,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DEH (Diploma In Ethical Hacking)",
+    title: "Diploma In Ethical Hacking",
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
     image: "https://placehold.co/600x400.png",
     hint: "ethical hacking",
@@ -112,7 +112,7 @@ const diplomaCourses = [
     ],
   },
   {
-    title: "DDM (Diploma In Digital Marketing)",
+    title: "Diploma In Digital Marketing",
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
     image: "https://placehold.co/600x400.png",
     hint: "digital marketing",
@@ -309,7 +309,6 @@ export default function DiplomaCoursesPage() {
               </div>
               <div className="md:w-3/5 flex flex-col p-6">
                 <CardHeader className="p-0">
-                  <CardTitle className="text-xl">{course.title.split('(')[0]}</CardTitle>
                   <CardTitle className="text-2xl font-bold">{course.title}</CardTitle>
                   <CardDescription className="pt-2">{course.description}</CardDescription>
                 </CardHeader>
@@ -338,5 +337,7 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
