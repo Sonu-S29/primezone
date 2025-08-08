@@ -7,8 +7,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from 
 import { Button } from "@/components/ui/button";
 import { Users, Lightbulb } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
-import EventGallery from "@/components/event-gallery";
-
+import ScrollStack, { ScrollStackItem } from "@/components/scroll-stack";
 
 const studentProjects = [
   {
@@ -32,6 +31,100 @@ const studentProjects = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
+];
+
+const events = [
+    { 
+        name: "15 Aug", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'Indian flag' },
+            { src: 'https://placehold.co/600x400.png', hint: 'students celebrating' },
+            { src: 'https://placehold.co/600x400.png', hint: 'independence day event' },
+            { src: 'https://placehold.co/600x400.png', hint: 'cultural program' },
+            { src: 'https://placehold.co/600x400.png', hint: 'group photo' },
+            { src: 'https://placehold.co/600x400.png', hint: 'patriotic performance' },
+            { src: 'https://placehold.co/600x400.png', hint: 'Tricolour balloons' },
+            { src: 'https://placehold.co/600x400.png', hint: 'Campus decoration' },
+        ]
+    },
+    { 
+        name: "26 Jan", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'republic day parade' },
+            { src: 'https://placehold.co/600x400.png', hint: 'flag hoisting' },
+            { src: 'https://placehold.co/600x400.png', hint: 'student performance' },
+            { src: 'https://placehold.co/600x400.png', hint: 'campus decoration' },
+            { src: 'https://placehold.co/600x400.png', hint: 'students in ethnic wear' },
+            { src: 'https://placehold.co/600x400.png', hint: 'republic day speeches' },
+            { src: 'https://placehold.co/600x400.png', hint: 'cultural dance' },
+            { src: 'https://placehold.co/600x400.png', hint: 'proud students' },
+        ]
+    },
+    { 
+        name: "Picnic", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'students on a picnic' },
+            { src: 'https://placehold.co/600x400.png', hint: 'outdoor games' },
+            { src: 'https://placehold.co/600x400.png', hint: 'group lunch' },
+            { src: 'https://placehold.co/600x400.png', hint: 'fun activities' },
+            { src: 'https://placehold.co/600x400.png', hint: 'scenic view' },
+            { src: 'https://placehold.co/600x400.png', hint: 'laughing students' },
+            { src: 'https://placehold.co/600x400.png', hint: 'bus journey' },
+            { src: 'https://placehold.co/600x400.png', hint: 'bonfire' },
+        ]
+    },
+    { 
+        name: "Resort", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'students at a resort' },
+            { src: 'https://placehold.co/600x400.png', hint: 'swimming pool fun' },
+            { src: 'https://placehold.co/600x400.png', hint: 'team building games' },
+            { src: 'https://placehold.co/600x400.png', hint: 'relaxing by the pool' },
+            { src: 'https://placehold.co/600x400.png', hint: 'resort group photo' },
+            { src: 'https://placehold.co/600x400.png', hint: 'adventure sports' },
+            { src: 'https://placehold.co/600x400.png', hint: 'evening party' },
+            { src: 'https://placehold.co/600x400.png', hint: 'luxury rooms' },
+        ]
+    },
+    { 
+        name: "DJ Night", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'students dancing' },
+            { src: 'https://placehold.co/600x400.png', hint: 'dj setup' },
+            { src: 'https://placehold.co/600x400.png', hint: 'party lights' },
+            { src: 'https://placehold.co/600x400.png', hint: 'crowd enjoying music' },
+            { src: 'https://placehold.co/600x400.png', hint: 'fun moments at party' },
+            { src: 'https://placehold.co/600x400.png', hint: 'laser show' },
+            { src: 'https://placehold.co/600x400.png', hint: 'group of friends' },
+            { src: 'https://placehold.co/600x400.png', hint: 'energetic dance floor' },
+        ]
+    },
+    { 
+        name: "Seminars", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'guest speaker' },
+            { src: 'https://placehold.co/600x400.png', hint: 'students attending seminar' },
+            { src: 'https://placehold.co/600x400.png', hint: 'interactive session' },
+            { src: 'https://placehold.co/600x400.png', hint: 'q&a session' },
+            { src: 'https://placehold.co/600x400.png', hint: 'networking event' },
+            { src: 'https://placehold.co/600x400.png', hint: 'industry experts' },
+            { src: 'https://placehold.co/600x400.png', hint: 'workshop' },
+            { src: 'https://placehold.co/600x400.png', hint: 'certificate distribution' },
+        ]
+    },
+    { 
+        name: "Corporate Training", 
+        images: [
+            { src: 'https://placehold.co/600x400.png', hint: 'corporate training session' },
+            { src: 'https://placehold.co/600x400.png', hint: 'professionals in a workshop' },
+            { src: 'https://placehold.co/600x400.png', hint: 'team collaboration' },
+            { src: 'https://placehold.co/600x400.png', hint: 'presentation' },
+            { src: 'https://placehold.co/600x400.png', hint: 'skill development' },
+            { src: 'https://placehold.co/600x400.png', hint: 'business meeting' },
+            { src: 'https://placehold.co/600x400.png', hint: 'office environment' },
+            { src: 'https://placehold.co/600x400.png', hint: 'successful team' },
+        ]
+    },
 ];
 
 
@@ -112,11 +205,33 @@ export default function GalleryPage() {
         )}
       </Dialog>
 
-
       <section id="photo-gallery" className="py-16 bg-muted overflow-hidden">
         <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Photo Glimpses</h2>
-            <EventGallery />
+            <div className="relative w-full">
+              <ScrollStack>
+                {events.map((event, index) => (
+                  <ScrollStackItem key={index}>
+                    <div className="p-8 bg-card rounded-lg shadow-lg">
+                      <h3 className="text-2xl font-bold text-primary mb-4">{event.name}</h3>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {event.images.map((image, imgIndex) => (
+                          <Image 
+                            key={imgIndex}
+                            src={image.src}
+                            alt={image.hint}
+                            width={300}
+                            height={200}
+                            className="rounded-md object-cover"
+                            data-ai-hint={image.hint}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </ScrollStackItem>
+                ))}
+              </ScrollStack>
+            </div>
         </div>
       </section>
     </div>

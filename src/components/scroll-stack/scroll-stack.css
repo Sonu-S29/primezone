@@ -1,0 +1,33 @@
+
+.scroll-stack-scroller {
+    height: 600px;
+    width: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.scroll-stack-inner {
+    position: relative;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 70vh;
+}
+
+.scroll-stack-card {
+    position: sticky;
+    top: 20%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    will-change: transform, filter;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.scroll-stack-end {
+    height: 100vh;
+}
