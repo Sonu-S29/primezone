@@ -2,7 +2,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Stack.css";
 
 function CardRotate({ children, onSendToBack, sensitivity }) {
@@ -56,6 +56,17 @@ export default function Stack({
         { id: 4, img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format" }
       ]
   );
+  
+  const [initialRotations, setInitialRotations] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (randomRotation) {
+      setInitialRotations(cards.map(() => Math.random() * 10 - 5));
+    } else {
+      setInitialRotations(cards.map(() => 0));
+    }
+  }, [cards.length, randomRotation]);
+
 
   const sendToBack = (id) => {
     setCards((prev) => {
@@ -76,10 +87,8 @@ export default function Stack({
         perspective: 600,
       }}
     >
-      {cards.map((card, index) => {
-        const randomRotate = randomRotation
-          ? Math.random() * 10 - 5
-          : 0;
+      {initialRotations.length > 0 && cards.map((card, index) => {
+        const randomRotate = initialRotations[index] || 0;
 
         return (
           <CardRotate
