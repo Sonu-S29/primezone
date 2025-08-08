@@ -15,7 +15,7 @@ const diplomaCourses = [
   {
     title: "DIA (Diploma In Accounting)",
     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/dia.jpg",
     hint: "accounting collage",
     modules: [
         { title: "Financial Accounting Basics", icon: <Landmark />, subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
@@ -338,3 +338,5 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
