@@ -113,7 +113,7 @@ export default function GalleryPage() {
       </Dialog>
 
 
-      <section id="photo-gallery" className="py-16 bg-muted">
+      <section id="photo-gallery" className="py-16 bg-muted overflow-hidden">
         <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Photo Glimpses</h2>
             <EventGallery />

@@ -1,8 +1,7 @@
 
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Card } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import Cubes from './cubes';
 
@@ -101,51 +100,10 @@ const events = [
 ];
 
 export default function EventGallery() {
-    const [activeEventIndex, setActiveEventIndex] = useState(0);
-
-    const handleEventClick = (index: number) => {
-        if (index === activeEventIndex) return;
-        setActiveEventIndex(index);
-    };
-    
-    const currentEventImages = events[activeEventIndex].images;
-
     return (
         <div className="container mx-auto px-4">
-            {/* Event Circles */}
-            <div className="flex justify-center items-center gap-4 md:gap-8 mb-8 flex-wrap">
-                {events.map((event, index) => (
-                    <div 
-                        key={event.name}
-                        onClick={() => handleEventClick(index)}
-                        className="flex flex-col items-center gap-2 cursor-pointer group"
-                    >
-                        <div className={cn(
-                            "relative h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center border-4 transition-all duration-300",
-                            activeEventIndex === index ? 'bg-primary border-primary' : 'bg-card border-border group-hover:border-primary'
-                        )}>
-                            <p className={cn(
-                                "font-bold text-center text-sm md:text-base",
-                                activeEventIndex === index ? 'text-primary-foreground' : 'text-primary'
-                            )}>
-                                {event.name}
-                            </p>
-                            {activeEventIndex === index && (
-                                <div className="absolute -bottom-2 -right-2 bg-green-500 rounded-full p-1 border-2 border-background">
-                                    <Check className="h-3 w-3 text-white" />
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                ))}
-            </div>
-            
-            {/* Cube Display */}
-            <div className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
-                 <Cubes
-                    key={activeEventIndex}
-                    images={currentEventImages}
-                />
+            <div className="relative h-[600px] md:h-[800px] w-full flex items-center justify-center -mt-16 md:-mt-24">
+                 <Cubes events={events} />
             </div>
         </div>
     );

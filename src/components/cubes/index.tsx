@@ -7,66 +7,49 @@ import { cn } from '@/lib/utils';
 import './cubes.css';
 
 interface CubesProps {
-  images: { src: string; hint: string }[];
+  events: { name: string; images: { src: string; hint: string }[] }[];
 }
 
-const Cubes: React.FC<CubesProps> = ({ images }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [shuffledImages, setShuffledImages] = useState<any[]>([]);
+const Cubes: React.FC<CubesProps> = ({ events }) => {
+  const [activeEventIndex, setActiveEventIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    // Initialize with 8 placeholders
-    const initialCubes = Array(8).fill(null).map((_, i) => images[i % images.length] || { src: 'https://placehold.co/200x200.png', hint: 'placeholder' });
-     setShuffledImages(initialCubes);
-  }, [images]);
+  const allCubes = events.flatMap((event, eventIndex) => 
+    Array(8).fill(null).map((_, cubeIndex) => ({
+      eventIndex,
+      cubeIndex,
+      image: event.images[cubeIndex % event.images.length]
+    }))
+  );
 
-  const handleCubeClick = (index: number) => {
-    if (activeIndex === index) {
-      // If clicking the active cube, reset the view
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index);
-      
-      // When a cube is clicked, reshuffle the images for the other cubes
-      const activeImage = shuffledImages[index];
-      const otherImages = images.filter(img => img.src !== activeImage.src);
-      
-      // Shuffle the other images
-      const shuffled = [...otherImages].sort(() => 0.5 - Math.random());
-
-      const newArrangement = [...shuffledImages];
-      let imageIndex = 0;
-      for (let i = 0; i < 8; i++) {
-        if (i !== index) {
-          newArrangement[i] = shuffled[imageIndex % shuffled.length];
-          imageIndex++;
-        }
-      }
-      setShuffledImages(newArrangement);
-    }
+  const handleCubeClick = (eventIndex: number) => {
+    setActiveEventIndex(prevIndex => (prevIndex === eventIndex ? null : eventIndex));
   };
 
-  const renderCube = (index: number) => {
-    const image = shuffledImages[index];
-    if (!image) return null; // Don't render if image data isn't ready
+  const renderCube = (cubeData: typeof allCubes[0], globalIndex: number) => {
+    const { eventIndex, image } = cubeData;
 
-    const isMainActive = activeIndex !== null;
-    const isActive = activeIndex === index;
-    const isInactive = isMainActive && !isActive;
+    const isMainActive = activeEventIndex !== null;
+    const isGroupActive = activeEventIndex === eventIndex;
+
+    // Default position based on global index
+    const defaultPositionClass = `cube-pos-${globalIndex}`;
+    
+    // Position when its group is active
+    const activePositionClass = `active-pos-${globalIndex % 8}`;
 
     return (
       <div
-        key={index}
+        key={globalIndex}
         className={cn(
           'interactive-cube-container',
-          `cube-pos-${index}`,
-          { 'active': isActive, 'inactive': isInactive, 'main-active': isMainActive }
+          isGroupActive ? activePositionClass : defaultPositionClass,
+          { 'group-active': isGroupActive, 'main-inactive': isMainActive && !isGroupActive }
         )}
-        onClick={() => handleCubeClick(index)}
+        onClick={() => handleCubeClick(eventIndex)}
       >
         <div className="interactive-cube">
           <div className="cube-face cube-front">
-             <Image src={image.src} alt={image.hint} width={200} height={200} data-ai-hint={image.hint} className="object-cover" />
+            {isGroupActive && <Image src={image.src} alt={image.hint} width={200} height={200} data-ai-hint={image.hint} className="object-cover" />}
           </div>
           <div className="cube-face cube-back"></div>
           <div className="cube-face cube-left"></div>
@@ -81,7 +64,7 @@ const Cubes: React.FC<CubesProps> = ({ images }) => {
   return (
     <div className="interactive-cubes-wrapper">
       <div className="interactive-cubes-scene">
-        {Array.from({ length: 8 }).map((_, i) => renderCube(i))}
+        {allCubes.map((cube, i) => renderCube(cube, i))}
       </div>
     </div>
   );
