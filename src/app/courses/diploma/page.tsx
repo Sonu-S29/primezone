@@ -315,7 +315,7 @@ export default function DiplomaCoursesPage() {
                 <CardFooter className="p-0 mt-auto pt-6">
                    <Dialog>
                         <DialogTrigger asChild>
-                           <Button onClick={() => setSelectedCourse(course)}>Learn More <ChevronRight className="ml-2 h-4 w-4"/></Button>
+                           <Button onClick={() => setSelectedCourse(course)}>View Modules <ChevronRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
                         <DialogContent className="bg-transparent border-none shadow-none p-0 w-auto max-w-[95vw] md:max-w-7xl rounded-lg data-[state=open]:w-auto">
                           {selectedCourse && (
