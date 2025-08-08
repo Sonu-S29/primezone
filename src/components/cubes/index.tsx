@@ -4,7 +4,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import "./cubes.css";
 
 const Cubes = ({
@@ -294,6 +294,9 @@ const Cubes = ({
         </div>
         {selectedImage && (
             <DialogContent className="max-w-3xl h-auto p-0">
+                 <DialogHeader className="sr-only">
+                    <DialogTitle>{selectedImage.hint}</DialogTitle>
+                </DialogHeader>
                 <Image
                     src={selectedImage.src}
                     alt={selectedImage.hint}
@@ -308,3 +311,5 @@ const Cubes = ({
 };
 
 export default Cubes;
+
+    
