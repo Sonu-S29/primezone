@@ -88,44 +88,43 @@ export default function EventGallery() {
     const [animationState, setAnimationState] = useState<'in' | 'out' | 'idle'>('idle');
 
     useEffect(() => {
+        let animationTimeout: NodeJS.Timeout;
         const scheduleAnimation = () => {
             setAnimationState('in');
 
-            const scaleInTimer = setTimeout(() => {
-                const holdTimer = setTimeout(() => {
-                    setAnimationState('out');
+            animationTimeout = setTimeout(() => {
+                setAnimationState('out');
 
-                    const scaleOutTimer = setTimeout(() => {
-                        setActiveImageIndex(prev => {
-                            const isLastImage = prev === events[activeEventIndex].images.length - 1;
-                            if (isLastImage) {
-                                setActiveEventIndex(currentEvent => (currentEvent + 1) % events.length);
-                                return 0;
-                            }
-                            return prev + 1;
-                        });
-                    }, ANIMATION_DURATION);
-                    
-                    return () => clearTimeout(scaleOutTimer);
-                }, HOLD_DURATION);
-
-                return () => clearTimeout(holdTimer);
-            }, ANIMATION_DURATION);
-            
-            return () => clearTimeout(scaleInTimer);
+                animationTimeout = setTimeout(() => {
+                    setActiveImageIndex(prev => {
+                        const isLastImage = prev === events[activeEventIndex].images.length - 1;
+                        if (isLastImage) {
+                            setActiveEventIndex(currentEvent => (currentEvent + 1) % events.length);
+                            return 0;
+                        }
+                        return prev + 1;
+                    });
+                }, ANIMATION_DURATION);
+            }, HOLD_DURATION + ANIMATION_DURATION);
         };
         
         const timeoutId = scheduleAnimation();
         
-        return () => clearTimeout(timeoutId);
+        return () => {
+             if (animationTimeout) clearTimeout(animationTimeout);
+             if (timeoutId) clearTimeout(timeoutId);
+        }
 
     }, [activeEventIndex, activeImageIndex]);
 
 
     const handleEventClick = (index: number) => {
-        setActiveEventIndex(index);
-        setActiveImageIndex(0);
-        setAnimationState('idle'); 
+        if (index === activeEventIndex) return;
+        setAnimationState('out');
+        setTimeout(() => {
+            setActiveEventIndex(index);
+            setActiveImageIndex(0);
+        }, ANIMATION_DURATION);
     };
 
     return (
