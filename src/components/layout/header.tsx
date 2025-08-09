@@ -43,7 +43,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <div className="relative w-full py-2">
+    <header className="absolute top-0 left-0 w-full z-50">
+      <div className="relative w-full py-2">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -57,7 +58,7 @@ export default function Header() {
                         href={item.href}
                         className={cn(
                             "transition-colors hover:text-primary",
-                            isActive ? "text-primary font-semibold" : "text-muted-foreground"
+                            isActive ? "text-primary font-semibold" : "text-foreground/70"
                         )}
                     >
                         {item.label}
@@ -66,12 +67,12 @@ export default function Header() {
             })}
           </div>
           <div className="flex items-center gap-4">
-             <NavbarButton variant="secondary">
+             <Button variant="outline">
                 <Link href="/enroll">Login</Link>
-             </NavbarButton>
-            <NavbarButton variant="primary">
+             </Button>
+            <Button>
                  <Link href="/enroll">Enroll Now</Link>
-            </NavbarButton>
+            </Button>
           </div>
         </NavBody>
 
@@ -95,23 +96,22 @@ export default function Header() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4 pt-4">
-                <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="secondary"
-                className="w-full">
+                <Button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    variant="outline"
+                    className="w-full">
                     <Link href="/enroll">Login</Link>
-                </NavbarButton>
-              <NavbarButton
+                </Button>
+              <Button
                 onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
                 className="w-full">
                     <Link href="/enroll">Enroll Now</Link>
-              </NavbarButton>
+              </Button>
             </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
     </div>
+    </header>
   );
 }
-

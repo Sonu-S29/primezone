@@ -47,16 +47,21 @@ export const Navbar = ({
   return (
     <NavbarContext.Provider value={{ isOpen, setIsOpen }}>
       <motion.nav
-        initial={{ y: 0 }}
+        initial={{
+          maxWidth: "64rem", // max-w-6xl
+          borderRadius: "1rem", // rounded-2xl
+        }}
         animate={{
-          y: scrolled ? -8 : 0,
+          maxWidth: scrolled ? "100%" : "64rem",
+          borderRadius: scrolled ? "0rem" : "1rem",
         }}
         transition={{
           duration: 0.2,
           ease: "easeInOut",
         }}
         className={cn(
-          "sticky inset-x-0 top-2 z-50 mx-auto max-w-6xl rounded-2xl border border-neutral-200/50 bg-neutral-50/50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] backdrop-blur-md dark:border-neutral-700/50 dark:bg-neutral-900/50",
+          "sticky inset-x-0 top-0 md:top-2 z-50 mx-auto transition-colors duration-200",
+           scrolled ? "bg-card/95 backdrop-blur-sm border-b" : "bg-transparent border-b border-transparent",
           className
         )}>
         {children}
