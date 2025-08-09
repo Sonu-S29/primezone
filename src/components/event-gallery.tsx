@@ -11,116 +11,117 @@ const events = [
     name: "Picnic",
     mainImage: "https://placehold.co/200x300.png",
     hint: "picnic event",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("picnic fun"),
   },
   {
     name: "Corporate Training",
     mainImage: "https://placehold.co/200x300.png",
     hint: "corporate training",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("professional training"),
   },
   {
     name: "Dandiya Night",
     mainImage: "https://placehold.co/200x300.png",
     hint: "dandiya night",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("dandiya dance"),
   },
   {
     name: "DJ Night",
     mainImage: "https://placehold.co/200x300.png",
     hint: "dj night",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("dj party"),
   },
   {
     name: "Seminar",
     mainImage: "https://placehold.co/200x300.png",
     hint: "seminar event",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("educational seminar"),
   },
   {
     name: "Graduation",
     mainImage: "https://placehold.co/200x300.png",
     hint: "graduation ceremony",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("graduation cap"),
   },
   {
     name: "Workshop",
     mainImage: "https://placehold.co/200x300.png",
     hint: "coding workshop",
+    subImages: Array(8).fill("https://placehold.co/150x150.png"),
+    subHints: Array(8).fill("learning workshop"),
   },
 ];
 
+const VerticalCarousel = ({ images, hints, direction = 'down' }: { images: string[], hints: string[], direction?: 'up' | 'down' }) => {
+    return (
+        <div className="relative h-full w-[150px] overflow-hidden" style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)' }}>
+            <div className={cn("absolute flex flex-col", direction === 'down' ? 'animate-scroll-down' : 'animate-scroll-up')}>
+                {[...images, ...images].map((src, i) => (
+                    <div key={i} className="flex-shrink-0 w-[150px] h-[150px] p-2">
+                        <Image
+                            src={src}
+                            alt={`Event detail ${i + 1}`}
+                            width={150}
+                            height={150}
+                            className="w-full h-full object-cover rounded-lg shadow-lg"
+                            data-ai-hint={hints[i % hints.length]}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+
 export default function EventGallery() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
 
   const nextEvent = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
+    setCurrentEventIndex((prevIndex) => (prevIndex + 1) % events.length);
   }, []);
 
-  const prevEvent = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + events.length) % events.length);
-  };
-  
   useEffect(() => {
-    const interval = setInterval(nextEvent, 3000);
+    const interval = setInterval(nextEvent, 8000); // Change event every 8 seconds
     return () => clearInterval(interval);
   }, [nextEvent]);
 
-  const getCardStyle = (index: number) => {
-    const total = events.length;
-    const offset = (index - currentIndex + total) % total;
-    const angle = (offset / total) * 360;
-    const radius = 150; // controls the circle size for vertical rotation
-    const y = Math.sin((angle * Math.PI) / 180) * radius;
-    const z = Math.cos((angle * Math.PI) / 180) * radius - radius;
-    const scale = (z + radius) / (2 * radius) * 0.4 + 0.8; // scale from 0.8 to 1.2
-    
-    let opacity = 0;
-    let display = 'none';
-
-    // Adjust which cards are visible for a vertical layout
-    if (offset === 0 || offset === 1 || offset === total -1 || offset === 2 || offset === total - 2) {
-        opacity = 1;
-        display = 'block';
-    }
-    
-    return {
-      transform: `translateY(calc(-50% + ${y}px)) translateZ(${z}px) scale(${scale})`,
-      zIndex: Math.round(scale * 100),
-      opacity,
-      display,
-      transition: 'transform 0.5s ease-out, opacity 0.5s ease-out'
-    };
-  };
+  const currentEvent = events[currentEventIndex];
 
   return (
-    <div className="relative w-full h-[400px] flex flex-col justify-center items-center overflow-hidden bg-card p-4 rounded-2xl shadow-lg">
-      <div className="relative h-full w-[120px]" style={{ perspective: '1000px' }}>
-        {events.map((event, index) => (
-          <div
-            key={event.name}
-            className="absolute top-1/2 left-0 w-[120px] h-[180px] cursor-pointer"
-            style={getCardStyle(index)}
-            onClick={() => setCurrentIndex(index)}
-          >
-            <Image
-              src={event.mainImage}
-              alt={event.name}
-              width={120}
-              height={180}
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-              data-ai-hint={event.hint}
-            />
-          </div>
-        ))}
+    <div className="relative w-full max-w-4xl h-[600px] flex justify-between items-center overflow-hidden bg-card p-8 rounded-2xl shadow-lg">
+      
+      {/* Left Carousel (Sub-images) */}
+      <div className="h-full">
+        <VerticalCarousel 
+            images={currentEvent.subImages} 
+            hints={currentEvent.subHints}
+            direction="down" 
+        />
       </div>
-       <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center z-[101]">
-         <h3 className="text-3xl font-bold text-primary transition-opacity duration-500">
-            {events[currentIndex].name}
-         </h3>
-       </div>
-       <div className="absolute right-4 bottom-4 flex flex-col gap-4">
-            <button onClick={prevEvent} className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary/40 transition-colors">
-                <ChevronLeft size={24} />
-            </button>
-            <button onClick={nextEvent} className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary/40 transition-colors">
-                <ChevronRight size={24} />
-            </button>
-        </div>
+
+      {/* Center Content (Event Name) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
+        <h3 key={currentEvent.name} className="text-5xl font-bold text-primary text-focus-in">
+            {currentEvent.name}
+        </h3>
+      </div>
+      
+      {/* Right Carousel (Main Event Cards) */}
+      <div className="h-full">
+         <VerticalCarousel 
+            images={events.map(e => e.mainImage)} 
+            hints={events.map(e => e.hint)}
+            direction="up" 
+        />
+      </div>
+
     </div>
   );
 }
