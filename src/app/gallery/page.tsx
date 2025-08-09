@@ -3,10 +3,10 @@
 
 import Image from "next/image";
 import { useState } from 'react';
-import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Users, Lightbulb } from "lucide-react";
+import { Users, Lightbulb, PlayCircle } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
+import Link from "next/link";
 
 const studentProjects = [
   {
@@ -30,6 +30,41 @@ const studentProjects = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
+   {
+    src: "https://placehold.co/400x600.png",
+    alt: "Student project 4",
+    brand: "Brand D",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    hint: "student project"
+  },
+   {
+    src: "https://placehold.co/400x600.png",
+    alt: "Student project 5",
+    brand: "Brand E",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    hint: "student project"
+  },
+   {
+    src: "https://placehold.co/400x600.png",
+    alt: "Student project 6",
+    brand: "Brand F",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    hint: "student project"
+  },
+   {
+    src: "https://placehold.co/400x600.png",
+    alt: "Student project 7",
+    brand: "Brand G",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    hint: "student project"
+  },
+    {
+    src: "https://placehold.co/400x600.png",
+    alt: "Student project 8",
+    brand: "Brand H",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    hint: "student project"
+  }
 ];
 
 
@@ -52,58 +87,50 @@ export default function GalleryPage() {
         <MemoriesGallery />
       </section>
       
-      <Dialog open={!!selectedVideo} onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
-        <section className="container mx-auto px-4 py-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Student Projects</h2>
-          <div className="relative w-full overflow-hidden">
-            <div className="flex animate-scroll hover:pause">
-              {[...studentProjects, ...studentProjects].map((project, index) => (
-                <DialogTrigger asChild key={index} onClick={() => setSelectedVideo(project.videoUrl)}>
-                  <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer flex-shrink-0 w-80 mx-4">
-                    <Image
-                      src={project.src}
-                      alt={project.alt}
-                      width={400}
-                      height={600}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-                      data-ai-hint={project.hint}
-                    />
-                    <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4">
-                      <div className="absolute top-4 w-full flex justify-between px-4">
-                        <Users className="h-8 w-8 text-white/80" />
-                        <Lightbulb className="h-8 w-8 text-white/80" />
-                      </div>
-                      <div className="absolute bottom-16 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-center">
-                        <p className="font-bold text-primary">{project.brand}</p>
-                      </div>
-                      <div className="absolute bottom-4 bg-primary/90 rounded-full px-6 py-2">
-                        <p className="text-primary-foreground font-bold tracking-wider">STUDENT PROJECT</p>
-                      </div>
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-20">Student Projects</h2>
+            <div className="relative flex justify-center items-center h-[500px]">
+                {/* Orbiting images */}
+                {studentProjects.map((project, index) => {
+                    const angle = (index / studentProjects.length) * 360;
+                    return (
+                        <div
+                            key={project.src}
+                            className="absolute w-32 h-48 rounded-lg overflow-hidden shadow-lg animate-orbit"
+                            style={{
+                                transformOrigin: '300px',
+                                animationDelay: `-${index * 2}s`,
+                            }}
+                        >
+                            <Image
+                                src={project.src}
+                                alt={project.alt}
+                                width={128}
+                                height={192}
+                                className="w-full h-full object-cover"
+                                data-ai-hint={project.hint}
+                            />
+                        </div>
+                    );
+                })}
+
+                {/* Central content */}
+                <div className="relative z-10 text-center bg-background/70 backdrop-blur-sm p-8 rounded-xl shadow-2xl max-w-md">
+                    <div className="flex justify-center mb-4">
+                        <Users className="h-12 w-12 text-primary" />
                     </div>
-                  </div>
-                </DialogTrigger>
-              ))}
-            </div>
-          </div>
-        </section>
-        {selectedVideo && (
-            <DialogContent className="max-w-3xl h-auto p-0">
-                <DialogHeader>
-                  <DialogTitle>Student Project Video</DialogTitle>
-                </DialogHeader>
-                <div className="aspect-video">
-                    <iframe
-                        src={selectedVideo}
-                        title="Student Project Video"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                    ></iframe>
+                    <h3 className="text-2xl font-bold text-primary mb-2">Showcasing Talent</h3>
+                    <p className="text-muted-foreground mb-6">
+                        Our students create amazing projects. Explore their work and see what's possible with the skills you can learn at Primezone.
+                    </p>
+                    <Button asChild>
+                        <Link href="/courses">Explore Courses</Link>
+                    </Button>
                 </div>
-            </DialogContent>
-        )}
-      </Dialog>
+            </div>
+        </div>
+      </section>
     </div>
   );
 }

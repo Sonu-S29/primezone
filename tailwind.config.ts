@@ -1,4 +1,3 @@
-
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -123,6 +122,10 @@ export default {
         'scale-out-center': {
             '0%': { transform: 'scale(1)', opacity: '1' },
             '100%': { transform: 'scale(0)', opacity: '1' },
+        },
+        'orbit': {
+            '0%': { transform: 'rotate(0deg) translateX(300px) rotate(0deg)' },
+            '100%': { transform: 'rotate(360deg) translateX(300px) rotate(-360deg)' },
         }
       },
       animation: {
@@ -136,7 +139,8 @@ export default {
         'h-scroll': 'h-scroll 4s linear infinite',
         'v-scroll': 'v-scroll 4s linear infinite',
         'scale-in-center': 'scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
-        'scale-out-center': 'scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both'
+        'scale-out-center': 'scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both',
+        'orbit': 'orbit 16s linear infinite',
       },
     },
   },
