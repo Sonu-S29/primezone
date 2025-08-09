@@ -101,76 +101,74 @@ export default function GalleryPage() {
       </section>
 
       <section className="py-16 bg-muted overflow-hidden">
-         <div className="container mx-auto px-4">
-            <div className="event-gallery-container h-[600px] w-full relative">
-                <div className="absolute inset-0 flex justify-center items-center">
-                    <div className="text-center z-10 bg-background/50 backdrop-blur-sm p-8 rounded-lg">
-                        <div className="flex justify-center mb-4">
-                            <Users className="h-12 w-12 text-primary" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
-                        <p className="text-muted-foreground mt-4 max-w-md">
-                            From workshops to celebrations, see the moments that make our community special.
-                        </p>
-                        <Button asChild className="mt-6">
-                            <Link href="/contact">Join Us</Link>
-                        </Button>
-                    </div>
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 items-center gap-8 min-h-[400px]">
+            {/* Left Image Fan */}
+            <div className="relative h-96 hidden md:flex items-center justify-center">
+              {leftImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="absolute transition-transform duration-300 hover:scale-110 hover:z-10"
+                  style={{
+                    transform: `translateX(${(index - 1.5) * 20}px) rotate(${
+                      (index - 1.5) * 10
+                    }deg)`,
+                  }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.hint}
+                    width={150}
+                    height={200}
+                    className="w-40 h-52 object-cover rounded-lg shadow-lg"
+                    data-ai-hint={image.hint}
+                  />
                 </div>
-
-                {leftImages.map((image, index) => {
-                    const angle = -140 + (index * 25);
-                    const radius = 350;
-                    const x = radius * Math.cos((angle * Math.PI) / 180);
-                    const y = radius * Math.sin((angle * Math.PI) / 180);
-
-                    return (
-                         <div 
-                            key={index} 
-                            className="absolute top-1/2 left-1/2 w-40 h-52 rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-110 hover:z-20"
-                            style={{
-                                transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${angle + 90}deg)`,
-                            }}
-                         >
-                            <Image
-                                src={image.src}
-                                alt={image.hint}
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint={image.hint}
-                                className="w-full h-full"
-                            />
-                        </div>
-                    );
-                })}
-
-                {rightImages.map((image, index) => {
-                    const angle = 40 + (index * 25);
-                    const radius = 350;
-                    const x = radius * Math.cos((angle * Math.PI) / 180);
-                    const y = radius * Math.sin((angle * Math.PI) / 180);
-
-                    return (
-                         <div 
-                            key={index + leftImages.length} 
-                            className="absolute top-1/2 left-1/2 w-40 h-52 rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-110 hover:z-20"
-                            style={{
-                                transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${angle + 90}deg)`,
-                            }}
-                         >
-                            <Image
-                                src={image.src}
-                                alt={image.hint}
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint={image.hint}
-                                className="w-full h-full"
-                            />
-                        </div>
-                    );
-                })}
+              ))}
             </div>
-         </div>
+
+            {/* Central Content */}
+            <div className="text-center z-10">
+              <div className="flex justify-center mb-4">
+                <Users className="h-12 w-12 text-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">
+                Event Highlights
+              </h2>
+              <p className="text-muted-foreground mt-4 max-w-md mx-auto">
+                From workshops to celebrations, see the moments that make our
+                community special.
+              </p>
+              <Button asChild className="mt-6">
+                <Link href="/contact">Join Us</Link>
+              </Button>
+            </div>
+            
+            {/* Right Image Fan */}
+            <div className="relative h-96 hidden md:flex items-center justify-center">
+              {rightImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="absolute transition-transform duration-300 hover:scale-110 hover:z-10"
+                  style={{
+                    transform: `translateX(${(index - 1.5) * 20}px) rotate(${
+                      (index - 1.5) * -10
+                    }deg)`,
+                  }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.hint}
+                    width={150}
+                    height={200}
+                    className="w-40 h-52 object-cover rounded-lg shadow-lg"
+                    data-ai-hint={image.hint}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
       
       <section className="py-16 bg-card">
@@ -220,4 +218,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-
