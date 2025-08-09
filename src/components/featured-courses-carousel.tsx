@@ -108,7 +108,6 @@ export default function FeaturedCoursesCarousel() {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <h1 className="about-title courses-title">POPULAR</h1>
             <div className="carousel-container">
                 <button 
                     className="nav-arrow left" 
