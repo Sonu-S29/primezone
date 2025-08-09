@@ -78,6 +78,8 @@ const eventImages = [
     { src: 'https://placehold.co/300x200.png', hint: 'guest speaker' },
 ];
 
+const leftImages = eventImages.slice(0, 4);
+const rightImages = eventImages.slice(4);
 
 export default function GalleryPage() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -116,8 +118,8 @@ export default function GalleryPage() {
                     </div>
                 </div>
 
-                {eventImages.map((image, index) => {
-                    const angle = -90 + (index / (eventImages.length - 1)) * 180;
+                {leftImages.map((image, index) => {
+                    const angle = -140 + (index * 25);
                     const radius = 350;
                     const x = radius * Math.cos((angle * Math.PI) / 180);
                     const y = radius * Math.sin((angle * Math.PI) / 180);
@@ -125,6 +127,32 @@ export default function GalleryPage() {
                     return (
                          <div 
                             key={index} 
+                            className="absolute top-1/2 left-1/2 w-40 h-52 rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-110 hover:z-20"
+                            style={{
+                                transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${angle + 90}deg)`,
+                            }}
+                         >
+                            <Image
+                                src={image.src}
+                                alt={image.hint}
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint={image.hint}
+                                className="w-full h-full"
+                            />
+                        </div>
+                    );
+                })}
+
+                {rightImages.map((image, index) => {
+                    const angle = 40 + (index * 25);
+                    const radius = 350;
+                    const x = radius * Math.cos((angle * Math.PI) / 180);
+                    const y = radius * Math.sin((angle * Math.PI) / 180);
+
+                    return (
+                         <div 
+                            key={index + leftImages.length} 
                             className="absolute top-1/2 left-1/2 w-40 h-52 rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-110 hover:z-20"
                             style={{
                                 transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${angle + 90}deg)`,
@@ -192,3 +220,4 @@ export default function GalleryPage() {
     </div>
   );
 }
+
