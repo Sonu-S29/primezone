@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
-import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, Clock, Users, BookOpen, Download } from "lucide-react";
+import { Calculator, Code, Megaphone, Paintbrush, CheckCircle, Clock, Users, BookOpen, Download, Filter } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import BrochureDownloadForm from "@/components/brochure-download-form";
@@ -128,7 +128,7 @@ const courseData = [
             description: 'Learn Python programming',
             modules: 5,
             topics: ['Python Basics', 'Data Types and Structures', 'Functions and Modules', 'File I/O', 'Libraries and Frameworks'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/shortterm/python.png",
             hint: "python code"
         },
         {
@@ -184,7 +184,7 @@ const courseData = [
             description: 'Learn Java programming',
             modules: 5,
             topics: ['Java Basics', 'Object-Oriented Programming', 'Exception Handling', 'Collections Framework', 'Multithreading'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/shortterm/java.png",
             hint: "java code"
         },
         {
@@ -369,6 +369,7 @@ const courseData = [
 
 export default function ShortTermCoursesPage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [showFilters, setShowFilters] = useState(false);
 
   const filteredCourses = activeFilter
     ? courseData.find((category) => category.id === activeFilter)?.courses || []
@@ -387,30 +388,66 @@ export default function ShortTermCoursesPage() {
 
       <section className="container mx-auto px-4 py-16">
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <Button
-            onClick={() => setActiveFilter(null)}
-            variant={activeFilter === null ? "default" : "outline"}
-            className="h-10"
-          >
-            All Courses
-          </Button>
-          {courseData.map((category) => (
+        <div className="flex flex-col items-center mb-12">
+            {/* Mobile Filter Button */}
             <Button
-              key={category.id}
-              onClick={() => setActiveFilter(category.id)}
-              variant={activeFilter === category.id ? "default" : "outline"}
-              className="h-10"
+                onClick={() => setShowFilters(!showFilters)}
+                className="md:hidden w-full mb-4"
             >
-              <div className="flex items-center gap-3 p-2">
-                {category.icon}
-                <div className="text-left">
-                  <p className="font-bold">{category.name}</p>
-                </div>
-              </div>
+                <Filter className="mr-2 h-4 w-4" />
+                Filter Courses
             </Button>
-          ))}
+
+            {/* Desktop Filters (always visible) */}
+            <div className="hidden md:flex flex-wrap justify-center gap-4">
+                 <Button
+                    onClick={() => setActiveFilter(null)}
+                    variant={activeFilter === null ? "default" : "outline"}
+                    className="h-10"
+                >
+                    All Courses
+                </Button>
+                {courseData.map((category) => (
+                    <Button
+                    key={category.id}
+                    onClick={() => setActiveFilter(category.id)}
+                    variant={activeFilter === category.id ? "default" : "outline"}
+                    className="h-10"
+                    >
+                    <div className="flex items-center gap-3 p-2">
+                        {category.icon}
+                        <div className="text-left">
+                        <p className="font-bold">{category.name}</p>
+                        </div>
+                    </div>
+                    </Button>
+                ))}
+            </div>
+
+            {/* Mobile Filters (conditionally rendered) */}
+            {showFilters && (
+                <div className="md:hidden flex flex-nowrap overflow-x-auto justify-start gap-2 pb-2 w-full">
+                    <Button
+                        onClick={() => {setActiveFilter(null); setShowFilters(false);}}
+                        variant={activeFilter === null ? "default" : "outline"}
+                        className="h-10 flex-shrink-0"
+                    >
+                        All
+                    </Button>
+                    {courseData.map((category) => (
+                        <Button
+                        key={category.id}
+                        onClick={() => {setActiveFilter(category.id); setShowFilters(false);}}
+                        variant={activeFilter === category.id ? "default" : "outline"}
+                        className="h-10 flex-shrink-0"
+                        >
+                        {category.name}
+                        </Button>
+                    ))}
+                </div>
+            )}
         </div>
+
 
         {/* Course Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
