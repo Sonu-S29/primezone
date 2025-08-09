@@ -3,11 +3,20 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { GraduationCap, Menu, ChevronRight } from "lucide-react";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  NavbarButton,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "@/components/ui/resizable-navbar";
+import { GraduationCap } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,85 +27,81 @@ const navLinks = [
   { href: "/contact", label: "Contact Us" },
 ];
 
-const NavLink = ({ href, label, currentPath, className, children }: { href: string, label: string, currentPath: string, className?: string, children?: React.ReactNode }) => {
-    const isActive = currentPath === href || (href !== '/' && currentPath.startsWith(href));
+const NavbarLogo = () => {
     return (
-        <Link
-            href={href}
-            className={cn(
-                "transition-colors hover:text-primary",
-                isActive ? "text-primary" : "text-muted-foreground",
-                className
-            )}
-        >
-            {label}
-            {children}
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+          <GraduationCap className="h-6 w-6 text-primary" />
+          <span className="font-headline">Primezone</span>
         </Link>
     )
 }
 
 export default function Header() {
   const pathname = usePathname();
-  const [open, setOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/30 backdrop-blur-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <GraduationCap className="h-6 w-6 text-primary" />
-          <span className="font-headline">Primezone</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          {navLinks.map((link) => (
-              <NavLink 
-                key={link.href}
-                href={link.href}
-                label={link.label}
-                currentPath={pathname}
-              />
-            )
-          )}
-        </nav>
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild>
-            <Link href="/enroll">Enroll Now</Link>
-          </Button>
-        </div>
-        <div className="md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <SheetHeader className="sr-only">
-                <SheetTitle>Navigation Menu</SheetTitle>
-              </SheetHeader>
-              <nav className="grid gap-4 text-lg font-medium mt-8">
-                {navLinks.map((link) => (
-                  <SheetClose asChild key={link.href}>
-                      <Link
-                      href={link.href}
-                      className="block py-2 text-muted-foreground hover:text-primary"
-                      >
-                      {link.label}
-                      </Link>
-                  </SheetClose>
-                ))}
-                <div className="flex flex-col gap-4 mt-6 pt-6 border-t">
-                    <SheetClose asChild>
-                        <Button asChild>
+        <Navbar>
+            {/* Desktop Navigation */}
+            <NavBody>
+                <NavbarLogo />
+                <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+                {navLinks.map((item, idx) => {
+                    const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+                    return (
+                        <a
+                            key={`link=${idx}`}
+                            href={item.href}
+                            className={cn(
+                                "transition-colors hover:text-primary",
+                                isActive ? "text-primary" : "text-muted-foreground",
+                                "relative text-neutral-600 dark:text-neutral-300"
+                            )}
+                        >
+                            <span className="block text-sm">{item.label}</span>
+                        </a>
+                    )
+                })}
+                </div>
+                <div className="flex items-center gap-4">
+                    <Button asChild>
+                        <Link href="/enroll">Enroll Now</Link>
+                    </Button>
+                </div>
+            </NavBody>
+
+            {/* Mobile Navigation */}
+            <MobileNav>
+                <MobileNavHeader>
+                    <NavbarLogo />
+                    <MobileNavToggle
+                    isOpen={isMobileMenuOpen}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+                </MobileNavHeader>
+
+                <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
+                    {navLinks.map((item, idx) => (
+                    <a
+                        key={`mobile-link-${idx}`}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="relative text-neutral-600 dark:text-neutral-300">
+                        <span className="block">{item.label}</span>
+                    </a>
+                    ))}
+                    <div className="flex w-full flex-col gap-4 pt-4 mt-4 border-t">
+                        <Button asChild
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="w-full">
                             <Link href="/enroll">Enroll Now</Link>
                         </Button>
-                    </SheetClose>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
+                    </div>
+                </MobileNavMenu>
+            </MobileNav>
+        </Navbar>
+       </div>
     </header>
   );
 }
