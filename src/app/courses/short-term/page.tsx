@@ -15,7 +15,7 @@ import Image from "next/image";
 const courseData = [
   {
     id: "accounting",
-    name: "Account Courses",
+    name: "Account",
     description: "Master accounting and finance",
     icon: <Calculator className="h-8 w-8" />,
     courses: [
@@ -87,7 +87,7 @@ const courseData = [
   },
   {
     id: "programming",
-    name: "Programming Courses",
+    name: "Programming",
     description: "Learn coding and development",
     icon: <Code className="h-8 w-8" />,
     courses: [
@@ -295,7 +295,7 @@ const courseData = [
   },
   {
     id: "graphics",
-    name: "Graphics Courses",
+    name: "Graphics",
     description: "Create stunning visuals",
     icon: <Paintbrush className="h-8 w-8" />,
     courses: [
@@ -395,7 +395,7 @@ export default function ShortTermCoursesPage() {
                 className="md:hidden w-full mb-4"
             >
                 <Filter className="mr-2 h-4 w-4" />
-                Filter Courses
+                Filter
             </Button>
 
             {/* Desktop Filters (always visible) */}
@@ -405,7 +405,7 @@ export default function ShortTermCoursesPage() {
                     variant={activeFilter === null ? "default" : "outline"}
                     className="h-10"
                 >
-                    All Courses
+                    All
                 </Button>
                 {courseData.map((category) => (
                     <Button
@@ -426,7 +426,7 @@ export default function ShortTermCoursesPage() {
 
             {/* Mobile Filters (conditionally rendered) */}
             {showFilters && (
-                <div className="md:hidden flex flex-nowrap overflow-x-auto justify-start gap-2 pb-2 w-full">
+                <div className="md:hidden flex flex-nowrap overflow-x-auto justify-start gap-2 pb-2 w-full animate-scale-in-center">
                     <Button
                         onClick={() => {setActiveFilter(null); setShowFilters(false);}}
                         variant={activeFilter === null ? "default" : "outline"}
