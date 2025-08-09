@@ -24,7 +24,7 @@ const courseData = [
           description: 'Master essential office tools',
           modules: 5,
           topics: ['Word Processing', 'Spreadsheet Management', 'Presentation Software', 'Email Communication', 'Basic IT Skills'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/shortterm/OA.png",
           hint: "office software"
         },
         {
@@ -32,23 +32,16 @@ const courseData = [
           description: 'Master advanced Excel functions',
           modules: 5,
           topics: ['Formulas and Functions', 'Pivot Tables', 'Data Analysis Tools', 'Macros and VBA', 'Advanced Charting'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/shortterm/advexcel.png",
           hint: "excel spreadsheet"
         },
+        
         {
-          title: 'Tally Prime',
-          description: 'Learn Tally ERP 9 basics',
-          modules: 5,
-          topics: ['Accounting Basics', 'Inventory Management', 'GST Compliance', 'Financial Reporting', 'Payroll Management'],
-          image: "https://placehold.co/600x400.png",
-          hint: "accounting software"
-        },
-        {
-          title: 'Tally Prime GST',
+          title: 'Tally Prime + GST',
           description: 'Learn GST compliance',
           modules: 5,
           topics: ['GST Registration', 'Filing GST Returns', 'Input Tax Credit', 'GST Audit', 'Compliance Management'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/shortterm/tallygst.png",
           hint: "tax document"
         },
         {
@@ -80,7 +73,7 @@ const courseData = [
           description: 'Learn computer fundamentals',
           modules: 5,
           topics: ['Computer Fundamentals', 'Internet and Web Technologies', 'Word Processing', 'Spreadsheet Applications', 'Presentation Software'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/shortterm/ccc.png",
           hint: "computer basics"
         }
     ]
@@ -96,7 +89,7 @@ const courseData = [
             description: 'Build modern web applications',
             modules: 5,
             topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Backend Integration'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/shortterm/web.png",
             hint: "web development"
         },
         {
@@ -104,7 +97,7 @@ const courseData = [
             description: 'Create visually appealing websites',
             modules: 5,
             topics: ['UI/UX Principles', 'Color Theory', 'Typography', 'Design Tools', 'Prototyping'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/shortterm/webd.png",
             hint: "web design"
         },
         {
@@ -116,11 +109,19 @@ const courseData = [
             hint: "data structures"
         },
         {
-            title: 'C & C++',
-            description: 'Learn C and C++ programming',
+            title: 'C',
+            description: 'Learn C programming',
             modules: 5,
             topics: ['Syntax and Semantics', 'Object-Oriented Programming', 'Memory Management', 'File Handling', 'Data Structures in C/C++'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/shortterm/c.png",
+            hint: "c code"
+        },
+        {
+            title: 'C++',
+            description: 'Learn C++',
+            modules: 5,
+            topics: ['Syntax and Semantics', 'Object-Oriented Programming', 'Memory Management', 'File Handling', 'Data Structures in C/C++'],
+            image: "/images/shortterm/c++.png",
             hint: "c++ code"
         },
         {
@@ -216,7 +217,7 @@ const courseData = [
             description: 'Learn PowerBI for data visualization',
             modules: 5,
             topics: ['Data Visualization', 'DAX Functions', 'Power Query', 'Report Sharing', 'Dashboard Creation'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/shortterm/powerbi.png",
             hint: "powerbi dashboard"
         }
     ]
@@ -453,12 +454,12 @@ export default function ShortTermCoursesPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredCourses.map((course) => (
                 <Card key={course.title} className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
-                    <div className="relative h-40 w-full">
+                    <div className="relative h-40 w-full p-4">
                         <Image
                             src={course.image}
                             alt={course.title}
                             fill
-                            style={{objectFit: "cover"}}
+                            style={{objectFit: "contain"}}
                             data-ai-hint={course.hint}
                             className="rounded-t-2xl"
                         />
