@@ -96,7 +96,7 @@ export default function GalleryPage() {
                     const angle = (index / studentProjects.length) * 360;
                     return (
                         <div
-                            key={project.src}
+                            key={index}
                             className="absolute w-32 h-48 rounded-lg overflow-hidden shadow-lg animate-orbit"
                             style={{
                                 transformOrigin: '300px',
