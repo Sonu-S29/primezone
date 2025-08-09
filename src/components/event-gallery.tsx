@@ -64,22 +64,22 @@ export default function EventGallery() {
     const total = events.length;
     const offset = (index - currentIndex + total) % total;
     const angle = (offset / total) * 360;
-    const radius = 250; // controls the circle size
-    const x = Math.sin((angle * Math.PI) / 180) * radius;
+    const radius = 150; // controls the circle size for vertical rotation
+    const y = Math.sin((angle * Math.PI) / 180) * radius;
     const z = Math.cos((angle * Math.PI) / 180) * radius - radius;
     const scale = (z + radius) / (2 * radius) * 0.4 + 0.8; // scale from 0.8 to 1.2
     
     let opacity = 0;
     let display = 'none';
 
-    // Make 4 cards visible: center, one left, two right
-    if (offset === 0 || offset === 1 || offset === 2 || offset === total - 1) {
+    // Adjust which cards are visible for a vertical layout
+    if (offset === 0 || offset === 1 || offset === total -1 || offset === 2 || offset === total - 2) {
         opacity = 1;
         display = 'block';
     }
     
     return {
-      transform: `translateX(calc(-50% + ${x}px)) translateZ(${z}px) scale(${scale})`,
+      transform: `translateY(calc(-50% + ${y}px)) translateZ(${z}px) scale(${scale})`,
       zIndex: Math.round(scale * 100),
       opacity,
       display,
@@ -89,11 +89,11 @@ export default function EventGallery() {
 
   return (
     <div className="relative w-full h-[400px] flex flex-col justify-center items-center overflow-hidden bg-card p-4 rounded-2xl shadow-lg">
-      <div className="relative h-[250px] w-full" style={{ perspective: '1000px' }}>
+      <div className="relative h-full w-[120px]" style={{ perspective: '1000px' }}>
         {events.map((event, index) => (
           <div
             key={event.name}
-            className="absolute top-0 left-1/2 w-[120px] h-[180px] cursor-pointer"
+            className="absolute top-1/2 left-0 w-[120px] h-[180px] cursor-pointer"
             style={getCardStyle(index)}
             onClick={() => setCurrentIndex(index)}
           >
@@ -108,10 +108,12 @@ export default function EventGallery() {
           </div>
         ))}
       </div>
-      <h3 className="mt-8 text-3xl font-bold text-primary text-center transition-opacity duration-500">
-        {events[currentIndex].name}
-      </h3>
-       <div className="absolute bottom-4 flex gap-4">
+       <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center z-[101]">
+         <h3 className="text-3xl font-bold text-primary transition-opacity duration-500">
+            {events[currentIndex].name}
+         </h3>
+       </div>
+       <div className="absolute right-4 bottom-4 flex flex-col gap-4">
             <button onClick={prevEvent} className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary/40 transition-colors">
                 <ChevronLeft size={24} />
             </button>
