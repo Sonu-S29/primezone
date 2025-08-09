@@ -68,14 +68,14 @@ const studentProjects = [
 ];
 
 const eventImages = [
-    { src: 'https://placehold.co/300x400.png', hint: 'picnic fun', className: 'row-start-2' },
-    { src: 'https://placehold.co/300x300.png', hint: 'corporate training', className: 'row-start-3' },
-    { src: 'https://placehold.co/300x450.png', hint: 'dandiya night', className: 'row-start-4' },
-    { src: 'https://placehold.co/300x350.png', hint: 'dj night', className: 'col-start-4 row-start-2' },
-    { src: 'https://placehold.co/300x250.png', hint: 'seminar audience', className: 'col-start-4 row-start-3' },
-    { src: 'https://placehold.co/300x400.png', hint: 'graduation day', className: 'col-start-4 row-start-4' },
-    { src: 'https://placehold.co/300x200.png', hint: 'workshop collaboration', className: 'col-start-2 row-start-1' },
-    { src: 'https://placehold.co/300x200.png', hint: 'guest speaker', className: 'col-start-3 row-start-5' },
+    { src: 'https://placehold.co/300x400.png', hint: 'picnic fun' },
+    { src: 'https://placehold.co/300x300.png', hint: 'corporate training' },
+    { src: 'https://placehold.co/300x450.png', hint: 'dandiya night' },
+    { src: 'https://placehold.co/300x350.png', hint: 'dj night' },
+    { src: 'https://placehold.co/300x250.png', hint: 'seminar audience' },
+    { src: 'https://placehold.co/300x400.png', hint: 'graduation day' },
+    { src: 'https://placehold.co/300x200.png', hint: 'workshop collaboration' },
+    { src: 'https://placehold.co/300x200.png', hint: 'guest speaker' },
 ];
 
 
@@ -98,32 +98,49 @@ export default function GalleryPage() {
         <MemoriesGallery />
       </section>
 
-      <section className="py-16 bg-muted">
+      <section className="py-16 bg-muted overflow-hidden">
          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-4 grid-rows-5 gap-4 h-[700px]">
-                {eventImages.map((image, index) => (
-                    <div key={index} className={`relative rounded-lg overflow-hidden shadow-lg ${image.className}`}>
-                        <Image
-                            src={image.src}
-                            alt={image.hint}
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint={image.hint}
-                        />
+            <div className="event-gallery-container h-[600px] w-full relative">
+                <div className="absolute inset-0 flex justify-center items-center">
+                    <div className="text-center z-10 bg-background/50 backdrop-blur-sm p-8 rounded-lg">
+                        <div className="flex justify-center mb-4">
+                            <Users className="h-12 w-12 text-primary" />
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
+                        <p className="text-muted-foreground mt-4 max-w-md">
+                            From workshops to celebrations, see the moments that make our community special.
+                        </p>
+                        <Button asChild className="mt-6">
+                            <Link href="/contact">Join Us</Link>
+                        </Button>
                     </div>
-                ))}
-                <div className="col-start-2 col-span-2 row-start-2 row-span-3 flex flex-col justify-center items-center text-center p-8">
-                     <div className="flex justify-center mb-4">
-                        <Users className="h-12 w-12 text-primary" />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
-                    <p className="text-muted-foreground mt-4 max-w-md">
-                        From workshops to celebrations, see the moments that make our community special.
-                    </p>
-                    <Button asChild className="mt-6">
-                        <Link href="/contact">Join Us</Link>
-                    </Button>
                 </div>
+
+                {eventImages.map((image, index) => {
+                    const angle = -90 + (index / (eventImages.length - 1)) * 180;
+                    const radius = 350;
+                    const x = radius * Math.cos((angle * Math.PI) / 180);
+                    const y = radius * Math.sin((angle * Math.PI) / 180);
+
+                    return (
+                         <div 
+                            key={index} 
+                            className="absolute top-1/2 left-1/2 w-40 h-52 rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-110 hover:z-20"
+                            style={{
+                                transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${angle + 90}deg)`,
+                            }}
+                         >
+                            <Image
+                                src={image.src}
+                                alt={image.hint}
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint={image.hint}
+                                className="w-full h-full"
+                            />
+                        </div>
+                    );
+                })}
             </div>
          </div>
       </section>
