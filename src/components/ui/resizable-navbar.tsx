@@ -61,7 +61,7 @@ export const Navbar = ({
         }}
         className={cn(
           "sticky inset-x-0 top-0 md:top-2 z-50 mx-auto transition-colors duration-200",
-           scrolled ? "bg-card/95 backdrop-blur-sm border-b" : "bg-transparent border-b border-transparent",
+           scrolled ? "glass-effect border-b" : "bg-transparent border-b border-transparent",
           className
         )}>
         {children}
