@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -108,14 +109,6 @@ const HeroSlider = () => {
                     </li>
                 ))}
             </ul>
-            <nav className='hero-slider-nav'>
-                <button className='btn prev' onClick={handlePrev} aria-label="Previous Slide">
-                    <ArrowLeft size={24}/>
-                </button>
-                <button className='btn next' onClick={handleNext} aria-label="Next Slide">
-                    <ArrowRight size={24}/>
-                </button>
-            </nav>
         </main>
     );
 };

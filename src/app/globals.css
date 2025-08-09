@@ -147,8 +147,8 @@ body {
       height: 180px;
       list-style-type: none;
       position: absolute;
-      top: 80%;
-      transform: translateY(-50%);
+      bottom: 2rem;
+      transform: translateX(-50%);
       z-index: 1;
       background-position: center;
       background-size: cover;
@@ -223,29 +223,6 @@ body {
         opacity: 1;
         filter: blur(0);
       }
-    }
-
-    .hero-slider-nav {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      user-select: none;
-    }
-
-    .hero-slider-nav .btn {
-      background-color: rgba(255,255,255,0.5);
-      color: rgba(0,0,0,0.7);
-      border: 2px solid rgba(0,0,0,0.6);
-      margin: 0 0.25rem;
-      padding: 0.75rem;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .hero-slider-nav .btn:hover {
-      background-color: rgba(255,255,255,0.3);
     }
     
     @media (min-width: 900px) {
