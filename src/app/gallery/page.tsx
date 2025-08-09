@@ -85,11 +85,6 @@ export default function GalleryPage() {
               ))}
             </div>
           </div>
-           <div className="text-center mt-12">
-              <Button variant="outline" asChild>
-                <a href="#photo-gallery">Explore more Glimpses</a>
-              </Button>
-            </div>
         </section>
         {selectedVideo && (
             <DialogContent className="max-w-3xl h-auto p-0">
