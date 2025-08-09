@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Users, Lightbulb, PlayCircle } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
 import Link from "next/link";
-import EventGallery from "@/components/event-gallery";
 
 const studentProjects = [
   {
@@ -68,6 +67,17 @@ const studentProjects = [
   }
 ];
 
+const eventImages = [
+    { src: 'https://placehold.co/300x400.png', hint: 'picnic fun', className: 'row-start-2' },
+    { src: 'https://placehold.co/300x300.png', hint: 'corporate training', className: 'row-start-3' },
+    { src: 'https://placehold.co/300x450.png', hint: 'dandiya night', className: 'row-start-4' },
+    { src: 'https://placehold.co/300x350.png', hint: 'dj night', className: 'col-start-4 row-start-2' },
+    { src: 'https://placehold.co/300x250.png', hint: 'seminar audience', className: 'col-start-4 row-start-3' },
+    { src: 'https://placehold.co/300x400.png', hint: 'graduation day', className: 'col-start-4 row-start-4' },
+    { src: 'https://placehold.co/300x200.png', hint: 'workshop collaboration', className: 'col-start-2 row-start-1' },
+    { src: 'https://placehold.co/300x200.png', hint: 'guest speaker', className: 'col-start-3 row-start-5' },
+];
+
 
 export default function GalleryPage() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -89,10 +99,33 @@ export default function GalleryPage() {
       </section>
 
       <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4 flex flex-col items-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Event Highlights</h2>
-            <EventGallery />
-        </div>
+         <div className="container mx-auto px-4">
+            <div className="grid grid-cols-4 grid-rows-5 gap-4 h-[700px]">
+                {eventImages.map((image, index) => (
+                    <div key={index} className={`relative rounded-lg overflow-hidden shadow-lg ${image.className}`}>
+                        <Image
+                            src={image.src}
+                            alt={image.hint}
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint={image.hint}
+                        />
+                    </div>
+                ))}
+                <div className="col-start-2 col-span-2 row-start-2 row-span-3 flex flex-col justify-center items-center text-center p-8">
+                     <div className="flex justify-center mb-4">
+                        <Users className="h-12 w-12 text-primary" />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
+                    <p className="text-muted-foreground mt-4 max-w-md">
+                        From workshops to celebrations, see the moments that make our community special.
+                    </p>
+                    <Button asChild className="mt-6">
+                        <Link href="/contact">Join Us</Link>
+                    </Button>
+                </div>
+            </div>
+         </div>
       </section>
       
       <section className="py-16 bg-card">
