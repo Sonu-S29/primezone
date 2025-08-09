@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Lightbulb, PlayCircle } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
 import Link from "next/link";
+import EventGallery from "@/components/event-gallery";
 
 const studentProjects = [
   {
@@ -86,8 +87,15 @@ export default function GalleryPage() {
         <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Our Memories</h2>
         <MemoriesGallery />
       </section>
-      
+
       <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-12">Event Highlights</h2>
+            <EventGallery />
+        </div>
+      </section>
+      
+      <section className="py-16 bg-card">
         <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary text-center mb-20">Student Projects</h2>
             <div className="relative flex justify-center items-center h-[500px]">
