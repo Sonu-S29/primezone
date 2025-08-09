@@ -714,7 +714,7 @@ body {
 
     @keyframes scale-out-center {
         0% { transform: scale(1); opacity: 1; } 
-        100% { transform: scale(0); opacity: 1; } 
+        100% { transform: scale(0); opacity: 1; }
     }
     
     .scale-out-center-normal { 
@@ -724,16 +724,6 @@ body {
     @keyframes orbit {
         0% { transform: rotate(0deg) translateX(300px) rotate(0deg); }
         100% { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
-    }
-
-    @keyframes scroll-up {
-        from { transform: translateY(0); }
-        to { transform: translateY(-100%); }
-    }
-
-    @keyframes scroll-down {
-        from { transform: translateY(-100%); }
-        to { transform: translateY(0); }
     }
 
     @keyframes text-focus-in {
