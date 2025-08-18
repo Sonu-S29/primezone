@@ -152,30 +152,6 @@ export default function ReferAndEarnPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-            <Card className="max-w-2xl mx-auto">
-                <CardHeader className="text-center">
-                    <CardTitle>Start Referring Now</CardTitle>
-                    <CardDescription>Enter your details to get your unique referral link.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form className="space-y-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="name">Your Name</Label>
-                            <Input id="name" placeholder="John Doe" />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="email">Your Email</Label>
-                            <Input id="email" type="email" placeholder="john.doe@example.com" />
-                        </div>
-                        <Button type="submit" className="w-full">Get My Referral Link</Button>
-                    </form>
-                </CardContent>
-            </Card>
-        </div>
-      </section>
-
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
