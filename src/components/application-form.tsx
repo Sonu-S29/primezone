@@ -87,7 +87,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="priya.sharma@example.com" {...field} />
+                <Input type="email" placeholder="abc@example.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
