@@ -99,17 +99,9 @@ export default function BrochureDownloadForm() {
 
   return (
     <>
-      <CardHeader>
-        <CardTitle>Download Brochure</CardTitle>
-        <CardDescription>
-          {step === "details"
-            ? "Please provide your details to receive the brochure."
-            : "Enter the OTP sent to your phone to verify and start the download."}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+      <CardContent className="p-0">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 pt-4">
             {step === "details" && (
               <>
                 <FormField
