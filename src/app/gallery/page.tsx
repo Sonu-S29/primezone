@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Book, Building, Star, GraduationCap, PartyPopper, PlayCircle } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 const studentProjects = [
@@ -262,6 +262,7 @@ export default function GalleryPage() {
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-3xl p-0">
+                          <DialogTitle className="sr-only">{video.title}</DialogTitle>
                           {selectedVideo && (
                             <div className="aspect-video">
                               <iframe
@@ -336,5 +337,7 @@ export default function GalleryPage() {
     </div>
   );
 }
+
+    
 
     
