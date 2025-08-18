@@ -42,6 +42,7 @@ const NavbarLogo = () => {
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   return (
@@ -69,11 +70,11 @@ export default function Header() {
                   )
               })}
               
-              <DropdownMenu>
+              <DropdownMenu onOpenChange={setIsDropdownOpen}>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-primary px-[5px]">
+                  <Button variant="outline" className="flex items-center gap-1 text-sm font-medium text-foreground/70 px-[5px]">
                     More
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className={cn("h-4 w-4 transition-transform", isDropdownOpen && "rotate-180")} />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
