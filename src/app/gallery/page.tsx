@@ -12,21 +12,21 @@ import { cn } from "@/lib/utils";
 
 const studentProjects = [
   {
-    src: "https://ggayane.github.io/css-experiments/cards/force_magice.png",
+    src: "https://placehold.co/400x600.png",
     alt: "Student project with Lifebuoy",
     brand: "Lifebuoy",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     hint: "student project"
   },
   {
-    src: "https://ggayane.github.io/css-experiments/cards/force_outter.png",
+    src: "https://placehold.co/400x600.png",
     alt: "Student project with FAE Beauty",
     brand: "FAE BEAUTY",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
   {
-    src: "https://ggayane.github.io/css-experiments/cards/force_circle.png",
+    src: "https://placehold.co/400x600.png",
     alt: "Student project with Allen Solly",
     brand: "Allen Solly",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -77,19 +77,19 @@ const eventCategories = [
         description: "The Capstone Project is the pinnacle of your student experience, where you apply everything you've learned to a real-world digital marketing challenge. It's an opportunity to collaborate, innovate, and showcase your strategic skills, preparing you to lead in the industry.",
         videos: [
             {
-                thumbnail: 'https://ggayane.github.io/css-experiments/cards/force_magice.png',
+                thumbnail: 'https://placehold.co/600x400.png',
                 title: 'Power of Influence!',
                 hint: 'influencer marketing',
                 url: 'https://www.youtube.com/embed/nEwGfB7eU8A'
             },
             {
-                thumbnail: 'https://ggayane.github.io/css-experiments/cards/force_outter.png',
+                thumbnail: 'https://placehold.co/600x400.png',
                 title: 'Making soda viral...',
                 hint: 'viral marketing',
                 url: 'https://www.youtube.com/embed/xv-n_m4n4iU'
             },
             {
-                thumbnail: 'https://ggayane.github.io/css-experiments/cards/force_circle.png',
+                thumbnail: 'https://placehold.co/600x400.png',
                 title: 'Founder Rated 10/10',
                 hint: 'product launch',
                 url: 'https://www.youtube.com/embed/W9nZ6u15yis'
@@ -336,3 +336,5 @@ export default function GalleryPage() {
     </div>
   );
 }
+
+    
