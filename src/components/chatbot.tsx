@@ -30,12 +30,15 @@ export default function Chatbot() {
 
     useEffect(() => {
         if (scrollAreaRef.current) {
-            scrollAreaRef.current.scrollTo({
-                top: scrollAreaRef.current.scrollHeight,
-                behavior: 'smooth'
-            });
+            const scrollableNode = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
+            if (scrollableNode) {
+                 scrollableNode.scrollTo({
+                    top: scrollableNode.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
         }
-    }, [messages]);
+    }, [messages, loading]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -129,4 +132,3 @@ export default function Chatbot() {
         </>
     );
 }
-

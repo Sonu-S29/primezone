@@ -4,9 +4,7 @@
 /**
  * @fileOverview A simple chatbot flow for Primezone Computer Education.
  *
- * - chat - A function that handles the chatbot conversation.
- * - ChatInput - The input type for the chat function.
- * - ChatOutput - The return type for the chat function.
+ * - chatFlow - A function that handles the chatbot conversation.
  */
 
 import {ai} from '@/ai/genkit';
@@ -17,19 +15,14 @@ const MessageSchema = z.object({
     content: z.string(),
 });
 
-export const ChatInputSchema = z.object({
+const ChatInputSchema = z.object({
   history: z.array(MessageSchema).describe('The conversation history.'),
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export const ChatOutputSchema = z.object({
+const ChatOutputSchema = z.object({
   response: z.string().describe('The chatbot\'s response.'),
 });
-export type ChatOutput = z.infer<typeof ChatOutputSchema>;
-
-export async function chat(input: ChatInput): Promise<ChatOutput> {
-  return chatFlow(input);
-}
 
 const systemPrompt = `You are a friendly and helpful chatbot for Primezone Computer Education.
 Your goal is to assist users by answering their questions about courses, admissions, and other services offered by Primezone.
@@ -46,7 +39,7 @@ const prompt = ai.definePrompt({
   prompt: systemPrompt,
 });
 
-const chatFlow = ai.defineFlow(
+export const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,

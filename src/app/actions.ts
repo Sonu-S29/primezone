@@ -1,7 +1,7 @@
 
 "use server";
 import { personalizedCourseRecommendation, PersonalizedCourseRecommendationInput, PersonalizedCourseRecommendationOutput } from "@/ai/flows/course-recommendation";
-import { chat, ChatInput, ChatOutput } from "@/ai/flows/chatbot";
+import { chatFlow } from "@/ai/flows/chatbot";
 import { z } from "zod";
 
 const InputSchema = z.object({
@@ -45,7 +45,18 @@ export async function verifyOtp(otp: string): Promise<{ success: boolean, messag
     return { success: false, message: "Invalid OTP." };
 }
 
+const MessageSchema = z.object({
+    role: z.enum(['user', 'model']),
+    content: z.string(),
+});
+
+const ChatInputSchema = z.object({
+  history: z.array(MessageSchema),
+});
+
+type ChatInput = z.infer<typeof ChatInputSchema>;
+type ChatOutput = { response: string };
+
 export async function getChatbotResponse(history: ChatInput['history']): Promise<ChatOutput> {
-    return await chat({ history });
+    return await chatFlow({ history });
 }
-    
