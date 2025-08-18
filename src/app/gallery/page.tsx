@@ -10,65 +10,6 @@ import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
-const studentProjects = [
-  {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project with Lifebuoy",
-    brand: "Lifebuoy",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
-    hint: "student project"
-  },
-  {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project with FAE Beauty",
-    brand: "FAE BEAUTY",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  },
-  {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project with Allen Solly",
-    brand: "Allen Solly",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  },
-   {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project 4",
-    brand: "Brand D",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  },
-   {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project 5",
-    brand: "Brand E",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  },
-   {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project 6",
-    brand: "Brand F",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  },
-   {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project 7",
-    brand: "Brand G",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  },
-    {
-    src: "https://placehold.co/128x192.png",
-    alt: "Student project 8",
-    brand: "Brand H",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    hint: "student project"
-  }
-];
-
 const eventCategories = [
     {
         id: 'capstone',
@@ -262,7 +203,7 @@ export default function GalleryPage() {
                                         alt={item.title}
                                         width={600}
                                         height={400}
-                                        className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                                        className="w-full h-auto object-cover rounded-lg shadow-none md:shadow-md transition-transform duration-300 group-hover:scale-105"
                                         data-ai-hint={item.hint}
                                       />
                                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
@@ -293,7 +234,7 @@ export default function GalleryPage() {
                                   alt={item.alt}
                                   width={400}
                                   height={300}
-                                  className="w-full h-auto object-cover rounded-lg shadow-md"
+                                  className="w-full h-auto object-cover rounded-lg shadow-none md:shadow-md"
                                   data-ai-hint={item.hint}
                                 />
                              )}
