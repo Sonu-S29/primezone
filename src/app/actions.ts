@@ -45,18 +45,28 @@ export async function verifyOtp(otp: string): Promise<{ success: boolean, messag
     return { success: false, message: "Invalid OTP." };
 }
 
+
+// Chatbot Actions
+const ButtonSchema = z.object({
+  text: z.string(),
+  payload: z.string(),
+});
+
 const MessageSchema = z.object({
     role: z.enum(['user', 'model']),
     content: z.string(),
+    buttons: z.array(ButtonSchema).optional(),
 });
 
 const ChatInputSchema = z.object({
   history: z.array(MessageSchema),
+  message: z.string().optional(),
 });
 
+export type Message = z.infer<typeof MessageSchema>;
 type ChatInput = z.infer<typeof ChatInputSchema>;
-type ChatOutput = { response: string };
+type ChatOutput = { response: Message };
 
-export async function getChatbotResponse(history: ChatInput['history']): Promise<ChatOutput> {
-    return await chatFlow({ history });
+export async function getChatbotResponse(history: ChatInput['history'], message?: string): Promise<ChatOutput> {
+    return await chatFlow({ history, message });
 }
