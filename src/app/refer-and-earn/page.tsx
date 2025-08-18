@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Gift, Users, Send } from "lucide-react";
+import { Gift, Users, Send, IndianRupee, Star, MessageSquare } from "lucide-react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,7 +23,7 @@ export default function ReferAndEarnPage() {
           <div className="order-2 md:order-1">
             <h2 className="text-3xl font-bold text-primary mb-4 font-headline">How It Works</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Our referral program is simple. Share your unique referral link with your friends. When they enroll in any of our diploma courses, you both get exciting rewards. It's a win-win!
+              Our referral program is simple. Share your unique referral link with your friends. When they inquire or enroll in any of our courses, you both get exciting rewards. It's a win-win!
             </p>
             <div className="space-y-6">
               <div className="flex items-start">
@@ -40,8 +40,8 @@ export default function ReferAndEarnPage() {
                   <Users className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">2. Your Friend Enrolls</h3>
-                  <p className="text-muted-foreground text-sm">Your friend signs up for a course using your referral link.</p>
+                  <h3 className="font-semibold">2. Your Friend Inquires or Enrolls</h3>
+                  <p className="text-muted-foreground text-sm">Your friend uses your link to either inquire about a course or enroll directly.</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -49,8 +49,8 @@ export default function ReferAndEarnPage() {
                   <Gift className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">3. You Both Get Rewarded</h3>
-                  <p className="text-muted-foreground text-sm">Once they confirm their admission, you and your friend receive your rewards!</p>
+                  <h3 className="font-semibold">3. You Get Rewarded</h3>
+                  <p className="text-muted-foreground text-sm">You receive cash rewards for successful enrollments or points for inquiries.</p>
                 </div>
               </div>
             </div>
@@ -69,6 +69,58 @@ export default function ReferAndEarnPage() {
       </section>
 
       <section className="bg-muted py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Referral Rewards</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              We offer rewards for both course enrollments and inquiries made through your referral.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="text-center">
+                  <CardHeader>
+                      <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 w-fit mb-2">
+                          <IndianRupee className="h-8 w-8" />
+                      </div>
+                      <CardTitle>Diploma Course Enrollment</CardTitle>
+                      <CardDescription>When your friend enrolls in any Diploma course.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                      <p className="text-3xl font-bold text-primary">₹2000</p>
+                      <p className="text-muted-foreground">Cash Reward</p>
+                  </CardContent>
+              </Card>
+              <Card className="text-center">
+                  <CardHeader>
+                      <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 w-fit mb-2">
+                          <IndianRupee className="h-8 w-8" />
+                      </div>
+                      <CardTitle>Short-Term Course Enrollment</CardTitle>
+                      <CardDescription>When your friend enrolls in any Short-Term course.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                      <p className="text-3xl font-bold text-primary">₹1000</p>
+                      <p className="text-muted-foreground">Cash Reward</p>
+                  </CardContent>
+              </Card>
+              <Card className="text-center">
+                  <CardHeader>
+                      <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 w-fit mb-2">
+                          <Star className="h-8 w-8" />
+                      </div>
+                      <CardTitle>Course Inquiry</CardTitle>
+                      <CardDescription>When your referred friend makes an inquiry but doesn't enroll.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                      <p className="text-3xl font-bold text-primary">50 Points</p>
+                      <p className="text-muted-foreground text-sm">(10 Points = ₹5, redeemable on admission)</p>
+                  </CardContent>
+              </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
         <div className="container mx-auto px-4">
             <Card className="max-w-2xl mx-auto">
                 <CardHeader className="text-center">
