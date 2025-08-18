@@ -135,7 +135,7 @@ export default function Chatbot() {
                                                 >
                                                    <ReactMarkdown
                                                         components={{
-                                                            a: ({node, ...props}) => <Link href={props.href ?? '#'} {...props} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer" />,
+                                                            a: ({node, ...props}) => <Link href={props.href ?? '#'} {...props} className="text-blue-500 hover:underline" />,
                                                             p: ({node, ...props}) => <p className="my-0" {...props} />,
                                                             ul: ({node, ...props}) => <ul className="my-2 pl-4" {...props} />,
                                                             li: ({node, ...props}) => <li className="my-1" {...props} />
