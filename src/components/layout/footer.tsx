@@ -37,9 +37,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Home</Link></li>
               <li><Link href="/about" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>About Us</Link></li>
-              <li><Link href="/courses/diploma" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Courses</Link></li>
+              <li><Link href="/courses" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Courses</Link></li>
               <li><Link href="/contact" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Contact us</Link></li>
-              <li><Link href="/recommendations" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>AI Recommender</Link></li>
+              <li><Link href="/blog" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Blog</Link></li>
+              <li><Link href="/career" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Career</Link></li>
+              <li><Link href="/refer-and-earn" className="flex items-center text-primary-foreground/70 hover:text-primary-foreground text-sm"><ChevronRight className="h-4 w-4 mr-1"/>Refer & Earn</Link></li>
             </ul>
           </div>
 
