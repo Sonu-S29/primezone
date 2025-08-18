@@ -1,10 +1,35 @@
 
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Gift, Users, Send, IndianRupee, Star, MessageSquare } from "lucide-react";
+import { Gift, Users, Send, IndianRupee, Star, HelpCircle } from "lucide-react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const faqs = [
+    {
+        question: "How do I get my referral link?",
+        answer: "Simply enter your name and email in the form on this page, and we'll generate a unique referral link for you to share."
+    },
+    {
+        question: "What rewards do I get?",
+        answer: "You get a ₹2000 cash reward for a Diploma course enrollment, ₹1000 for a Short-Term course enrollment, and 50 points for every valid inquiry."
+    },
+    {
+        question: "How can I use my referral points?",
+        answer: "You can redeem your points for a discount on your own course fees. 10 points are equivalent to ₹5. Points are redeemable at the time of your own admission."
+    },
+    {
+        question: "Is there a limit to how many friends I can refer?",
+        answer: "No, there is no limit! You can refer as many friends as you like and earn rewards for every successful enrollment and inquiry."
+    },
+    {
+        question: "When do I receive my cash reward?",
+        answer: "Cash rewards are processed after your referred friend has successfully completed their enrollment and fee payment."
+    }
+];
 
 export default function ReferAndEarnPage() {
   return (
@@ -78,7 +103,7 @@ export default function ReferAndEarnPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <Card className="flex flex-col text-center border-2 border-primary/20 shadow-lg rounded-xl overflow-hidden">
-                  <CardHeader className="bg-primary/10 p-4">
+                  <CardHeader className="bg-green-500/10 p-4">
                       <div className="mx-auto bg-green-500/20 text-green-600 rounded-full p-3 w-fit mb-2">
                           <Star className="h-6 w-6" />
                       </div>
@@ -148,6 +173,30 @@ export default function ReferAndEarnPage() {
                     </form>
                 </CardContent>
             </Card>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground mt-2">Find answers to common questions about our referral program.</p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>
+                  <div className="flex items-center gap-2">
+                    <HelpCircle className="h-5 w-5 text-primary" />
+                    {faq.question}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </div>
