@@ -3,21 +3,32 @@
 
 import Link from "next/link";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { GraduationCap, Menu } from "lucide-react";
+import { GraduationCap, Menu, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
-const navLinks = [
+const mainNavLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
   { href: "/gallery", label: "Gallery" },
+];
+
+const moreLinks = [
   { href: "/blog", label: "Blog" },
   { href: "/career", label: "Career" },
   { href: "/refer-and-earn", label: "Refer & Earn" },
-  { href: "/contact", label: "Contact Us" },
 ];
+
+const allNavLinks = [...mainNavLinks, ...moreLinks, { href: "/contact", label: "Contact Us" }];
 
 const NavbarLogo = () => {
     return (
@@ -41,7 +52,7 @@ export default function Header() {
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-              {navLinks.map((item) => {
+              {mainNavLinks.map((item) => {
                   const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
                   return (
                       <Link
@@ -56,6 +67,34 @@ export default function Header() {
                       </Link>
                   )
               })}
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-primary px-0">
+                    More
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {moreLinks.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link href={item.href} className={cn(pathname === item.href && "font-semibold text-primary")}>
+                          {item.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Link
+                href="/contact"
+                className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === "/contact" ? "text-primary font-semibold" : "text-foreground/70"
+                )}
+              >
+                Contact Us
+              </Link>
             </nav>
 
             {/* Mobile Navigation */}
@@ -74,7 +113,7 @@ export default function Header() {
                    <div className="flex flex-col gap-6 p-4">
                       <NavbarLogo />
                       <nav className="flex flex-col gap-4">
-                          {navLinks.map((item) => (
+                          {allNavLinks.map((item) => (
                               <Link
                                   key={item.href}
                                   href={item.href}
