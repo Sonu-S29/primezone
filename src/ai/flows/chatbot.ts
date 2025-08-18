@@ -63,8 +63,7 @@ export const chatFlow = ai.defineFlow(
     const lastBotMessage = input.history.slice().reverse().find(m => m.role === 'model')?.content;
 
     // Path for "Suggestions"
-    if (lastBotMessage?.includes("What is your educational background?")) {
-        const educationalBackground = userMessage;
+    if (lastBotMessage?.includes("What is your educational background")) {
         return {
             response: {
                 role: 'model',
@@ -75,7 +74,7 @@ export const chatFlow = ai.defineFlow(
     if (lastBotMessage?.includes("what are your interests")) {
         const historyText = input.history.map(m => `${m.role}: ${m.content}`).join('\n');
         const careerGoalsMatch = historyText.match(/career goals\?\nuser: (.*)/);
-        const backgroundMatch = historyText.match(/educational background\?\nuser: (.*)/);
+        const backgroundMatch = historyText.match(/educational background.*\nuser: (.*)/);
 
         const careerGoals = careerGoalsMatch ? careerGoalsMatch[1] : "Not specified";
         const educationalBackground = backgroundMatch ? backgroundMatch[1] : "Not specified";
@@ -161,7 +160,7 @@ export const chatFlow = ai.defineFlow(
     }
 
     if (userMessage?.startsWith('short_term_')) {
-        const category = userMessage.replace('short_term_', '').replace('_', ' ');
+        const category = userMessage.replace('short_term_', '').replace(/_/g, ' ');
         const categoryKey = Object.keys(shortTermCourseCategories).find(k => k.toLowerCase() === category) as keyof typeof shortTermCourseCategories | undefined;
         
         if (categoryKey) {
