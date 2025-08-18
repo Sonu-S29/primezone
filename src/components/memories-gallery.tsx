@@ -47,13 +47,34 @@ const gridConfig = [
     { top: '40%', left: '40%', width: '100px', height: '100px' },
 ];
 
+const mobileGridConfig = [
+    { top: '5%', left: '10%', width: '100px', height: '120px' },
+    { top: '10%', left: '60%', width: '120px', height: '100px' },
+    { top: '35%', left: '30%', width: '150px', height: '130px' },
+    { top: '60%', left: '5%', width: '110px', height: '140px' },
+    { top: '65%', left: '65%', width: '130px', height: '110px' },
+    { top: '5%', left: '35%', width: '80px', height: '80px' },
+];
+
+
 const MemoriesGallery = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+    
+    const activeGridConfig = isMobile ? mobileGridConfig : gridConfig;
+
   const [animationState, setAnimationState] = useState<('in' | 'out' | 'idle')[]>(
-    new Array(gridConfig.length).fill('idle')
+    new Array(activeGridConfig.length).fill('idle')
   );
 
   useEffect(() => {
-    const timeouts = new Array(gridConfig.length).fill(null);
+    const timeouts = new Array(activeGridConfig.length).fill(null);
 
     const scheduleAnimation = (index: number) => {
         const randomDelay = Math.random() * 3000 + 1000; // Time spent hidden
@@ -85,22 +106,22 @@ const MemoriesGallery = () => {
         }, randomDelay);
     };
 
-    gridConfig.forEach((_, index) => {
+    activeGridConfig.forEach((_, index) => {
         scheduleAnimation(index);
     });
 
     return () => timeouts.forEach(clearTimeout);
-  }, []);
+  }, [activeGridConfig]);
 
   return (
     <div
-      className="relative h-[500px] w-full max-w-4xl mx-auto bg-grid"
+      className="relative h-[400px] sm:h-[500px] w-full max-w-4xl mx-auto bg-grid"
       style={{
         backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)',
         backgroundSize: '20px 20px'
       }}
     >
-      {gridConfig.map((style, index) => (
+      {activeGridConfig.map((style, index) => (
         <div
           key={index}
           className={cn(

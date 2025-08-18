@@ -202,8 +202,8 @@ export default function GalleryPage() {
     <div>
       <section className="bg-card py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">Our Gallery</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-headline text-primary">Our Gallery</h1>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             A glimpse into life at Primezone Computer Education. Explore our campus, events, and student activities.
           </p>
         </div>
@@ -219,37 +219,37 @@ export default function GalleryPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
             <p className="text-muted-foreground mt-2">Explore the vibrant life at Primezone</p>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="flex flex-col md:grid md:grid-cols-4 gap-8">
             <div className="md:col-span-1">
-              <div className="bg-background rounded-lg p-4 shadow-sm">
-                <ul className="space-y-2">
-                  {eventCategories.map(category => (
-                    <li key={category.id}>
-                      <button
-                        onClick={() => handleTabClick(category.id)}
-                        className={cn(
-                          "w-full text-left px-4 py-2 rounded-md flex items-center transition-colors",
-                          activeTab === category.id
-                            ? "bg-primary text-primary-foreground"
-                            : "hover:bg-muted"
-                        )}
-                      >
-                        {category.icon} {category.title}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="bg-background rounded-lg p-2 md:p-4 shadow-sm">
+                    <ul className="flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 overflow-x-auto pb-2 md:pb-0">
+                    {eventCategories.map(category => (
+                        <li key={category.id} className="flex-shrink-0">
+                        <button
+                            onClick={() => handleTabClick(category.id)}
+                            className={cn(
+                            "w-full text-left px-3 py-2 rounded-md flex items-center transition-colors text-sm md:text-base",
+                            activeTab === category.id
+                                ? "bg-primary text-primary-foreground"
+                                : "hover:bg-muted"
+                            )}
+                        >
+                            {category.icon} {category.title}
+                        </button>
+                        </li>
+                    ))}
+                    </ul>
+                </div>
             </div>
             <div className="md:col-span-3">
               <div key={contentKey} className="space-y-8 animate-fade-in-up">
-                <h3 className="text-3xl font-bold font-headline">{activeCategory.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold font-headline">{activeCategory.title}</h3>
                 
                 <div>
                   {(activeCategory.media?.length || 0) > 0 ? (
                     <InfiniteScroller speed="slow">
                         {activeCategory.media.map((item, index) => (
-                           <li key={`media-${index}`} className="w-80 flex-shrink-0">
+                           <li key={`media-${index}`} className="w-64 md:w-80 flex-shrink-0">
                              {item.type === 'video' ? (
                                 <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
                                   <DialogTrigger asChild>
@@ -266,9 +266,9 @@ export default function GalleryPage() {
                                         data-ai-hint={item.hint}
                                       />
                                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <PlayCircle className="h-16 w-16 text-white" />
+                                        <PlayCircle className="h-12 w-12 md:h-16 md:w-16 text-white" />
                                       </div>
-                                      <p className="mt-2 font-semibold text-center">{item.title}</p>
+                                      <p className="mt-2 font-semibold text-center text-sm md:text-base">{item.title}</p>
                                     </div>
                                   </DialogTrigger>
                                   <DialogContent className="max-w-3xl p-0">
