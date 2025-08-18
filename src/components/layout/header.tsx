@@ -28,7 +28,7 @@ const moreLinks = [
   { href: "/refer-and-earn", label: "Refer & Earn" },
 ];
 
-const allNavLinks = [...mainNavLinks, ...moreLinks, { href: "/contact", label: "Contact Us" }];
+const allNavLinks = [...mainNavLinks, { href: "/contact", label: "Contact Us" }, ...moreLinks];
 
 const NavbarLogo = () => {
     return (
@@ -68,6 +68,16 @@ export default function Header() {
                   )
               })}
 
+              <Link
+                href="/contact"
+                className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname === "/contact" ? "text-primary font-semibold" : "text-foreground/70"
+                )}
+              >
+                Contact Us
+              </Link>
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-primary px-0">
@@ -86,15 +96,6 @@ export default function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Link
-                href="/contact"
-                className={cn(
-                    "transition-colors hover:text-primary",
-                    pathname === "/contact" ? "text-primary font-semibold" : "text-foreground/70"
-                )}
-              >
-                Contact Us
-              </Link>
             </nav>
 
             {/* Mobile Navigation */}
