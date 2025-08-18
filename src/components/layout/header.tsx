@@ -43,7 +43,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50">
+    <header className="sticky top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-sm">
       <div className="relative w-full py-2">
       <Navbar>
         {/* Desktop Navigation */}

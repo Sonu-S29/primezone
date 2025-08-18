@@ -49,19 +49,16 @@ export const Navbar = ({
       <motion.nav
         initial={{
           maxWidth: "64rem", // max-w-6xl
-          borderRadius: "1rem", // rounded-2xl
         }}
         animate={{
-          maxWidth: scrolled ? "100%" : "64rem",
-          borderRadius: scrolled ? "0rem" : "1rem",
+          maxWidth: "100%",
         }}
         transition={{
           duration: 0.2,
           ease: "easeInOut",
         }}
         className={cn(
-          "sticky inset-x-0 top-0 md:top-2 z-50 mx-auto transition-colors duration-200",
-           scrolled ? "glass-effect border-b" : "bg-transparent border-b border-transparent",
+          "inset-x-0 z-50 mx-auto",
           className
         )}>
         {children}
