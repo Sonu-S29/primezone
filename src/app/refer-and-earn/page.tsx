@@ -76,44 +76,51 @@ export default function ReferAndEarnPage() {
               We offer rewards for both course enrollments and inquiries made through your referral.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <Card className="text-center">
-                  <CardHeader>
-                      <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 w-fit mb-2">
-                          <IndianRupee className="h-8 w-8" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="flex flex-col text-center border-2 border-primary/20 shadow-lg rounded-xl overflow-hidden">
+                  <CardHeader className="bg-primary/10 p-4">
+                      <div className="mx-auto bg-blue-500/20 text-blue-600 rounded-full p-3 w-fit mb-2">
+                          <Star className="h-6 w-6" />
                       </div>
-                      <CardTitle>Diploma Course Enrollment</CardTitle>
-                      <CardDescription>When your friend enrolls in any Diploma course.</CardDescription>
+                      <CardTitle className="text-blue-800">Course Inquiry</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                      <p className="text-3xl font-bold text-primary">₹2000</p>
-                      <p className="text-muted-foreground">Cash Reward</p>
-                  </CardContent>
-              </Card>
-              <Card className="text-center">
-                  <CardHeader>
-                      <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 w-fit mb-2">
-                          <IndianRupee className="h-8 w-8" />
-                      </div>
-                      <CardTitle>Short-Term Course Enrollment</CardTitle>
-                      <CardDescription>When your friend enrolls in any Short-Term course.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                      <p className="text-3xl font-bold text-primary">₹1000</p>
-                      <p className="text-muted-foreground">Cash Reward</p>
-                  </CardContent>
-              </Card>
-              <Card className="text-center">
-                  <CardHeader>
-                      <div className="mx-auto bg-primary text-primary-foreground rounded-full p-4 w-fit mb-2">
-                          <Star className="h-8 w-8" />
-                      </div>
-                      <CardTitle>Course Inquiry</CardTitle>
+                  <CardContent className="flex-grow p-6 space-y-4">
+                      <p className="text-4xl font-bold text-primary">50 <span className="text-xl font-medium">Points</span></p>
                       <CardDescription>When your referred friend makes an inquiry but doesn't enroll.</CardDescription>
+                  </CardContent>
+                   <CardContent className="p-6 mt-auto">
+                      <p className="text-sm font-bold text-blue-600 bg-blue-100 border border-blue-200 rounded-md py-2 px-4">10 Points = <IndianRupee className="inline h-4 w-4 -mt-1" />5</p>
+                      <p className="text-xs text-muted-foreground mt-2">Redeemable on admission</p>
+                  </CardContent>
+              </Card>
+               <Card className="flex flex-col text-center border-2 border-accent shadow-lg rounded-xl overflow-hidden scale-105 bg-card">
+                  <CardHeader className="bg-accent/20 p-4">
+                      <div className="mx-auto bg-green-500/20 text-green-600 rounded-full p-3 w-fit mb-2">
+                          <IndianRupee className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-green-800">Short-Term Course</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                      <p className="text-3xl font-bold text-primary">50 Points</p>
-                      <p className="text-muted-foreground text-sm">(10 Points = ₹5, redeemable on admission)</p>
+                  <CardContent className="flex-grow p-6 space-y-4">
+                      <p className="text-4xl font-bold text-primary"><IndianRupee className="inline h-8 w-8 -mt-2" />1000</p>
+                      <CardDescription>When your friend enrolls in any Short-Term course.</CardDescription>
+                  </CardContent>
+                   <CardContent className="p-6 mt-auto">
+                      <p className="text-sm font-bold text-green-600 bg-green-100 border border-green-200 rounded-md py-2 px-4">Cash Reward</p>
+                  </CardContent>
+              </Card>
+              <Card className="flex flex-col text-center border-2 border-primary/20 shadow-lg rounded-xl overflow-hidden">
+                  <CardHeader className="bg-red-500/10 p-4">
+                      <div className="mx-auto bg-red-500/20 text-red-600 rounded-full p-3 w-fit mb-2">
+                          <IndianRupee className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-red-800">Diploma Course</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow p-6 space-y-4">
+                      <p className="text-4xl font-bold text-primary"><IndianRupee className="inline h-8 w-8 -mt-2" />2000</p>
+                      <CardDescription>When your friend enrolls in any Diploma course.</CardDescription>
+                  </CardContent>
+                   <CardContent className="p-6 mt-auto">
+                       <p className="text-sm font-bold text-red-600 bg-red-100 border border-red-200 rounded-md py-2 px-4">Cash Reward</p>
                   </CardContent>
               </Card>
           </div>
