@@ -52,6 +52,8 @@ const shortTermCourseCategories = {
     Graphics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Video|Sound Editing", "Adobe Animation", "3D MAX", "Canva Design"]
 };
 
+const contactInfo = "\n\nFor more details, you can contact us at:\n**Jogeshwari:** [9769730087](tel:+919769730087)\n**Vile Parle:** [9321773941](tel:+919321773941)";
+
 export const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
@@ -87,7 +89,7 @@ export const chatFlow = ai.defineFlow(
                 interests,
             });
             
-            const recommendationText = `Based on what you told me, here are some courses I'd recommend:\n\n**Courses:**\n- ${recommendations.courseRecommendations.join('\n- ')}\n\n**Reasoning:**\n${recommendations.reasoning}\n\nWould you like to explore something else?`;
+            const recommendationText = `Based on what you told me, here are some courses I'd recommend:\n\n**Courses:**\n- ${recommendations.courseRecommendations.join('\n- ')}\n\n**Reasoning:**\n${recommendations.reasoning}\n\nWould you like to explore something else? ${contactInfo}`;
             
             return {
                 response: {
@@ -134,7 +136,7 @@ export const chatFlow = ai.defineFlow(
       return {
         response: {
           role: 'model',
-          content: `Here are our Diploma courses:\n${courseList}\n\nYou can find more details on our [diploma courses page](/courses/diploma). What else can I help with?`,
+          content: `Here are our Diploma courses:\n${courseList}\n\nYou can find more details on our [diploma courses page](/courses/diploma). What else can I help with? ${contactInfo}`,
            buttons: [
                 { text: "Courses", payload: "courses" },
                 { text: "Career Guidance", payload: "career_guidance" },
@@ -169,7 +171,7 @@ export const chatFlow = ai.defineFlow(
             return {
                 response: {
                     role: 'model',
-                    content: `Here are the courses under ${categoryKey}:\n${courseList}\n\nFor more details, visit our [short-term courses page](/courses/short-term). What else can I help you with?`,
+                    content: `Here are the courses under ${categoryKey}:\n${courseList}\n\nFor more details, visit our [short-term courses page](/courses/short-term). What else can I help you with? ${contactInfo}`,
                     buttons: [
                         { text: "Courses", payload: "courses" },
                         { text: "Career Guidance", payload: "career_guidance" },
@@ -185,7 +187,7 @@ export const chatFlow = ai.defineFlow(
       return {
         response: {
           role: 'model',
-          content: "Of course! For career guidance, you can contact our counselors at:\n\n**Jogeshwari:** 9769730087\n**Vile Parle:** 9321773941\n\nWhat else can I help with?",
+          content: `Of course! For career guidance, you can contact our counselors at:\n\n**Jogeshwari:** [9769730087](tel:+919769730087)\n**Vile Parle:** [9321773941](tel:+919321773941)\n\nWhat else can I help with?`,
            buttons: [
                 { text: "Courses", payload: "courses" },
                 { text: "Career Guidance", payload: "career_guidance" },
