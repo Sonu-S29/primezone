@@ -247,7 +247,6 @@ export default function GalleryPage() {
                 <h3 className="text-3xl font-bold font-headline">{activeCategory.title}</h3>
                 
                 <div>
-                  <h4 className="text-xl font-bold mb-4">Media</h4>
                   {(activeCategory.media?.length || 0) > 0 ? (
                     <InfiniteScroller speed="slow">
                         {activeCategory.media.map((item, index) => (
