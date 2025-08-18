@@ -71,7 +71,7 @@ export default function Header() {
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-primary px-0">
+                  <Button variant="ghost" className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-primary px-[5px]">
                     More
                     <ChevronDown className="h-4 w-4" />
                   </Button>
