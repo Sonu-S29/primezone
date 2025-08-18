@@ -12,56 +12,56 @@ import { cn } from "@/lib/utils";
 
 const studentProjects = [
   {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project with Lifebuoy",
     brand: "Lifebuoy",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     hint: "student project"
   },
   {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project with FAE Beauty",
     brand: "FAE BEAUTY",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
   {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project with Allen Solly",
     brand: "Allen Solly",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
    {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project 4",
     brand: "Brand D",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
    {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project 5",
     brand: "Brand E",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
    {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project 6",
     brand: "Brand F",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
    {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project 7",
     brand: "Brand G",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     hint: "student project"
   },
     {
-    src: "https://placehold.co/400x600.png",
+    src: "https://placehold.co/128x192.png",
     alt: "Student project 8",
     brand: "Brand H",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -74,110 +74,131 @@ const eventCategories = [
         id: 'capstone',
         title: 'Capstone Project',
         icon: <Book className="mr-2 h-5 w-5" />,
-        description: "The Capstone Project is the pinnacle of your student experience, where you apply everything you've learned to a real-world digital marketing challenge. It's an opportunity to collaborate, innovate, and showcase your strategic skills, preparing you to lead in the industry.",
         videos: [
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Power of Influence!',
-                hint: 'influencer marketing',
-                url: 'https://www.youtube.com/embed/nEwGfB7eU8A'
-            },
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Making soda viral...',
-                hint: 'viral marketing',
-                url: 'https://www.youtube.com/embed/xv-n_m4n4iU'
-            },
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Founder Rated 10/10',
-                hint: 'product launch',
-                url: 'https://www.youtube.com/embed/W9nZ6u15yis'
-            }
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Power of Influence!', hint: 'influencer marketing', url: 'https://www.youtube.com/embed/nEwGfB7eU8A' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Making soda viral...', hint: 'viral marketing', url: 'https://www.youtube.com/embed/xv-n_m4n4iU' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Founder Rated 10/10', hint: 'product launch', url: 'https://www.youtube.com/embed/W9nZ6u15yis' }
+        ],
+        images: [
+            { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 1', hint: 'team presentation' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 2', hint: 'students brainstorming' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 3', hint: 'project prototype' },
+            { src: 'https://placeholdco/400x300.png', alt: 'Capstone Image 4', hint: 'final project award' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 5', hint: 'group photo' },
         ]
     },
     {
         id: 'agency',
         title: 'Agency Visits',
         icon: <Building className="mr-2 h-5 w-5" />,
-        description: "Get a behind-the-scenes look at the fast-paced world of digital marketing with exclusive visits to top agencies. Network with professionals, learn about agency life, and see how campaigns are built from the ground up.",
         videos: [
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'A Day at a Top Agency',
-                hint: 'marketing agency office',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            },
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Networking with Pros',
-                hint: 'business networking event',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            }
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'A Day at a Top Agency', hint: 'marketing agency office', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Networking with Pros', hint: 'business networking event', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Agency Case Study', hint: 'successful ad campaign', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+        ],
+        images: [
+            { src: 'https://placehold.co/400x300.png', alt: 'Agency Visit 1', hint: 'office tour' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Agency Visit 2', hint: 'meeting with executives' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Agency Visit 3', hint: 'creative department' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Agency Visit 4', hint: 'team collaboration' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Agency Visit 5', hint: 'company logo' },
         ]
     },
     {
         id: 'super_sessions',
         title: 'Super Sessions',
         icon: <Star className="mr-2 h-5 w-5" />,
-        description: "Dive deep into specialized topics with our Super Sessions, led by industry experts. These intensive workshops cover the latest trends, tools, and strategies in digital marketing, giving you a competitive edge.",
         videos: [
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'AI in Marketing',
-                hint: 'artificial intelligence marketing',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            },
-             {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Content Creation Masterclass',
-                hint: 'content creation workshop',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            },
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Advanced SEO Techniques',
-                hint: 'seo strategy session',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            }
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'AI in Marketing', hint: 'artificial intelligence marketing', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Content Creation Masterclass', hint: 'content creation workshop', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Advanced SEO Techniques', hint: 'seo strategy session', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
+        ],
+        images: [
+            { src: 'https://placehold.co/400x300.png', alt: 'Super Session 1', hint: 'expert speaker' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Super Session 2', hint: 'interactive workshop' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Super Session 3', hint: 'students asking questions' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Super Session 4', hint: 'networking break' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Super Session 5', hint: 'presentation slide' },
         ]
     },
     {
         id: 'co_curricular',
         title: 'Co-Curricular Activities',
         icon: <PartyPopper className="mr-2 h-5 w-5" />,
-        description: "Learning at Primezone goes beyond the classroom. Participate in competitions, join clubs, and attend workshops to build your skills, network, and have fun while you learn.",
         videos: [
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Marketing Fest Highlights',
-                hint: 'student festival',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            }
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Marketing Fest Highlights', hint: 'student festival', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Competition Highlights', hint: 'student competition', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Club Activity Highlights', hint: 'student club meeting', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+        ],
+        images: [
+            { src: 'https://placehold.co/400x300.png', alt: 'Co-Curricular 1', hint: 'sports day' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Co-Curricular 2', hint: 'debate competition' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Co-Curricular 3', hint: 'hackathon event' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Co-Curricular 4', hint: 'art exhibition' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Co-Curricular 5', hint: 'music performance' },
         ]
     },
     {
         id: 'extracurricular',
         title: 'Extracurricular Activities',
         icon: <Users className="mr-2 h-5 w-5" />,
-        description: "From sports and cultural events to community service, our extracurricular activities provide a well-rounded experience. Develop teamwork, leadership, and social skills while pursuing your passions.",
-        videos: []
+        videos: [
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Fun Fair', hint: 'student fair', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Annual Day', hint: 'annual day', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Holi Celebrations', hint: 'holi festival', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+        ],
+        images: [
+            { src: 'https://placehold.co/400x300.png', alt: 'Extracurricular 1', hint: 'fun fair' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Extracurricular 2', hint: 'students having fun' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Extracurricular 3', hint: 'celebration' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Extracurricular 4', hint: 'party' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Extracurricular 5', hint: 'students dancing' },
+        ]
     },
     {
         id: 'graduation',
         title: 'Graduation',
         icon: <GraduationCap className="mr-2 h-5 w-5" />,
-        description: "Celebrate the culmination of your hard work and dedication at our grand graduation ceremony. A day to remember, as you step into the future as a skilled professional, ready to make your mark on the world.",
         videos: [
-            {
-                thumbnail: 'https://placehold.co/600x400.png',
-                title: 'Graduation Day 2023',
-                hint: 'graduation ceremony',
-                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-            }
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Graduation Day 2023', hint: 'graduation ceremony', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Alumni Speak', hint: 'alumni speech', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { thumbnail: 'https://placehold.co/600x400.png', title: 'Batch of 2023', hint: 'graduating batch', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+        ],
+        images: [
+            { src: 'https://placehold.co/400x300.png', alt: 'Graduation 1', hint: 'throwing caps' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Graduation 2', hint: 'receiving degree' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Graduation 3', hint: 'group of graduates' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Graduation 4', hint: 'happy graduate' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Graduation 5', hint: 'convocation ceremony' },
         ]
     }
 ];
+
+const InfiniteScroller = ({ children, speed = "slow" }: { children: React.ReactNode, speed?: "slow" | "normal" | "fast" }) => {
+    return (
+        <div
+          className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+        >
+          <ul className={cn(
+                "flex items-center justify-center md:justify-start [&_li]:mx-4 animate-scroll",
+                speed === "slow" && "animation-duration-80s",
+                speed === "normal" && "animation-duration-40s",
+                speed === "fast" && "animation-duration-20s",
+          )}>
+            {children}
+          </ul>
+          <ul className={cn(
+                "flex items-center justify-center md:justify-start [&_li]:mx-4 animate-scroll",
+                "flex items-center justify-center md:justify-start [&_li]:mx-4 animate-scroll",
+                speed === "slow" && "animation-duration-80s",
+                speed === "normal" && "animation-duration-40s",
+                speed === "fast" && "animation-duration-20s",
+          )} aria-hidden="true">
+            {children}
+          </ul>
+        </div>
+      );
+}
 
 export default function GalleryPage() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -234,56 +255,87 @@ export default function GalleryPage() {
               </div>
             </div>
             <div className="md:col-span-3">
-              <div key={contentKey} className="space-y-6 animate-fade-in-up">
+              <div key={contentKey} className="space-y-8 animate-fade-in-up">
                 <h3 className="text-3xl font-bold font-headline">{activeCategory.title}</h3>
-                <p className="text-muted-foreground">{activeCategory.description}</p>
                 
-                {activeCategory.videos.length > 0 ? (
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {activeCategory.videos.map((video, index) => (
-                      <Dialog key={index} onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
-                        <DialogTrigger asChild>
-                          <div
-                            onClick={() => setSelectedVideo(video.url)}
-                            className="relative group cursor-pointer"
-                          >
-                            <Image
-                              src={video.thumbnail}
-                              alt={video.title}
-                              width={600}
-                              height={400}
-                              className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
-                              data-ai-hint={video.hint}
-                            />
-                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                              <PlayCircle className="h-16 w-16 text-white" />
-                            </div>
-                            <p className="mt-2 font-semibold">{video.title}</p>
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-3xl p-0">
-                          <DialogTitle className="sr-only">{video.title}</DialogTitle>
-                          {selectedVideo && (
-                            <div className="aspect-video">
-                              <iframe
-                                src={selectedVideo}
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="w-full h-full"
-                              ></iframe>
-                            </div>
-                          )}
-                        </DialogContent>
-                      </Dialog>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-12 bg-background rounded-lg">
-                    <p className="text-muted-foreground">More content coming soon!</p>
-                  </div>
-                )}
+                {/* Videos Section */}
+                <div>
+                  <h4 className="text-xl font-bold mb-4">Videos</h4>
+                  {(activeCategory.videos?.length || 0) > 0 ? (
+                    <InfiniteScroller speed="slow">
+                        {activeCategory.videos.map((video, index) => (
+                           <li key={`video-${index}`} className="w-80 flex-shrink-0">
+                             <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
+                               <DialogTrigger asChild>
+                                 <div
+                                   onClick={() => setSelectedVideo(video.url)}
+                                   className="relative group cursor-pointer"
+                                 >
+                                   <Image
+                                     src={video.thumbnail}
+                                     alt={video.title}
+                                     width={600}
+                                     height={400}
+                                     className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                                     data-ai-hint={video.hint}
+                                   />
+                                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                     <PlayCircle className="h-16 w-16 text-white" />
+                                   </div>
+                                   <p className="mt-2 font-semibold text-center">{video.title}</p>
+                                 </div>
+                               </DialogTrigger>
+                               <DialogContent className="max-w-3xl p-0">
+                                  <DialogTitle className="sr-only">{video.title}</DialogTitle>
+                                 {selectedVideo && (
+                                   <div className="aspect-video">
+                                     <iframe
+                                       src={selectedVideo}
+                                       title="YouTube video player"
+                                       frameBorder="0"
+                                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                       allowFullScreen
+                                       className="w-full h-full"
+                                     ></iframe>
+                                   </div>
+                                 )}
+                               </DialogContent>
+                             </Dialog>
+                           </li>
+                         ))}
+                    </InfiniteScroller>
+                  ) : (
+                    <div className="text-center py-12 bg-background rounded-lg">
+                      <p className="text-muted-foreground">No videos available for this category.</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Images Section */}
+                <div>
+                    <h4 className="text-xl font-bold mb-4">Images</h4>
+                    {(activeCategory.images?.length || 0) > 0 ? (
+                         <InfiniteScroller speed="normal">
+                            {activeCategory.images.map((image, index) => (
+                                <li key={`image-${index}`} className="w-80 flex-shrink-0">
+                                    <Image
+                                      src={image.src}
+                                      alt={image.alt}
+                                      width={400}
+                                      height={300}
+                                      className="w-full h-auto object-cover rounded-lg shadow-md"
+                                      data-ai-hint={image.hint}
+                                    />
+                                </li>
+                            ))}
+                         </InfiniteScroller>
+                    ) : (
+                        <div className="text-center py-12 bg-background rounded-lg">
+                            <p className="text-muted-foreground">No images available for this category.</p>
+                        </div>
+                    )}
+                </div>
+
               </div>
             </div>
           </div>
@@ -337,7 +389,5 @@ export default function GalleryPage() {
     </div>
   );
 }
-
-    
 
     
