@@ -66,11 +66,9 @@ export default function BlogPage() {
       </section>
 
       <section className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Blog Posts */}
-          <div className="lg:col-span-2 space-y-8">
+        <div className="space-y-8">
             {blogPosts.map((post) => (
-              <Card key={post.title} className="overflow-hidden group">
+              <Card key={post.title} className="overflow-hidden group max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-3">
                     <div className="md:col-span-1">
                         <Image
@@ -104,48 +102,6 @@ export default function BlogPage() {
               </Card>
             ))}
           </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Search /> Search</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex w-full max-w-sm items-center space-x-2">
-                  <Input type="text" placeholder="Search articles..." />
-                  <Button type="submit">Search</Button>
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Rss /> Subscribe</CardTitle>
-                <CardDescription>Get the latest articles delivered to your inbox.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                 <div className="flex w-full max-w-sm items-center space-x-2">
-                    <Input type="email" placeholder="Your Email" />
-                    <Button type="submit">Subscribe</Button>
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Newspaper /> Recent Posts</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                    {blogPosts.slice(0, 3).map(post => (
-                        <li key={post.title}>
-                            <Link href={post.link} className="text-sm hover:text-primary">{post.title}</Link>
-                        </li>
-                    ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </section>
 
       {selectedPost && (
