@@ -66,14 +66,6 @@ export default function Header() {
                 )
             })}
           </div>
-          <div className="flex items-center gap-4">
-             <Button variant="outline">
-                <Link href="/enroll">Login</Link>
-             </Button>
-            <Button>
-                 <Link href="/enroll">Enroll Now</Link>
-            </Button>
-          </div>
         </NavBody>
 
         {/* Mobile Navigation */}
@@ -95,19 +87,6 @@ export default function Header() {
                 <span className="block">{item.label}</span>
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4 pt-4">
-                <Button
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    variant="outline"
-                    className="w-full">
-                    <Link href="/enroll">Login</Link>
-                </Button>
-              <Button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full">
-                    <Link href="/enroll">Enroll Now</Link>
-              </Button>
-            </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
