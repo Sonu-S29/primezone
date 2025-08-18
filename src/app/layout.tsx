@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
+import Chatbot from '@/components/chatbot';
 
 export const metadata: Metadata = {
   title: 'Primezone Computer Education',
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Chatbot />
         <Toaster />
       </body>
     </html>
