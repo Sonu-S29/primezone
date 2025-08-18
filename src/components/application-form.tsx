@@ -61,7 +61,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input placeholder="Priya Sharma" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -87,7 +87,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="john.doe@example.com" {...field} />
+                <Input type="email" placeholder="priya.sharma@example.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,7 +100,7 @@ export default function ApplicationForm() {
                 <FormItem>
                 <FormLabel>LinkedIn Profile</FormLabel>
                 <FormControl>
-                    <Input placeholder="https://linkedin.com/in/johndoe" {...field} />
+                    <Input placeholder="https://linkedin.com/in/priyasharma" {...field} />
                 </FormControl>
                 <FormMessage />
                 </FormItem>
