@@ -83,7 +83,7 @@ const eventCategories = [
             { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 1', hint: 'team presentation' },
             { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 2', hint: 'students brainstorming' },
             { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 3', hint: 'project prototype' },
-            { src: 'https://placeholdco/400x300.png', alt: 'Capstone Image 4', hint: 'final project award' },
+            { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 4', hint: 'final project award' },
             { src: 'https://placehold.co/400x300.png', alt: 'Capstone Image 5', hint: 'group photo' },
         ]
     },
