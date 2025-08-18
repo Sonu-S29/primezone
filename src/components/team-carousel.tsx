@@ -105,7 +105,9 @@ export default function TeamCarousel() {
             <div className="carousel-container">
                 <button 
                     className="nav-arrow left" 
-                    onClick={() => updateCarousel(currentIndex - 1)}>
+                    onClick={() => updateCarousel(currentIndex - 1)}
+                    aria-label="Previous team member"
+                >
                     <ChevronLeft size={24} />
                 </button>
                 <div className="carousel-track">
@@ -133,7 +135,9 @@ export default function TeamCarousel() {
                 </div>
                 <button 
                     className="nav-arrow right"
-                    onClick={() => updateCarousel(currentIndex + 1)}>
+                    onClick={() => updateCarousel(currentIndex + 1)}
+                    aria-label="Next team member"
+                >
                     <ChevronRight size={24} />
                 </button>
             </div>
@@ -145,11 +149,13 @@ export default function TeamCarousel() {
 
             <div className="dots">
                 {teamMembers.map((_, i) => (
-                    <div 
+                    <button
+                        type="button"
                         key={i} 
                         className={cn("dot", { active: i === currentIndex })}
                         onClick={() => updateCarousel(i)}
-                    ></div>
+                        aria-label={'View team member ' + (i + 1)}
+                    ></button>
                 ))}
             </div>
         </div>

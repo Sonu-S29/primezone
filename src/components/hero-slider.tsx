@@ -1,8 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from 'next/link';
 import { Button } from './ui/button';
 
@@ -51,19 +50,11 @@ const HeroSlider = () => {
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleNext = useCallback(() => {
-        setItems(prevItems => {
+        setItems((prevItems) => {
             const [first, ...rest] = prevItems;
             return [...rest, first];
         });
     }, []);
-
-    const handlePrev = () => {
-        setItems(prevItems => {
-            const last = prevItems[prevItems.length - 1];
-            const rest = prevItems.slice(0, prevItems.length - 1);
-            return [last, ...rest];
-        });
-    };
 
     const startSlider = useCallback(() => {
         if (intervalRef.current) {
@@ -91,14 +82,14 @@ const HeroSlider = () => {
 
 
     return (
-        <main 
+        <main
             className='hero-slider-main'
             onMouseEnter={stopSlider}
             onMouseLeave={startSlider}
         >
             <ul className='hero-slider'>
                 {items.map((item, index) => (
-                    <li key={index} className='item' style={{ backgroundImage: `url(${item.imageUrl})` }} data-ai-hint={item.hint}>
+                    <li key={item.title + index} className='item' style={{ backgroundImage: `url(${item.imageUrl})` }} data-ai-hint={item.hint}>
                         <div className='content'>
                             <h2 className='title'>{item.title}</h2>
                             <p className='description'>{item.description}</p>

@@ -112,6 +112,7 @@ export default function FeaturedCoursesCarousel() {
                 <button 
                     className="nav-arrow left" 
                     onClick={() => updateCarousel(currentIndex - 1)}>
+                    aria-label='Previous slide'
                     <ChevronLeft size={24} />
                 </button>
                 <div className="carousel-track">
@@ -148,6 +149,7 @@ export default function FeaturedCoursesCarousel() {
                 <button 
                     className="nav-arrow right"
                     onClick={() => updateCarousel(currentIndex + 1)}>
+                    aria-label='Next slide'
                     <ChevronRight size={24} />
                 </button>
             </div>
@@ -155,9 +157,10 @@ export default function FeaturedCoursesCarousel() {
             <div className="dots mt-10">
                 {featuredCourses.map((_, i) => (
                     <div 
-                        key={i} 
-                        className={cn("dot", { active: i === currentIndex })}
+                        as='button'
+                        key={i}
                         onClick={() => updateCarousel(i)}
+                        aria-label={'Go to slide ' + (i + 1)}
                     ></div>
                 ))}
             </div>

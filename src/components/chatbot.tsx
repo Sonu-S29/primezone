@@ -100,7 +100,12 @@ export default function Chatbot() {
         <>
             <div className="fixed bottom-4 right-4 z-50">
                 <Button onClick={() => setIsOpen(!isOpen)} size="icon" className="rounded-full w-14 h-14 shadow-lg">
-                    {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
+                    {isOpen ? (
+                        <X className="h-6 w-6" aria-label="Close chatbot" />
+                    ) : (
+                        <Bot className="h-6 w-6" aria-label="Open chatbot" />
+                    )}
+
                 </Button>
             </div>
 
@@ -184,7 +189,7 @@ export default function Chatbot() {
                                         disabled={loading}
                                         autoFocus
                                     />
-                                    <Button type="submit" size="icon" disabled={loading || !input.trim()}>
+                                    <Button type="submit" size="icon" disabled={loading || !input.trim()} aria-label="Send message">
                                         <Send className="h-4 w-4" />
                                     </Button>
                                 </form>
