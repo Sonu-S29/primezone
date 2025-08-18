@@ -4,9 +4,11 @@
 import Image from "next/image";
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Users, Lightbulb, PlayCircle } from "lucide-react";
+import { Users, Book, Building, Star, GraduationCap, PartyPopper, PlayCircle } from "lucide-react";
 import MemoriesGallery from "@/components/memories-gallery";
 import Link from "next/link";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 
 const studentProjects = [
   {
@@ -67,23 +69,127 @@ const studentProjects = [
   }
 ];
 
-const eventImages = [
-    { src: 'https://placehold.co/300x400.png', hint: 'picnic fun' },
-    { src: 'https://placehold.co/300x300.png', hint: 'corporate training' },
-    { src: 'https://placehold.co/300x450.png', hint: 'dandiya night' },
-    { src: 'https://placehold.co/300x350.png', hint: 'dj night' },
-    { src: 'https://placehold.co/300x250.png', hint: 'seminar audience' },
-    { src: 'https://placehold.co/300x400.png', hint: 'graduation day' },
-    { src: 'https://placehold.co/300x200.png', hint: 'workshop collaboration' },
-    { src: 'https://placehold.co/300x200.png', hint: 'guest speaker' },
+const eventCategories = [
+    {
+        id: 'capstone',
+        title: 'Capstone Project',
+        icon: <Book className="mr-2 h-5 w-5" />,
+        description: "The Capstone Project is the pinnacle of your student experience, where you apply everything you've learned to a real-world digital marketing challenge. It's an opportunity to collaborate, innovate, and showcase your strategic skills, preparing you to lead in the industry.",
+        videos: [
+            {
+                thumbnail: 'https://ggayane.github.io/css-experiments/cards/force_magice.png',
+                title: 'Power of Influence!',
+                hint: 'influencer marketing',
+                url: 'https://www.youtube.com/embed/nEwGfB7eU8A'
+            },
+            {
+                thumbnail: 'https://ggayane.github.io/css-experiments/cards/force_outter.png',
+                title: 'Making soda viral...',
+                hint: 'viral marketing',
+                url: 'https://www.youtube.com/embed/xv-n_m4n4iU'
+            },
+            {
+                thumbnail: 'https://ggayane.github.io/css-experiments/cards/force_circle.png',
+                title: 'Founder Rated 10/10',
+                hint: 'product launch',
+                url: 'https://www.youtube.com/embed/W9nZ6u15yis'
+            }
+        ]
+    },
+    {
+        id: 'agency',
+        title: 'Agency Visits',
+        icon: <Building className="mr-2 h-5 w-5" />,
+        description: "Get a behind-the-scenes look at the fast-paced world of digital marketing with exclusive visits to top agencies. Network with professionals, learn about agency life, and see how campaigns are built from the ground up.",
+        videos: [
+            {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'A Day at a Top Agency',
+                hint: 'marketing agency office',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            },
+            {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'Networking with Pros',
+                hint: 'business networking event',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            }
+        ]
+    },
+    {
+        id: 'super_sessions',
+        title: 'Super Sessions',
+        icon: <Star className="mr-2 h-5 w-5" />,
+        description: "Dive deep into specialized topics with our Super Sessions, led by industry experts. These intensive workshops cover the latest trends, tools, and strategies in digital marketing, giving you a competitive edge.",
+        videos: [
+            {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'AI in Marketing',
+                hint: 'artificial intelligence marketing',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            },
+             {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'Content Creation Masterclass',
+                hint: 'content creation workshop',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            },
+            {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'Advanced SEO Techniques',
+                hint: 'seo strategy session',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            }
+        ]
+    },
+    {
+        id: 'co_curricular',
+        title: 'Co-Curricular Activities',
+        icon: <PartyPopper className="mr-2 h-5 w-5" />,
+        description: "Learning at Primezone goes beyond the classroom. Participate in competitions, join clubs, and attend workshops to build your skills, network, and have fun while you learn.",
+        videos: [
+            {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'Marketing Fest Highlights',
+                hint: 'student festival',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            }
+        ]
+    },
+    {
+        id: 'extracurricular',
+        title: 'Extracurricular Activities',
+        icon: <Users className="mr-2 h-5 w-5" />,
+        description: "From sports and cultural events to community service, our extracurricular activities provide a well-rounded experience. Develop teamwork, leadership, and social skills while pursuing your passions.",
+        videos: []
+    },
+    {
+        id: 'graduation',
+        title: 'Graduation',
+        icon: <GraduationCap className="mr-2 h-5 w-5" />,
+        description: "Celebrate the culmination of your hard work and dedication at our grand graduation ceremony. A day to remember, as you step into the future as a skilled professional, ready to make your mark on the world.",
+        videos: [
+            {
+                thumbnail: 'https://placehold.co/600x400.png',
+                title: 'Graduation Day 2023',
+                hint: 'graduation ceremony',
+                url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            }
+        ]
+    }
 ];
-
-const leftImages = eventImages.slice(0, 4);
-const rightImages = eventImages.slice(4);
 
 export default function GalleryPage() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+    const [activeTab, setActiveTab] = useState(eventCategories[0].id);
+    const activeCategory = eventCategories.find(cat => cat.id === activeTab) || eventCategories[0];
+    const [contentKey, setContentKey] = useState(0);
 
+    const handleTabClick = (tabId: string) => {
+        setActiveTab(tabId);
+        setContentKey(prevKey => prevKey + 1); // Change key to trigger re-animation
+    };
+  
   return (
     <div>
       <section className="bg-card py-12">
@@ -99,72 +205,85 @@ export default function GalleryPage() {
         <MemoriesGallery />
       </section>
 
-      <section className="py-16 bg-muted overflow-hidden">
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 items-center gap-8 min-h-[400px]">
-            {/* Left Image Fan */}
-            <div className="relative h-96 hidden md:flex items-center justify-center">
-              {leftImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="absolute transition-transform duration-300 hover:scale-110 hover:z-10"
-                  style={{
-                    transform: `translateX(${(index - 1.5) * 20}px) rotate(${
-                      (index - 1.5) * 10
-                    }deg)`,
-                  }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.hint}
-                    width={150}
-                    height={200}
-                    className="w-40 h-52 object-cover rounded-lg shadow-lg"
-                    data-ai-hint={image.hint}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Central Content */}
-            <div className="text-center z-10">
-              <div className="flex justify-center mb-4">
-                <Users className="h-12 w-12 text-primary" />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
+            <p className="text-muted-foreground mt-2">Explore the vibrant life at Primezone</p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="md:col-span-1">
+              <div className="bg-background rounded-lg p-4 shadow-sm">
+                <ul className="space-y-2">
+                  {eventCategories.map(category => (
+                    <li key={category.id}>
+                      <button
+                        onClick={() => handleTabClick(category.id)}
+                        className={cn(
+                          "w-full text-left px-4 py-2 rounded-md flex items-center transition-colors",
+                          activeTab === category.id
+                            ? "bg-primary text-primary-foreground"
+                            : "hover:bg-muted"
+                        )}
+                      >
+                        {category.icon} {category.title}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">
-                Event Highlights
-              </h2>
-              <p className="text-muted-foreground mt-4 max-w-md mx-auto">
-                From workshops to celebrations, see the moments that make our
-                community special.
-              </p>
-              <Button asChild className="mt-6">
-                <Link href="/contact">Join Us</Link>
-              </Button>
             </div>
-            
-            {/* Right Image Fan */}
-            <div className="relative h-96 hidden md:flex items-center justify-center">
-              {rightImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="absolute transition-transform duration-300 hover:scale-110 hover:z-10"
-                  style={{
-                    transform: `translateX(${(index - 1.5) * 20}px) rotate(${
-                      (index - 1.5) * -10
-                    }deg)`,
-                  }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.hint}
-                    width={150}
-                    height={200}
-                    className="w-40 h-52 object-cover rounded-lg shadow-lg"
-                    data-ai-hint={image.hint}
-                  />
-                </div>
-              ))}
+            <div className="md:col-span-3">
+              <div key={contentKey} className="space-y-6 animate-fade-in-up">
+                <h3 className="text-3xl font-bold font-headline">{activeCategory.title}</h3>
+                <p className="text-muted-foreground">{activeCategory.description}</p>
+                
+                {activeCategory.videos.length > 0 ? (
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {activeCategory.videos.map((video, index) => (
+                      <Dialog key={index} onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
+                        <DialogTrigger asChild>
+                          <div
+                            onClick={() => setSelectedVideo(video.url)}
+                            className="relative group cursor-pointer"
+                          >
+                            <Image
+                              src={video.thumbnail}
+                              alt={video.title}
+                              width={600}
+                              height={400}
+                              className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                              data-ai-hint={video.hint}
+                            />
+                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                              <PlayCircle className="h-16 w-16 text-white" />
+                            </div>
+                            <p className="mt-2 font-semibold">{video.title}</p>
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-3xl p-0">
+                          {selectedVideo && (
+                            <div className="aspect-video">
+                              <iframe
+                                src={selectedVideo}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="w-full h-full"
+                              ></iframe>
+                            </div>
+                          )}
+                        </DialogContent>
+                      </Dialog>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12 bg-background rounded-lg">
+                    <p className="text-muted-foreground">More content coming soon!</p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

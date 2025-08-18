@@ -715,5 +715,13 @@ body {
     }
 }
 
+@keyframes v-scroll {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-v-scroll {
+  animation: v-scroll 0.5s ease-out forwards;
+}
     
     
