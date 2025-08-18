@@ -1,9 +1,13 @@
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+"use client";
+
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import ApplicationForm from "@/components/application-form";
+import { useState } from "react";
 
 const jobOpenings = [
   {
@@ -11,25 +15,24 @@ const jobOpenings = [
     location: "Mumbai (On-site)",
     type: "Full-time",
     description: "We are looking for an experienced web developer with a passion for teaching. You will be responsible for delivering our web development curriculum, mentoring students, and updating course material.",
-    link: "#"
   },
   {
     title: "Admissions Counselor",
     location: "Vile Parle, Mumbai",
     type: "Full-time",
     description: "Join our dynamic admissions team. You will guide prospective students, help them choose the right courses, and manage the enrollment process.",
-    link: "#"
   },
   {
     title: "Digital Marketing Executive",
     location: "Jogeshwari, Mumbai",
     type: "Part-time",
     description: "We need a creative digital marketer to manage our online presence, run campaigns, and engage with our community on social media.",
-    link: "#"
   },
 ];
 
 export default function CareerPage() {
+  const [selectedJob, setSelectedJob] = useState<string | null>(null);
+
   return (
     <div>
       <section className="bg-card py-12">
@@ -90,9 +93,17 @@ export default function CareerPage() {
                 <CardContent className="p-6">
                   <div className="flex flex-col sm:flex-row justify-between sm:items-center">
                     <CardTitle className="text-xl">{job.title}</CardTitle>
-                    <Button asChild className="mt-4 sm:mt-0">
-                      <Link href={job.link}>Apply Now <ArrowRight className="ml-2 h-4 w-4"/></Link>
-                    </Button>
+                    <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedJob(null)}>
+                        <DialogTrigger asChild>
+                           <Button className="mt-4 sm:mt-0" onClick={() => setSelectedJob(job.title)}>Apply Now <ArrowRight className="ml-2 h-4 w-4"/></Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>Apply for {selectedJob}</DialogTitle>
+                            </DialogHeader>
+                            <ApplicationForm />
+                        </DialogContent>
+                    </Dialog>
                   </div>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2 mb-4">
                     <div className="flex items-center gap-1"><MapPin className="h-4 w-4"/> {job.location}</div>
