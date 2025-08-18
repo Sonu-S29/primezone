@@ -13,7 +13,9 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/recommendations", label: "AI Recommender" },
+  { href: "/blog", label: "Blog" },
+  { href: "/career", label: "Career" },
+  { href: "/refer-and-earn", label: "Refer & Earn" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -66,8 +68,8 @@ export default function Header() {
                   </button>
                 </SheetTrigger>
                 <SheetContent side="left">
-                    <SheetHeader className="sr-only">
-                        <SheetTitle>Mobile Navigation Menu</SheetTitle>
+                    <SheetHeader>
+                        <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
                     </SheetHeader>
                    <div className="flex flex-col gap-6 p-4">
                       <NavbarLogo />
