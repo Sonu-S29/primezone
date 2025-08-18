@@ -3,11 +3,8 @@
 
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Newspaper, Rss, Search } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const blogPosts = [
@@ -66,38 +63,36 @@ export default function BlogPage() {
       </section>
 
       <section className="container mx-auto px-4 py-16">
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <Card key={post.title} className="overflow-hidden group max-w-4xl mx-auto">
-                <div className="grid md:grid-cols-3">
-                    <div className="md:col-span-1">
-                        <Image
-                        src={post.image}
-                        alt={post.title}
-                        width={600}
-                        height={400}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={post.hint}
-                        />
-                    </div>
-                    <div className="md:col-span-2 p-6 flex flex-col">
-                        <CardHeader className="p-0">
-                            <CardTitle className="text-xl hover:text-primary">{post.title}</CardTitle>
-                            <CardDescription className="text-xs pt-2">
-                                By {post.author} on {post.date}
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="p-0 pt-4 flex-grow">
-                            <p className="text-muted-foreground text-sm line-clamp-3">{post.description}</p>
-                        </CardContent>
-                         <CardFooter className="p-0 pt-4">
-                            <Dialog>
-                                <DialogTrigger asChild>
-                                    <Button variant="link" className="p-0" onClick={() => setSelectedPost(post)}>Read More</Button>
-                                </DialogTrigger>
-                            </Dialog>
-                        </CardFooter>
-                    </div>
+              <Card key={post.title} className="flex flex-col overflow-hidden group rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="relative w-full h-56">
+                    <Image
+                    src={post.image}
+                    alt={post.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="group-hover:scale-105 transition-transform duration-300"
+                    data-ai-hint={post.hint}
+                    />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                    <CardHeader className="p-0">
+                        <CardTitle className="text-xl hover:text-primary">{post.title}</CardTitle>
+                        <CardDescription className="text-xs pt-2">
+                            By {post.author} on {post.date}
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-0 pt-4 flex-grow">
+                        <p className="text-muted-foreground text-sm line-clamp-4">{post.description}</p>
+                    </CardContent>
+                      <CardFooter className="p-0 pt-6 mt-auto">
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button className="w-full bg-slate-900 text-white hover:bg-slate-800" onClick={() => setSelectedPost(post)}>Read More</Button>
+                            </DialogTrigger>
+                        </Dialog>
+                    </CardFooter>
                 </div>
               </Card>
             ))}
@@ -106,25 +101,28 @@ export default function BlogPage() {
 
       {selectedPost && (
          <Dialog open={!!selectedPost} onOpenChange={(isOpen) => !isOpen && setSelectedPost(null)}>
-            <DialogContent className="max-w-3xl">
-                <DialogHeader>
-                    <div className="relative w-full h-64 mb-4">
-                        <Image
-                            src={selectedPost.image}
-                            alt={selectedPost.title}
-                            layout="fill"
-                            objectFit="cover"
-                            className="rounded-t-lg"
-                             data-ai-hint={selectedPost.hint}
-                        />
-                    </div>
-                    <DialogTitle className="text-2xl font-bold">{selectedPost.title}</DialogTitle>
-                    <CardDescription className="text-xs pt-2">
-                        By {selectedPost.author} on {selectedPost.date}
-                    </CardDescription>
+            <DialogContent className="max-w-3xl p-0">
+                <DialogHeader className="sr-only">
+                    <DialogTitle>{selectedPost.title}</DialogTitle>
                 </DialogHeader>
-                <div className="prose max-w-none">
-                    <p>{selectedPost.description}</p>
+                <div className="relative w-full h-64 mb-4">
+                    <Image
+                        src={selectedPost.image}
+                        alt={selectedPost.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-t-lg"
+                          data-ai-hint={selectedPost.hint}
+                    />
+                </div>
+                <div className="p-6">
+                    <h2 className="text-2xl font-bold mb-2">{selectedPost.title}</h2>
+                    <p className="text-xs text-muted-foreground mb-4">
+                        By {selectedPost.author} on {selectedPost.date}
+                    </p>
+                    <div className="prose max-w-none text-muted-foreground">
+                        <p>{selectedPost.description}</p>
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>
