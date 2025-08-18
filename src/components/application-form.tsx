@@ -61,7 +61,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="Priya Sharma" {...field} />
+                <Input placeholder="abc" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
