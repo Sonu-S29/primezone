@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
@@ -7,7 +8,7 @@ import Chatbot from '@/components/chatbot';
 
 export const metadata: Metadata = {
   title: 'Primezone Computer Education',
-  description: 'Unlock Your Potential in the Digital World',
+  description: 'Unlock Your Potential in the Digital World. Primezone offers expert-led courses in programming, design, accounting, and more. Start your tech career with us today!',
 };
 
 export default function RootLayout({

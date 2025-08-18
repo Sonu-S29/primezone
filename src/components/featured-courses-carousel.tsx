@@ -60,49 +60,7 @@ export default function FeaturedCoursesCarousel() {
             updateCarousel(currentIndex + 1);
         }, 5000); // Auto-scroll every 5 seconds
 
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === "ArrowLeft") {
-                updateCarousel(currentIndex - 1);
-            } else if (e.key === "ArrowRight") {
-                updateCarousel(currentIndex + 1);
-            }
-        };
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        const handleTouchStart = (e: TouchEvent) => {
-            touchStartX = e.changedTouches[0].screenX;
-        };
-
-        const handleTouchEnd = (e: TouchEvent) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        };
-
-        const handleSwipe = () => {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    updateCarousel(currentIndex + 1);
-                } else {
-                    updateCarousel(currentIndex - 1);
-                }
-            }
-        };
-
-        window.addEventListener("keydown", handleKeyDown);
-        document.addEventListener("touchstart", handleTouchStart);
-        document.addEventListener("touchend", handleTouchEnd);
-
-        return () => {
-            clearInterval(interval);
-            window.removeEventListener("keydown", handleKeyDown);
-            document.removeEventListener("touchstart", handleTouchStart);
-            document.removeEventListener("touchend", handleTouchEnd);
-        };
+        return () => clearInterval(interval);
     }, [currentIndex, updateCarousel]);
 
 
@@ -111,8 +69,8 @@ export default function FeaturedCoursesCarousel() {
             <div className="carousel-container">
                 <button 
                     className="nav-arrow left" 
-                    onClick={() => updateCarousel(currentIndex - 1)}>
-                    aria-label='Previous slide'
+                    onClick={() => updateCarousel(currentIndex - 1)}
+                    aria-label='Previous slide'>
                     <ChevronLeft size={24} />
                 </button>
                 <div className="carousel-track">
@@ -148,20 +106,20 @@ export default function FeaturedCoursesCarousel() {
                 </div>
                 <button 
                     className="nav-arrow right"
-                    onClick={() => updateCarousel(currentIndex + 1)}>
-                    aria-label='Next slide'
+                    onClick={() => updateCarousel(currentIndex + 1)}
+                    aria-label='Next slide'>
                     <ChevronRight size={24} />
                 </button>
             </div>
 
             <div className="dots mt-10">
                 {featuredCourses.map((_, i) => (
-                    <div 
-                        as='button'
-                        key={i}
+                    <button
+                        key={i} 
+                        className={cn("dot", { active: i === currentIndex })}
                         onClick={() => updateCarousel(i)}
                         aria-label={'Go to slide ' + (i + 1)}
-                    ></div>
+                    ></button>
                 ))}
             </div>
         </div>
