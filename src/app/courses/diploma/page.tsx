@@ -15,7 +15,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Accounting",
     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
-    image: "/images/courses/dia.jpg",
+    image: "/images/courses/DIA.jpg",
     hint: "accounting collage",
     modules: [
         { title: "Financial Accounting Basics", icon: <Landmark />, subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
@@ -26,7 +26,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Financial Accounting",
     description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/DFA.jpg",
     hint: "financial report",
     modules: [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
@@ -38,7 +38,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Computer Application",
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/DCA.jpg",
     hint: "computer application",
     modules: [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
@@ -51,7 +51,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Financial & Management",
     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/DFAM.jpg",
     hint: "financial management",
     modules: [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
@@ -65,7 +65,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Programming Course",
     description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/DPC.jpg",
     hint: "programming course",
     modules: [
         { title: "C, C++ & DSA", icon: <Code />, subTopics: ["Intro Flow Algorithm", "C Syntax, Operators & Data Types", "C++ with OOPS Concepts", "Control Statements & Loops", "Data Structures & Algorithms", "File Handling & Preprocessor"] },
@@ -78,7 +78,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Graphic & Animation",
     description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/DGA.jpg",
     hint: "graphic animation",
     modules: [
         { title: "Graphic Designing", icon: <Palette />, subTopics: ["CorelDRAW", "Adobe PHOTOSHOP", "Adobe ILLUSTRATOR", "Adobe INDESIGN", "CANVA DESIGN", "ASSIGNMENTS / PROJECT", "and many more..."] },
@@ -114,7 +114,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Digital Marketing",
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/dm.jpg",
     hint: "digital marketing",
     modules: [
         { title: "Marketing Fundamentals", icon: <Megaphone />, subTopics: ["Introduction to Digital Marketing", "Website Analysis", "Google Algorithms", "Duplicate Content Checking", "Web Master Tools"] },
@@ -128,7 +128,7 @@ const diplomaCourses = [
   {
     title: "Full-Stack Development",
     description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/FSD.jpg",
     hint: "full stack",
     modules: [
         { title: "HTML & CSS", icon: <Code />, subTopics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
@@ -144,7 +144,7 @@ const diplomaCourses = [
   {
     title: "Data Analytics",
     description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/DATA-ANALYTICS.jpg",
     hint: "data analytics",
     modules: [
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Complex Functions, What - if - Analysis", "Working with Macros, MIS Reporting", "Dashboard Creation, Data Validation"] },
@@ -341,3 +341,4 @@ export default function DiplomaCoursesPage() {
     
 
     
+
