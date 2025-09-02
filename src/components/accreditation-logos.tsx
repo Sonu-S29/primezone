@@ -12,7 +12,13 @@ import { ArrowRight } from "lucide-react";
 const scrollingFeatures = [
     {
         title: "Affiliation & Recognizations",
-        image: "https://placehold.co/150x60/png",
+        image: [
+            "https://placehold.co/150x60/png?text=Logo1",
+            "https://placehold.co/150x60/png?text=Logo2",
+            "https://placehold.co/150x60/png?text=Logo3",
+            "https://placehold.co/150x60/png?text=Logo4",
+            "https://placehold.co/150x60/png?text=Logo5",
+        ],
         hint: "organization logos",
         link: "/about"
     },
@@ -50,7 +56,7 @@ export default function AccreditationLogos() {
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
           <div className="h-12 w-px bg-border hidden md:block"></div>
         </div>
-        <div className="w-64 h-20 relative">
+        <div className="w-auto h-20 relative">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentIndex}
@@ -61,14 +67,30 @@ export default function AccreditationLogos() {
                     className="absolute inset-0 flex items-center justify-end"
                 >
                     <div className="flex items-center gap-4">
-                        <Image
-                            src={scrollingFeatures[currentIndex].image}
-                            alt={scrollingFeatures[currentIndex].title}
-                            width={150}
-                            height={60}
-                            className="object-contain"
-                            data-ai-hint={scrollingFeatures[currentIndex].hint}
-                        />
+                       {Array.isArray(scrollingFeatures[currentIndex].image) ? (
+                            <div className="flex items-center gap-4">
+                                {(scrollingFeatures[currentIndex].image as string[]).slice(0, 5).map((img, idx) => (
+                                    <Image
+                                        key={idx}
+                                        src={img}
+                                        alt={`${scrollingFeatures[currentIndex].title} logo ${idx + 1}`}
+                                        width={100}
+                                        height={40}
+                                        className="object-contain"
+                                        data-ai-hint={scrollingFeatures[currentIndex].hint}
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <Image
+                                src={scrollingFeatures[currentIndex].image as string}
+                                alt={scrollingFeatures[currentIndex].title}
+                                width={150}
+                                height={60}
+                                className="object-contain"
+                                data-ai-hint={scrollingFeatures[currentIndex].hint}
+                            />
+                        )}
                     </div>
                 </motion.div>
             </AnimatePresence>
