@@ -46,7 +46,7 @@ export default function AccreditationLogos() {
     }, []);
 
   return (
-    <Card className="p-6 md:p-8 glass-effect relative overflow-hidden">
+    <Card className="p-6 md:p-8 glass-effect relative overflow-hidden min-h-[140px] md:min-h-[120px]">
       <div className="absolute top-4 right-6">
         <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
