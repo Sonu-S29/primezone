@@ -13,9 +13,9 @@ const scrollingFeatures = [
     {
         title: "Affiliation & Recognizations",
         image: [
-            "https://placehold.co/150x60/png?text=Logo1",
-            "https://placehold.co/150x60/png?text=Logo2",
-            "https://placehold.co/150x60/png?text=Logo3",
+            "/images/certificates/certipoint.png",
+            "/images/certificates/nsdc.png",
+            "/images/certificates/unnamed.png",
             "https://placehold.co/150x60/png?text=Logo4",
         ],
         hint: "organization logos",
@@ -50,7 +50,7 @@ export default function AccreditationLogos() {
       <div className="absolute top-4 right-6">
         <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
-      <div className="flex justify-between items-center flex-wrap pt-4">
+      <div className="grid md:grid-cols-2 gap-4 items-center">
         <div className="flex items-center gap-4">
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
           <div className="h-12 w-px bg-border hidden md:block"></div>
@@ -63,32 +63,33 @@ export default function AccreditationLogos() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5 }}
-                    className="absolute inset-0 flex items-center justify-end"
+                    className="absolute inset-0 flex items-center justify-center md:justify-end"
                 >
-                    <div className="flex items-center gap-4 flex-1 justify-end">
+                    <div className="flex items-center justify-center md:justify-end flex-1">
                        {Array.isArray(scrollingFeatures[currentIndex].image) ? (
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center justify-center flex-wrap gap-4 md:gap-6">
                                 {(scrollingFeatures[currentIndex].image as string[]).slice(0, 4).map((img, idx) => (
-                                    <Image
-                                        key={idx}
-                                        src={img}
-                                        alt={`${scrollingFeatures[currentIndex].title} logo ${idx + 1}`}
-                                        width={100}
-                                        height={40}
-                                        className="object-contain"
-                                        data-ai-hint={scrollingFeatures[currentIndex].hint}
-                                    />
+                                    <div key={idx} className="relative h-10 md:h-12 w-24 md:w-32">
+                                        <Image
+                                            src={img}
+                                            alt={`${scrollingFeatures[currentIndex].title} logo ${idx + 1}`}
+                                            fill
+                                            className="object-contain"
+                                            data-ai-hint={scrollingFeatures[currentIndex].hint}
+                                        />
+                                    </div>
                                 ))}
                             </div>
                         ) : (
-                            <Image
-                                src={scrollingFeatures[currentIndex].image as string}
-                                alt={scrollingFeatures[currentIndex].title}
-                                width={150}
-                                height={60}
-                                className="object-contain"
-                                data-ai-hint={scrollingFeatures[currentIndex].hint}
-                            />
+                             <div className="relative h-16 w-40">
+                                <Image
+                                    src={scrollingFeatures[currentIndex].image as string}
+                                    alt={scrollingFeatures[currentIndex].title}
+                                    fill
+                                    className="object-contain"
+                                    data-ai-hint={scrollingFeatures[currentIndex].hint}
+                                />
+                            </div>
                         )}
                     </div>
                 </motion.div>
