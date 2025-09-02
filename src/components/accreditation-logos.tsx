@@ -64,23 +64,23 @@ export default function AccreditationLogos() {
                         <Image
                             src={scrollingFeatures[currentIndex].image}
                             alt={scrollingFeatures[currentIndex].title}
-                            width={80}
+                            width={150}
                             height={60}
                             className="object-contain"
                             data-ai-hint={scrollingFeatures[currentIndex].hint}
                         />
-                        <div className="w-40">
-                             <Button asChild variant="link" className="p-0 h-auto text-xs">
-                                <Link href={scrollingFeatures[currentIndex].link}>
-                                    Read More <ArrowRight className="ml-1 h-3 w-3"/>
-                                </Link>
-                            </Button>
-                        </div>
                     </div>
                 </motion.div>
             </AnimatePresence>
         </div>
       </div>
+        <div className="absolute bottom-4 right-6">
+            <Button asChild variant="link" className="p-0 h-auto text-xs">
+                <Link href={scrollingFeatures[currentIndex].link}>
+                    Read More <ArrowRight className="ml-1 h-3 w-3"/>
+                </Link>
+            </Button>
+        </div>
     </Card>
   );
 }
