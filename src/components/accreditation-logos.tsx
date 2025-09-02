@@ -17,7 +17,6 @@ const scrollingFeatures = [
             "https://placehold.co/150x60/png?text=Logo2",
             "https://placehold.co/150x60/png?text=Logo3",
             "https://placehold.co/150x60/png?text=Logo4",
-            "https://placehold.co/150x60/png?text=Logo5",
         ],
         hint: "organization logos",
         link: "/about"
@@ -66,10 +65,10 @@ export default function AccreditationLogos() {
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0 flex items-center justify-end"
                 >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-1 justify-end">
                        {Array.isArray(scrollingFeatures[currentIndex].image) ? (
                             <div className="flex items-center gap-4">
-                                {(scrollingFeatures[currentIndex].image as string[]).slice(0, 5).map((img, idx) => (
+                                {(scrollingFeatures[currentIndex].image as string[]).slice(0, 4).map((img, idx) => (
                                     <Image
                                         key={idx}
                                         src={img}
