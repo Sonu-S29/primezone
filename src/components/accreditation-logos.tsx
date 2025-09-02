@@ -8,12 +8,12 @@ export default function AccreditationLogos() {
       <div className="absolute top-4 right-6">
         <p className="font-bold text-xs text-muted-foreground">Accredited by</p>
       </div>
-      <div className="flex justify-between items-center gap-8 md:gap-16 flex-wrap pt-4">
+      <div className="flex justify-between items-center flex-wrap pt-4">
         <div className="flex items-center gap-4">
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
+          <div className="h-12 w-px bg-border hidden md:block"></div>
         </div>
-        <div className="h-12 w-px bg-border hidden md:block"></div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center">
           <Image
             src="https://placehold.co/150x60/png"
             alt="Media and Entertainment Skills Council"
