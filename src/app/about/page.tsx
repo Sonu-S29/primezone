@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card";
-import AnimatedFlipCard from "@/components/animated-flip-card";
 
 const services = [
     {
@@ -194,20 +193,17 @@ export default function AboutUs() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUsItems.map((item, index) => (
-              <AnimatedFlipCard
-                key={index}
-                frontContent={
-                  <>
-                    <div className="p-3 bg-primary text-primary-foreground rounded-lg">
-                      {item.icon}
-                    </div>
-                    <CardTitle className="tracking-in-contract-normal">{item.title}</CardTitle>
-                  </>
-                }
-                backContent={
-                  <p className="text-muted-foreground text-sm tracking-in-contract-normal">{item.description}</p>
-                }
-              />
+              <Card key={index} className="text-center p-6 glass-effect">
+                <CardHeader>
+                  <div className="p-4 bg-primary text-primary-foreground rounded-full inline-block mb-4">
+                    {item.icon}
+                  </div>
+                  <CardTitle>{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -223,20 +219,17 @@ export default function AboutUs() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-             <AnimatedFlipCard
-                key={index}
-                frontContent={
-                  <>
-                    <div className="bg-accent text-accent-foreground p-3 rounded-lg">
+            <Card key={index} className="text-center p-6 glass-effect">
+                <CardHeader>
+                    <div className="bg-accent text-accent-foreground p-4 rounded-full inline-block mb-4">
                       {service.icon}
                     </div>
-                    <CardTitle className="tracking-in-contract-normal">{service.title}</CardTitle>
-                  </>
-                }
-                backContent={
-                  <p className="text-muted-foreground text-sm tracking-in-contract-normal">{service.description}</p>
-                }
-              />
+                    <CardTitle>{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+            </Card>
           ))}
         </div>
       </section>
