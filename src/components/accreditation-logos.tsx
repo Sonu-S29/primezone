@@ -16,8 +16,8 @@ const scrollingFeatures = [
             "/images/certificates/certipoint.png",
             "/images/certificates/nsdc.png",
             "/images/certificates/unnamed.png",
-            "https://placehold.co/150x60/png"
-        ],
+            
+        ].slice(0, 4), // Ensure only 4 images are used
         hint: "organization logos",
         link: "/about"
     },
@@ -47,7 +47,7 @@ export default function AccreditationLogos() {
 
   return (
     <Card className="p-8 md:p-10 glass-effect relative overflow-hidden min-h-[160px] md:min-h-[120px]">
-      <div className="absolute top-4 right-6">
+      <div className="absolute top-4 right-6 w-full pr-12 text-right">
         <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
       <div className="grid md:grid-cols-2 gap-4 items-center">
@@ -68,7 +68,7 @@ export default function AccreditationLogos() {
                     <div className="flex flex-1 items-center justify-center md:justify-end">
                        {Array.isArray(scrollingFeatures[currentIndex].image) ? (
                             <div className="flex items-center justify-center gap-4 md:gap-6 flex-nowrap">
-                                {(scrollingFeatures[currentIndex].image as string[]).slice(0, 4).map((img, idx) => (
+                                {(scrollingFeatures[currentIndex].image as string[]).map((img, idx) => (
                                     <div key={idx} className="relative h-10 md:h-12 w-24 md:w-32">
                                         <Image
                                             src={img}
