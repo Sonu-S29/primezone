@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import React from "react";
 import HeroSlider from "@/components/hero-slider";
 import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
+import AccreditationLogos from "@/components/accreditation-logos";
 
 const allCourses = [
     "Diploma in Computer Application & Programming (DCAP)",
@@ -211,6 +212,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+      {/* Accreditation Logos Section */}
+      <section className="container mx-auto px-4">
+        <AccreditationLogos />
+      </section>
 
       {/* Featured Courses Section */}
       <section className="relative py-16 overflow-hidden">
