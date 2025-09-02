@@ -16,7 +16,7 @@ const scrollingFeatures = [
             "/images/certificates/certipoint.png",
             "/images/certificates/nsdc.png",
             "/images/certificates/unnamed.png",
-            "https://placehold.co/150x60/png?text=Logo4",
+            "https://placehold.co/150x60/png"
         ],
         hint: "organization logos",
         link: "/about"
@@ -51,9 +51,9 @@ export default function AccreditationLogos() {
         <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
       <div className="grid md:grid-cols-2 gap-4 items-center">
-        <div className="flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4">
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
-          <div className="h-12 w-px bg-border hidden md:block"></div>
+          <div className="h-12 w-px bg-border"></div>
         </div>
         <div className="flex-1 h-20 relative">
             <AnimatePresence mode="wait">
@@ -65,9 +65,9 @@ export default function AccreditationLogos() {
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0 flex items-center justify-center md:justify-end"
                 >
-                    <div className="flex items-center justify-center md:justify-end flex-1">
+                    <div className="flex flex-1 items-center justify-center md:justify-end">
                        {Array.isArray(scrollingFeatures[currentIndex].image) ? (
-                            <div className="flex items-center justify-center gap-4 md:gap-6">
+                            <div className="flex items-center justify-center gap-4 md:gap-6 flex-nowrap">
                                 {(scrollingFeatures[currentIndex].image as string[]).slice(0, 4).map((img, idx) => (
                                     <div key={idx} className="relative h-10 md:h-12 w-24 md:w-32">
                                         <Image
