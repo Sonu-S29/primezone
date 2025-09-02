@@ -7,30 +7,86 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Book, Clock } from "lucide-react";
 
 const scrollingFeatures = [
     {
         title: "Affiliation & Recognizations",
-        image: [
-            "/images/certificates/certipoint.png",
-            "/images/certificates/nsdc.png",
-            "/images/certificates/unnamed.png",
-            
-        ].slice(0, 4), // Ensure only 4 images are used
-        hint: "organization logos",
+        content: (
+             <div className="flex items-center justify-center md:justify-end gap-2 md:gap-2 flex-nowrap">
+                <div className="relative h-10 md:h-12 w-24 md:w-32">
+                    <Image
+                        src="/images/certificates/certipoint.png"
+                        alt="Certipoint logo"
+                        fill
+                        className="object-contain"
+                        data-ai-hint="organization logo"
+                    />
+                </div>
+                <div className="relative h-10 md:h-12 w-24 md:w-32">
+                    <Image
+                        src="/images/certificates/nsdc.png"
+                        alt="NSDC logo"
+                        fill
+                        className="object-contain"
+                        data-ai-hint="organization logo"
+                    />
+                </div>
+                 <div className="relative h-10 md:h-12 w-24 md:w-32">
+                    <Image
+                        src="/images/certificates/unnamed.png"
+                        alt="Unnamed logo"
+                        fill
+                        className="object-contain"
+                        data-ai-hint="organization logo"
+                    />
+                </div>
+            </div>
+        ),
         link: "/about"
     },
     {
         title: "Our Diploma and Short-term Courses",
-        image: "https://placehold.co/150x60/png",
-        hint: "course certificates",
+        content: (
+             <div className="flex flex-col md:flex-row gap-4 items-center justify-center text-sm">
+                <div className="flex flex-col items-center p-2 rounded-lg">
+                    <div className="flex items-center font-bold">
+                        <Book className="mr-2 h-4 w-4 text-accent" />
+                        <span>10+ Diploma Courses</span>
+                    </div>
+                    <div className="flex items-center text-xs text-muted-foreground mt-1">
+                        <Clock className="mr-1 h-3 w-3" />
+                         <span>6 Months to 1 Year</span>
+                    </div>
+                </div>
+                 <div className="hidden md:block h-10 w-px bg-border"></div>
+                 <div className="flex flex-col items-center p-2 rounded-lg">
+                    <div className="flex items-center font-bold">
+                        <Book className="mr-2 h-4 w-4 text-accent" />
+                        <span>35+ Short-Term Courses</span>
+                    </div>
+                    <div className="flex items-center text-xs text-muted-foreground mt-1">
+                        <Clock className="mr-1 h-3 w-3" />
+                         <span>2 to 6 Months</span>
+                    </div>
+                </div>
+            </div>
+        ),
         link: "/courses"
     },
     {
         title: "Why Choose Us?",
-        image: "https://placehold.co/150x60/png",
-        hint: "students learning",
+        content: (
+            <div className="relative h-16 w-40">
+                <Image
+                    src="https://placehold.co/150x60.png"
+                    alt="Why Choose Us?"
+                    fill
+                    className="object-contain"
+                    data-ai-hint="students learning"
+                />
+            </div>
+        ),
         link: "/about"
     }
 ];
@@ -69,31 +125,7 @@ export default function AccreditationLogos() {
                     className="absolute inset-0 flex items-center justify-center md:justify-end"
                 >
                     <div className="flex flex-1 items-center justify-center md:justify-end">
-                       {Array.isArray(scrollingFeatures[currentIndex].image) ? (
-                            <div className="flex items-center justify-center gap-2 md:gap-2 flex-nowrap">
-                                {(scrollingFeatures[currentIndex].image as string[]).map((img, idx) => (
-                                    <div key={idx} className="relative h-10 md:h-12 w-24 md:w-32">
-                                        <Image
-                                            src={img}
-                                            alt={`${scrollingFeatures[currentIndex].title} logo ${idx + 1}`}
-                                            fill
-                                            className="object-contain"
-                                            data-ai-hint={scrollingFeatures[currentIndex].hint}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                             <div className="relative h-16 w-40">
-                                <Image
-                                    src={scrollingFeatures[currentIndex].image as string}
-                                    alt={scrollingFeatures[currentIndex].title}
-                                    fill
-                                    className="object-contain"
-                                    data-ai-hint={scrollingFeatures[currentIndex].hint}
-                                />
-                            </div>
-                        )}
+                       {scrollingFeatures[currentIndex].content}
                     </div>
                 </motion.div>
             </AnimatePresence>
