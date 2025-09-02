@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -134,25 +133,25 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-            <Card className="glass-effect overflow-hidden">
+            <div className="glass-effect rounded-lg p-4">
                 <Image 
                     src="https://placehold.co/600x400.png"
                     alt="Why Choose Us"
                     width={600}
                     height={400}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-md"
                     data-ai-hint="students collaborating"
                 />
-            </Card>
-            <Card className="glass-effect p-8">
-                <CardHeader className="p-0 mb-6">
-                    <CardTitle className="text-3xl font-bold font-headline text-primary">Why Choose Us?</CardTitle>
-                    <CardDescription>Our commitment to excellence and student success sets us apart.</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0 space-y-6">
+            </div>
+            <div className="space-y-8">
+                <div>
+                    <h2 className="text-3xl font-bold font-headline text-primary">Why Choose Us?</h2>
+                    <p className="text-muted-foreground mt-2">Our commitment to excellence and student success sets us apart.</p>
+                </div>
+                <div className="space-y-6">
                     {whyChooseUsItems.map((item, index) => (
                         <div key={index} className="flex items-start gap-4">
-                            <div className="p-3 bg-primary text-primary-foreground rounded-full">
+                            <div className="p-3 bg-primary text-primary-foreground rounded-full flex-shrink-0">
                                 {item.icon}
                             </div>
                             <div>
@@ -161,8 +160,8 @@ export default function Home() {
                             </div>
                         </div>
                     ))}
-                </CardContent>
-            </Card>
+                </div>
+            </div>
         </div>
     </section>
 
