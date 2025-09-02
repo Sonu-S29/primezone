@@ -7,17 +7,8 @@ export default function AccreditationLogos() {
     <Card className="p-6 md:p-8 glass-effect">
       <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
         <div className="flex items-center gap-4">
-          <Image
-            src="https://placehold.co/150x60/png"
-            alt="Best computer classes, Awarded by World Education Summit"
-            width={150}
-            height={60}
-            className="object-contain"
-            data-ai-hint="digital marketing award"
-          />
           <div className="hidden md:block">
             <p className="font-bold text-sm">BEST COMPUTER CLASSES</p>
-            <p className="text-xs text-muted-foreground">Awarded by World Education Summit</p>
           </div>
         </div>
         <div className="h-12 w-px bg-border hidden md:block"></div>
