@@ -51,9 +51,12 @@ export default function AccreditationLogos() {
         <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
       <div className="grid md:grid-cols-2 gap-4 items-center">
-        <div className="hidden md:flex items-center gap-4">
-          <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
-          <div className="h-12 w-px bg-border"></div>
+        <div className="hidden md:flex flex-col items-start gap-1">
+            <p className="font-semibold text-sm text-muted-foreground">Primezone Computer Education</p>
+            <div className="flex items-center gap-4">
+              <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
+              <div className="h-8 w-px bg-border"></div>
+            </div>
         </div>
         <div className="flex-1 h-20 relative pt-8 min-h-[100px]">
             <AnimatePresence mode="wait">
@@ -67,7 +70,7 @@ export default function AccreditationLogos() {
                 >
                     <div className="flex flex-1 items-center justify-center md:justify-end">
                        {Array.isArray(scrollingFeatures[currentIndex].image) ? (
-                            <div className="flex items-center justify-center gap-2 md:gap-4 flex-nowrap">
+                            <div className="flex items-center justify-center gap-2 md:gap-2 flex-nowrap">
                                 {(scrollingFeatures[currentIndex].image as string[]).map((img, idx) => (
                                     <div key={idx} className="relative h-10 md:h-12 w-24 md:w-32">
                                         <Image
