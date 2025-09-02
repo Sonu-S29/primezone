@@ -9,14 +9,14 @@ export default function AccreditationLogos() {
         <div className="flex items-center gap-4">
           <Image
             src="https://placehold.co/150x60/png"
-            alt="#1 Digital Marketing Institute, Awarded by World Education Summit"
+            alt="Best computer classes, Awarded by World Education Summit"
             width={150}
             height={60}
             className="object-contain"
             data-ai-hint="digital marketing award"
           />
           <div className="hidden md:block">
-            <p className="font-bold text-sm">#1 DIGITAL MARKETING INSTITUTE</p>
+            <p className="font-bold text-sm">BEST COMPUTER CLASSES</p>
             <p className="text-xs text-muted-foreground">Awarded by World Education Summit</p>
           </div>
         </div>
