@@ -67,7 +67,7 @@ export default function AccreditationLogos() {
                 >
                     <div className="flex items-center justify-center md:justify-end flex-1">
                        {Array.isArray(scrollingFeatures[currentIndex].image) ? (
-                            <div className="flex items-center justify-center flex-wrap gap-4 md:gap-6">
+                            <div className="flex items-center justify-center gap-4 md:gap-6">
                                 {(scrollingFeatures[currentIndex].image as string[]).slice(0, 4).map((img, idx) => (
                                     <div key={idx} className="relative h-10 md:h-12 w-24 md:w-32">
                                         <Image
