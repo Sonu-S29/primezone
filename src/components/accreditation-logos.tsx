@@ -46,7 +46,7 @@ export default function AccreditationLogos() {
     }, []);
 
   return (
-    <Card className="p-6 md:p-8 glass-effect relative overflow-hidden min-h-[140px] md:min-h-[120px]">
+    <Card className="p-6 md:p-8 glass-effect relative overflow-hidden min-h-[160px] md:min-h-[120px]">
       <div className="absolute top-4 right-6">
         <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
@@ -55,7 +55,7 @@ export default function AccreditationLogos() {
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
           <div className="h-12 w-px bg-border"></div>
         </div>
-        <div className="flex-1 h-20 relative pt-4 min-h-[100px]">
+        <div className="flex-1 h-20 relative pt-8 min-h-[100px]">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentIndex}
