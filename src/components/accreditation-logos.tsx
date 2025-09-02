@@ -8,7 +8,7 @@ export default function AccreditationLogos() {
       <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
         <div className="flex items-center gap-4">
           <div className="hidden md:block">
-            <p className="font-bold text-sm">BEST COMPUTER CLASSES</p>
+            <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
           </div>
         </div>
         <div className="h-12 w-px bg-border hidden md:block"></div>
