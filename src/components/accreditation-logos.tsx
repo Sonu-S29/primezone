@@ -7,7 +7,6 @@ export default function AccreditationLogos() {
     <Card className="p-6 md:p-8 glass-effect">
       <div className="text-center mb-6">
         <p className="font-bold text-sm">Accredited by</p>
-        <p className="text-xs text-muted-foreground">Media and Entertainment Skills Council</p>
       </div>
       <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
         <div className="flex items-center gap-4">
