@@ -131,29 +131,39 @@ export default function Home() {
       </section>
       
       {/* Why Choose Us Section */}
-        <section className="container mx-auto px-4">
-            <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">Why Choose Us?</h2>
-            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                Our commitment to excellence and student success sets us apart.
-            </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-                {whyChooseUsItems.map((item, index) => (
-                    <Card key={index} className="text-center glass-effect p-6 flex flex-col items-center">
-                        <CardHeader className="p-1">
-                            <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit mb-4">
+      <section className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+            <Card className="glass-effect overflow-hidden">
+                <Image 
+                    src="https://placehold.co/600x400.png"
+                    alt="Why Choose Us"
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover"
+                    data-ai-hint="students collaborating"
+                />
+            </Card>
+            <Card className="glass-effect p-8">
+                <CardHeader className="p-0 mb-6">
+                    <CardTitle className="text-3xl font-bold font-headline text-primary">Why Choose Us?</CardTitle>
+                    <CardDescription>Our commitment to excellence and student success sets us apart.</CardDescription>
+                </CardHeader>
+                <CardContent className="p-0 space-y-6">
+                    {whyChooseUsItems.map((item, index) => (
+                        <div key={index} className="flex items-start gap-4">
+                            <div className="p-3 bg-primary text-primary-foreground rounded-full">
                                 {item.icon}
                             </div>
-                            <CardTitle className="mt-2 text-xl">{item.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-1">
-                            <p className="text-muted-foreground text-sm">{item.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </section>
+                            <div>
+                                <h3 className="text-xl font-semibold">{item.title}</h3>
+                                <p className="text-muted-foreground mt-1">{item.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </CardContent>
+            </Card>
+        </div>
+    </section>
 
         {/* Welcome Section */}
         <section className="container mx-auto px-4">
