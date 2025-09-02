@@ -5,11 +5,13 @@ import { Card } from "@/components/ui/card";
 export default function AccreditationLogos() {
   return (
     <Card className="p-6 md:p-8 glass-effect">
+      <div className="text-center mb-6">
+        <p className="font-bold text-sm">Accredited by</p>
+        <p className="text-xs text-muted-foreground">Media and Entertainment Skills Council</p>
+      </div>
       <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
         <div className="flex items-center gap-4">
-          <div className="hidden md:block">
-            <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
-          </div>
+          <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
         </div>
         <div className="h-12 w-px bg-border hidden md:block"></div>
         <div className="flex items-center gap-4">
@@ -21,10 +23,6 @@ export default function AccreditationLogos() {
             className="object-contain"
             data-ai-hint="skills council logo"
           />
-           <div className="hidden md:block">
-            <p className="font-bold text-sm">Accredited by</p>
-            <p className="text-xs text-muted-foreground">Media and Entertainment Skills Council</p>
-          </div>
         </div>
       </div>
     </Card>
