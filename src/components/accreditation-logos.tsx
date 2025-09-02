@@ -43,7 +43,7 @@ export default function AccreditationLogos() {
   return (
     <Card className="p-6 md:p-8 glass-effect relative overflow-hidden">
       <div className="absolute top-4 right-6">
-        <p className="font-bold text-xs text-muted-foreground">Accredited by</p>
+        <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
       </div>
       <div className="flex justify-between items-center flex-wrap pt-4">
         <div className="flex items-center gap-4">
@@ -70,7 +70,6 @@ export default function AccreditationLogos() {
                             data-ai-hint={scrollingFeatures[currentIndex].hint}
                         />
                         <div className="w-40">
-                            <p className="font-semibold text-sm">{scrollingFeatures[currentIndex].title}</p>
                              <Button asChild variant="link" className="p-0 h-auto text-xs">
                                 <Link href={scrollingFeatures[currentIndex].link}>
                                     Read More <ArrowRight className="ml-1 h-3 w-3"/>
