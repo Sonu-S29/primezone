@@ -52,7 +52,7 @@ export default function AccreditationLogos() {
       </div>
       <div className="grid md:grid-cols-2 gap-4 items-center">
         <div className="hidden md:flex flex-col items-start gap-1">
-            <p className="font-semibold text-sm text-muted-foreground">Primezone Computer Education</p>
+            <p className="font-semibold text-2xl text-muted-foreground">Primezone Computer Education</p>
             <div className="flex items-center gap-4">
               <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
               <div className="h-8 w-px bg-border"></div>
