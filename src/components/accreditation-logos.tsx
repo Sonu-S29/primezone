@@ -4,11 +4,11 @@ import { Card } from "@/components/ui/card";
 
 export default function AccreditationLogos() {
   return (
-    <Card className="p-6 md:p-8 glass-effect">
-      <div className="text-center mb-6">
-        <p className="font-bold text-sm">Accredited by</p>
+    <Card className="p-6 md:p-8 glass-effect relative">
+      <div className="absolute top-4 right-6">
+        <p className="font-bold text-xs text-muted-foreground">Accredited by</p>
       </div>
-      <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
+      <div className="flex justify-center items-center gap-8 md:gap-16 flex-wrap pt-4">
         <div className="flex items-center gap-4">
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
         </div>
