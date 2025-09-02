@@ -55,7 +55,7 @@ export default function AccreditationLogos() {
           <p className="font-bold text-lg">BEST COMPUTER CLASSES</p>
           <div className="h-12 w-px bg-border"></div>
         </div>
-        <div className="flex-1 h-20 relative">
+        <div className="flex-1 h-20 relative pt-4 min-h-[100px]">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentIndex}
