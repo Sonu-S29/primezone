@@ -296,8 +296,8 @@ export default function DiplomaCoursesPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
           {diplomaCourses.map((course) => (
-            <Card key={course.title} className="flex flex-col md:flex-row overflow-hidden group glass-effect">
-              <div className="md:w-2/5 relative">
+            <Card key={course.title} className="flex flex-col overflow-hidden group glass-effect">
+              <div className="relative h-64">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -307,7 +307,7 @@ export default function DiplomaCoursesPage() {
                   data-ai-hint={course.hint}
                 />
               </div>
-              <div className="md:w-3/5 flex flex-col p-6">
+              <div className="flex flex-col p-6">
                 <CardHeader className="p-0">
                   <CardTitle className="text-2xl font-bold">{course.title}</CardTitle>
                   <CardDescription className="pt-2">{course.description}</CardDescription>
@@ -337,8 +337,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
-    
-
-    
-
