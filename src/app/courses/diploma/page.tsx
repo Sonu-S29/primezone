@@ -284,7 +284,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         asChild
                         className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
                     >
-                        <Link href="/enroll">Enroll Now</Link>
+                        <Link href={`/enroll?course=${encodeURIComponent(course.title)}`}>Enroll Now</Link>
                     </Button>
                 </div>
              </div>
@@ -356,3 +356,5 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
