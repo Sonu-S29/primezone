@@ -19,14 +19,10 @@ import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
 
 const allCourses = [
-    "Diploma in Computer Application & Programming (DCAP)",
-    "Diploma in Financial Accounting (DFA)",
-    "Diploma in Web Development (DWD)",
-    "Diploma in Graphic Designing (DGD)",
-    "Advanced Tally Prime with GST",
-    "Certificate in Web Designing",
-    "C & C++ Programming",
-    "Python for Data Science",
+    "Diploma course",
+    "Short Term Course",
+    "Career Counseling",
+    "Other",
   ];
 
 const testimonials = [
@@ -228,7 +224,7 @@ export default function Home() {
             <div className="md:col-span-4 space-y-8">
                 {empoweringFeatures.slice(0, 2).map((feature, index) => (
                     <div key={index} className="text-left md:text-right">
-                        <div className="flex flex-row-reverse md:flex-row items-center gap-4 justify-end">
+                        <div className="flex flex-row-reverse md:flex-row items-center gap-4 justify-end md:justify-start">
                            <div className="text-left md:text-right">
                                <h3 className="font-bold text-lg">{feature.title}</h3>
                                <p className="text-muted-foreground text-sm">{feature.description}</p>
@@ -326,6 +322,8 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
 
     
