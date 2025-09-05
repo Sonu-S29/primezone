@@ -91,7 +91,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Ethical Hacking",
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/courses/F-H.webp",
     hint: "ethical hacking",
     modules: [
       { title: "Intro to Ethical Hacking", icon: <ShieldCheck />, subTopics: ["Key terminology", "Penetration testing", "Cyber ethics", "Hacking phases"] },
@@ -114,7 +114,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Digital Marketing",
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
-    image: "/images/courses/dm.jpg",
+    image: "/images/courses/dm.webp",
     hint: "digital marketing",
     modules: [
         { title: "Marketing Fundamentals", icon: <Megaphone />, subTopics: ["Introduction to Digital Marketing", "Website Analysis", "Google Algorithms", "Duplicate Content Checking", "Web Master Tools"] },
@@ -128,7 +128,7 @@ const diplomaCourses = [
   {
     title: "Full-Stack Development",
     description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
-    image: "/images/courses/FSD.jpg",
+    image: "/images/courses/full-stack.webp",
     hint: "full stack",
     modules: [
         { title: "HTML & CSS", icon: <Code />, subTopics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
@@ -144,7 +144,7 @@ const diplomaCourses = [
   {
     title: "Data Analytics",
     description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
-    image: "/images/courses/DATA-ANALYTICS.jpg",
+    image: "/images/courses/dataanalytics.webp",
     hint: "data analytics",
     modules: [
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Complex Functions, What - if - Analysis", "Working with Macros, MIS Reporting", "Dashboard Creation, Data Validation"] },
@@ -297,7 +297,7 @@ export default function DiplomaCoursesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {diplomaCourses.map((course) => (
             <Card key={course.title} className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
-                <div className="relative h-48 w-full">
+                <div className="relative h-48 sm:h-56 w-full">
                     <Image
                         src={course.image}
                         alt={course.title}
@@ -347,6 +347,8 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
 
