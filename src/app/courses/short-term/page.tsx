@@ -353,7 +353,7 @@ const courseData = [
           description: 'Learn 3D modeling',
           modules: 5,
           topics: ['3D Modeling', 'Texturing', 'Lighting Techniques', 'Animation', 'Rendering'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/courses/short/3DMAX.png",
           hint: "3d modeling"
         },
         {
@@ -568,5 +568,3 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
-
-    
