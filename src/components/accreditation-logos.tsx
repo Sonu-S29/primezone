@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Book, Clock } from "lucide-react";
+import { ArrowRight, Book, Clock, Star, Users, Award, Briefcase, Cpu, GraduationCap, ChevronsRight } from "lucide-react";
 
 const scrollingFeatures = [
     {
@@ -77,14 +77,13 @@ const scrollingFeatures = [
     {
         title: "Why Choose Us?",
         content: (
-            <div className="relative h-16 w-40">
-                <Image
-                    src="https://placehold.co/150x60.png"
-                    alt="Why Choose Us?"
-                    fill
-                    className="object-contain"
-                    data-ai-hint="students learning"
-                />
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
+                <div className="flex items-center gap-2"><Briefcase className="h-3 w-3 text-accent"/><span>Best in Industry</span></div>
+                <div className="flex items-center gap-2"><Award className="h-3 w-3 text-accent"/><span>Award-Winning</span></div>
+                <div className="flex items-center gap-2"><Cpu className="h-3 w-3 text-accent"/><span>State-of-the-Art Labs</span></div>
+                <div className="flex items-center gap-2"><Users className="h-3 w-3 text-accent"/><span>Expert Faculty</span></div>
+                <div className="flex items-center gap-2"><GraduationCap className="h-3 w-3 text-accent"/><span>Free Career Counseling</span></div>
+                <div className="flex items-center gap-2"><Star className="h-3 w-3 text-accent"/><span>Job-Oriented Training</span></div>
             </div>
         ),
         link: "/about"
