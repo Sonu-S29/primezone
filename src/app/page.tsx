@@ -227,9 +227,9 @@ export default function Home() {
         <div className="grid md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-4 space-y-8">
                 {empoweringFeatures.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="text-right">
-                        <div className="inline-flex items-center gap-4">
-                           <div className="text-right">
+                    <div key={index} className="text-left md:text-right">
+                        <div className="flex flex-row-reverse md:flex-row items-center gap-4 justify-end">
+                           <div className="text-left md:text-right">
                                <h3 className="font-bold text-lg">{feature.title}</h3>
                                <p className="text-muted-foreground text-sm">{feature.description}</p>
                            </div>
@@ -253,7 +253,7 @@ export default function Home() {
             <div className="md:col-span-4 space-y-8">
                 {empoweringFeatures.slice(2, 4).map((feature, index) => (
                     <div key={index} className="text-left">
-                        <div className="inline-flex items-center gap-4">
+                        <div className="flex items-center gap-4">
                            <div className="p-3 bg-accent text-accent-foreground rounded-lg">
                                {feature.icon}
                            </div>
@@ -326,6 +326,8 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
 
     
