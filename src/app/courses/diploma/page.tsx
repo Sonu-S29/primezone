@@ -356,15 +356,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
