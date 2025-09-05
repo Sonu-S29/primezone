@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -293,43 +293,53 @@ export default function DiplomaCoursesPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+       <section className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {diplomaCourses.map((course) => (
-            <Card key={course.title} className="flex flex-col overflow-hidden group glass-effect">
-              <div className="relative h-64">
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={course.hint}
-                />
-              </div>
-              <div className="flex flex-col p-6">
-                <CardHeader className="p-0">
-                  <CardTitle className="text-2xl font-bold">{course.title}</CardTitle>
-                  <CardDescription className="pt-2">{course.description}</CardDescription>
+            <Card key={course.title} className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
+                <div className="relative h-40 w-full p-4 bg-white rounded-t-2xl">
+                    <Image
+                        src={course.image}
+                        alt={course.title}
+                        fill
+                        style={{objectFit: "contain"}}
+                        data-ai-hint={course.hint}
+                        className=""
+                    />
+                </div>
+                <CardHeader className="space-y-1">
+                    <div className="flex justify-between items-start">
+                        <p className="text-sm text-blue-500 font-semibold">Diploma</p>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                               <Button onClick={() => setSelectedCourse(course)} variant="outline" size="sm">View Modules</Button>
+                            </DialogTrigger>
+                            <DialogContent className="bg-transparent border-none shadow-none p-0 w-auto max-w-[95vw] md:max-w-7xl rounded-lg data-[state=open]:w-auto">
+                                {selectedCourse && course.title === selectedCourse.title && (
+                                    <>
+                                        <DialogHeader className="sr-only">
+                                            <DialogTitle>{selectedCourse.title}</DialogTitle>
+                                        </DialogHeader>
+                                        <RoadmapPopup course={selectedCourse} />
+                                    </>
+                                )}
+                            </DialogContent>
+                        </Dialog>
+                    </div>
+                    <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
+                    <CardDescription>{course.description}</CardDescription>
                 </CardHeader>
-                <CardFooter className="p-0 mt-auto pt-6">
-                   <Dialog>
-                        <DialogTrigger asChild>
-                           <Button onClick={() => setSelectedCourse(course)}>View Modules <ChevronRight className="ml-2 h-4 w-4"/></Button>
-                        </DialogTrigger>
-                        <DialogContent className="bg-transparent border-none shadow-none p-0 w-auto max-w-[95vw] md:max-w-7xl rounded-lg data-[state=open]:w-auto">
-                          {selectedCourse && (
-                            <>
-                            <DialogHeader className="sr-only">
-                                <DialogTitle>{selectedCourse.title}</DialogTitle>
-                            </DialogHeader>
-                            <RoadmapPopup course={selectedCourse} />
-                            </>
-                          )}
-                        </DialogContent>
-                    </Dialog>
+                <CardContent className="flex-grow"></CardContent>
+                <CardFooter className="bg-blue-50 text-blue-900 p-3 rounded-b-2xl flex justify-between items-center text-sm font-medium">
+                    <div className="flex items-center gap-2">
+                        <BookOpen className="h-4 w-4" />
+                        <span>{course.modules.length} Modules</span>
+                    </div>
+                     <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4" />
+                        <span>{course.modules.reduce((acc, m) => acc + (m.subTopics?.length || 0), 0)} Total Topics</span>
+                    </div>
                 </CardFooter>
-              </div>
             </Card>
           ))}
         </div>
@@ -337,3 +347,5 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
