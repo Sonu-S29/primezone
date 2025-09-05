@@ -297,7 +297,7 @@ export default function DiplomaCoursesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {diplomaCourses.map((course) => (
             <Card key={course.title} className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
-                <div className="relative h-40 w-full">
+                <div className="relative h-48 w-full">
                     <Image
                         src={course.image}
                         alt={course.title}
@@ -327,7 +327,7 @@ export default function DiplomaCoursesPage() {
                         </Dialog>
                     </div>
                     <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
-                    <CardDescription>{course.description}</CardDescription>
+                    <CardDescription className="line-clamp-3">{course.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow"></CardContent>
                 <CardFooter className="bg-blue-50 text-blue-900 p-3 rounded-b-2xl flex justify-between items-center text-sm font-medium">
@@ -347,6 +347,8 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
 
