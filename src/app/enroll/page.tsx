@@ -50,7 +50,7 @@ const courses = [
   "SEM",
   "WordPress",
   "Content Creation",
-  "Email Marketing",
+  "Facebook & Google Ads",
   "SMO",
   "Google Analytics",
   "CorelDRAW",
@@ -147,5 +147,7 @@ export default function EnrollPage() {
     </div>
   );
 }
+
+    
 
     

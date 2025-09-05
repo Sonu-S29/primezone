@@ -269,12 +269,12 @@ const courseData = [
             hint: "content creation"
         },
         {
-            title: 'Email Marketing',
-            description: 'Manage email campaigns',
+            title: 'Facebook & Google Ads',
+            description: 'Manage paid ad campaigns',
             modules: 5,
-            topics: ['Email Campaigns', 'List Building', 'A/B Testing', 'Analytics and Reporting', 'Automation'],
+            topics: ['Facebook Ads', 'Google Ads', 'Campaign Management', 'Ad Copywriting', 'Conversion Tracking'],
             image: "https://placehold.co/600x400.png",
-            hint: "email marketing"
+            hint: "social media ads"
         },
         {
             title: 'SMO',
@@ -300,110 +300,110 @@ const courseData = [
     description: "Create stunning visuals",
     icon: <Paintbrush className="h-8 w-8" />,
     courses: [
-        {
-          title: 'CorelDRAW',
-          description: 'Learn vector graphics design',
-          modules: 5,
-          topics: ['Vector Graphics', 'Logo Design', 'Layout Design', 'Typography', 'Color Management'],
-          image: "https://placehold.co/600x400.png",
-          hint: "vector design"
-        },
-        {
-          title: 'Adobe Photoshop',
-          description: 'Master photo editing',
-          modules: 5,
-          topics: ['Photo Editing', 'Retouching Techniques', 'Layer Management', 'Color Correction', 'Graphic Design'],
-          image: "https://placehold.co/600x400.png",
-          hint: "photoshop editing"
-        },
-        {
-          title: 'Adobe Illustrator',
-          description: 'Create vector illustrations',
-          modules: 5,
-          topics: ['Vector Illustration', 'Logo Creation', 'Infographics', 'Icon Design', 'Print Design'],
-          image: "https://placehold.co/600x400.png",
-          hint: "illustrator art"
-        },
-        {
-          title: 'Adobe InDesign',
-          description: 'Learn layout design',
-          modules: 5,
-          topics: ['Layout Design', 'Typography', 'Print Production', 'Interactive PDFs', 'Book Design'],
-          image: "https://placehold.co/600x400.png",
-          hint: "indesign layout"
-        },
-        {
-          title: 'Video|Sound Editing',
-          description: 'Edit videos and audio',
-          modules: 5,
-          topics: ['Video Editing Basics', 'Audio Editing Techniques', 'Color Grading', 'Motion Graphics', 'Exporting and Compression'],
-          image: "https://placehold.co/600x400.png",
-          hint: "video editing"
-        },
-        {
-          title: 'Adobe Animation',
-          description: 'Create animations',
-          modules: 5,
-          topics: ['Animation Principles', 'Character Animation', 'Motion Graphics', 'Storyboarding', 'Exporting Animations'],
-          image: "https://placehold.co/600x400.png",
-          hint: "character animation"
-        },
-        {
-          title: '3D MAX',
-          description: 'Learn 3D modeling',
-          modules: 5,
-          topics: ['3D Modeling', 'Texturing', 'Lighting Techniques', 'Animation', 'Rendering'],
-          image: "/images/courses/short/3DMAX.png",
-          hint: "3d modeling"
-        },
-        {
-          title: 'Canva Design',
-          description: 'Create designs for social media',
-          modules: 5,
-          topics: ['Graphic Design Basics', 'Social Media Graphics', 'Presentation Design', 'Branding', 'Marketing Materials'],
-          image: "https://placehold.co/600x400.png",
-          hint: "canva design"
-        },
-        {
-          title: 'After Effects',
-          description: 'Create motion graphics and visual effects.',
-          modules: 5,
-          topics: ['Motion Graphics', 'Visual Effects', 'Compositing', 'Animation', 'Exporting'],
-          image: "https://placehold.co/600x400.png",
-          hint: "motion graphics"
-        },
-        {
-          title: 'Premiere Pro',
-          description: 'Learn professional video editing.',
-          modules: 5,
-          topics: ['Video Editing', 'Audio Editing', 'Color Correction', 'Titling', 'Exporting'],
-          image: "https://placehold.co/600x400.png",
-          hint: "video editing software"
-        },
-        {
-          title: 'Figma',
-          description: 'Design and prototype user interfaces.',
-          modules: 5,
-          topics: ['UI Design', 'Prototyping', 'Collaboration', 'Design Systems', 'Components'],
-          image: "https://placehold.co/600x400.png",
-          hint: "ui design figma"
-        },
-        {
-          title: 'AutoCAD',
-          description: 'Learn 2D and 3D design and drafting.',
-          modules: 5,
-          topics: ['2D Drafting', '3D Modeling', 'Technical Drawing', 'Layouts', 'Plotting'],
-          image: "https://placehold.co/600x400.png",
-          hint: "autocad drawing"
-        },
-        {
-          title: 'Revit',
-          description: 'Learn BIM for architectural design.',
-          modules: 5,
-          topics: ['BIM Modeling', 'Architectural Design', 'Construction Documentation', 'Collaboration', 'Families'],
-          image: "https://placehold.co/600x400.png",
-          hint: "revit architecture"
-        }
+      {
+        title: 'CorelDRAW',
+        description: 'Learn vector graphics design',
+        modules: 5,
+        topics: ['Vector Graphics', 'Logo Design', 'Layout Design', 'Typography', 'Color Management'],
+        image: "/images/courses/short/CorelDRAW.png",
+        hint: "vector design"
+      },
+      {
+        title: 'Adobe Photoshop',
+        description: 'Master photo editing',
+        modules: 5,
+        topics: ['Photo Editing', 'Retouching Techniques', 'Layer Management', 'Color Correction', 'Graphic Design'],
+        image: "/images/courses/short/AdobePhotoshop.png",
+        hint: "photoshop editing"
+      },
+      {
+        title: 'Adobe Illustrator',
+        description: 'Create vector illustrations',
+        modules: 5,
+        topics: ['Vector Illustration', 'Logo Creation', 'Infographics', 'Icon Design', 'Print Design'],
+        image: "/images/courses/short/Illustrator.png",
+        hint: "illustrator art"
+      },
+      {
+        title: 'Adobe InDesign',
+        description: 'Learn layout design',
+        modules: 5,
+        topics: ['Layout Design', 'Typography', 'Print Production', 'Interactive PDFs', 'Book Design'],
+        image: "/images/courses/short/InDesign.png",
+        hint: "indesign layout"
+      },
+      {
+        title: 'Video|Sound Editing',
+        description: 'Edit videos and audio',
+        modules: 5,
+        topics: ['Video Editing Basics', 'Audio Editing Techniques', 'Color Grading', 'Motion Graphics', 'Exporting and Compression'],
+        image: "/images/courses/short/PremierePro.png",  // Used PremierePro as closest match
+        hint: "video editing"
+      },
+      {
+        title: 'Adobe Animation',
+        description: 'Create animations',
+        modules: 5,
+        topics: ['Animation Principles', 'Character Animation', 'Motion Graphics', 'Storyboarding', 'Exporting Animations'],
+        image: "/images/courses/short/animates.png",
+        hint: "character animation"
+      },
+      {
+        title: '3D MAX',
+        description: 'Learn 3D modeling',
+        modules: 5,
+        topics: ['3D Modeling', 'Texturing', 'Lighting Techniques', 'Animation', 'Rendering'],
+        image: "/images/courses/short/3DMAX.png",
+        hint: "3d modeling"
+      },
+      {
+        title: 'Canva Design',
+        description: 'Create designs for social media',
+        modules: 5,
+        topics: ['Graphic Design Basics', 'Social Media Graphics', 'Presentation Design', 'Branding', 'Marketing Materials'],
+        image: "/images/courses/short/Canva.png",
+        hint: "canva design"
+      },
+      {
+        title: 'After Effects',
+        description: 'Create motion graphics and visual effects.',
+        modules: 5,
+        topics: ['Motion Graphics', 'Visual Effects', 'Compositing', 'Animation', 'Exporting'],
+        image: "/images/courses/short/AfterEffects.png",
+        hint: "motion graphics"
+      },
+      {
+        title: 'Premiere Pro',
+        description: 'Learn professional video editing.',
+        modules: 5,
+        topics: ['Video Editing', 'Audio Editing', 'Color Correction', 'Titling', 'Exporting'],
+        image: "/images/courses/short/PremierePro.png",
+        hint: "video editing software"
+      },
+      {
+        title: 'Figma',
+        description: 'Design and prototype user interfaces.',
+        modules: 5,
+        topics: ['UI Design', 'Prototyping', 'Collaboration', 'Design Systems', 'Components'],
+        image: "/images/courses/short/Figma.png",
+        hint: "ui design figma"
+      },
+      {
+        title: 'AutoCAD',
+        description: 'Learn 2D and 3D design and drafting.',
+        modules: 5,
+        topics: ['2D Drafting', '3D Modeling', 'Technical Drawing', 'Layouts', 'Plotting'],
+        image: "/images/courses/short/AutoCAD.png",
+        hint: "autocad drawing"
+      },
+      {
+        title: 'Revit',
+        description: 'Learn BIM for architectural design.',
+        modules: 5,
+        topics: ['BIM Modeling', 'Architectural Design', 'Construction Documentation', 'Collaboration', 'Families'],
+        image: "/images/courses/short/Revit.png",
+        hint: "revit architecture"
+      }
     ]
   },
 ];
@@ -568,3 +568,5 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
+
+    
