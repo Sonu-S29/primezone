@@ -307,14 +307,13 @@ export default function DiplomaCoursesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {diplomaCourses.map((course) => (
             <Card key={course.title} className="bg-white flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl">
-                <div className="relative h-56 sm:h-64 w-full">
+                <div className="relative h-56 sm:h-64 w-full p-4 bg-white rounded-t-2xl">
                     <Image
                         src={course.image}
                         alt={course.title}
                         fill
-                        style={{objectFit: "cover"}}
+                        style={{objectFit: "contain"}}
                         data-ai-hint={course.hint}
-                        className="rounded-t-2xl"
                     />
                 </div>
                 <CardHeader className="space-y-1">
@@ -357,6 +356,8 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
 
