@@ -312,7 +312,7 @@ export default function DiplomaCoursesPage() {
                         src={course.image}
                         alt={course.title}
                         fill
-                        style={{objectFit: "cover"}}
+                        className="object-cover"
                         data-ai-hint={course.hint}
                     />
                 </div>
