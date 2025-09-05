@@ -17,6 +17,7 @@ const diplomaCourses = [
     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
     image: "/images/courses/DIA.jpg",
     hint: "accounting collage",
+    totalTopics: "60+",
     modules: [
         { title: "Financial Accounting Basics", icon: <Landmark />, subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
         { title: "Advanced Excel for Accountants", icon: <BarChart />, subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
@@ -28,6 +29,7 @@ const diplomaCourses = [
     description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
     image: "/images/courses/DFA.jpg",
     hint: "financial report",
+    totalTopics: "90+",
     modules: [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
@@ -40,6 +42,7 @@ const diplomaCourses = [
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
     image: "/images/courses/DCA.jpg",
     hint: "computer application",
+    totalTopics: "220+",
     modules: [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting"] },
@@ -53,6 +56,7 @@ const diplomaCourses = [
     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
     image: "/images/courses/DFAM.jpg",
     hint: "financial management",
+    totalTopics: "235+",
     modules: [
         { title: "Office Automation", icon: <MonitorCheck />, subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Mircosoft Windows Fundamental", "and many more..."] },
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting"] },
@@ -67,6 +71,7 @@ const diplomaCourses = [
     description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
     image: "/images/courses/DPC.jpg",
     hint: "programming course",
+    totalTopics: "255+",
     modules: [
         { title: "C, C++ & DSA", icon: <Code />, subTopics: ["Intro Flow Algorithm", "C Syntax, Operators & Data Types", "C++ with OOPS Concepts", "Control Statements & Loops", "Data Structures & Algorithms", "File Handling & Preprocessor"] },
         { title: "Web Technologies", icon: <Globe />, subTopics: ["HTML", "CSS", "JavaScript", "PHP for server-side scripting", "Database Management (MySQL/SSMS)", "WordPress basics", "Web Hosting & Deployment"] },
@@ -80,6 +85,7 @@ const diplomaCourses = [
     description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
     image: "/images/courses/DGA.jpg",
     hint: "graphic animation",
+    totalTopics: "200+",
     modules: [
         { title: "Graphic Designing", icon: <Palette />, subTopics: ["CorelDRAW", "Adobe PHOTOSHOP", "Adobe ILLUSTRATOR", "Adobe INDESIGN", "CANVA DESIGN", "ASSIGNMENTS / PROJECT", "and many more..."] },
         { title: "Web Designing", icon: <Globe />, subTopics: ["Introduction to Web Page Designing", "Html / CSS", "Adobe Animate", "Web Hosting", "Domain / Sub Domain", "ASSIGNMENTS / PROJECT", "and many more..."] },
@@ -93,6 +99,7 @@ const diplomaCourses = [
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
     image: "/images/courses/F-H.webp",
     hint: "ethical hacking",
+    totalTopics: "135+",
     modules: [
       { title: "Intro to Ethical Hacking", icon: <ShieldCheck />, subTopics: ["Key terminology", "Penetration testing", "Cyber ethics", "Hacking phases"] },
       { title: "Footprinting", icon: <Fingerprint />, subTopics: ["Using search engines", "Website footprinting", "Email footprinting", "DNS footprinting", "Network footprinting", "Social engineering"] },
@@ -116,6 +123,7 @@ const diplomaCourses = [
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
     image: "/images/courses/dm.webp",
     hint: "digital marketing",
+    totalTopics: "120+",
     modules: [
         { title: "Marketing Fundamentals", icon: <Megaphone />, subTopics: ["Introduction to Digital Marketing", "Website Analysis", "Google Algorithms", "Duplicate Content Checking", "Web Master Tools"] },
         { title: "SEO & SEM", icon: <Search />, subTopics: ["On-Page Optimization", "Off-Page Optimization", "Keyword Research", "Meta Tag Optimization", "Search Engine Marketing (SEM)", "PPC Marketing", "Google Analytics"] },
@@ -130,6 +138,7 @@ const diplomaCourses = [
     description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
     image: "/images/courses/full-stack.webp",
     hint: "full stack",
+    totalTopics: "155+",
     modules: [
         { title: "HTML & CSS", icon: <Code />, subTopics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
         { title: "JavaScript", icon: <Code />, subTopics: ["Developer Essentials", "Language, Events", "Methods, Using Names, Objects", "Validation options, Rollovers & More"] },
@@ -146,6 +155,7 @@ const diplomaCourses = [
     description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
     image: "/images/courses/dataanalytics.webp",
     hint: "data analytics",
+    totalTopics: "120+",
     modules: [
         { title: "Advanced Excel", icon: <BarChart />, subTopics: ["Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Complex Functions, What - if - Analysis", "Working with Macros, MIS Reporting", "Dashboard Creation, Data Validation"] },
         { title: "Power BI", icon: <BarChart />, subTopics: ["Introducing PowerPivot", "Working with Data", "Enhancing the Data Model", "Analysing Data", "Data Analysis Expressions (DAX)", "Publishing & Managing PowerPivot Models", "Importing Data with Power Query"] },
@@ -337,7 +347,7 @@ export default function DiplomaCoursesPage() {
                     </div>
                      <div className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4" />
-                        <span>{course.modules.reduce((acc, m) => acc + (m.subTopics?.length || 0), 0)} Total Topics</span>
+                        <span>{course.totalTopics} Total Topics</span>
                     </div>
                 </CardFooter>
             </Card>
@@ -347,6 +357,8 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
 
