@@ -61,6 +61,11 @@ const courses = [
   "Adobe Animation",
   "3D MAX",
   "Canva Design",
+  "After Effects",
+  "Premiere Pro",
+  "Figma",
+  "AutoCAD",
+  "Revit",
 ];
 
 

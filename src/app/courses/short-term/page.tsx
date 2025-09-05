@@ -363,6 +363,46 @@ const courseData = [
           topics: ['Graphic Design Basics', 'Social Media Graphics', 'Presentation Design', 'Branding', 'Marketing Materials'],
           image: "https://placehold.co/600x400.png",
           hint: "canva design"
+        },
+        {
+          title: 'After Effects',
+          description: 'Create motion graphics and visual effects.',
+          modules: 5,
+          topics: ['Motion Graphics', 'Visual Effects', 'Compositing', 'Animation', 'Exporting'],
+          image: "https://placehold.co/600x400.png",
+          hint: "motion graphics"
+        },
+        {
+          title: 'Premiere Pro',
+          description: 'Learn professional video editing.',
+          modules: 5,
+          topics: ['Video Editing', 'Audio Editing', 'Color Correction', 'Titling', 'Exporting'],
+          image: "https://placehold.co/600x400.png",
+          hint: "video editing software"
+        },
+        {
+          title: 'Figma',
+          description: 'Design and prototype user interfaces.',
+          modules: 5,
+          topics: ['UI Design', 'Prototyping', 'Collaboration', 'Design Systems', 'Components'],
+          image: "https://placehold.co/600x400.png",
+          hint: "ui design figma"
+        },
+        {
+          title: 'AutoCAD',
+          description: 'Learn 2D and 3D design and drafting.',
+          modules: 5,
+          topics: ['2D Drafting', '3D Modeling', 'Technical Drawing', 'Layouts', 'Plotting'],
+          image: "https://placehold.co/600x400.png",
+          hint: "autocad drawing"
+        },
+        {
+          title: 'Revit',
+          description: 'Learn BIM for architectural design.',
+          modules: 5,
+          topics: ['BIM Modeling', 'Architectural Design', 'Construction Documentation', 'Collaboration', 'Families'],
+          image: "https://placehold.co/600x400.png",
+          hint: "revit architecture"
         }
     ]
   },
@@ -528,3 +568,5 @@ export default function ShortTermCoursesPage() {
     </div>
   );
 }
+
+    
