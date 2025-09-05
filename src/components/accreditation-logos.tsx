@@ -48,8 +48,8 @@ const scrollingFeatures = [
     {
         title: "Our Diploma and Short-term Courses",
         content: (
-             <div className="flex flex-col md:flex-row gap-4 items-center justify-center text-sm">
-                <div className="flex flex-col items-center p-2 rounded-lg">
+             <div className="flex flex-col md:flex-row gap-4 items-start justify-center text-sm">
+                <div className="flex flex-col items-start p-2 rounded-lg">
                     <div className="flex items-center font-bold">
                         <Book className="mr-2 h-4 w-4 text-accent" />
                         <span>10+ Diploma Courses</span>
@@ -60,7 +60,7 @@ const scrollingFeatures = [
                     </div>
                 </div>
                  <div className="hidden md:block h-10 w-px bg-border"></div>
-                 <div className="flex flex-col items-center p-2 rounded-lg">
+                 <div className="flex flex-col items-start p-2 rounded-lg">
                     <div className="flex items-center font-bold">
                         <Book className="mr-2 h-4 w-4 text-accent" />
                         <span>35+ Short-Term Courses</span>
