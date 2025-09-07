@@ -22,6 +22,7 @@ const courses = [
   "Full-Stack Development",
   "Data Analytics",
   "Office Automation",
+  "MS Office",
   "Advanced Excel",
   "Tally Prime + GST",
   "Taxation Auditing",

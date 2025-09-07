@@ -44,7 +44,7 @@ const diplomaCourses = [
 ];
 
 const shortTermCourses = {
-    Account: ["Office Automation", "Advanced Excel", "Tally Prime + GST", "Taxation Auditing", "Management Skill", "Share Market", "CCC"],
+    Account: ["Office Automation", "MS Office", "Advanced Excel", "Tally Prime + GST", "Taxation Auditing", "Management Skill", "Share Market", "CCC"],
     Programming: ["Web Development", "Web Designing", "DSA", "C", "C++", "Python", "Front-End Development", "Back-End Development", "Database", "Angular", "HTML-CSS", "JavaScript", "Core Java", "C#", "React", "Advanced Java", "PowerBI"],
     'Digital Marketing': ["SEO", "SMM", "SEM", "WordPress", "Content Creation", "Facebook & Google Ads", "SMO", "Google Analytics"],
     Graphics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Video|Sound Editing", "Adobe Animation", "3D MAX", "Canva Design"]

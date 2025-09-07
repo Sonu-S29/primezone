@@ -22,10 +22,18 @@ const courseData = [
         {
           title: 'Office Automation',
           description: 'Master essential office tools',
-          modules: 5,
-          topics: ['Word Processing', 'Spreadsheet Management', 'Presentation Software', 'Email Communication', 'Basic IT Skills'],
+          modules: 6,
+          topics: ['Word', 'Excel', 'PPT', 'OneNote', 'Outlook', 'Access'],
           image: "/images/shortterm/OA.png",
           hint: "office software"
+        },
+        {
+          title: 'MS Office',
+          description: 'Become proficient in Microsoft Office Suite.',
+          modules: 6,
+          topics: ['Word', 'Excel', 'PowerPoint', 'OneNote', 'Outlook', 'Access'],
+          image: "/images/shortterm/msoffice.png",
+          hint: "ms office"
         },
         {
           title: 'Advanced Excel',
