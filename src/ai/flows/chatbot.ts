@@ -48,8 +48,8 @@ const diplomaCourses = [
 const shortTermCourseCategories = {
     Account: ["Office Automation", "MS Office", "Advanced Excel", "Tally Prime + GST", "Taxation Auditing", "Management Skill", "Share Market", "CCC"],
     Programming: ["Web Development", "Web Designing", "DSA", "C", "C++", "Python", "Front-End Development", "Back-End Development", "Database", "Angular", "HTML-CSS", "JavaScript", "Core Java", "C#", "React", "Advanced Java", "PowerBI"],
-    'Digital Marketing': ["SEO", "SMM", "SEM", "WordPress", "Content Creation", "Facebook & Google Ads", "SMO", "Google Analytics"],
-    Graphics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Video|Sound Editing", "Adobe Animation", "3D MAX", "Canva Design"]
+    'Digital Marketing': ["SEO", "SMM", "SEM", "WordPress", "Content Creation", "Facebook & Google Ads", "SMO", "Google Analytics", "Social Media Marketing", "Search Engine Marketing"],
+    Graphics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Video|Sound Editing", "Adobe Animation", "3D MAX", "Canva Design", "After Effects", "Premiere Pro", "Figma", "AutoCAD", "Revit"]
 };
 
 const contactInfo = "\n\nFor more details, you can contact us at:\n**Jogeshwari:** [9769730087](tel:+919769730087)\n\n**Vile Parle:** [9321773941](tel:+919321773941)";
@@ -231,5 +231,3 @@ export const chatFlow = ai.defineFlow(
     };
   }
 );
-
-    

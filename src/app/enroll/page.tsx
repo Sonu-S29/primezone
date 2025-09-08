@@ -67,6 +67,8 @@ const courses = [
   "Figma",
   "AutoCAD",
   "Revit",
+  "Social Media Marketing",
+  "Search Engine Marketing",
 ];
 
 
@@ -148,7 +150,3 @@ export default function EnrollPage() {
     </div>
   );
 }
-
-    
-
-    
