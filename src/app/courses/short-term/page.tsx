@@ -24,7 +24,7 @@ const courseData = [
           description: 'Master essential office tools',
           modules: 6,
           topics: ['Word', 'Excel', 'PPT', 'OneNote', 'Outlook', 'Access'],
-          image: "/images/shortterm/OA.png",
+          image: "/images/courses/short/account/oa.png",
           hint: "office software"
         },
         {
@@ -32,7 +32,7 @@ const courseData = [
           description: 'Become proficient in Microsoft Office Suite.',
           modules: 6,
           topics: ['Word', 'Excel', 'PowerPoint', 'OneNote', 'Outlook', 'Access'],
-          image: "/images/shortterm/msoffice.png",
+          image: "/images/courses/short/account/msoffice.png",
           hint: "ms office"
         },
         {
@@ -40,7 +40,7 @@ const courseData = [
           description: 'Master advanced Excel functions',
           modules: 5,
           topics: ['Formulas and Functions', 'Pivot Tables', 'Data Analysis Tools', 'Macros and VBA', 'Advanced Charting'],
-          image: "/images/shortterm/advexcel.png",
+          image: "/images/courses/short/account/advexcel.png",
           hint: "excel spreadsheet"
         },
         
@@ -49,7 +49,7 @@ const courseData = [
           description: 'Learn GST compliance',
           modules: 5,
           topics: ['GST Registration', 'Filing GST Returns', 'Input Tax Credit', 'GST Audit', 'Compliance Management'],
-          image: "/images/shortterm/tallygst.png",
+          image: "/images/courses/short/account/tallygst.png",
           hint: "tax document"
         },
         {
@@ -57,7 +57,7 @@ const courseData = [
           description: 'Understand tax laws and auditing',
           modules: 5,
           topics: ['Tax Laws Overview', 'Auditing Techniques', 'Tax Returns Preparation', 'Compliance and Regulations', 'Tax Planning Strategies'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/courses/short/account/TaxationAuditing.png",
           hint: "auditing report"
         },
         {
@@ -65,7 +65,7 @@ const courseData = [
           description: 'Develop leadership and team management',
           modules: 5,
           topics: ['Leadership Skills', 'Team Management', 'Conflict Resolution', 'Time Management', 'Decision Making'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/courses/short/account/management.png",
           hint: "team management"
         },
         {
@@ -73,7 +73,7 @@ const courseData = [
           description: 'Understand the basics of share trading',
           modules: 5,
           topics: ['Introduction to Share Market', 'Types of Shares', 'Stock Market Analysis', 'Trading Strategies', 'Risk Management'],
-          image: "https://placehold.co/600x400.png",
+          image: "/images/courses/short/account/sharemarket.png",
           hint: "stock market chart"
         },
         {
@@ -81,7 +81,7 @@ const courseData = [
           description: 'Learn computer fundamentals',
           modules: 5,
           topics: ['Computer Fundamentals', 'Internet and Web Technologies', 'Word Processing', 'Spreadsheet Applications', 'Presentation Software'],
-          image: "/images/shortterm/ccc.png",
+          image: "/images/courses/short/account/ccc.png",
           hint: "computer basics"
         }
     ]
@@ -97,7 +97,7 @@ const courseData = [
             description: 'Build modern web applications',
             modules: 5,
             topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Backend Integration'],
-            image: "/images/shortterm/web.png",
+            image: "/images/courses/short/programming/webdev.png",
             hint: "web development"
         },
         {
@@ -105,7 +105,7 @@ const courseData = [
             description: 'Create visually appealing websites',
             modules: 5,
             topics: ['UI/UX Principles', 'Color Theory', 'Typography', 'Design Tools', 'Prototyping'],
-            image: "/images/shortterm/webd.png",
+            image: "/images/courses/short/programming/webdesign.png",
             hint: "web design"
         },
         {
@@ -113,7 +113,7 @@ const courseData = [
             description: 'Master data structures and algorithms',
             modules: 5,
             topics: ['Data Structures', 'Algorithms', 'Problem Solving', 'Complexity Analysis', 'Coding Challenges'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/dsa.png",
             hint: "data structures"
         },
         {
@@ -121,7 +121,7 @@ const courseData = [
             description: 'Learn C programming',
             modules: 5,
             topics: ['Syntax and Semantics', 'Object-Oriented Programming', 'Memory Management', 'File Handling', 'Data Structures in C/C++'],
-            image: "/images/shortterm/c.png",
+            image: "/images/courses/short/programming/cprog.png",
             hint: "c code"
         },
         {
@@ -129,7 +129,7 @@ const courseData = [
             description: 'Learn C++',
             modules: 5,
             topics: ['Syntax and Semantics', 'Object-Oriented Programming', 'Memory Management', 'File Handling', 'Data Structures in C/C++'],
-            image: "/images/shortterm/c++.png",
+            image: "/images/courses/short/programming/c++.png",
             hint: "c++ code"
         },
         {
@@ -137,7 +137,7 @@ const courseData = [
             description: 'Learn Python programming',
             modules: 5,
             topics: ['Python Basics', 'Data Types and Structures', 'Functions and Modules', 'File I/O', 'Libraries and Frameworks'],
-            image: "/images/shortterm/python.png",
+            image: "/images/courses/short/programming/python.png",
             hint: "python code"
         },
         {
@@ -145,7 +145,7 @@ const courseData = [
             description: 'Build front-end web applications',
             modules: 5,
             topics: ['HTML & CSS', 'JavaScript Basics', 'Responsive Design', 'Frontend Frameworks', 'Version Control with Git'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/frontend.png",
             hint: "front end code"
         },
         {
@@ -153,7 +153,7 @@ const courseData = [
             description: 'Build back-end web applications',
             modules: 5,
             topics: ['Server-Side Programming', 'Database Management', 'API Development', 'Authentication and Security', 'Deployment Strategies'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/backend.png",
             hint: "back end code"
         },
         {
@@ -161,7 +161,7 @@ const courseData = [
             description: 'Learn database management',
             modules: 5,
             topics: ['SQL Basics', 'Database Design', 'Data Normalization', 'Query Optimization', 'NoSQL Databases'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/database.png",
             hint: "database diagram"
         },
         {
@@ -169,7 +169,7 @@ const courseData = [
             description: 'Learn Angular framework',
             modules: 5,
             topics: ['Angular Basics', 'Components and Modules', 'Services and Dependency Injection', 'Routing and Navigation', 'State Management'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/angular.png",
             hint: "angular code"
         },
         {
@@ -177,7 +177,7 @@ const courseData = [
             description: 'Master HTML and CSS',
             modules: 5,
             topics: ['HTML Structure', 'CSS Styling', 'Responsive Design', 'CSS Frameworks', 'Accessibility'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/htmlcss.png",
             hint: "html css code"
         },
         {
@@ -185,7 +185,7 @@ const courseData = [
             description: 'Learn JavaScript',
             modules: 5,
             topics: ['JavaScript Basics', 'DOM Manipulation', 'Event Handling', 'AJAX and Fetch API', 'ES6 Features'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/js.png",
             hint: "javascript code"
         },
         {
@@ -201,7 +201,7 @@ const courseData = [
             description: 'Learn C# programming',
             modules: 5,
             topics: ['C# Basics', 'Object-Oriented Programming', 'LINQ Queries', 'Asynchronous Programming', '.NET Framework'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/csharp.png",
             hint: "c# code"
         },
         {
@@ -209,7 +209,7 @@ const courseData = [
             description: 'Learn React framework',
             modules: 5,
             topics: ['React Basics', 'Components and Props', 'State Management', 'React Router', 'Hooks'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/react.png",
             hint: "react code"
         },
         {
@@ -217,7 +217,7 @@ const courseData = [
             description: 'Learn advanced Java',
             modules: 5,
             topics: ['Java EE', 'Spring Framework', 'Hibernate', 'RESTful Services', 'Microservices'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/programming/advjava.png",
             hint: "java ee code"
         },
         {
@@ -225,7 +225,7 @@ const courseData = [
             description: 'Learn PowerBI for data visualization',
             modules: 5,
             topics: ['Data Visualization', 'DAX Functions', 'Power Query', 'Report Sharing', 'Dashboard Creation'],
-            image: "/images/shortterm/powerbi.png",
+            image: "/images/courses/short/programming/powerbi.png",
             hint: "powerbi dashboard"
         }
     ]
@@ -241,7 +241,7 @@ const courseData = [
             description: 'Optimize websites for search engines',
             modules: 5,
             topics: ['Keyword Research', 'On-Page SEO', 'Off-Page SEO', 'Technical SEO', 'SEO Tools'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/SEO.png",
             hint: "seo analysis"
         },
         {
@@ -249,7 +249,7 @@ const courseData = [
             description: 'Manage social media marketing',
             modules: 5,
             topics: ['Social Media Strategy', 'Content Creation', 'Engagement Techniques', 'Analytics', 'Community Management'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/smm.png",
             hint: "social media marketing"
         },
         {
@@ -257,7 +257,7 @@ const courseData = [
             description: 'Manage search engine marketing',
             modules: 5,
             topics: ['PPC Campaigns', 'Ad Copywriting', 'Bid Management', 'Conversion Tracking', 'A/B Testing'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/sem.png",
             hint: "search engine marketing"
         },
         {
@@ -265,7 +265,7 @@ const courseData = [
             description: 'Build and manage WordPress websites',
             modules: 5,
             topics: ['WordPress Setup', 'Theme Customization', 'Plugin Management', 'SEO for WordPress', 'Security Best Practices'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/wordpress.png",
             hint: "wordpress dashboard"
         },
         {
@@ -273,7 +273,7 @@ const courseData = [
             description: 'Create engaging content',
             modules: 5,
             topics: ['Blogging', 'Video Content', 'Social Media Posts', 'Copywriting', 'Content Strategy'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/Content.png",
             hint: "content creation"
         },
         {
@@ -281,7 +281,7 @@ const courseData = [
             description: 'Manage paid ad campaigns',
             modules: 5,
             topics: ['Facebook Ads', 'Google Ads', 'Campaign Management', 'Ad Copywriting', 'Conversion Tracking'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/facebookgoogleads.png",
             hint: "social media ads"
         },
         {
@@ -289,7 +289,7 @@ const courseData = [
             description: 'Manage social media optimization',
             modules: 5,
             topics: ['Social Media Strategy', 'Content Planning', 'Engagement Techniques', 'Analytics', 'Community Management'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/SMO.png",
             hint: "social media optimization"
         },
         {
@@ -297,7 +297,7 @@ const courseData = [
             description: 'Track website performance',
             modules: 5,
             topics: ['Setting Up Google Analytics', 'Understanding Metrics', 'Tracking Conversions', 'Reporting', 'Data Interpretation'],
-            image: "https://placehold.co/600x400.png",
+            image: "/images/courses/short/dm/googleanalytics.png",
             hint: "analytics dashboard"
         }
     ]
@@ -313,7 +313,7 @@ const courseData = [
         description: 'Learn vector graphics design',
         modules: 5,
         topics: ['Vector Graphics', 'Logo Design', 'Layout Design', 'Typography', 'Color Management'],
-        image: "/images/courses/short/CorelDRAW.png",
+        image: "/images/courses/short/graphics/CorelDRAW.png",
         hint: "vector design"
       },
       {
@@ -321,7 +321,7 @@ const courseData = [
         description: 'Master photo editing',
         modules: 5,
         topics: ['Photo Editing', 'Retouching Techniques', 'Layer Management', 'Color Correction', 'Graphic Design'],
-        image: "/images/courses/short/AdobePhotoshop.png",
+        image: "/images/courses/short/graphics/AdobePhotoshop.png",
         hint: "photoshop editing"
       },
       {
@@ -329,7 +329,7 @@ const courseData = [
         description: 'Create vector illustrations',
         modules: 5,
         topics: ['Vector Illustration', 'Logo Creation', 'Infographics', 'Icon Design', 'Print Design'],
-        image: "/images/courses/short/Illustrator.png",
+        image: "/images/courses/short/graphics/Illustrator.png",
         hint: "illustrator art"
       },
       {
@@ -337,7 +337,7 @@ const courseData = [
         description: 'Learn layout design',
         modules: 5,
         topics: ['Layout Design', 'Typography', 'Print Production', 'Interactive PDFs', 'Book Design'],
-        image: "/images/courses/short/InDesign.png",
+        image: "/images/courses/short/graphics/InDesign.png",
         hint: "indesign layout"
       },
       {
@@ -345,7 +345,7 @@ const courseData = [
         description: 'Edit videos and audio',
         modules: 5,
         topics: ['Video Editing Basics', 'Audio Editing Techniques', 'Color Grading', 'Motion Graphics', 'Exporting and Compression'],
-        image: "/images/courses/short/PremierePro.png",  // Used PremierePro as closest match
+        image: "/images/courses/short/graphics/PremierePro.png",  // Used PremierePro as closest match
         hint: "video editing"
       },
       {
@@ -353,7 +353,7 @@ const courseData = [
         description: 'Create animations',
         modules: 5,
         topics: ['Animation Principles', 'Character Animation', 'Motion Graphics', 'Storyboarding', 'Exporting Animations'],
-        image: "/images/courses/short/animates.png",
+        image: "/images/courses/short/graphics/animates.png",
         hint: "character animation"
       },
       {
@@ -361,7 +361,7 @@ const courseData = [
         description: 'Learn 3D modeling',
         modules: 5,
         topics: ['3D Modeling', 'Texturing', 'Lighting Techniques', 'Animation', 'Rendering'],
-        image: "/images/courses/short/3DMAX.png",
+        image: "/images/courses/short/graphics/3DMAX.png",
         hint: "3d modeling"
       },
       {
@@ -369,7 +369,7 @@ const courseData = [
         description: 'Create designs for social media',
         modules: 5,
         topics: ['Graphic Design Basics', 'Social Media Graphics', 'Presentation Design', 'Branding', 'Marketing Materials'],
-        image: "/images/courses/short/Canva.png",
+        image: "/images/courses/short/graphics/Canva.png",
         hint: "canva design"
       },
       {
@@ -377,7 +377,7 @@ const courseData = [
         description: 'Create motion graphics and visual effects.',
         modules: 5,
         topics: ['Motion Graphics', 'Visual Effects', 'Compositing', 'Animation', 'Exporting'],
-        image: "/images/courses/short/AfterEffects.png",
+        image: "/images/courses/short/graphics/AfterEffects.png",
         hint: "motion graphics"
       },
       {
@@ -385,7 +385,7 @@ const courseData = [
         description: 'Learn professional video editing.',
         modules: 5,
         topics: ['Video Editing', 'Audio Editing', 'Color Correction', 'Titling', 'Exporting'],
-        image: "/images/courses/short/PremierePro.png",
+        image: "/images/courses/short/graphics/PremierePro.png",
         hint: "video editing software"
       },
       {
@@ -393,7 +393,7 @@ const courseData = [
         description: 'Design and prototype user interfaces.',
         modules: 5,
         topics: ['UI Design', 'Prototyping', 'Collaboration', 'Design Systems', 'Components'],
-        image: "/images/courses/short/Figma.png",
+        image: "/images/courses/short/graphics/Figma.png",
         hint: "ui design figma"
       },
       {
@@ -401,7 +401,7 @@ const courseData = [
         description: 'Learn 2D and 3D design and drafting.',
         modules: 5,
         topics: ['2D Drafting', '3D Modeling', 'Technical Drawing', 'Layouts', 'Plotting'],
-        image: "/images/courses/short/AutoCAD.png",
+        image: "/images/courses/short/graphics/AutoCAD.png",
         hint: "autocad drawing"
       },
       {
@@ -409,7 +409,7 @@ const courseData = [
         description: 'Learn BIM for architectural design.',
         modules: 5,
         topics: ['BIM Modeling', 'Architectural Design', 'Construction Documentation', 'Collaboration', 'Families'],
-        image: "/images/courses/short/Revit.png",
+        image: "/images/courses/short/graphics/Revit.png",
         hint: "revit architecture"
       }
     ]

@@ -299,7 +299,7 @@ export default function DiplomaCoursesPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">Trending Diploma courses for 10th, 12th, Graduations</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline">Most Popular Diploma Courses After 10th, 12th, and Graduation.</h1>
         </div>
       </section>
 

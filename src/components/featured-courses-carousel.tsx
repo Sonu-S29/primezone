@@ -10,40 +10,40 @@ import Link from 'next/link';
 
 const featuredCourses = [
   {
-    title: "Diploma in Computer Application",
-    description: "A comprehensive course covering the fundamentals of computer applications, office automation, and basic programming.",
+    title: "Web Designing",
+    description: "Create visually stunning and user-friendly websites with the latest design trends and technologies.",
     image: "https://placehold.co/600x400.png",
-    hint: "computer code"
+    hint: "web design"
   },
   {
-    title: "Advanced Tally Prime with GST",
-    description: "Master accounting with Tally Prime, from basic principles to advanced GST compliance and financial reporting.",
+    title: "Advanced Excel",
+    description: "Master complex formulas, data analysis, and visualization techniques to become an Excel power user.",
+    image: "https://placehold.co/600x400.png",
+    hint: "excel spreadsheet"
+  },
+  {
+    title: "PowerBI",
+    description: "Turn complex data into clear, interactive visualizations and dashboards with Microsoft Power BI.",
+    image: "https://placehold.co/600x400.png",
+    hint: "business intelligence dashboard"
+  },
+  {
+    title: "Tally+GST",
+    description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
     image: "https://placehold.co/600x400.png",
     hint: "accounting software"
   },
   {
-    title: "Web Development",
-    description: "Learn to build modern, responsive websites and web applications using HTML, CSS, JavaScript, and popular frameworks.",
+    title: "Video & Sound Editing",
+    description: "Master the art of video and audio editing to create professional-quality media content.",
     image: "https://placehold.co/600x400.png",
-    hint: "web development"
+    hint: "video editing"
   },
   {
-    title: "Diploma in Graphic Designing",
-    description: "Unleash your creativity with graphic design principles and software like Adobe Photoshop, Illustrator, and CorelDRAW.",
+    title: "AutoCad 2D-3D",
+    description: "Learn to create precise 2D and 3D drawings with AutoCAD, the leading software for design and drafting.",
     image: "https://placehold.co/600x400.png",
-    hint: "graphic design"
-  },
-  {
-    title: "C & C++ Programming",
-    description: "Build a strong foundation in programming with two of the most powerful and widely-used languages in the industry.",
-    image: "https://placehold.co/600x400.png",
-    hint: "c++ code"
-  },
-  {
-    title: "Python for Data Science",
-    description: "An introduction to Python programming, focusing on libraries and techniques for data analysis, manipulation, and visualization.",
-    image: "https://placehold.co/600x400.png",
-    hint: "data science dashboard"
+    hint: "autocad drawing"
   },
 ];
 
