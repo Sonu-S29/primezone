@@ -45,6 +45,24 @@ const featuredCourses = [
     image: "https://placehold.co/600x400.png",
     hint: "autocad drawing"
   },
+  {
+    title: "Social Media Marketing",
+    description: "Engage audiences and build brands on social platforms.",
+    image: "https://placehold.co/600x400.png",
+    hint: "social media strategy"
+  },
+  {
+    title: "Search Engine Marketing",
+    description: "Drive traffic and conversions with paid search campaigns.",
+    image: "https://placehold.co/600x400.png",
+    hint: "search engine ads"
+  },
+  {
+    title: "Google Ads & Facebook Ads",
+    description: "Master the two largest advertising platforms.",
+    image: "https://placehold.co/600x400.png",
+    hint: "online advertising"
+  }
 ];
 
 export default function FeaturedCoursesCarousel() {
