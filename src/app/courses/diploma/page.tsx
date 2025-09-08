@@ -97,7 +97,7 @@ const diplomaCourses = [
   {
     title: "Diploma In Ethical Hacking",
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
-    image: "/images/courses/F-H.webp",
+    image: "/images/courses/ethical.webp",
     hint: "ethical hacking",
     totalTopics: "135+",
     modules: [
@@ -299,7 +299,7 @@ export default function DiplomaCoursesPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">Diploma Courses for your Better Career</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline">Trending Diploma courses for 10th, 12th, Graduations</h1>
         </div>
       </section>
 

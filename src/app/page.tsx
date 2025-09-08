@@ -139,7 +139,7 @@ export default function Home() {
         <section className="py-16">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold font-headline">Trending Diploma courses for 10th, 12th, Graduations</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline">Diploma Courses for your Better Career</h2>
                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
                         Explore our most popular diploma programs designed to launch your career.
                     </p>
