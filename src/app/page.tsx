@@ -18,6 +18,7 @@ import HeroSlider from "@/components/hero-slider";
 import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
 import TrendingCourses from "@/components/trending-courses";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const allCourses = [
     "Diploma course",
@@ -280,33 +281,44 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="w-full py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Success Stories</h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Hear what our students have to say about their journey with us.
-          </p>
-        </div>
-        <div className="relative w-full overflow-hidden">
-            <div className="flex animate-scroll">
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
-                    <Card key={index} className="glass-effect flex-shrink-0 w-80 md:w-96 mx-4">
-                        <CardContent className="pt-6">
-                            <div className="flex items-center mb-4">
-                                <Avatar>
-                                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
-                                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                </Avatar>
-                                <div className="ml-4">
-                                    <p className="font-semibold">{testimonial.name}</p>
-                                    <p className="text-sm text-muted-foreground">{testimonial.course}</p>
-                                </div>
-                            </div>
-                            <p className="text-muted-foreground italic">"{testimonial.story}"</p>
-                        </CardContent>
-                    </Card>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Success Stories</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Hear what our students have to say about their journey with us.
+            </p>
+          </div>
+          <div className="container mx-auto px-4">
+            <Carousel 
+              opts={{ loop: true, align: "start" }} 
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card className="glass-effect h-full">
+                          <CardContent className="pt-6 flex flex-col h-full">
+                              <div className="flex items-center mb-4">
+                                  <Avatar>
+                                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
+                                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                  </Avatar>
+                                  <div className="ml-4">
+                                      <p className="font-semibold">{testimonial.name}</p>
+                                      <p className="text-sm text-muted-foreground">{testimonial.course}</p>
+                                  </div>
+                              </div>
+                              <p className="text-muted-foreground italic flex-grow">"{testimonial.story}"</p>
+                          </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
                 ))}
-            </div>
-        </div>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
       </section>
       
        {/* Call to Action for Brochure */}
