@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const mainNavLinks = [
   { href: "/", label: "Home" },
@@ -34,7 +35,7 @@ const allNavLinks = [...mainNavLinks, ...moreLinks];
 const NavbarLogo = () => {
     return (
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary">
-          <GraduationCap className="h-6 w-6" />
+          <Image src="https://placehold.co/150x50.png" alt="Primezone Logo" width={32} height={32} data-ai-hint="logo" />
           <span className="font-headline">Primezone</span>
         </Link>
     )
