@@ -122,7 +122,7 @@ const empoweringFeatures = [
   ];
 
 export default function Home() {
-  const plugin = useRef(
+  const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
@@ -296,7 +296,7 @@ export default function Home() {
             <Carousel 
               plugins={[plugin.current]}
               opts={{ loop: true, align: "start" }} 
-              className="w-full max-w-4xl mx-auto"
+              className="w-full"
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}
             >
