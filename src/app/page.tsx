@@ -13,12 +13,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import React from "react";
+import React, { useRef } from "react";
 import HeroSlider from "@/components/hero-slider";
 import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
 import TrendingCourses from "@/components/trending-courses";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const allCourses = [
     "Diploma course",
@@ -121,6 +122,10 @@ const empoweringFeatures = [
   ];
 
 export default function Home() {
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
@@ -289,12 +294,15 @@ export default function Home() {
           </div>
           <div className="container mx-auto px-4">
             <Carousel 
+              plugins={[plugin.current]}
               opts={{ loop: true, align: "start" }} 
               className="w-full max-w-4xl mx-auto"
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
             >
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
                       <Card className="glass-effect h-full">
                           <CardContent className="pt-6 flex flex-col h-full">
@@ -359,3 +367,4 @@ export default function Home() {
     
 
     
+
