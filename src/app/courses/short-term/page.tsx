@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -299,30 +298,6 @@ const courseData = [
             topics: ['Setting Up Google Analytics', 'Understanding Metrics', 'Tracking Conversions', 'Reporting', 'Data Interpretation'],
             image: "/images/courses/short/dm/googleanalytics.png",
             hint: "analytics dashboard"
-        },
-        {
-            title: 'Social Media Marketing',
-            description: 'Engage audiences and build brands on social platforms.',
-            modules: 5,
-            topics: ['Strategy Development', 'Platform Management', 'Content Creation', 'Campaign Analysis', 'Community Building'],
-            image: "https://placehold.co/600x400.png",
-            hint: "social media strategy"
-        },
-        {
-            title: 'Search Engine Marketing',
-            description: 'Drive traffic and conversions with paid search campaigns.',
-            modules: 5,
-            topics: ['PPC Advertising', 'Keyword Strategy', 'Ad Copywriting', 'Bid Management', 'Performance Tracking'],
-            image: "https://placehold.co/600x400.png",
-            hint: "search engine ads"
-        },
-        {
-            title: 'Google Ads & Facebook Ads',
-            description: 'Master the two largest advertising platforms.',
-            modules: 5,
-            topics: ['Campaign Setup', 'Targeting Options', 'Ad Creation', 'Budget Optimization', 'A/B Testing'],
-            image: "https://placehold.co/600x400.png",
-            hint: "online advertising"
         }
     ]
   },

@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -8,7 +7,7 @@
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import {z} from 'zod';
 import { personalizedCourseRecommendation } from './course-recommendation';
 
 const ButtonSchema = z.object({
@@ -48,7 +47,7 @@ const diplomaCourses = [
 const shortTermCourseCategories = {
     Account: ["Office Automation", "MS Office", "Advanced Excel", "Tally Prime + GST", "Taxation Auditing", "Management Skill", "Share Market", "CCC"],
     Programming: ["Web Development", "Web Designing", "DSA", "C", "C++", "Python", "Front-End Development", "Back-End Development", "Database", "Angular", "HTML-CSS", "JavaScript", "Core Java", "C#", "React", "Advanced Java", "PowerBI"],
-    'Digital Marketing': ["SEO", "SMM", "SEM", "WordPress", "Content Creation", "Facebook & Google Ads", "SMO", "Google Analytics", "Social Media Marketing", "Search Engine Marketing"],
+    'Digital Marketing': ["SEO", "WordPress", "Content Creation", "SMO", "Google Analytics"],
     Graphics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Video|Sound Editing", "Adobe Animation", "3D MAX", "Canva Design", "After Effects", "Premiere Pro", "Figma", "AutoCAD", "Revit"]
 };
 

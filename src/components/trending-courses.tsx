@@ -51,6 +51,17 @@ const trendingCourses = [
 export default function TrendingCourses() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const itemsPerSlide = isMobile ? 1 : 2;
+  const numDots = Math.ceil(trendingCourses.length / itemsPerSlide);
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -63,7 +74,7 @@ export default function TrendingCourses() {
     timeoutRef.current = setTimeout(
       () =>
         setCurrentIndex((prevIndex) =>
-          prevIndex === Math.ceil(trendingCourses.length / 2) - 1 ? 0 : prevIndex + 1
+          prevIndex === numDots - 1 ? 0 : prevIndex + 1
         ),
       3000
     );
@@ -71,13 +82,11 @@ export default function TrendingCourses() {
     return () => {
       resetTimeout();
     };
-  }, [currentIndex]);
+  }, [currentIndex, numDots]);
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
-  
-  const numDots = Math.ceil(trendingCourses.length / 2);
 
   return (
     <div className="relative">
@@ -87,8 +96,8 @@ export default function TrendingCourses() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {Array.from({ length: numDots }).map((_, slideIndex) => (
-            <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 gap-8">
-              {trendingCourses.slice(slideIndex * 2, slideIndex * 2 + 2).map((course) => (
+            <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 gap-8 px-1">
+              {trendingCourses.slice(slideIndex * itemsPerSlide, slideIndex * itemsPerSlide + itemsPerSlide).map((course) => (
                 <Card key={course.title} className="flex flex-col border-primary/20 hover:border-primary transition-colors">
                    <CardHeader>
                         <div className="flex justify-between items-center">
@@ -125,6 +134,7 @@ export default function TrendingCourses() {
               "h-2 w-2 rounded-full transition-colors",
               currentIndex === i ? "bg-primary" : "bg-muted"
             )}
+            aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useSearchParams } from 'next/navigation';
@@ -67,8 +66,6 @@ const courses = [
   "Figma",
   "AutoCAD",
   "Revit",
-  "Social Media Marketing",
-  "Search Engine Marketing",
 ];
 
 
