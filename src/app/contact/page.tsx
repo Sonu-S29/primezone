@@ -74,9 +74,13 @@ export default function ContactUsPage() {
   const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
 
   const handleCourseSelect = (course: string) => {
-    if (course && !selectedCourses.includes(course)) {
-      setSelectedCourses([...selectedCourses, course]);
-    }
+    if (!course) return;
+    
+    setSelectedCourses(prev => 
+      prev.includes(course) 
+        ? prev.filter(c => c !== course) 
+        : [...prev, course]
+    );
   };
 
   const handleCourseRemove = (course: string) => {
@@ -163,21 +167,23 @@ export default function ContactUsPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                    <Select onValueChange={handleCourseSelect}>
+                    <Select onValueChange={handleCourseSelect} value="">
                         <SelectTrigger id="subject">
                             <SelectValue placeholder="Select courses..." />
                         </SelectTrigger>
                         <SelectContent>
                             {courses.map((course) => (
-                                <SelectItem key={course} value={course} disabled={selectedCourses.includes(course)}>{course}</SelectItem>
+                                <SelectItem key={course} value={course}>
+                                  {selectedCourses.includes(course) ? "✓ " : ""}{course}
+                                </SelectItem>
                             ))}
                         </SelectContent>
                     </Select>
-                     <div className="flex flex-wrap gap-2 pt-2">
+                     <div className="flex flex-wrap gap-2 pt-2 min-h-[2.25rem]">
                         {selectedCourses.map(course => (
                             <Badge key={course} variant="secondary" className="pl-3 pr-1 py-1">
                                 {course}
-                                <button onClick={() => handleCourseRemove(course)} className="ml-2 rounded-full hover:bg-background/50 p-0.5">
+                                <button type="button" onClick={() => handleCourseRemove(course)} className="ml-2 rounded-full hover:bg-background/50 p-0.5">
                                     <X className="h-3 w-3" />
                                 </button>
                             </Badge>
@@ -197,3 +203,4 @@ export default function ContactUsPage() {
     </div>
   );
 }
+
