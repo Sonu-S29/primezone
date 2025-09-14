@@ -5,6 +5,66 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
+const courses = [
+    "Diploma In Accounting",
+    "Diploma In Financial Accounting",
+    "Diploma In Computer Application",
+    "Diploma In Financial & Management",
+    "Diploma In Programming Course",
+    "Diploma In Graphic & Animation",
+    "Diploma In Ethical Hacking",
+    "Diploma In Digital Marketing",
+    "Full-Stack Development",
+    "Data Analytics",
+    "Office Automation",
+    "MS Office",
+    "Advanced Excel",
+    "Tally Prime + GST",
+    "Taxation Auditing",
+    "Management Skill",
+    "Share Market",
+    "CCC",
+    "Web Development",
+    "Web Designing",
+    "DSA",
+    "C",
+    "C++",
+    "Python",
+    "Front-End Development",
+    "Back-End Development",
+    "Database",
+    "Angular",
+    "HTML-CSS",
+    "JavaScript",
+    "Core Java",
+    "C#",
+    "React",
+    "Advanced Java",
+    "PowerBI",
+    "SEO",
+    "SMM",
+    "SEM",
+    "WordPress",
+    "Content Creation",
+    "Facebook & Google Ads",
+    "SMO",
+    "Google Analytics",
+    "CorelDRAW",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+    "Adobe InDesign",
+    "Video|Sound Editing",
+    "Adobe Animation",
+    "3D MAX",
+    "Canva Design",
+    "After Effects",
+    "Premiere Pro",
+    "Figma",
+    "AutoCAD",
+    "Revit",
+  ];
 
 export default function ContactUsPage() {
   return (
@@ -86,7 +146,16 @@ export default function ContactUsPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Course Inquiry" />
+                    <Select>
+                        <SelectTrigger id="subject">
+                            <SelectValue placeholder="Select a course" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {courses.map((course) => (
+                                <SelectItem key={course} value={course}>{course}</SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Your Message</Label>
