@@ -11,22 +11,10 @@ import { useState } from "react";
 
 const jobOpenings = [
   {
-    title: "Senior Web Development Instructor",
-    location: "Mumbai (On-site)",
+    title: "Graphic Designer",
+    location: "Mumbai (Remote)",
     type: "Full-time",
-    description: "We are looking for an experienced web developer with a passion for teaching. You will be responsible for delivering our web development curriculum, mentoring students, and updating course material.",
-  },
-  {
-    title: "Admissions Counselor",
-    location: "Vile Parle, Mumbai",
-    type: "Full-time",
-    description: "Join our dynamic admissions team. You will guide prospective students, help them choose the right courses, and manage the enrollment process.",
-  },
-  {
-    title: "Digital Marketing Executive",
-    location: "Jogeshwari, Mumbai",
-    type: "Part-time",
-    description: "We need a creative digital marketer to manage our online presence, run campaigns, and engage with our community on social media.",
+    description: "We are looking for a creative Graphic Designer to be responsible for giving lectures and creating engaging content for daily posts and banners.",
   },
 ];
 
