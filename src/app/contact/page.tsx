@@ -1,11 +1,15 @@
 
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, X } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 
 const courses = [
     "Diploma In Accounting",
@@ -67,6 +71,19 @@ const courses = [
   ];
 
 export default function ContactUsPage() {
+  const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
+
+  const handleCourseSelect = (course: string) => {
+    if (course && !selectedCourses.includes(course)) {
+      setSelectedCourses([...selectedCourses, course]);
+    }
+  };
+
+  const handleCourseRemove = (course: string) => {
+    setSelectedCourses(selectedCourses.filter(c => c !== course));
+  };
+
+
   return (
     <div>
       <section className="bg-card py-12">
@@ -146,16 +163,26 @@ export default function ContactUsPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                    <Select>
+                    <Select onValueChange={handleCourseSelect}>
                         <SelectTrigger id="subject">
-                            <SelectValue placeholder="Select a course" />
+                            <SelectValue placeholder="Select courses..." />
                         </SelectTrigger>
                         <SelectContent>
                             {courses.map((course) => (
-                                <SelectItem key={course} value={course}>{course}</SelectItem>
+                                <SelectItem key={course} value={course} disabled={selectedCourses.includes(course)}>{course}</SelectItem>
                             ))}
                         </SelectContent>
                     </Select>
+                     <div className="flex flex-wrap gap-2 pt-2">
+                        {selectedCourses.map(course => (
+                            <Badge key={course} variant="secondary" className="pl-3 pr-1 py-1">
+                                {course}
+                                <button onClick={() => handleCourseRemove(course)} className="ml-2 rounded-full hover:bg-background/50 p-0.5">
+                                    <X className="h-3 w-3" />
+                                </button>
+                            </Badge>
+                        ))}
+                    </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Your Message</Label>
