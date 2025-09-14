@@ -120,14 +120,14 @@ export default function ContactUsPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold mb-4 font-headline">Get in Touch</h2>
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-1 gap-4">
                     <div className="flex items-center">
                       <div className="p-3 bg-primary text-primary-foreground rounded-full">
                         <Mail className="h-6 w-6" />
                       </div>
                       <div className="ml-4">
                         <h3 className="font-semibold">Email Us</h3>
-                        <a href="mailto:contact@primezone.edu" className="text-muted-foreground hover:text-primary">contact@primezone.edu</a>
+                        <a href="mailto:pzofficial123@gmail.com" className="text-muted-foreground hover:text-primary">pzofficial123@gmail.com</a> | <a href="mailto:primezonecomputer@gmail.com" className="text-muted-foreground hover:text-primary">primezonecomputer@gmail.com</a>
                       </div>
                     </div>
                     <div className="flex items-center">
@@ -136,7 +136,7 @@ export default function ContactUsPage() {
                       </div>
                       <div className="ml-4">
                         <h3 className="font-semibold">Call Us</h3>
-                        <a href="tel:+919769730087" className="text-muted-foreground hover:text-primary">+91 9769730087</a>
+                        <a href="tel:+919769730087" className="text-muted-foreground hover:text-primary">(+91) 97697 30087</a> | <a href="tel:+919321773941" className="text-muted-foreground hover:text-primary">(+91) 93217 73941</a>
                       </div>
                     </div>
                   </div>
@@ -203,4 +203,5 @@ export default function ContactUsPage() {
     </div>
   );
 }
+
 

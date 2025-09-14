@@ -111,7 +111,7 @@ export default function AboutUs() {
                         </div>
                         <div>
                             <p className="text-muted-foreground">Call to ask any question</p>
-                            <a href="tel:+919769730087" className="text-lg font-bold text-primary hover:underline">+91 9769730087</a>
+                            <a href="tel:+919769730087" className="text-lg font-bold text-primary hover:underline">(+91) 97697 30087</a>
                         </div>
                     </div>
                     <Button asChild size="lg">

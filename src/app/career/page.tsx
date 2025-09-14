@@ -104,7 +104,7 @@ export default function CareerPage() {
              <Card className="text-center bg-transparent border-dashed">
                 <CardContent className="p-8">
                     <h3 className="font-semibold">Don't see a role for you?</h3>
-                    <p className="text-muted-foreground mt-2 mb-4">We are always looking for talented individuals. Send your resume to <a href="mailto:careers@primezone.com" className="text-primary hover:underline">careers@primezone.com</a>.</p>
+                    <p className="text-muted-foreground mt-2 mb-4">We are always looking for talented individuals. Send your resume to <a href="mailto:pzofficial123@gmail.com" className="text-primary hover:underline">pzofficial123@gmail.com</a>.</p>
                 </CardContent>
              </Card>
           </div>
