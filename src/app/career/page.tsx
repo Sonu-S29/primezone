@@ -58,7 +58,7 @@ export default function CareerPage() {
           </div>
           <div>
             <Image
-              src="https://placehold.co/600x400.png"
+              src="https://picsum.photos/seed/happydiverse/600/400"
               alt="Team at Primezone"
               width={600}
               height={400}

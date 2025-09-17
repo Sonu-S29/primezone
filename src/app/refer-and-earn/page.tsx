@@ -1,5 +1,4 @@
 
-
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift, Users, Send, IndianRupee, Star, HelpCircle } from "lucide-react";
@@ -82,7 +81,7 @@ export default function ReferAndEarnPage() {
           </div>
           <div className="order-1 md:order-2">
             <Image
-              src="https://placehold.co/600x600.png"
+              src="https://picsum.photos/seed/refer/600/600"
               alt="Refer and Earn"
               width={600}
               height={600}

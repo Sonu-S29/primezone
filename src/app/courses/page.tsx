@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,7 +9,7 @@ const courseCategories = [
   {
     title: "Diploma Courses",
     description: "In-depth programs for comprehensive skill development.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/diploma/600/400",
     hint: "diploma certificate",
     link: "/courses/diploma",
     details: [
@@ -21,7 +22,7 @@ const courseCategories = [
   {
     title: "Short-Term Courses",
     description: "Quickly upgrade your skills with our focused certificate courses.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/shortterm/600/400",
     hint: "stopwatch certificate",
     link: "/courses/short-term",
     details: [

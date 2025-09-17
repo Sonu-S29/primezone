@@ -12,55 +12,55 @@ const featuredCourses = [
   {
     title: "Web Designing",
     description: "Create visually stunning and user-friendly websites with the latest design trends and technologies.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/webdesign/600/400",
     hint: "web design"
   },
   {
     title: "Advanced Excel",
     description: "Master complex formulas, data analysis, and visualization techniques to become an Excel power user.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/excel/600/400",
     hint: "excel spreadsheet"
   },
   {
     title: "PowerBI",
     description: "Turn complex data into clear, interactive visualizations and dashboards with Microsoft Power BI.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/powerbi/600/400",
     hint: "business intelligence dashboard"
   },
   {
     title: "Tally+GST",
     description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/tally/600/400",
     hint: "accounting software"
   },
   {
     title: "Video & Sound Editing",
     description: "Master the art of video and audio editing to create professional-quality media content.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/videoedit/600/400",
     hint: "video editing"
   },
   {
     title: "AutoCad 2D-3D",
     description: "Learn to create precise 2D and 3D drawings with AutoCAD, the leading software for design and drafting.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/autocad/600/400",
     hint: "autocad drawing"
   },
   {
     title: "Social Media Marketing",
     description: "Engage audiences and build brands on social platforms.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/smm/600/400",
     hint: "social media strategy"
   },
   {
     title: "Search Engine Marketing",
     description: "Drive traffic and conversions with paid search campaigns.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/sem/600/400",
     hint: "search engine ads"
   },
   {
     title: "Google Ads & Facebook Ads",
     description: "Master the two largest advertising platforms.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://picsum.photos/seed/onlineads/600/400",
     hint: "online advertising"
   }
 ];

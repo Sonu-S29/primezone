@@ -121,7 +121,7 @@ export default function AboutUs() {
             </div>
             <div>
               <Image 
-                src="https://placehold.co/600x600.png"
+                src="https://picsum.photos/seed/educationlogo/600/600"
                 alt="Primezone Education Crest"
                 width={600}
                 height={600}
@@ -147,7 +147,7 @@ export default function AboutUs() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <Image 
-              src="https://placehold.co/600x400.png"
+              src="https://picsum.photos/seed/studentslearning/600/400"
               alt="Team working together"
               width={600}
               height={400}

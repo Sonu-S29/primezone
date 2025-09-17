@@ -4,6 +4,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from 'next/link';
 import { Button } from './ui/button';
+import Image from "next/image";
 
 const initialItems = [
     {
@@ -89,7 +90,17 @@ const HeroSlider = () => {
         >
             <ul className='hero-slider'>
                 {items.map((item, index) => (
-                    <li key={item.title + index} className='item' style={{ backgroundImage: `url(${item.imageUrl})` }} data-ai-hint={item.hint}>
+                    <li key={item.title + index} className='item'>
+                       <Image 
+                            src={item.imageUrl} 
+                            alt={item.title} 
+                            fill
+                            sizes="100vw"
+                            quality={80}
+                            priority={index < 2}
+                            className="object-cover"
+                            data-ai-hint={item.hint}
+                        />
                         <div className='content'>
                             <h2 className='title'>{item.title}</h2>
                             <p className='description'>{item.description}</p>
