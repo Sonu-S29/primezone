@@ -9,7 +9,7 @@ const courseCategories = [
   {
     title: "Diploma Courses",
     description: "In-depth programs for comprehensive skill development.",
-    image: "https://picsum.photos/seed/diploma/600/400",
+    image: "/images/courses/diploma.png",
     hint: "diploma certificate",
     link: "/courses/diploma",
     details: [
@@ -22,7 +22,7 @@ const courseCategories = [
   {
     title: "Short-Term Courses",
     description: "Quickly upgrade your skills with our focused certificate courses.",
-    image: "https://picsum.photos/seed/shortterm/600/400",
+    image: "/images/courses/shortterm.png",
     hint: "stopwatch certificate",
     link: "/courses/short-term",
     details: [
