@@ -230,21 +230,21 @@ export default function Home() {
             <div className="md:col-span-4 space-y-8">
                 {empoweringFeatures.slice(0, 2).map((feature, index) => (
                     <div key={index} className="text-left md:text-right">
-                        <div className="flex md:flex-row-reverse items-center gap-4 justify-start md:justify-end">
-                           <div className="text-left md:text-right">
+                        <div className="flex md:flex-row-reverse items-center gap-4">
+                           <div className="flex-grow">
                                <h3 className="font-bold text-lg">{feature.title}</h3>
-                               <p className="text-muted-foreground text-sm">{feature.description}</p>
+                               <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
                            </div>
-                           <div className="p-3 bg-accent text-accent-foreground rounded-lg">
+                           <div className="p-3 bg-accent text-accent-foreground rounded-lg flex-shrink-0">
                                {feature.icon}
                            </div>
                         </div>
                     </div>
                 ))}
             </div>
-            <div className="md:col-span-4">
+            <div className="md:col-span-4 row-start-1 md:row-start-auto">
                 <Image 
-                    src="https://picsum.photos/seed/computerlab/400/500"
+                    src="/images/logo.png"
                     alt="Computer lab"
                     width={400}
                     height={500}
@@ -256,12 +256,12 @@ export default function Home() {
                 {empoweringFeatures.slice(2, 4).map((feature, index) => (
                     <div key={index} className="text-left">
                         <div className="flex items-center gap-4">
-                           <div className="p-3 bg-accent text-accent-foreground rounded-lg">
+                           <div className="p-3 bg-accent text-accent-foreground rounded-lg flex-shrink-0">
                                {feature.icon}
                            </div>
-                           <div>
+                           <div className="flex-grow">
                                <h3 className="font-bold text-lg">{feature.title}</h3>
-                               <p className="text-muted-foreground text-sm">{feature.description}</p>
+                               <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
                            </div>
                         </div>
                     </div>

@@ -12,19 +12,19 @@ const featuredCourses = [
   {
     title: "Web Designing",
     description: "Create visually stunning and user-friendly websites with the latest design trends and technologies.",
-    image: "https://picsum.photos/seed/webdesign/600/400",
+    image: "/images/courses/coursetrend/webdesigning.png",
     hint: "web design"
   },
   {
     title: "Advanced Excel",
     description: "Master complex formulas, data analysis, and visualization techniques to become an Excel power user.",
-    image: "https://picsum.photos/seed/excel/600/400",
+    image: "/images/courses/coursetrend/advexcel.png",
     hint: "excel spreadsheet"
   },
   {
     title: "PowerBI",
     description: "Turn complex data into clear, interactive visualizations and dashboards with Microsoft Power BI.",
-    image: "https://picsum.photos/seed/powerbi/600/400",
+    image: "/images/courses/coursetrend/power_bi.png",
     hint: "business intelligence dashboard"
   },
   {
