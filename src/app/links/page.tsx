@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code } from "lucide-react";
+import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -26,7 +27,7 @@ export default function LinksPage() {
                 <header className="flex flex-col items-center mb-6">
                     <div className="mb-4">
                         <Image
-                            src="/images/logo.png"
+                            src="/favicon.ico"
                             alt="Primezone Logo"
                             width={100}
                             height={100}
@@ -71,6 +72,11 @@ export default function LinksPage() {
                             </Link>
                         ))}
                     </div>
+                    <Button asChild className="w-full mt-4">
+                        <Link href="/courses">
+                            Show All Courses <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
                 </section>
             </div>
         </div>
