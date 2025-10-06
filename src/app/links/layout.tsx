@@ -1,7 +1,6 @@
 
 import type { Metadata } from 'next';
 import '../globals.css';
-import '../dot-grid.css';
 
 export const metadata: Metadata = {
   title: 'Primezone Computer – Links & Courses',
