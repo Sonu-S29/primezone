@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import React from "react";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -95,3 +96,4 @@ export default function LinksPage() {
         </div>
     );
 }
+
