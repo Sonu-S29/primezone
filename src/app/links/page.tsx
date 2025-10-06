@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -27,7 +28,7 @@ const socialLinks = [
 
 export default function LinksPage() {
     return (
-        <div className="relative min-h-screen w-full bg-[#E2EBF0]">
+        <div className="relative min-h-screen w-full bg-background">
             <DotGrid
                 baseColor="#CFD9DF"
                 activeColor="#082A7B"
