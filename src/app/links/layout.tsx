@@ -1,8 +1,9 @@
+
 import type { Metadata } from 'next';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Prime Zone Computer – Links & Courses',
+  title: 'Primezone Computer – Links & Courses',
   description: 'Your Gateway to Tech Learning. Find all our important links and featured courses in one place.',
 };
 

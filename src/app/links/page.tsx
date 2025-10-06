@@ -82,7 +82,7 @@ export default function LinksPage() {
                     </Button>
                 </section>
 
-                <footer className="mt-12">
+                {/* <footer className="mt-12">
                     <div className="flex justify-center gap-6">
                         {socialLinks.map((link) => (
                             <Link key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
@@ -91,7 +91,7 @@ export default function LinksPage() {
                             </Link>
                         ))}
                     </div>
-                </footer>
+                </footer> */}
             </div>
         </div>
     );
