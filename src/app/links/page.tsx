@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import LetterGlitch from "@/components/LetterGlitch";
+import DotGrid from "@/components/DotGrid";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -29,11 +29,13 @@ const socialLinks = [
 export default function LinksPage() {
     return (
         <div className="relative min-h-screen w-full">
-            <LetterGlitch
-              glitchSpeed={50}
-              centerVignette={false}
-              outerVignette={true}
-              smooth={true}
+            <DotGrid
+                baseColor="#D4E7F0"
+                activeColor="#4095c6"
+                dotSize={10}
+                gap={25}
+                proximity={120}
+                className="absolute inset-0 -z-10"
             />
             <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center text-primary-foreground relative z-10">
                 <div className="w-full max-w-md mx-auto">
@@ -48,8 +50,8 @@ export default function LinksPage() {
                                 data-ai-hint="company logo"
                             />
                         </div>
-                        <h1 className="text-2xl font-bold text-white">@PrimezoneComputer</h1>
-                        <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
+                        <h1 className="text-2xl font-bold text-primary">@PrimezoneComputer</h1>
+                        <p className="text-primary/80 mt-1">Your Gateway to Tech Learning</p>
                     </header>
 
                     <main className="space-y-4">
@@ -59,7 +61,7 @@ export default function LinksPage() {
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center justify-center w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold text-lg"
+                                className="group flex items-center justify-center w-full p-4 bg-white/30 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-primary font-semibold text-lg"
                             >
                                 {link.icon && <div className="absolute left-4">{link.icon}</div>}
                                 <span>{link.name}</span>
@@ -68,22 +70,22 @@ export default function LinksPage() {
                     </main>
 
                     <section className="mt-10">
-                        <h2 className="text-xl font-bold text-white mb-4">Featured Courses</h2>
+                        <h2 className="text-xl font-bold text-primary mb-4">Featured Courses</h2>
                         <div className="grid grid-cols-2 gap-4">
                             {courseLinks.map((course) => (
                                 <Link
                                     key={course.name}
                                     href={course.href}
-                                    className="group flex flex-col items-center justify-center p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-white"
+                                    className="group flex flex-col items-center justify-center p-4 bg-white/30 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-primary"
                                 >
-                                    <div className="text-white mb-2 group-hover:text-accent transition-colors">
+                                    <div className="text-primary mb-2 group-hover:text-accent transition-colors">
                                         {course.icon}
                                     </div>
                                     <span className="font-semibold text-sm">{course.name}</span>
                                 </Link>
                             ))}
                         </div>
-                        <Button asChild className="w-full mt-4 bg-white/90 text-primary hover:bg-white">
+                         <Button asChild className="w-full mt-4 bg-primary/90 text-primary-foreground hover:bg-primary">
                             <Link href="/courses">
                                 Show All Courses <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
@@ -93,7 +95,7 @@ export default function LinksPage() {
                     <footer className="mt-12">
                         <div className="flex justify-center gap-6">
                             {socialLinks.map((link) => (
-                                <Link key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                                <Link key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">
                                     {React.cloneElement(link.icon, { size: 28 })}
                                     <span className="sr-only">{link.name}</span>
                                 </Link>

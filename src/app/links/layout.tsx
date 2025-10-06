@@ -21,7 +21,7 @@ export default function LinksLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <meta name="description" content={metadata.description!} />
       </head>
-      <body className="font-body antialiased bg-link-gradient">
+      <body className="font-body antialiased">
         <main>{children}</main>
       </body>
     </html>
