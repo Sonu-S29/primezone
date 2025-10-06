@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import './globals.css';
+import '../globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';

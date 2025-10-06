@@ -97,7 +97,7 @@ const eventCategories = [
             { type: 'image', src: 'https://picsum.photos/seed/degree/400/300', alt: 'Graduation 2', hint: 'receiving degree' },
             { type: 'video', thumbnail: 'https://picsum.photos/seed/gradbatch/600/400', title: 'Batch of 2023', hint: 'graduating batch', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
             { type: 'image', src: 'https://picsum.photos/seed/gradgroup/400/300', alt: 'Graduation 3', hint: 'group of graduates' },
-            { type: 'image', src: 'https://picsum.photos/seed/happygrad/400/300', alt: 'Graduation 4', hint: 'happy graduate' },
+            { type 'image', src: 'https://picsum.photos/seed/happygrad/400/300', alt: 'Graduation 4', hint: 'happy graduate' },
             { type: 'image', src: 'https://picsum.photos/seed/convocation/400/300', alt: 'Graduation 5', hint: 'convocation ceremony' },
         ]
     }
