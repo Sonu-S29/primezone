@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import DotGrid from "@/components/dot-grid";
+import LetterGlitch from "@/components/LetterGlitch";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -29,12 +29,11 @@ const socialLinks = [
 export default function LinksPage() {
     return (
         <div className="relative min-h-screen w-full">
-            <DotGrid 
-                dotSize={2}
-                gap={25}
-                baseColor="#003049"
-                activeColor="#4095c6"
-                className="absolute inset-0 -z-10" 
+            <LetterGlitch
+              glitchSpeed={50}
+              centerVignette={false}
+              outerVignette={true}
+              smooth={true}
             />
             <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center text-primary-foreground relative z-10">
                 <div className="w-full max-w-md mx-auto">
@@ -60,7 +59,7 @@ export default function LinksPage() {
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center justify-center w-full p-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-primary font-semibold text-lg"
+                                className="group flex items-center justify-center w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-white font-semibold text-lg"
                             >
                                 {link.icon && <div className="absolute left-4">{link.icon}</div>}
                                 <span>{link.name}</span>
@@ -75,9 +74,9 @@ export default function LinksPage() {
                                 <Link
                                     key={course.name}
                                     href={course.href}
-                                    className="group flex flex-col items-center justify-center p-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-primary"
+                                    className="group flex flex-col items-center justify-center p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 text-white"
                                 >
-                                    <div className="text-primary mb-2 group-hover:text-accent transition-colors">
+                                    <div className="text-white mb-2 group-hover:text-accent transition-colors">
                                         {course.icon}
                                     </div>
                                     <span className="font-semibold text-sm">{course.name}</span>
