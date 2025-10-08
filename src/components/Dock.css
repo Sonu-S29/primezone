@@ -1,0 +1,58 @@
+.dock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.dock {
+  display: flex;
+  gap: 0.75rem; /* 12px */
+  padding: 0.5rem; /* 8px */
+  background-color: rgba(30, 30, 30, 0.5); /* Semi-transparent dark background */
+  border-radius: 1rem; /* 16px */
+  border: 1px solid rgba(80, 80, 80, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(100, 100, 100, 0.3);
+}
+
+.dock-item-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dock-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.75rem; /* 12px */
+  background-color: rgba(50, 50, 50, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(120, 120, 120, 0.4);
+  color: #e0e0e0;
+  transition: color 0.2s ease-in-out;
+}
+
+.dock-item:hover {
+    color: #ffffff;
+}
+
+.dock-item-label {
+  position: absolute;
+  top: -2.2rem;
+  font-size: 0.8rem; /* 12.8px */
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem; /* 8px */
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  pointer-events: none;
+}
