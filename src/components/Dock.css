@@ -27,8 +27,8 @@
 }
 
 .dock-item {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 0.75rem; /* 12px */
   background-color: rgba(50, 50, 50, 0.6);
   display: flex;
@@ -50,4 +50,8 @@
   color: #f0f0f0;
   white-space: nowrap;
   pointer-events: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
