@@ -18,6 +18,7 @@ const mainLinks = [
 
 export default function LinksPage() {
     const [isMobile, setIsMobile] = useState(false);
+    const [currentLinkIndex, setCurrentLinkIndex] = useState(0);
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -25,6 +26,15 @@ export default function LinksPage() {
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
+
+    useEffect(() => {
+        if (isMobile) {
+            const interval = setInterval(() => {
+                setCurrentLinkIndex(prevIndex => (prevIndex + 1) % mainLinks.length);
+            }, 2000);
+            return () => clearInterval(interval);
+        }
+    }, [isMobile]);
 
 
     return (
@@ -45,22 +55,27 @@ export default function LinksPage() {
                     <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
                 </header>
 
-                 {isMobile && (
-                    <div className="flex items-center justify-center text-lg font-medium mb-12">
-                       <span>Connect with us on:</span>
-                       <div className="relative w-48 h-8 ml-2">
-                           <RotatingText
-                                texts={mainLinks.map(link => link.name)}
-                                mainClassName="px-2 bg-cyan-300 text-black overflow-hidden py-0.5 justify-center rounded-lg"
-                                staggerFrom={"last"}
-                                initial={{ y: "100%" }}
-                                animate={{ y: 0 }}
-                                exit={{ y: "-120%" }}
-                                staggerDuration={0.025}
-                                splitLevelClassName="overflow-hidden pb-0.5"
-                                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                                rotationInterval={2000}
-                            />
+                {isMobile && (
+                    <div className="flex items-center justify-center text-lg font-medium mb-12 h-10">
+                       <span className="mr-2">Connect with us on:</span>
+                       <div className="flex items-center gap-2">
+                           <div className="relative w-28 h-8">
+                                <RotatingText
+                                    texts={mainLinks.map(link => link.name)}
+                                    mainClassName="px-2 bg-cyan-300 text-black overflow-hidden py-0.5 justify-center rounded-lg"
+                                    staggerFrom={"last"}
+                                    initial={{ y: "100%" }}
+                                    animate={{ y: 0 }}
+                                    exit={{ y: "-120%" }}
+                                    staggerDuration={0.025}
+                                    splitLevelClassName="overflow-hidden pb-0.5"
+                                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                                    rotationInterval={2000}
+                                />
+                           </div>
+                           <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-md">
+                             {mainLinks[currentLinkIndex].icon}
+                           </div>
                        </div>
                     </div>
                 )}
