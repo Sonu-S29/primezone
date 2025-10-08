@@ -35,17 +35,17 @@ export default function LinksPage() {
                         <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
                     </header>
 
-                    <main className="space-y-4">
+                    <main className="flex justify-center gap-4">
                         {mainLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center justify-center w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:bg-white/20 hover:scale-105 transition-all duration-300 font-semibold text-lg"
+                                className="group flex items-center justify-center w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full shadow-md hover:bg-white/20 hover:scale-105 transition-all duration-300"
+                                title={link.name}
                             >
-                                {link.icon && <div className="absolute left-4">{link.icon}</div>}
-                                <span>{link.name}</span>
+                                {link.icon && React.cloneElement(link.icon, { size: 24 })}
                             </Link>
                         ))}
                     </main>
