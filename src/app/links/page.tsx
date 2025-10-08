@@ -1,39 +1,29 @@
-
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Globe, MessageCircle, Instagram, Facebook, Phone, Youtube, Linkedin } from "lucide-react";
 import React from "react";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
     { name: "WhatsApp", href: "https://wa.me/919769730087", icon: <MessageCircle /> },
+    { name: "Instagram", href: "https://www.instagram.com/primezone_computer_education/", icon: <Instagram /> },
+    { name: "Facebook", href: "https://www.facebook.com/primezonecomputerjogeshwari/", icon: <Facebook /> },
+    { name: "LinkedIn", href: "https://www.linkedin.com", icon: <Linkedin /> },
+    { name: "YouTube", href: "https://www.youtube.com", icon: <Youtube /> },
     { name: "Call Us", href: "tel:+919769730087", icon: <Phone /> },
 ];
 
-const courseLinks = [
-    { name: "MS Office", href: "/courses/short-term", icon: <Tv /> },
-    { name: "Web Designing", href: "/courses/short-term", icon: <Brush /> },
-    { name: "Power BI", href: "/courses/short-term", icon: <BarChart /> },
-    { name: "C Programming", href: "/courses/short-term", icon: <Code /> },
-];
-
-const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/primezone_computer_education/", icon: <Instagram /> },
-    { name: "Facebook", href: "https://www.facebook.com/primezonecomputerjogeshwari/", icon: <Facebook /> },
-]
-
 export default function LinksPage() {
     return (
-        <div className="relative min-h-screen w-full bg-gradient-to-br from-indigo-900 via-slate-900 to-black text-white">
-            <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center relative z-10">
+        <div className="relative min-h-screen w-full bg-gradient-to-br from-indigo-900 via-slate-900 to-black text-white flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center relative z-10 w-full">
                 <div className="w-full max-w-md mx-auto">
                     <header className="flex flex-col items-center mb-8">
                         <div className="mb-4">
                             <Image
-                                src="/favicon.ico"
+                                src="/images/logo.png"
                                 alt="Primezone Logo"
                                 width={100}
                                 height={100}
@@ -60,38 +50,8 @@ export default function LinksPage() {
                         ))}
                     </main>
 
-                    <section className="mt-10">
-                        <h2 className="text-xl font-bold mb-4">Featured Courses</h2>
-                        <div className="grid grid-cols-2 gap-4">
-                            {courseLinks.map((course) => (
-                                <Link
-                                    key={course.name}
-                                    href={course.href}
-                                    className="group flex flex-col items-center justify-center p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:bg-white/20 hover:scale-105 transition-all duration-300"
-                                >
-                                    <div className="text-white mb-2 group-hover:text-accent transition-colors">
-                                        {course.icon}
-                                    </div>
-                                    <span className="font-semibold text-sm">{course.name}</span>
-                                </Link>
-                            ))}
-                        </div>
-                         <Button asChild className="w-full mt-4 bg-white/90 text-slate-900 hover:bg-white">
-                            <Link href="/courses">
-                                Show All Courses <ArrowRight className="ml-2 h-4 w-4" />
-                            </Link>
-                        </Button>
-                    </section>
-
                     <footer className="mt-12">
-                        <div className="flex justify-center gap-6">
-                            {socialLinks.map((link) => (
-                                <Link key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                                    {React.cloneElement(link.icon, { size: 28 })}
-                                    <span className="sr-only">{link.name}</span>
-                                </Link>
-                            ))}
-                        </div>
+                       
                     </footer>
                 </div>
             </div>
