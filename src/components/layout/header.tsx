@@ -21,6 +21,7 @@ const mainNavLinks = [
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/student-projects", label: "Student Projects" },
   { href: "/contact", label: "Contact Us" },
 ];
 
