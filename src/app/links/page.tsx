@@ -27,8 +27,8 @@ export default function LinksPage() {
                 className="object-cover -z-10"
                 data-ai-hint="abstract background"
             />
-            <div className="w-full max-w-md mx-auto flex flex-col items-center justify-start pt-16">
-                <header className="flex flex-col items-center mb-12 text-center">
+            <div className="w-full max-w-md mx-auto flex flex-col items-center justify-between flex-grow">
+                <header className="flex flex-col items-center text-center pt-16">
                     <div className="mb-4">
                         <Image
                             src="/images/logo.png"
@@ -42,12 +42,15 @@ export default function LinksPage() {
                     <h1 className="text-2xl font-bold">@PrimezoneComputer</h1>
                     <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
                 </header>
-                <WhatWeDo />
-            </div>
 
-            <footer className="absolute bottom-8 w-full">
-                <Dock items={mainLinks} />
-            </footer>
+                <div className="flex-grow flex items-center justify-center">
+                    <WhatWeDo />
+                </div>
+                
+                <footer className="w-full pb-8">
+                    <Dock items={mainLinks} />
+                </footer>
+            </div>
         </div>
     );
 }
