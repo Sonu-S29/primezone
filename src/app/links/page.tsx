@@ -22,14 +22,23 @@ const locations = [
     { name: "Vile Parle", url: "https://g.co/kgs/rvyVD8w" }
 ]
 
+const contacts = [
+    { name: "Jogeshwari", tel: "+919769730087" },
+    { name: "Vile Parle", tel: "+919321773941" }
+]
+
 export default function LinksPage() {
     const [showLocations, setShowLocations] = useState(false);
+    const [showContacts, setShowContacts] = useState(false);
 
     return (
         <div className="relative min-h-screen w-full bg-gradient-to-br from-blue-100 to-white text-slate-800 flex flex-col p-4">
-             <div className="absolute top-4 right-4 z-20">
+            <div className="absolute top-4 right-4 z-20">
                 <button 
-                    onClick={() => setShowLocations(!showLocations)}
+                    onClick={() => {
+                        setShowLocations(!showLocations);
+                        setShowContacts(false);
+                    }}
                     className="p-2 rounded-full bg-white/30 backdrop-blur-md border border-white/40 shadow-md hover:bg-white/50 transition-colors"
                     aria-label="Toggle locations"
                 >
@@ -50,6 +59,41 @@ export default function LinksPage() {
                                         <span className="font-semibold">{loc.name}</span>
                                         <a href={loc.url} target="_blank" rel="noopener noreferrer" className="px-4 py-1 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
                                             Show
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+            
+            <div className="absolute top-4 left-4 z-20">
+                <button 
+                    onClick={() => {
+                        setShowContacts(!showContacts);
+                        setShowLocations(false);
+                    }}
+                    className="p-2 rounded-full bg-white/30 backdrop-blur-md border border-white/40 shadow-md hover:bg-white/50 transition-colors"
+                    aria-label="Toggle contacts"
+                >
+                    <Phone className="h-6 w-6 text-slate-700" />
+                </button>
+                <AnimatePresence>
+                    {showContacts && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            className="absolute top-14 left-0 w-64 bg-white/50 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg p-4"
+                        >
+                            <h3 className="font-bold text-center mb-3">Contact Us</h3>
+                            <div className="space-y-3">
+                                {contacts.map(contact => (
+                                    <div key={contact.name} className="flex items-center justify-between p-2 bg-white/40 rounded-lg">
+                                        <span className="font-semibold">{contact.name}</span>
+                                        <a href={`tel:${contact.tel}`} className="px-4 py-1 text-sm bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors">
+                                            Call
                                         </a>
                                     </div>
                                 ))}
