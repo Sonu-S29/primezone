@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Calculator, Code, Megaphone, Paintbrush, ArrowLeft, BookOpen } from 'lucide-react';
@@ -40,48 +40,49 @@ export default function WhatWeDo() {
   const [step, setStep] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(null);
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const initialTimersRef = useRef<NodeJS.Timeout[]>([]);
 
   const whatWeDoText = "What We do?".split(" ");
   const weTeachText = "We Teach".split(" ");
   
-  const resetAnimation = () => {
-    setStep(1);
-    setSelectedCategory(null);
-  };
-  
-  const resetInactivityTimer = () => {
+  const runAnimationSequence = useCallback(() => {
+    // Clear any existing timers
+    initialTimersRef.current.forEach(clearTimeout);
+    initialTimersRef.current = [];
+
+    setStep(1); // Start with "What We do?"
+    initialTimersRef.current.push(setTimeout(() => setStep(2), 3000)); // -> "We Teach"
+    initialTimersRef.current.push(setTimeout(() => setStep(3), 6000)); // -> Category blocks
+  }, []);
+
+  const resetInactivityTimer = useCallback(() => {
     if (inactivityTimerRef.current) {
-        clearTimeout(inactivityTimerRef.current);
+      clearTimeout(inactivityTimerRef.current);
     }
-    inactivityTimerRef.current = setTimeout(resetAnimation, 40000); // 40 seconds
-  };
+    inactivityTimerRef.current = setTimeout(runAnimationSequence, 40000);
+  }, [runAnimationSequence]);
 
   useEffect(() => {
-    // Start the animation sequence
-    const initialTimers = [
-      setTimeout(() => setStep(1), 500),
-      setTimeout(() => setStep(2), 3500), 
-      setTimeout(() => setStep(3), 6500)
-    ];
+    runAnimationSequence(); // Start the animation on initial mount
 
-    // Set up inactivity timer and listeners
-    resetInactivityTimer();
-    const events = ['mousemove', 'mousedown', 'keypress', 'touchstart', 'scroll'];
-    events.forEach(event => window.addEventListener(event, resetInactivityTimer));
+    const events: (keyof WindowEventMap)[] = ['mousemove', 'mousedown', 'keypress', 'touchstart', 'scroll'];
+    const eventListener = () => resetInactivityTimer();
+
+    events.forEach(event => window.addEventListener(event, eventListener));
 
     return () => {
-      initialTimers.forEach(clearTimeout);
+      initialTimersRef.current.forEach(clearTimeout);
       if (inactivityTimerRef.current) {
         clearTimeout(inactivityTimerRef.current);
       }
-      events.forEach(event => window.removeEventListener(event, resetInactivityTimer));
+      events.forEach(event => window.removeEventListener(event, eventListener));
     };
-  }, []);
-
-  // When step changes, reset the timer
+  }, [runAnimationSequence, resetInactivityTimer]);
+  
+  // When step or category changes due to user interaction, reset the timer
   useEffect(() => {
     resetInactivityTimer();
-  }, [step, selectedCategory]);
+  }, [step, selectedCategory, resetInactivityTimer]);
   
 
   const handleCategoryClick = (categoryKey: CategoryKey) => {
