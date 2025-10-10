@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ApplicationForm from "@/components/application-form";
 import { useState } from "react";
+import imageData from "@/lib/placeholder-images.json";
 
 const jobOpenings = [
   {
@@ -17,6 +19,8 @@ const jobOpenings = [
     description: "We are looking for a creative Graphic Designer to be responsible for giving lectures and creating engaging content for daily posts and banners.",
   },
 ];
+
+const teamImage = imageData.find(img => img.id === 'happy-diverse-team');
 
 export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
@@ -57,14 +61,14 @@ export default function CareerPage() {
             </ul>
           </div>
           <div>
-            <Image
-              src="https://picsum.photos/seed/happydiverse/600/400"
+            {teamImage && <Image
+              src={teamImage.src}
               alt="Team at Primezone"
-              width={600}
-              height={400}
+              width={teamImage.width}
+              height={teamImage.height}
               className="rounded-lg shadow-lg"
-              data-ai-hint="happy diverse team"
-            />
+              data-ai-hint={teamImage.hint}
+            />}
           </div>
         </div>
       </section>
@@ -113,3 +117,5 @@ export default function CareerPage() {
     </div>
   );
 }
+
+    

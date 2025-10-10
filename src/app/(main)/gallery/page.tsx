@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -9,6 +10,7 @@ import MemoriesGallery from "@/components/memories-gallery";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import imageData from "@/lib/placeholder-images.json";
 
 const eventCategories = [
     {
@@ -16,14 +18,14 @@ const eventCategories = [
         title: 'Capstone Project',
         icon: <Book className="mr-2 h-5 w-5" />,
         media: [
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/influencer/600/400', title: 'Power of Influence!', hint: 'influencer marketing', url: 'https://www.youtube.com/embed/nEwGfB7eU8A' },
-            { type: 'image', src: 'https://picsum.photos/seed/presentation/400/300', alt: 'Capstone Image 1', hint: 'team presentation' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/viral/600/400', title: 'Making soda viral...', hint: 'viral marketing', url: 'https://www.youtube.com/embed/xv-n_m4n4iU' },
-            { type: 'image', src: 'https://picsum.photos/seed/brainstorming/400/300', alt: 'Capstone Image 2', hint: 'students brainstorming' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/launch/600/400', title: 'Founder Rated 10/10', hint: 'product launch', url: 'https://www.youtube.com/embed/W9nZ6u15yis' },
-            { type: 'image', src: 'https://picsum.photos/seed/prototype/400/300', alt: 'Capstone Image 3', hint: 'project prototype' },
-            { type: 'image', src: 'https://picsum.photos/seed/award/400/300', alt: 'Capstone Image 4', hint: 'final project award' },
-            { type: 'image', src: 'https://picsum.photos/seed/groupphoto/400/300', alt: 'Capstone Image 5', hint: 'group photo' },
+            { type: 'video', imageId: 'influencer-video-thumb', title: 'Power of Influence!', url: 'https://www.youtube.com/embed/nEwGfB7eU8A' },
+            { type: 'image', imageId: 'capstone-presentation' },
+            { type: 'video', imageId: 'viral-video-thumb', title: 'Making soda viral...', url: 'https://www.youtube.com/embed/xv-n_m4n4iU' },
+            { type: 'image', imageId: 'brainstorming' },
+            { type: 'video', imageId: 'launch-video-thumb', title: 'Founder Rated 10/10', url: 'https://www.youtube.com/embed/W9nZ6u15yis' },
+            { type: 'image', imageId: 'prototype' },
+            { type: 'image', imageId: 'final-award' },
+            { type: 'image', imageId: 'group-photo' },
         ]
     },
     {
@@ -31,14 +33,14 @@ const eventCategories = [
         title: 'Agency Visits',
         icon: <Building className="mr-2 h-5 w-5" />,
         media: [
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/agencyoffice/600/400', title: 'A Day at a Top Agency', hint: 'marketing agency office', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/officetour/400/300', alt: 'Agency Visit 1', hint: 'office tour' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/networking/600/400', title: 'Networking with Pros', hint: 'business networking event', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/meeting/400/300', alt: 'Agency Visit 2', hint: 'meeting with executives' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/adcampaign/600/400', title: 'Agency Case Study', hint: 'successful ad campaign', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/creativedept/400/300', alt: 'Agency Visit 3', hint: 'creative department' },
-            { type: 'image', src: 'https://picsum.photos/seed/teamcollab/400/300', alt: 'Agency Visit 4', hint: 'team collaboration' },
-            { type: 'image', src: 'https://picsum.photos/seed/companylogo/400/300', alt: 'Agency Visit 5', hint: 'company logo' },
+            { type: 'video', imageId: 'agency-office-thumb', title: 'A Day at a Top Agency', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'office-tour' },
+            { type: 'video', imageId: 'networking-thumb', title: 'Networking with Pros', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'meeting-execs' },
+            { type: 'video', imageId: 'ad-campaign-thumb', title: 'Agency Case Study', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'creative-dept' },
+            { type: 'image', imageId: 'team-collab' },
+            { type: 'image', imageId: 'company-logo-agency' },
         ]
     },
     {
@@ -46,14 +48,14 @@ const eventCategories = [
         title: 'Super Sessions',
         icon: <Star className="mr-2 h-5 w-5" />,
         media: [
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/aimarketing/600/400', title: 'AI in Marketing', hint: 'artificial intelligence marketing', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/speaker/400/300', alt: 'Super Session 1', hint: 'expert speaker' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/contentworkshop/600/400', title: 'Content Creation Masterclass', hint: 'content creation workshop', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/workshop/400/300', alt: 'Super Session 2', hint: 'interactive workshop' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/seosession/600/400', title: 'Advanced SEO Techniques', hint: 'seo strategy session', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/qna/400/300', alt: 'Super Session 3', hint: 'students asking questions' },
-            { type: 'image', src: 'https://picsum.photos/seed/networkingbreak/400/300', alt: 'Super Session 4', hint: 'networking break' },
-            { type: 'image', src: 'https://picsum.photos/seed/slide/400/300', alt: 'Super Session 5', hint: 'presentation slide' },
+            { type: 'video', imageId: 'ai-marketing-thumb', title: 'AI in Marketing', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'expert-speaker' },
+            { type: 'video', imageId: 'content-workshop-thumb', title: 'Content Creation Masterclass', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'interactive-workshop' },
+            { type: 'video', imageId: 'seo-session-thumb', title: 'Advanced SEO Techniques', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'q-and-a' },
+            { type: 'image', imageId: 'networking-break' },
+            { type: 'image', imageId: 'presentation-slide' },
         ]
     },
     {
@@ -61,14 +63,14 @@ const eventCategories = [
         title: 'Co-Curricular Activities',
         icon: <PartyPopper className="mr-2 h-5 w-5" />,
         media: [
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/studentfest/600/400', title: 'Marketing Fest Highlights', hint: 'student festival', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/sportsday/400/300', alt: 'Co-Curricular 1', hint: 'sports day' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/competition/600/400', title: 'Competition Highlights', hint: 'student competition', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/debate/400/300', alt: 'Co-Curricular 2', hint: 'debate competition' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/clubactivity/600/400', title: 'Club Activity Highlights', hint: 'student club meeting', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/hackathon/400/300', alt: 'Co-Curricular 3', hint: 'hackathon event' },
-            { type: 'image', src: 'https://picsum.photos/seed/artexhibit/400/300', alt: 'Co-Curricular 4', hint: 'art exhibition' },
-            { type: 'image', src: 'https://picsum.photos/seed/musicperf/400/300', alt: 'Co-Curricular 5', hint: 'music performance' },
+            { type: 'video', imageId: 'student-fest-thumb', title: 'Marketing Fest Highlights', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'sports-day' },
+            { type: 'video', imageId: 'competition-thumb', title: 'Competition Highlights', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'debate-competition' },
+            { type: 'video', imageId: 'club-activity-thumb', title: 'Club Activity Highlights', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'hackathon' },
+            { type: 'image', imageId: 'art-exhibit' },
+            { type: 'image', imageId: 'music-performance' },
         ]
     },
     {
@@ -76,14 +78,14 @@ const eventCategories = [
         title: 'Extracurricular Activities',
         icon: <Users className="mr-2 h-5 w-5" />,
         media: [
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/funfair/600/400', title: 'Fun Fair', hint: 'student fair', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/studentfair/400/300', alt: 'Extracurricular 1', hint: 'fun fair' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/annualday/600/400', title: 'Annual Day', hint: 'annual day', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/funstudents/400/300', alt: 'Extracurricular 2', hint: 'students having fun' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/holi/600/400', title: 'Holi Celebrations', hint: 'holi festival', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/celebration/400/300', alt: 'Extracurricular 3', hint: 'celebration' },
-            { type: 'image', src: 'https://picsum.photos/seed/party/400/300', alt: 'Extracurricular 4', hint: 'party' },
-            { type: 'image', src: 'https://picsum.photos/seed/dancing/400/300', alt: 'Extracurricular 5', hint: 'students dancing' },
+            { type: 'video', imageId: 'fun-fair-thumb', title: 'Fun Fair', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'student-fair' },
+            { type: 'video', imageId: 'annual-day-thumb', title: 'Annual Day', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'fun-students' },
+            { type: 'video', imageId: 'holi-thumb', title: 'Holi Celebrations', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'celebration' },
+            { type: 'image', imageId: 'party' },
+            { type: 'image', imageId: 'dancing-students' },
         ]
     },
     {
@@ -91,14 +93,14 @@ const eventCategories = [
         title: 'Graduation',
         icon: <GraduationCap className="mr-2 h-5 w-5" />,
         media: [
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/gradceremony/600/400', title: 'Graduation Day 2023', hint: 'graduation ceremony', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/gradcaps/400/300', alt: 'Graduation 1', hint: 'throwing caps' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/alumnispeech/600/400', title: 'Alumni Speak', hint: 'alumni speech', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/degree/400/300', alt: 'Graduation 2', hint: 'receiving degree' },
-            { type: 'video', thumbnail: 'https://picsum.photos/seed/gradbatch/600/400', title: 'Batch of 2023', hint: 'graduating batch', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { type: 'image', src: 'https://picsum.photos/seed/gradgroup/400/300', alt: 'Graduation 3', hint: 'group of graduates' },
-            { type: 'image', src: 'https://picsum.photos/seed/happygrad/400/300', alt: 'Graduation 4', hint: 'happy graduate' },
-            { type: 'image', src: 'https://picsum.photos/seed/convocation/400/300', alt: 'Graduation 5', hint: 'convocation ceremony' },
+            { type: 'video', imageId: 'grad-ceremony-thumb', title: 'Graduation Day 2023', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'throwing-caps' },
+            { type: 'video', imageId: 'alumni-speech-thumb', title: 'Alumni Speak', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'receiving-degree' },
+            { type: 'video', imageId: 'grad-batch-thumb', title: 'Batch of 2023', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { type: 'image', imageId: 'group-of-graduates' },
+            { type: 'image', imageId: 'happy-graduate' },
+            { type: 'image', imageId: 'convocation' },
         ]
     }
 ];
@@ -189,31 +191,35 @@ export default function GalleryPage() {
                 <div>
                   {(activeCategory.media?.length || 0) > 0 ? (
                     <InfiniteScroller speed="slow">
-                        {activeCategory.media.map((item, index) => (
+                        {activeCategory.media.map((item, index) => {
+                           const imageInfo = imageData.find(img => img.id === item.imageId);
+                           if (!imageInfo) return null;
+                           
+                           return (
                            <li key={`media-${index}`} className="w-64 md:w-80 flex-shrink-0">
                              {item.type === 'video' ? (
                                 <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
                                   <DialogTrigger asChild>
                                     <div
-                                      onClick={() => setSelectedVideo(item.url)}
+                                      onClick={() => setSelectedVideo((item as any).url)}
                                       className="relative group cursor-pointer"
                                     >
                                       <Image
-                                        src={item.thumbnail}
-                                        alt={item.title}
-                                        width={600}
-                                        height={400}
+                                        src={imageInfo.src}
+                                        alt={(item as any).title || ""}
+                                        width={imageInfo.width}
+                                        height={imageInfo.height}
                                         className="w-full h-auto object-cover rounded-lg shadow-none md:shadow-md transition-transform duration-300 group-hover:scale-105"
-                                        data-ai-hint={item.hint}
+                                        data-ai-hint={imageInfo.hint}
                                       />
                                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                                         <PlayCircle className="h-12 w-12 md:h-16 md:w-16 text-white" />
                                       </div>
-                                      <p className="mt-2 font-semibold text-center text-sm md:text-base">{item.title}</p>
+                                      <p className="mt-2 font-semibold text-center text-sm md:text-base">{(item as any).title}</p>
                                     </div>
                                   </DialogTrigger>
                                   <DialogContent className="max-w-3xl p-0">
-                                     <DialogTitle className="sr-only">{item.title}</DialogTitle>
+                                     <DialogTitle className="sr-only">{(item as any).title}</DialogTitle>
                                     {selectedVideo && (
                                       <div className="aspect-video">
                                         <iframe
@@ -230,16 +236,16 @@ export default function GalleryPage() {
                                 </Dialog>
                              ) : (
                                 <Image
-                                  src={item.src}
-                                  alt={item.alt}
-                                  width={400}
-                                  height={300}
+                                  src={imageInfo.src}
+                                  alt={(item as any).alt || ""}
+                                  width={imageInfo.width}
+                                  height={imageInfo.height}
                                   className="w-full h-auto object-cover rounded-lg shadow-none md:shadow-md"
-                                  data-ai-hint={item.hint}
+                                  data-ai-hint={imageInfo.hint}
                                 />
                              )}
                            </li>
-                         ))}
+                         )})}
                     </InfiniteScroller>
                   ) : (
                     <div className="text-center py-12 bg-background rounded-lg">
@@ -256,3 +262,5 @@ export default function GalleryPage() {
     </div>
   );
 }
+
+    

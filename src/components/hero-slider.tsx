@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
@@ -97,7 +98,7 @@ const HeroSlider = () => {
                             fill
                             sizes="100vw"
                             quality={80}
-                            priority={index < 2}
+                            priority={index === 0}
                             className="object-cover"
                             data-ai-hint={item.hint}
                         />
@@ -116,3 +117,5 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
+
+    

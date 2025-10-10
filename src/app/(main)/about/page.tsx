@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card";
+import imageData from "@/lib/placeholder-images.json";
 
 const services = [
     {
@@ -69,6 +70,9 @@ const teamMembers = [
     }
 ];
 
+const educationLogo = imageData.find(img => img.id === 'education-logo');
+const studentsLearning = imageData.find(img => img.id === 'students-learning');
+
 export default function AboutUs() {
   return (
     <div className="space-y-16 md:space-y-24 pb-16">
@@ -121,14 +125,16 @@ export default function AboutUs() {
                 </div>
             </div>
             <div>
-              <Image 
-                src="https://picsum.photos/seed/educationlogo/600/600"
-                alt="Primezone Education Crest"
-                width={600}
-                height={600}
-                className="rounded-lg shadow-xl mx-auto"
-                data-ai-hint="education logo"
-              />
+              {educationLogo && (
+                <Image 
+                    src={educationLogo.src}
+                    alt="Primezone Education Crest"
+                    width={educationLogo.width}
+                    height={educationLogo.height}
+                    className="rounded-lg shadow-xl mx-auto"
+                    data-ai-hint={educationLogo.hint}
+                />
+              )}
             </div>
           </div>
         </section>
@@ -147,14 +153,16 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
-            <Image 
-              src="https://picsum.photos/seed/studentslearning/600/400"
-              alt="Team working together"
-              width={600}
-              height={400}
-              className="w-full object-cover"
-              data-ai-hint="students learning"
-            />
+            {studentsLearning && (
+              <Image 
+                src={studentsLearning.src}
+                alt="Team working together"
+                width={studentsLearning.width}
+                height={studentsLearning.height}
+                className="w-full object-cover"
+                data-ai-hint={studentsLearning.hint}
+              />
+            )}
           </div>
         </div>
       </section>
@@ -237,3 +245,5 @@ export default function AboutUs() {
     </div>
   );
 }
+
+    

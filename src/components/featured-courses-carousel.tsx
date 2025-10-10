@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -7,6 +8,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import imageData from '@/lib/placeholder-images.json';
 
 const featuredCourses = [
   {
@@ -30,38 +32,32 @@ const featuredCourses = [
   {
     title: "Tally+GST",
     description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
-    image: "https://picsum.photos/seed/tally/600/400",
-    hint: "accounting software"
+    imageId: "tally",
   },
   {
     title: "Video & Sound Editing",
     description: "Master the art of video and audio editing to create professional-quality media content.",
-    image: "https://picsum.photos/seed/videoedit/600/400",
-    hint: "video editing"
+    imageId: "video-editing",
   },
   {
     title: "AutoCad 2D-3D",
     description: "Learn to create precise 2D and 3D drawings with AutoCAD, the leading software for design and drafting.",
-    image: "https://picsum.photos/seed/autocad/600/400",
-    hint: "autocad drawing"
+    imageId: "autocad",
   },
   {
     title: "Social Media Marketing",
     description: "Engage audiences and build brands on social platforms.",
-    image: "https://picsum.photos/seed/smm/600/400",
-    hint: "social media strategy"
+    imageId: "smm",
   },
   {
     title: "Search Engine Marketing",
     description: "Drive traffic and conversions with paid search campaigns.",
-    image: "https://picsum.photos/seed/sem/600/400",
-    hint: "search engine ads"
+    imageId: "sem",
   },
   {
     title: "Google Ads & Facebook Ads",
     description: "Master the two largest advertising platforms.",
-    image: "https://picsum.photos/seed/onlineads/600/400",
-    hint: "online advertising"
+    imageId: "online-ads",
   }
 ];
 
@@ -102,15 +98,22 @@ export default function FeaturedCoursesCarousel() {
                         else if (offset === featuredCourses.length - 1) cardClass = "left-1";
                         else if (offset === featuredCourses.length - 2) cardClass = "left-2";
                         else if (offset === featuredCourses.length - 3) cardClass = "left-3";
+                        
+                        const imageInfo = course.imageId ? imageData.find(img => img.id === course.imageId) : null;
+                        const src = course.image || imageInfo?.src || "https://placehold.co/400x600";
+                        const width = imageInfo?.width || 400;
+                        const height = imageInfo?.height || 600;
+                        const hint = course.hint || imageInfo?.hint || "image";
 
                         return (
                             <div key={i} className={cn("course-card", cardClass)} onClick={() => updateCarousel(i)}>
                                 <Image 
-                                    src={course.image} 
+                                    src={src} 
                                     alt={course.title} 
-                                    width={400}
-                                    height={600}
-                                    data-ai-hint={course.hint}
+                                    width={width}
+                                    height={height}
+                                    data-ai-hint={hint}
+                                    className='object-cover w-full h-full'
                                 />
                                 <div className="course-card-content">
                                     <h3 className="course-card-title">{course.title}</h3>
@@ -143,3 +146,5 @@ export default function FeaturedCoursesCarousel() {
         </div>
     );
 }
+
+    

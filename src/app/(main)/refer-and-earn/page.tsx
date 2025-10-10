@@ -1,4 +1,5 @@
 
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift, Users, Send, IndianRupee, Star, HelpCircle } from "lucide-react";
@@ -6,6 +7,7 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import imageData from "@/lib/placeholder-images.json";
 
 const faqs = [
     {
@@ -29,6 +31,8 @@ const faqs = [
         answer: "Cash rewards are processed after your referred friend has successfully completed their enrollment and fee payment."
     }
 ];
+
+const referImage = imageData.find(img => img.id === 'refer-earn');
 
 export default function ReferAndEarnPage() {
   return (
@@ -80,14 +84,14 @@ export default function ReferAndEarnPage() {
             </div>
           </div>
           <div className="order-1 md:order-2">
-            <Image
-              src="https://picsum.photos/seed/refer/600/600"
+            {referImage && <Image
+              src={referImage.src}
               alt="Refer and Earn"
-              width={600}
-              height={600}
+              width={referImage.width}
+              height={referImage.height}
               className="rounded-lg shadow-lg"
-              data-ai-hint="friends celebrating"
-            />
+              data-ai-hint={referImage.hint}
+            />}
           </div>
         </div>
       </section>
@@ -177,3 +181,5 @@ export default function ReferAndEarnPage() {
     </div>
   );
 }
+
+    

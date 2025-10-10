@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -13,13 +14,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import React, { useRef } from "react";
+import React, { Suspense, lazy, useRef } from "react";
 import HeroSlider from "@/components/hero-slider";
 import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
-import TrendingCourses from "@/components/trending-courses";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const TrendingCourses = lazy(() => import("@/components/trending-courses"));
 
 const allCourses = [
     "Diploma course",
@@ -136,7 +139,9 @@ export default function Home() {
                         Explore our most popular diploma programs designed to launch your career.
                     </p>
                 </div>
-                <TrendingCourses />
+                <Suspense fallback={<Skeleton className="h-64 w-full" />}>
+                  <TrendingCourses />
+                </Suspense>
             </div>
         </section>
 
@@ -351,3 +356,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+    
