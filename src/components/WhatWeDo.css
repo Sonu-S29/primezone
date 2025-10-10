@@ -1,10 +1,11 @@
 .glassmorphic-block {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    color: #334155; /* slate-700 */
 }
 
 .category-item {
@@ -16,13 +17,14 @@
     border-radius: 0.75rem;
     cursor: pointer;
     transition: background 0.3s ease;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #475569; /* slate-600 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .category-item:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
+    color: #0f172a; /* slate-900 */
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .course-list::-webkit-scrollbar {
@@ -34,12 +36,16 @@
 }
 
 .course-list::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   border: 3px solid transparent;
 }
 
 .course-list {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.course-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
