@@ -14,7 +14,6 @@ const mainLinks = [
     { name: "Facebook", href: "https://www.facebook.com/primezonecomputerjogeshwari/", icon: <Facebook /> },
     { name: "LinkedIn", href: "https://www.linkedin.com", icon: <Linkedin /> },
     { name: "YouTube", href: "https://www.youtube.com", icon: <Youtube /> },
-    { name: "Call Us", href: "tel:+919769730087", icon: <Phone /> },
 ];
 
 const locations = [
