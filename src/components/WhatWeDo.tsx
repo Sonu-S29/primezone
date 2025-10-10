@@ -24,7 +24,7 @@ const courseData = {
     id: "digital-marketing",
     name: "Marketing",
     icon: <Megaphone className="h-8 w-8" />,
-    courses: [ 'SEO', 'WordPress', 'Content Creation', 'SMO', 'Google Analytics' ]
+    courses: [ 'SEO', 'WordPress', 'Content Creation', 'SMO', 'Google Analytics', 'Facebook & Google Ads' ]
   },
   graphics: {
     id: "graphics",
@@ -130,7 +130,7 @@ export default function WhatWeDo() {
             ))}
            </motion.div>
         )}
-        {step === 4 && (
+        {step === 4 && currentCategoryData && (
             <motion.div
                 key="courses"
                 initial={{ opacity: 0, x: 100 }}
@@ -139,7 +139,7 @@ export default function WhatWeDo() {
                 transition={{ duration: 0.5 }}
                 className="w-full max-w-sm h-[250px] glassmorphic-block p-4 flex flex-col"
             >
-                {currentCategoryData && (
+                
                 <>
                     <div className="flex items-center mb-3">
                         <button onClick={handleBack} className="mr-2 p-1 rounded-full hover:bg-white/20">
@@ -161,7 +161,7 @@ export default function WhatWeDo() {
                         </ul>
                     </div>
                 </>
-                )}
+                
             </motion.div>
         )}
       </AnimatePresence>
