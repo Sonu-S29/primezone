@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from "next/image";
@@ -19,14 +18,7 @@ const mainLinks = [
 
 export default function LinksPage() {
     return (
-        <div className="relative min-h-screen w-full text-white flex flex-col items-center p-4">
-             <Image
-                src="https://picsum.photos/seed/glassbg/1920/1080"
-                alt="Background"
-                fill
-                className="object-cover -z-10"
-                data-ai-hint="abstract background"
-            />
+        <div className="relative min-h-screen w-full bg-gradient-to-br from-blue-100 to-white text-slate-800 flex flex-col p-4">
             <div className="w-full max-w-md mx-auto flex flex-col items-center justify-between flex-grow">
                 <header className="flex flex-col items-center text-center pt-16">
                     <div className="mb-4">
@@ -40,7 +32,7 @@ export default function LinksPage() {
                         />
                     </div>
                     <h1 className="text-2xl font-bold">@PrimezoneComputer</h1>
-                    <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
+                    <p className="text-slate-600 mt-1">Your Gateway to Tech Learning</p>
                 </header>
 
                 <div className="flex-grow flex items-center justify-center">
