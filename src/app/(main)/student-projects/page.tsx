@@ -119,7 +119,7 @@ export default function StudentProjectsPage() {
             </div>
         </section>
         <section className='relative h-[80vh] bg-gradient-to-br from-blue-100 to-white'>
-             <DomeGallery images={projectData} overlayBlurColor="#e2ebf0" />
+             <DomeGallery images={projectData} overlayBlurColor="#e2ebf0" grayscale={false} />
         </section>
     </div>
   );
