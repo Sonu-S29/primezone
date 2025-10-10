@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -136,25 +137,29 @@ export default function WhatWeDo() {
                 transition={{ duration: 0.5 }}
                 className="w-full max-w-sm h-[250px] glassmorphic-block p-4 flex flex-col"
             >
-                <div className="flex items-center mb-3">
-                    <button onClick={handleBack} className="mr-2 p-1 rounded-full hover:bg-white/20">
-                        <ArrowLeft className="h-5 w-5" />
-                    </button>
-                    <div className="flex items-center gap-2">
-                        {courseData[selectedCategory].icon}
-                        <h3 className="text-lg font-bold">{courseData[selectedCategory].name} Courses</h3>
+                {selectedCategory && (
+                <>
+                    <div className="flex items-center mb-3">
+                        <button onClick={handleBack} className="mr-2 p-1 rounded-full hover:bg-white/20">
+                            <ArrowLeft className="h-5 w-5" />
+                        </button>
+                        <div className="flex items-center gap-2">
+                            {courseData[selectedCategory].icon}
+                            <h3 className="text-lg font-bold">{courseData[selectedCategory].name} Courses</h3>
+                        </div>
                     </div>
-                </div>
-                <div className="overflow-y-auto flex-grow course-list">
-                    <ul className="space-y-1">
-                        {courseData[selectedCategory].courses.map((course) => (
-                            <li key={course} className="flex items-center text-sm p-1 rounded-md hover:bg-white/10">
-                                <BookOpen className="h-4 w-4 mr-2 shrink-0" />
-                                {course}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                    <div className="overflow-y-auto flex-grow course-list">
+                        <ul className="space-y-1">
+                            {courseData[selectedCategory].courses.map((course) => (
+                                <li key={course} className="flex items-center text-sm p-1 rounded-md hover:bg-white/10">
+                                    <BookOpen className="h-4 w-4 mr-2 shrink-0" />
+                                    {course}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </>
+                )}
             </motion.div>
         )}
       </AnimatePresence>
