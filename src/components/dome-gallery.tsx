@@ -3,7 +3,7 @@
 
 import { useEffect, useMemo, useRef, useCallback, useState } from 'react';
 import { useGesture } from '@use-gesture/react';
-import { motion, AnimatePresence, LayoutId } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './dome-gallery.css';
 import { Link, Video, Briefcase, BookOpen, User } from 'lucide-react';
 import { Button } from './ui/button';

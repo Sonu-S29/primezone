@@ -156,12 +156,17 @@ main.sphere-main {
 }
 
 .viewer .details {
-    color: #333;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
 }
 .viewer .details h2 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    color: white;
 }
 .viewer .details .detail-item {
     display: flex;
@@ -169,13 +174,20 @@ main.sphere-main {
     gap: 0.75rem;
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
-    color: #555;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .viewer .details .links {
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
+}
+.viewer .details .links a {
+    color: white;
+    text-decoration: none;
+}
+.viewer .details .links a:hover {
+    text-decoration: underline;
 }
 
 
