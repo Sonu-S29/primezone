@@ -78,7 +78,7 @@ export default function WhatWeDo() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const categories = Object.values(courseData);
+  const categories = Object.entries(courseData);
   const currentCategoryData = selectedCategory ? courseData[selectedCategory] : null;
 
 
@@ -122,8 +122,8 @@ export default function WhatWeDo() {
             transition={{ duration: 0.5 }}
             className="w-[200px] h-[200px] p-2 glassmorphic-block grid grid-cols-2 grid-rows-2 gap-2"
            >
-            {categories.map((cat) => (
-                <div key={cat.id} onClick={() => handleCategoryClick(cat.id as CategoryKey)} className="category-item">
+            {categories.map(([key, cat]) => (
+                <div key={key} onClick={() => handleCategoryClick(key as CategoryKey)} className="category-item">
                     {cat.icon}
                     <span className="text-sm font-semibold mt-1">{cat.name}</span>
                 </div>
