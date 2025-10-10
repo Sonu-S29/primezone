@@ -1,9 +1,10 @@
 'use client';
 
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Globe, MessageCircle, Instagram, Facebook, Phone, Youtube, Linkedin } from "lucide-react";
 import Dock from "@/components/Dock";
+import WhatWeDo from "@/components/WhatWeDo";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -33,6 +34,7 @@ export default function LinksPage() {
                     <h1 className="text-2xl font-bold">@PrimezoneComputer</h1>
                     <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
                 </header>
+                <WhatWeDo />
             </div>
 
             <footer className="absolute bottom-8 w-full">
