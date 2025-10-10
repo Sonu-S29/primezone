@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Calculator, Code, Megaphone, Paintbrush, ArrowLeft, BookOpen } from 'lucide-react';
@@ -39,23 +39,53 @@ type CategoryKey = keyof typeof courseData;
 export default function WhatWeDo() {
   const [step, setStep] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(null);
+  const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const whatWeDoText = "What We do?".split(" ");
   const weTeachText = "We Teach".split(" ");
+  
+  const resetAnimation = () => {
+    setStep(1);
+    setSelectedCategory(null);
+  };
+  
+  const resetInactivityTimer = () => {
+    if (inactivityTimerRef.current) {
+        clearTimeout(inactivityTimerRef.current);
+    }
+    inactivityTimerRef.current = setTimeout(resetAnimation, 40000); // 40 seconds
+  };
 
   useEffect(() => {
-    if (step >= 3) return; // Stop timers if we are past the text animations
-
-    const timers = [
-      setTimeout(() => setStep(1), 1500), // Show "What We do?"
-      setTimeout(() => setStep(2), 4500), // Show "We Teach"
-      setTimeout(() => setStep(3), 7500)  // Show categories
+    // Start the animation sequence
+    const initialTimers = [
+      setTimeout(() => setStep(1), 500),
+      setTimeout(() => setStep(2), 3500), 
+      setTimeout(() => setStep(3), 6500)
     ];
-    return () => timers.forEach(clearTimeout);
+
+    // Set up inactivity timer and listeners
+    resetInactivityTimer();
+    const events = ['mousemove', 'mousedown', 'keypress', 'touchstart', 'scroll'];
+    events.forEach(event => window.addEventListener(event, resetInactivityTimer));
+
+    return () => {
+      initialTimers.forEach(clearTimeout);
+      if (inactivityTimerRef.current) {
+        clearTimeout(inactivityTimerRef.current);
+      }
+      events.forEach(event => window.removeEventListener(event, resetInactivityTimer));
+    };
   }, []);
 
-  const handleCategoryClick = (category: CategoryKey) => {
-    setSelectedCategory(category);
+  // When step changes, reset the timer
+  useEffect(() => {
+    resetInactivityTimer();
+  }, [step, selectedCategory]);
+  
+
+  const handleCategoryClick = (categoryKey: CategoryKey) => {
+    setSelectedCategory(categoryKey);
     setStep(4);
   };
 
