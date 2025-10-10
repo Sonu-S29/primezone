@@ -1,4 +1,5 @@
 
+
 .sphere-root {
   position: relative;
   width: 100%;
@@ -126,12 +127,58 @@ main.sphere-main {
   padding: var(--viewer-pad);
 }
 
+.viewer[data-enlarging='true'] {
+    pointer-events: auto;
+}
+
+.viewer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    pointer-events: auto;
+}
+
 .viewer .frame {
   height: 100%;
-  aspect-ratio: 1;
+  max-height: 80vh;
+  aspect-ratio: 3 / 4;
   border-radius: var(--enlarge-radius, 32px);
-  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
+
+.viewer .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.viewer .details {
+    color: #333;
+}
+.viewer .details h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.viewer .details .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+}
+
+.viewer .details .links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
 
 @media (max-aspect-ratio: 1/1) {
   .viewer .frame {
@@ -148,35 +195,12 @@ main.sphere-main {
   pointer-events: none;
   opacity: 0;
   transition: opacity 500ms ease;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(8px);
 }
 
-.sphere-root[data-enlarging='true'] .viewer .scrim {
+.viewer[data-enlarging='true'] .scrim {
   opacity: 1;
   pointer-events: all;
-}
-
-.viewer .enlarge {
-  position: absolute;
-  z-index: 30;
-  border-radius: var(--enlarge-radius, 32px);
-  overflow: hidden;
-  transition:
-    transform 500ms ease,
-    opacity 500ms ease;
-  transform-origin: top left;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.viewer .enlarge img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: var(--image-filter, none);
-}
-
-.sphere-root .enlarge-closing img {
-  filter: var(--image-filter, none);
 }
 
 .edge-fade {
@@ -200,4 +224,26 @@ main.sphere-main {
 
 body.dg-scroll-lock {
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .viewer-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    .viewer .frame {
+        max-height: 50vh;
+        margin: 0 auto;
+    }
+    .viewer .details h2 {
+        font-size: 1.75rem;
+    }
+    .viewer .details .detail-item {
+        justify-content: center;
+    }
+    .viewer .details .links {
+        justify-content: center;
+    }
 }
