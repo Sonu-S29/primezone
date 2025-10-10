@@ -40,26 +40,29 @@ export default function WhatWeDo() {
   const [step, setStep] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(null);
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const initialTimersRef = useRef<NodeJS.Timeout[]>([]);
+  const sequenceTimersRef = useRef<NodeJS.Timeout[]>([]);
 
   const whatWeDoText = "What We do?".split(" ");
   const weTeachText = "We Teach".split(" ");
   
   const runAnimationSequence = useCallback(() => {
-    // Clear any existing timers
-    initialTimersRef.current.forEach(clearTimeout);
-    initialTimersRef.current = [];
+    // Clear any existing timers to prevent duplicates
+    sequenceTimersRef.current.forEach(clearTimeout);
+    sequenceTimersRef.current = [];
 
     setStep(1); // Start with "What We do?"
-    initialTimersRef.current.push(setTimeout(() => setStep(2), 3000)); // -> "We Teach"
-    initialTimersRef.current.push(setTimeout(() => setStep(3), 6000)); // -> Category blocks
+    sequenceTimersRef.current.push(setTimeout(() => setStep(2), 3000)); // -> "We Teach"
+    sequenceTimersRef.current.push(setTimeout(() => {
+        setStep(3)
+        setSelectedCategory(null)
+    }, 6000)); // -> Category blocks
   }, []);
 
   const resetInactivityTimer = useCallback(() => {
     if (inactivityTimerRef.current) {
       clearTimeout(inactivityTimerRef.current);
     }
-    inactivityTimerRef.current = setTimeout(runAnimationSequence, 40000);
+    inactivityTimerRef.current = setTimeout(runAnimationSequence, 25000);
   }, [runAnimationSequence]);
 
   useEffect(() => {
@@ -71,7 +74,7 @@ export default function WhatWeDo() {
     events.forEach(event => window.addEventListener(event, eventListener));
 
     return () => {
-      initialTimersRef.current.forEach(clearTimeout);
+      sequenceTimersRef.current.forEach(clearTimeout);
       if (inactivityTimerRef.current) {
         clearTimeout(inactivityTimerRef.current);
       }
