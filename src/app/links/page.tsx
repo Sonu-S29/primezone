@@ -17,7 +17,7 @@ const mainLinks = [
 
 export default function LinksPage() {
     return (
-        <div className="relative min-h-screen w-full bg-gradient-to-br from-slate-900 via-black to-slate-900 text-white flex flex-col items-center justify-center p-4">
+        <div className="relative min-h-screen w-full bg-gradient-to-br from-slate-900 via-black to-slate-900 text-white flex flex-col items-center justify-start p-4 pt-16">
             <div className="flex flex-col items-center justify-center text-center relative z-10 w-full max-w-md mx-auto">
                 <header className="flex flex-col items-center mb-12">
                     <div className="mb-4">
