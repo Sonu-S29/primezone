@@ -20,7 +20,7 @@ const courses = [
     description: "Unlock insights from data to drive business decisions.",
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
-    tags: ["Unlimited Interviews", "Integrated Internship"],
+    tags: ["100% Job Placement Assistance", "Integrated Internship"],
     technologies: ["/images/tech/excel.png", "/images/tech/powerbi.png", "/images/tech/sql.png", "/images/tech/python.png", "/images/tech/tableau.png"],
     batchStarts: new Date(new Date().getTime() + 72 * 60 * 60 * 1000), // 72 hours from now
     seatsLeft: 5
@@ -31,7 +31,7 @@ const courses = [
     description: "Master front-end and back-end technologies to build complete web applications.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
-    tags: ["Unlimited Interviews", "Integrated Internship"],
+    tags: ["100% Job Placement Assistance", "Integrated Internship"],
     technologies: ["/images/tech/html.png", "/images/tech/css.png", "/images/tech/js.png", "/images/tech/react.png", "/images/tech/node.png"],
     batchStarts: new Date(new Date().getTime() + 96 * 60 * 60 * 1000),
     seatsLeft: 3
@@ -42,7 +42,7 @@ const courses = [
     description: "Learn SEO, SEM, and social media strategies to grow businesses online.",
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
-    tags: ["Unlimited Interviews"],
+    tags: ["100% Job Placement Assistance", "Government Recognized Certification"],
     technologies: ["/images/tech/ga.png", "/images/tech/google-ads.png", "/images/tech/fb.png", "/images/tech/seo.png", "/images/tech/wordpress.png"],
     batchStarts: new Date(new Date().getTime() + 120 * 60 * 60 * 1000),
     seatsLeft: 8
@@ -53,7 +53,7 @@ const courses = [
     description: "Protect digital assets by learning to think like a hacker.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
-    tags: ["Integrated Internship"],
+    tags: ["Integrated Internship", "Government Recognized Certification"],
     technologies: ["/images/tech/python.png", "/images/tech/linux.png", "/images/tech/wireshark.png", "/images/tech/metasploit.png", "/images/tech/nmap.png"],
     batchStarts: new Date(new Date().getTime() + 150 * 60 * 60 * 1000),
     seatsLeft: 4
@@ -64,18 +64,18 @@ const courses = [
     description: "Gain expertise in financial accounting, Tally, and GST.",
     duration: "1 Year",
     idealFor: "10th, 12th, Graduates",
-    tags: ["Job Oriented"],
+    tags: ["100% Job Placement Assistance", "Government Recognized Certification"],
     technologies: ["/images/tech/tally.png", "/images/tech/excel.png", "/images/tech/gst.png", "/images/tech/tax.png", "/images/tech/automation.png"],
     batchStarts: new Date(new Date().getTime() + 200 * 60 * 60 * 1000),
     seatsLeft: 6
   },
   {
-    slug: "programming",
+    slug: "programming-course",
     title: "Diploma in Programming",
     description: "Build a strong foundation in programming with C, C++, Java, and Python.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
-    tags: ["Integrated Internship"],
+    tags: ["Integrated Internship", "Government Recognized Certification"],
     technologies: ["/images/tech/c.png", "/images/tech/cplusplus.png", "/images/tech/java.png", "/images/tech/python.png", "/images/tech/dsa.png"],
     batchStarts: new Date(new Date().getTime() + 250 * 60 * 60 * 1000),
     seatsLeft: 2
