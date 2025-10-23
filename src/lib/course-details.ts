@@ -83,7 +83,7 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Tableau", logo: "/images/tech/tableau.png" },
         ]
     },
-     "full-stack-development": {
+    "full-stack-development": {
         title: "Full-Stack Development",
         description: "Become a versatile developer by mastering both front-end and back-end technologies. This course will guide you through building complete, scalable web applications from scratch.",
         image: "/images/courses/full-stack.webp",
@@ -98,20 +98,89 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Full-Stack Developer", "Front-End Developer", "Back-End Developer", "Web Application Developer", "Software Engineer"],
         syllabus: [
-            { title: "HTML & CSS", icon: "code", topics: ["HTML Tags, Forms, Frames", "CSS Syntax, Box Model, Flexbox, Grid"] },
-            { title: "JavaScript", icon: "code", topics: ["ES6+ Features", "DOM Manipulation", "Events", "Asynchronous JavaScript (Promises, async/await)"] },
-            { title: "ReactJS", icon: "code", topics: ["Components, Props, and State", "React Hooks", "State Management (Context API/Redux)", "React Router"] },
-            { title: "Back-End (Node.js/Express)", icon: "code", topics: ["Creating a server with Node.js", "Building RESTful APIs with Express", "Middleware", "Authentication & Authorization"] },
-            { title: "Databases", icon: "code", topics: ["MySQL for relational data", "MongoDB for NoSQL data", "Database design and modeling"] }
+            { title: "HTML & CSS", icon: "code", topics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
+            { title: "JavaScript", icon: "code", topics: ["Developer Essentials", "Language, Events", "Methods, Using Names, Objects", "Validation options, Rollovers & More"] },
+            { title: "AngularJS", icon: "code", topics: ["Expressions, Modules, Directives", "Model, Data Binding, Controllers", "Scopes, Filters, Services, Http", "Tables, Select, SQL, DOM, Events", "Validation, API, W3.CSS, Animation", "AngularJS Routing, Application"] },
+            { title: "ReactJS", icon: "code", topics: ["Components in React", "State management Lists & keys", "Handling events, Forms", "Handling HTTP requests", "Server-side rendering (SSR)"] },
+            { title: "Bootstrap", icon: "code", topics: ["Bootstrap Framework, Features", "Bootstrap Components, Grid", "Responsive web page, Bootstrap Plug-Ins"] },
+            { title: "Back-End Technologies", icon: "code", topics: ["Django", "Node.js", "Express.js", "Python", "PHP", "Laravel"] },
+            { title: "Database Technologies", icon: "code", topics: ["MySQL", "MongoDB"] },
+            { title: "Java Technology", icon: "code", topics: ["Core Java", "Advanced Java", "Hibernate", "Spring"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.png" },
             { name: "CSS3", logo: "/images/tech/css.png" },
             { name: "JavaScript", logo: "/images/tech/js.png" },
             { name: "React", logo: "/images/tech/react.png" },
+            { name: "Angular", logo: "/images/tech/angular.png" },
             { name: "Node.js", logo: "/images/tech/node.png" },
             { name: "MySQL", logo: "/images/tech/sql.png" },
             { name: "MongoDB", logo: "/images/tech/mongodb.png" }
+        ]
+    },
+    'accounting': {
+        title: "Diploma In Accounting",
+        description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
+        image: "/images/courses/DIA.jpg",
+        hint: "accounting collage",
+        highlights: ["Job Oriented", "Practical Training", "Expert Faculty", "Certification"],
+        whatYouWillLearn: ["Financial accounting principles", "Advanced Excel for accounting tasks", "Tally Prime with GST compliance", "Fundamentals of taxation and auditing"],
+        careerOpportunities: ["Accountant", "Finance Executive", "Tax Consultant", "MIS Executive"],
+        syllabus: [
+            { title: "Financial Accounting Basics", icon: "barchart", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
+            { title: "Advanced Excel for Accountants", icon: "barchart", subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
+            { title: "Tally Prime with GST", icon: "code", subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
+        ],
+        tools: [
+            { name: "MS Excel", logo: "/images/tech/excel.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+        ]
+    },
+    'financial-accounting': {
+        title: "Diploma In Financial Accounting",
+        description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
+        image: "/images/courses/DFA.jpg",
+        hint: "financial report",
+        highlights: ["In-depth Curriculum", "Practical Case Studies", "Software Training", "Industry Recognized"],
+        whatYouWillLearn: ["Office automation tools", "Advanced Excel for financial reporting", "Complete Tally Prime with GST", "Taxation and auditing procedures"],
+        careerOpportunities: ["Financial Analyst", "Accounts Manager", "Taxation Expert", "Compliance Officer"],
+        syllabus: [
+            { title: "Office Automation", icon: "tv", subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
+            { title: "Advanced Excel", icon: "barchart", subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
+            { title: "Tally Prime (GST)", icon: "code", subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
+            { title: "Taxation Auditing", icon: "barchart", subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
+        ],
+        tools: [
+            { name: "MS Office", logo: "/images/tech/office.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "MS Excel", logo: "/images/tech/excel.png" },
+        ]
+    },
+    "web-designing": {
+        title: "Web Designing",
+        description: "Create visually appealing and user-friendly websites. Learn the principles of UI/UX design and master the tools to build beautiful web interfaces.",
+        image: "/images/courses/short/programming/webdesign.png",
+        hint: "web design",
+        highlights: ["Portfolio Development", "Live Projects", "Responsive Design", "UI/UX Principles"],
+        whatYouWillLearn: [
+            "Fundamentals of UI/UX design.",
+            "Creating wireframes and prototypes.",
+            "Designing responsive layouts for different devices.",
+            "Using modern design tools like Figma.",
+            "Basics of HTML & CSS to bring designs to life."
+        ],
+        careerOpportunities: ["Web Designer", "UI Designer", "UX Designer", "Visual Designer"],
+        syllabus: [
+            { title: "UI/UX Principles", icon: "brush", topics: ["User-Centered Design", "Color Theory", "Typography", "Layout and Composition"] },
+            { title: "HTML & CSS", icon: "code", topics: ["Structuring web pages with HTML5", "Styling with CSS3, including Flexbox and Grid", "Responsive Design Techniques"] },
+            { title: "Design Tools", icon: "brush", topics: ["Designing and prototyping in Figma", "Introduction to Adobe XD and Sketch"] },
+            { title: "Project", icon: "code", topics: ["Build a complete website design from scratch", "Create a personal portfolio"] }
+        ],
+        tools: [
+            { name: "HTML5", logo: "/images/tech/html.png" },
+            { name: "CSS3", logo: "/images/tech/css.png" },
+            { name: "Figma", logo: "/images/tech/figma.png" },
+            { name: "Adobe XD", logo: "/images/tech/xd.png" }
         ]
     },
     // Add other courses here
