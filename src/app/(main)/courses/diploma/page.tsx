@@ -328,7 +328,7 @@ export default function DiplomaCoursesPage() {
                 </div>
                 <CardHeader className="space-y-1">
                     <div className="flex justify-between items-start">
-                        <p className="text-sm text-blue-500 font-semibold">Diploma</p>
+                        <p className="text-sm text-blue-500 font-semibold">{course.title}</p>
                         <Dialog>
                             <DialogTrigger asChild>
                                <Button onClick={() => setSelectedCourse(course)} variant="outline" size="sm">View Modules</Button>
@@ -366,5 +366,7 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
+
+    
 
     
