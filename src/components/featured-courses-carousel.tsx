@@ -12,49 +12,58 @@ import imageData from '@/lib/placeholder-images.json';
 
 const featuredCourses = [
   {
+    slug: "web-designing",
     title: "Web Designing",
     description: "Create visually stunning and user-friendly websites with the latest design trends and technologies.",
     image: "/images/courses/coursetrend/webdesigning.png",
     hint: "web design"
   },
   {
+    slug: "advanced-excel",
     title: "Advanced Excel",
     description: "Master complex formulas, data analysis, and visualization techniques to become an Excel power user.",
     image: "/images/courses/coursetrend/advexcel.png",
     hint: "excel spreadsheet"
   },
   {
+    slug: "power-bi",
     title: "PowerBI",
     description: "Turn complex data into clear, interactive visualizations and dashboards with Microsoft Power BI.",
     image: "/images/courses/coursetrend/power_bi.png",
     hint: "business intelligence dashboard"
   },
   {
+    slug: "tally-gst",
     title: "Tally+GST",
     description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
     imageId: "tally",
   },
   {
+    slug: "video-editing",
     title: "Video & Sound Editing",
     description: "Master the art of video and audio editing to create professional-quality media content.",
     imageId: "video-editing",
   },
   {
+    slug: "autocad",
     title: "AutoCad 2D-3D",
     description: "Learn to create precise 2D and 3D drawings with AutoCAD, the leading software for design and drafting.",
     imageId: "autocad",
   },
   {
+    slug: "social-media-marketing",
     title: "Social Media Marketing",
     description: "Engage audiences and build brands on social platforms.",
     imageId: "smm",
   },
   {
+    slug: "search-engine-marketing",
     title: "Search Engine Marketing",
     description: "Drive traffic and conversions with paid search campaigns.",
     imageId: "sem",
   },
   {
+    slug: "google-facebook-ads",
     title: "Google Ads & Facebook Ads",
     description: "Master the two largest advertising platforms.",
     imageId: "online-ads",
@@ -118,7 +127,7 @@ export default function FeaturedCoursesCarousel() {
                                 <div className="course-card-content">
                                     <h3 className="course-card-title">{course.title}</h3>
                                     <Button asChild variant="secondary" size="sm">
-                                        <Link href="/courses/diploma">Learn More</Link>
+                                        <Link href={`/courses/details/${course.slug}`}>Learn More</Link>
                                     </Button>
                                 </div>
                             </div>
@@ -146,5 +155,3 @@ export default function FeaturedCoursesCarousel() {
         </div>
     );
 }
-
-    

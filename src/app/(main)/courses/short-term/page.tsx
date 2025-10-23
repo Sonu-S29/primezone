@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -19,6 +20,7 @@ const courseData = [
     icon: <Calculator className="h-8 w-8" />,
     courses: [
         {
+          slug: 'office-automation',
           title: 'Office Automation',
           description: 'Master essential office tools',
           modules: 6,
@@ -27,6 +29,7 @@ const courseData = [
           hint: "office software"
         },
         {
+          slug: 'ms-office',
           title: 'MS Office',
           description: 'Become proficient in Microsoft Office Suite.',
           modules: 6,
@@ -35,6 +38,7 @@ const courseData = [
           hint: "ms office"
         },
         {
+          slug: 'advanced-excel',
           title: 'Advanced Excel',
           description: 'Master advanced Excel functions',
           modules: 5,
@@ -44,6 +48,7 @@ const courseData = [
         },
         
         {
+          slug: 'tally-gst',
           title: 'Tally Prime + GST',
           description: 'Learn GST compliance',
           modules: 5,
@@ -52,6 +57,7 @@ const courseData = [
           hint: "tax document"
         },
         {
+          slug: 'taxation-auditing',
           title: 'Taxation Auditing',
           description: 'Understand tax laws and auditing',
           modules: 5,
@@ -60,6 +66,7 @@ const courseData = [
           hint: "auditing report"
         },
         {
+          slug: 'management-skill',
           title: 'Management Skill',
           description: 'Develop leadership and team management',
           modules: 5,
@@ -68,6 +75,7 @@ const courseData = [
           hint: "team management"
         },
         {
+          slug: 'share-market',
           title: 'Share Market',
           description: 'Understand the basics of share trading',
           modules: 5,
@@ -76,6 +84,7 @@ const courseData = [
           hint: "stock market chart"
         },
         {
+          slug: 'ccc',
           title: 'CCC',
           description: 'Learn computer fundamentals',
           modules: 5,
@@ -92,6 +101,7 @@ const courseData = [
     icon: <Code className="h-8 w-8" />,
     courses: [
         {
+            slug: 'web-development',
             title: 'Web Development',
             description: 'Build modern web applications',
             modules: 5,
@@ -100,6 +110,7 @@ const courseData = [
             hint: "web development"
         },
         {
+            slug: 'web-designing',
             title: 'Web Designing',
             description: 'Create visually appealing websites',
             modules: 5,
@@ -108,6 +119,7 @@ const courseData = [
             hint: "web design"
         },
         {
+            slug: 'dsa',
             title: 'DSA',
             description: 'Master data structures and algorithms',
             modules: 5,
@@ -116,6 +128,7 @@ const courseData = [
             hint: "data structures"
         },
         {
+            slug: 'c-programming',
             title: 'C',
             description: 'Learn C programming',
             modules: 5,
@@ -124,6 +137,7 @@ const courseData = [
             hint: "c code"
         },
         {
+            slug: 'c-plus-plus',
             title: 'C++',
             description: 'Learn C++',
             modules: 5,
@@ -132,6 +146,7 @@ const courseData = [
             hint: "c++ code"
         },
         {
+            slug: 'python',
             title: 'Python',
             description: 'Learn Python programming',
             modules: 5,
@@ -140,6 +155,7 @@ const courseData = [
             hint: "python code"
         },
         {
+            slug: 'front-end-development',
             title: 'Front-End Development',
             description: 'Build front-end web applications',
             modules: 5,
@@ -148,6 +164,7 @@ const courseData = [
             hint: "front end code"
         },
         {
+            slug: 'back-end-development',
             title: 'Back-End Development',
             description: 'Build back-end web applications',
             modules: 5,
@@ -156,6 +173,7 @@ const courseData = [
             hint: "back end code"
         },
         {
+            slug: 'database',
             title: 'Database',
             description: 'Learn database management',
             modules: 5,
@@ -164,6 +182,7 @@ const courseData = [
             hint: "database diagram"
         },
         {
+            slug: 'angular',
             title: 'Angular',
             description: 'Learn Angular framework',
             modules: 5,
@@ -172,6 +191,7 @@ const courseData = [
             hint: "angular code"
         },
         {
+            slug: 'html-css',
             title: 'HTML-CSS',
             description: 'Master HTML and CSS',
             modules: 5,
@@ -180,6 +200,7 @@ const courseData = [
             hint: "html css code"
         },
         {
+            slug: 'javascript',
             title: 'JavaScript',
             description: 'Learn JavaScript',
             modules: 5,
@@ -188,6 +209,7 @@ const courseData = [
             hint: "javascript code"
         },
         {
+            slug: 'core-java',
             title: 'Core Java',
             description: 'Learn Java programming',
             modules: 5,
@@ -196,6 +218,7 @@ const courseData = [
             hint: "java code"
         },
         {
+            slug: 'c-sharp',
             title: 'C#',
             description: 'Learn C# programming',
             modules: 5,
@@ -204,6 +227,7 @@ const courseData = [
             hint: "c# code"
         },
         {
+            slug: 'react',
             title: 'React',
             description: 'Learn React framework',
             modules: 5,
@@ -212,6 +236,7 @@ const courseData = [
             hint: "react code"
         },
         {
+            slug: 'advanced-java',
             title: 'Advanced Java',
             description: 'Learn advanced Java',
             modules: 5,
@@ -220,6 +245,7 @@ const courseData = [
             hint: "java ee code"
         },
         {
+            slug: 'power-bi',
             title: 'PowerBI',
             description: 'Learn PowerBI for data visualization',
             modules: 5,
@@ -236,6 +262,7 @@ const courseData = [
     icon: <Megaphone className="h-8 w-8" />,
     courses: [
         {
+            slug: 'seo',
             title: 'SEO',
             description: 'Optimize websites for search engines',
             modules: 5,
@@ -244,6 +271,7 @@ const courseData = [
             hint: "seo analysis"
         },
         {
+            slug: 'smm',
             title: 'SMM',
             description: 'Manage social media marketing',
             modules: 5,
@@ -252,6 +280,7 @@ const courseData = [
             hint: "social media marketing"
         },
         {
+            slug: 'sem',
             title: 'SEM',
             description: 'Manage search engine marketing',
             modules: 5,
@@ -260,6 +289,7 @@ const courseData = [
             hint: "search engine marketing"
         },
         {
+            slug: 'wordpress',
             title: 'WordPress',
             description: 'Build and manage WordPress websites',
             modules: 5,
@@ -268,6 +298,7 @@ const courseData = [
             hint: "wordpress dashboard"
         },
         {
+            slug: 'content-creation',
             title: 'Content Creation',
             description: 'Create engaging content',
             modules: 5,
@@ -276,6 +307,7 @@ const courseData = [
             hint: "content creation"
         },
         {
+            slug: 'facebook-google-ads',
             title: 'Facebook & Google Ads',
             description: 'Manage paid ad campaigns',
             modules: 5,
@@ -284,6 +316,7 @@ const courseData = [
             hint: "social media ads"
         },
         {
+            slug: 'smo',
             title: 'SMO',
             description: 'Manage social media optimization',
             modules: 5,
@@ -292,6 +325,7 @@ const courseData = [
             hint: "social media optimization"
         },
         {
+            slug: 'google-analytics',
             title: 'Google Analytics',
             description: 'Track website performance',
             modules: 5,
@@ -308,6 +342,7 @@ const courseData = [
     icon: <Paintbrush className="h-8 w-8" />,
     courses: [
       {
+        slug: 'coreldraw',
         title: 'CorelDRAW',
         description: 'Learn vector graphics design',
         modules: 5,
@@ -316,6 +351,7 @@ const courseData = [
         hint: "vector design"
       },
       {
+        slug: 'adobe-photoshop',
         title: 'Adobe Photoshop',
         description: 'Master photo editing',
         modules: 5,
@@ -324,6 +360,7 @@ const courseData = [
         hint: "photoshop editing"
       },
       {
+        slug: 'adobe-illustrator',
         title: 'Adobe Illustrator',
         description: 'Create vector illustrations',
         modules: 5,
@@ -332,6 +369,7 @@ const courseData = [
         hint: "illustrator art"
       },
       {
+        slug: 'adobe-indesign',
         title: 'Adobe InDesign',
         description: 'Learn layout design',
         modules: 5,
@@ -340,6 +378,7 @@ const courseData = [
         hint: "indesign layout"
       },
       {
+        slug: 'video-sound-editing',
         title: 'Video|Sound Editing',
         description: 'Edit videos and audio',
         modules: 5,
@@ -348,6 +387,7 @@ const courseData = [
         hint: "video editing"
       },
       {
+        slug: 'adobe-animation',
         title: 'Adobe Animation',
         description: 'Create animations',
         modules: 5,
@@ -356,6 +396,7 @@ const courseData = [
         hint: "character animation"
       },
       {
+        slug: '3d-max',
         title: '3D MAX',
         description: 'Learn 3D modeling',
         modules: 5,
@@ -364,6 +405,7 @@ const courseData = [
         hint: "3d modeling"
       },
       {
+        slug: 'canva-design',
         title: 'Canva Design',
         description: 'Create designs for social media',
         modules: 5,
@@ -372,6 +414,7 @@ const courseData = [
         hint: "canva design"
       },
       {
+        slug: 'after-effects',
         title: 'After Effects',
         description: 'Create motion graphics and visual effects.',
         modules: 5,
@@ -380,6 +423,7 @@ const courseData = [
         hint: "motion graphics"
       },
       {
+        slug: 'premiere-pro',
         title: 'Premiere Pro',
         description: 'Learn professional video editing.',
         modules: 5,
@@ -388,6 +432,7 @@ const courseData = [
         hint: "video editing software"
       },
       {
+        slug: 'figma',
         title: 'Figma',
         description: 'Design and prototype user interfaces.',
         modules: 5,
@@ -396,6 +441,7 @@ const courseData = [
         hint: "ui design figma"
       },
       {
+        slug: 'autocad',
         title: 'AutoCAD',
         description: 'Learn 2D and 3D design and drafting.',
         modules: 5,
@@ -404,6 +450,7 @@ const courseData = [
         hint: "autocad drawing"
       },
       {
+        slug: 'revit',
         title: 'Revit',
         description: 'Learn BIM for architectural design.',
         modules: 5,
@@ -532,8 +579,8 @@ export default function ShortTermCoursesPage() {
                                         ))}
                                     </ul>
                                     <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
-                                            <Button asChild>
-                                            <a href="tel:+919769730087"><Clock className="mr-2"/> Enroll Now</a>
+                                         <Button asChild>
+                                            <Link href={`/courses/details/${course.slug}`}>Learn More</Link>
                                         </Button>
                                         <Dialog>
                                         <DialogTrigger asChild>

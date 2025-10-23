@@ -15,6 +15,7 @@ import BrochureDownloadForm from "./brochure-download-form";
 
 const courses = [
   {
+    slug: "data-analysis",
     title: "Data Analysis",
     description: "Unlock insights from data to drive business decisions.",
     duration: "6 Months",
@@ -25,6 +26,7 @@ const courses = [
     seatsLeft: 5
   },
   {
+    slug: "full-stack-development",
     title: "Full-Stack Development",
     description: "Master front-end and back-end technologies to build complete web applications.",
     duration: "1 Year",
@@ -35,6 +37,7 @@ const courses = [
     seatsLeft: 3
   },
   {
+    slug: "digital-marketing",
     title: "Digital Marketing",
     description: "Learn SEO, SEM, and social media strategies to grow businesses online.",
     duration: "6 Months",
@@ -45,6 +48,7 @@ const courses = [
     seatsLeft: 8
   },
   {
+    slug: "ethical-hacking",
     title: "Ethical Hacking and Cyber Security",
     description: "Protect digital assets by learning to think like a hacker.",
     duration: "1 Year",
@@ -55,6 +59,7 @@ const courses = [
     seatsLeft: 4
   },
   {
+    slug: "financial-accounting",
     title: "Diploma in Financial Accounting",
     description: "Gain expertise in financial accounting, Tally, and GST.",
     duration: "1 Year",
@@ -65,6 +70,7 @@ const courses = [
     seatsLeft: 6
   },
   {
+    slug: "programming",
     title: "Diploma in Programming",
     description: "Build a strong foundation in programming with C, C++, Java, and Python.",
     duration: "1 Year",
@@ -221,7 +227,7 @@ export default function TrendingCourses() {
                             </DialogContent>
                         </Dialog>
                         <Button asChild>
-                            <Link href="/courses/diploma">
+                            <Link href={`/courses/details/${course.slug}`}>
                                 Know More <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
                         </Button>

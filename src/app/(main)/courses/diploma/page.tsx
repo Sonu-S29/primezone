@@ -13,6 +13,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const diplomaCourses = [
   {
+    slug: "accounting",
     title: "Diploma In Accounting",
     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
     image: "/images/courses/DIA.jpg",
@@ -25,6 +26,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "financial-accounting",
     title: "Diploma In Financial Accounting",
     description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
     image: "/images/courses/DFA.jpg",
@@ -38,6 +40,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "computer-application",
     title: "Diploma In Computer Application",
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
     image: "/images/courses/DCA.jpg",
@@ -52,6 +55,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "financial-management",
     title: "Diploma In Financial & Management",
     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
     image: "/images/courses/DFAM.jpg",
@@ -67,6 +71,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "programming-course",
     title: "Diploma In Programming Course",
     description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
     image: "/images/courses/DPC.jpg",
@@ -81,6 +86,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "graphic-animation",
     title: "Diploma In Graphic & Animation",
     description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
     image: "/images/courses/DGA.jpg",
@@ -95,6 +101,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "ethical-hacking",
     title: "Diploma In Ethical Hacking",
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
     image: "/images/courses/ethical.webp",
@@ -119,6 +126,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "digital-marketing",
     title: "Diploma In Digital Marketing",
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
     image: "/images/courses/dm.webp",
@@ -134,6 +142,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "full-stack-development",
     title: "Full-Stack Development",
     description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
     image: "/images/courses/full-stack.webp",
@@ -151,6 +160,7 @@ const diplomaCourses = [
     ],
   },
   {
+    slug: "data-analysis",
     title: "Data Analytics",
     description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
     image: "/images/courses/dataanalytics.webp",
@@ -284,7 +294,7 @@ const RoadmapPopup = ({ course }: { course: (typeof diplomaCourses)[0] }) => {
                         asChild
                         className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold"
                     >
-                        <Link href={`/enroll?course=${encodeURIComponent(course.title)}`}>Enroll Now</Link>
+                        <Link href={`/courses/details/${course.slug}`}>Learn More</Link>
                     </Button>
                 </div>
              </div>
