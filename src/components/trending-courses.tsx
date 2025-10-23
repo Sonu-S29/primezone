@@ -81,13 +81,15 @@ const Countdown = ({ toDate }: { toDate: Date }) => {
     });
 
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+
         const interval = setInterval(() => {
             const now = new Date();
             const difference = toDate.getTime() - now.getTime();
 
             if (difference > 0) {
                 setTimeLeft({
-                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24) + Math.floor(difference / (1000 * 60 * 60 * 24)) * 24,
                     minutes: Math.floor((difference / 1000 / 60) % 60),
                     seconds: Math.floor((difference / 1000) % 60),
                 });
@@ -112,15 +114,20 @@ export default function TrendingCourses() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-      const checkMobile = () => setIsMobile(window.innerWidth < 768);
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
+      if (typeof window === 'undefined') return;
+      const checkScreenSize = () => {
+        setIsMobile(window.innerWidth < 768);
+        setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+      }
+      checkScreenSize();
+      window.addEventListener("resize", checkScreenSize);
+      return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  const itemsPerSlide = isMobile ? 1 : 2;
+  const itemsPerSlide = isMobile ? 1 : isTablet ? 2 : 3;
   const numDots = Math.ceil(courses.length / itemsPerSlide);
 
   const resetTimeout = () => {
@@ -156,7 +163,7 @@ export default function TrendingCourses() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {Array.from({ length: numDots }).map((_, slideIndex) => (
-            <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 gap-8 px-1">
+            <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-1">
               {courses.slice(slideIndex * itemsPerSlide, slideIndex * itemsPerSlide + itemsPerSlide).map((course) => (
                 <Card key={course.title} className="flex flex-col border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300">
                     <CardHeader className="flex-row items-center justify-between pb-2">
