@@ -355,7 +355,7 @@ export default function DiplomaCoursesPage() {
                         </Dialog>
                         <div className="flex items-center text-xs font-medium text-muted-foreground">
                             <Clock className="mr-1 h-3 w-3" />
-                            {course.duration}
+                            Duration: {course.duration}
                         </div>
                     </div>
                     <CardTitle className="text-xl font-bold pt-2">{course.title}</CardTitle>
