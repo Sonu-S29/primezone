@@ -6,47 +6,107 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Clock, FileText, Download, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
-const trendingCourses = [
+const courses = [
   {
     title: "Data Analysis",
     description: "Unlock insights from data to drive business decisions.",
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
+    tags: ["Unlimited Interviews", "Integrated Internship"],
+    technologies: ["/images/tech/excel.png", "/images/tech/powerbi.png", "/images/tech/sql.png", "/images/tech/python.png", "/images/tech/tableau.png"],
+    batchStarts: new Date(new Date().getTime() + 72 * 60 * 60 * 1000), // 72 hours from now
+    seatsLeft: 5
   },
   {
     title: "Full-Stack Development",
     description: "Master front-end and back-end technologies to build complete web applications.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
+    tags: ["Unlimited Interviews", "Integrated Internship"],
+    technologies: ["/images/tech/html.png", "/images/tech/css.png", "/images/tech/js.png", "/images/tech/react.png", "/images/tech/node.png"],
+    batchStarts: new Date(new Date().getTime() + 96 * 60 * 60 * 1000),
+    seatsLeft: 3
   },
   {
     title: "Digital Marketing",
     description: "Learn SEO, SEM, and social media strategies to grow businesses online.",
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
+    tags: ["Unlimited Interviews"],
+    technologies: ["/images/tech/ga.png", "/images/tech/google-ads.png", "/images/tech/fb.png", "/images/tech/seo.png", "/images/tech/wordpress.png"],
+    batchStarts: new Date(new Date().getTime() + 120 * 60 * 60 * 1000),
+    seatsLeft: 8
   },
   {
     title: "Ethical Hacking and Cyber Security",
     description: "Protect digital assets by learning to think like a hacker.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
+    tags: ["Integrated Internship"],
+    technologies: ["/images/tech/python.png", "/images/tech/linux.png", "/images/tech/wireshark.png", "/images/tech/metasploit.png", "/images/tech/nmap.png"],
+    batchStarts: new Date(new Date().getTime() + 150 * 60 * 60 * 1000),
+    seatsLeft: 4
   },
   {
     title: "Diploma in Financial Accounting",
     description: "Gain expertise in financial accounting, Tally, and GST.",
     duration: "1 Year",
     idealFor: "10th, 12th, Graduates",
+    tags: ["Job Oriented"],
+    technologies: ["/images/tech/tally.png", "/images/tech/excel.png", "/images/tech/gst.png", "/images/tech/tax.png", "/images/tech/automation.png"],
+    batchStarts: new Date(new Date().getTime() + 200 * 60 * 60 * 1000),
+    seatsLeft: 6
   },
   {
     title: "Diploma in Programming",
     description: "Build a strong foundation in programming with C, C++, Java, and Python.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
+    tags: ["Integrated Internship"],
+    technologies: ["/images/tech/c.png", "/images/tech/cplusplus.png", "/images/tech/java.png", "/images/tech/python.png", "/images/tech/dsa.png"],
+    batchStarts: new Date(new Date().getTime() + 250 * 60 * 60 * 1000),
+    seatsLeft: 2
   },
 ];
+
+const Countdown = ({ toDate }: { toDate: Date }) => {
+    const [timeLeft, setTimeLeft] = useState({
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date();
+            const difference = toDate.getTime() - now.getTime();
+
+            if (difference > 0) {
+                setTimeLeft({
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                });
+            } else {
+                setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+                clearInterval(interval);
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [toDate]);
+    
+    return (
+        <p className="text-xs text-muted-foreground">
+            Next batch starts in <br />
+            <span className="font-semibold text-primary">{String(timeLeft.hours).padStart(2, '0')} hrs : {String(timeLeft.minutes).padStart(2, '0')} mins : {String(timeLeft.seconds).padStart(2, '0')} sec</span>
+        </p>
+    );
+};
 
 export default function TrendingCourses() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,7 +121,7 @@ export default function TrendingCourses() {
   }, []);
 
   const itemsPerSlide = isMobile ? 1 : 2;
-  const numDots = Math.ceil(trendingCourses.length / itemsPerSlide);
+  const numDots = Math.ceil(courses.length / itemsPerSlide);
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -76,7 +136,7 @@ export default function TrendingCourses() {
         setCurrentIndex((prevIndex) =>
           prevIndex === numDots - 1 ? 0 : prevIndex + 1
         ),
-      3000
+      5000
     );
 
     return () => {
@@ -97,25 +157,49 @@ export default function TrendingCourses() {
         >
           {Array.from({ length: numDots }).map((_, slideIndex) => (
             <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 gap-8 px-1">
-              {trendingCourses.slice(slideIndex * itemsPerSlide, slideIndex * itemsPerSlide + itemsPerSlide).map((course) => (
-                <Card key={course.title} className="flex flex-col border-primary/20 hover:border-primary transition-colors">
-                   <CardHeader>
-                        <div className="flex justify-between items-center">
-                           <Badge>Trending</Badge>
-                           <span className="text-xs text-muted-foreground">Duration: {course.duration}</span>
-                        </div>
-                        <CardTitle className="pt-2">{course.title}</CardTitle>
+              {courses.slice(slideIndex * itemsPerSlide, slideIndex * itemsPerSlide + itemsPerSlide).map((course) => (
+                <Card key={course.title} className="flex flex-col border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300">
+                    <CardHeader className="flex-row items-center justify-between pb-2">
+                        <Countdown toDate={course.batchStarts} />
+                        <Badge variant="destructive">{course.seatsLeft} seats left</Badge>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                        <CardDescription>{course.description}</CardDescription>
-                         <p className="text-xs text-muted-foreground mt-4">
-                            <span className="font-semibold">Ideal For:</span> {course.idealFor}
-                         </p>
+                    <CardContent className="text-center pt-4 pb-0">
+                        <div className="flex justify-around items-center">
+                            <div className="w-1/3"></div>
+                            <div className="w-1/3 flex justify-center">
+                                <Image src="/images/tech/python_stacked.png" alt="Python" width={60} height={60} />
+                            </div>
+                            <div className="w-1/3"></div>
+                        </div>
+                         <div className="flex justify-center items-center gap-4 mt-4">
+                           {course.technologies.map((tech, index) => (
+                             <div key={index} className="flex flex-col items-center gap-1">
+                                <Image src={tech} alt="" width={24} height={24} className="object-contain" />
+                             </div>
+                           ))}
+                         </div>
                     </CardContent>
-                    <CardFooter>
-                        <Button asChild variant="link" className="p-0">
+                    <CardContent className="mt-4 border-t pt-4">
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {course.tags.map((tag) => (
+                                <Badge key={tag} variant={tag === "Integrated Internship" ? "secondary" : "default"} className={cn(
+                                    tag === "Integrated Internship" ? 'bg-yellow-200 text-yellow-800' : 'bg-blue-100 text-blue-800'
+                                )}>{tag}</Badge>
+                            ))}
+                        </div>
+                        <CardTitle className="text-xl">{course.title}</CardTitle>
+                        <CardDescription className="mt-2">{course.description}</CardDescription>
+                        
+                        <div className="mt-4 space-y-2 text-sm text-muted-foreground border-t pt-4">
+                            <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> {course.duration} Classroom & Online Training</p>
+                            <p className="flex items-center gap-2"><Calendar className="h-4 w-4" /> Weekday and Weekend Batches</p>
+                        </div>
+                    </CardContent>
+                    <CardFooter className="grid grid-cols-2 gap-2 pt-4">
+                        <Button variant="outline"><Download className="mr-2 h-4 w-4" /> Download Brochure</Button>
+                        <Button asChild>
                             <Link href="/courses/diploma">
-                                View Details <ArrowRight className="ml-2 h-4 w-4" />
+                                Know More <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
                         </Button>
                     </CardFooter>
