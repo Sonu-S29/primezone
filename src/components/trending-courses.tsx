@@ -9,6 +9,9 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Clock, FileText, Download, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import BrochureDownloadForm from "./brochure-download-form";
+
 
 const courses = [
   {
@@ -203,7 +206,20 @@ export default function TrendingCourses() {
                         </div>
                     </CardContent>
                     <CardFooter className="grid grid-cols-2 gap-2 pt-4">
-                        <Button variant="outline"><Download className="mr-2 h-4 w-4" /> Download Brochure</Button>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button variant="outline"><Download className="mr-2 h-4 w-4" /> Download Brochure</Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                                <DialogHeader>
+                                <DialogTitle>Download Brochure</DialogTitle>
+                                <DialogDescription>
+                                    Please provide your details to receive the brochure.
+                                </DialogDescription>
+                                </DialogHeader>
+                                <BrochureDownloadForm />
+                            </DialogContent>
+                        </Dialog>
                         <Button asChild>
                             <Link href="/courses/diploma">
                                 Know More <ArrowRight className="ml-2 h-4 w-4" />
