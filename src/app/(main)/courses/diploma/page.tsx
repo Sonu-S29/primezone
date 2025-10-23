@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -15,6 +15,7 @@ const diplomaCourses = [
   {
     slug: "accounting",
     title: "Diploma In Accounting",
+    duration: "1 Year",
     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
     image: "/images/courses/DIA.jpg",
     hint: "accounting collage",
@@ -28,6 +29,7 @@ const diplomaCourses = [
   {
     slug: "financial-accounting",
     title: "Diploma In Financial Accounting",
+    duration: "1 Year",
     description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
     image: "/images/courses/DFA.jpg",
     hint: "financial report",
@@ -42,6 +44,7 @@ const diplomaCourses = [
   {
     slug: "computer-application",
     title: "Diploma In Computer Application",
+    duration: "1 Year",
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
     image: "/images/courses/DCA.jpg",
     hint: "computer application",
@@ -57,6 +60,7 @@ const diplomaCourses = [
   {
     slug: "financial-management",
     title: "Diploma In Financial & Management",
+    duration: "1 Year",
     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
     image: "/images/courses/DFAM.jpg",
     hint: "financial management",
@@ -73,6 +77,7 @@ const diplomaCourses = [
   {
     slug: "programming-course",
     title: "Diploma In Programming Course",
+    duration: "1 Year",
     description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
     image: "/images/courses/DPC.jpg",
     hint: "programming course",
@@ -88,6 +93,7 @@ const diplomaCourses = [
   {
     slug: "graphic-animation",
     title: "Diploma In Graphic & Animation",
+    duration: "1 Year",
     description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
     image: "/images/courses/DGA.jpg",
     hint: "graphic animation",
@@ -103,6 +109,7 @@ const diplomaCourses = [
   {
     slug: "ethical-hacking",
     title: "Diploma In Ethical Hacking",
+    duration: "1 Year",
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
     image: "/images/courses/ethical.webp",
     hint: "ethical hacking",
@@ -128,6 +135,7 @@ const diplomaCourses = [
   {
     slug: "digital-marketing",
     title: "Diploma In Digital Marketing",
+    duration: "6 Months",
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
     image: "/images/courses/dm.webp",
     hint: "digital marketing",
@@ -144,6 +152,7 @@ const diplomaCourses = [
   {
     slug: "full-stack-development",
     title: "Full-Stack Development",
+    duration: "1 Year",
     description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
     image: "/images/courses/full-stack.webp",
     hint: "full stack",
@@ -162,6 +171,7 @@ const diplomaCourses = [
   {
     slug: "data-analysis",
     title: "Data Analytics",
+    duration: "6 Months",
     description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
     image: "/images/courses/dataanalytics.webp",
     hint: "data analytics",
@@ -327,7 +337,7 @@ export default function DiplomaCoursesPage() {
                     />
                 </div>
                 <CardHeader className="space-y-1">
-                    <div className="flex justify-between items-start">
+                    <div className="flex justify-between items-center">
                         <Dialog>
                             <DialogTrigger asChild>
                                <Button onClick={() => setSelectedCourse(course)} variant="outline" size="sm">View Modules</Button>
@@ -343,8 +353,12 @@ export default function DiplomaCoursesPage() {
                                 )}
                             </DialogContent>
                         </Dialog>
+                        <div className="flex items-center text-xs font-medium text-muted-foreground">
+                            <Clock className="mr-1 h-3 w-3" />
+                            {course.duration}
+                        </div>
                     </div>
-                    <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold pt-2">{course.title}</CardTitle>
                     <CardDescription className="line-clamp-3">{course.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow"></CardContent>
@@ -365,9 +379,3 @@ export default function DiplomaCoursesPage() {
     </div>
   );
 }
-
-    
-
-    
-
-    
