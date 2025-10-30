@@ -8,34 +8,34 @@ import Image from "next/image";
 
 const initialItems = [
     {
-        imageUrl: "/images/gallery/DPC-Course-Website-Slider-1920x600-theme.jpg",
-        hint: "modern classroom students",
-        title: "Unlock Your Potential",
-        description: "World-class training to shape your future in technology.",
-        width: 5,
-        height: 10
+        imageUrl: "/images/dpc.jpg",
+        hint: "programming course",
+        title: "Diploma in Programming",
+        description: "Master coding languages and build a solid foundation for a career in software development.",
+        width: 1920,
+        height: 600
     },
     {
-        imageUrl: "/images/gallery/26.jpg",
-        hint: "student coding",
-        title: "Learn from the Best",
-        description: "Industry experts guiding you every step of the way.",
+        imageUrl: "/images/dfam.jpg",
+        hint: "financial management",
+        title: "Financial Management",
+        description: "Develop key skills in finance and management to excel in the business world.",
         width: 400,
         height: 600
     },
     {
-        imageUrl: "/images/gallery/50.jpg",
-        hint: "students collaborating",
-        title: "Your Future Starts Here",
-        description: "Join a community of learners and innovators.",
+        imageUrl: "/images/dga.jpg",
+        hint: "graphic animation",
+        title: "Graphic & Animation",
+        description: "Unleash your creativity and bring ideas to life with our design and animation courses.",
         width: 400,
         height: 600
     },
     {
-        imageUrl: "/images/gallery/37.jpg",
-        hint: "graphic design",
-        title: "Creative Careers",
-        description: "Master the art of visual communication and design.",
+        imageUrl: "/images/dm.jpg",
+        hint: "digital marketing",
+        title: "Digital Marketing",
+        description: "Learn the latest strategies in SEO, social media, and online advertising to grow businesses.",
         width: 400,
         height: 600
     },
@@ -47,14 +47,7 @@ const initialItems = [
         width: 400,
         height: 600
     },
-    {
-        imageUrl: "/images/gallery/fullstack.png",
-        hint: "cyber security",
-        title: "Secure the Future",
-        description: "Become an expert in protecting digital assets.",
-        width: 400,
-        height: 600
-    },
+   
 ];
 
 
