@@ -53,7 +53,7 @@ export default function CoursesPage() {
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
                         <Card className="overflow-hidden group glass-effect h-full flex flex-col">
-                            <div className="relative w-full h-64">
+                            <div className="relative w-full h-72">
                                 <Image 
                                 src={category.image}
                                 alt={category.title}
