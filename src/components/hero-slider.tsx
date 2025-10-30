@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
@@ -9,7 +8,7 @@ import Image from "next/image";
 
 const initialItems = [
     {
-        imageUrl: "/images/gallery/1.jpeg",
+        imageUrl: "/images/gallery/DPC-Course-Website-Slider-1920x600-theme.jpg",
         hint: "modern classroom students",
         title: "Unlock Your Potential",
         description: "World-class training to shape your future in technology.",
