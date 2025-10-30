@@ -58,7 +58,7 @@ export default function CoursesPage() {
                                 src={category.image}
                                 alt={category.title}
                                 fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                className="object-contain transition-transform duration-300 group-hover:scale-105"
                                 data-ai-hint={category.hint}
                                 />
                             </div>
