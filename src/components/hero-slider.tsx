@@ -12,8 +12,8 @@ const initialItems = [
         hint: "modern classroom students",
         title: "Unlock Your Potential",
         description: "World-class training to shape your future in technology.",
-        width: 1920,
-        height: 1080
+        width: 600,
+        height: 400
     },
     {
         imageUrl: "/images/gallery/26.jpg",
