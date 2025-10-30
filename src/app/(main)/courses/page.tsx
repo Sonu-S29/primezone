@@ -9,7 +9,7 @@ const courseCategories = [
   {
     title: "Diploma Courses",
     description: "In-depth programs for comprehensive skill development.",
-    image: "/images/courses/diploma.png",
+    image: "/images/diplomacard.jpg",
     hint: "diploma certificate",
     link: "/courses/diploma",
     details: [
@@ -22,7 +22,7 @@ const courseCategories = [
   {
     title: "Short-Term Courses",
     description: "Quickly upgrade your skills with our focused certificate courses.",
-    image: "/images/courses/shortterm.png",
+    image: "/images/shorttermcard.jpg",
     hint: "stopwatch certificate",
     link: "/courses/short-term",
     details: [
@@ -53,14 +53,15 @@ export default function CoursesPage() {
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
                         <Card className="overflow-hidden group glass-effect h-full flex flex-col">
-                            <Image 
-                            src={category.image}
-                            alt={category.title}
-                            width={600}
-                            height={400}
-                            className="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint={category.hint}
-                            />
+                            <div className="relative w-full h-64">
+                                <Image 
+                                src={category.image}
+                                alt={category.title}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint={category.hint}
+                                />
+                            </div>
                             <CardHeader className="flex-grow">
                                 <CardTitle>{category.title}</CardTitle>
                             </CardHeader>
