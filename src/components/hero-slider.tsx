@@ -8,44 +8,34 @@ import Image from "next/image";
 
 const initialItems = [
     {
-        imageUrl: "/images/dpc.jpg",
+        imageUrl: "/images/dpc.jpeg",
         hint: "programming course",
         title: "Diploma in Programming",
         description: "Master coding languages and build a solid foundation for a career in software development.",
-        width: 1920,
-        height: 600
     },
     {
-        imageUrl: "/images/dfam.jpg",
+        imageUrl: "/images/ddm.jpeg",
         hint: "financial management",
         title: "Financial Management",
         description: "Develop key skills in finance and management to excel in the business world.",
-        width: 400,
-        height: 600
     },
     {
         imageUrl: "/images/dga.jpg",
         hint: "graphic animation",
         title: "Graphic & Animation",
         description: "Unleash your creativity and bring ideas to life with our design and animation courses.",
-        width: 400,
-        height: 600
     },
     {
         imageUrl: "/images/dm.jpg",
         hint: "digital marketing",
         title: "Digital Marketing",
         description: "Learn the latest strategies in SEO, social media, and online advertising to grow businesses.",
-        width: 400,
-        height: 600
     },
     {
         imageUrl: "/images/gallery/data.webp",
         hint: "data analytics",
         title: "Data-Driven Decisions",
         description: "Unlock insights and drive business growth with data.",
-        width: 400,
-        height: 600
     },
    
 ];
@@ -99,9 +89,7 @@ const HeroSlider = () => {
                        <Image 
                             src={item.imageUrl} 
                             alt={item.title} 
-                            fill={index === 0}
-                            width={index !== 0 ? item.width : undefined}
-                            height={index !== 0 ? item.height : undefined}
+                            fill
                             sizes="100vw"
                             quality={80}
                             priority={index === 0}
