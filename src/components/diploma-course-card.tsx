@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Search, Megaphone, Newspaper, CheckCircle, ArrowLeft, ArrowRight, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen, Clock } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -41,7 +41,9 @@ const iconMap: { [key: string]: React.ReactNode } = {
     default: <BookOpen />,
 }
 
-const RoadmapPopup = ({ course }: { course: DiplomaCourse }) => {
+function RoadmapPopup({ course }: { course: DiplomaCourse }) {
+    "use client"; // This component uses hooks, so it must be a client component.
+
     const [activeModule, setActiveModule] = useState(0);
     const moduleRefs = useRef<(HTMLButtonElement | null)[]>([]);
     const timerRef = useRef<NodeJS.Timeout | null>(null);
