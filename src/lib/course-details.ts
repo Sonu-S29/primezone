@@ -180,6 +180,147 @@ export const courseDetails: { [key: string]: any } = {
             { name: "CSS3", logo: "/images/tech/css.png" },
         ]
     },
+     "financial-management": {
+        title: "Diploma In Financial & Management",
+        description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
+        image: "/images/courses/DFAM.jpg",
+        hint: "financial management",
+        highlights: ["Finance & Management", "Share Market Intro", "Practical Case Studies", "Job-Oriented"],
+        whatYouWillLearn: [
+            "Comprehensive office automation and advanced Excel skills.",
+            "In-depth knowledge of Tally Prime with GST and Taxation.",
+            "Core management skills for business finance, marketing, and operations.",
+            "An introduction to the share market and investment basics."
+        ],
+        careerOpportunities: ["Finance Manager", "Business Analyst", "Management Trainee", "Investment Advisor"],
+        syllabus: [
+            { title: "Office Automation", icon: "tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
+            { title: "Advanced Excel", icon: "barchart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
+            { title: "Tally Prime (GST)", icon: "code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
+            { title: "Taxation Auditing", icon: "barchart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
+            { title: "Management Skills", icon: "code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
+            { title: "Share Market", icon: "barchart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
+        ],
+        tools: [
+            { name: "MS Office", logo: "/images/tech/office.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "MS Excel", logo: "/images/tech/excel.png" },
+        ]
+    },
+    "programming-course": {
+        title: "Diploma In Programming",
+        description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
+        image: "/images/courses/DPC.jpg",
+        hint: "programming code",
+        highlights: ["Multi-Language Mastery", "Data Structures", "Web & DB Technologies", "Live Projects"],
+        whatYouWillLearn: [
+            "Strong foundation in C, C++, and Data Structures & Algorithms.",
+            "Full-stack web development skills including HTML, CSS, JavaScript, and PHP.",
+            "Proficiency in popular languages like Python and Java (Core & Advanced).",
+            "Experience with modern frameworks like .NET or the MERN stack."
+        ],
+        careerOpportunities: ["Software Developer", "Full-Stack Developer", "Java Developer", "Python Developer", ".NET Developer"],
+        syllabus: [
+            { title: "C, C++ & DSA", icon: "code", topics: ["C Syntax", "C++ with OOPS", "Data Structures & Algorithms", "File Handling"] },
+            { title: "Web Technologies", icon: "code", topics: ["HTML, CSS, JavaScript", "PHP for server-side", "Database Management (MySQL)", "WordPress"] },
+            { title: "Python Programming", icon: "code", topics: ["Core Python Features", "Data Types", "Functions & Modules", "File Handling"] },
+            { title: "Java (Core & Advanced)", icon: "code", topics: ["Java Fundamentals", "OOPS Concepts", "GUI with Swing", "Servlet, JSP, JDBC"] },
+            { title: ".NET or MERN Stack", icon: "code", topics: ["ASP.NET with C# or MERN Stack", "API Integration", "State Management"] }
+        ],
+        tools: [
+            { name: "C++", logo: "/images/tech/cplusplus.png" },
+            { name: "Java", logo: "/images/tech/java.png" },
+            { name: "Python", logo: "/images/tech/python.png" },
+            { name: "HTML5", logo: "/images/tech/html.png" },
+            { name: "React", logo: "/images/tech/react.png" },
+            { name: "MySQL", logo: "/images/tech/sql.png" }
+        ]
+    },
+    "graphic-animation": {
+        title: "Diploma In Graphic & Animation",
+        description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
+        image: "/images/courses/DGA.jpg",
+        hint: "graphic animation",
+        highlights: ["Complete Design Suite", "2D & 3D Animation", "Video Editing", "Portfolio Development"],
+        whatYouWillLearn: [
+            "Mastering graphic design tools like CorelDRAW, Photoshop, and Illustrator.",
+            "Creating web page designs with HTML, CSS, and Adobe Animate.",
+            "Producing 2D animations and understanding animation principles.",
+            "Editing video and sound for professional output.",
+            "Building 3D models and architectural visualizations with 3ds Max."
+        ],
+        careerOpportunities: ["Graphic Designer", "Animator (2D/3D)", "Video Editor", "UI/UX Designer", "Architectural Visualizer"],
+        syllabus: [
+            { title: "Graphic Designing", icon: "brush", topics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Canva"] },
+            { title: "Web Designing", icon: "code", topics: ["HTML/CSS", "Adobe Animate", "Web Hosting", "Domain Management"] },
+            { title: "Adobe Animate", icon: "brush", topics: ["Frame-by-Frame Animation", "Shape Tweening", "ActionScript 2.0"] },
+            { title: "Video / Sound Editing", icon: "code", topics: ["Editing with Tools", "Transition Effects", "Animation Effects"] },
+            { title: "3DS MAX", icon: "brush", topics: ["2D/3D Interior Designing", "3D Modelling", "Materials & Camera Walkthrough"] }
+        ],
+        tools: [
+            { name: "Photoshop", logo: "/images/tech/photoshop.png" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.png" },
+            { name: "InDesign", logo: "/images/tech/indesign.png" },
+            { name: "Premiere Pro", logo: "/images/tech/premiere.png" },
+            { name: "After Effects", logo: "/images/tech/after-effects.png" },
+            { name: "3ds Max", logo: "/images/tech/3dsmax.png" }
+        ]
+    },
+    "ethical-hacking": {
+        title: "Diploma In Ethical Hacking",
+        description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
+        image: "/images/courses/ethical.webp",
+        hint: "ethical hacking",
+        highlights: ["Penetration Testing", "Network Security", "Vulnerability Analysis", "Cyber Ethics"],
+        whatYouWillLearn: [
+            "Footprinting and reconnaissance techniques to gather information.",
+            "Scanning networks to find live systems and open ports.",
+            "Hacking systems, web servers, and web applications.",
+            "Understanding malware threats, SQL injection, and session hijacking.",
+            "Evading IDS, firewalls, and honeypots."
+        ],
+        careerOpportunities: ["Ethical Hacker", "Security Analyst", "Penetration Tester", "Cybersecurity Consultant"],
+        syllabus: [
+            { title: "Intro to Ethical Hacking", icon: "code", topics: ["Key terminology", "Penetration testing", "Cyber ethics", "Hacking phases"] },
+            { title: "Footprinting & Scanning", icon: "code", topics: ["Website & DNS footprinting", "Network scanning techniques", "Vulnerability scanning"] },
+            { title: "System Hacking", icon: "code", topics: ["Gaining access", "Escalating privileges", "Maintaining access", "Covering tracks"] },
+            { title: "Web & Network Hacking", icon: "code", topics: ["Hacking Web Servers", "SQL Injection", "Sniffing & Social Engineering", "Denial-of-Service"] }
+        ],
+        tools: [
+            { name: "Nmap", logo: "/images/tech/nmap.png" },
+            { name: "Wireshark", logo: "/images/tech/wireshark.png" },
+            { name: "Metasploit", logo: "/images/tech/metasploit.png" },
+            { name: "Linux", logo: "/images/tech/linux.png" }
+        ]
+    },
+    "digital-marketing": {
+        title: "Diploma In Digital Marketing",
+        description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
+        image: "/images/courses/dm.webp",
+        hint: "digital marketing",
+        highlights: ["SEO & SEM", "Social Media Marketing", "Content Creation", "Google Analytics"],
+        whatYouWillLearn: [
+            "Fundamentals of marketing and Google's algorithms.",
+            "On-page and off-page SEO to rank higher in search results.",
+            "Managing social media marketing campaigns on Facebook, Instagram, and LinkedIn.",
+            "Creating websites with WordPress and developing content strategies.",
+            "Analyzing website traffic and user behavior with Google Analytics."
+        ],
+        careerOpportunities: ["Digital Marketing Manager", "SEO Specialist", "Social Media Manager", "Content Marketer"],
+        syllabus: [
+            { title: "Marketing Fundamentals", icon: "brush", topics: ["Intro to Digital Marketing", "Website Analysis", "Google Algorithms"] },
+            { title: "SEO & SEM", icon: "code", topics: ["On-Page & Off-Page Optimization", "Keyword Research", "PPC Marketing"] },
+            { title: "Social Media Marketing", icon: "code", topics: ["Facebook & Instagram Marketing", "LinkedIn for Business", "YouTube Marketing"] },
+            { title: "Content & Email Marketing", icon: "code", topics: ["Blogging for Business", "WordPress Website Creation", "Email Campaigning"] },
+            { title: "Google Analytics", icon: "barchart", topics: ["Tracking Traffic", "Analyzing Behavior", "Conversion Tracking"] }
+        ],
+        tools: [
+            { name: "Google Analytics", logo: "/images/tech/ga.png" },
+            { name: "Google Ads", logo: "/images/tech/google-ads.png" },
+            { name: "WordPress", logo: "/images/tech/wordpress.png" },
+            { name: "SEO", logo: "/images/tech/seo.png" }
+        ]
+    },
     "web-designing": {
         title: "Web Designing",
         description: "Create visually appealing and user-friendly websites. Learn the principles of UI/UX design and master the tools to build beautiful web interfaces.",
@@ -373,7 +514,7 @@ export const courseDetails: { [key: string]: any } = {
         highlights: ["Cross-Platform Strategy", "Audience Targeting", "Budget Optimization", "Performance Marketing"],
         whatYouWillLearn: [
             "Creating and managing campaigns on both Google Ads and Facebook Ads.",
-            "Advanced audience targeting techniques.",
+            "Advanced audience targeting and retargeting.",
             "Optimizing ad spend for maximum ROI.",
             "Retargeting and building sales funnels."
         ],
