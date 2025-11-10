@@ -1,9 +1,8 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, FC, ReactElement } from 'react';
+import React, { useState, FC, ReactElement } from 'react';
 import Link from 'next/link';
-
+import { cn } from '@/lib/utils';
 import './Dock.css';
 
 interface DockItemProps {
@@ -23,28 +22,19 @@ const DockItem: FC<DockItemProps> = ({ item }) => {
       onMouseLeave={() => setIsHovered(false)}
       className="dock-item-container"
     >
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.2 }}
-            className="dock-item-label"
-          >
-            {item.name}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isHovered && (
+        <div
+          className="dock-item-label"
+        >
+          {item.name}
+        </div>
+      )}
       <Link href={item.href} target="_blank" rel="noopener noreferrer">
-        <motion.div
-          whileHover={{ y: -12, scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+        <div
           className="dock-item"
         >
           {item.icon}
-        </motion.div>
+        </div>
       </Link>
     </div>
   );

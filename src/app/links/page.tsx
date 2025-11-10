@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Globe, MessageCircle, Instagram, Facebook, Phone, Youtube, Linkedin, MapPin } from "lucide-react";
 import Dock from "@/components/Dock";
 import WhatWeDo from "@/components/WhatWeDo";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -45,10 +45,8 @@ export default function LinksPage() {
                 </button>
                 <AnimatePresence>
                     {showLocations && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
+                        <div
+                            
                             className="absolute top-14 right-0 w-64 bg-white/50 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg p-4"
                         >
                             <h3 className="font-bold text-center mb-3">Our Branches</h3>
@@ -62,7 +60,7 @@ export default function LinksPage() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     )}
                 </AnimatePresence>
             </div>
@@ -80,10 +78,7 @@ export default function LinksPage() {
                 </button>
                 <AnimatePresence>
                     {showContacts && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
+                        <div
                             className="absolute top-14 left-0 w-64 bg-white/50 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg p-4"
                         >
                             <h3 className="font-bold text-center mb-3">Contact Us</h3>
@@ -97,7 +92,7 @@ export default function LinksPage() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     )}
                 </AnimatePresence>
             </div>

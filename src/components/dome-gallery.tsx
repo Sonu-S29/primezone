@@ -2,11 +2,12 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useCallback, useState } from 'react';
-import { useGesture } from '@use-gesture/react';
-import { motion, AnimatePresence } from 'framer-motion';
-import './dome-gallery.css';
-import { Link, Video, Briefcase, BookOpen, User } from 'lucide-react';
+import { Link as LinkIcon, Video, Briefcase, BookOpen, User } from 'lucide-react';
 import { Button } from './ui/button';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import './dome-gallery.css';
+
 
 type ImageItem = {
     src: string;
@@ -115,13 +116,7 @@ export default function DomeGallery({
   const [isEnlarging, setIsEnlarging] = useState(false);
   
   const rotationRef = useRef({ x: 0, y: 0 });
-  const startRotRef = useRef({ x: 0, y: 0 });
-  const startPosRef = useRef<{x: number, y: number} | null>(null);
-  const draggingRef = useRef(false);
-  const movedRef = useRef(false);
-  const inertiaRAF = useRef<number | null>(null);
   const openStartedAtRef = useRef(0);
-  const lastDragEndAt = useRef(0);
 
   const scrollLockedRef = useRef(false);
   const lockScroll = useCallback(() => {
@@ -180,77 +175,6 @@ export default function DomeGallery({
 
   useEffect(() => { applyTransform(rotationRef.current.x, rotationRef.current.y); }, []);
 
-  const stopInertia = useCallback(() => {
-    if (inertiaRAF.current) {
-      cancelAnimationFrame(inertiaRAF.current);
-      inertiaRAF.current = null;
-    }
-  }, []);
-
-  const startInertia = useCallback(
-    (vx: number, vy: number) => {
-      const MAX_V = 1.4;
-      let vX = clamp(vx, -MAX_V, MAX_V) * 80;
-      let vY = clamp(vy, -MAX_V, MAX_V) * 80;
-      let frames = 0;
-      const d = clamp(dragDampening ?? 0.6, 0, 1);
-      const frictionMul = 0.94 + 0.055 * d;
-      const stopThreshold = 0.015 - 0.01 * d;
-      const maxFrames = Math.round(90 + 270 * d);
-      const step = () => {
-        vX *= frictionMul; vY *= frictionMul;
-        if (Math.abs(vX) < stopThreshold && Math.abs(vY) < stopThreshold) { inertiaRAF.current = null; return; }
-        if (++frames > maxFrames) { inertiaRAF.current = null; return; }
-        const nextX = clamp(rotationRef.current.x - vY / 200, -maxVerticalRotationDeg, maxVerticalRotationDeg);
-        const nextY = wrapAngleSigned(rotationRef.current.y + vX / 200);
-        rotationRef.current = { x: nextX, y: nextY };
-        applyTransform(nextX, nextY);
-        inertiaRAF.current = requestAnimationFrame(step);
-      };
-      stopInertia();
-      inertiaRAF.current = requestAnimationFrame(step);
-    }, [dragDampening, maxVerticalRotationDeg, stopInertia]
-  );
-
-  useGesture({
-    onDragStart: ({ event }) => {
-      if (enlargedItem) return;
-      stopInertia();
-      draggingRef.current = true;
-      movedRef.current = false;
-      startRotRef.current = { ...rotationRef.current };
-      startPosRef.current = { x: (event as PointerEvent).clientX, y: (event as PointerEvent).clientY };
-    },
-    onDrag: ({ event, last, velocity = [0, 0], direction = [0, 0], movement }) => {
-      if (enlargedItem || !draggingRef.current || !startPosRef.current) return;
-      const evt = event as PointerEvent;
-      const dxTotal = evt.clientX - startPosRef.current.x;
-      const dyTotal = evt.clientY - startPosRef.current.y;
-      if (!movedRef.current) {
-        if (dxTotal * dxTotal + dyTotal * dyTotal > 16) movedRef.current = true;
-      }
-      const nextX = clamp(startRotRef.current.x - dyTotal / dragSensitivity, -maxVerticalRotationDeg, maxVerticalRotationDeg);
-      const nextY = wrapAngleSigned(startRotRef.current.y + dxTotal / dragSensitivity);
-      rotationRef.current = { x: nextX, y: nextY };
-      applyTransform(nextX, nextY);
-
-      if (last) {
-        draggingRef.current = false;
-        let [vMagX, vMagY] = velocity;
-        const [dirX, dirY] = direction;
-        let vx = vMagX * dirX, vy = vMagY * dirY;
-        if (Math.abs(vx) < 0.001 && Math.abs(vy) < 0.001 && Array.isArray(movement)) {
-          const [mx, my] = movement;
-          vx = clamp((mx / dragSensitivity) * 0.02, -1.2, 1.2);
-          vy = clamp((my / dragSensitivity) * 0.02, -1.2, 1.2);
-        }
-        if (Math.abs(vx) > 0.005 || Math.abs(vy) > 0.005) startInertia(vx, vy);
-        if (movedRef.current) lastDragEndAt.current = performance.now();
-        movedRef.current = false;
-      }
-    }
-  }, { target: mainRef, eventOptions: { passive: true } });
-
   const closeItem = useCallback(() => {
     if (!enlargedItem) return;
     const parent = enlargedItem.element.parentElement as HTMLElement;
@@ -304,26 +228,11 @@ export default function DomeGallery({
   }, [isEnlarging, items, lockScroll, segments]);
   
   const onTileClick = useCallback((e: React.MouseEvent<HTMLDivElement>, itemData: ImageItem) => {
-    if (movedRef.current) return;
     if (isEnlarging) return;
-    if (performance.now() - lastDragEndAt.current < 80) return;
     openItem(e.currentTarget);
   }, [openItem, isEnlarging]);
   
   useEffect(() => { return () => { document.body.classList.remove('dg-scroll-lock'); }; }, []);
-
-  const detailVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    })
-  };
 
   return (
     <div ref={rootRef} className="sphere-root" style={{
@@ -346,7 +255,7 @@ export default function DomeGallery({
                 <div className="item__image" role="button" tabIndex={0}
                   aria-label={it.alt || 'Open image'}
                   onClick={(e) => onTileClick(e, it)}>
-                  <img src={it.src} draggable={false} alt={it.alt} />
+                  <Image src={it.src} draggable={false} alt={it.alt || ''} fill loading='lazy' sizes="(max-width: 768px) 10vw, 5vw"/>
                 </div>
               </div>
             ))}
@@ -358,33 +267,26 @@ export default function DomeGallery({
         <div className="edge-fade edge-fade--top" />
         <div className="edge-fade edge-fade--bottom" />
 
-        <div className="viewer" ref={viewerRef} data-enlarging={!!enlargedItem}>
+        <div className={cn("viewer", enlargedItem && "viewer--enlarged")} ref={viewerRef} data-enlarging={!!enlargedItem}>
           <div ref={scrimRef} className="scrim" onClick={closeItem}/>
-          <AnimatePresence>
             {enlargedItem && (
-              <motion.div 
+              <div 
                 className="viewer-content"
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: enlargeTransitionMs / 1000 }}
               >
-                <motion.div className="frame" layoutId={`image-${enlargedItem.src}`}>
-                    <img src={enlargedItem.src} alt={enlargedItem.alt} />
-                </motion.div>
-                <div className="details">
-                  <motion.h2 custom={0} initial="hidden" animate="visible" variants={detailVariants}>{enlargedItem.student}</motion.h2>
-                  <motion.div custom={1} initial="hidden" animate="visible" variants={detailVariants} className="detail-item"><BookOpen /> {enlargedItem.course}</motion.div>
-                  <motion.div custom={2} initial="hidden" animate="visible" variants={detailVariants} className="detail-item"><Briefcase /> {enlargedItem.company}</motion.div>
-                  <motion.div custom={3} initial="hidden" animate="visible" variants={detailVariants} className="links">
-                    {enlargedItem.projectLink && <Button asChild variant="link"><a href={enlargedItem.projectLink} target="_blank" rel="noopener noreferrer"><Link className="mr-2"/> Project Link</a></Button>}
-                    {enlargedItem.videoLink && <Button asChild variant="link"><a href={enlargedItem.videoLink} target="_blank" rel="noopener noreferrer"><Video className="mr-2"/> Watch Video</a></Button>}
-                  </motion.div>
+                <div className="frame">
+                    <Image src={enlargedItem.src} alt={enlargedItem.alt} fill style={{objectFit: 'cover'}}/>
                 </div>
-              </motion.div>
+                <div className="details">
+                  <h2>{enlargedItem.student}</h2>
+                  <div className="detail-item"><BookOpen /> {enlargedItem.course}</div>
+                  <div className="detail-item"><Briefcase /> {enlargedItem.company}</div>
+                  <div className="links">
+                    {enlargedItem.projectLink && <Button asChild variant="link"><a href={enlargedItem.projectLink} target="_blank" rel="noopener noreferrer"><LinkIcon className="mr-2"/> Project Link</a></Button>}
+                    {enlargedItem.videoLink && <Button asChild variant="link"><a href={enlargedItem.videoLink} target="_blank" rel="noopener noreferrer"><Video className="mr-2"/> Watch Video</a></Button>}
+                  </div>
+                </div>
+              </div>
             )}
-          </AnimatePresence>
         </div>
       </main>
     </div>
