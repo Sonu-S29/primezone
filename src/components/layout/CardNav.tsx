@@ -15,17 +15,10 @@ interface NavLink {
   ariaLabel: string;
 }
 
-interface NavItem {
-  label: string;
-  bgColor: string;
-  textColor: string;
-  links: NavLink[];
-}
-
 interface CardNavProps {
   logo: string;
   logoAlt?: string;
-  items: NavItem[];
+  items: NavLink[];
   className?: string;
   ease?: string;
   baseColor?: string;
@@ -42,49 +35,29 @@ const CardNav = ({
   ease = 'power3.out',
   baseColor = '#fff',
   menuColor,
-  buttonBgColor,
-  buttonTextColor
 }: CardNavProps) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const contentRef = useRef<HTMLDivElement>(null);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
   const calculateExpandedHeight = () => {
-    const navEl = navRef.current;
-    if (!navEl) return 260;
+    const contentEl = contentRef.current;
+    if (!contentEl) return 260;
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-      const contentEl = navEl.querySelector('.card-nav-content') as HTMLElement;
-      if (contentEl) {
-        const wasVisible = contentEl.style.visibility;
-        const wasPointerEvents = contentEl.style.pointerEvents;
-        const wasPosition = contentEl.style.position;
-        const wasHeight = contentEl.style.height;
+    const topBarHeight = 60;
+    const padding = 32 * 2; // 2rem top and bottom padding
+    let contentHeight = 0;
 
-        contentEl.style.visibility = 'visible';
-        contentEl.style.pointerEvents = 'auto';
-        contentEl.style.position = 'static';
-        contentEl.style.height = 'auto';
-
-        contentEl.offsetHeight;
-
-        const topBar = 60;
-        const padding = 16;
-        const contentHeight = contentEl.scrollHeight;
-
-        contentEl.style.visibility = wasVisible;
-        contentEl.style.pointerEvents = wasPointerEvents;
-        contentEl.style.position = wasPosition;
-        contentEl.style.height = wasHeight;
-
-        return topBar + contentHeight + padding;
-      }
-    }
-    return 260;
+    // Temporarily make it visible to measure scrollHeight
+    const wasVisible = contentEl.style.visibility;
+    contentEl.style.visibility = 'visible';
+    contentHeight = contentEl.scrollHeight;
+    contentEl.style.visibility = wasVisible;
+    
+    return topBarHeight + contentHeight + padding;
   };
   
   const getExpandedWidth = () => {
@@ -95,13 +68,15 @@ const CardNav = ({
   const createTimeline = () => {
     const navEl = navRef.current;
     const containerEl = containerRef.current;
-    if (!navEl || !containerEl) return null;
+    const contentEl = contentRef.current;
+
+    if (!navEl || !containerEl || !contentEl) return null;
 
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     gsap.set(navEl, { height: 60, overflow: 'hidden' });
     gsap.set(containerEl, { width: isMobile ? '90%' : '240px', maxWidth: isMobile ? 'none' : '240px' });
-    gsap.set(cardsRef.current, { y: 50, opacity: 0 });
+    gsap.set(contentEl, { opacity: 0 });
 
     const tl = gsap.timeline({ paused: true });
 
@@ -118,7 +93,7 @@ const CardNav = ({
       ease
     }, 0);
 
-    tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
+    tl.to(contentEl, { opacity: 1, duration: 0.4, ease }, '-=0.1');
 
     return tl;
   };
@@ -171,9 +146,6 @@ const CardNav = ({
     }
   };
 
-  const setCardRef = (i: number) => (el: HTMLDivElement | null) => {
-    if (el) cardsRef.current[i] = el;
-  };
 
   return (
     <div ref={containerRef} className={`card-nav-container ${className} ${isExpanded ? 'open' : ''}`}>
@@ -181,7 +153,7 @@ const CardNav = ({
         <div className="card-nav-top">
           <div className="logo-container">
             <Link href="/" aria-label="Home">
-                <Image src={logo} alt={logoAlt} className="logo" width={150} height={28} data-ai-hint="logo" />
+                <Image src={logo} alt={logoAlt} className="logo" width={150} height={32} data-ai-hint="logo" />
             </Link>
           </div>
           <div
@@ -196,40 +168,22 @@ const CardNav = ({
             <div className="hamburger-line" />
           </div>
 
-           <Link href="/enroll" passHref legacyBehavior>
-              <Button
-                asChild={false}
-                style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                className="card-nav-cta-button"
-              >
-                  <a>Enroll Now</a>
-              </Button>
-           </Link>
-
         </div>
 
-        <div className="card-nav-content" aria-hidden={!isExpanded}>
-          {(items || []).slice(0, 3).map((item, idx) => (
-            <div
-              key={`${item.label}-${idx}`}
-              className="nav-card"
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
-            >
-              <div className="nav-card-label">{item.label}</div>
-              <div className="nav-card-links">
-                {item.links?.map((lnk, i) => (
-                  <Link key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} aria-label={lnk.ariaLabel} onClick={() => {
-                    setIsHamburgerOpen(false);
-                    tlRef.current?.reverse();
-                  }}>
-                    <ArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
-                    {lnk.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div ref={contentRef} className="card-nav-content" aria-hidden={!isExpanded}>
+           <ul className="nav-list">
+              {items.map((link, i) => (
+                <li key={`${link.label}-${i}`} className='nav-list-item'>
+                    <Link className="nav-list-link" href={link.href} aria-label={link.ariaLabel} onClick={() => {
+                        setIsHamburgerOpen(false);
+                        tlRef.current?.reverse();
+                    }}>
+                        <ArrowUpRight className="nav-list-link-icon" aria-hidden="true" />
+                        {link.label}
+                    </Link>
+                </li>
+              ))}
+           </ul>
         </div>
       </nav>
     </div>

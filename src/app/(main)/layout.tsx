@@ -17,36 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const navItems = [
-    {
-      label: "About",
-      bgColor: "hsl(var(--primary))",
-      textColor: "hsl(var(--primary-foreground))",
-      links: [
-        { label: "About Us", href: "/about", ariaLabel: "About Company" },
-        { label: "Our Team", href: "/about", ariaLabel: "Meet our Team" },
-        { label: "Careers", href: "/career", ariaLabel: "About Careers" },
-      ]
-    },
-    {
-      label: "Courses",
-      bgColor: "hsl(var(--accent))",
-      textColor: "hsl(var(--accent-foreground))",
-      links: [
-        { label: "Diploma Courses", href: "/courses/diploma", ariaLabel: "View Diploma Courses" },
-        { label: "Short-Term Courses", href: "/courses/short-term", ariaLabel: "View Short-Term Courses" },
-        { label: "AI Recommendations", href: "/recommendations", ariaLabel: "Get AI course recommendations" },
-      ]
-    },
-    {
-      label: "Contact",
-      bgColor: "hsl(var(--secondary))",
-      textColor: "hsl(var(--secondary-foreground))",
-      links: [
-        { label: "Contact Us", href: "/contact", ariaLabel: "Contact us" },
-        { label: "Student Projects", href: "/student-projects", ariaLabel: "View student projects" },
-        { label: "Gallery", href: "/gallery", ariaLabel: "View our gallery" }
-      ]
-    }
+    { label: "Home", href: "/", ariaLabel: "Home" },
+    { label: "About Us", href: "/about", ariaLabel: "About Company" },
+    { label: "Courses", href: "/courses", ariaLabel: "View All Courses" },
+    { label: "Diploma Courses", href: "/courses/diploma", ariaLabel: "View Diploma Courses" },
+    { label: "Short-Term Courses", href: "/courses/short-term", ariaLabel: "View Short-Term Courses" },
+    { label: "AI Recommendations", href: "/recommendations", ariaLabel: "Get AI course recommendations" },
+    { label: "Gallery", href: "/gallery", ariaLabel: "View our gallery" },
+    { label: "Student Projects", href: "/student-projects", ariaLabel: "View student projects" },
+    { label: "Blog", href: "/blog", ariaLabel: "Read our blog" },
+    { label: "Careers", href: "/career", ariaLabel: "About Careers" },
+    { label: "Refer & Earn", href: "/refer-and-earn", ariaLabel: "Refer and Earn program" },
+    { label: "Contact Us", href: "/contact", ariaLabel: "Contact us" },
   ];
 
   return (
