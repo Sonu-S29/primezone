@@ -1,11 +1,11 @@
+
 "use client";
 
-import { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import './CardNav.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 
 interface NavLink {
@@ -39,7 +39,7 @@ const CardNav = ({
         <div className="card-nav-top">
           <div className="logo-container">
             <Link href="/" aria-label="Home">
-                <Image src={logo} alt={logoAlt} className="logo" width={150} height={32} data-ai-hint="logo" />
+                <Image src={logo} alt={logoAlt} className="logo" width={150} height={32} data-ai-hint="logo" priority />
             </Link>
           </div>
           <div
@@ -55,18 +55,20 @@ const CardNav = ({
           </div>
         </div>
 
-        <div className="card-nav-content" aria-hidden={!isExpanded}>
-           <ul className="nav-list">
-              {items.map((link, i) => (
-                <li key={`${link.label}-${i}`} className='nav-list-item'>
-                    <Link className="nav-list-link" href={link.href} aria-label={link.ariaLabel} onClick={() => setIsExpanded(false)}>
-                        <ArrowUpRight className="nav-list-link-icon" aria-hidden="true" />
-                        {link.label}
-                    </Link>
-                </li>
-              ))}
-           </ul>
-        </div>
+        {isExpanded && (
+          <div className="card-nav-content" aria-hidden={!isExpanded}>
+            <ul className="nav-list">
+                {items.map((link, i) => (
+                  <li key={`${link.label}-${i}`} className='nav-list-item'>
+                      <Link className="nav-list-link" href={link.href} aria-label={link.ariaLabel} onClick={() => setIsExpanded(false)}>
+                          <ArrowUpRight className="nav-list-link-icon" aria-hidden="true" />
+                          {link.label}
+                      </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
       </nav>
     </div>
   );

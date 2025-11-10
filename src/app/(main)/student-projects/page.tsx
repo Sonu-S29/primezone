@@ -1,8 +1,11 @@
 
 "use client";
 
-import DomeGallery from '@/components/dome-gallery';
+import { Suspense, lazy } from 'react';
 import imageData from "@/lib/placeholder-images.json";
+import { Skeleton } from '@/components/ui/skeleton';
+
+const DomeGallery = lazy(() => import('@/components/dome-gallery'));
 
 const projectData = [
     { 
@@ -119,7 +122,9 @@ export default function StudentProjectsPage() {
             </div>
         </section>
         <section className='relative h-[80vh] bg-gradient-to-br from-blue-100 to-white'>
-             <DomeGallery images={projectData} overlayBlurColor="#e2ebf0" grayscale={false} />
+            <Suspense fallback={<Skeleton className="w-full h-full" />}>
+                <DomeGallery images={projectData} overlayBlurColor="#e2ebf0" grayscale={false} />
+            </Suspense>
         </section>
     </div>
   );

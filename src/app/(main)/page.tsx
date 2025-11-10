@@ -17,12 +17,17 @@ import React, { Suspense, lazy, useRef } from "react";
 import HeroSlider from "@/components/hero-slider";
 import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Skeleton } from "@/components/ui/skeleton";
 import { allCoursesList } from "@/lib/course-data";
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
+const Carousel = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.Carousel })));
+const CarouselContent = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselContent })));
+const CarouselItem = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselItem })));
+const CarouselPrevious = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselPrevious })));
+const CarouselNext = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselNext })));
+
 
 const quoteCourses = [
     "Diploma course",
@@ -285,40 +290,42 @@ export default function Home() {
             </p>
           </div>
           <div className="container mx-auto px-4">
-            <Carousel 
-              plugins={[plugin.current]}
-              opts={{ loop: true, align: "start" }} 
-              className="w-full"
-              onMouseEnter={plugin.current.stop}
-              onMouseLeave={plugin.current.reset}
-            >
-              <CarouselContent>
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1 h-full">
-                      <Card className="glass-effect h-full flex flex-col">
-                          <CardContent className="pt-6 flex flex-col h-full">
-                              <div className="flex items-start mb-4">
-                                  <div className="ml-4 flex-grow">
-                                      <p className="font-semibold">{testimonial.name}</p>
-                                      <p className="text-sm text-muted-foreground">{testimonial.course}</p>
-                                  </div>
-                                  <div className="flex items-center">
-                                      {[...Array(5)].map((_, i) => (
-                                          <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                                      ))}
-                                  </div>
-                              </div>
-                              <p className="text-muted-foreground italic flex-grow">"{testimonial.story}"</p>
-                          </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <Suspense fallback={<Skeleton className="h-64 w-full" />}>
+                <Carousel 
+                plugins={[plugin.current]}
+                opts={{ loop: true, align: "start" }} 
+                className="w-full"
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
+                >
+                <CarouselContent>
+                    {testimonials.map((testimonial, index) => (
+                    <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
+                        <div className="p-1 h-full">
+                        <Card className="glass-effect h-full flex flex-col">
+                            <CardContent className="pt-6 flex flex-col h-full">
+                                <div className="flex items-start mb-4">
+                                    <div className="ml-4 flex-grow">
+                                        <p className="font-semibold">{testimonial.name}</p>
+                                        <p className="text-sm text-muted-foreground">{testimonial.course}</p>
+                                    </div>
+                                    <div className="flex items-center">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                                        ))}
+                                    </div>
+                                </div>
+                                <p className="text-muted-foreground italic flex-grow">"{testimonial.story}"</p>
+                            </CardContent>
+                        </Card>
+                        </div>
+                    </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+                </Carousel>
+            </Suspense>
              <div className="mt-8 flex justify-center gap-4">
                 <Button asChild>
                     <Link href="https://share.google/hAEhk3Rr4UeMvWz1G" target="_blank" aria-label="Read more reviews on Google">Read more reviews</Link>
