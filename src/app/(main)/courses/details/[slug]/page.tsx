@@ -39,10 +39,10 @@ export default function CourseDetailPage() {
     }
     
     const iconMap: { [key: string]: React.ReactNode } = {
-        tv: <Tv className="h-5 w-5 text-accent" />,
-        barchart: <BarChart className="h-5 w-5 text-accent" />,
-        code: <Code className="h-5 w-5 text-accent" />,
-        brush: <Brush className="h-5 w-5 text-accent" />,
+        Tv: <Tv className="h-5 w-5 text-accent" />,
+        BarChart: <BarChart className="h-5 w-5 text-accent" />,
+        Code: <Code className="h-5 w-5 text-accent" />,
+        Brush: <Brush className="h-5 w-5 text-accent" />,
         default: <BookOpen className="h-5 w-5 text-accent" />,
     };
 

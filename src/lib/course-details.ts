@@ -17,7 +17,7 @@ export const courseDetails: { [key: string]: any } = {
         syllabus: [
             {
                 title: "Advanced Excel",
-                icon: "barchart",
+                icon: "BarChart",
                 topics: [
                     "Advanced Conditional Formatting",
                     "Pivot Tables & Pivot Charts",
@@ -29,7 +29,7 @@ export const courseDetails: { [key: string]: any } = {
             },
             {
                 title: "Power BI",
-                icon: "barchart",
+                icon: "BarChart",
                 topics: [
                     "Introduction to Power BI",
                     "Working with Data, Power Pivot",
@@ -40,7 +40,7 @@ export const courseDetails: { [key: string]: any } = {
             },
             {
                 title: "MySQL",
-                icon: "code",
+                icon: "Code",
                 topics: [
                     "Introduction to SQL Server",
                     "Database & Types",
@@ -52,7 +52,7 @@ export const courseDetails: { [key: string]: any } = {
             },
             {
                 title: "Python",
-                icon: "code",
+                icon: "Code",
                 topics: [
                     "Basic Python Syntax",
                     "Data Types & Operators",
@@ -64,7 +64,7 @@ export const courseDetails: { [key: string]: any } = {
             },
             {
                 title: "Tableau",
-                icon: "barchart",
+                icon: "BarChart",
                 topics: [
                     "Working with Tableau",
                     "Deep Diving with Data & Connections",
@@ -98,14 +98,14 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Full-Stack Developer", "Front-End Developer", "Back-End Developer", "Web Application Developer", "Software Engineer"],
         syllabus: [
-            { title: "HTML & CSS", icon: "code", topics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
-            { title: "JavaScript", icon: "code", topics: ["Developer Essentials", "Language, Events", "Methods, Using Names, Objects", "Validation options, Rollovers & More"] },
-            { title: "AngularJS", icon: "code", topics: ["Expressions, Modules, Directives", "Model, Data Binding, Controllers", "Scopes, Filters, Services, Http", "Tables, Select, SQL, DOM, Events", "Validation, API, W3.CSS, Animation", "AngularJS Routing, Application"] },
-            { title: "ReactJS", icon: "code", topics: ["Components in React", "State management Lists & keys", "Handling events, Forms", "Handling HTTP requests", "Server-side rendering (SSR)"] },
-            { title: "Bootstrap", icon: "code", topics: ["Bootstrap Framework, Features", "Bootstrap Components, Grid", "Responsive web page, Bootstrap Plug-Ins"] },
-            { title: "Back-End Technologies", icon: "code", topics: ["Django", "Node.js", "Express.js", "Python", "PHP", "Laravel"] },
-            { title: "Database Technologies", icon: "code", topics: ["MySQL", "MongoDB"] },
-            { title: "Java Technology", icon: "code", topics: ["Core Java", "Advanced Java", "Hibernate", "Spring"] }
+            { title: "HTML & CSS", icon: "Code", topics: ["HTML Tags, Fonts, Image, Heading", "Table, Links, Source, Form, Frames", "CSS Tags, Styles, Syntax, Model, IDS"] },
+            { title: "JavaScript", icon: "Code", topics: ["Developer Essentials", "Language, Events", "Methods, Using Names, Objects", "Validation options, Rollovers & More"] },
+            { title: "AngularJS", icon: "Code", topics: ["Expressions, Modules, Directives", "Model, Data Binding, Controllers", "Scopes, Filters, Services, Http", "Tables, Select, SQL, DOM, Events", "Validation, API, W3.CSS, Animation", "AngularJS Routing, Application"] },
+            { title: "ReactJS", icon: "Code", topics: ["Components in React", "State management Lists & keys", "Handling events, Forms", "Handling HTTP requests", "Server-side rendering (SSR)"] },
+            { title: "Bootstrap", icon: "Code", topics: ["Bootstrap Framework, Features", "Bootstrap Components, Grid", "Responsive web page, Bootstrap Plug-Ins"] },
+            { title: "Back-End Technologies", icon: "Code", topics: ["Django", "Node.js", "Express.js", "Python", "PHP", "Laravel"] },
+            { title: "Database Technologies", icon: "Code", topics: ["MySQL", "MongoDB"] },
+            { title: "Java Technology", icon: "Code", topics: ["Core Java", "Advanced Java", "Hibernate", "Spring"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.png" },
@@ -127,9 +127,9 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Financial accounting principles", "Advanced Excel for accounting tasks", "Tally Prime with GST compliance", "Fundamentals of taxation and auditing"],
         careerOpportunities: ["Accountant", "Finance Executive", "Tax Consultant", "MIS Executive"],
         syllabus: [
-            { title: "Financial Accounting Basics", icon: "barchart", topics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
-            { title: "Advanced Excel for Accountants", icon: "barchart", topics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
-            { title: "Tally Prime with GST", icon: "code", topics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
+            { title: "Financial Accounting Basics", icon: "BarChart", topics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
+            { title: "Advanced Excel for Accountants", icon: "BarChart", topics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
+            { title: "Tally Prime with GST", icon: "Code", topics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
         ],
         tools: [
             { name: "MS Excel", logo: "/images/tech/excel.png" },
@@ -145,10 +145,10 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Office automation tools", "Advanced Excel for financial reporting", "Complete Tally Prime with GST", "Taxation and auditing procedures"],
         careerOpportunities: ["Financial Analyst", "Accounts Manager", "Taxation Expert", "Compliance Officer"],
         syllabus: [
-            { title: "Office Automation", icon: "tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
-            { title: "Advanced Excel", icon: "barchart", topics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
-            { title: "Tally Prime (GST)", icon: "code", topics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
-            { title: "Taxation Auditing", icon: "barchart", topics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
+            { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
+            { title: "Advanced Excel", icon: "BarChart", topics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
+            { title: "Tally Prime (GST)", icon: "Code", topics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
+            { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
         ],
         tools: [
             { name: "MS Office", logo: "/images/tech/office.png" },
@@ -165,11 +165,11 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Proficiency in office automation tools and advanced Excel.", "Complete Tally Prime with GST for accounting.", "Fundamentals of graphic design with CorelDRAW, Photoshop, and Illustrator.", "Basics of web design with HTML, CSS, and Adobe Animate."],
         careerOpportunities: ["DTP Operator", "Graphic Designer", "Accountant", "Web Designer", "Office Administrator"],
         syllabus: [
-            { title: "Office Automation", icon: "tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet Usage", "Windows Fundamentals"] },
-            { title: "Advanced Excel", icon: "barchart", topics: ["Advanced Formatting", "Pivot Tables & Charts", "V-Lookup & H-Lookup", "Macros and MIS Reporting"] },
-            { title: "Tally Prime (GST)", icon: "code", topics: ["Accounting Principles", "Voucher Entry", "TDS & GST Compliance", "Inventory & Payroll"] },
-            { title: "Graphic Designing", icon: "brush", topics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Canva"] },
-            { title: "Web Designing", icon: "code", topics: ["HTML / CSS", "Adobe Animate", "JavaScript Basics", "Web Hosting", "Adobe Dreamweaver"] }
+            { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet Usage", "Windows Fundamentals"] },
+            { title: "Advanced Excel", icon: "BarChart", topics: ["Advanced Formatting", "Pivot Tables & Charts", "V-Lookup & H-Lookup", "Macros and MIS Reporting"] },
+            { title: "Tally Prime (GST)", icon: "Code", topics: ["Accounting Principles", "Voucher Entry", "TDS & GST Compliance", "Inventory & Payroll"] },
+            { title: "Graphic Designing", icon: "Brush", topics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Canva"] },
+            { title: "Web Designing", icon: "Code", topics: ["HTML / CSS", "Adobe Animate", "JavaScript Basics", "Web Hosting", "Adobe Dreamweaver"] }
         ],
         tools: [
             { name: "MS Office", logo: "/images/tech/office.png" },
@@ -194,12 +194,12 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Finance Manager", "Business Analyst", "Management Trainee", "Investment Advisor"],
         syllabus: [
-            { title: "Office Automation", icon: "tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
-            { title: "Advanced Excel", icon: "barchart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
-            { title: "Tally Prime (GST)", icon: "code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
-            { title: "Taxation Auditing", icon: "barchart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
-            { title: "Management Skills", icon: "code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
-            { title: "Share Market", icon: "barchart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
+            { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
+            { title: "Advanced Excel", icon: "BarChart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
+            { title: "Tally Prime (GST)", icon: "Code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
+            { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
+            { title: "Management Skills", icon: "Code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
+            { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
         ],
         tools: [
             { name: "MS Office", logo: "/images/tech/office.png" },
@@ -221,11 +221,11 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Software Developer", "Full-Stack Developer", "Java Developer", "Python Developer", ".NET Developer"],
         syllabus: [
-            { title: "C, C++ & DSA", icon: "code", topics: ["C Syntax", "C++ with OOPS", "Data Structures & Algorithms", "File Handling"] },
-            { title: "Web Technologies", icon: "code", topics: ["HTML, CSS, JavaScript", "PHP for server-side", "Database Management (MySQL)", "WordPress"] },
-            { title: "Python Programming", icon: "code", topics: ["Core Python Features", "Data Types", "Functions & Modules", "File Handling"] },
-            { title: "Java (Core & Advanced)", icon: "code", topics: ["Java Fundamentals", "OOPS Concepts", "GUI with Swing", "Servlet, JSP, JDBC"] },
-            { title: ".NET or MERN Stack", icon: "code", topics: ["ASP.NET with C# or MERN Stack", "API Integration", "State Management"] }
+            { title: "C, C++ & DSA", icon: "Code", topics: ["C Syntax", "C++ with OOPS", "Data Structures & Algorithms", "File Handling"] },
+            { title: "Web Technologies", icon: "Code", topics: ["HTML, CSS, JavaScript", "PHP for server-side", "Database Management (MySQL)", "WordPress"] },
+            { title: "Python Programming", icon: "Code", topics: ["Core Python Features", "Data Types", "Functions & Modules", "File Handling"] },
+            { title: "Java (Core & Advanced)", icon: "Code", topics: ["Java Fundamentals", "OOPS Concepts", "GUI with Swing", "Servlet, JSP, JDBC"] },
+            { title: ".NET or MERN Stack", icon: "Code", topics: ["ASP.NET with C# or MERN Stack", "API Integration", "State Management"] }
         ],
         tools: [
             { name: "C++", logo: "/images/tech/cplusplus.png" },
@@ -251,11 +251,11 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Graphic Designer", "Animator (2D/3D)", "Video Editor", "UI/UX Designer", "Architectural Visualizer"],
         syllabus: [
-            { title: "Graphic Designing", icon: "brush", topics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Canva"] },
-            { title: "Web Designing", icon: "code", topics: ["HTML/CSS", "Adobe Animate", "Web Hosting", "Domain Management"] },
-            { title: "Adobe Animate", icon: "brush", topics: ["Frame-by-Frame Animation", "Shape Tweening", "ActionScript 2.0"] },
-            { title: "Video / Sound Editing", icon: "code", topics: ["Editing with Tools", "Transition Effects", "Animation Effects"] },
-            { title: "3DS MAX", icon: "brush", topics: ["2D/3D Interior Designing", "3D Modelling", "Materials & Camera Walkthrough"] }
+            { title: "Graphic Designing", icon: "Brush", topics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Canva"] },
+            { title: "Web Designing", icon: "Code", topics: ["HTML/CSS", "Adobe Animate", "Web Hosting", "Domain Management"] },
+            { title: "Adobe Animate", icon: "Brush", topics: ["Frame-by-Frame Animation", "Shape Tweening", "ActionScript 2.0"] },
+            { title: "Video / Sound Editing", icon: "Code", topics: ["Editing with Tools", "Transition Effects", "Animation Effects"] },
+            { title: "3DS MAX", icon: "Brush", topics: ["2D/3D Interior Designing", "3D Modelling", "Materials & Camera Walkthrough"] }
         ],
         tools: [
             { name: "Photoshop", logo: "/images/tech/photoshop.png" },
@@ -281,10 +281,10 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Ethical Hacker", "Security Analyst", "Penetration Tester", "Cybersecurity Consultant"],
         syllabus: [
-            { title: "Intro to Ethical Hacking", icon: "code", topics: ["Key terminology", "Penetration testing", "Cyber ethics", "Hacking phases"] },
-            { title: "Footprinting & Scanning", icon: "code", topics: ["Website & DNS footprinting", "Network scanning techniques", "Vulnerability scanning"] },
-            { title: "System Hacking", icon: "code", topics: ["Gaining access", "Escalating privileges", "Maintaining access", "Covering tracks"] },
-            { title: "Web & Network Hacking", icon: "code", topics: ["Hacking Web Servers", "SQL Injection", "Sniffing & Social Engineering", "Denial-of-Service"] }
+            { title: "Intro to Ethical Hacking", icon: "Code", topics: ["Key terminology", "Penetration testing", "Cyber ethics", "Hacking phases"] },
+            { title: "Footprinting & Scanning", icon: "Code", topics: ["Website & DNS footprinting", "Network scanning techniques", "Vulnerability scanning"] },
+            { title: "System Hacking", icon: "Code", topics: ["Gaining access", "Escalating privileges", "Maintaining access", "Covering tracks"] },
+            { title: "Web & Network Hacking", icon: "Code", topics: ["Hacking Web Servers", "SQL Injection", "Sniffing & Social Engineering", "Denial-of-Service"] }
         ],
         tools: [
             { name: "Nmap", logo: "/images/tech/nmap.png" },
@@ -308,11 +308,11 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Digital Marketing Manager", "SEO Specialist", "Social Media Manager", "Content Marketer"],
         syllabus: [
-            { title: "Marketing Fundamentals", icon: "brush", topics: ["Intro to Digital Marketing", "Website Analysis", "Google Algorithms"] },
-            { title: "SEO & SEM", icon: "code", topics: ["On-Page & Off-Page Optimization", "Keyword Research", "PPC Marketing"] },
-            { title: "Social Media Marketing", icon: "code", topics: ["Facebook & Instagram Marketing", "LinkedIn for Business", "YouTube Marketing"] },
-            { title: "Content & Email Marketing", icon: "code", topics: ["Blogging for Business", "WordPress Website Creation", "Email Campaigning"] },
-            { title: "Google Analytics", icon: "barchart", topics: ["Tracking Traffic", "Analyzing Behavior", "Conversion Tracking"] }
+            { title: "Marketing Fundamentals", icon: "Brush", topics: ["Intro to Digital Marketing", "Website Analysis", "Google Algorithms"] },
+            { title: "SEO & SEM", icon: "Code", topics: ["On-Page & Off-Page Optimization", "Keyword Research", "PPC Marketing"] },
+            { title: "Social Media Marketing", icon: "Code", topics: ["Facebook & Instagram Marketing", "LinkedIn for Business", "YouTube Marketing"] },
+            { title: "Content & Email Marketing", icon: "Code", topics: ["Blogging for Business", "WordPress Website Creation", "Email Campaigning"] },
+            { title: "Google Analytics", icon: "BarChart", topics: ["Tracking Traffic", "Analyzing Behavior", "Conversion Tracking"] }
         ],
         tools: [
             { name: "Google Analytics", logo: "/images/tech/ga.png" },
@@ -336,10 +336,10 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Web Designer", "UI Designer", "UX Designer", "Visual Designer"],
         syllabus: [
-            { title: "UI/UX Principles", icon: "brush", topics: ["User-Centered Design", "Color Theory", "Typography", "Layout and Composition"] },
-            { title: "HTML & CSS", icon: "code", topics: ["Structuring web pages with HTML5", "Styling with CSS3, including Flexbox and Grid", "Responsive Design Techniques"] },
-            { title: "Design Tools", icon: "brush", topics: ["Designing and prototyping in Figma", "Introduction to Adobe XD and Sketch"] },
-            { title: "Project", icon: "code", topics: ["Build a complete website design from scratch", "Create a personal portfolio"] }
+            { title: "UI/UX Principles", icon: "Brush", topics: ["User-Centered Design", "Color Theory", "Typography", "Layout and Composition"] },
+            { title: "HTML & CSS", icon: "Code", topics: ["Structuring web pages with HTML5", "Styling with CSS3, including Flexbox and Grid", "Responsive Design Techniques"] },
+            { title: "Design Tools", icon: "Brush", topics: ["Designing and prototyping in Figma", "Introduction to Adobe XD and Sketch"] },
+            { title: "Project", icon: "Code", topics: ["Build a complete website design from scratch", "Create a personal portfolio"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.png" },
@@ -362,9 +362,9 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["MIS Executive", "Data Analyst", "Financial Analyst", "Business Analyst"],
         syllabus: [
-            { title: "Advanced Formulas", icon: "barchart", topics: ["VLOOKUP, HLOOKUP, INDEX, MATCH", "Logical functions (IF, AND, OR, nested IFs)", "Text and Date functions"] },
-            { title: "Data Analysis Tools", icon: "barchart", topics: ["PivotTables and PivotCharts", "What-If Analysis (Goal Seek, Scenario Manager)", "Data Validation and Conditional Formatting"] },
-            { title: "Macros & VBA", icon: "code", topics: ["Recording and running macros", "Introduction to the VBA editor", "Creating user-defined functions (UDFs)"] },
+            { title: "Advanced Formulas", icon: "BarChart", topics: ["VLOOKUP, HLOOKUP, INDEX, MATCH", "Logical functions (IF, AND, OR, nested IFs)", "Text and Date functions"] },
+            { title: "Data Analysis Tools", icon: "BarChart", topics: ["PivotTables and PivotCharts", "What-If Analysis (Goal Seek, Scenario Manager)", "Data Validation and Conditional Formatting"] },
+            { title: "Macros & VBA", icon: "Code", topics: ["Recording and running macros", "Introduction to the VBA editor", "Creating user-defined functions (UDFs)"] },
         ],
         tools: [
             { name: "MS Excel", logo: "/images/tech/excel.png" }
@@ -384,10 +384,10 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["BI Analyst", "Data Visualization Specialist", "Power BI Developer", "Business Analyst"],
         syllabus: [
-            { title: "Introduction to Power BI", icon: "barchart", topics: ["Power BI Desktop, Service, and Mobile", "Connecting to data sources"] },
-            { title: "Data Transformation", icon: "code", topics: ["Using Power Query Editor", "Cleaning, shaping, and merging data"] },
-            { title: "Data Modeling and DAX", icon: "code", topics: ["Creating relationships between tables", "Calculated columns and measures using DAX"] },
-            { title: "Visualization", icon: "brush", topics: ["Creating various charts and graphs", "Designing interactive dashboards"] },
+            { title: "Introduction to Power BI", icon: "BarChart", topics: ["Power BI Desktop, Service, and Mobile", "Connecting to data sources"] },
+            { title: "Data Transformation", icon: "Code", topics: ["Using Power Query Editor", "Cleaning, shaping, and merging data"] },
+            { title: "Data Modeling and DAX", icon: "Code", topics: ["Creating relationships between tables", "Calculated columns and measures using DAX"] },
+            { title: "Visualization", icon: "Brush", topics: ["Creating various charts and graphs", "Designing interactive dashboards"] },
         ],
         tools: [
             { name: "Power BI", logo: "/images/tech/powerbi.png" }
@@ -407,9 +407,9 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Accountant", "Tally Operator", "GST Practitioner", "Finance Executive"],
         syllabus: [
-            { title: "Accounting Fundamentals", icon: "barchart", topics: ["Company Setup", "Ledger and Voucher Entry", "Bank Reconciliation"] },
-            { title: "GST in Tally", icon: "code", topics: ["GST Activation and Configuration", "Recording GST-compliant transactions", "Generating GST reports"] },
-            { title: "Advanced Features", icon: "code", topics: ["Inventory Management", "Payroll Setup and Processing", "TDS (Tax Deducted at Source)"] },
+            { title: "Accounting Fundamentals", icon: "BarChart", topics: ["Company Setup", "Ledger and Voucher Entry", "Bank Reconciliation"] },
+            { title: "GST in Tally", icon: "Code", topics: ["GST Activation and Configuration", "Recording GST-compliant transactions", "Generating GST reports"] },
+            { title: "Advanced Features", icon: "Code", topics: ["Inventory Management", "Payroll Setup and Processing", "TDS (Tax Deducted at Source)"] },
         ],
         tools: [
             { name: "Tally Prime", logo: "/images/tech/tally.png" }
@@ -429,9 +429,9 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Video Editor", "Motion Graphics Artist", "Multimedia Artist", "Content Creator"],
         syllabus: [
-            { title: "Premiere Pro Fundamentals", icon: "brush", topics: ["Interface and Workflow", "Basic and Advanced Editing Techniques", "Transitions and Effects"] },
-            { title: "After Effects for Motion Graphics", icon: "brush", topics: ["Introduction to After Effects", "Creating Text and Shape Animations", "Compositing and Visual Effects"] },
-            { title: "Sound Editing", icon: "code", topics: ["Audio cleanup and enhancement", "Mixing and mastering audio tracks"] },
+            { title: "Premiere Pro Fundamentals", icon: "Brush", topics: ["Interface and Workflow", "Basic and Advanced Editing Techniques", "Transitions and Effects"] },
+            { title: "After Effects for Motion Graphics", icon: "Brush", topics: ["Introduction to After Effects", "Creating Text and Shape Animations", "Compositing and Visual Effects"] },
+            { title: "Sound Editing", icon: "Code", topics: ["Audio cleanup and enhancement", "Mixing and mastering audio tracks"] },
         ],
         tools: [
             { name: "Premiere Pro", logo: "/images/tech/premiere.png" },
@@ -452,9 +452,9 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["CAD Designer", "Drafter", "Architectural Assistant", "Interior Designer"],
         syllabus: [
-            { title: "2D Drafting", icon: "brush", topics: ["Drawing and Modify tools", "Layers, Blocks, and Attributes", "Dimensioning and Annotations"] },
-            { title: "3D Modeling", icon: "brush", topics: ["Creating 3D objects", "Solid modeling techniques", "Rendering and visualization"] },
-            { title: "Layout and Plotting", icon: "code", topics: ["Working with layouts and viewports", "Setting up plots and print styles"] },
+            { title: "2D Drafting", icon: "Brush", topics: ["Drawing and Modify tools", "Layers, Blocks, and Attributes", "Dimensioning and Annotations"] },
+            { title: "3D Modeling", icon: "Brush", topics: ["Creating 3D objects", "Solid modeling techniques", "Rendering and visualization"] },
+            { title: "Layout and Plotting", icon: "Code", topics: ["Working with layouts and viewports", "Setting up plots and print styles"] },
         ],
         tools: [
             { name: "AutoCAD", logo: "/images/tech/autocad.png" }
@@ -474,9 +474,9 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["Social Media Manager", "Content Strategist", "Digital Marketing Specialist"],
         syllabus: [
-            { title: "Strategy & Planning", icon: "brush", topics: ["Setting goals", "Identifying target audience", "Platform selection"] },
-            { title: "Content & Campaigns", icon: "code", topics: ["Content creation", "Running ads on Facebook, Instagram, LinkedIn", "Community management"] },
-            { title: "Analytics", icon: "barchart", topics: ["Tracking key metrics", "Using platform-native analytics tools", "Reporting and optimization"] },
+            { title: "Strategy & Planning", icon: "Brush", topics: ["Setting goals", "Identifying target audience", "Platform selection"] },
+            { title: "Content & Campaigns", icon: "Code", topics: ["Content creation", "Running ads on Facebook, Instagram, LinkedIn", "Community management"] },
+            { title: "Analytics", icon: "BarChart", topics: ["Tracking key metrics", "Using platform-native analytics tools", "Reporting and optimization"] },
         ],
         tools: [
             { name: "Facebook", logo: "/images/tech/fb.png" },
@@ -498,8 +498,8 @@ export const courseDetails: { [key: string]: any } = {
         ],
         careerOpportunities: ["SEM Specialist", "PPC Analyst", "Digital Advertising Coordinator"],
         syllabus: [
-            { title: "Google Ads Fundamentals", icon: "code", topics: ["Campaign structure", "Keyword match types", "Bidding strategies"] },
-            { title: "Campaign Optimization", icon: "barchart", topics: ["A/B testing ad copy", "Quality Score improvement", "Conversion tracking and analysis"] },
+            { title: "Google Ads Fundamentals", icon: "Code", topics: ["Campaign structure", "Keyword match types", "Bidding strategies"] },
+            { title: "Optimization", icon: "BarChart", topics: ["A/B testing ad copy", "Quality Score improvement", "Conversion tracking and analysis"] },
         ],
         tools: [
             { name: "Google Ads", logo: "/images/tech/google-ads.png" },
@@ -513,15 +513,15 @@ export const courseDetails: { [key: string]: any } = {
         hint: "online advertising",
         highlights: ["Cross-Platform Strategy", "Audience Targeting", "Budget Optimization", "Performance Marketing"],
         whatYouWillLearn: [
-            "Creating and managing campaigns on both Google Ads and Facebook Ads.",
+            "Creating and managing ad campaigns on both Google Ads and Facebook Ads.",
             "Advanced audience targeting and retargeting.",
-            "Optimizing ad spend for maximum ROI.",
+            "Optimizing ad spend for maximum return on investment (ROI).",
             "Retargeting and building sales funnels."
         ],
         careerOpportunities: ["Paid Media Specialist", "Digital Marketing Manager", "Performance Marketer"],
         syllabus: [
-            { title: "Platform Mastery", icon: "code", topics: ["Deep dive into Google Ads and Facebook Ads platforms", "Understanding different ad formats"] },
-            { title: "Integrated Strategy", icon: "brush", topics: ["Creating a cohesive strategy across platforms", "Attribution modeling"] },
+            { title: "Platform Mastery", icon: "Code", topics: ["Deep dive into Google Ads and Facebook Ads platforms", "Understanding different ad formats"] },
+            { title: "Integrated Strategy", icon: "Brush", topics: ["Creating a cohesive strategy across platforms", "Attribution modeling"] },
         ],
         tools: [
             { name: "Google Ads", logo: "/images/tech/google-ads.png" },
@@ -537,9 +537,9 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating professional documents in Word", "Managing data and creating charts in Excel", "Designing engaging presentations in PowerPoint", "Organizing notes and information with OneNote"],
         careerOpportunities: ["Office Administrator", "Executive Assistant", "Data Entry Operator", "Any office-based role"],
         syllabus: [
-            { title: "Microsoft Word", icon: "code", topics: ["Formatting text and paragraphs", "Working with tables and images", "Creating templates and mail merge"] },
-            { title: "Microsoft Excel", icon: "barchart", topics: ["Basic formulas and functions", "Formatting and sorting data", "Creating charts and graphs"] },
-            { title: "Microsoft PowerPoint", icon: "tv", topics: ["Creating and designing slides", "Adding animations and transitions", "Delivering presentations"] }
+            { title: "Microsoft Word", icon: "Code", topics: ["Formatting text and paragraphs", "Working with tables and images", "Creating templates and mail merge"] },
+            { title: "Microsoft Excel", icon: "BarChart", topics: ["Basic formulas and functions", "Formatting and sorting data", "Creating charts and graphs"] },
+            { title: "Microsoft PowerPoint", icon: "Tv", topics: ["Creating and designing slides", "Adding animations and transitions", "Delivering presentations"] }
         ],
         tools: [
             { name: "MS Word", logo: "/images/tech/word.png" },
@@ -556,9 +556,9 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Mastering Word, Excel, and PowerPoint", "Managing emails and schedules with Outlook", "Creating simple databases with Access", "Organizing information with OneNote"],
         careerOpportunities: ["Office Manager", "Administrative Assistant", "Project Coordinator", "Any role requiring MS Office proficiency"],
         syllabus: [
-            { title: "Core Applications", icon: "tv", topics: ["In-depth Word, Excel, and PowerPoint", "Advanced features and integration"] },
-            { title: "Productivity Tools", icon: "code", topics: ["Email management with Outlook", "Note-taking with OneNote"] },
-            { title: "Data Management", icon: "code", topics: ["Introduction to database concepts with MS Access"] }
+            { title: "Core Applications", icon: "Tv", topics: ["In-depth Word, Excel, and PowerPoint", "Advanced features and integration"] },
+            { title: "Productivity Tools", icon: "Code", topics: ["Email management with Outlook", "Note-taking with OneNote"] },
+            { title: "Data Management", icon: "Code", topics: ["Introduction to database concepts with MS Access"] }
         ],
         tools: [
             { name: "MS Office", logo: "/images/tech/office.png" }
@@ -573,8 +573,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Understanding direct and indirect taxes", "Preparing and filing tax returns", "Conducting internal audits", "Ensuring financial compliance and accuracy"],
         careerOpportunities: ["Tax Consultant", "Auditor", "Compliance Officer", "Finance Officer"],
         syllabus: [
-            { title: "Taxation", icon: "barchart", topics: ["Direct and Indirect Tax laws", "Income Tax preparation", "GST compliance and returns"] },
-            { title: "Auditing", icon: "code", topics: ["Principles of Auditing", "Internal and External Audit procedures", "Vouching and Verification"] }
+            { title: "Taxation", icon: "BarChart", topics: ["Direct and Indirect Tax laws", "Income Tax preparation", "GST compliance and returns"] },
+            { title: "Auditing", icon: "Code", topics: ["Principles of Auditing", "Internal and External Audit procedures", "Vouching and Verification"] }
         ],
         tools: [
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
@@ -590,8 +590,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Effective leadership and communication techniques", "Motivating and managing teams", "Resolving conflicts and making sound decisions", "Time management and personal productivity"],
         careerOpportunities: ["Team Leader", "Manager", "Project Manager", "Entrepreneur"],
         syllabus: [
-            { title: "Leadership & Communication", icon: "code", topics: ["Leadership styles", "Effective communication", "Public speaking"] },
-            { title: "Team Management", icon: "code", topics: ["Building and managing teams", "Delegation and motivation", "Performance management"] }
+            { title: "Leadership & Communication", icon: "Code", topics: ["Leadership styles", "Effective communication", "Public speaking"] },
+            { title: "Team Management", icon: "Code", topics: ["Building and managing teams", "Delegation and motivation", "Performance management"] }
         ],
         tools: []
     },
@@ -604,8 +604,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["How the stock market works", "Analyzing stocks and making investment decisions", "Different trading strategies for short-term and long-term gains", "Managing risks in your investment portfolio"],
         careerOpportunities: ["Stock Trader", "Financial Advisor", "Investment Analyst", "Personal Investor"],
         syllabus: [
-            { title: "Market Fundamentals", icon: "barchart", topics: ["Introduction to Stock Market", "Primary and Secondary Markets", "IPOs and FPOs"] },
-            { title: "Analysis & Trading", icon: "code", topics: ["Fundamental and Technical Analysis", "Trading patterns and indicators", "Risk management"] }
+            { title: "Market Fundamentals", icon: "BarChart", topics: ["Introduction to Stock Market", "Primary and Secondary Markets", "IPOs and FPOs"] },
+            { title: "Analysis & Trading", icon: "Code", topics: ["Fundamental and Technical Analysis", "Trading patterns and indicators", "Risk management"] }
         ],
         tools: []
     },
@@ -618,9 +618,9 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Basic computer hardware and software concepts", "Using the internet and email effectively", "Creating documents, spreadsheets, and presentations", "Understanding digital financial tools"],
         careerOpportunities: ["Government Jobs requiring CCC", "Data Entry Operator", "Office Assistant"],
         syllabus: [
-            { title: "Computer Fundamentals", icon: "tv", topics: ["Introduction to computers", "Operating Systems", "Hardware and Software"] },
-            { title: "Productivity Tools", icon: "code", topics: ["Word Processing", "Spreadsheet Applications", "Presentations"] },
-            { title: "Internet & Digital Services", icon: "code", topics: ["Internet and WWW", "Email and Social Networking", "Digital Financial Services"] }
+            { title: "Computer Fundamentals", icon: "Tv", topics: ["Introduction to computers", "Operating Systems", "Hardware and Software"] },
+            { title: "Productivity Tools", icon: "Code", topics: ["Word Processing", "Spreadsheet Applications", "Presentations"] },
+            { title: "Internet & Digital Services", icon: "Code", topics: ["Internet and WWW", "Email and Social Networking", "Digital Financial Services"] }
         ],
         tools: [
             { name: "MS Office", logo: "/images/tech/office.png" }
@@ -635,8 +635,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Building web pages with HTML and CSS", "Adding interactivity with JavaScript", "Using front-end frameworks like React or Angular", "Developing server-side logic with Node.js or Python"],
         careerOpportunities: ["Web Developer", "Front-End Developer", "Back-End Developer", "Full-Stack Developer"],
         syllabus: [
-            { title: "Front-End", icon: "code", topics: ["HTML, CSS, JavaScript", "Responsive Design", "React or Angular basics"] },
-            { title: "Back-End", icon: "code", topics: ["Node.js and Express", "Databases (SQL/NoSQL)", "API Development"] }
+            { title: "Front-End", icon: "Code", topics: ["HTML, CSS, JavaScript", "Responsive Design", "React or Angular basics"] },
+            { title: "Back-End", icon: "Code", topics: ["Node.js and Express", "Databases (SQL/NoSQL)", "API Development"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.png" },
@@ -655,8 +655,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Implementing various data structures like arrays, linked lists, trees, and graphs", "Understanding and applying key algorithms for sorting, searching, and more", "Analyzing the time and space complexity of algorithms", "Solving complex coding problems efficiently"],
         careerOpportunities: ["Software Engineer", "SDE Interview Preparation", "Competitive Programmer"],
         syllabus: [
-            { title: "Core Data Structures", icon: "code", topics: ["Arrays, Stacks, Queues", "Linked Lists", "Trees, Heaps, Graphs"] },
-            { title: "Algorithms", icon: "code", topics: ["Sorting and Searching", "Recursion and Backtracking", "Dynamic Programming", "Greedy Algorithms"] }
+            { title: "Core Data Structures", icon: "Code", topics: ["Arrays, Stacks, Queues", "Linked Lists", "Trees, Heaps, Graphs"] },
+            { title: "Algorithms", icon: "Code", topics: ["Sorting and Searching", "Recursion and Backtracking", "Dynamic Programming", "Greedy Algorithms"] }
         ],
         tools: [
             { name: "C++", logo: "/images/tech/cplusplus.png" },
@@ -673,8 +673,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["C programming syntax and semantics", "Working with pointers and memory management", "Implementing data structures", "Developing problem-solving skills"],
         careerOpportunities: ["Embedded Systems Engineer", "System Programmer", "Foundation for other languages"],
         syllabus: [
-            { title: "C Fundamentals", icon: "code", topics: ["Variables, Data Types, Operators", "Control Structures (if, for, while)", "Functions and Arrays"] },
-            { title: "Advanced C", icon: "code", topics: ["Pointers and Memory Allocation", "Structures and Unions", "File I/O"] }
+            { title: "C Fundamentals", icon: "Code", topics: ["Variables, Data Types, Operators", "Control Structures (if, for, while)", "Functions and Arrays"] },
+            { title: "Advanced C", icon: "Code", topics: ["Pointers and Memory Allocation", "Structures and Unions", "File I/O"] }
         ],
         tools: []
     },
@@ -687,8 +687,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Object-Oriented Programming (OOP) concepts", "Using the Standard Template Library (STL)", "Memory management and performance optimization", "Building complex applications"],
         careerOpportunities: ["Game Developer", "Software Engineer", "Quantitative Analyst", "High-Frequency Trading"],
         syllabus: [
-            { title: "C++ Basics", icon: "code", topics: ["Syntax, Variables, Control Flow", "Functions and Arrays"] },
-            { title: "Object-Oriented C++", icon: "code", topics: ["Classes and Objects", "Inheritance, Polymorphism", "Templates and STL"] }
+            { title: "C++ Basics", icon: "Code", topics: ["Syntax, Variables, Control Flow", "Functions and Arrays"] },
+            { title: "Object-Oriented C++", icon: "Code", topics: ["Classes and Objects", "Inheritance, Polymorphism", "Templates and STL"] }
         ],
         tools: [
             { name: "C++", logo: "/images/tech/cplusplus.png" }
@@ -703,8 +703,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Python syntax and data structures", "Writing functions and modules", "Object-oriented programming in Python", "Working with popular libraries like NumPy and Pandas"],
         careerOpportunities: ["Python Developer", "Data Scientist", "Automation Engineer", "Web Developer (with Django/Flask)"],
         syllabus: [
-            { title: "Core Python", icon: "code", topics: ["Data Types, Variables, Operators", "Control Flow and Loops", "Functions, Modules, and Packages"] },
-            { title: "Advanced Python", icon: "code", topics: ["Object-Oriented Programming", "File Handling", "Introduction to Pandas and NumPy"] }
+            { title: "Core Python", icon: "Code", topics: ["Data Types, Variables, Operators", "Control Flow and Loops", "Functions, Modules, and Packages"] },
+            { title: "Advanced Python", icon: "Code", topics: ["Object-Oriented Programming", "File Handling", "Introduction to Pandas and NumPy"] }
         ],
         tools: [
             { name: "Python", logo: "/images/tech/python.png" }
@@ -719,9 +719,9 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating semantic HTML and modern CSS layouts", "Building dynamic and interactive UIs with JavaScript", "Using a modern framework like React or Angular", "Ensuring cross-browser compatibility and responsiveness"],
         careerOpportunities: ["Front-End Developer", "UI Engineer", "Web Developer"],
         syllabus: [
-            { title: "Web Fundamentals", icon: "code", topics: ["HTML5 and CSS3", "Flexbox and Grid", "Responsive Design"] },
-            { title: "JavaScript", icon: "code", topics: ["DOM Manipulation", "Events", "ES6+ features", "API integration"] },
-            { title: "Frameworks", icon: "code", topics: ["Introduction to React or Angular", "Component-based architecture"] }
+            { title: "Web Fundamentals", icon: "Code", topics: ["HTML5 and CSS3", "Flexbox and Grid", "Responsive Design"] },
+            { title: "JavaScript", icon: "Code", topics: ["DOM Manipulation", "Events", "ES6+ features", "API integration"] },
+            { title: "Frameworks", icon: "Code", topics: ["Introduction to React or Angular", "Component-based architecture"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.png" },
@@ -739,9 +739,9 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Building server-side applications with Node.js or Python", "Designing and implementing RESTful APIs", "Working with SQL and NoSQL databases", "User authentication and security best practices"],
         careerOpportunities: ["Back-End Developer", "API Developer", "Database Engineer", "Software Engineer"],
         syllabus: [
-            { title: "Server-Side Programming", icon: "code", topics: ["Node.js and Express (or Python with Django/Flask)", "Handling requests and responses"] },
-            { title: "Databases", icon: "code", topics: ["SQL fundamentals (MySQL/PostgreSQL)", "Introduction to NoSQL (MongoDB)"] },
-            { title: "APIs & Security", icon: "code", topics: ["Building RESTful APIs", "Authentication (JWT, OAuth)"] }
+            { title: "Server-Side Programming", icon: "Code", topics: ["Node.js and Express (or Python with Django/Flask)", "Handling requests and responses"] },
+            { title: "Databases", icon: "Code", topics: ["SQL fundamentals (MySQL/PostgreSQL)", "Introduction to NoSQL (MongoDB)"] },
+            { title: "APIs & Security", icon: "Code", topics: ["Building RESTful APIs", "Authentication (JWT, OAuth)"] }
         ],
         tools: [
             { name: "Node.js", logo: "/images/tech/node.png" },
@@ -759,8 +759,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Fundamentals of database design and normalization", "Writing complex SQL queries", "Understanding the use cases for NoSQL databases", "Basic database administration tasks"],
         careerOpportunities: ["Database Administrator", "Data Engineer", "Back-End Developer"],
         syllabus: [
-            { title: "SQL Databases", icon: "code", topics: ["Relational Database Design", "Advanced SQL queries (Joins, Subqueries)", "Transactions and Indexing"] },
-            { title: "NoSQL Databases", icon: "code", topics: ["Introduction to NoSQL (e.g., MongoDB)", "Document-based data modeling", "CRUD operations"] }
+            { title: "SQL Databases", icon: "Code", topics: ["Relational Database Design", "Advanced SQL queries (Joins, Subqueries)", "Transactions and Indexing"] },
+            { title: "NoSQL Databases", icon: "Code", topics: ["Introduction to NoSQL (e.g., MongoDB)", "Document-based data modeling", "CRUD operations"] }
         ],
         tools: [
             { name: "MySQL", logo: "/images/tech/sql.png" },
@@ -776,8 +776,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Building applications with Angular's component-based architecture", "Using TypeScript for robust and maintainable code", "Managing application state and routing", "Communicating with back-end APIs"],
         careerOpportunities: ["Angular Developer", "Front-End Developer", "UI Engineer"],
         syllabus: [
-            { title: "Angular Basics", icon: "code", topics: ["Components, Modules, and Data Binding", "Directives and Pipes"] },
-            { title: "Advanced Angular", icon: "code", topics: ["Services and Dependency Injection", "Routing", "Handling Forms", "HTTP Client"] }
+            { title: "Angular Basics", icon: "Code", topics: ["Components, Modules, and Data Binding", "Directives and Pipes"] },
+            { title: "Advanced Angular", icon: "Code", topics: ["Services and Dependency Injection", "Routing", "Handling Forms", "HTTP Client"] }
         ],
         tools: [
             { name: "Angular", logo: "/images/tech/angular.png" }
@@ -792,8 +792,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating well-structured web pages with semantic HTML", "Styling websites with modern CSS, including Flexbox and Grid", "Building responsive layouts that work on all devices"],
         careerOpportunities: ["Starting point for any web career", "Email Developer", "Content Manager"],
         syllabus: [
-            { title: "HTML5", icon: "code", topics: ["Semantic elements", "Forms", "Multimedia"] },
-            { title: "CSS3", icon: "code", topics: ["Selectors and Specificity", "Box Model", "Flexbox and Grid", "Responsive Design with Media Queries"] }
+            { title: "HTML5", icon: "Code", topics: ["Semantic elements", "Forms", "Multimedia"] },
+            { title: "CSS3", icon: "Code", topics: ["Selectors and Specificity", "Box Model", "Flexbox and Grid", "Responsive Design with Media Queries"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.png" },
@@ -809,8 +809,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["JavaScript fundamentals and modern ES6+ syntax", "Manipulating the DOM to create dynamic web pages", "Handling user events", "Making asynchronous requests to APIs (AJAX/Fetch)"],
         careerOpportunities: ["JavaScript Developer", "Front-End Developer", "Full-Stack Developer"],
         syllabus: [
-            { title: "Core JavaScript", icon: "code", topics: ["Variables, Data Types, Operators", "Control Flow, Functions, Objects"] },
-            { title: "Browser JavaScript", icon: "code", topics: ["DOM Manipulation and Events", "Asynchronous JavaScript (Promises, async/await)", "Fetch API"] }
+            { title: "Core JavaScript", icon: "Code", topics: ["Variables, Data Types, Operators", "Control Flow, Functions, Objects"] },
+            { title: "Browser JavaScript", icon: "Code", topics: ["DOM Manipulation and Events", "Asynchronous JavaScript (Promises, async/await)", "Fetch API"] }
         ],
         tools: [
             { name: "JavaScript", logo: "/images/tech/js.png" }
@@ -825,8 +825,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Java fundamentals and syntax", "Object-Oriented Programming (OOP) principles", "Handling exceptions and errors", "Working with the Java Collections Framework"],
         careerOpportunities: ["Java Developer", "Android Developer", "Software Engineer"],
         syllabus: [
-            { title: "Java Fundamentals", icon: "code", topics: ["JVM, JRE, JDK", "Data Types, Variables, Operators", "Control Flow"] },
-            { title: "Object-Oriented Programming", icon: "code", topics: ["Classes and Objects", "Inheritance, Polymorphism", "Exception Handling", "Collections"] }
+            { title: "Java Fundamentals", icon: "Code", topics: ["JVM, JRE, JDK", "Data Types, Variables, Operators", "Control Flow"] },
+            { title: "Object-Oriented Programming", icon: "Code", topics: ["Classes and Objects", "Inheritance, Polymorphism", "Exception Handling", "Collections"] }
         ],
         tools: [
             { name: "Java", logo: "/images/tech/java.png" }
@@ -841,8 +841,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["C# syntax and object-oriented principles", "Working with the .NET framework", "Using LINQ for data querying", "Building console and desktop applications"],
         careerOpportunities: [".NET Developer", "Game Developer (Unity)", "Windows Application Developer"],
         syllabus: [
-            { title: "C# Fundamentals", icon: "code", topics: ["Data Types, Variables", "Control Structures", "Methods"] },
-            { title: "Advanced C#", icon: "code", topics: ["Object-Oriented Programming", "LINQ", "Asynchronous Programming"] }
+            { title: "C# Fundamentals", icon: "Code", topics: ["Data Types, Variables", "Control Structures", "Methods"] },
+            { title: "Advanced C#", icon: "Code", topics: ["Object-Oriented Programming", "LINQ", "Asynchronous Programming"] }
         ],
         tools: [
             { name: "C#", logo: "/images/tech/csharp.png" }
@@ -857,8 +857,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Building UIs with React's component-based architecture", "Managing application state with hooks", "Handling user events and forms", "Routing in a single-page application with React Router"],
         careerOpportunities: ["React Developer", "Front-End Developer", "UI Engineer"],
         syllabus: [
-            { title: "React Fundamentals", icon: "code", topics: ["JSX and Components", "Props and State", "Lifecycle Methods/Hooks"] },
-            { title: "Advanced React", icon: "code", topics: ["React Router", "State Management (Context API/Redux)", "Working with APIs"] }
+            { title: "React Fundamentals", icon: "Code", topics: ["JSX and Components", "Props and State", "Lifecycle Methods/Hooks"] },
+            { title: "Advanced React", icon: "Code", topics: ["React Router", "State Management (Context API/Redux)", "Working with APIs"] }
         ],
         tools: [
             { name: "React", logo: "/images/tech/react.png" }
@@ -873,8 +873,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Building web applications with Servlets and JSP", "Developing RESTful web services with JAX-RS", "Using Spring Framework for dependency injection and MVC", "Object-Relational Mapping (ORM) with Hibernate"],
         careerOpportunities: ["Java EE Developer", "Back-End Engineer", "Enterprise Application Developer"],
         syllabus: [
-            { title: "Web Technologies", icon: "code", topics: ["Servlets, JSP, JSTL", "JDBC for database connectivity"] },
-            { title: "Frameworks", icon: "code", topics: ["Introduction to Spring Framework", "Introduction to Hibernate ORM"] }
+            { title: "Web Technologies", icon: "Code", topics: ["Servlets, JSP, JSTL", "JDBC for database connectivity"] },
+            { title: "Frameworks", icon: "Code", topics: ["Introduction to Spring Framework", "Introduction to Hibernate ORM"] }
         ],
         tools: [
             { name: "Java", logo: "/images/tech/java.png" },
@@ -891,8 +891,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["How search engines work", "Conducting keyword research and competitor analysis", "Optimizing on-page elements like titles, meta descriptions, and content", "Building high-quality backlinks to improve authority"],
         careerOpportunities: ["SEO Specialist", "Digital Marketing Manager", "Content Strategist"],
         syllabus: [
-            { title: "SEO Fundamentals", icon: "code", topics: ["Keyword Research", "On-Page SEO", "Off-Page SEO"] },
-            { title: "Technical & Local SEO", icon: "code", topics: ["Technical SEO (site speed, mobile-friendliness)", "Local SEO and Google My Business"] }
+            { title: "SEO Fundamentals", icon: "Code", topics: ["Keyword Research", "On-Page SEO", "Off-Page SEO"] },
+            { title: "Technical & Local SEO", icon: "Code", topics: ["Technical SEO (site speed, mobile-friendliness)", "Local SEO and Google My Business"] }
         ],
         tools: [
             { name: "Google Analytics", logo: "/images/tech/ga.png" },
@@ -908,8 +908,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating a social media strategy", "Developing engaging content for different platforms", "Running paid ad campaigns on Facebook and Instagram", "Measuring and analyzing social media performance"],
         careerOpportunities: ["Social Media Manager", "Content Creator", "Digital Marketer"],
         syllabus: [
-            { title: "Platform Strategies", icon: "code", topics: ["Facebook and Instagram Marketing", "LinkedIn for B2B", "Content Creation"] },
-            { title: "Advertising & Analytics", icon: "code", topics: ["Facebook Ads Manager", "Tracking KPIs", "Reporting"] }
+            { title: "Platform Strategies", icon: "Code", topics: ["Facebook and Instagram Marketing", "LinkedIn for B2B", "Content Creation"] },
+            { title: "Advertising & Analytics", icon: "Code", topics: ["Facebook Ads Manager", "Tracking KPIs", "Reporting"] }
         ],
         tools: [
             { name: "Facebook Ads", logo: "/images/tech/fb.png" },
@@ -925,8 +925,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Setting up and structuring Google Ads campaigns", "Conducting keyword research for paid search", "Writing effective ad copy", "Optimizing campaigns for better performance and lower cost"],
         careerOpportunities: ["SEM Specialist", "PPC Analyst", "Digital Advertising Manager"],
         syllabus: [
-            { title: "Google Ads", icon: "code", topics: ["Campaign Setup", "Ad Groups and Keywords", "Bidding and Budgeting"] },
-            { title: "Optimization", icon: "barchart", topics: ["A/B Testing", "Conversion Tracking", "Performance Analysis"] }
+            { title: "Google Ads", icon: "Code", topics: ["Campaign Setup", "Ad Groups and Keywords", "Bidding and Budgeting"] },
+            { title: "Optimization", icon: "BarChart", topics: ["A/B Testing", "Conversion Tracking", "Performance Analysis"] }
         ],
         tools: [
             { name: "Google Ads", logo: "/images/tech/google-ads.png" }
@@ -941,8 +941,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Setting up WordPress and configuring a new site", "Customizing themes and layouts", "Using plugins to add functionality", "Basic SEO for WordPress sites"],
         careerOpportunities: ["WordPress Developer", "Webmaster", "Blogger", "Small Business Owner"],
         syllabus: [
-            { title: "WordPress Basics", icon: "code", topics: ["Installation and Setup", "Dashboard and Settings", "Posts vs. Pages"] },
-            { title: "Customization", icon: "brush", topics: ["Working with Themes", "Using the Customizer", "Essential Plugins"] }
+            { title: "WordPress Basics", icon: "Code", topics: ["Installation and Setup", "Dashboard and Settings", "Posts vs. Pages"] },
+            { title: "Customization", icon: "Brush", topics: ["Working with Themes", "Using the Customizer", "Essential Plugins"] }
         ],
         tools: [
             { name: "WordPress", logo: "/images/tech/wordpress.png" }
@@ -957,8 +957,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Developing a content strategy that aligns with business goals", "Writing engaging blog posts and articles", "Creating scripts and storyboards for video content", "Crafting persuasive copy for websites and ads"],
         careerOpportunities: ["Content Creator", "Copywriter", "Content Strategist", "Digital Marketer"],
         syllabus: [
-            { title: "Written Content", icon: "code", topics: ["Blogging for SEO", "Copywriting fundamentals", "Email marketing content"] },
-            { title: "Visual Content", icon: "brush", topics: ["Basics of graphic design for social media", "Video content planning and creation"] }
+            { title: "Written Content", icon: "Code", topics: ["Blogging for SEO", "Copywriting fundamentals", "Email marketing content"] },
+            { title: "Visual Content", icon: "Brush", topics: ["Basics of graphic design for social media", "Video content planning and creation"] }
         ],
         tools: [
             { name: "Canva", logo: "/images/tech/canva.png" },
@@ -974,8 +974,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating and managing ad campaigns on Facebook, Instagram, and Google", "Advanced audience targeting and retargeting", "Optimizing ad spend for maximum return on investment (ROI)", "Analyzing campaign performance and creating reports"],
         careerOpportunities: ["Paid Media Specialist", "Digital Advertiser", "Performance Marketer"],
         syllabus: [
-            { title: "Facebook & Instagram Ads", icon: "code", topics: ["Campaign objectives", "Audience targeting", "Ad creation and testing"] },
-            { title: "Google Ads", icon: "code", topics: ["Search, Display, and YouTube campaigns", "Keyword strategy", "Conversion tracking"] }
+            { title: "Facebook & Instagram Ads", icon: "Code", topics: ["Campaign objectives", "Audience targeting", "Ad creation and testing"] },
+            { title: "Google Ads", icon: "Code", topics: ["Search, Display, and YouTube campaigns", "Keyword strategy", "Conversion tracking"] }
         ],
         tools: [
             { name: "Facebook Ads", logo: "/images/tech/fb.png" },
@@ -991,8 +991,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Optimizing social media profiles for search and discovery", "Developing a strategy to increase engagement and followers", "Techniques to amplify your content's reach", "Integrating social media with other marketing channels"],
         careerOpportunities: ["Social Media Manager", "Community Manager", "Brand Manager"],
         syllabus: [
-            { title: "Profile & Content Optimization", icon: "code", topics: ["Optimizing profiles on major platforms", "Creating shareable content"] },
-            { title: "Engagement & Growth", icon: "code", topics: ["Strategies for increasing engagement", "Using social media for customer service"] }
+            { title: "Profile & Content Optimization", icon: "Code", topics: ["Optimizing profiles on major platforms", "Creating shareable content"] },
+            { title: "Engagement & Growth", icon: "Code", topics: ["Strategies for increasing engagement", "Using social media for customer service"] }
         ],
         tools: [
             { name: "Facebook", logo: "/images/tech/fb.png" },
@@ -1009,8 +1009,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Setting up and configuring Google Analytics", "Understanding key metrics and dimensions", "Analyzing user behavior and traffic sources", "Setting up goals and tracking conversions"],
         careerOpportunities: ["Digital Analyst", "Web Analyst", "Marketing Analyst"],
         syllabus: [
-            { title: "GA4 Fundamentals", icon: "barchart", topics: ["Setting up GA4", "Navigating the interface", "Understanding events"] },
-            { title: "Analysis & Reporting", icon: "barchart", topics: ["Acquisition, Engagement, and Monetization reports", "Creating custom explorations", "Setting up conversion tracking"] }
+            { title: "GA4 Fundamentals", icon: "BarChart", topics: ["Setting up GA4", "Navigating the interface", "Understanding events"] },
+            { title: "Analysis & Reporting", icon: "BarChart", topics: ["Acquisition, Engagement, and Monetization reports", "Creating custom explorations", "Setting up conversion tracking"] }
         ],
         tools: [
             { name: "Google Analytics", logo: "/images/tech/ga.png" }
@@ -1025,8 +1025,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Using CorelDRAW's tools to create vector illustrations", "Designing professional logos and brand identities", "Creating layouts for brochures, flyers, and other print media"],
         careerOpportunities: ["Graphic Designer", "Illustrator", "Logo Designer"],
         syllabus: [
-            { title: "CorelDRAW Basics", icon: "brush", topics: ["Interface and tools", "Working with shapes and lines", "Color and fills"] },
-            { title: "Advanced Techniques", icon: "brush", topics: ["Logo design process", "Creating layouts for print", "Special effects"] }
+            { title: "CorelDRAW Basics", icon: "Brush", topics: ["Interface and tools", "Working with shapes and lines", "Color and fills"] },
+            { title: "Advanced Techniques", icon: "Brush", topics: ["Logo design process", "Creating layouts for print", "Special effects"] }
         ],
         tools: []
     },
@@ -1039,8 +1039,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Retouching and enhancing photos", "Working with layers, masks, and selections", "Creating composite images", "Preparing images for web and print"],
         careerOpportunities: ["Photo Editor", "Graphic Designer", "Digital Artist"],
         syllabus: [
-            { title: "Photoshop Essentials", icon: "brush", topics: ["Interface and tools", "Layers and masks", "Selection techniques"] },
-            { title: "Advanced Editing", icon: "brush", topics: ["Photo retouching", "Color correction", "Compositing"] }
+            { title: "Photoshop Essentials", icon: "Brush", topics: ["Interface and tools", "Layers and masks", "Selection techniques"] },
+            { title: "Advanced Editing", icon: "Brush", topics: ["Photo retouching", "Color correction", "Compositing"] }
         ],
         tools: [
             { name: "Photoshop", logo: "/images/tech/photoshop.png" }
@@ -1055,8 +1055,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Mastering the Pen Tool and other drawing tools", "Creating logos, icons, and illustrations", "Working with typography", "Preparing artwork for various outputs"],
         careerOpportunities: ["Graphic Designer", "Illustrator", "UI Designer"],
         syllabus: [
-            { title: "Illustrator Basics", icon: "brush", topics: ["Interface and artboards", "Drawing tools", "Color and gradients"] },
-            { title: "Advanced Illustration", icon: "brush", topics: ["Pen Tool mastery", "Creating complex illustrations", "Typography and effects"] }
+            { title: "Illustrator Basics", icon: "Brush", topics: ["Interface and artboards", "Drawing tools", "Color and gradients"] },
+            { title: "Advanced Illustration", icon: "Brush", topics: ["Pen Tool mastery", "Creating complex illustrations", "Typography and effects"] }
         ],
         tools: [
             { name: "Illustrator", logo: "/images/tech/illustrator.png" }
@@ -1071,8 +1071,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating layouts for magazines, brochures, and books", "Working with master pages and styles", "Preparing documents for professional printing", "Creating interactive PDFs"],
         careerOpportunities: ["Layout Artist", "Graphic Designer", "Publishing Specialist"],
         syllabus: [
-            { title: "InDesign Essentials", icon: "brush", topics: ["Document setup", "Working with frames", "Text and typography"] },
-            { title: "Advanced Layouts", icon: "brush", topics: ["Master pages and styles", "Creating interactive documents", "Prepress and printing"] }
+            { title: "InDesign Essentials", icon: "Brush", topics: ["Document setup", "Working with frames", "Text and typography"] },
+            { title: "Advanced Layouts", icon: "Brush", topics: ["Master pages and styles", "Creating interactive documents", "Prepress and printing"] }
         ],
         tools: [
             { name: "InDesign", logo: "/images/tech/indesign.png" }
@@ -1087,8 +1087,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Editing video in Adobe Premiere Pro", "Cleaning and enhancing audio", "Applying color correction and grading", "Creating basic motion graphics and titles"],
         careerOpportunities: ["Video Editor", "Multimedia Artist", "Content Creator"],
         syllabus: [
-            { title: "Video Editing", icon: "brush", topics: ["Premiere Pro interface", "Editing techniques", "Color correction"] },
-            { title: "Audio & Motion", icon: "code", topics: ["Sound editing basics", "Introduction to After Effects for titles"] }
+            { title: "Video Editing", icon: "Brush", topics: ["Premiere Pro interface", "Editing techniques", "Color correction"] },
+            { title: "Audio & Motion", icon: "Code", topics: ["Sound editing basics", "Introduction to After Effects for titles"] }
         ],
         tools: [
             { name: "Premiere Pro", logo: "/images/tech/premiere.png" },
@@ -1104,8 +1104,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["The principles of animation", "Creating character animations with bone rigging", "Building interactive web content", "Exporting animations for various platforms"],
         careerOpportunities: ["Animator", "Motion Graphics Designer", "Interactive Designer"],
         syllabus: [
-            { title: "Animation Basics", icon: "brush", topics: ["Timeline and frames", "Shape and motion tweens", "Symbols"] },
-            { title: "Character Animation", icon: "brush", topics: ["Character rigging", "Walk cycles", "Lip-syncing"] }
+            { title: "Animation Basics", icon: "Brush", topics: ["Timeline and frames", "Shape and motion tweens", "Symbols"] },
+            { title: "Character Animation", icon: "Brush", topics: ["Character rigging", "Walk cycles", "Lip-syncing"] }
         ],
         tools: [
             { name: "Animate", logo: "/images/tech/animate.png" }
@@ -1120,8 +1120,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating complex 3D models", "Applying materials and textures", "Setting up lighting and cameras", "Rendering high-quality images and animations"],
         careerOpportunities: ["3D Modeler", "Architectural Visualizer", "Game Artist"],
         syllabus: [
-            { title: "Modeling", icon: "brush", topics: ["Polygon and spline modeling", "Modifiers", "Creating complex objects"] },
-            { title: "Rendering", icon: "brush", topics: ["Materials and texturing", "Lighting and cameras", "Rendering with Arnold"] }
+            { title: "Modeling", icon: "Brush", topics: ["Polygon and spline modeling", "Modifiers", "Creating complex objects"] },
+            { title: "Rendering", icon: "Brush", topics: ["Materials and texturing", "Lighting and cameras", "Rendering with Arnold"] }
         ],
         tools: []
     },
@@ -1134,8 +1134,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Using Canva's templates to create professional designs", "Creating custom graphics for social media", "Designing presentations, flyers, and posters", "Understanding basic design principles"],
         careerOpportunities: ["Social Media Manager", "Small Business Owner", "Marketer", "Anyone needing quick graphics"],
         syllabus: [
-            { title: "Canva Basics", icon: "brush", topics: ["Navigating the Canva interface", "Using templates", "Working with text and images"] },
-            { title: "Creating Content", icon: "brush", topics: ["Designing for social media", "Creating presentations", "Brand kit usage"] }
+            { title: "Canva Basics", icon: "Brush", topics: ["Navigating the Canva interface", "Using templates", "Working with text and images"] },
+            { title: "Creating Content", icon: "Brush", topics: ["Designing for social media", "Creating presentations", "Brand kit usage"] }
         ],
         tools: [
             { name: "Canva", logo: "/images/tech/canva.png" }
@@ -1150,8 +1150,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating animations with keyframes", "Working with shape layers and text animators", "Compositing video and adding visual effects", "Exporting projects for different media"],
         careerOpportunities: ["Motion Graphics Artist", "VFX Artist", "Video Editor"],
         syllabus: [
-            { title: "Motion Graphics Basics", icon: "brush", topics: ["Interface and compositions", "Keyframe animation", "Text and shape layers"] },
-            { title: "Visual Effects", icon: "brush", topics: ["Masking and tracking", "Color correction", "Introduction to compositing"] }
+            { title: "Motion Graphics Basics", icon: "Brush", topics: ["Interface and compositions", "Keyframe animation", "Text and shape layers"] },
+            { title: "Visual Effects", icon: "Brush", topics: ["Masking and tracking", "Color correction", "Introduction to compositing"] }
         ],
         tools: [
             { name: "After Effects", logo: "/images/tech/after-effects.png" }
@@ -1166,8 +1166,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["The complete video editing workflow from import to export", "Advanced editing techniques, including multi-camera editing", "Color correcting and grading footage", "Mixing audio and adding sound effects"],
         careerOpportunities: ["Video Editor", "Filmmaker", "Content Creator", "YouTuber"],
         syllabus: [
-            { title: "Editing Fundamentals", icon: "brush", topics: ["Project setup and importing", "Timeline editing", "Transitions and effects"] },
-            { title: "Polishing Your Edit", icon: "brush", topics: ["Color correction and grading", "Audio mixing", "Exporting for different platforms"] }
+            { title: "Editing Fundamentals", icon: "Brush", topics: ["Project setup and importing", "Timeline editing", "Transitions and effects"] },
+            { title: "Polishing Your Edit", icon: "Brush", topics: ["Color correction and grading", "Audio mixing", "Exporting for different platforms"] }
         ],
         tools: [
             { name: "Premiere Pro", logo: "/images/tech/premiere.png" }
@@ -1182,8 +1182,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Designing high-fidelity user interfaces for web and mobile", "Creating interactive prototypes to test user flows", "Working collaboratively with a team", "Building and using design systems and components"],
         careerOpportunities: ["UI/UX Designer", "Product Designer", "Web Designer"],
         syllabus: [
-            { title: "Figma for UI Design", icon: "brush", topics: ["Interface and tools", "Layout grids and constraints", "Components and styles"] },
-            { title: "Prototyping & Collaboration", icon: "code", topics: ["Creating interactive prototypes", "Sharing and collaborating on designs"] }
+            { title: "Figma for UI Design", icon: "Brush", topics: ["Interface and tools", "Layout grids and constraints", "Components and styles"] },
+            { title: "Prototyping & Collaboration", icon: "Code", topics: ["Creating interactive prototypes", "Sharing and collaborating on designs"] }
         ],
         tools: [
             { name: "Figma", logo: "/images/tech/figma.png" }
@@ -1198,8 +1198,8 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating 3D architectural models with intelligent components", "Generating construction documents from your model", "Collaborating with a team on a BIM project", "Understanding the principles of BIM"],
         careerOpportunities: ["BIM Modeler", "Architectural Technician", "Revit Specialist"],
         syllabus: [
-            { title: "Revit Architecture", icon: "brush", topics: ["Modeling walls, floors, and roofs", "Placing doors and windows", "Creating views and sheets"] },
-            { title: "Documentation", icon: "code", topics: ["Annotating and dimensioning", "Creating schedules", "Setting up construction documents"] }
+            { title: "Revit Architecture", icon: "Brush", topics: ["Modeling walls, floors, and roofs", "Placing doors and windows", "Creating views and sheets"] },
+            { title: "Documentation", icon: "Code", topics: ["Annotating and dimensioning", "Creating schedules", "Setting up construction documents"] }
         ],
         tools: []
     }

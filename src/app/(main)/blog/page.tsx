@@ -90,7 +90,7 @@ export default function BlogPage() {
                         <CardFooter className="p-0 pt-6 mt-auto">
                           <Dialog>
                               <DialogTrigger asChild>
-                                  <Button className="w-full bg-slate-900 text-white hover:bg-slate-800" onClick={() => setSelectedPost(post)}>Read More</Button>
+                                  <Button className="w-full" onClick={() => setSelectedPost(post)} aria-label={`Read more about ${post.title}`}>Read More</Button>
                               </DialogTrigger>
                           </Dialog>
                       </CardFooter>
@@ -135,5 +135,3 @@ export default function BlogPage() {
     </div>
   );
 }
-
-    
