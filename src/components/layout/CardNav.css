@@ -4,8 +4,8 @@
   top: 1em;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 800px;
+  width: 27%;
+  max-width: 240px;
   z-index: 99;
   box-sizing: border-box;
 }
@@ -167,6 +167,7 @@
   .card-nav-container {
     width: 90%;
     top: 1.2em;
+    max-width: 800px; /* Reset max-width for mobile */
   }
 
   .card-nav-top {

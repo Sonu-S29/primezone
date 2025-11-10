@@ -41,8 +41,6 @@ const CardNav = ({
   ease = 'power3.out',
   baseColor = '#fff',
   menuColor,
-  buttonBgColor,
-  buttonTextColor
 }: CardNavProps) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -183,16 +181,6 @@ const CardNav = ({
             <div className="hamburger-line" />
           </div>
 
-
-          <Link href="/enroll" passHref>
-            <button
-              type="button"
-              className="card-nav-cta-button"
-              style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-            >
-              Enroll Now
-            </button>
-          </Link>
         </div>
 
         <div className="card-nav-content" aria-hidden={!isExpanded}>
