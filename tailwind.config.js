@@ -1,7 +1,5 @@
-
-import type {Config} from 'tailwindcss';
-
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ['class'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -146,7 +144,7 @@ export default {
   },
   plugins: [
     require('tailwindcss-animate'),
-    function({ addUtilities }: { addUtilities: any }) {
+    function({ addUtilities }) {
         addUtilities({
             '.pause': {
                 'animation-play-state': 'paused',
@@ -160,4 +158,4 @@ export default {
         });
     },
   ],
-} satisfies Config;
+};
