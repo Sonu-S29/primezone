@@ -156,6 +156,30 @@ export const courseDetails: { [key: string]: any } = {
             { name: "MS Excel", logo: "/images/tech/excel.png" },
         ]
     },
+    'computer-application': {
+        title: "Diploma In Computer Application",
+        description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
+        image: "/images/heroslider/dca.jpeg",
+        hint: "computer application",
+        highlights: ["All-in-One Course", "Graphic & Web Design", "Accounting Software", "Programming Basics"],
+        whatYouWillLearn: ["Proficiency in office automation tools and advanced Excel.", "Complete Tally Prime with GST for accounting.", "Fundamentals of graphic design with CorelDRAW, Photoshop, and Illustrator.", "Basics of web design with HTML, CSS, and Adobe Animate."],
+        careerOpportunities: ["DTP Operator", "Graphic Designer", "Accountant", "Web Designer", "Office Administrator"],
+        syllabus: [
+            { title: "Office Automation", icon: "tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet Usage", "Windows Fundamentals"] },
+            { title: "Advanced Excel", icon: "barchart", topics: ["Advanced Formatting", "Pivot Tables & Charts", "V-Lookup & H-Lookup", "Macros and MIS Reporting"] },
+            { title: "Tally Prime (GST)", icon: "code", topics: ["Accounting Principles", "Voucher Entry", "TDS & GST Compliance", "Inventory & Payroll"] },
+            { title: "Graphic Designing", icon: "brush", topics: ["CorelDRAW", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Canva"] },
+            { title: "Web Designing", icon: "code", topics: ["HTML / CSS", "Adobe Animate", "JavaScript Basics", "Web Hosting", "Adobe Dreamweaver"] }
+        ],
+        tools: [
+            { name: "MS Office", logo: "/images/tech/office.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Photoshop", logo: "/images/tech/photoshop.png" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.png" },
+            { name: "HTML5", logo: "/images/tech/html.png" },
+            { name: "CSS3", logo: "/images/tech/css.png" },
+        ]
+    },
     "web-designing": {
         title: "Web Designing",
         description: "Create visually appealing and user-friendly websites. Learn the principles of UI/UX design and master the tools to build beautiful web interfaces.",
@@ -331,7 +355,7 @@ export const courseDetails: { [key: string]: any } = {
             "Writing compelling ad copy that converts.",
             "Optimizing campaigns based on performance data."
         ],
-        careerOpportunities: ["SEM Specialist", "PPC Manager", "Digital Advertising Coordinator"],
+        careerOpportunities: ["SEM Specialist", "PPC Analyst", "Digital Advertising Coordinator"],
         syllabus: [
             { title: "Google Ads Fundamentals", icon: "code", topics: ["Campaign structure", "Keyword match types", "Bidding strategies"] },
             { title: "Campaign Optimization", icon: "barchart", topics: ["A/B testing ad copy", "Quality Score improvement", "Conversion tracking and analysis"] },

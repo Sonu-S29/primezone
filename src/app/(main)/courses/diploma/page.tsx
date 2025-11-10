@@ -46,7 +46,7 @@ const diplomaCourses = [
     title: "Diploma In Computer Application",
     duration: "1 Year",
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
-    image: "",
+    image: "/images/heroslider/dca.jpeg",
     hint: "computer application",
     totalTopics: "220+",
     modules: [

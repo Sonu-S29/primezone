@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const initialItems = [
     {
-        imageUrl: "/images/dca.jpeg",
+        imageUrl: "/images/heroslider/dca.jpeg",
         hint: "computer application course",
         title: "Diploma in Computer Application",
         description: "Master the fundamentals of computer applications and software.",
