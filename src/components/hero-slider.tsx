@@ -5,16 +5,17 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from 'next/link';
 import { Button } from './ui/button';
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const initialItems = [
     {
-        imageUrl: "/images/dpc.jpeg",
-        hint: "programming course",
-        title: "Diploma in Programming",
-        description: "Master coding languages and build a solid foundation for a career in software development.",
+        imageUrl: "/images/dca.jpeg",
+        hint: "computer application course",
+        title: "Diploma in Computer Application",
+        description: "Master the fundamentals of computer applications and software.",
     },
     {
-        imageUrl: "/images/ddm.jpeg",
+        imageUrl: "/images/dfam.jpg",
         hint: "financial management",
         title: "Financial Management",
         description: "Develop key skills in finance and management to excel in the business world.",
@@ -31,25 +32,21 @@ const initialItems = [
         title: "Digital Marketing",
         description: "Learn the latest strategies in SEO, social media, and online advertising to grow businesses.",
     },
-    {
-        imageUrl: "/images/gallery/data.webp",
-        hint: "data analytics",
-        title: "Data-Driven Decisions",
-        description: "Unlock insights and drive business growth with data.",
+     {
+        imageUrl: "/images/dpc.jpg",
+        hint: "programming course",
+        title: "Diploma in Programming",
+        description: "Master coding languages and build a solid foundation for a career in software development.",
     },
-   
 ];
 
 
 const HeroSlider = () => {
-    const [items, setItems] = useState(initialItems);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleNext = useCallback(() => {
-        setItems((prevItems) => {
-            const [first, ...rest] = prevItems;
-            return [...rest, first];
-        });
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % initialItems.length);
     }, []);
 
     const startSlider = useCallback(() => {
@@ -60,12 +57,6 @@ const HeroSlider = () => {
             handleNext();
         }, 5000);
     }, [handleNext]);
-
-    const stopSlider = () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-        }
-    };
 
     useEffect(() => {
         startSlider();
@@ -80,12 +71,12 @@ const HeroSlider = () => {
     return (
         <main
             className='hero-slider-main'
-            onMouseEnter={stopSlider}
+            onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current) }}
             onMouseLeave={startSlider}
         >
             <ul className='hero-slider'>
-                {items.map((item, index) => (
-                    <li key={item.title + index} className='item'>
+                {initialItems.map((item, index) => (
+                    <li key={item.title + index} className={cn('item', index === currentIndex && 'active')}>
                        <Image 
                             src={item.imageUrl} 
                             alt={item.title} 
