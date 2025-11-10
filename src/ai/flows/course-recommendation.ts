@@ -10,7 +10,7 @@
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import {z} from 'zod';
 
 const PersonalizedCourseRecommendationInputSchema = z.object({
   careerGoals: z.string().describe('The career goals of the prospective student.'),

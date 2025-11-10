@@ -1,7 +1,7 @@
 
 "use server";
-import { personalizedCourseRecommendation, PersonalizedCourseRecommendationInput, PersonalizedCourseRecommendationOutput } from "@/ai/flows/course-recommendation";
-import { chatFlow } from "@/ai/flows/chatbot";
+// import { personalizedCourseRecommendation, PersonalizedCourseRecommendationInput, PersonalizedCourseRecommendationOutput } from "@/ai/flows/course-recommendation";
+// import { chatFlow } from "@/ai/flows/chatbot";
 import { z } from "zod";
 
 const InputSchema = z.object({
@@ -10,23 +10,29 @@ const InputSchema = z.object({
     interests: z.string().min(10, "Please tell us more about your interests."),
 });
 
+// export async function getCourseRecommendations(
+//   input: PersonalizedCourseRecommendationInput
+// ): Promise<{ success: boolean; data: PersonalizedCourseRecommendationOutput | null; error: any | null }> {
+//   const parsed = InputSchema.safeParse(input);
+//   if (!parsed.success) {
+//     return { success: false, data: null, error: parsed.error.flatten().fieldErrors };
+//   }
+
+//   try {
+//     const result = await personalizedCourseRecommendation(parsed.data);
+//     return { success: true, data: result, error: null };
+//   } catch (e) {
+//     console.error(e);
+//     return { success: false, data: null, error: "An unexpected error occurred. Please try again." };
+//   }
+// }
 
 export async function getCourseRecommendations(
-  input: PersonalizedCourseRecommendationInput
-): Promise<{ success: boolean; data: PersonalizedCourseRecommendationOutput | null; error: any | null }> {
-  const parsed = InputSchema.safeParse(input);
-  if (!parsed.success) {
-    return { success: false, data: null, error: parsed.error.flatten().fieldErrors };
-  }
-
-  try {
-    const result = await personalizedCourseRecommendation(parsed.data);
-    return { success: true, data: result, error: null };
-  } catch (e) {
-    console.error(e);
-    return { success: false, data: null, error: "An unexpected error occurred. Please try again." };
-  }
+  input: any
+): Promise<{ success: boolean; data: any | null; error: any | null }> {
+    return { success: false, data: null, error: "AI service is temporarily unavailable." };
 }
+
 
 export async function sendOtp(phone: string): Promise<{ success: boolean, message: string }> {
   console.log(`Sending OTP to ${phone}`);
@@ -67,6 +73,15 @@ export type Message = z.infer<typeof MessageSchema>;
 type ChatInput = z.infer<typeof ChatInputSchema>;
 type ChatOutput = { response: Message };
 
+// export async function getChatbotResponse(history: ChatInput['history'], message?: string): Promise<ChatOutput> {
+//     return await chatFlow({ history, message });
+// }
+
 export async function getChatbotResponse(history: ChatInput['history'], message?: string): Promise<ChatOutput> {
-    return await chatFlow({ history, message });
+    return {
+        response: {
+            role: 'model',
+            content: "I'm sorry, the chat service is temporarily unavailable. Please contact us directly.",
+        }
+    }
 }

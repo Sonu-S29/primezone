@@ -6,8 +6,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Book, Clock, Star, Users, Award, Briefcase, Cpu, GraduationCap, ChevronsRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const scrollingFeatures = [
     {
@@ -92,10 +92,15 @@ const scrollingFeatures = [
 
 export default function AccreditationLogos() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isFading, setIsFading] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % scrollingFeatures.length);
+            setIsFading(true);
+            setTimeout(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % scrollingFeatures.length);
+                setIsFading(false);
+            }, 500); // Corresponds to the fade-out duration
         }, 3000);
         return () => clearInterval(interval);
     }, []);
@@ -103,7 +108,7 @@ export default function AccreditationLogos() {
   return (
     <Card className="p-8 md:p-10 glass-effect relative overflow-hidden min-h-[160px] md:min-h-[120px]">
       <div className="absolute top-4 right-0 w-full px-6 text-center">
-        <p className="font-bold text-xs text-muted-foreground">{scrollingFeatures[currentIndex].title}</p>
+        <p className={cn("font-bold text-xs text-muted-foreground transition-opacity duration-500", isFading ? "opacity-0" : "opacity-100")}>{scrollingFeatures[currentIndex].title}</p>
       </div>
       <div className="grid md:grid-cols-2 gap-4 items-center">
         <div className="hidden md:flex flex-col items-start gap-1">
@@ -114,23 +119,14 @@ export default function AccreditationLogos() {
             </div>
         </div>
         <div className="flex-1 h-20 relative pt-8 min-h-[100px]">
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={currentIndex}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0 flex items-center justify-center md:justify-end"
-                >
-                    <div className="flex flex-1 items-center justify-center md:justify-end">
-                       {scrollingFeatures[currentIndex].content}
-                    </div>
-                </motion.div>
-            </AnimatePresence>
+            <div className={cn("absolute inset-0 flex items-center justify-center md:justify-end transition-opacity duration-500", isFading ? "opacity-0" : "opacity-100")}>
+                <div className="flex flex-1 items-center justify-center md:justify-end">
+                    {scrollingFeatures[currentIndex].content}
+                </div>
+            </div>
         </div>
       </div>
-        <div className="absolute bottom-4 right-6">
+        <div className={cn("absolute bottom-4 right-6 transition-opacity duration-500", isFading ? "opacity-0" : "opacity-100")}>
             <Button asChild variant="link" className="p-0 h-auto text-xs">
                 <Link href={scrollingFeatures[currentIndex].link}>
                     Read More <ArrowRight className="ml-1 h-3 w-3"/>
