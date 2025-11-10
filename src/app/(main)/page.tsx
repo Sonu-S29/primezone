@@ -20,10 +20,11 @@ import AccreditationLogos from "@/components/accreditation-logos";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Skeleton } from "@/components/ui/skeleton";
+import { allCoursesList } from "@/lib/course-data";
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
 
-const allCourses = [
+const quoteCourses = [
     "Diploma course",
     "Short Term Course",
     "Career Counseling",
@@ -206,7 +207,7 @@ export default function Home() {
                                     <SelectValue placeholder="Select a Course" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    {allCourses.map((course) => (
+                                    {quoteCourses.map((course) => (
                                         <SelectItem key={course} value={course}>{course}</SelectItem>
                                     ))}
                                 </SelectContent>
