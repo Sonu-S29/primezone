@@ -20,7 +20,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  will-change: height;
+  will-change: height, width;
 }
 
 .card-nav-top {
@@ -166,8 +166,10 @@
 @media (max-width: 768px) {
   .card-nav-container {
     width: 90%;
-    top: 1.2em;
-    max-width: 800px; /* Reset max-width for mobile */
+    max-width: none;
+  }
+  .card-nav-container.open {
+    width: 90%;
   }
 
   .card-nav-top {

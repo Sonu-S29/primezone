@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import './CardNav.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '../ui/button';
 
 interface NavLink {
   label: string;
@@ -41,14 +42,17 @@ const CardNav = ({
   ease = 'power3.out',
   baseColor = '#fff',
   menuColor,
+  buttonBgColor,
+  buttonTextColor
 }: CardNavProps) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
-  const calculateHeight = () => {
+  const calculateExpandedHeight = () => {
     const navEl = navRef.current;
     if (!navEl) return 260;
 
@@ -82,21 +86,37 @@ const CardNav = ({
     }
     return 260;
   };
+  
+  const getExpandedWidth = () => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    return isMobile ? '90%' : '800px';
+  };
 
   const createTimeline = () => {
     const navEl = navRef.current;
-    if (!navEl) return null;
+    const containerEl = containerRef.current;
+    if (!navEl || !containerEl) return null;
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     gsap.set(navEl, { height: 60, overflow: 'hidden' });
+    gsap.set(containerEl, { width: isMobile ? '90%' : '240px', maxWidth: isMobile ? 'none' : '240px' });
     gsap.set(cardsRef.current, { y: 50, opacity: 0 });
 
     const tl = gsap.timeline({ paused: true });
 
-    tl.to(navEl, {
-      height: calculateHeight,
+    tl.to(containerEl, {
+      width: getExpandedWidth,
+      maxWidth: getExpandedWidth,
       duration: 0.4,
       ease
-    });
+    }, 0);
+    
+    tl.to(navEl, {
+      height: calculateExpandedHeight,
+      duration: 0.4,
+      ease
+    }, 0);
 
     tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
 
@@ -104,43 +124,38 @@ const CardNav = ({
   };
 
   useLayoutEffect(() => {
-    const tl = createTimeline();
+    let tl = createTimeline();
     tlRef.current = tl;
 
+    const handleResize = () => {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (tl) tl.kill();
+
+      if (isExpanded) {
+        gsap.set(containerRef.current, { width: isMobile ? '90%' : '800px', maxWidth: isMobile ? '90%' : '800px' });
+        gsap.set(navRef.current, { height: calculateExpandedHeight() });
+      } else {
+        gsap.set(containerRef.current, { width: isMobile ? '90%' : '240px', maxWidth: isMobile ? 'none' : '240px' });
+        gsap.set(navRef.current, { height: 60 });
+      }
+
+      tl = createTimeline();
+      if (isExpanded && tl) {
+        tl.progress(1);
+      }
+      tlRef.current = tl;
+    };
+
+    window.addEventListener('resize', handleResize);
+    
     return () => {
       tl?.kill();
       tlRef.current = null;
+      window.removeEventListener('resize', handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ease, items]);
 
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      if (!tlRef.current) return;
-
-      if (isExpanded) {
-        const newHeight = calculateHeight();
-        gsap.set(navRef.current, { height: newHeight });
-
-        tlRef.current.kill();
-        const newTl = createTimeline();
-        if (newTl) {
-          newTl.progress(1);
-          tlRef.current = newTl;
-        }
-      } else {
-        tlRef.current.kill();
-        const newTl = createTimeline();
-        if (newTl) {
-          tlRef.current = newTl;
-        }
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isExpanded]);
 
   const toggleMenu = () => {
     const tl = tlRef.current;
@@ -161,7 +176,7 @@ const CardNav = ({
   };
 
   return (
-    <div className={`card-nav-container ${className}`}>
+    <div ref={containerRef} className={`card-nav-container ${className} ${isExpanded ? 'open' : ''}`}>
       <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
           <div className="logo-container">
@@ -180,6 +195,16 @@ const CardNav = ({
             <div className="hamburger-line" />
             <div className="hamburger-line" />
           </div>
+
+           <Link href="/enroll" passHref legacyBehavior>
+              <Button
+                asChild={false}
+                style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                className="card-nav-cta-button"
+              >
+                  <a>Enroll Now</a>
+              </Button>
+           </Link>
 
         </div>
 
