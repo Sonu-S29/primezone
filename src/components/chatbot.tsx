@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -31,12 +31,18 @@ export default function Chatbot() {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const [showInput, setShowInput] = useState(false);
 
-    useEffect(() => {
-        if (isOpen && messages.length === 0) {
+    const initializeChat = useCallback(() => {
+        if (messages.length === 0) {
             setMessages([introductoryMessage]);
             setShowInput(false);
         }
-    }, [isOpen, messages.length]);
+    }, [messages.length]);
+
+    useEffect(() => {
+        if (isOpen) {
+            initializeChat();
+        }
+    }, [isOpen, initializeChat]);
 
     useEffect(() => {
         if (scrollAreaRef.current) {
@@ -54,12 +60,12 @@ export default function Chatbot() {
         if (loading) return;
 
         const userMessage: Message = { role: "user", content: text };
-        const newMessages: Message[] = [...messages, userMessage];
-        setMessages(newMessages);
+        setMessages(prev => [...prev, userMessage]);
         setLoading(true);
         setShowInput(false);
 
         try {
+            const newMessages = [...messages, userMessage];
             const result = await getChatbotResponse(newMessages, payload);
             const botResponse = result.response;
             setMessages(prev => [...prev, botResponse]);
@@ -77,13 +83,14 @@ export default function Chatbot() {
         if (!input.trim() || loading) return;
 
         const userMessage: Message = { role: "user", content: input };
-        const newMessages: Message[] = [...messages, userMessage];
-        setMessages(newMessages);
         const currentInput = input;
+        
+        setMessages(prev => [...prev, userMessage]);
         setInput("");
         setLoading(true);
 
         try {
+            const newMessages = [...messages, userMessage];
             const result = await getChatbotResponse(newMessages, currentInput);
             const botResponse = result.response;
             setMessages(prev => [...prev, botResponse]);

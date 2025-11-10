@@ -1,5 +1,3 @@
-
-
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift, Users, Send, IndianRupee, Star, HelpCircle } from "lucide-react";
@@ -91,6 +89,8 @@ export default function ReferAndEarnPage() {
               height={referImage.height}
               className="rounded-lg shadow-lg"
               data-ai-hint={referImage.hint}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
             />}
           </div>
         </div>
@@ -181,5 +181,3 @@ export default function ReferAndEarnPage() {
     </div>
   );
 }
-
-    

@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -255,6 +254,7 @@ export default function Home() {
                     height={500}
                     className="rounded-lg shadow-xl mx-auto"
                     data-ai-hint="computer lab"
+                    priority
                 />
             </div>
             <div className="md:col-span-4 space-y-8">

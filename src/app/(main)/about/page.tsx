@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -133,6 +131,7 @@ export default function AboutUs() {
                     height={educationLogo.height}
                     className="rounded-lg shadow-xl mx-auto"
                     data-ai-hint={educationLogo.hint}
+                    priority
                 />
               )}
             </div>
@@ -159,6 +158,7 @@ export default function AboutUs() {
                 alt="Team working together"
                 width={studentsLearning.width}
                 height={studentsLearning.height}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full object-cover"
                 data-ai-hint={studentsLearning.hint}
               />
@@ -245,5 +245,3 @@ export default function AboutUs() {
     </div>
   );
 }
-
-    

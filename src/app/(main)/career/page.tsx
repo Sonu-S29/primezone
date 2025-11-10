@@ -1,14 +1,9 @@
-
-
-"use client";
-
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ApplicationForm from "@/components/application-form";
-import { useState } from "react";
 import imageData from "@/lib/placeholder-images.json";
 
 const jobOpenings = [
@@ -23,8 +18,6 @@ const jobOpenings = [
 const teamImage = imageData.find(img => img.id === 'happy-diverse-team');
 
 export default function CareerPage() {
-  const [selectedJob, setSelectedJob] = useState<string | null>(null);
-
   return (
     <div>
       <section className="bg-card py-12">
@@ -68,6 +61,8 @@ export default function CareerPage() {
               height={teamImage.height}
               className="rounded-lg shadow-lg"
               data-ai-hint={teamImage.hint}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
             />}
           </div>
         </div>
@@ -85,13 +80,13 @@ export default function CareerPage() {
                 <CardContent className="p-6">
                   <div className="flex flex-col sm:flex-row justify-between sm:items-center">
                     <CardTitle className="text-xl">{job.title}</CardTitle>
-                    <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedJob(null)}>
+                    <Dialog>
                         <DialogTrigger asChild>
-                           <Button className="mt-4 sm:mt-0" onClick={() => setSelectedJob(job.title)}>Apply Now <ArrowRight className="ml-2 h-4 w-4"/></Button>
+                           <Button className="mt-4 sm:mt-0">Apply Now <ArrowRight className="ml-2 h-4 w-4"/></Button>
                         </DialogTrigger>
                         <DialogContent>
                             <DialogHeader>
-                                <DialogTitle>Apply for {selectedJob}</DialogTitle>
+                                <DialogTitle>Apply for {job.title}</DialogTitle>
                             </DialogHeader>
                             <ApplicationForm />
                         </DialogContent>
@@ -117,5 +112,4 @@ export default function CareerPage() {
     </div>
   );
 }
-
     

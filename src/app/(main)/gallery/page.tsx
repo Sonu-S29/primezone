@@ -1,16 +1,17 @@
 
-
 "use client";
 
 import Image from "next/image";
-import { useState } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { Button } from "@/components/ui/button";
 import { Users, Book, Building, Star, GraduationCap, PartyPopper, PlayCircle } from "lucide-react";
-import MemoriesGallery from "@/components/memories-gallery";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import imageData from "@/lib/placeholder-images.json";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const MemoriesGallery = lazy(() => import("@/components/memories-gallery"));
 
 const eventCategories = [
     {
@@ -153,7 +154,9 @@ export default function GalleryPage() {
       </section>
 
       <section className="container mx-auto px-4 py-16">
-        <MemoriesGallery />
+        <Suspense fallback={<Skeleton className="h-[400px] sm:h-[500px] w-full max-w-4xl mx-auto" />}>
+            <MemoriesGallery />
+        </Suspense>
       </section>
 
       <section className="py-16 bg-muted">
@@ -262,5 +265,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-
-    
