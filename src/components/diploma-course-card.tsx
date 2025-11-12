@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen, Clock } from "lucide-react";
+import { Check, ChevronRight, X, Users, ListChecks, Palette, Code, LayoutTemplate, Globe, MonitorCheck, Rocket, Landmark, FileText, BarChart, Settings, Bot, ShieldCheck, Fingerprint, TerminalSquare, Network, Mail, ShieldAlert, ShieldOff, Wifi, Bug, ServerCrash, KeyRound, BugPlay, BookOpen, Clock, Search, Megaphone, Newspaper } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
@@ -149,7 +149,7 @@ function RoadmapPopup({ course }: { course: DiplomaCourse }) {
                         <ul className="space-y-2 mt-4 text-sm">
                           {(course.modules[activeModule].subTopics ?? []).map((topic, i) => (
                             <li key={i} className="flex items-center">
-                              <CheckCircle className="h-4 w-4 mr-2 text-green-500 shrink-0" />
+                              <Check className="h-4 w-4 mr-2 text-green-500 shrink-0" />
                               <span>{topic}</span>
                             </li>
                           ))}
@@ -216,7 +216,7 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
                     <span>{course.modules.length} Modules</span>
                 </div>
                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4" />
+                    <Check className="h-4 w-4" />
                     <span>{course.totalTopics} Total Topics</span>
                 </div>
             </CardFooter>
