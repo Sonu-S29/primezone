@@ -83,7 +83,7 @@ const HeroSlider = () => {
                             fill
                             sizes="100vw"
                             quality={80}
-                            priority={index === 0}
+                            priority={index <= 1} // Prioritize first two images
                             className="object-cover"
                             data-ai-hint={item.hint}
                         />
@@ -102,5 +102,3 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
-
-    

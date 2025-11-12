@@ -7,6 +7,7 @@ import './CardNav.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { Suspense, lazy } from 'react';
 
 interface NavLink {
   label: string;
@@ -21,6 +22,21 @@ interface CardNavProps {
   className?: string;
   baseColor?: string;
   menuColor?: string;
+}
+
+const NavList = ({ items, onLinkClick }: { items: NavLink[], onLinkClick: () => void }) => {
+    return (
+        <ul className="nav-list">
+            {items.map((link, i) => (
+              <li key={`${link.label}-${i}`} className='nav-list-item'>
+                  <Link className="nav-list-link" href={link.href} aria-label={link.ariaLabel} onClick={onLinkClick}>
+                      <ArrowUpRight className="nav-list-link-icon" aria-hidden="true" />
+                      {link.label}
+                  </Link>
+              </li>
+            ))}
+        </ul>
+    )
 }
 
 const CardNav = ({
@@ -57,16 +73,7 @@ const CardNav = ({
 
         {isExpanded && (
           <div className="card-nav-content" aria-hidden={!isExpanded}>
-            <ul className="nav-list">
-                {items.map((link, i) => (
-                  <li key={`${link.label}-${i}`} className='nav-list-item'>
-                      <Link className="nav-list-link" href={link.href} aria-label={link.ariaLabel} onClick={() => setIsExpanded(false)}>
-                          <ArrowUpRight className="nav-list-link-icon" aria-hidden="true" />
-                          {link.label}
-                      </Link>
-                  </li>
-                ))}
-            </ul>
+              <NavList items={items} onLinkClick={() => setIsExpanded(false)} />
           </div>
         )}
       </nav>

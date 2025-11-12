@@ -1,10 +1,13 @@
 
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import '../globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import CardNav from '@/components/layout/CardNav';
 import Footer from '@/components/layout/footer';
 import Chatbot from '@/components/chatbot';
+
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: 'Primezone Computer Education',
@@ -32,12 +35,9 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" className="font-body antialiased pt-24">
+    <html lang="en" className={`${inter.className} antialiased pt-24`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <meta name="description" content={metadata.description!} />
       </head>
       <body>
@@ -49,7 +49,6 @@ export default function RootLayout({
           menuColor="hsl(var(--card-foreground))"
           buttonBgColor="hsl(var(--primary))"
           buttonTextColor="hsl(var(--primary-foreground))"
-          ease="power3.out"
         />
         <main className="flex-grow">{children}</main>
         <Footer />

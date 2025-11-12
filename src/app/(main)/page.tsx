@@ -3,23 +3,19 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Briefcase, Target, Award, BookOpen, User, Calendar, CheckCircle, Phone, Download, Reply, Clock, Users, Star, MessageSquare } from "lucide-react";
+import { Star, Reply, Clock, Users, Phone, Award, Briefcase, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import BrochureDownloadForm from "@/components/brochure-download-form";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription, DialogHeader } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import React, { Suspense, lazy, useRef } from "react";
+import React, { Suspense, lazy } from "react";
 import HeroSlider from "@/components/hero-slider";
 import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
 import Autoplay from "embla-carousel-autoplay";
 import { Skeleton } from "@/components/ui/skeleton";
-import { allCoursesList } from "@/lib/course-data";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
 const Carousel = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.Carousel })));
@@ -230,56 +226,58 @@ export default function Home() {
       </section>
 
       {/* Empowering Your Career Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-            <p className="font-semibold text-accent">WHY CHOOSE US</p>
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mt-2">Empowering your career journey with in-demand skills and knowledge</h2>
-            <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
-        </div>
-        <div className="grid md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-4 space-y-8">
-                {empoweringFeatures.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="text-left md:text-right">
-                        <div className="flex md:flex-row-reverse items-center gap-4">
-                           <div className="flex-grow">
-                               <h3 className="font-bold text-lg">{feature.title}</h3>
-                               <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
-                           </div>
-                           <div className="p-3 bg-accent text-accent-foreground rounded-lg flex-shrink-0">
-                               {feature.icon}
-                           </div>
+      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+        <section className="container mx-auto px-4 py-16">
+            <div className="text-center mb-12">
+                <p className="font-semibold text-accent">WHY CHOOSE US</p>
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mt-2">Empowering your career journey with in-demand skills and knowledge</h2>
+                <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+                <div className="md:col-span-4 space-y-8">
+                    {empoweringFeatures.slice(0, 2).map((feature, index) => (
+                        <div key={index} className="text-left md:text-right">
+                            <div className="flex md:flex-row-reverse items-center gap-4">
+                               <div className="flex-grow">
+                                   <h3 className="font-bold text-lg">{feature.title}</h3>
+                                   <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
+                               </div>
+                               <div className="p-3 bg-accent text-accent-foreground rounded-lg flex-shrink-0">
+                                   {feature.icon}
+                               </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-            <div className="md:col-span-4 row-start-1 md:row-start-auto">
-                <Image 
-                    src="/images/logo.png"
-                    alt="Computer lab"
-                    width={400}
-                    height={500}
-                    className="rounded-lg shadow-xl mx-auto"
-                    data-ai-hint="computer lab"
-                    priority
-                />
-            </div>
-            <div className="md:col-span-4 space-y-8">
-                {empoweringFeatures.slice(2, 4).map((feature, index) => (
-                    <div key={index} className="text-left">
-                        <div className="flex items-center gap-4">
-                           <div className="p-3 bg-accent text-accent-foreground rounded-lg flex-shrink-0">
-                               {feature.icon}
-                           </div>
-                           <div className="flex-grow">
-                               <h3 className="font-bold text-lg">{feature.title}</h3>
-                               <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
-                           </div>
+                    ))}
+                </div>
+                <div className="md:col-span-4 row-start-1 md:row-start-auto">
+                    <Image 
+                        src="/images/logo.png"
+                        alt="Computer lab"
+                        width={400}
+                        height={400}
+                        className="rounded-lg shadow-xl mx-auto"
+                        data-ai-hint="computer lab"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                </div>
+                <div className="md:col-span-4 space-y-8">
+                    {empoweringFeatures.slice(2, 4).map((feature, index) => (
+                        <div key={index} className="text-left">
+                            <div className="flex items-center gap-4">
+                               <div className="p-3 bg-accent text-accent-foreground rounded-lg flex-shrink-0">
+                                   {feature.icon}
+                               </div>
+                               <div className="flex-grow">
+                                   <h3 className="font-bold text-lg">{feature.title}</h3>
+                                   <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
+                               </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
-      </section>
+        </section>
+      </Suspense>
 
       {/* Testimonials Section */}
       <section className="w-full py-16">
@@ -336,30 +334,6 @@ export default function Home() {
             </div>
           </div>
       </section>
-      
-       {/* Call to Action for Brochure */}
-       <section className="bg-primary text-primary-foreground">
-        <Dialog>
-            <div className="container mx-auto px-4 py-16 text-center">
-                <h2 className="text-3xl font-bold mb-4 font-headline">Ready to Start Your Journey?</h2>
-                <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-                    Download our brochure to get detailed information about all our courses, fee structures, and admission process.
-                </p>
-                <DialogTrigger asChild>
-                    <Button size="lg" variant="secondary">Download Brochure</Button>
-                </DialogTrigger>
-            </div>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Download Brochure</DialogTitle>
-                    <DialogDescription>
-                        Please provide your details to receive the brochure.
-                    </DialogDescription>
-                </DialogHeader>
-                <BrochureDownloadForm />
-            </DialogContent>
-        </Dialog>
-       </section>
 
     </div>
   );

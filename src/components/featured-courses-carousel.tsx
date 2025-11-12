@@ -122,7 +122,9 @@ export default function FeaturedCoursesCarousel() {
                                     width={width}
                                     height={height}
                                     data-ai-hint={hint}
-                                    priority={offset <= 1 || offset >= featuredCourses.length - 1}
+                                    priority={offset === 0}
+                                    loading={offset > 1 && offset < featuredCourses.length - 1 ? "lazy" : "eager"}
+                                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 200px"
                                     className='object-cover w-full h-full'
                                 />
                                 <div className="course-card-content">
