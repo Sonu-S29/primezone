@@ -10,19 +10,24 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import React, { Suspense, lazy } from "react";
 import HeroSlider from "@/components/hero-slider";
-import FeaturedCoursesCarousel from "@/components/featured-courses-carousel";
 import AccreditationLogos from "@/components/accreditation-logos";
 import Autoplay from "embla-carousel-autoplay";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import dynamic from "next/dynamic";
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
-const Carousel = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.Carousel })));
-const CarouselContent = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselContent })));
-const CarouselItem = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselItem })));
-const CarouselPrevious = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselPrevious })));
-const CarouselNext = lazy(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselNext })));
+const FeaturedCoursesCarousel = lazy(() => import("@/components/featured-courses-carousel"));
+
+const Carousel = dynamic(() => import("@/components/ui/carousel").then(module => ({ default: module.Carousel })), {
+    loading: () => <Skeleton className="h-64 w-full" />,
+    ssr: false
+});
+const CarouselContent = dynamic(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselContent })), { ssr: false });
+const CarouselItem = dynamic(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselItem })), { ssr: false });
+const CarouselPrevious = dynamic(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselPrevious })), { ssr: false });
+const CarouselNext = dynamic(() => import("@/components/ui/carousel").then(module => ({ default: module.CarouselNext })), { ssr: false });
 
 
 const quoteCourses = [
@@ -155,7 +160,9 @@ export default function Home() {
               Kickstart your career with our most popular courses.
             </p>
           </div>
-          <FeaturedCoursesCarousel />
+           <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+                <FeaturedCoursesCarousel />
+            </Suspense>
         </div>
       </section>
 
@@ -258,6 +265,7 @@ export default function Home() {
                         className="rounded-lg shadow-xl mx-auto"
                         data-ai-hint="computer lab"
                         sizes="(max-width: 768px) 100vw, 33vw"
+                        loading="lazy"
                     />
                 </div>
                 <div className="md:col-span-4 space-y-8">

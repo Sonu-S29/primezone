@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
+  swcMinify: true,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -37,6 +38,8 @@ const nextConfig = {
     ],
   },
   experimental: {
+    legacyBrowsers: false,
+    browsersListForSwc: true,
   },
 };
 

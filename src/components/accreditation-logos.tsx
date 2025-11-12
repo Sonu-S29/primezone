@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { ArrowRight, Book, Clock, Star, Users, Award, Briefcase, Cpu, GraduationCap, ChevronsRight } from "lucide-react";
+import { ArrowRight, Book, Clock, Star, Users, Award, Briefcase, Cpu, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const scrollingFeatures = [
@@ -18,7 +18,8 @@ const scrollingFeatures = [
                     <Image
                         src="/images/certificates/certipoint.png"
                         alt="Certipoint logo"
-                        fill
+                        width={120}
+                        height={40}
                         className="object-contain"
                         data-ai-hint="organization logo"
                     />
@@ -27,7 +28,8 @@ const scrollingFeatures = [
                     <Image
                         src="/images/certificates/nsdc.png"
                         alt="NSDC logo"
-                        fill
+                        width={120}
+                        height={40}
                         className="object-contain"
                         data-ai-hint="organization logo"
                     />
@@ -36,7 +38,8 @@ const scrollingFeatures = [
                     <Image
                         src="/images/certificates/unnamed.png"
                         alt="Unnamed logo"
-                        fill
+                        width={120}
+                        height={40}
                         className="object-contain"
                         data-ai-hint="organization logo"
                     />

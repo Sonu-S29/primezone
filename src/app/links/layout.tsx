@@ -1,6 +1,9 @@
 
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import '../globals.css';
+
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: 'Primezone Computer – Links & Courses',
@@ -13,15 +16,12 @@ export default function LinksLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
        <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <meta name="description" content={metadata.description!} />
       </head>
-      <body className="font-body antialiased">
+      <body className="antialiased">
         <main>{children}</main>
       </body>
     </html>
