@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Calculator, Code, Megaphone, Paintbrush, ArrowLeft, BookOpen } from 'lucide-react';
 import './WhatWeDo.css';
@@ -98,62 +97,35 @@ export default function WhatWeDo() {
     setStep(3);
   };
   
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-  
-  const wordVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   const categories = Object.entries(courseData);
   const currentCategoryData = selectedCategory ? courseData[selectedCategory] : null;
 
 
   return (
     <div className="relative h-64 w-full flex items-center justify-center">
-      <AnimatePresence mode="wait">
         {step === 1 && (
-          <motion.div
+          <div
             key="what-we-do"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
             className="text-3xl font-bold flex gap-2"
           >
             {whatWeDoText.map((word, i) => (
-              <motion.span key={i} variants={wordVariants}>{word}</motion.span>
+              <span key={i}>{word}</span>
             ))}
-          </motion.div>
+          </div>
         )}
         {step === 2 && (
-          <motion.div
+          <div
             key="we-teach"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
             className="text-3xl font-bold flex gap-2"
           >
             {weTeachText.map((word, i) => (
-              <motion.span key={i} variants={wordVariants}>{word}</motion.span>
+              <span key={i}>{word}</span>
             ))}
-          </motion.div>
+          </div>
         )}
         {step === 3 && (
-           <motion.div
+           <div
             key="categories"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.5 }}
             className="w-[200px] h-[200px] p-2 glassmorphic-block grid grid-cols-2 grid-rows-2 gap-2"
            >
             {categories.map(([key, cat]) => (
@@ -162,15 +134,11 @@ export default function WhatWeDo() {
                     <span className="text-sm font-semibold mt-1">{cat.name}</span>
                 </div>
             ))}
-           </motion.div>
+           </div>
         )}
         {step === 4 && currentCategoryData && (
-            <motion.div
+            <div
                 key="courses"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
                 className="w-full max-w-sm h-[250px] glassmorphic-block p-4 flex flex-col"
             >
                 
@@ -196,9 +164,8 @@ export default function WhatWeDo() {
                     </div>
                 </>
                 
-            </motion.div>
+            </div>
         )}
-      </AnimatePresence>
     </div>
   );
 }

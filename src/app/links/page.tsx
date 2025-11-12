@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Globe, MessageCircle, Instagram, Facebook, Phone, Youtube, Linkedin, MapPin } from "lucide-react";
 import Dock from "@/components/Dock";
 import WhatWeDo from "@/components/WhatWeDo";
-import { AnimatePresence } from "framer-motion";
 
 const mainLinks = [
     { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
@@ -43,7 +42,7 @@ export default function LinksPage() {
                 >
                     <MapPin className="h-6 w-6 text-slate-700" />
                 </button>
-                <AnimatePresence>
+
                     {showLocations && (
                         <div
                             
@@ -62,7 +61,7 @@ export default function LinksPage() {
                             </div>
                         </div>
                     )}
-                </AnimatePresence>
+
             </div>
             
             <div className="absolute top-4 left-4 z-20">
@@ -76,7 +75,7 @@ export default function LinksPage() {
                 >
                     <Phone className="h-6 w-6 text-slate-700" />
                 </button>
-                <AnimatePresence>
+
                     {showContacts && (
                         <div
                             className="absolute top-14 left-0 w-64 bg-white/50 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg p-4"
@@ -94,7 +93,6 @@ export default function LinksPage() {
                             </div>
                         </div>
                     )}
-                </AnimatePresence>
             </div>
 
             <header className="flex flex-col items-center text-center pt-16">
