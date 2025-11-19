@@ -78,31 +78,23 @@ const HeroSlider = () => {
     }, [startSlider, isMobile]);
 
     if (isMobile) {
-        const item = initialItems[0];
         return (
-            <main className='hero-slider-main'>
-                <ul className='hero-slider'>
-                    <li className='item active'>
-                       <Image 
-                            src={item.imageUrl} 
-                            alt={item.title} 
-                            fill
-                            sizes="100vw"
-                            quality={80}
-                            priority
-                            className="object-cover"
-                            data-ai-hint={item.hint}
-                        />
-                        <div className='content'>
-                            <h2 className='title'>{item.title}</h2>
-                            <p className='description'>{item.description}</p>
-                            <Button asChild>
-                               <Link href="/courses">Read More</Link>
-                            </Button>
-                        </div>
-                    </li>
-                </ul>
-            </main>
+             <section className="bg-white text-center py-16 px-4">
+                <h1 className="text-4xl font-bold text-gray-800 tracking-tighter">
+                   Unlock Your Potential with <span className="text-primary">Primezone</span>
+                </h1>
+                <p className="max-w-2xl mx-auto mt-4 text-muted-foreground">
+                    Access our collection of premium, meticulously crafted courses. Save time and focus on what matters—building standout skills that captivate employers.
+                </p>
+                <div className="mt-8 flex justify-center gap-4">
+                    <Button asChild>
+                        <Link href="/courses">Explore Courses</Link>
+                    </Button>
+                     <Button asChild variant="outline">
+                        <Link href="/enroll">Enroll Now</Link>
+                    </Button>
+                </div>
+            </section>
         )
     }
 
