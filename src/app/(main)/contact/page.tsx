@@ -1,10 +1,19 @@
 
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import { PinContainer } from "@/components/ui/3d-pin";
+import { useState, useEffect } from "react";
 
 export default function ContactUsPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div>
       <section className="bg-card py-12">
@@ -25,38 +34,42 @@ export default function ContactUsPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4 h-[20rem] md:h-[25rem] items-center">
-                    <PinContainer
-                        title="Jogeshwari"
-                        href="https://g.co/kgs/e12TVNF"
-                    >
-                        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-                        <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                            Jogeshwari Branch
-                        </h3>
-                        <div className="text-base !m-0 !p-0 font-normal">
-                            <span className="text-slate-500 ">
-                            Click to see the location on Google Maps.
-                            </span>
-                        </div>
-                        <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-blue-500 via-sky-500 to-cyan-500" />
-                        </div>
-                    </PinContainer>
-                    <PinContainer
-                        title="Vile Parle"
-                        href="https://g.co/kgs/rvyVD8w"
-                    >
-                        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-                        <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                            Vile Parle Branch
-                        </h3>
-                        <div className="text-base !m-0 !p-0 font-normal">
-                            <span className="text-slate-500 ">
-                            Click to see the location on Google Maps.
-                            </span>
-                        </div>
-                        <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500" />
-                        </div>
-                    </PinContainer>
+                  {isClient && (
+                    <>
+                      <PinContainer
+                          title="Jogeshwari"
+                          href="https://g.co/kgs/e12TVNF"
+                      >
+                          <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
+                          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                              Jogeshwari Branch
+                          </h3>
+                          <div className="text-base !m-0 !p-0 font-normal">
+                              <span className="text-slate-500 ">
+                              Click to see the location on Google Maps.
+                              </span>
+                          </div>
+                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-blue-500 via-sky-500 to-cyan-500" />
+                          </div>
+                      </PinContainer>
+                      <PinContainer
+                          title="Vile Parle"
+                          href="https://g.co/kgs/rvyVD8w"
+                      >
+                          <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
+                          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                              Vile Parle Branch
+                          </h3>
+                          <div className="text-base !m-0 !p-0 font-normal">
+                              <span className="text-slate-500 ">
+                              Click to see the location on Google Maps.
+                              </span>
+                          </div>
+                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500" />
+                          </div>
+                      </PinContainer>
+                    </>
+                  )}
                 </div>
 
                 <div>
