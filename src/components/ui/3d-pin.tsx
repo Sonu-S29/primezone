@@ -33,7 +33,7 @@ export const PinContainer = ({
   return (
     <div
       className={cn(
-        "relative group/pin z-50  cursor-pointer",
+        "relative group/pin z-10  cursor-pointer",
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
@@ -51,9 +51,9 @@ export const PinContainer = ({
             style={{
               transform: transform,
             }}
-            className="absolute left-1/2 p-4 top-1/2 flex justify-start items-start rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-background border border-border group-hover/pin:border-primary/50 transition duration-700 overflow-hidden"
+            // The card is removed but we keep the structure for the pin perspective
           >
-            <div className={cn(" relative z-50 ", className)}>{children}</div>
+            <div className={cn("relative z-50", className)}>{children}</div>
           </div>
         </div>
         <PinPerspective title={title} href={href} />
@@ -70,7 +70,7 @@ export const PinPerspective = ({
   href?: string;
 }) => {
   return (
-    <motion.div className="pointer-events-none w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div className="pointer-events-none w-24 h-24 md:w-32 md:h-32 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
       <div className="w-full h-full -mt-7 flex-none inset-0">
         <div className="absolute top-0 inset-x-0 flex justify-center">
           <a
@@ -112,7 +112,7 @@ export const PinPerspective = ({
                 repeat: Infinity,
                 delay: 0,
               }}
-              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] bg-primary/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2  h-8 w-8 rounded-full bg-primary/50"
             ></motion.div>
             <motion.div
               initial={{
@@ -132,7 +132,7 @@ export const PinPerspective = ({
                 repeat: Infinity,
                 delay: 2,
               }}
-              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] bg-primary/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2  h-8 w-8 rounded-full bg-primary/50"
             ></motion.div>
             <motion.div
               initial={{
@@ -152,7 +152,7 @@ export const PinPerspective = ({
                 repeat: Infinity,
                 delay: 4,
               }}
-              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] bg-primary/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2 h-16 w-16 rounded-full bg-primary/20"
             ></motion.div>
           </>
         </div>

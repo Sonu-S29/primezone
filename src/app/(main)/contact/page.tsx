@@ -45,14 +45,18 @@ export default function ContactUsPage() {
                 <CardTitle>Our Locations</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="relative w-full h-[500px] lg:h-[600px] flex items-center justify-center">
-                  <Image 
-                    src="/images/world-map.png" 
-                    alt="World Map" 
-                    fill 
-                    className="object-cover opacity-20"
-                    data-ai-hint="world map"
-                  />
+                <div className="relative w-full h-[500px] lg:h-[600px] flex items-center justify-center rounded-lg overflow-hidden">
+                  <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120652.5539294975!2d72.78413812553956!3d19.1118676239109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c67!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1622582824982!5m2!1sen!2sus"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="absolute inset-0 w-full h-full opacity-30"
+                  ></iframe>
+
                   {isClient && (
                     <div className="relative z-10 w-full h-full flex flex-col sm:flex-row items-center justify-center gap-4">
                       {locations.map((loc) => (
@@ -61,18 +65,8 @@ export default function ContactUsPage() {
                             title={loc.title}
                             href={loc.href}
                         >
-                          <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[16rem] h-[16rem]">
-                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center">
-                              {loc.title}
-                            </h3>
-                            <div className="text-base !m-0 !p-0 font-normal text-center">
-                              <span className="text-muted-foreground">
-                                Click to see the location on Google Maps.
-                              </span>
-                            </div>
-                            <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-blue-100 via-sky-100 to-blue-200 items-center justify-center">
-                                <MapPin className="h-16 w-16 text-primary" />
-                            </div>
+                          <div className="flex items-center justify-center h-16 w-16 md:h-20 md:w-20">
+                            <MapPin className="h-10 w-10 md:h-12 md:w-12 text-primary" />
                           </div>
                         </PinContainer>
                       ))}
@@ -111,3 +105,4 @@ export default function ContactUsPage() {
     </div>
   );
 }
+
