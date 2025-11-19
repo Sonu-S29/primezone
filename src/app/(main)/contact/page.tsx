@@ -6,6 +6,18 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+
+const locations = [
+  {
+    title: "Jogeshwari Branch",
+    href: "https://g.co/kgs/e12TVNF",
+  },
+  {
+    title: "Vile Parle Branch",
+    href: "https://g.co/kgs/rvyVD8w",
+  }
+]
 
 export default function ContactUsPage() {
   const [isClient, setIsClient] = useState(false);
@@ -33,62 +45,38 @@ export default function ContactUsPage() {
                 <CardTitle>Our Locations</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 items-center justify-center">
+                <div className="relative w-full h-[500px] lg:h-[600px] flex items-center justify-center">
+                  <Image 
+                    src="/images/world-map.png" 
+                    alt="World Map" 
+                    fill 
+                    className="object-cover opacity-20"
+                    data-ai-hint="world map"
+                  />
                   {isClient && (
-                    <>
-                      <PinContainer
-                          title="Jogeshwari"
-                          href="https://g.co/kgs/e12TVNF"
-                      >
-                        <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[25rem]">
-                          <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base">
-                            Jogeshwari Branch
-                          </h3>
-                          <div className="text-base !m-0 !p-0 font-normal">
-                            <span className="text-muted-foreground">
-                              Click to see the location on Google Maps.
-                            </span>
+                    <div className="relative z-10 w-full h-full flex flex-col sm:flex-row items-center justify-center gap-4">
+                      {locations.map((loc) => (
+                        <PinContainer
+                            key={loc.title}
+                            title={loc.title}
+                            href={loc.href}
+                        >
+                          <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[16rem] h-[16rem]">
+                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center">
+                              {loc.title}
+                            </h3>
+                            <div className="text-base !m-0 !p-0 font-normal text-center">
+                              <span className="text-muted-foreground">
+                                Click to see the location on Google Maps.
+                              </span>
+                            </div>
+                            <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-blue-100 via-sky-100 to-blue-200 items-center justify-center">
+                                <MapPin className="h-16 w-16 text-primary" />
+                            </div>
                           </div>
-                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-card overflow-hidden">
-                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.378772392474!2d72.8550920749877!3d19.13490904921614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d45084457f%3A0x956b464b5d63fef0!2sPrimezone%20Computer%20Education%20(Jogeshwari)!5e0!3m2!1sen!2sin!4v1700486858178!5m2!1sen!2sin"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen={false}
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                          </div>
-                        </div>
-                      </PinContainer>
-                      <PinContainer
-                          title="Vile Parle"
-                          href="https://g.co/kgs/rvyVD8w"
-                      >
-                         <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[25rem]">
-                          <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base">
-                           Vile Parle Branch
-                          </h3>
-                          <div className="text-base !m-0 !p-0 font-normal">
-                            <span className="text-muted-foreground">
-                              Click to see the location on Google Maps.
-                            </span>
-                          </div>
-                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-card overflow-hidden">
-                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.473523558113!2d72.85246287498642!3d19.08688405085814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9ac7f1f0085%3A0x33df871465324269!2sPrimezone%20Computer%20Education%20(Vile%20Parle)!5e0!3m2!1sen!2sin!4v1700486948577!5m2!1sen!2sin"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen={false}
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                              ></iframe>
-                          </div>
-                        </div>
-                      </PinContainer>
-                    </>
+                        </PinContainer>
+                      ))}
+                    </div>
                   )}
                 </div>
 
