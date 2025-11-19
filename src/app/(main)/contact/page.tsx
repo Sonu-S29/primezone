@@ -33,14 +33,14 @@ export default function ContactUsPage() {
                 <CardTitle>Our Locations</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 h-[25rem] md:h-[30rem] items-center justify-center">
+                <div className="grid sm:grid-cols-2 gap-4 items-center justify-center">
                   {isClient && (
                     <>
                       <PinContainer
                           title="Jogeshwari"
                           href="https://g.co/kgs/e12TVNF"
                       >
-                        <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[22rem]">
+                        <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[25rem]">
                           <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base">
                             Jogeshwari Branch
                           </h3>
@@ -66,7 +66,7 @@ export default function ContactUsPage() {
                           title="Vile Parle"
                           href="https://g.co/kgs/rvyVD8w"
                       >
-                         <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[22rem]">
+                         <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[25rem]">
                           <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base">
                            Vile Parle Branch
                           </h3>
