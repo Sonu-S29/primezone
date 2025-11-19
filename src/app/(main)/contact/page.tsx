@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "@/components/contact-form";
+import { PinContainer } from "@/components/ui/3d-pin";
 
 export default function ContactUsPage() {
   return (
@@ -23,15 +24,39 @@ export default function ContactUsPage() {
                 <CardTitle>Our Locations</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                     <div>
-                        <h3 className="font-bold flex items-center gap-2 mb-2"><MapPin/> Jogeshwari</h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!m12!1m3!1d241238.81418146254!2d72.54561129453127!3d19.135867299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7337ae704d1%3A0xeb9d18351a79413f!2sPrimezone%20Computer%20Education%20%7C%20Best%20computer%20institute%20%26%20classes%20in%20Jogeshwari%20Mumbai!5e0!3m2!1sen!2sin!4v1753973268532!5m2!1sen!2sin" width="100%" height="250" style={{border:0, borderRadius: "0.5rem"}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                     </div>
-                     <div>
-                        <h3 className="font-bold flex items-center gap-2 mb-2"><MapPin/> Vile Parle</h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!m12!1m3!1d241238.81418146254!2d72.54561129453127!3d19.135867299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c93b792d5e83%3A0xd7635d0de4b921f1!2sPrimezone%20Computer%20Education%20%7C%20Best%20computer%20institute%20%26%20classes%20in%20Vile%20Parle%20Mumbai!5e0!3m2!1sen!2sin!4v1753973302240!5m2!1sen!2sin" width="100%" height="250" style={{border:0, borderRadius: "0.5rem"}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                     </div>
+                <div className="grid sm:grid-cols-2 gap-4 h-[20rem] md:h-[25rem] items-center">
+                    <PinContainer
+                        title="Jogeshwari"
+                        href="https://g.co/kgs/e12TVNF"
+                    >
+                        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
+                        <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                            Jogeshwari Branch
+                        </h3>
+                        <div className="text-base !m-0 !p-0 font-normal">
+                            <span className="text-slate-500 ">
+                            Click to see the location on Google Maps.
+                            </span>
+                        </div>
+                        <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-blue-500 via-sky-500 to-cyan-500" />
+                        </div>
+                    </PinContainer>
+                    <PinContainer
+                        title="Vile Parle"
+                        href="https://g.co/kgs/rvyVD8w"
+                    >
+                        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
+                        <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                            Vile Parle Branch
+                        </h3>
+                        <div className="text-base !m-0 !p-0 font-normal">
+                            <span className="text-slate-500 ">
+                            Click to see the location on Google Maps.
+                            </span>
+                        </div>
+                        <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500" />
+                        </div>
+                    </PinContainer>
                 </div>
 
                 <div>
