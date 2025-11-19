@@ -12,21 +12,25 @@ export const PinContainer = ({
   href,
   className,
   containerClassName,
+  active = false,
 }: {
   children: React.ReactNode;
   title?: string;
   href?: string;
   className?: string;
   containerClassName?: string;
+  active?: boolean;
 }) => {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
   );
 
   const onMouseEnter = () => {
+    if (active) return;
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
   };
   const onMouseLeave = () => {
+     if (active) return;
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
   };
 
@@ -56,7 +60,7 @@ export const PinContainer = ({
             <div className={cn("relative z-50", className)}>{children}</div>
           </div>
         </div>
-        <PinPerspective title={title} href={href} />
+        <PinPerspective title={title} href={href} active={active}/>
       </a>
     </div>
   );
@@ -65,12 +69,17 @@ export const PinContainer = ({
 export const PinPerspective = ({
   title,
   href,
+  active,
 }: {
   title?: string;
   href?: string;
+  active?: boolean;
 }) => {
   return (
-    <motion.div className="pointer-events-none w-24 h-24 md:w-32 md:h-32 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div className={cn(
+      "pointer-events-none w-24 h-24 md:w-32 md:h-32 flex items-center justify-center z-[60] transition duration-500",
+      active ? "opacity-100" : "opacity-0 group-hover/pin:opacity-100"
+    )}>
       <div className="w-full h-full -mt-7 flex-none inset-0">
         <div className="absolute top-0 inset-x-0 flex justify-center">
           <a

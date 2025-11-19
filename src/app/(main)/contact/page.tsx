@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,10 +11,12 @@ const locations = [
   {
     title: "Jogeshwari Branch",
     href: "https://g.co/kgs/e12TVNF",
+    position: { top: '35%', left: '40%' }
   },
   {
     title: "Vile Parle Branch",
     href: "https://g.co/kgs/rvyVD8w",
+    position: { top: '55%', left: '50%' }
   }
 ]
 
@@ -58,17 +59,19 @@ export default function ContactUsPage() {
                   ></iframe>
 
                   {isClient && (
-                    <div className="relative z-10 w-full h-full flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
                       {locations.map((loc) => (
-                        <PinContainer
-                            key={loc.title}
-                            title={loc.title}
-                            href={loc.href}
-                        >
-                          <div className="flex items-center justify-center h-16 w-16 md:h-20 md:w-20">
-                            <MapPin className="h-10 w-10 md:h-12 md:w-12 text-primary" />
-                          </div>
-                        </PinContainer>
+                        <div key={loc.title} className="absolute" style={loc.position}>
+                            <PinContainer
+                                title={loc.title}
+                                href={loc.href}
+                                active
+                            >
+                              <div className="flex items-center justify-center h-16 w-16 md:h-20 md:w-20">
+                                <MapPin className="h-10 w-10 md:h-12 md:w-12 text-primary" />
+                              </div>
+                            </PinContainer>
+                        </div>
                       ))}
                     </div>
                   )}
@@ -105,4 +108,3 @@ export default function ContactUsPage() {
     </div>
   );
 }
-
