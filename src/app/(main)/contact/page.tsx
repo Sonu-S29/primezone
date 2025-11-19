@@ -11,12 +11,12 @@ const locations = [
   {
     title: "Jogeshwari Branch",
     href: "https://g.co/kgs/e12TVNF",
-    position: { top: '35%', left: '40%' }
+    position: { top: '15%', left: '30%' }
   },
   {
     title: "Vile Parle Branch",
     href: "https://g.co/kgs/rvyVD8w",
-    position: { top: '55%', left: '50%' }
+    position: { top: '35%', left: '30%' }
   }
 ]
 

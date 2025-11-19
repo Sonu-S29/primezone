@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card";
 import imageData from "@/lib/placeholder-images.json";
+import { Timeline } from "@/components/ui/timeline";
 
 const services = [
     {
@@ -67,6 +68,39 @@ const teamMembers = [
         hint: "professional woman"
     }
 ];
+
+const timelineData = [
+    {
+      title: "2020 – Primezone is Founded",
+      content:
+        "Primezone Computer Education is established with a mission to bring quality computer education within reach of every student. The institute begins with a vision to create skilled, confident, and career-ready professionals.",
+    },
+    {
+      title: "2021 – Expanding Quality Education",
+      content:
+        "Primezone introduces a wide range of courses including Software Development, Hardware & Networking, Multimedia, Animation, E-Accounting, and Digital Literacy. Both online and offline classes are launched to ensure maximum accessibility.",
+    },
+    {
+      title: "2022 – Excellence Recognized",
+      content:
+        "Primezone gains recognition for its excellence, experienced faculty, and consistent training quality. The institute receives awards and builds a strong reputation among students across Mumbai.",
+    },
+    {
+      title: "2023 – Student Success & Career Support",
+      content:
+        "Career counseling, job placement assistance, and personality development programs are introduced. Primezone begins forming partnerships with companies to help students secure real job opportunities.",
+    },
+    {
+      title: "2024 – Growth of Primezone Community",
+      content:
+        "With thousands of students trained, Primezone becomes one of Mumbai’s most trusted computer education institutes. Practical, hands-on industry-oriented learning becomes the institute’s core strength.",
+    },
+    {
+      title: "2025 – Moving Toward the Future",
+      content:
+        "Primezone continues to innovate with advanced diploma programs, modern teaching methods, and an expanded team. The institute remains committed to shaping future tech leaders and supporting students from every background.",
+    },
+  ];
 
 const educationLogo = imageData.find(img => img.id === 'education-logo');
 const studentsLearning = imageData.find(img => img.id === 'students-learning');
@@ -137,6 +171,17 @@ export default function AboutUs() {
             </div>
           </div>
         </section>
+
+      {/* Our Journey Timeline */}
+      <section className="container mx-auto px-4">
+        <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Journey</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+                Tracing our path from a humble beginning to a trusted name in computer education.
+            </p>
+        </div>
+        <Timeline data={timelineData} />
+      </section>
 
       {/* Mission and Vision */}
       <section className="container mx-auto px-4">
