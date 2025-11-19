@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card";
 import imageData from "@/lib/placeholder-images.json";
 import { Timeline } from "@/components/ui/timeline";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 const services = [
     {
@@ -191,21 +193,17 @@ export default function AboutUs() {
               Our commitment to excellence and student success sets us apart.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {whyChooseUsItems.map((item, index) => (
-              <Card key={index} className="text-center p-6 glass-effect">
-                <CardHeader>
-                  <div className="p-4 bg-primary text-primary-foreground rounded-full inline-block mb-4">
-                    {item.icon}
-                  </div>
-                  <CardTitle>{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
+          <BentoGrid className="max-w-4xl mx-auto">
+            {whyChooseUsItems.map((item, i) => (
+                <BentoGridItem
+                key={i}
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+                className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+                />
             ))}
-          </div>
+          </BentoGrid>
         </div>
       </section>
 
@@ -217,21 +215,17 @@ export default function AboutUs() {
             We offer more than just courses. We provide a complete support system for your career.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="text-center p-6 glass-effect">
-                <CardHeader>
-                    <div className="bg-accent text-accent-foreground p-4 rounded-full inline-block mb-4">
-                      {service.icon}
-                    </div>
-                    <CardTitle>{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-            </Card>
-          ))}
-        </div>
+        <BentoGrid className="max-w-4xl mx-auto">
+            {services.map((item, i) => (
+                <BentoGridItem
+                key={i}
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+                className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+                />
+            ))}
+        </BentoGrid>
       </section>
     </div>
   );
