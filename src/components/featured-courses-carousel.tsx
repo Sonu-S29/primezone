@@ -29,7 +29,7 @@ const featuredCourses = [
     slug: "power-bi",
     title: "PowerBI",
     description: "Turn complex data into clear, interactive visualizations and dashboards with Microsoft Power BI.",
-    image: "/images/courses/coursetrend/power_bi.png",
+    image: "/images/courses/coursetrend/power.gif",
     hint: "business intelligence dashboard"
   },
   {

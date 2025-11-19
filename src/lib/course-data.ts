@@ -52,7 +52,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Diploma In Computer Application",
     duration: "1 Year",
     description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
-    image: "/images/heroslider/dca.jpeg",
+    image: "/images/courses/diploma/dca.webp",
     hint: "computer application",
     totalTopics: "220+",
     modules: [
@@ -68,7 +68,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Diploma In Financial & Management",
     duration: "1 Year",
     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
-    image: "/images/courses/DFAM.jpg",
+    image: "/images/courses/diploma/dfam.webp",
     hint: "financial management",
     totalTopics: "235+",
     modules: [
@@ -85,7 +85,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Diploma In Programming Course",
     duration: "1 Year",
     description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
-    image: "/images/courses/DPC.jpg",
+    image: "/images/courses/diploma/dpc.webp",
     hint: "programming course",
     totalTopics: "255+",
     modules: [
@@ -101,7 +101,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Diploma In Graphic & Animation",
     duration: "1 Year",
     description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
-    image: "/images/courses/DGA.jpg",
+    image: "/images/courses/diploma/dga.webp",
     hint: "graphic animation",
     totalTopics: "200+",
     modules: [
@@ -117,7 +117,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Diploma In Ethical Hacking",
     duration: "1 Year",
     description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
-    image: "/images/courses/ethical.webp",
+    image: "/images/courses/diploma/deh.webp",
     hint: "ethical hacking",
     totalTopics: "135+",
     modules: [
@@ -143,7 +143,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Diploma In Digital Marketing",
     duration: "6 Months",
     description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
-    image: "/images/courses/dm.webp",
+    image: "/images/courses/diploma/ddm.webp",
     hint: "digital marketing",
     totalTopics: "120+",
     modules: [
@@ -160,7 +160,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Full-Stack Development",
     duration: "1 Year",
     description: "Become proficient in both front-end and back-end technologies, including HTML, CSS, JavaScript, Angular, Node.js, and MySQL for comprehensive web development.",
-    image: "/images/courses/full-stack.webp",
+    image: "/images/courses/diploma/fullstack.webp",
     hint: "full stack",
     totalTopics: "155+",
     modules: [
@@ -179,7 +179,7 @@ export const diplomaCourses: DiplomaCourse[] = [
     title: "Data Analytics",
     duration: "6 Months",
     description: "Develop skills in data mining, statistical analysis, and data visualization to extract meaningful insights and support data-driven decision-making in businesses.",
-    image: "/images/courses/dataanalytics.webp",
+    image: "/images/courses/diploma/dataanalysis.webp",
     hint: "data analytics",
     totalTopics: "120+",
     modules: [
