@@ -33,40 +33,60 @@ export default function ContactUsPage() {
                 <CardTitle>Our Locations</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 h-[20rem] md:h-[25rem] items-center">
+                <div className="grid sm:grid-cols-2 gap-4 h-[25rem] md:h-[30rem] items-center justify-center">
                   {isClient && (
                     <>
                       <PinContainer
                           title="Jogeshwari"
                           href="https://g.co/kgs/e12TVNF"
                       >
-                          <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-                          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                              Jogeshwari Branch
+                        <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[22rem]">
+                          <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base">
+                            Jogeshwari Branch
                           </h3>
                           <div className="text-base !m-0 !p-0 font-normal">
-                              <span className="text-slate-500 ">
+                            <span className="text-muted-foreground">
                               Click to see the location on Google Maps.
-                              </span>
+                            </span>
                           </div>
-                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-blue-500 via-sky-500 to-cyan-500" />
+                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-card overflow-hidden">
+                             <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.378772392474!2d72.8550920749877!3d19.13490904921614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d45084457f%3A0x956b464b5d63fef0!2sPrimezone%20Computer%20Education%20(Jogeshwari)!5e0!3m2!1sen!2sin!4v1700486858178!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={false}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
                           </div>
+                        </div>
                       </PinContainer>
                       <PinContainer
                           title="Vile Parle"
                           href="https://g.co/kgs/rvyVD8w"
                       >
-                          <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-                          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                              Vile Parle Branch
+                         <div className="flex basis-full flex-col p-4 tracking-tight text-foreground sm:basis-1/2 w-[18rem] h-[22rem]">
+                          <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base">
+                           Vile Parle Branch
                           </h3>
                           <div className="text-base !m-0 !p-0 font-normal">
-                              <span className="text-slate-500 ">
+                            <span className="text-muted-foreground">
                               Click to see the location on Google Maps.
-                              </span>
+                            </span>
                           </div>
-                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500" />
+                          <div className="flex flex-1 w-full rounded-lg mt-4 bg-card overflow-hidden">
+                             <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.473523558113!2d72.85246287498642!3d19.08688405085814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9ac7f1f0085%3A0x33df871465324269!2sPrimezone%20Computer%20Education%20(Vile%20Parle)!5e0!3m2!1sen!2sin!4v1700486948577!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={false}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                              ></iframe>
                           </div>
+                        </div>
                       </PinContainer>
                     </>
                   )}
