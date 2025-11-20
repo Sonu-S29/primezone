@@ -98,7 +98,7 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
 
             <div className="p-4 flex flex-col flex-grow">
                 {/* Row 2: Module Circles */}
-                 <div className="module-carousel-container">
+                 <div className="module-carousel-container my-3">
                     <div className="module-carousel">
                         {course.modules.map((module, index) => (
                             <button
@@ -116,13 +116,12 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
                     </div>
                 </div>
 
-                <CardHeader className="p-0 space-y-1">
-                    <CardTitle className="text-xl font-bold pt-2">{course.title}</CardTitle>
-                    <CardDescription className="line-clamp-2 h-[2.5em]">{course.description}</CardDescription>
+                <CardHeader className="p-0">
+                    <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
                 </CardHeader>
 
                 {/* Row 3: Duration & Topics */}
-                <div className="flex justify-between items-center text-xs font-medium text-muted-foreground mt-4 py-2 border-y">
+                <div className="flex justify-between items-center text-xs font-medium text-muted-foreground mt-auto py-3 border-y">
                      <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>{course.duration}</span>
