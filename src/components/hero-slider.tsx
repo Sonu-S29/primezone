@@ -92,7 +92,7 @@ const HeroSlider = () => {
                     }}
                     className="flex flex-col items-center px-4"
                 >
-                    <h1 className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
+                    <h1 className="mt-8 bg-gradient-to-br from-background to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
                         Unlock Your Potential with Primezone
                     </h1>
                     <p className="max-w-xl mx-auto mt-4 text-center text-base text-neutral-400">
