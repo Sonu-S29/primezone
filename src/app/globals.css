@@ -652,6 +652,31 @@ body {
         transform: translate3d(0%, -30%, 100px) scale(1.2);
     }
 
+    /* New Diploma Card CSS */
+    .module-circle {
+        @apply relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-primary/20 bg-background text-primary/50 transition-all duration-300;
+    }
+
+    .module-circle:hover,
+    .module-circle.active {
+        @apply border-solid border-primary bg-primary/10 text-primary scale-110;
+    }
+    
+    .module-icon {
+        @apply transition-transform duration-300;
+    }
+
+    .module-circle:hover .module-icon,
+    .module-circle.active .module-icon {
+        @apply scale-110;
+    }
+
+    .module-tooltip {
+        @apply absolute -top-8 left-1/2 -translate-x-1/2 scale-0 transform whitespace-nowrap rounded-md bg-primary px-2 py-1 text-xs text-primary-foreground opacity-0 transition-all duration-300;
+        @apply group-hover:scale-100 group-hover:opacity-100;
+    }
+
+
     @keyframes tracking-in-contract {
         0% { letter-spacing: 1em; opacity: 0; }
         40% { opacity: 0.6; }
@@ -722,4 +747,5 @@ body {
     
 
     
+
 
