@@ -98,20 +98,22 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
 
             <div className="p-4 flex flex-col flex-grow">
                 {/* Row 2: Module Circles */}
-                <div className="flex justify-center items-center gap-2 my-3">
-                    {course.modules.map((module, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setSelectedModule(index)}
-                            className={`module-circle group ${selectedModule === index ? 'active' : ''}`}
-                            title={module.title}
-                        >
-                            <div className="module-icon">
-                                {iconMap[module.icon] || iconMap.default}
-                            </div>
-                            <span className="module-tooltip">{module.title}</span>
-                        </button>
-                    ))}
+                 <div className="module-carousel-container">
+                    <div className="module-carousel">
+                        {course.modules.map((module, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setSelectedModule(index)}
+                                className={`module-circle group ${selectedModule === index ? 'active' : ''}`}
+                                title={module.title}
+                            >
+                                <div className="module-icon">
+                                    {iconMap[module.icon] || iconMap.default}
+                                </div>
+                                <span className="module-tooltip">{module.title}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 <CardHeader className="p-0 space-y-1">

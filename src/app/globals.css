@@ -653,17 +653,34 @@ body {
     }
 
     /* New Diploma Card CSS */
+    .module-carousel-container {
+        @apply w-full overflow-hidden my-3;
+    }
+
+    .module-carousel {
+        @apply flex items-center gap-2 pb-2 overflow-x-auto;
+        scrollbar-width: none; /* For Firefox */
+    }
+
+    .module-carousel::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+    }
+
     .module-circle {
-        @apply relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-primary/20 bg-background text-primary/50 transition-all duration-300;
+        @apply relative flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full border-2 border-transparent bg-muted/50 transition-all duration-300;
     }
 
     .module-circle:hover,
     .module-circle.active {
-        @apply border-solid border-primary bg-primary/10 text-primary scale-110;
+        @apply border-primary bg-primary/10 text-primary scale-110 shadow-lg;
     }
     
     .module-icon {
-        @apply transition-transform duration-300;
+        @apply transition-transform duration-300 text-muted-foreground group-hover:text-primary;
+    }
+    
+    .module-circle.active .module-icon {
+        @apply text-primary;
     }
 
     .module-circle:hover .module-icon,
@@ -747,5 +764,6 @@ body {
     
 
     
+
 
 
