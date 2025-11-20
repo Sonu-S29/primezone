@@ -49,6 +49,20 @@
     "hint": "graphic design trends"
   },
   {
+    "id": "top-5-courses",
+    "src": "https://picsum.photos/seed/topcourses/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "job opportunities"
+  },
+  {
+    "id": "coreldraw-vs-illustrator",
+    "src": "https://picsum.photos/seed/designcompare/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "design software"
+  },
+  {
     "id": "happy-diverse-team",
     "src": "https://picsum.photos/seed/happydiverse/600/400",
     "width": 600,
