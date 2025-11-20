@@ -1,0 +1,21 @@
+
+.text-inner, .text-cover {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background-clip: inherit;
+  -webkit-background-clip: inherit;
+  text-transparent: inherit;
+  background-image: inherit;
+  white-space: nowrap;
+}
+
+.text-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

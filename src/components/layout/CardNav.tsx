@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Suspense, lazy } from 'react';
+import { Cover } from '../ui/cover';
 
 interface NavLink {
   label: string;
@@ -57,6 +58,12 @@ const CardNav = ({
             <Link href="/" aria-label="Home">
                 <Image src={logo} alt={logoAlt} className="logo" width={150} height={32} data-ai-hint="logo" priority />
             </Link>
+          </div>
+          <div className="animated-text-container">
+            <h1
+                className="text-lg md:text-xl lg:text-2xl font-semibold max-w-7xl mx-auto text-center relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+                <Cover>Primezone</Cover>
+            </h1>
           </div>
           <div
             className={cn('hamburger-menu', isExpanded && 'open')}
