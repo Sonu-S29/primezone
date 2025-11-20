@@ -14,6 +14,13 @@
     "hint": "students learning"
   },
   {
+    "id": "computer-education-shapes-success",
+    "src": "https://picsum.photos/seed/compedusuccess/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "computer education"
+  },
+  {
     "id": "web-dev-future",
     "src": "https://picsum.photos/seed/webdevfuture/600/400",
     "width": 600,
