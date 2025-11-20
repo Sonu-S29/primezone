@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+       backgroundImage: {
+        "gradient-conic": "conic-gradient(var(--tw-gradient-stops))",
+      },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Inter', 'sans-serif'],
