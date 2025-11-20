@@ -35,7 +35,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" className={`${inter.className} antialiased pt-24`}>
+    <html lang="en" className={`${inter.className} antialiased`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="description" content={metadata.description!} />
@@ -50,7 +50,7 @@ export default function RootLayout({
           buttonBgColor="hsl(var(--primary))"
           buttonTextColor="hsl(var(--primary-foreground))"
         />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-24">{children}</main>
         <Footer />
         <Chatbot />
         <Toaster />
