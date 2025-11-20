@@ -658,7 +658,7 @@ body {
     }
 
     .module-carousel {
-        @apply flex items-center gap-2 pb-2 overflow-x-auto;
+        @apply flex items-center gap-2 py-2 overflow-x-auto;
         scrollbar-width: none; /* For Firefox */
     }
 
@@ -764,6 +764,7 @@ body {
     
 
     
+
 
 
 
