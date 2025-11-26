@@ -15,7 +15,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import dynamic from "next/dynamic";
-import DotGrid from "@/components/DotGrid";
+import ParticleHero from "@/components/particle-hero";
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
 const FeaturedCoursesCarousel = lazy(() => import("@/components/featured-courses-carousel"));
@@ -124,38 +124,7 @@ export default function Home() {
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-      <section className="relative h-screen -mt-24 flex items-center justify-center text-center text-foreground bg-background">
-        <DotGrid
-          dotSize={10}
-          gap={15}
-          baseColor="hsl(var(--accent))"
-          activeColor="hsl(var(--primary))"
-          proximity={120}
-          shockRadius={250}
-          shockStrength={5}
-          resistance={750}
-          returnDuration={1.5}
-          className="absolute inset-0"
-        />
-        <div className="relative z-10 p-4">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4">
-            Unlock Your Potential with Primezone
-          </h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
-            Access our collection of premium, meticulously crafted courses. Save
-            time and focus on what matters—building standout skills that
-            captivate employers.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <Button asChild>
-              <Link href="/courses">Explore Courses</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/enroll">Enroll Now</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ParticleHero />
       
 
       {/* Accreditation Logos Section */}
@@ -375,5 +344,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
