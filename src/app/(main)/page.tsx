@@ -124,12 +124,12 @@ export default function Home() {
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-      <section className="relative h-screen -mt-20 flex items-center justify-center text-center text-white bg-primary">
+      <section className="relative h-screen -mt-24 flex items-center justify-center text-center text-foreground bg-background">
         <DotGrid
           dotSize={10}
           gap={15}
-          baseColor="#4095c6"
-          activeColor="#003049"
+          baseColor="hsl(var(--accent))"
+          activeColor="hsl(var(--primary))"
           proximity={120}
           shockRadius={250}
           shockStrength={5}
@@ -141,7 +141,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4">
             Unlock Your Potential with Primezone
           </h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/80">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
             Access our collection of premium, meticulously crafted courses. Save
             time and focus on what matters—building standout skills that
             captivate employers.
@@ -150,7 +150,7 @@ export default function Home() {
             <Button asChild>
               <Link href="/courses">Explore Courses</Link>
             </Button>
-            <Button asChild variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-primary">
+            <Button asChild variant="outline">
               <Link href="/enroll">Enroll Now</Link>
             </Button>
           </div>
@@ -375,3 +375,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
