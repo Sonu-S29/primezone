@@ -7,8 +7,6 @@ import { Button } from './ui/button';
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { LampContainer } from "./ui/lamp";
-import { motion } from "framer-motion";
 
 const initialItems = [
     {
@@ -69,46 +67,16 @@ const HeroSlider = () => {
     }, [handleNext]);
 
     useEffect(() => {
-        if (!isMobile) {
-            startSlider();
-        }
+        startSlider();
         return () => {
             if (intervalRef.current) {
                 clearInterval(intervalRef.current);
             }
         };
-    }, [startSlider, isMobile]);
+    }, [startSlider]);
 
     if (isMobile) {
-        return (
-             <LampContainer>
-                <motion.div
-                    initial={{ opacity: 0.5, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                    delay: 0.3,
-                    duration: 0.8,
-                    ease: "easeInOut",
-                    }}
-                    className="flex flex-col items-center px-4"
-                >
-                    <h1 className="mt-8 bg-gradient-to-br from-background to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-                        Unlock Your Potential with Primezone
-                    </h1>
-                    <p className="max-w-xl mx-auto mt-4 text-center text-base text-neutral-400">
-                        Access our collection of premium, meticulously crafted courses. Save time and focus on what matters—building standout skills that captivate employers.
-                    </p>
-                    <div className="mt-8 flex justify-center gap-4">
-                        <Button asChild>
-                            <Link href="/courses">Explore Courses</Link>
-                        </Button>
-                        <Button asChild variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
-                            <Link href="/enroll">Enroll Now</Link>
-                        </Button>
-                    </div>
-                </motion.div>
-            </LampContainer>
-        )
+        return null;
     }
 
     return (

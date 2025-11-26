@@ -1,99 +1,269 @@
-"use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { Globe, MessageCircle, Instagram, Facebook, Phone, Tv, Brush, BarChart, Code, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import React from "react";
+'use client';
+import { useRef, useEffect, useCallback, useMemo } from 'react';
+import { gsap } from 'gsap';
+import { InertiaPlugin } from 'gsap/InertiaPlugin';
 
-const mainLinks = [
-    { name: "Website", href: "https://www.primezonecomputer.com/", icon: <Globe /> },
-    { name: "WhatsApp", href: "https://wa.me/919769730087", icon: <MessageCircle /> },
-    { name: "Call Us", href: "tel:+919769730087", icon: <Phone /> },
-];
+import './DotGrid.css';
 
-const courseLinks = [
-    { name: "MS Office", href: "/courses/short-term", icon: <Tv /> },
-    { name: "Web Designing", href: "/courses/short-term", icon: <Brush /> },
-    { name: "Power BI", href: "/courses/short-term", icon: <BarChart /> },
-    { name: "C Programming", href: "/courses/short-term", icon: <Code /> },
-];
+gsap.registerPlugin(InertiaPlugin);
 
-const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/primezone_computer_education/", icon: <Instagram /> },
-    { name: "Facebook", href: "https://www.facebook.com/primezonecomputerjogeshwari/", icon: <Facebook /> },
-]
+const throttle = (func, limit) => {
+  let lastCall = 0;
+  return function (...args) {
+    const now = performance.now();
+    if (now - lastCall >= limit) {
+      lastCall = now;
+      func.apply(this, args);
+    }
+  };
+};
 
-export default function LinksPage() {
-    return (
-        <div className="relative min-h-screen w-full bg-gradient-to-br from-indigo-900 via-slate-900 to-black text-white">
-            <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center relative z-10">
-                <div className="w-full max-w-md mx-auto">
-                    <header className="flex flex-col items-center mb-8">
-                        <div className="mb-4">
-                            <Image
-                                src="/favicon.ico"
-                                alt="Primezone Logo"
-                                width={100}
-                                height={100}
-                                className="rounded-full shadow-lg border-2 border-white/50"
-                                data-ai-hint="company logo"
-                            />
-                        </div>
-                        <h1 className="text-2xl font-bold">@PrimezoneComputer</h1>
-                        <p className="text-white/80 mt-1">Your Gateway to Tech Learning</p>
-                    </header>
-
-                    <main className="space-y-4">
-                        {mainLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group flex items-center justify-center w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:bg-white/20 hover:scale-105 transition-all duration-300 font-semibold text-lg"
-                            >
-                                {link.icon && <div className="absolute left-4">{link.icon}</div>}
-                                <span>{link.name}</span>
-                            </Link>
-                        ))}
-                    </main>
-
-                    <section className="mt-10">
-                        <h2 className="text-xl font-bold mb-4">Featured Courses</h2>
-                        <div className="grid grid-cols-2 gap-4">
-                            {courseLinks.map((course) => (
-                                <Link
-                                    key={course.name}
-                                    href={course.href}
-                                    className="group flex flex-col items-center justify-center p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md hover:bg-white/20 hover:scale-105 transition-all duration-300"
-                                >
-                                    <div className="text-white mb-2 group-hover:text-accent transition-colors">
-                                        {course.icon}
-                                    </div>
-                                    <span className="font-semibold text-sm">{course.name}</span>
-                                </Link>
-                            ))}
-                        </div>
-                         <Button asChild className="w-full mt-4 bg-white/90 text-slate-900 hover:bg-white">
-                            <Link href="/courses">
-                                Show All Courses <ArrowRight className="ml-2 h-4 w-4" />
-                            </Link>
-                        </Button>
-                    </section>
-
-                    <footer className="mt-12">
-                        <div className="flex justify-center gap-6">
-                            {socialLinks.map((link) => (
-                                <Link key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                                    {React.cloneElement(link.icon, { size: 28 })}
-                                    <span className="sr-only">{link.name}</span>
-                                </Link>
-                            ))}
-                        </div>
-                    </footer>
-                </div>
-            </div>
-        </div>
-    );
+function hexToRgb(hex) {
+  const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
+  if (!m) return { r: 0, g: 0, b: 0 };
+  return {
+    r: parseInt(m[1], 16),
+    g: parseInt(m[2], 16),
+    b: parseInt(m[3], 16)
+  };
 }
+
+const DotGrid = ({
+  dotSize = 16,
+  gap = 32,
+  baseColor = '#5227FF',
+  activeColor = '#5227FF',
+  proximity = 150,
+  speedTrigger = 100,
+  shockRadius = 250,
+  shockStrength = 5,
+  maxSpeed = 5000,
+  resistance = 750,
+  returnDuration = 1.5,
+  className = '',
+  style
+}) => {
+  const wrapperRef = useRef(null);
+  const canvasRef = useRef(null);
+  const dotsRef = useRef([]);
+  const pointerRef = useRef({
+    x: 0,
+    y: 0,
+    vx: 0,
+    vy: 0,
+    speed: 0,
+    lastTime: 0,
+    lastX: 0,
+    lastY: 0
+  });
+
+  const baseRgb = useMemo(() => hexToRgb(baseColor), [baseColor]);
+  const activeRgb = useMemo(() => hexToRgb(activeColor), [activeColor]);
+
+  const circlePath = useMemo(() => {
+    if (typeof window === 'undefined' || !window.Path2D) return null;
+
+    const p = new window.Path2D();
+    p.arc(0, 0, dotSize / 2, 0, Math.PI * 2);
+    return p;
+  }, [dotSize]);
+
+  const buildGrid = useCallback(() => {
+    const wrap = wrapperRef.current;
+    const canvas = canvasRef.current;
+    if (!wrap || !canvas) return;
+
+    const { width, height } = wrap.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    const ctx = canvas.getContext('2d');
+    if (ctx) ctx.scale(dpr, dpr);
+
+    const cols = Math.floor((width + gap) / (dotSize + gap));
+    const rows = Math.floor((height + gap) / (dotSize + gap));
+    const cell = dotSize + gap;
+
+    const gridW = cell * cols - gap;
+    const gridH = cell * rows - gap;
+
+    const extraX = width - gridW;
+    const extraY = height - gridH;
+
+    const startX = extraX / 2 + dotSize / 2;
+    const startY = extraY / 2 + dotSize / 2;
+
+    const dots = [];
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const cx = startX + x * cell;
+        const cy = startY + y * cell;
+        dots.push({ cx, cy, xOffset: 0, yOffset: 0, _inertiaApplied: false });
+      }
+    }
+    dotsRef.current = dots;
+  }, [dotSize, gap]);
+
+  useEffect(() => {
+    if (!circlePath) return;
+
+    let rafId;
+    const proxSq = proximity * proximity;
+
+    const draw = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const { x: px, y: py } = pointerRef.current;
+
+      for (const dot of dotsRef.current) {
+        const ox = dot.cx + dot.xOffset;
+        const oy = dot.cy + dot.yOffset;
+        const dx = dot.cx - px;
+        const dy = dot.cy - py;
+        const dsq = dx * dx + dy * dy;
+
+        let style = baseColor;
+        if (dsq <= proxSq) {
+          const dist = Math.sqrt(dsq);
+          const t = 1 - dist / proximity;
+          const r = Math.round(baseRgb.r + (activeRgb.r - baseRgb.r) * t);
+          const g = Math.round(baseRgb.g + (activeRgb.g - baseRgb.g) * t);
+          const b = Math.round(baseRgb.b + (activeRgb.b - baseRgb.b) * t);
+          style = `rgb(${r},${g},${b})`;
+        }
+
+        ctx.save();
+        ctx.translate(ox, oy);
+        ctx.fillStyle = style;
+        ctx.fill(circlePath);
+        ctx.restore();
+      }
+
+      rafId = requestAnimationFrame(draw);
+    };
+
+    draw();
+    return () => cancelAnimationFrame(rafId);
+  }, [proximity, baseColor, activeRgb, baseRgb, circlePath]);
+
+  useEffect(() => {
+    buildGrid();
+    let ro = null;
+    if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
+      ro = new ResizeObserver(buildGrid);
+      wrapperRef.current && ro.observe(wrapperRef.current);
+    } else {
+      window.addEventListener('resize', buildGrid);
+    }
+    return () => {
+      if (ro) ro.disconnect();
+      else window.removeEventListener('resize', buildGrid);
+    };
+  }, [buildGrid]);
+
+  useEffect(() => {
+    const onMove = e => {
+      const now = performance.now();
+      const pr = pointerRef.current;
+      const dt = pr.lastTime ? now - pr.lastTime : 16;
+      const dx = e.clientX - pr.lastX;
+      const dy = e.clientY - pr.lastY;
+      let vx = (dx / dt) * 1000;
+      let vy = (dy / dt) * 1000;
+      let speed = Math.hypot(vx, vy);
+      if (speed > maxSpeed) {
+        const scale = maxSpeed / speed;
+        vx *= scale;
+        vy *= scale;
+        speed = maxSpeed;
+      }
+      pr.lastTime = now;
+      pr.lastX = e.clientX;
+      pr.lastY = e.clientY;
+      pr.vx = vx;
+      pr.vy = vy;
+      pr.speed = speed;
+
+      const rect = canvasRef.current.getBoundingClientRect();
+      pr.x = e.clientX - rect.left;
+      pr.y = e.clientY - rect.top;
+
+      for (const dot of dotsRef.current) {
+        const dist = Math.hypot(dot.cx - pr.x, dot.cy - pr.y);
+        if (speed > speedTrigger && dist < proximity && !dot._inertiaApplied) {
+          dot._inertiaApplied = true;
+          gsap.killTweensOf(dot);
+          const pushX = dot.cx - pr.x + vx * 0.005;
+          const pushY = dot.cy - pr.y + vy * 0.005;
+          gsap.to(dot, {
+            inertia: { xOffset: pushX, yOffset: pushY, resistance },
+            onComplete: () => {
+              gsap.to(dot, {
+                xOffset: 0,
+                yOffset: 0,
+                duration: returnDuration,
+                ease: 'elastic.out(1,0.75)'
+              });
+              dot._inertiaApplied = false;
+            }
+          });
+        }
+      }
+    };
+
+    const onClick = e => {
+      const rect = canvasRef.current.getBoundingClientRect();
+      const cx = e.clientX - rect.left;
+      const cy = e.clientY - rect.top;
+      for (const dot of dotsRef.current) {
+        const dist = Math.hypot(dot.cx - cx, dot.cy - cy);
+        if (dist < shockRadius && !dot._inertiaApplied) {
+          dot._inertiaApplied = true;
+          gsap.killTweensOf(dot);
+          const falloff = Math.max(0, 1 - dist / shockRadius);
+          const pushX = (dot.cx - cx) * shockStrength * falloff;
+          const pushY = (dot.cy - cy) * shockStrength * falloff;
+          gsap.to(dot, {
+            inertia: { xOffset: pushX, yOffset: pushY, resistance },
+            onComplete: () => {
+              gsap.to(dot, {
+                xOffset: 0,
+                yOffset: 0,
+                duration: returnDuration,
+                ease: 'elastic.out(1,0.75)'
+              });
+              dot._inertiaApplied = false;
+            }
+          });
+        }
+      }
+    };
+
+    const throttledMove = throttle(onMove, 50);
+    window.addEventListener('mousemove', throttledMove, { passive: true });
+    window.addEventListener('click', onClick);
+
+    return () => {
+      window.removeEventListener('mousemove', throttledMove);
+      window.removeEventListener('click', onClick);
+    };
+  }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength]);
+
+  return (
+    <section className={`dot-grid ${className}`} style={style}>
+      <div ref={wrapperRef} className="dot-grid__wrap">
+        <canvas ref={canvasRef} className="dot-grid__canvas" />
+      </div>
+    </section>
+  );
+};
+
+export default DotGrid;
