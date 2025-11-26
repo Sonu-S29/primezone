@@ -51,7 +51,6 @@ const initialItems = [
 const HeroSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
-    const isMobile = useIsMobile();
 
     const handleNext = useCallback(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % initialItems.length);
@@ -75,13 +74,9 @@ const HeroSlider = () => {
         };
     }, [startSlider]);
 
-    if (isMobile) {
-        return null;
-    }
-
     return (
         <main
-            className='hero-slider-main'
+            className='hero-slider-main -mt-24'
             onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current) }}
             onMouseLeave={startSlider}
         >
@@ -113,3 +108,5 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
+
+    

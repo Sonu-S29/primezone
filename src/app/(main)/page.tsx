@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import AccreditationLogos from "@/components/accreditation-logos";
 import Autoplay from "embla-carousel-autoplay";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -16,6 +16,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import dynamic from "next/dynamic";
 import ParticleHero from "@/components/particle-hero";
+import HeroSlider from "@/components/hero-slider";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
 const FeaturedCoursesCarousel = lazy(() => import("@/components/featured-courses-carousel"));
@@ -120,11 +122,13 @@ export default function Home() {
    const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
+  const isMobile = useIsMobile();
+
 
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-      <ParticleHero />
+       {isMobile ? <ParticleHero /> : <HeroSlider />}
       
 
       {/* Accreditation Logos Section */}
@@ -344,3 +348,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
