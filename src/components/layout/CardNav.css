@@ -1,3 +1,4 @@
+
 .card-nav-container {
   position: fixed;
   top: 1em;
@@ -16,7 +17,7 @@
 
 .card-nav {
   display: block;
-  height: 36px;
+  height: 45px;
   padding: 0;
   background-color: white;
   border: 0.5px solid hsla(var(--border) / 0.5);
@@ -116,6 +117,7 @@
   pointer-events: none;
   z-index: 1;
   transition: opacity 0.4s ease-in-out;
+  overflow-y: auto;
 }
 
 .card-nav.open .card-nav-content {
