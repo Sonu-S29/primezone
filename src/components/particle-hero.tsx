@@ -175,7 +175,7 @@ const ParticleHero = () => {
     }, []);
 
     return (
-        <section ref={heroRef} id="heroContainer" className="relative h-screen -mt-24 w-full bg-background">
+        <section ref={heroRef} id="heroContainer" className="relative h-screen -mt-24 w-full bg-background overflow-hidden">
             <canvas ref={canvasRef} id="particle-canvas" />
             <div className="hero-content">
                 <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-foreground">
@@ -194,7 +194,7 @@ const ParticleHero = () => {
                         <Link href="/enroll">Enroll Now</Link>
                     </Button>
                 </div>
-                 <div className="absolute bottom-0 left-0 w-full h-24">
+                 <div className="absolute bottom-0 left-0 w-full h-24 overflow-hidden">
                   <LogoLoop
                     logos={courseLogos}
                     speed={80}
