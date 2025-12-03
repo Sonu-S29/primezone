@@ -201,18 +201,18 @@ export default function Home() {
             </div>
             <Card className="bg-accent/20 p-8 rounded-2xl">
                 <CardContent className="p-0">
-                    <form className="space-y-4">
+                    <form action="https://formspree.io/f/xnnawrlz" method="POST" className="space-y-4">
                         <div className="space-y-2">
                            <Label htmlFor="quoteName" className="sr-only">Your Name</Label>
-                           <Input id="quoteName" placeholder="Your Name" className="bg-background"/>
+                           <Input id="quoteName" name="name" placeholder="Your Name" className="bg-background"/>
                         </div>
                          <div className="space-y-2">
                            <Label htmlFor="quoteEmail" className="sr-only">Your Email</Label>
-                           <Input id="quoteEmail" type="email" placeholder="Your Email" className="bg-background"/>
+                           <Input id="quoteEmail" name="email" type="email" placeholder="Your Email" className="bg-background"/>
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="quoteCourse" className="sr-only">Select a Course</Label>
-                            <Select>
+                            <Select name="course">
                                 <SelectTrigger id="quoteCourse" className="bg-background">
                                     <SelectValue placeholder="Select a Course" />
                                 </SelectTrigger>
@@ -225,7 +225,7 @@ export default function Home() {
                         </div>
                          <div className="space-y-2">
                            <Label htmlFor="quoteMessage" className="sr-only">Message</Label>
-                           <Textarea id="quoteMessage" placeholder="Message" rows={4} className="bg-background"/>
+                           <Textarea id="quoteMessage" name="message" placeholder="Message" rows={4} className="bg-background"/>
                         </div>
                         <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg">Request A Quote</Button>
                     </form>
@@ -348,5 +348,4 @@ export default function Home() {
     </div>
   );
 }
-
     

@@ -83,25 +83,25 @@ function EnrollmentForm() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form className="space-y-6">
+          <form action="https://formspree.io/f/xnnawrlz" method="POST" className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="fullName">Full Name</Label>
-                <Input id="fullName" placeholder="John Doe" />
+                <Input id="fullName" name="fullName" placeholder="John Doe" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" placeholder="john.doe@example.com" />
+                <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" type="tel" placeholder="+1 (234) 567-890" />
+                <Input id="phone" name="phone" type="tel" placeholder="+1 (234) 567-890" />
               </div>
               <div className="space-y-2">
                   <Label htmlFor="course">Course of Interest</Label>
-                  <Select defaultValue={courseFromUrl || undefined}>
+                  <Select name="course" defaultValue={courseFromUrl || undefined}>
                       <SelectTrigger id="course">
                           <SelectValue placeholder="Select a course" />
                       </SelectTrigger>
@@ -115,11 +115,11 @@ function EnrollmentForm() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="address">Address</Label>
-              <Textarea id="address" placeholder="123 Tech Street, Innovation City" />
+              <Textarea id="address" name="address" placeholder="123 Tech Street, Innovation City" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="background">Educational Background</Label>
-              <Textarea id="background" placeholder="e.g., High School Diploma, Bachelor's in Arts" />
+              <Textarea id="background" name="educationalBackground" placeholder="e.g., High School Diploma, Bachelor's in Arts" />
             </div>
             <Button type="submit" className="w-full" size="lg">Submit Enrollment</Button>
           </form>

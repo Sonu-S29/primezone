@@ -35,24 +35,24 @@ export default function ContactForm() {
         <CardTitle>Send us a Message</CardTitle>
       </CardHeader>
       <CardContent>
-        <form className="space-y-4">
+        <form action="https://formspree.io/f/xnnawrlz" method="POST" className="space-y-4">
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" placeholder="John" />
+              <Input id="firstName" name="firstName" placeholder="John" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" placeholder="Doe" />
+              <Input id="lastName" name="lastName" placeholder="Doe" />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" type="email" placeholder="john.doe@example.com" />
+            <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="subject">Subject</Label>
-              <Select onValueChange={handleCourseSelect} value="">
+              <Select onValueChange={handleCourseSelect} value="" name="subject">
                   <SelectTrigger id="subject">
                       <SelectValue placeholder="Select courses..." />
                   </SelectTrigger>
@@ -77,7 +77,7 @@ export default function ContactForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Your Message</Label>
-            <Textarea id="message" rows={5} placeholder="Please type your message here..."/>
+            <Textarea id="message" name="message" rows={5} placeholder="Please type your message here..."/>
           </div>
           <Button type="submit" className="w-full">Send Message</Button>
         </form>

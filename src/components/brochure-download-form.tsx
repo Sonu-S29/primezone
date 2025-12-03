@@ -101,7 +101,7 @@ export default function BrochureDownloadForm() {
     <>
       <CardContent className="p-0">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 pt-4">
+          <form action="https://formspree.io/f/xnnawrlz" method="POST" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 pt-4">
             {step === "details" && (
               <>
                 <FormField
