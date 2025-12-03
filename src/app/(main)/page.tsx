@@ -200,7 +200,9 @@ export default function Home() {
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-       {isMobile ? <ParticleHero /> : <HeroSlider />}
+       {isMobile === undefined ? (
+        <div className="h-screen -mt-24 w-full bg-background" />
+      ) : isMobile ? <ParticleHero /> : <HeroSlider />}
       
 
       {/* Accreditation Logos Section */}
