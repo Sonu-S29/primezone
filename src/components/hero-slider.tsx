@@ -14,36 +14,42 @@ const initialItems = [
         hint: "computer course",
         title: "50% Off on all computer Courses",
         description: "Master the fundamentals and become a professional in computer applications and software.",
+        hasContent: true,
     },
     {
         imageUrl: "/images/heroslider/dca.webp",
         hint: "computer application course",
         title: "Diploma in Computer Application",
         description: "Master the fundamentals of computer applications and software.",
+        hasContent: true,
     },
     {
         imageUrl: "/images/heroslider/dfam.webp",
         hint: "financial management",
         title: "Financial Management",
         description: "Develop key skills in finance and management to excel in the business world.",
+        hasContent: false,
     },
     {
         imageUrl: "/images/heroslider/dga.webp",
         hint: "graphic animation",
         title: "Graphic & Animation",
         description: "Unleash your creativity and bring ideas to life with our design and animation courses.",
+        hasContent: false,
     },
     {
         imageUrl: "/images/heroslider/ddm.webp",
         hint: "digital marketing",
         title: "Digital Marketing",
         description: "Learn the latest strategies in SEO, social media, and online advertising to grow businesses.",
+        hasContent: false,
     },
      {
         imageUrl: "/images/heroslider/dpc.webp",
         hint: "programming course",
         title: "Diploma in Programming",
         description: "Master coding languages and build a solid foundation for a career in software development.",
+        hasContent: false,
     },
 ];
 
@@ -93,13 +99,15 @@ const HeroSlider = () => {
                             className="object-cover"
                             data-ai-hint={item.hint}
                         />
-                        <div className='content'>
-                            <h2 className='title'>{item.title}</h2>
-                            <p className='description'>{item.description}</p>
-                            <Button asChild>
-                               <Link href="/courses">Read More</Link>
-                            </Button>
-                        </div>
+                        {item.hasContent && (
+                            <div className='content'>
+                                <h2 className='title'>{item.title}</h2>
+                                <p className='description'>{item.description}</p>
+                                <Button asChild>
+                                <Link href="/courses">Read More</Link>
+                                </Button>
+                            </div>
+                        )}
                     </li>
                 ))}
             </ul>
