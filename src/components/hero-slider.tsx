@@ -14,14 +14,14 @@ const initialItems = [
         hint: "computer course",
         title: "50% Off on all computer Courses",
         description: "Master the fundamentals and become a professional in computer applications and software.",
-        hasContent: true,
+        hasContent: false,
     },
     {
         imageUrl: "/images/heroslider/dca.webp",
         hint: "computer application course",
         title: "Diploma in Computer Application",
         description: "Master the fundamentals of computer applications and software.",
-        hasContent: true,
+        hasContent: false,
     },
     {
         imageUrl: "/images/heroslider/dfam.webp",
