@@ -18,35 +18,35 @@ export interface DiplomaCourse {
 }
 
 export const diplomaCourses: DiplomaCourse[] = [
-  {
-    slug: "accounting",
-    title: "Diploma In Accounting",
-    duration: "1 Year",
-    description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
-    image: "/images/courses/DIA.jpg",
-    hint: "accounting collage",
-    totalTopics: "60+",
-    modules: [
-        { title: "Financial Accounting Basics", icon: "Landmark", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
-        { title: "Advanced Excel for Accountants", icon: "BarChart", subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
-        { title: "Tally Prime with GST", icon: "FileText", subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
-    ],
-  },
-  {
-    slug: "financial-accounting",
-    title: "Diploma In Financial Accounting",
-    duration: "1 Year",
-    description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
-    image: "/images/courses/DFA.jpg",
-    hint: "financial report",
-    totalTopics: "90+",
-    modules: [
-        { title: "Office Automation", icon: "MonitorCheck", subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
-        { title: "Advanced Excel", icon: "BarChart", subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
-        { title: "Tally Prime (GST)", icon: "FileText", subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
-        { title: "Taxation Auditing", icon: "Landmark", subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
-    ],
-  },
+  // {
+  //   slug: "accounting",
+  //   title: "Diploma In Accounting",
+  //   duration: "1 Year",
+  //   description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
+  //   image: "/images/courses/DIA.jpg",
+  //   hint: "accounting collage",
+  //   totalTopics: "60+",
+  //   modules: [
+  //       { title: "Financial Accounting Basics", icon: "Landmark", subTopics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
+  //       { title: "Advanced Excel for Accountants", icon: "BarChart", subTopics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
+  //       { title: "Tally Prime with GST", icon: "FileText", subTopics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
+  //   ],
+  // },
+  // {
+  //   slug: "financial-accounting",
+  //   title: "Diploma In Financial Accounting",
+  //   duration: "1 Year",
+  //   description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
+  //   image: "/images/courses/DFA.jpg",
+  //   hint: "financial report",
+  //   totalTopics: "90+",
+  //   modules: [
+  //       { title: "Office Automation", icon: "MonitorCheck", subTopics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
+  //       { title: "Advanced Excel", icon: "BarChart", subTopics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
+  //       { title: "Tally Prime (GST)", icon: "FileText", subTopics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
+  //       { title: "Taxation Auditing", icon: "Landmark", subTopics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
+  //   ],
+  // },
   {
     slug: "computer-application",
     title: "Diploma In Computer Application",

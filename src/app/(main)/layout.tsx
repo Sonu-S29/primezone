@@ -25,7 +25,6 @@ export default function RootLayout({
     { label: "Courses", href: "/courses", ariaLabel: "View All Courses" },
     { label: "Diploma Courses", href: "/courses/diploma", ariaLabel: "View Diploma Courses" },
     { label: "Short-Term Courses", href: "/courses/short-term", ariaLabel: "View Short-Term Courses" },
-    { label: "AI Recommendations", href: "/recommendations", ariaLabel: "Get AI course recommendations" },
     { label: "Gallery", href: "/gallery", ariaLabel: "View our gallery" },
     { label: "Student Projects", href: "/student-projects", ariaLabel: "View student projects" },
     { label: "Blog", href: "/blog", ariaLabel: "Read our blog" },
