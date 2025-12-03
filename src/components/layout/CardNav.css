@@ -16,7 +16,7 @@
 
 .card-nav {
   display: block;
-  height: 60px;
+  height: 36px;
   padding: 0;
   background-color: white;
   border: 0.5px solid hsla(var(--border) / 0.5);
@@ -28,7 +28,7 @@
 }
 
 .card-nav.open {
-  height: 400px; /* Adjust as needed */
+  height: 240px; /* Adjust as needed */
 }
 
 .card-nav-top {
@@ -36,7 +36,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -108,7 +108,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 60px;
+  top: 36px;
   bottom: 0;
   padding: 2rem;
   opacity: 0;
