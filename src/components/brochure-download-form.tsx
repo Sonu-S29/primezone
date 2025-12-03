@@ -1,12 +1,14 @@
 
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useForm as useReactHookForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { sendOtp, verifyOtp } from "@/app/actions";
 import { useToast } from "@/hooks/use-toast";
+import { useForm } from '@formspree/react';
 
 import { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -28,8 +30,10 @@ export default function BrochureDownloadForm() {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState<"details" | "otp" | "success">("details");
   const { toast } = useToast();
+  const router = useRouter();
+  const [formspreeState, handleFormspreeSubmit] = useForm("xnnawrlz");
 
-  const form = useForm<FormData>({
+  const form = useReactHookForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -38,6 +42,24 @@ export default function BrochureDownloadForm() {
       otp: "",
     },
   });
+
+  useEffect(() => {
+    if (formspreeState.succeeded && step !== "success") {
+        setStep("success");
+        toast({ title: "Success", description: "Verification successful! Your download will start shortly." });
+        
+        const link = document.createElement('a');
+        link.href = '/brochure.pdf';
+        link.download = 'Primezone_Brochure.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        setTimeout(() => {
+            router.push('/courses/diploma');
+        }, 2000);
+    }
+  }, [formspreeState.succeeded, step, toast, router]);
 
   async function handleSendOtp(data: FormData) {
     setLoading(true);
@@ -56,17 +78,7 @@ export default function BrochureDownloadForm() {
     setLoading(true);
     const response = await verifyOtp(data.otp);
     if (response.success) {
-      toast({ title: "Success", description: "Verification successful! Your download will start shortly." });
-      setStep("success");
-      
-      // Trigger download
-      const link = document.createElement('a');
-      link.href = '/brochure.pdf';
-      link.download = 'Primezone_Brochure.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
+      await handleFormspreeSubmit(data);
     } else {
       form.setError("otp", { type: "manual", message: response.message });
       toast({ variant: "destructive", title: "Error", description: response.message });
@@ -88,7 +100,7 @@ export default function BrochureDownloadForm() {
         <CheckCircle className="h-16 w-16 mx-auto text-green-500 mb-4" />
         <CardTitle>Download Started!</CardTitle>
         <CardDescription className="mt-2">
-            Your brochure is downloading. Please check your browser downloads.
+            Your brochure is downloading. Please check your browser downloads. Redirecting...
         </CardDescription>
         <DialogClose asChild>
             <Button className="mt-6">Close</Button>
@@ -101,7 +113,7 @@ export default function BrochureDownloadForm() {
     <>
       <CardContent className="p-0">
         <Form {...form}>
-          <form action="https://formspree.io/f/xnnawrlz" method="POST" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 pt-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 pt-4">
             {step === "details" && (
               <>
                 <FormField
@@ -162,8 +174,8 @@ export default function BrochureDownloadForm() {
               />
             )}
 
-            <Button type="submit" disabled={loading} className="w-full">
-              {loading ? (
+            <Button type="submit" disabled={loading || formspreeState.submitting} className="w-full">
+              {loading || formspreeState.submitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Processing...
@@ -185,4 +197,3 @@ export default function BrochureDownloadForm() {
     </>
   );
 }
-    

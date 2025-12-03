@@ -2,13 +2,16 @@
 "use client";
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useForm, ValidationError } from '@formspree/react';
+import { useToast } from '@/hooks/use-toast';
 
 const courses = [
   "Diploma In Accounting",
@@ -73,6 +76,34 @@ const courses = [
 function EnrollmentForm() {
     const searchParams = useSearchParams();
     const courseFromUrl = searchParams.get('course');
+    const [state, handleSubmit] = useForm("xnnawrlz");
+    const router = useRouter();
+    const { toast } = useToast();
+
+    useEffect(() => {
+        if (state.succeeded) {
+          toast({
+            title: "Enrollment Submitted!",
+            description: "Thank you for your interest. We will contact you shortly.",
+          });
+          setTimeout(() => {
+            router.push('/courses/diploma');
+          }, 2000);
+        }
+      }, [state.succeeded, router, toast]);
+
+    if (state.succeeded) {
+        return (
+             <Card className="max-w-3xl mx-auto">
+                <CardHeader>
+                    <CardTitle>Thank You!</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Your enrollment request has been submitted. Redirecting...</p>
+                </CardContent>
+            </Card>
+        );
+    }
   
     return (
         <Card className="max-w-3xl mx-auto">
@@ -83,7 +114,7 @@ function EnrollmentForm() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form action="https://formspree.io/f/xnnawrlz" method="POST" className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="fullName">Full Name</Label>
@@ -92,6 +123,7 @@ function EnrollmentForm() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
                 <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -121,7 +153,7 @@ function EnrollmentForm() {
               <Label htmlFor="background">Educational Background</Label>
               <Textarea id="background" name="educationalBackground" placeholder="e.g., High School Diploma, Bachelor's in Arts" />
             </div>
-            <Button type="submit" className="w-full" size="lg">Submit Enrollment</Button>
+            <Button type="submit" className="w-full" size="lg" disabled={state.submitting}>Submit Enrollment</Button>
           </form>
         </CardContent>
       </Card>

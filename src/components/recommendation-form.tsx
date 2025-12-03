@@ -1,12 +1,15 @@
 
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { useForm as useReactHookForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { getCourseRecommendations } from "@/app/actions";
 import type { PersonalizedCourseRecommendationOutput } from "@/ai/flows/course-recommendation";
+import { useForm } from '@formspree/react';
+import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -27,8 +30,11 @@ export default function RecommendationForm() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<PersonalizedCourseRecommendationOutput | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [formspreeState, handleFormspreeSubmit] = useForm("xnnawrlz");
+  const router = useRouter();
+  const { toast } = useToast();
 
-  const form = useForm<FormData>({
+  const form = useReactHookForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       careerGoals: "",
@@ -41,6 +47,11 @@ export default function RecommendationForm() {
     setLoading(true);
     setResult(null);
     setError(null);
+    
+    // Submit to Formspree
+    await handleFormspreeSubmit(data);
+
+    // Then get recommendations
     const response = await getCourseRecommendations(data);
     if (response.success && response.data) {
       setResult(response.data);
@@ -53,6 +64,38 @@ export default function RecommendationForm() {
     setLoading(false);
   }
 
+  useEffect(() => {
+    if (formspreeState.succeeded) {
+        toast({
+            title: "Submission Received!",
+            description: "Thank you! We're generating your recommendations now.",
+          });
+        // We don't redirect here, just let the recommendation logic proceed.
+        // We could clear the form if we wanted.
+        form.reset();
+
+        // Let's add a redirect after a delay if the user doesn't get a result,
+        // or just as a fallback
+         setTimeout(() => {
+            if(!result) {
+                 router.push('/courses/diploma');
+            }
+          }, 8000);
+    }
+  }, [formspreeState.succeeded, form, toast, router, result]);
+
+
+  if (formspreeState.succeeded && !result && !loading && !error) {
+     return (
+         <Card>
+             <CardContent className="p-6 text-center">
+                 <p>Thank you for your submission. If your recommendations don't appear, you'll be redirected shortly.</p>
+             </CardContent>
+         </Card>
+     )
+  }
+
+
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <Card>
@@ -62,7 +105,7 @@ export default function RecommendationForm() {
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form action="https://formspree.io/f/xnnawrlz" method="POST" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
                 control={form.control}
                 name="careerGoals"
@@ -102,8 +145,8 @@ export default function RecommendationForm() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={loading} className="w-full">
-                {loading ? (
+              <Button type="submit" disabled={loading || formspreeState.submitting} className="w-full">
+                {loading || formspreeState.submitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Generating Recommendations...

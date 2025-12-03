@@ -18,6 +18,10 @@ import dynamic from "next/dynamic";
 import ParticleHero from "@/components/particle-hero";
 import HeroSlider from "@/components/hero-slider";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useForm, ValidationError } from '@formspree/react';
+import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
+
 
 const TrendingCourses = lazy(() => import("@/components/trending-courses"));
 const FeaturedCoursesCarousel = lazy(() => import("@/components/featured-courses-carousel"));
@@ -117,6 +121,74 @@ const empoweringFeatures = [
       description: "Primezone offers free career counseling to all students and prospective learners. Our experienced counselors provide personalized guidance to help you choose the right course, understand career paths in the tech industry, and make informed decisions about your educational journey. We're committed to supporting your success every step of the way."
     }
   ];
+  
+const QuoteForm = () => {
+    const [state, handleSubmit] = useForm("xnnawrlz");
+    const router = useRouter();
+    const { toast } = useToast();
+
+    useEffect(() => {
+        if (state.succeeded) {
+          toast({
+            title: "Quote Request Sent!",
+            description: "Thank you for your interest. We will get back to you shortly.",
+          });
+          setTimeout(() => {
+            router.push('/courses/diploma');
+          }, 2000);
+        }
+      }, [state.succeeded, router, toast]);
+
+    if (state.succeeded) {
+        return (
+            <Card className="bg-accent/20 p-8 rounded-2xl text-center">
+                 <CardHeader>
+                    <CardTitle>Thank You!</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Your quote request has been sent. Redirecting...</p>
+                </CardContent>
+            </Card>
+        )
+    }
+
+    return (
+        <Card className="bg-accent/20 p-8 rounded-2xl">
+            <CardContent className="p-0">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                       <Label htmlFor="quoteName" className="sr-only">Your Name</Label>
+                       <Input id="quoteName" name="name" placeholder="Your Name" className="bg-background"/>
+                    </div>
+                     <div className="space-y-2">
+                       <Label htmlFor="quoteEmail" className="sr-only">Your Email</Label>
+                       <Input id="quoteEmail" name="email" type="email" placeholder="Your Email" className="bg-background"/>
+                       <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="quoteCourse" className="sr-only">Select a Course</Label>
+                        <Select name="course">
+                            <SelectTrigger id="quoteCourse" className="bg-background">
+                                <SelectValue placeholder="Select a Course" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {quoteCourses.map((course) => (
+                                    <SelectItem key={course} value={course}>{course}</SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                     <div className="space-y-2">
+                       <Label htmlFor="quoteMessage" className="sr-only">Message</Label>
+                       <Textarea id="quoteMessage" name="message" placeholder="Message" rows={4} className="bg-background"/>
+                       <ValidationError prefix="Message" field="message" errors={state.errors} className="text-destructive text-sm" />
+                    </div>
+                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg" disabled={state.submitting}>Request A Quote</Button>
+                </form>
+            </CardContent>
+        </Card>
+    );
+};
 
 export default function Home() {
    const plugin = React.useRef(
@@ -199,38 +271,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Card className="bg-accent/20 p-8 rounded-2xl">
-                <CardContent className="p-0">
-                    <form action="https://formspree.io/f/xnnawrlz" method="POST" className="space-y-4">
-                        <div className="space-y-2">
-                           <Label htmlFor="quoteName" className="sr-only">Your Name</Label>
-                           <Input id="quoteName" name="name" placeholder="Your Name" className="bg-background"/>
-                        </div>
-                         <div className="space-y-2">
-                           <Label htmlFor="quoteEmail" className="sr-only">Your Email</Label>
-                           <Input id="quoteEmail" name="email" type="email" placeholder="Your Email" className="bg-background"/>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="quoteCourse" className="sr-only">Select a Course</Label>
-                            <Select name="course">
-                                <SelectTrigger id="quoteCourse" className="bg-background">
-                                    <SelectValue placeholder="Select a Course" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {quoteCourses.map((course) => (
-                                        <SelectItem key={course} value={course}>{course}</SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                        </div>
-                         <div className="space-y-2">
-                           <Label htmlFor="quoteMessage" className="sr-only">Message</Label>
-                           <Textarea id="quoteMessage" name="message" placeholder="Message" rows={4} className="bg-background"/>
-                        </div>
-                        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg">Request A Quote</Button>
-                    </form>
-                </CardContent>
-            </Card>
+            <QuoteForm />
         </div>
       </section>
 

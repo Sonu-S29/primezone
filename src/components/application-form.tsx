@@ -1,11 +1,13 @@
 
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useForm as useReactHookForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import { useForm } from '@formspree/react';
 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -24,10 +26,11 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function ApplicationForm() {
-  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const router = useRouter();
+  const [formspreeState, handleFormspreeSubmit] = useForm("xnnawrlz");
 
-  const form = useForm<FormData>({
+  const form = useReactHookForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
@@ -38,22 +41,28 @@ export default function ApplicationForm() {
     },
   });
 
-  async function onSubmit(data: FormData) {
-    setLoading(true);
-    // Here you would typically send the data to your backend
-    console.log("Application data:", data);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({ title: "Success", description: "Your application has been submitted successfully!" });
-    setLoading(false);
-    form.reset();
+  useEffect(() => {
+    if (formspreeState.succeeded) {
+      toast({ title: "Success", description: "Your application has been submitted successfully!" });
+      form.reset();
+      setTimeout(() => {
+        router.push('/courses/diploma');
+      }, 2000);
+    }
+  }, [formspreeState.succeeded, form, router, toast]);
+
+  if (formspreeState.succeeded) {
+      return (
+          <div className="text-center p-8">
+              <h3 className="text-xl font-semibold">Thank You!</h3>
+              <p className="text-muted-foreground mt-2">Your application has been sent. Redirecting...</p>
+          </div>
+      )
   }
 
   return (
     <Form {...form}>
-      <form action="https://formspree.io/f/xnnawrlz" method="POST" className="space-y-4">
+      <form onSubmit={form.handleSubmit((data) => handleFormspreeSubmit(data))} className="space-y-4">
         <FormField
           control={form.control}
           name="fullName"
@@ -124,8 +133,8 @@ export default function ApplicationForm() {
             <DialogClose asChild>
                 <Button type="button" variant="outline">Cancel</Button>
             </DialogClose>
-            <Button type="submit" disabled={loading}>
-              {loading ? (
+            <Button type="submit" disabled={formspreeState.submitting}>
+              {formspreeState.submitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Submitting...
