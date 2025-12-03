@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import { allCoursesList } from '@/lib/course-data';
 import LogoLoop from './LogoLoop';
+import AccreditationLogos from './accreditation-logos';
 
 const courseLogos = allCoursesList.map(course => ({
   node: <span className="text-sm font-semibold text-foreground/60">{course}</span>,
@@ -193,6 +194,9 @@ const ParticleHero = () => {
                     <Button asChild variant="outline">
                         <Link href="/enroll">Enroll Now</Link>
                     </Button>
+                </div>
+                 <div className="mt-8 w-[85%]">
+                    <AccreditationLogos />
                 </div>
                  <div className="absolute bottom-0 left-0 w-full h-24 overflow-hidden">
                   <LogoLoop

@@ -207,7 +207,7 @@ export default function Home() {
 
       {/* Accreditation Logos Section */}
       <section className="container mx-auto px-4">
-        <div className="w-[85%] md:w-[75%] mx-auto">
+        <div className="hidden md:block w-[85%] md:w-[75%] mx-auto">
           <AccreditationLogos />
         </div>
       </section>
