@@ -4,6 +4,13 @@ import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { allCoursesList } from '@/lib/course-data';
+import LogoLoop from './LogoLoop';
+
+const courseLogos = allCoursesList.map(course => ({
+  node: <span className="text-sm font-semibold text-foreground/60">{course}</span>,
+  title: course,
+}));
 
 const ParticleHero = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -113,6 +120,7 @@ const ParticleHero = () => {
 
         let animationFrameId: number;
         function animate() {
+            if (!ctx) return;
             ctx.clearRect(0, 0, width, height);
 
             spawnParticleField();
@@ -185,6 +193,17 @@ const ParticleHero = () => {
                     <Button asChild variant="outline">
                         <Link href="/enroll">Enroll Now</Link>
                     </Button>
+                </div>
+                 <div className="absolute bottom-0 left-0 w-full h-24">
+                  <LogoLoop
+                    logos={courseLogos}
+                    speed={80}
+                    direction="left"
+                    logoHeight={20}
+                    gap={40}
+                    fadeOut
+                    fadeOutColor="hsl(var(--background))"
+                  />
                 </div>
             </div>
         </section>
