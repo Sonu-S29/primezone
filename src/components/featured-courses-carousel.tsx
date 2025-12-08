@@ -29,43 +29,49 @@ const featuredCourses = [
     slug: "power-bi",
     title: "PowerBI",
     description: "Turn complex data into clear, interactive visualizations and dashboards with Microsoft Power BI.",
-    image: "/images/courses/coursetrend/power.gif",
+    image: "/images/courses/coursetrend/powerbi.webp",
     hint: "business intelligence dashboard"
   },
   {
     slug: "tally-gst",
     title: "Tally+GST",
     description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
+    image: "/images/courses/coursetrend/tally.webp",
     imageId: "tally",
   },
   {
     slug: "video-editing",
     title: "Video & Sound Editing",
     description: "Master the art of video and audio editing to create professional-quality media content.",
+    image: "/images/courses/coursetrend/Video & Sound Editing.webp",
     imageId: "video-editing",
   },
   {
     slug: "autocad",
     title: "AutoCad 2D-3D",
     description: "Learn to create precise 2D and 3D drawings with AutoCAD, the leading software for design and drafting.",
+    image: "/images/courses/coursetrend/AutoCad 2D-3D.webp",
     imageId: "autocad",
   },
   {
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     description: "Engage audiences and build brands on social platforms.",
+    image: "/images/courses/coursetrend/AutoCad 2D-3D.webp",
     imageId: "smm",
   },
   {
     slug: "search-engine-marketing",
     title: "Search Engine Marketing",
     description: "Drive traffic and conversions with paid search campaigns.",
+    image: "/images/courses/coursetrend/AutoCad 2D-3D.webp",
     imageId: "sem",
   },
   {
     slug: "google-facebook-ads",
     title: "Google Ads & Facebook Ads",
     description: "Master the two largest advertising platforms.",
+    image: "/images/courses/coursetrend/Google Ads & Facebook Ads.webp",
     imageId: "online-ads",
   }
 ];
