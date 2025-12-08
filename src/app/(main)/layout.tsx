@@ -5,7 +5,6 @@ import '../globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import CardNav from '@/components/layout/CardNav';
 import Footer from '@/components/layout/footer';
-import Chatbot from '@/components/chatbot';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -51,7 +50,6 @@ export default function RootLayout({
         />
         <main className="flex-grow pt-24">{children}</main>
         <Footer />
-        <Chatbot />
         <Toaster />
       </body>
     </html>

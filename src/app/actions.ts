@@ -1,37 +1,6 @@
 
 "use server";
-// import { personalizedCourseRecommendation, PersonalizedCourseRecommendationInput, PersonalizedCourseRecommendationOutput } from "@/ai/flows/course-recommendation";
-// import { chatFlow } from "@/ai/flows/chatbot";
 import { z } from "zod";
-
-const InputSchema = z.object({
-    careerGoals: z.string().min(10, "Please describe your career goals in more detail."),
-    educationalBackground: z.string().min(10, "Please provide more details about your education."),
-    interests: z.string().min(10, "Please tell us more about your interests."),
-});
-
-// export async function getCourseRecommendations(
-//   input: PersonalizedCourseRecommendationInput
-// ): Promise<{ success: boolean; data: PersonalizedCourseRecommendationOutput | null; error: any | null }> {
-//   const parsed = InputSchema.safeParse(input);
-//   if (!parsed.success) {
-//     return { success: false, data: null, error: parsed.error.flatten().fieldErrors };
-//   }
-
-//   try {
-//     const result = await personalizedCourseRecommendation(parsed.data);
-//     return { success: true, data: result, error: null };
-//   } catch (e) {
-//     console.error(e);
-//     return { success: false, data: null, error: "An unexpected error occurred. Please try again." };
-//   }
-// }
-
-export async function getCourseRecommendations(
-  input: any
-): Promise<{ success: boolean; data: any | null; error: any | null }> {
-    return { success: false, data: null, error: "AI service is temporarily unavailable." };
-}
 
 
 export async function sendOtp(phone: string): Promise<{ success: boolean, message: string }> {
@@ -51,37 +20,11 @@ export async function verifyOtp(otp: string): Promise<{ success: boolean, messag
     return { success: false, message: "Invalid OTP." };
 }
 
-
-// Chatbot Actions
-const ButtonSchema = z.object({
-  text: z.string(),
-  payload: z.string(),
-});
-
-const MessageSchema = z.object({
-    role: z.enum(['user', 'model']),
-    content: z.string(),
-    buttons: z.array(ButtonSchema).optional(),
-});
-
-const ChatInputSchema = z.object({
-  history: z.array(MessageSchema),
-  message: z.string().optional(),
-});
-
-export type Message = z.infer<typeof MessageSchema>;
-type ChatInput = z.infer<typeof ChatInputSchema>;
-type ChatOutput = { response: Message };
-
-// export async function getChatbotResponse(history: ChatInput['history'], message?: string): Promise<ChatOutput> {
-//     return await chatFlow({ history, message });
+// export async function getCourseRecommendations(input: CourseRecommendationInput): Promise<CourseRecommendationOutput> {
+//     return getCourseRecommendationsFlow(input);
 // }
 
-export async function getChatbotResponse(history: ChatInput['history'], message?: string): Promise<ChatOutput> {
-    return {
-        response: {
-            role: 'model',
-            content: "I'm sorry, the chat service is temporarily unavailable. Please contact us directly.",
-        }
-    }
-}
+// export async function getChatbotResponse(history: {role: string, content: string}[], message: string) {
+//     return askTutor(history, message);
+// }
+
