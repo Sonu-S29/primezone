@@ -3,7 +3,7 @@ export const courseDetails: { [key: string]: any } = {
     'data-analysis': {
         title: "Data Analysis",
         description: "This comprehensive program is designed to equip you with the essential skills for data analysis, covering everything from foundational concepts to advanced tools. You'll learn to clean, analyze, and visualize data to drive informed business decisions.",
-        image: "/images/courses/dataanalytics.webp",
+        image: "/images/courses/data-analysis.webp",
         hint: "data analytics dashboard",
         highlights: ["100% Job Assistance", "Integrated Internship", "Live Projects", "Expert-Led Training"],
         whatYouWillLearn: [
@@ -139,7 +139,7 @@ export const courseDetails: { [key: string]: any } = {
     'financial-accounting': {
         title: "Diploma In Financial Accounting",
         description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
-        image: "/images/courses/DFA.jpg",
+        image: "/images/courses/financial-accounting.webp",
         hint: "financial report",
         highlights: ["In-depth Curriculum", "Practical Case Studies", "Software Training", "Industry Recognized"],
         whatYouWillLearn: ["Office automation tools", "Advanced Excel for financial reporting", "Complete Tally Prime with GST", "Taxation and auditing procedures"],
@@ -159,7 +159,7 @@ export const courseDetails: { [key: string]: any } = {
     'computer-application': {
         title: "Diploma In Computer Application",
         description: "Learn essential computer skills, including hardware basics, operating systems, and popular software applications for personal and professional use.",
-        image: "/images/heroslider/dca.jpeg",
+        image: "/images/courses/diploma/dca.webp",
         hint: "computer application",
         highlights: ["All-in-One Course", "Graphic & Web Design", "Accounting Software", "Programming Basics"],
         whatYouWillLearn: ["Proficiency in office automation tools and advanced Excel.", "Complete Tally Prime with GST for accounting.", "Fundamentals of graphic design with CorelDRAW, Photoshop, and Illustrator.", "Basics of web design with HTML, CSS, and Adobe Animate."],
@@ -210,7 +210,7 @@ export const courseDetails: { [key: string]: any } = {
     "programming-course": {
         title: "Diploma In Programming",
         description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
-        image: "/images/courses/DPC.jpg",
+        image: "/images/courses/programming.webp",
         hint: "programming code",
         highlights: ["Multi-Language Mastery", "Data Structures", "Web & DB Technologies", "Live Projects"],
         whatYouWillLearn: [
@@ -269,7 +269,7 @@ export const courseDetails: { [key: string]: any } = {
     "ethical-hacking": {
         title: "Diploma In Ethical Hacking",
         description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
-        image: "/images/courses/ethical.webp",
+        image: "/images/courses/ethical-hacking.webp",
         hint: "ethical hacking",
         highlights: ["Penetration Testing", "Network Security", "Vulnerability Analysis", "Cyber Ethics"],
         whatYouWillLearn: [
@@ -296,7 +296,7 @@ export const courseDetails: { [key: string]: any } = {
     "digital-marketing": {
         title: "Diploma In Digital Marketing",
         description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
-        image: "/images/courses/dm.webp",
+        image: "/images/courses/digital-marketing.webp",
         hint: "digital marketing",
         highlights: ["SEO & SEM", "Social Media Marketing", "Content Creation", "Google Analytics"],
         whatYouWillLearn: [
