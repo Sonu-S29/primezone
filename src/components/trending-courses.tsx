@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -195,7 +196,7 @@ export default function TrendingCourses() {
                         <div className="flex justify-around items-center">
                             <div className="w-1/3"></div>
                             <div className="w-1/3 flex justify-center">
-                                <Image src={course.image} alt={course.title} width={80} height={80} data-ai-hint={course.imageHint} className="object-contain"/>
+                                <Image src={course.image} alt={course.title} width={120} height={120} data-ai-hint={course.imageHint} className="object-contain"/>
                             </div>
                             <div className="w-1/3"></div>
                         </div>
