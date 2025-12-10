@@ -21,9 +21,11 @@ const courses = [
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
     tags: ["100% Job Placement Assistance", "Integrated Internship"],
-    technologies: ["/images/tech/excel.png", "/images/tech/powerbi.png", "/images/tech/sql.png", "/images/tech/python.png", "/images/tech/tableau.png"],
+    technologies: ["/images/tech/excel.svg", "/images/tech/powerbi.svg", "/images/tech/mysql.svg", "/images/tech/python.svg", "/images/tech/tableau.svg"],
     batchStarts: new Date(new Date().getTime() + 72 * 60 * 60 * 1000), // 72 hours from now
-    seatsLeft: 5
+    seatsLeft: 5,
+    image: "/images/courses/diploma/dataanalysis.webp",
+    imageHint: "data analytics dashboard"
   },
   {
     slug: "full-stack-development",
@@ -32,9 +34,11 @@ const courses = [
     duration: "1 Year",
     idealFor: "12th, Graduates",
     tags: ["100% Job Placement Assistance", "Integrated Internship"],
-    technologies: ["/images/tech/html.png", "/images/tech/css.png", "/images/tech/js.png", "/images/tech/react.png", "/images/tech/node.png"],
+    technologies: ["/images/tech/html.svg", "/images/tech/css.svg", "/images/tech/js.svg", "/images/tech/react.svg", "/images/tech/angular.svg"],
     batchStarts: new Date(new Date().getTime() + 96 * 60 * 60 * 1000),
-    seatsLeft: 3
+    seatsLeft: 3,
+    image: "/images/courses/diploma/fullstack.webp",
+    imageHint: "code on screen"
   },
   {
     slug: "digital-marketing",
@@ -43,9 +47,11 @@ const courses = [
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
     tags: ["100% Job Placement Assistance", "Government Recognized Certification"],
-    technologies: ["/images/tech/ga.png", "/images/tech/google-ads.png", "/images/tech/fb.png", "/images/tech/seo.png", "/images/tech/wordpress.png"],
+    technologies: ["/images/tech/ga.svg", "/images/tech/google-ads.svg", "/images/tech/fb.svg", "/images/tech/seo.svg", "/images/tech/wordpress.svg"],
     batchStarts: new Date(new Date().getTime() + 120 * 60 * 60 * 1000),
-    seatsLeft: 8
+    seatsLeft: 8,
+    image: "/images/courses/diploma/ddm.webp",
+    imageHint: "digital marketing strategy"
   },
   {
     slug: "ethical-hacking",
@@ -54,9 +60,11 @@ const courses = [
     duration: "1 Year",
     idealFor: "12th, Graduates",
     tags: ["Integrated Internship", "Government Recognized Certification"],
-    technologies: ["/images/tech/python.png", "/images/tech/linux.png", "/images/tech/wireshark.png", "/images/tech/metasploit.png", "/images/tech/nmap.png"],
+    technologies: ["/images/tech/python.svg", "/images/tech/linux.svg", "/images/tech/wireshark.svg", "/images/tech/metasploit.svg", "/images/tech/nmap.svg"],
     batchStarts: new Date(new Date().getTime() + 150 * 60 * 60 * 1000),
-    seatsLeft: 4
+    seatsLeft: 4,
+    image: "/images/courses/diploma/deh.webp",
+    imageHint: "cyber security"
   },
   {
     slug: "financial-accounting",
@@ -65,9 +73,11 @@ const courses = [
     duration: "1 Year",
     idealFor: "10th, 12th, Graduates",
     tags: ["100% Job Placement Assistance", "Government Recognized Certification"],
-    technologies: ["/images/tech/tally.png", "/images/tech/excel.png", "/images/tech/gst.png", "/images/tech/tax.png", "/images/tech/automation.png"],
+    technologies: ["/images/tech/tally.png", "/images/tech/excel.svg", "/images/tech/gst.jpg", "/images/tech/tax.png", "/images/tech/p.svg"],
     batchStarts: new Date(new Date().getTime() + 200 * 60 * 60 * 1000),
-    seatsLeft: 6
+    seatsLeft: 6,
+    image: "/images/courses/diploma/dfam.webp",
+    imageHint: "financial accounting report"
   },
   {
     slug: "programming-course",
@@ -76,9 +86,11 @@ const courses = [
     duration: "1 Year",
     idealFor: "12th, Graduates",
     tags: ["Integrated Internship", "Government Recognized Certification"],
-    technologies: ["/images/tech/c.png", "/images/tech/cplusplus.png", "/images/tech/java.png", "/images/tech/python.png", "/images/tech/dsa.png"],
+    technologies: ["/images/tech/c.svg", "/images/tech/cplusplus.svg", "/images/tech/java.svg", "/images/tech/python.svg", "/images/tech/database.svg"],
     batchStarts: new Date(new Date().getTime() + 250 * 60 * 60 * 1000),
-    seatsLeft: 2
+    seatsLeft: 2,
+    image: "/images/courses/diploma/dpc.webp",
+    imageHint: "programming code"
   },
 ];
 
@@ -183,7 +195,7 @@ export default function TrendingCourses() {
                         <div className="flex justify-around items-center">
                             <div className="w-1/3"></div>
                             <div className="w-1/3 flex justify-center">
-                                <Image src="/images/tech/python_stacked.png" alt="Python" width={60} height={60} />
+                                <Image src={course.image} alt={course.title} width={80} height={80} data-ai-hint={course.imageHint} className="object-contain"/>
                             </div>
                             <div className="w-1/3"></div>
                         </div>
