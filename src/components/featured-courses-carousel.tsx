@@ -15,14 +15,14 @@ const featuredCourses = [
     slug: "web-designing",
     title: "Web Designing",
     description: "Create visually stunning and user-friendly websites with the latest design trends and technologies.",
-    image: "/images/courses/coursetrend/webdesigning.png",
+    image: "/images/courses/coursetrend/web.webp",
     hint: "web design"
   },
   {
     slug: "advanced-excel",
     title: "Advanced Excel",
     description: "Master complex formulas, data analysis, and visualization techniques to become an Excel power user.",
-    image: "/images/courses/coursetrend/advexcel.png",
+    image: "/images/courses/coursetrend/advexcel.webp",
     hint: "excel spreadsheet"
   },
   {
@@ -36,7 +36,7 @@ const featuredCourses = [
     slug: "tally-gst",
     title: "Tally+GST",
     description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
-    image: "/images/courses/coursetrend/tally.webp",
+    image: "/images/courses/coursetrend/tallygst.webp",
     imageId: "tally",
   },
   {
@@ -57,14 +57,14 @@ const featuredCourses = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     description: "Engage audiences and build brands on social platforms.",
-    image: "/images/courses/coursetrend/AutoCad 2D-3D.webp",
+    image: "/images/courses/coursetrend/socailmedia.webp",
     imageId: "smm",
   },
   {
     slug: "search-engine-marketing",
     title: "Search Engine Marketing",
     description: "Drive traffic and conversions with paid search campaigns.",
-    image: "/images/courses/coursetrend/AutoCad 2D-3D.webp",
+    image: "/images/courses/coursetrend/mark.webp",
     imageId: "sem",
   },
   {
@@ -133,9 +133,8 @@ export default function FeaturedCoursesCarousel() {
                                     sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 200px"
                                     className='object-cover w-full h-full'
                                 />
-                                <div className="course-card-content">
-                                    <h3 className="course-card-title">{course.title}</h3>
-                                    <Button asChild variant="secondary" size="sm">
+                                <div className="course-card-content flex flex-col justify-end items-center">
+                                    <Button asChild variant="secondary" size="sm" className="w-4/5">
                                         <Link href={`/courses/details/${course.slug}`}>Learn More</Link>
                                     </Button>
                                 </div>
