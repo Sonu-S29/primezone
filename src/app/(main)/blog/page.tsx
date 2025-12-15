@@ -42,7 +42,7 @@ Vile Parle Branch: +91 9702570087
 Jogeshwari Branch: +91 9769730087
 A Few Last Words These days, knowing computers isn’t just nice to have—it’s a must. The sooner you start, the better prepared you’ll be for whatever comes next. Don’t just wait around for things to happen. Make your own luck. Build your skills. Learn. Grow. Succeed. With Primezone Computer Education.
 `,
-    image: "/images/blogs/computer-education-shapes-success.jpg",
+    image: "/images/blogs/computerEducationShapes.png",
     hint: "computer education",
     author: "Karan Singh",
     date: "2024-08-22",
@@ -107,7 +107,7 @@ Take the First Step Toward a Brighter Future.
 Don’t wait for opportunities. Create them with computer skills!
 Join Primezone Computer Education today and start building a career that’s future-ready, high-paying, and in demand globally.
 `,
-    image: "/images/blogs/top-5-courses.jpg",
+    image: "/images/blogs/Top5.png",
     hint: "job opportunities",
     author: "Vedika Singh",
     date: "2024-08-25",
@@ -175,7 +175,7 @@ Our Graphic Design Course Includes:
 Vile Parle Branch: +91 9702570087
 Jogeshwari Branch: +91 9769730087
 `,
-    image: "/images/blogs/coreldraw-vs-illustrator.jpg",
+    image: "/images/blogs/corelvsadobe.png",
     hint: "design software",
     author: "Karan Singh",
     date: "2024-08-24",
@@ -184,7 +184,7 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "The Future of Web Development in 2025",
     description: "Explore the upcoming trends in web development, from AI-powered tools to new frameworks and technologies that are shaping the future of the web. This article delves into the rise of server components, the increasing importance of edge computing, and how AI is revolutionizing the development workflow, from code generation to automated testing. We'll also look at the new features in upcoming framework releases and what they mean for developers.",
-    image: "/images/blogs/web-dev-future.jpg",
+    image: "/images/blogs/web.png",
     hint: "web development future",
     author: "Karan Singh",
     date: "2024-08-20",
@@ -193,7 +193,7 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "A Beginner's Guide to Financial Accounting",
     description: "New to accounting? This guide breaks down the fundamental concepts of financial accounting to give you a solid foundation. We'll cover everything from double-entry bookkeeping, reading financial statements like the balance sheet and income statement, to understanding debits and credits. This guide is perfect for small business owners, students, or anyone looking to get a better handle on their finances.",
-    image: "/images/blogs/accounting-guide.jpg",
+    image: "/images/blogs/account.png",
     hint: "accounting guide",
     author: "Vedika Singh",
     date: "2024-08-18",
@@ -202,7 +202,7 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "Why Python is the Top Language for Data Science",
     description: "Discover why Python has become the go-to programming language for data scientists and learn about the essential libraries you need to know. We'll explore the power of Pandas for data manipulation, NumPy for numerical operations, Matplotlib and Seaborn for data visualization, and Scikit-learn for machine learning. See practical examples of how Python is used in real-world data science projects.",
-    image: "/images/blogs/python-ds.jpg",
+    image: "/images/blogs/python.png",
     hint: "python data science",
     author: "Karan Singh",
     date: "2024-08-15",
@@ -211,7 +211,7 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "Graphic Design Trends to Watch This Year",
     description: "Stay ahead of the curve with our roundup of the latest graphic design trends, from 3D illustrations to retro-futurism. This piece explores the resurgence of Y2K aesthetics, the use of vibrant, unconventional color palettes, and the move towards more inclusive and diverse visual storytelling. Get inspired for your next project with stunning examples from leading designers.",
-    image: "/images/blogs/design-trends.jpg",
+    image: "/images/blogs/graphicrends.png",
     hint: "graphic design trends",
     author: "Vedika Singh",
     date: "2024-08-12",
