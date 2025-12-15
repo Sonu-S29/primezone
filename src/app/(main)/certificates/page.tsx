@@ -31,7 +31,7 @@ export default function CertificatesPage() {
           {certificateData.map((cert) => (
             <Dialog key={cert.id} onOpenChange={(isOpen) => !isOpen && setSelectedCert(null)}>
               <DialogTrigger asChild>
-                <button onClick={() => setSelectedCert(cert)} className="focus:outline-none">
+                <div onClick={() => setSelectedCert(cert)} className="focus:outline-none cursor-pointer">
                   <CardContainer>
                     <CardBody className="bg-background relative group/card w-auto h-auto rounded-xl p-6 border">
                       <CardItem
@@ -58,13 +58,13 @@ export default function CertificatesPage() {
                         />
                       </CardItem>
                       <div className="flex justify-between items-center mt-10">
-                        <CardItem
+                        {/* <CardItem
                           translateZ={20}
                           as="p"
                           className="text-muted-foreground text-xs"
                         >
                           Issued: {cert.year}
-                        </CardItem>
+                        </CardItem> */}
                         <CardItem
                           translateZ={20}
                           as="button"
@@ -75,7 +75,7 @@ export default function CertificatesPage() {
                       </div>
                     </CardBody>
                   </CardContainer>
-                </button>
+                </div>
               </DialogTrigger>
             </Dialog>
           ))}
