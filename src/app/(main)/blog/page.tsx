@@ -142,7 +142,7 @@ Choose CorelDRAW if you:
 - Prefer an easy-to-learn tool that delivers quick results
 - Mainly work on Windows systems
 - Want to quickly learn design basics
-CorelDRAW helps you understand layout, color, and typography. It’s perfect for beginners in graphic design.
+CorelDRAW helps you understand layou t, color, and typography. It’s perfect for beginners in graphic design.
 
 ### When to Choose Illustrator First
 Choose Adobe Illustrator if you:
