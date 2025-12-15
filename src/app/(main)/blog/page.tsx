@@ -225,7 +225,9 @@ export default function BlogPage() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   const getTruncatedDescription = (description: string) => {
-    const firstParagraph = description.split('\n\n')[0];
+    if (!description) return '';
+    const firstParagraph = description.trim().split('\n\n')[0];
+    if (!firstParagraph) return '';
     if (firstParagraph.length > 200) {
       return firstParagraph.substring(0, 200) + '...';
     }
@@ -312,5 +314,3 @@ export default function BlogPage() {
     </div>
   );
 }
-
-    
