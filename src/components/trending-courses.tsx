@@ -61,7 +61,7 @@ const courses = [
     duration: "1 Year",
     idealFor: "12th, Graduates",
     tags: ["Integrated Internship", "Government Recognized Certification"],
-    technologies: ["/images/tech/python.svg", "/images/tech/linux.svg", "/images/tech/wireshark.svg", "/images/tech/metasploit.svg", "/images/tech/nmap.svg"],
+    technologies: ["/images/tech/python.svg", "/images/tech/linux.svg", "/images/tech/wireshark.svg", "/images/tech/Metasploit.svg", "/images/tech/nmap.svg"],
     batchStarts: new Date(new Date().getTime() + 150 * 60 * 60 * 1000),
     seatsLeft: 4,
     image: "/images/courses/diploma/deh.webp",

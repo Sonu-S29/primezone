@@ -4,64 +4,15 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-const images = [
-  { src: "/images/gallery/1.jpeg", hint: "student smiling" },
-  { src: "/images/gallery/2.jpeg", hint: "student portrait" },
-  { src: "/images/gallery/3.jpeg", hint: "happy student" },
-  { src: "/images/gallery/4.jpeg", hint: "group of students" },
-  { src: "/images/gallery/5.jpg", hint: "student coding" },
-  { src: "/images/gallery/6.jpeg", hint: "student studying" },
-  { src: "/images/gallery/7.jpeg", hint: "close up student" },
-  { src: "/images/gallery/8.jpeg", hint: "student in classroom" },
-  { src: "/images/gallery/9.jpeg", hint: "student with laptop" },
-  { src: "/images/gallery/10.jpeg", hint: "headshot" },
-  { src: "/images/gallery/11.jpg", hint: "person smiling" },
-  { src: "/images/gallery/12.jpg", hint: "collaborating students" },
-  { src: "/images/gallery/13.jpg", hint: "student event" },
-  { src: "/images/gallery/14.jpg", hint: "tech workshop" },
-  { src: "/images/gallery/15.jpg", hint: "graduation day" },
-  { src: "/images/gallery/16.jpg", hint: "coding on laptop" },
-  { src: "/images/gallery/17.jpg", hint: "designing on computer" },
-  { src: "/images/gallery/18.jpg", hint: "team meeting" },
-  { src: "/images/gallery/19.jpg", hint: "image 19" },
-  { src: "/images/gallery/20.jpg", hint: "image 20" },
-  { src: "/images/gallery/21.jpg", hint: "image 21" },
-  { src: "/images/gallery/22.jpg", hint: "image 22" },
-  { src: "/images/gallery/23.jpg", hint: "image 23" },
-  { src: "/images/gallery/24.jpg", hint: "image 24" },
-  { src: "/images/gallery/25.jpg", hint: "image 25" },
-  { src: "/images/gallery/26.jpg", hint: "image 26" },
-  { src: "/images/gallery/27.jpg", hint: "image 27" },
-  { src: "/images/gallery/28.jpg", hint: "image 28" },
-  { src: "/images/gallery/29.jpg", hint: "image 29" },
-  { src: "/images/gallery/30.jpg", hint: "image 30" },
-  { src: "/images/gallery/31.jpg", hint: "image 31" },
-  { src: "/images/gallery/32.jpg", hint: "image 32" },
-  { src: "/images/gallery/33.jpg", hint: "image 33" },
-  { src: "/images/gallery/34.jpg", hint: "image 34" },
-  { src: "/images/gallery/35.jpg", hint: "image 35" },
-  { src: "/images/gallery/36.jpg", hint: "image 36" },
-  { src: "/images/gallery/37.jpg", hint: "image 37" },
-  { src: "/images/gallery/38.jpg", hint: "image 38" },
-  { src: "/images/gallery/39.jpg", hint: "image 39" },
-  { src: "/images/gallery/40.jpg", hint: "image 40" },
-  { src: "/images/gallery/41.jpg", hint: "image 41" },
-  { src: "/images/gallery/42.jpg", hint: "image 42" },
-  { src: "/images/gallery/43.jpg", hint: "image 43" },
-  { src: "/images/gallery/44.jpg", hint: "image 44" },
-  { src: "/images/gallery/45.jpg", hint: "image 45" },
-  { src: "/images/gallery/46.jpg", hint: "image 46" },
-  { src: "/images/gallery/47.jpg", hint: "image 47" },
-  { src: "/images/gallery/48.jpg", hint: "image 48" },
-  { src: "/images/gallery/49.jpg", hint: "image 49" },
-  { src: "/images/gallery/50.jpg", hint: "image 50" },
-  { src: "/images/gallery/51.jpg", hint: "image 51" },
-  { src: "/images/gallery/52.jpg", hint: "image 51" },
+const images = Array.from({ length: 72 }, (_, i) => ({
+  src: `/images/gallery/${i + 1}.jpeg`,
+  hint: `image ${i + 1}`,
+}));
 
 
-  
-];
-
+// =======================
+// Desktop Grid Config
+// =======================
 const gridConfig = [
   { top: '2%', left: '5%', width: '150px', height: '150px' },
   { top: '15%', left: '25%', width: '100px', height: '100px' },
@@ -118,15 +69,17 @@ const gridConfig = [
 ];
 
 
+// =======================
+// Mobile Grid Config
+// =======================
 const mobileGridConfig = [
-    { top: '5%', left: '10%', width: '100px', height: '120px' },
-    { top: '10%', left: '60%', width: '120px', height: '100px' },
-    { top: '35%', left: '30%', width: '150px', height: '130px' },
-    { top: '60%', left: '5%', width: '110px', height: '140px' },
-    { top: '65%', left: '65%', width: '130px', height: '110px' },
-    { top: '5%', left: '35%', width: '80px', height: '80px' },
+  { top: '5%', left: '10%', width: '100px', height: '120px' },
+  { top: '10%', left: '60%', width: '120px', height: '100px' },
+  { top: '35%', left: '30%', width: '150px', height: '130px' },
+  { top: '60%', left: '5%', width: '110px', height: '140px' },
+  { top: '65%', left: '65%', width: '130px', height: '110px' },
+  { top: '5%', left: '35%', width: '80px', height: '80px' },
 ];
-
 
 const MemoriesGallery = () => {
     const [isMobile, setIsMobile] = useState(false);
