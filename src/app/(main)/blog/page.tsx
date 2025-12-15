@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import imageData from "@/lib/placeholder-images.json";
 import ReactMarkdown from "react-markdown";
 
 const blogPosts = [
@@ -43,7 +42,8 @@ Vile Parle Branch: +91 9702570087
 Jogeshwari Branch: +91 9769730087
 A Few Last Words These days, knowing computers isn’t just nice to have—it’s a must. The sooner you start, the better prepared you’ll be for whatever comes next. Don’t just wait around for things to happen. Make your own luck. Build your skills. Learn. Grow. Succeed. With Primezone Computer Education.
 `,
-    imageId: "computer-education-shapes-success",
+    image: "/images/blogs/computer-education-shapes-success.jpg",
+    hint: "computer education",
     author: "Karan Singh",
     date: "2024-08-22",
     link: "#"
@@ -107,7 +107,8 @@ Take the First Step Toward a Brighter Future.
 Don’t wait for opportunities. Create them with computer skills!
 Join Primezone Computer Education today and start building a career that’s future-ready, high-paying, and in demand globally.
 `,
-    imageId: "top-5-courses",
+    image: "/images/blogs/top-5-courses.jpg",
+    hint: "job opportunities",
     author: "Vedika Singh",
     date: "2024-08-25",
     link: "#"
@@ -174,7 +175,8 @@ Our Graphic Design Course Includes:
 Vile Parle Branch: +91 9702570087
 Jogeshwari Branch: +91 9769730087
 `,
-    imageId: "coreldraw-vs-illustrator",
+    image: "/images/blogs/coreldraw-vs-illustrator.jpg",
+    hint: "design software",
     author: "Karan Singh",
     date: "2024-08-24",
     link: "#"
@@ -182,7 +184,8 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "The Future of Web Development in 2025",
     description: "Explore the upcoming trends in web development, from AI-powered tools to new frameworks and technologies that are shaping the future of the web. This article delves into the rise of server components, the increasing importance of edge computing, and how AI is revolutionizing the development workflow, from code generation to automated testing. We'll also look at the new features in upcoming framework releases and what they mean for developers.",
-    imageId: "web-dev-future",
+    image: "/images/blogs/web-dev-future.jpg",
+    hint: "web development future",
     author: "Karan Singh",
     date: "2024-08-20",
     link: "#"
@@ -190,7 +193,8 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "A Beginner's Guide to Financial Accounting",
     description: "New to accounting? This guide breaks down the fundamental concepts of financial accounting to give you a solid foundation. We'll cover everything from double-entry bookkeeping, reading financial statements like the balance sheet and income statement, to understanding debits and credits. This guide is perfect for small business owners, students, or anyone looking to get a better handle on their finances.",
-    imageId: "accounting-guide",
+    image: "/images/blogs/accounting-guide.jpg",
+    hint: "accounting guide",
     author: "Vedika Singh",
     date: "2024-08-18",
     link: "#"
@@ -198,15 +202,17 @@ Jogeshwari Branch: +91 9769730087
   {
     title: "Why Python is the Top Language for Data Science",
     description: "Discover why Python has become the go-to programming language for data scientists and learn about the essential libraries you need to know. We'll explore the power of Pandas for data manipulation, NumPy for numerical operations, Matplotlib and Seaborn for data visualization, and Scikit-learn for machine learning. See practical examples of how Python is used in real-world data science projects.",
-    imageId: "python-ds",
+    image: "/images/blogs/python-ds.jpg",
+    hint: "python data science",
     author: "Karan Singh",
     date: "2024-08-15",
     link: "#"
   },
-    {
+  {
     title: "Graphic Design Trends to Watch This Year",
     description: "Stay ahead of the curve with our roundup of the latest graphic design trends, from 3D illustrations to retro-futurism. This piece explores the resurgence of Y2K aesthetics, the use of vibrant, unconventional color palettes, and the move towards more inclusive and diverse visual storytelling. Get inspired for your next project with stunning examples from leading designers.",
-    imageId: "design-trends",
+    image: "/images/blogs/design-trends.jpg",
+    hint: "graphic design trends",
     author: "Vedika Singh",
     date: "2024-08-12",
     link: "#"
@@ -219,7 +225,6 @@ export default function BlogPage() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   const getTruncatedDescription = (description: string) => {
-    // Show the first paragraph or a certain number of characters for the card view
     const firstParagraph = description.split('\n\n')[0];
     if (firstParagraph.length > 200) {
       return firstParagraph.substring(0, 200) + '...';
@@ -240,42 +245,39 @@ export default function BlogPage() {
 
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => {
-              const imageInfo = imageData.find(img => img.id === post.imageId);
-              return (
-                <Card key={post.title} className="flex flex-col overflow-hidden group rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative w-full h-56">
-                    {imageInfo && <Image
-                      src={imageInfo.src}
-                      alt={post.title}
-                      width={imageInfo.width}
-                      height={imageInfo.height}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-full"
-                      data-ai-hint={imageInfo.hint}
-                    />}
-                  </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                      <CardHeader className="p-0">
-                          <CardTitle className="text-xl hover:text-primary">{post.title}</CardTitle>
-                          <CardDescription className="text-xs pt-2">
-                              By {post.author} on {post.date}
-                          </CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-0 pt-4 flex-grow">
-                          <p className="text-muted-foreground text-sm line-clamp-4">{getTruncatedDescription(post.description)}</p>
-                      </CardContent>
-                        <CardFooter className="p-0 pt-6 mt-auto">
-                          <Dialog>
-                              <DialogTrigger asChild>
-                                  <Button className="w-full" onClick={() => setSelectedPost(post)} aria-label={`Read more about ${post.title}`}>Read More</Button>
-                              </DialogTrigger>
-                          </Dialog>
-                      </CardFooter>
-                  </div>
-                </Card>
-              )
-            })}
+            {blogPosts.map((post) => (
+              <Card key={post.title} className="flex flex-col overflow-hidden group rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="relative w-full h-56">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={600}
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-full"
+                    data-ai-hint={post.hint}
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                    <CardHeader className="p-0">
+                        <CardTitle className="text-xl hover:text-primary">{post.title}</CardTitle>
+                        <CardDescription className="text-xs pt-2">
+                            By {post.author} on {post.date}
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-0 pt-4 flex-grow">
+                        <p className="text-muted-foreground text-sm line-clamp-4">{getTruncatedDescription(post.description)}</p>
+                    </CardContent>
+                      <CardFooter className="p-0 pt-6 mt-auto">
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button className="w-full" onClick={() => setSelectedPost(post)} aria-label={`Read more about ${post.title}`}>Read More</Button>
+                            </DialogTrigger>
+                        </Dialog>
+                    </CardFooter>
+                </div>
+              </Card>
+            ))}
           </div>
       </section>
 
@@ -286,17 +288,14 @@ export default function BlogPage() {
                     <DialogTitle>{selectedPost.title}</DialogTitle>
                 </DialogHeader>
                 <div className="relative w-full h-64 mb-4">
-                  {(() => {
-                    const imageInfo = imageData.find(img => img.id === selectedPost.imageId);
-                    return imageInfo && <Image
-                        src={imageInfo.src}
-                        alt={selectedPost.title}
-                        fill
-                        className="rounded-t-lg object-cover"
-                        sizes="100vw"
-                          data-ai-hint={imageInfo.hint}
-                    />
-                  })()}
+                  <Image
+                      src={selectedPost.image}
+                      alt={selectedPost.title}
+                      fill
+                      className="rounded-t-lg object-cover"
+                      sizes="100vw"
+                      data-ai-hint={selectedPost.hint}
+                  />
                 </div>
                 <div className="p-6 max-h-[60vh] overflow-y-auto">
                     <h2 className="text-2xl font-bold mb-2">{selectedPost.title}</h2>

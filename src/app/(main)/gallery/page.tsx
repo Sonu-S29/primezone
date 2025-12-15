@@ -159,7 +159,7 @@ export default function GalleryPage() {
         </Suspense>
       </section>
 
-      <section className="py-16 bg-muted">
+      {/* <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Event Highlights</h2>
@@ -260,7 +260,7 @@ export default function GalleryPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
     </div>
   );

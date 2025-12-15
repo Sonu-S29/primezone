@@ -64,7 +64,7 @@
   },
   {
     "id": "happy-diverse-team",
-    "src": "https://picsum.photos/seed/happydiverse/600/400",
+    "src": "/images/logo.png",
     "width": 600,
     "height": 400,
     "hint": "happy diverse team"
@@ -449,7 +449,7 @@
   },
   {
     "id": "refer-earn",
-    "src": "https://picsum.photos/seed/refer/600/600",
+    "src": "/images/logo.png",
     "width": 600,
     "height": 600,
     "hint": "friends celebrating"
