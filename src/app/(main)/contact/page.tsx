@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import ContactForm from "@/components/contact-form";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const locations = [
   {
@@ -58,23 +60,21 @@ export default function ContactUsPage() {
                       className="absolute inset-0 w-full h-full opacity-30"
                   ></iframe>
 
-                  {isClient && (
-                    <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
-                      {locations.map((loc) => (
-                        <div key={loc.title} className="absolute" style={loc.position}>
-                            <PinContainer
-                                title={loc.title}
-                                href={loc.href}
-                                active
-                            >
-                              <div className="flex items-center justify-center h-16 w-16 md:h-20 md:w-20">
-                                <MapPin className="h-10 w-10 md:h-12 md:w-12 text-primary" />
-                              </div>
-                            </PinContainer>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
+                    {locations.map((loc) => (
+                      <div key={loc.title} className={cn("absolute transition-opacity duration-300", isClient ? "opacity-100" : "opacity-0")} style={loc.position}>
+                          <PinContainer
+                              title={loc.title}
+                              href={loc.href}
+                              active
+                          >
+                            <div className="flex items-center justify-center h-16 w-16 md:h-20 md:w-20">
+                              <MapPin className="h-10 w-10 md:h-12 md:w-12 text-primary" />
+                            </div>
+                          </PinContainer>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <div>
