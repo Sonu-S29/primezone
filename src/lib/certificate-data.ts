@@ -45,7 +45,7 @@ export const certificateData = [
     "src": "/images/certificates/class.jpeg",
     "width": 600,
     "height": 400,
-    "title": "Primezone Certidicate",
+    "title": "Primezone Certificate",
     "issuer": "Primezone Computer Education",
     "year": "2020",
     "hint": "Course Completion Certificate"

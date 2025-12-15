@@ -96,33 +96,45 @@ const courses = [
 ];
 
 const Countdown = ({ toDate }: { toDate: Date }) => {
-    const [timeLeft, setTimeLeft] = useState({
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-    });
+    const [timeLeft, setTimeLeft] = useState<{
+        hours: number;
+        minutes: number;
+        seconds: number;
+    } | null>(null);
 
     useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        const interval = setInterval(() => {
+        const calculateTimeLeft = () => {
             const now = new Date();
             const difference = toDate.getTime() - now.getTime();
 
             if (difference > 0) {
-                setTimeLeft({
+                return {
                     hours: Math.floor((difference / (1000 * 60 * 60)) % 24) + Math.floor(difference / (1000 * 60 * 60 * 24)) * 24,
                     minutes: Math.floor((difference / 1000 / 60) % 60),
                     seconds: Math.floor((difference / 1000) % 60),
-                });
-            } else {
-                setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
-                clearInterval(interval);
+                };
             }
+            return { hours: 0, minutes: 0, seconds: 0 };
+        };
+
+        // Set initial value on client-side mount
+        setTimeLeft(calculateTimeLeft());
+
+        const interval = setInterval(() => {
+            setTimeLeft(calculateTimeLeft());
         }, 1000);
 
         return () => clearInterval(interval);
     }, [toDate]);
+    
+    if (timeLeft === null) {
+        return (
+            <p className="text-xs text-muted-foreground">
+                Next batch starts in <br />
+                <span className="font-semibold text-primary">Loading...</span>
+            </p>
+        );
+    }
     
     return (
         <p className="text-xs text-muted-foreground">
@@ -267,3 +279,4 @@ export default function TrendingCourses() {
     </div>
   );
 }
+
