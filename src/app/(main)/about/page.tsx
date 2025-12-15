@@ -65,8 +65,8 @@ const teamMembers = [
     { 
         name: "Vedika Singh",
         role: "Managing Director", 
-        image: "/images/karan.jpg",
-        characterImage: "/images/karan-removebg.png",
+        image: "/images/vedika.jpeg",
+        characterImage: "/images/vedika_bgremove.png",
         hint: "professional woman"
     }
 ];
@@ -105,7 +105,6 @@ const timelineData = [
   ];
 
 const educationLogo = imageData.find(img => img.id === 'education-logo');
-const studentsLearning = imageData.find(img => img.id === 'students-learning');
 
 export default function AboutUs() {
   return (
@@ -144,18 +143,16 @@ export default function AboutUs() {
               Our vision is to be a leading center for computer education, recognized for our excellence in teaching, innovation, and student success. We aspire to empower individuals from all backgrounds to achieve their full potential in the digital age.
             </p>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            {studentsLearning && (
+          <div className="rounded-lg overflow-hidden shadow-lg flex items-center justify-center p-8 bg-background">
               <Image 
-                src={studentsLearning.src}
-                alt="Team working together"
-                width={studentsLearning.width}
-                height={studentsLearning.height}
+                src="/images/logo.png"
+                alt="Primezone Logo"
+                width={400}
+                height={400}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full object-cover"
-                data-ai-hint={studentsLearning.hint}
+                className="w-full object-contain"
+                data-ai-hint="company logo"
               />
-            )}
           </div>
         </div>
       </section>
