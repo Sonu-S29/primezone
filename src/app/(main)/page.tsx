@@ -117,12 +117,16 @@ export default function Home() {
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
   const isMobile = useIsMobile();
+  const [isClient, setIsClient] = useState(false);
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-       {isMobile === undefined ? (
+       {!isClient ? (
         <div className="h-screen -mt-24 w-full bg-background" />
       ) : isMobile ? <ParticleHero /> : <HeroSlider />}
       
