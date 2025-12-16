@@ -24,11 +24,12 @@ const mainNavLinks = [
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/certificates", label: "Certificates" },
+  
 ];
 
 const moreLinks = [
   { href: "/blog", label: "Blog" },
+  { href: "/certificates", label: "Certificates" },
   { href: "/career", label: "Careers" },
   { href: "/refer-and-earn", label: "Refer & Earn" },
   { href: "/contact", label: "Contact Us" },
@@ -56,6 +57,23 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium ml-auto">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button>
+                  <Users className="mr-2 h-4 w-4" /> Get Career Guidance
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Get Free Career Guidance</DialogTitle>
+                  <DialogDescription>
+                    Fill out the form below and one of our career counselors will get in touch with you.
+                  </DialogDescription>
+                </DialogHeader>
+                <CareerGuidanceForm />
+              </DialogContent>
+            </Dialog>
+
           {mainNavLinks.map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
               return (
@@ -90,22 +108,6 @@ export default function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button>
-                  <Users className="mr-2 h-4 w-4" /> Get Career Guidance
-                </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Get Free Career Guidance</DialogTitle>
-                  <DialogDescription>
-                    Fill out the form below and one of our career counselors will get in touch with you.
-                  </DialogDescription>
-                </DialogHeader>
-                <CareerGuidanceForm />
-              </DialogContent>
-            </Dialog>
         </nav>
 
         {/* Mobile Navigation */}
