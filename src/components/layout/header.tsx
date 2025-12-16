@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import CareerGuidanceForm from "../career-guidance-form";
 
 const mainNavLinks = [
   { href: "/", label: "Home" },
@@ -37,7 +39,7 @@ const allNavLinks = [...mainNavLinks, ...moreLinks];
 const NavbarLogo = () => {
     return (
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary">
-          <Image src="/images/logo.png" alt="Primezone Logo" width={160} height={40} data-ai-hint="logo" />
+          <Image src="/images/logo.png" alt="Primezone Logo" width={50} height={50} data-ai-hint="logo" />
         </Link>
     )
 }
@@ -87,10 +89,44 @@ export default function Header() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button>
+                  <Users className="mr-2 h-4 w-4" /> Get Career Guidance
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Get Free Career Guidance</DialogTitle>
+                  <DialogDescription>
+                    Fill out the form below and one of our career counselors will get in touch with you.
+                  </DialogDescription>
+                </DialogHeader>
+                <CareerGuidanceForm />
+              </DialogContent>
+            </Dialog>
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden ml-auto">
+        <div className="md:hidden ml-auto flex items-center gap-2">
+          <Dialog>
+              <DialogTrigger asChild>
+                <Button size="icon" variant="outline">
+                  <Users className="h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Get Free Career Guidance</DialogTitle>
+                  <DialogDescription>
+                    Fill out the form below and one of our career counselors will get in touch with you.
+                  </DialogDescription>
+                </DialogHeader>
+                <CareerGuidanceForm />
+              </DialogContent>
+            </Dialog>
+
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <button className="p-2">
