@@ -19,12 +19,12 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import CareerGuidanceForm from "../career-guidance-form";
 
 const mainNavLinks = [
+  { href: "/student-projects", label: "Student Projects" },
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
   { href: "/gallery", label: "Gallery" },
   { href: "/certificates", label: "Certificates" },
-  // { href: "/student-projects", label: "Student Projects" },
 ];
 
 const moreLinks = [
