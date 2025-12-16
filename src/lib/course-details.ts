@@ -76,11 +76,11 @@ export const courseDetails: { [key: string]: any } = {
             }
         ],
         tools: [
-            { name: "Excel", logo: "/images/tech/excel.png" },
-            { name: "Power BI", logo: "/images/tech/powerbi.png" },
-            { name: "SQL", logo: "/images/tech/sql.png" },
-            { name: "Python", logo: "/images/tech/python.png" },
-            { name: "Tableau", logo: "/images/tech/tableau.png" },
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "Power BI", logo: "/images/tech/powerbi.svg" },
+            { name: "SQL", logo: "/images/tech/mysql.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "Tableau", logo: "/images/tech/tableau.svg" },
         ]
     },
     "full-stack-development": {
@@ -108,13 +108,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Java Technology", icon: "Code", topics: ["Core Java", "Advanced Java", "Hibernate", "Spring"] }
         ],
         tools: [
-            { name: "HTML5", logo: "/images/tech/html.png" },
-            { name: "CSS3", logo: "/images/tech/css.png" },
-            { name: "JavaScript", logo: "/images/tech/js.png" },
-            { name: "React", logo: "/images/tech/react.png" },
-            { name: "Angular", logo: "/images/tech/angular.png" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "React", logo: "/images/tech/react.svg" },
+            { name: "Angular", logo: "/images/tech/angular.svg" },
             { name: "Node.js", logo: "/images/tech/node.png" },
-            { name: "MySQL", logo: "/images/tech/sql.png" },
+            { name: "MySQL", logo: "/images/tech/mysql.png" },
             { name: "MongoDB", logo: "/images/tech/mongodb.png" }
         ]
     },
@@ -132,7 +132,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Tally Prime with GST", icon: "Code", topics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
         ],
         tools: [
-            { name: "MS Excel", logo: "/images/tech/excel.png" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
         ]
     },
@@ -151,9 +151,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/tech/office.png" },
+            { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "MS Excel", logo: "/images/tech/excel.png" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
         ]
     },
     'computer-application': {
@@ -172,12 +172,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Web Designing", icon: "Code", topics: ["HTML / CSS", "Adobe Animate", "JavaScript Basics", "Web Hosting", "Adobe Dreamweaver"] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/tech/office.png" },
+            { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "Photoshop", logo: "/images/tech/photoshop.png" },
-            { name: "Illustrator", logo: "/images/tech/illustrator.png" },
-            { name: "HTML5", logo: "/images/tech/html.png" },
-            { name: "CSS3", logo: "/images/tech/css.png" },
+            { name: "Photoshop", logo: "/images/courses/short/graphics/AdobePhotoshop.png" },
+            { name: "Illustrator", logo: "/images/courses/short/graphics/Illustrator.png" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
         ]
     },
      "financial-management": {
@@ -202,9 +202,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/tech/office.png" },
+            { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "MS Excel", logo: "/images/tech/excel.png" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
         ]
     },
     "programming-course": {
@@ -228,12 +228,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: ".NET or MERN Stack", icon: "Code", topics: ["ASP.NET with C# or MERN Stack", "API Integration", "State Management"] }
         ],
         tools: [
-            { name: "C++", logo: "/images/tech/cplusplus.png" },
-            { name: "Java", logo: "/images/tech/java.png" },
-            { name: "Python", logo: "/images/tech/python.png" },
-            { name: "HTML5", logo: "/images/tech/html.png" },
-            { name: "React", logo: "/images/tech/react.png" },
-            { name: "MySQL", logo: "/images/tech/sql.png" }
+            { name: "C++", logo: "/images/tech/cplusplus.svg" },
+            { name: "Java", logo: "/images/tech/java.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "React", logo: "/images/tech/react.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" }
         ]
     },
     "graphic-animation": {
@@ -258,12 +258,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "3DS MAX", icon: "Brush", topics: ["2D/3D Interior Designing", "3D Modelling", "Materials & Camera Walkthrough"] }
         ],
         tools: [
-            { name: "Photoshop", logo: "/images/tech/photoshop.png" },
-            { name: "Illustrator", logo: "/images/tech/illustrator.png" },
-            { name: "InDesign", logo: "/images/tech/indesign.png" },
-            { name: "Premiere Pro", logo: "/images/tech/premiere.png" },
-            { name: "After Effects", logo: "/images/tech/after-effects.png" },
-            { name: "3ds Max", logo: "/images/tech/3dsmax.png" }
+            { name: "Photoshop", logo: "/images/courses/short/graphics/AdobePhotoshop.png" },
+            { name: "Illustrator", logo: "/images/courses/short/graphics/Illustrator.png" },
+            { name: "InDesign", logo: "/images/courses/short/graphics/InDesign.png" },
+            { name: "Premiere Pro", logo: "/images/courses/short/graphics/PremierePro.png" },
+            { name: "After Effects", logo: "/images/courses/short/graphics/AfterEffects.png" },
+            { name: "3ds Max", logo: "/images/courses/short/graphics/3DMAX.png" }
         ]
     },
     "ethical-hacking": {
@@ -287,10 +287,10 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Web & Network Hacking", icon: "Code", topics: ["Hacking Web Servers", "SQL Injection", "Sniffing & Social Engineering", "Denial-of-Service"] }
         ],
         tools: [
-            { name: "Nmap", logo: "/images/tech/nmap.png" },
-            { name: "Wireshark", logo: "/images/tech/wireshark.png" },
-            { name: "Metasploit", logo: "/images/tech/metasploit.png" },
-            { name: "Linux", logo: "/images/tech/linux.png" }
+            { name: "Nmap", logo: "/images/tech/nmap.svg" },
+            { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
+            { name: "Metasploit", logo: "/images/tech/metasploit.svg" },
+            { name: "Linux", logo: "/images/tech/linux.svg" }
         ]
     },
     "digital-marketing": {
@@ -315,10 +315,10 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Google Analytics", icon: "BarChart", topics: ["Tracking Traffic", "Analyzing Behavior", "Conversion Tracking"] }
         ],
         tools: [
-            { name: "Google Analytics", logo: "/images/tech/ga.png" },
-            { name: "Google Ads", logo: "/images/tech/google-ads.png" },
-            { name: "WordPress", logo: "/images/tech/wordpress.png" },
-            { name: "SEO", logo: "/images/tech/seo.png" }
+            { name: "Google Analytics", logo: "/images/tech/ga.svg" },
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "SEO", logo: "/images/tech/seo.svg" }
         ]
     },
     "web-designing": {
@@ -342,9 +342,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Project", icon: "Code", topics: ["Build a complete website design from scratch", "Create a personal portfolio"] }
         ],
         tools: [
-            { name: "HTML5", logo: "/images/tech/html.png" },
-            { name: "CSS3", logo: "/images/tech/css.png" },
-            { name: "Figma", logo: "/images/tech/figma.png" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "Figma", logo: "/images/courses/short/graphics/Figma.png" },
             { name: "Adobe XD", logo: "/images/tech/xd.png" }
         ]
     },
@@ -367,7 +367,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Macros & VBA", icon: "Code", topics: ["Recording and running macros", "Introduction to the VBA editor", "Creating user-defined functions (UDFs)"] },
         ],
         tools: [
-            { name: "MS Excel", logo: "/images/tech/excel.png" }
+            { name: "MS Excel", logo: "/images/tech/excel.svg" }
         ]
     },
     "power-bi": {
@@ -390,13 +390,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Visualization", icon: "Brush", topics: ["Creating various charts and graphs", "Designing interactive dashboards"] },
         ],
         tools: [
-            { name: "Power BI", logo: "/images/tech/powerbi.png" }
+            { name: "Power BI", logo: "/images/tech/powerbi.svg" }
         ]
     },
     "tally-gst": {
         title: "Tally + GST",
         description: "Learn comprehensive accounting and GST management with the industry-standard Tally software.",
-        image: "/images/courses/coursetrend/tally.png",
+        image: "/images/courses/short/account/tallygst.png",
         hint: "accounting software",
         highlights: ["GST Compliance", "Financial Accounting", "Inventory Management", "Payroll Processing"],
         whatYouWillLearn: [
@@ -434,8 +434,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Sound Editing", icon: "Code", topics: ["Audio cleanup and enhancement", "Mixing and mastering audio tracks"] },
         ],
         tools: [
-            { name: "Premiere Pro", logo: "/images/tech/premiere.png" },
-            { name: "After Effects", logo: "/images/tech/after-effects.png" }
+            { name: "Premiere Pro", logo: "/images/courses/short/graphics/PremierePro.png" },
+            { name: "After Effects", logo: "/images/courses/short/graphics/AfterEffects.png" }
         ]
     },
     "autocad": {
@@ -457,7 +457,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Layout and Plotting", icon: "Code", topics: ["Working with layouts and viewports", "Setting up plots and print styles"] },
         ],
         tools: [
-            { name: "AutoCAD", logo: "/images/tech/autocad.png" }
+            { name: "AutoCAD", logo: "/images/courses/short/graphics/AutoCAD.png" }
         ]
     },
     "social-media-marketing": {
@@ -479,7 +479,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Analytics", icon: "BarChart", topics: ["Tracking key metrics", "Using platform-native analytics tools", "Reporting and optimization"] },
         ],
         tools: [
-            { name: "Facebook", logo: "/images/tech/fb.png" },
+            { name: "Facebook", logo: "/images/tech/fb.svg" },
             { name: "Instagram", logo: "/images/tech/ig.png" },
             { name: "LinkedIn", logo: "/images/tech/linkedin.png" }
         ]
@@ -502,8 +502,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Optimization", icon: "BarChart", topics: ["A/B testing ad copy", "Quality Score improvement", "Conversion tracking and analysis"] },
         ],
         tools: [
-            { name: "Google Ads", logo: "/images/tech/google-ads.png" },
-            { name: "Google Analytics", logo: "/images/tech/ga.png" }
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
+            { name: "Google Analytics", logo: "/images/tech/ga.svg" }
         ]
     },
     "google-facebook-ads": {
@@ -524,8 +524,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Integrated Strategy", icon: "Brush", topics: ["Creating a cohesive strategy across platforms", "Attribution modeling"] },
         ],
         tools: [
-            { name: "Google Ads", logo: "/images/tech/google-ads.png" },
-            { name: "Facebook Ads", logo: "/images/tech/fb.png" }
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
+            { name: "Facebook Ads", logo: "/images/tech/fb.svg" }
         ]
     },
     'office-automation': {
