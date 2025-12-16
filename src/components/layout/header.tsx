@@ -37,7 +37,7 @@ const allNavLinks = [...mainNavLinks, ...moreLinks];
 const NavbarLogo = () => {
     return (
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary">
-          <Image src="/images/logo.png" alt="Primezone Logo" width={150} height={32} data-ai-hint="logo" />
+          <Image src="/images/logo.png" alt="Primezone Logo" width={160} height={40} data-ai-hint="logo" />
         </Link>
     )
 }
