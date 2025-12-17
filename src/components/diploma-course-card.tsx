@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowLeft, BookOpen, Clock, Users, Landmark, BarChart, FileText, MonitorCheck, Palette, Globe, Bot, Rocket, Code, ShieldCheck, Fingerprint, Search, Mail, Bug, TerminalSquare, BugPlay, Wifi, ShieldOff, ServerCrash, ShieldAlert, KeyRound, Megaphone, Newspaper, Settings, LayoutTemplate } from "lucide-react";
+import { Check, ArrowLeft, BookOpen, Clock, Users, Landmark, BarChart, FileText, MonitorCheck, Palette, Globe, Bot, Rocket, Code, ShieldCheck, Fingerprint, Search, Mail, Bug, TerminalSquare, BugPlay, Wifi, ShieldOff, ServerCrash, ShieldAlert, KeyRound, Megaphone, Newspaper, Settings, LayoutTemplate, Hand, HandIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -114,6 +114,10 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
                             </button>
                         ))}
                     </div>
+                </div>
+                 <div className="flex items-center justify-center text-xs text-muted-foreground -mt-2 mb-3">
+                  <HandIcon className="h-3 w-3 mr-1 animate-pulse" />
+                  Click to view
                 </div>
 
                 <CardHeader className="p-0">
