@@ -51,26 +51,26 @@ const scrollingFeatures = [
     {
         title: "Our Diploma and Short-term Courses",
         content: (
-             <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-start text-sm">
-                <div className="flex flex-col items-start p-2 rounded-lg gap-1">
-                    <div className="flex items-center font-bold">
-                        <Book className="mr-2 h-4 w-4 text-accent" />
-                        <span>10+ Diploma Courses</span>
-                    </div>
-                    <div className="flex items-center text-xs text-muted-foreground ml-1">
-                        <Clock className="mr-1.5 h-3 w-3" />
-                         <span>6 Months to 1 Year</span>
+             <div className="flex flex-col md:flex-row items-start md:items-center justify-start text-sm gap-4">
+                <div className="flex items-start gap-3">
+                    <Book className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <div>
+                        <p className="font-bold">10+ Diploma Courses</p>
+                        <div className="flex items-center text-xs text-muted-foreground mt-1">
+                            <Clock className="mr-1.5 h-3 w-3" />
+                            <span>6 Months to 1 Year</span>
+                        </div>
                     </div>
                 </div>
-                 <div className="hidden md:block h-10 w-px bg-border"></div>
-                 <div className="flex flex-col items-start p-2 rounded-lg gap-1">
-                    <div className="flex items-center font-bold">
-                        <Book className="mr-2 h-4 w-4 text-accent" />
-                        <span>35+ Short-Term Courses</span>
-                    </div>
-                    <div className="flex items-center text-xs text-muted-foreground ml-1">
-                        <Clock className="mr-1.5 h-3 w-3" />
-                         <span>2 to 6 Months</span>
+                <div className="hidden md:block h-10 w-px bg-border"></div>
+                <div className="flex items-start gap-3">
+                     <Book className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                     <div>
+                        <p className="font-bold">35+ Short-Term Courses</p>
+                        <div className="flex items-center text-xs text-muted-foreground mt-1">
+                            <Clock className="mr-1.5 h-3 w-3" />
+                            <span>2 to 6 Months</span>
+                        </div>
                     </div>
                 </div>
             </div>
