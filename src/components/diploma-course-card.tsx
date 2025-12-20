@@ -56,6 +56,11 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
 
     const startCycle = () => {
         stopCycle(); // Stop any existing cycle
+        
+        // Show the first module immediately
+        const firstModuleIndex = selectedModule === null ? 0 : (selectedModule + 1) % course.modules.length;
+        setSelectedModule(firstModuleIndex);
+
         setIsAutoCycling(true);
         cycleIntervalRef.current = setInterval(() => {
             setSelectedModule(prev => (prev === null ? 0 : (prev + 1) % course.modules.length));
