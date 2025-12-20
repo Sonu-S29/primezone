@@ -51,7 +51,7 @@ const scrollingFeatures = [
     {
         title: "Our Diploma and Short-term Courses",
         content: (
-             <div className="flex flex-col md:flex-row gap-4 items-start justify-start text-sm">
+             <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-start text-sm">
                 <div className="flex flex-col items-start p-2 rounded-lg gap-1">
                     <div className="flex items-center font-bold">
                         <Book className="mr-2 h-4 w-4 text-accent" />
@@ -111,7 +111,7 @@ export default function AccreditationLogos() {
   return (
     <Card className="p-8 md:p-10 glass-effect relative overflow-hidden min-h-[200px] md:min-h-[160px]">
       <div className="absolute top-4 right-0 w-full px-6 text-center">
-        <p className={cn("font-bold text-xs text-muted-foreground transition-opacity duration-500 mb-2", isFading ? "opacity-0" : "opacity-100")}>{scrollingFeatures[currentIndex].title}</p>
+        <p className={cn("font-bold text-xs text-muted-foreground transition-opacity duration-500 mb-2 md:mb-0", isFading ? "opacity-0" : "opacity-100")}>{scrollingFeatures[currentIndex].title}</p>
       </div>
       <div className="grid md:grid-cols-2 gap-4 items-center">
         <div className="hidden md:flex flex-col items-start gap-1">
