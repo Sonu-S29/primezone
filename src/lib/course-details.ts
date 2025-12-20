@@ -3,7 +3,7 @@ export const courseDetails: { [key: string]: any } = {
     'data-analysis': {
         title: "Data Analysis",
         description: "This comprehensive program is designed to equip you with the essential skills for data analysis, covering everything from foundational concepts to advanced tools. You'll learn to clean, analyze, and visualize data to drive informed business decisions.",
-        image: "/images/courses/data-analysis.webp",
+        image: "/images/courses/diploma/dataanalysis.webp",
         hint: "data analytics dashboard",
         highlights: ["100% Job Assistance", "Integrated Internship", "Live Projects", "Expert-Led Training"],
         whatYouWillLearn: [
@@ -86,7 +86,7 @@ export const courseDetails: { [key: string]: any } = {
     "full-stack-development": {
         title: "Full-Stack Development",
         description: "Become a versatile developer by mastering both front-end and back-end technologies. This course will guide you through building complete, scalable web applications from scratch.",
-        image: "/images/courses/full-stack.webp",
+        image: "/images/courses/diploma/fullstack.webp",
         hint: "code on screen",
         highlights: ["100% Job Assistance", "Integrated Internship", "Live Projects", "Build Your Own Portfolio"],
         whatYouWillLearn: [
@@ -113,46 +113,55 @@ export const courseDetails: { [key: string]: any } = {
             { name: "JavaScript", logo: "/images/tech/js.svg" },
             { name: "React", logo: "/images/tech/react.svg" },
             { name: "Angular", logo: "/images/tech/angular.svg" },
-            { name: "Node.js", logo: "/images/tech/node.png" },
-            { name: "MySQL", logo: "/images/tech/mysql.png" },
-            { name: "MongoDB", logo: "/images/tech/mongodb.png" }
+            { name: "Node.js", logo: "/images/tech/node.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "MongoDB", logo: "/images/tech/mongodb.svg" }
         ]
     },
-    'accounting': {
-        title: "Diploma In Accounting",
-        description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
-        image: "/images/courses/DIA.jpg",
-        hint: "accounting collage",
-        highlights: ["Job Oriented", "Practical Training", "Expert Faculty", "Certification"],
-        whatYouWillLearn: ["Financial accounting principles", "Advanced Excel for accounting tasks", "Tally Prime with GST compliance", "Fundamentals of taxation and auditing"],
-        careerOpportunities: ["Accountant", "Finance Executive", "Tax Consultant", "MIS Executive"],
-        syllabus: [
-            { title: "Financial Accounting Basics", icon: "BarChart", topics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
-            { title: "Advanced Excel for Accountants", icon: "BarChart", topics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
-            { title: "Tally Prime with GST", icon: "Code", topics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
+    // 'accounting': {
+    //     title: "Diploma In Accounting",
+    //     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
+    //     image: "/images/courses/DIA.jpg",
+    //     hint: "accounting collage",
+    //     highlights: ["Job Oriented", "Practical Training", "Expert Faculty", "Certification"],
+    //     whatYouWillLearn: ["Financial accounting principles", "Advanced Excel for accounting tasks", "Tally Prime with GST compliance", "Fundamentals of taxation and auditing"],
+    //     careerOpportunities: ["Accountant", "Finance Executive", "Tax Consultant", "MIS Executive"],
+    //     syllabus: [
+    //         { title: "Financial Accounting Basics", icon: "BarChart", topics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
+    //         { title: "Advanced Excel for Accountants", icon: "BarChart", topics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
+    //         { title: "Tally Prime with GST", icon: "Code", topics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
+    //     ],
+    //     tools: [
+    //         { name: "MS Excel", logo: "/images/tech/excel.svg" },
+    //         { name: "Tally Prime", logo: "/images/tech/tally.png" },
+    //     ]
+    // },
+    'financial-management': {
+        title: "Diploma In Financial & Management",
+        description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
+        image: "/images/courses/diploma/dfam.webp",
+        hint: "financial management",
+        highlights: ["Finance & Management", "Share Market Intro", "Practical Case Studies", "Job-Oriented"],
+        whatYouWillLearn: [
+            "Comprehensive office automation and advanced Excel skills.",
+            "In-depth knowledge of Tally Prime with GST and Taxation.",
+            "Core management skills for business finance, marketing, and operations.",
+            "An introduction to the share market and investment basics."
         ],
-        tools: [
-            { name: "MS Excel", logo: "/images/tech/excel.svg" },
-            { name: "Tally Prime", logo: "/images/tech/tally.png" },
-        ]
-    },
-    'financial-accounting': {
-        title: "Diploma In Financial Accounting",
-        description: "Master financial accounting principles, practices, and software tools essential for managing an organization's financial records and reports.",
-        image: "/images/courses/financial-accounting.webp",
-        hint: "financial report",
-        highlights: ["In-depth Curriculum", "Practical Case Studies", "Software Training", "Industry Recognized"],
-        whatYouWillLearn: ["Office automation tools", "Advanced Excel for financial reporting", "Complete Tally Prime with GST", "Taxation and auditing procedures"],
-        careerOpportunities: ["Financial Analyst", "Accounts Manager", "Taxation Expert", "Compliance Officer"],
+        careerOpportunities: ["Finance Manager", "Business Analyst", "Management Trainee", "Investment Advisor"],
         syllabus: [
-            { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet - Upload,Download,Booking", "Microsoft Windows Fundamental", "and many more..."] },
-            { title: "Advanced Excel", icon: "BarChart", topics: ["Basic Functions, Tabs & Ribbons", "Advanced Conditional Formatting", "Pivot Tables & Pivot Charts", "Sparkline, Timeline, What if Analysis", "V-Lookup & H-Lookup", "Working with Macros, MIS Reporting", "and many more..."] },
-            { title: "Tally Prime (GST)", icon: "Code", topics: ["Basics of Accounting", "Accounting Principal", "Golden Rules of Accounting", "Receipt / Journal Vouchers & Contra", "TDS (Tax Deducted at Source)", "GST, Apply GST Number", "and many more..."] },
-            { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats, GST Return", "and many more..."] }
+            { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
+            { title: "Advanced Excel", icon: "BarChart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
+            { title: "Tally Prime (GST)", icon: "Code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
+            { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
+            { title: "Management Skills", icon: "Code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
+            { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
         ],
         tools: [
             { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Tax", logo: "/images/tech/tax.png" },
+            { name: "Gst", logo: "/images/tech/gst.jpg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
         ]
     },
@@ -180,33 +189,35 @@ export const courseDetails: { [key: string]: any } = {
             { name: "CSS3", logo: "/images/tech/css.svg" },
         ]
     },
-     "financial-management": {
-        title: "Diploma In Financial & Management",
-        description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
-        image: "/images/courses/DFAM.jpg",
-        hint: "financial management",
-        highlights: ["Finance & Management", "Share Market Intro", "Practical Case Studies", "Job-Oriented"],
-        whatYouWillLearn: [
-            "Comprehensive office automation and advanced Excel skills.",
-            "In-depth knowledge of Tally Prime with GST and Taxation.",
-            "Core management skills for business finance, marketing, and operations.",
-            "An introduction to the share market and investment basics."
-        ],
-        careerOpportunities: ["Finance Manager", "Business Analyst", "Management Trainee", "Investment Advisor"],
-        syllabus: [
-            { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
-            { title: "Advanced Excel", icon: "BarChart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
-            { title: "Tally Prime (GST)", icon: "Code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
-            { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
-            { title: "Management Skills", icon: "Code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
-            { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
-        ],
-        tools: [
-            { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
-            { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "MS Excel", logo: "/images/tech/excel.svg" },
-        ]
-    },
+    //  "financial-management": {
+    //     title: "Diploma In Financial & Management",
+    //     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
+    //     image: "/images/courses/diploma/dfam.webp",
+    //     hint: "financial management",
+    //     highlights: ["Finance & Management", "Share Market Intro", "Practical Case Studies", "Job-Oriented"],
+    //     whatYouWillLearn: [
+    //         "Comprehensive office automation and advanced Excel skills.",
+    //         "In-depth knowledge of Tally Prime with GST and Taxation.",
+    //         "Core management skills for business finance, marketing, and operations.",
+    //         "An introduction to the share market and investment basics."
+    //     ],
+    //     careerOpportunities: ["Finance Manager", "Business Analyst", "Management Trainee", "Investment Advisor"],
+    //     syllabus: [
+    //         { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
+    //         { title: "Advanced Excel", icon: "BarChart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
+    //         { title: "Tally Prime (GST)", icon: "Code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
+    //         { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
+    //         { title: "Management Skills", icon: "Code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
+    //         { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
+    //     ],
+    //     tools: [
+    //         { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
+    //         { name: "Tally Prime", logo: "/images/tech/tally.png" },
+    //         { name: "Tax", logo: "/images/tech/tax.svg" },
+    //         { name: "Gst", logo: "/images/tech/gst.jpg" },
+    //         { name: "MS Excel", logo: "/images/tech/excel.svg" },
+    //     ]
+    // },
     "programming-course": {
         title: "Diploma In Programming",
         description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
@@ -269,7 +280,7 @@ export const courseDetails: { [key: string]: any } = {
     "ethical-hacking": {
         title: "Diploma In Ethical Hacking",
         description: "Learn cybersecurity fundamentals, penetration testing techniques, and ethical hacking practices to protect systems and networks from malicious attacks.",
-        image: "/images/courses/ethical-hacking.webp",
+        image: "/images/courses/diploma/deh.webp",
         hint: "ethical hacking",
         highlights: ["Penetration Testing", "Network Security", "Vulnerability Analysis", "Cyber Ethics"],
         whatYouWillLearn: [
@@ -288,15 +299,16 @@ export const courseDetails: { [key: string]: any } = {
         ],
         tools: [
             { name: "Nmap", logo: "/images/tech/nmap.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
             { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
-            { name: "Metasploit", logo: "/images/tech/metasploit.svg" },
+            { name: "Metasploit", logo: "/images/tech/Metasploit.svg" },
             { name: "Linux", logo: "/images/tech/linux.svg" }
         ]
     },
     "digital-marketing": {
         title: "Diploma In Digital Marketing",
         description: "Master digital marketing strategies, including SEO, social media marketing, content creation, and analytics to promote businesses in the online world.",
-        image: "/images/courses/digital-marketing.webp",
+        image: "/images/courses/diploma/ddm.webp",
         hint: "digital marketing",
         highlights: ["SEO & SEM", "Social Media Marketing", "Content Creation", "Google Analytics"],
         whatYouWillLearn: [
@@ -318,6 +330,9 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Google Analytics", logo: "/images/tech/ga.svg" },
             { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
             { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "Facebook", logo: "/images/tech/fb.svg" },
+            { name: "Instagram", logo: "/images/tech/ig.png" },
+            { name: "Google Search Console", logo: "/images/tech/gsc.svg" },
             { name: "SEO", logo: "/images/tech/seo.svg" }
         ]
     },
@@ -412,7 +427,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced Features", icon: "Code", topics: ["Inventory Management", "Payroll Setup and Processing", "TDS (Tax Deducted at Source)"] },
         ],
         tools: [
-            { name: "Tally Prime", logo: "/images/tech/tally.png" }
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "GST", logo: "/images/tech/gst.jpg" }
         ]
     },
      "video-editing": {
@@ -434,8 +450,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Sound Editing", icon: "Code", topics: ["Audio cleanup and enhancement", "Mixing and mastering audio tracks"] },
         ],
         tools: [
-            { name: "Premiere Pro", logo: "/images/courses/short/graphics/PremierePro.png" },
-            { name: "After Effects", logo: "/images/courses/short/graphics/AfterEffects.png" }
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
+            { name: "After Effects", logo: "/images/tech/after-effects.svg" }
         ]
     },
     "autocad": {
@@ -481,7 +497,7 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "Facebook", logo: "/images/tech/fb.svg" },
             { name: "Instagram", logo: "/images/tech/ig.png" },
-            { name: "LinkedIn", logo: "/images/tech/linkedin.png" }
+            { name: "LinkedIn", logo: "/images/tech/linkedin.svg" }
         ]
     },
     "search-engine-marketing": {

@@ -68,8 +68,8 @@ const courses = [
     imageHint: "cyber security"
   },
   {
-    slug: "financial-accounting",
-    title: "Diploma in Financial Accounting",
+    slug: "financial-management",
+    title: "Diploma in Financial Accounting & Management",
     description: "Gain expertise in financial accounting, Tally, and GST.",
     duration: "1 Year",
     idealFor: "10th, 12th, Graduates",
