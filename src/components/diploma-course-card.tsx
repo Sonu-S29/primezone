@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowLeft, BookOpen, Clock, Users, Landmark, BarChart, FileText, MonitorCheck, Palette, Globe, Bot, Rocket, Code, ShieldCheck, Fingerprint, Search, Mail, Bug, TerminalSquare, BugPlay, Wifi, ShieldOff, ServerCrash, ShieldAlert, KeyRound, Megaphone, Newspaper, Settings, LayoutTemplate, Hand, HandIcon } from "lucide-react";
@@ -43,6 +43,45 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 export default function DiplomaCourseCard({ course }: { course: DiplomaCourse }) {
     const [selectedModule, setSelectedModule] = useState<number | null>(null);
+    const [isAutoCycling, setIsAutoCycling] = useState(false);
+    const cycleIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+    const stopCycle = () => {
+        if (cycleIntervalRef.current) {
+            clearInterval(cycleIntervalRef.current);
+            cycleIntervalRef.current = null;
+        }
+        setIsAutoCycling(false);
+    };
+
+    const startCycle = () => {
+        stopCycle(); // Stop any existing cycle
+        setIsAutoCycling(true);
+        cycleIntervalRef.current = setInterval(() => {
+            setSelectedModule(prev => (prev === null ? 0 : (prev + 1) % course.modules.length));
+        }, 2000);
+    };
+
+    const handleModuleClick = (index: number) => {
+        stopCycle();
+        setSelectedModule(index);
+    };
+
+    const handleAutoCycleClick = () => {
+        if (isAutoCycling) {
+            stopCycle();
+        } else {
+            startCycle();
+        }
+    };
+    
+    useEffect(() => {
+        // Cleanup on component unmount
+        return () => {
+            stopCycle();
+        };
+    }, []);
+
 
     return (
         <Card className="diploma-card-container flex flex-col justify-between overflow-hidden border-2 border-transparent hover:border-primary/20 transition-all duration-300 shadow-lg hover:shadow-xl rounded-2xl w-full max-w-sm mx-auto">
@@ -79,7 +118,7 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
                         >
                             <div className="flex items-center justify-between mb-2">
                                 <h4 className="font-bold text-primary">{course.modules[selectedModule].title}</h4>
-                                <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => setSelectedModule(null)}>
+                                <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => handleModuleClick(null)}>
                                     <ArrowLeft className="h-4 w-4" />
                                 </Button>
                             </div>
@@ -103,7 +142,7 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
                         {course.modules.map((module, index) => (
                             <button
                                 key={index}
-                                onClick={() => setSelectedModule(index)}
+                                onClick={() => handleModuleClick(index)}
                                 className={`module-circle group ${selectedModule === index ? 'active' : ''}`}
                                 title={module.title}
                             >
@@ -115,7 +154,7 @@ export default function DiplomaCourseCard({ course }: { course: DiplomaCourse })
                         ))}
                     </div>
                 </div>
-                 <div className="flex items-center justify-center text-xs text-muted-foreground -mt-2 mb-3">
+                 <div onClick={handleAutoCycleClick} className="flex items-center justify-center text-xs text-muted-foreground -mt-2 mb-3 cursor-pointer">
                   <HandIcon className="h-3 w-3 mr-1 animate-pulse" />
                   Click to view
                 </div>
