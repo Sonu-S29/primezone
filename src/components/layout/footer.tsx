@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">PrimeZone Computer Education</h3>
+            <h3 className="font-semibold text-lg">Primezone Computer Education</h3>
             <p className="text-primary-foreground/70 text-sm">
               PRIMEZONE COMPUTER EDUCATION was founded in 2020. It brings computer education within reach of common people, supporting students to add professional skills and achieve higher goals in life.
             </p>

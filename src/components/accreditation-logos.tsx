@@ -81,12 +81,12 @@ const scrollingFeatures = [
         title: "Why Choose Us?",
         content: (
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
-                <div className="flex items-center gap-2"><Briefcase className="h-3 w-3 text-accent"/><span>Best in Industry</span></div>
-                <div className="flex items-center gap-2"><Award className="h-3 w-3 text-accent"/><span>Award-Winning</span></div>
-                <div className="flex items-center gap-2"><Cpu className="h-3 w-3 text-accent"/><span>State-of-the-Art Labs</span></div>
-                <div className="flex items-center gap-2"><Users className="h-3 w-3 text-accent"/><span>Expert Faculty</span></div>
-                <div className="flex items-center gap-2"><GraduationCap className="h-3 w-3 text-accent"/><span>Free Career Counseling</span></div>
-                <div className="flex items-center gap-2"><Star className="h-3 w-3 text-accent"/><span>Job-Oriented Training</span></div>
+                <div className="flex items-start gap-2"><Briefcase className="h-4 w-4 text-accent shrink-0 mt-0.5"/><span>Best in Industry</span></div>
+                <div className="flex items-start gap-2"><Award className="h-4 w-4 text-accent shrink-0 mt-0.5"/><span>Award-Winning</span></div>
+                <div className="flex items-start gap-2"><Cpu className="h-4 w-4 text-accent shrink-0 mt-0.5"/><span>State-of-the-Art Labs</span></div>
+                <div className="flex items-start gap-2"><Users className="h-4 w-4 text-accent shrink-0 mt-0.5"/><span>Expert Faculty</span></div>
+                <div className="flex items-start gap-2"><GraduationCap className="h-4 w-4 text-accent shrink-0 mt-0.5"/><span>Free Career Counseling</span></div>
+                <div className="flex items-start gap-2"><Star className="h-4 w-4 text-accent shrink-0 mt-0.5"/><span>Job-Oriented Training</span></div>
             </div>
         ),
         link: "/about"
