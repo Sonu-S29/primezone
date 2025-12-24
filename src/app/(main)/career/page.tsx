@@ -56,6 +56,12 @@ const jobOpenings = [
     type: "Part-time / Full-time",
     description: "We are seeking an industry expert in Data Science who can take lectures and manage students effectively.",
   },
+  {
+    title: "Data Engineer",
+    location: "Mumbai (Remote)",
+    type: "Full-time",
+    description: "We are looking for a Data Engineer to develop, construct, test, and maintain our data architectures.",
+  },
 ];
 
 const teamImage = imageData.find(img => img.id === 'happy-diverse-team');
