@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
@@ -12,6 +13,42 @@ const jobOpenings = [
     location: "Mumbai (Remote)",
     type: "Full-time",
     description: "We are looking for a creative Graphic Designer to be responsible for giving lectures and creating engaging content for daily posts and banners.",
+  },
+  {
+    title: "Student Counselor",
+    location: "Mumbai",
+    type: "Full-time",
+    description: "We are seeking a compassionate and experienced Student Counselor to provide guidance, support, and enrollment assistance to our students.",
+  },
+  {
+    title: "Full-Stack Developer",
+    location: "Mumbai (Remote)",
+    type: "Full-time",
+    description: "We are looking for a skilled Full-Stack Developer to design, develop, and maintain our web applications and internal systems.",
+  },
+  {
+    title: "Java Developer",
+    location: "Mumbai",
+    type: "Full-time",
+    description: "Join our team as a Java Developer to build robust and scalable backend services and educational applications.",
+  },
+  {
+    title: "Digital Marketer",
+    location: "Mumbai",
+    type: "Full-time",
+    description: "We're hiring a Digital Marketer to manage our online presence, run campaigns, and analyze performance to drive student enrollments.",
+  },
+  {
+    title: "Telecaller (Female preferred)",
+    location: "Mumbai",
+    type: "Full-time",
+    description: "We are looking for a friendly and persuasive Telecaller to connect with prospective students, answer inquiries, and schedule counseling sessions.",
+  },
+  {
+    title: "Microsoft Office Trainer",
+    location: "Mumbai",
+    type: "Part-time / Full-time",
+    description: "Seeking an expert trainer for Microsoft Office 365, Tally, and GST to deliver high-quality instruction to our students.",
   },
 ];
 

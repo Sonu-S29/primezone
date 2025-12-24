@@ -158,7 +158,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
+            { name: "MS Office", logo: "/images/tech/office.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
             { name: "Tax", logo: "/images/tech/tax.png" },
             { name: "Gst", logo: "/images/tech/gst.jpg" },
@@ -181,7 +181,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Web Designing", icon: "Code", topics: ["HTML / CSS", "Adobe Animate", "JavaScript Basics", "Web Hosting", "Adobe Dreamweaver"] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
+            { name: "MS Office", logo: "/images/tech/office.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
             { name: "Photoshop", logo: "/images/courses/short/graphics/AdobePhotoshop.png" },
             { name: "Illustrator", logo: "/images/courses/short/graphics/Illustrator.png" },
@@ -269,12 +269,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "3DS MAX", icon: "Brush", topics: ["2D/3D Interior Designing", "3D Modelling", "Materials & Camera Walkthrough"] }
         ],
         tools: [
-            { name: "Photoshop", logo: "/images/courses/short/graphics/AdobePhotoshop.png" },
-            { name: "Illustrator", logo: "/images/courses/short/graphics/Illustrator.png" },
-            { name: "InDesign", logo: "/images/courses/short/graphics/InDesign.png" },
-            { name: "Premiere Pro", logo: "/images/courses/short/graphics/PremierePro.png" },
-            { name: "After Effects", logo: "/images/courses/short/graphics/AfterEffects.png" },
-            { name: "3ds Max", logo: "/images/courses/short/graphics/3DMAX.png" }
+            { name: "Photoshop", logo: "/images/tech/Adobe Animate.svg" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
+            { name: "InDesign", logo: "/images/tech/indesign.svg" },
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
+            { name: "After Effects", logo: "/images/tech/after-effects.svg" },
+            { name: "3ds Max", logo: "/images/tech/3dsMax.svg" }
         ]
     },
     "ethical-hacking": {
@@ -353,14 +353,12 @@ export const courseDetails: { [key: string]: any } = {
         syllabus: [
             { title: "UI/UX Principles", icon: "Brush", topics: ["User-Centered Design", "Color Theory", "Typography", "Layout and Composition"] },
             { title: "HTML & CSS", icon: "Code", topics: ["Structuring web pages with HTML5", "Styling with CSS3, including Flexbox and Grid", "Responsive Design Techniques"] },
-            { title: "Design Tools", icon: "Brush", topics: ["Designing and prototyping in Figma", "Introduction to Adobe XD and Sketch"] },
             { title: "Project", icon: "Code", topics: ["Build a complete website design from scratch", "Create a personal portfolio"] }
         ],
         tools: [
             { name: "HTML5", logo: "/images/tech/html.svg" },
-            { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "Figma", logo: "/images/courses/short/graphics/Figma.png" },
-            { name: "Adobe XD", logo: "/images/tech/xd.png" }
+            { name: "CSS3", logo: "/images/tech/css.svg" }
+            
         ]
     },
      "advanced-excel": {
@@ -450,8 +448,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Sound Editing", icon: "Code", topics: ["Audio cleanup and enhancement", "Mixing and mastering audio tracks"] },
         ],
         tools: [
-            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
-            { name: "After Effects", logo: "/images/tech/after-effects.svg" }
+            { name: "Premiere Pro", logo: "/images/tech/python.svg" },
+            { name: "After Effects", logo: "/images/tech/premiere.svg" }
         ]
     },
     "autocad": {
@@ -560,7 +558,10 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "MS Word", logo: "/images/tech/word.png" },
             { name: "MS Excel", logo: "/images/tech/excel.png" },
-            { name: "MS PowerPoint", logo: "/images/tech/powerpoint.png" }
+            { name: "MS One-Note", logo: "/images/tech/onenote.svg" },
+            { name: "MS Access", logo: "/images/tech/access.svg" },
+            { name: "MS outlook", logo: "/images/tech/outlook.svg" },
+            { name: "MS PowerPoint", logo: "/images/tech/ppt.png" }
         ]
     },
     'ms-office': {
@@ -577,7 +578,10 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Data Management", icon: "Code", topics: ["Introduction to database concepts with MS Access"] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/tech/office.png" }
+            { name: "MS Word", logo: "/images/tech/word.png" },
+            { name: "MS Excel", logo: "/images/tech/excel.png" },
+            { name: "MS PowerPoint", logo: "/images/tech/ppt.png" }
+            // { name: "MS Office", logo: "/images/tech/office.svg" }
         ]
     },
     'taxation-auditing': {
@@ -594,7 +598,8 @@ export const courseDetails: { [key: string]: any } = {
         ],
         tools: [
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "MS Excel", logo: "/images/tech/excel.png" }
+            { name: "GST", logo: "/images/tech/gst.jpg" }
+            // { name: "MS Excel", logo: "/images/tech/excel.png" }
         ]
     },
     'management-skill': {
@@ -639,7 +644,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Internet & Digital Services", icon: "Code", topics: ["Internet and WWW", "Email and Social Networking", "Digital Financial Services"] }
         ],
         tools: [
-            { name: "MS Office", logo: "/images/tech/office.png" }
+            { name: "CCC", logo: "/images/tech/ccc.jpg" }
         ]
     },
     'web-development': {
@@ -659,7 +664,7 @@ export const courseDetails: { [key: string]: any } = {
             { name: "CSS3", logo: "/images/tech/css.png" },
             { name: "JavaScript", logo: "/images/tech/js.png" },
             { name: "React", logo: "/images/tech/react.png" },
-            { name: "Node.js", logo: "/images/tech/node.png" }
+            { name: "PHP", logo: "/images/tech/php.svg" }
         ]
     },
     'dsa': {
@@ -675,9 +680,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Algorithms", icon: "Code", topics: ["Sorting and Searching", "Recursion and Backtracking", "Dynamic Programming", "Greedy Algorithms"] }
         ],
         tools: [
-            { name: "C++", logo: "/images/tech/cplusplus.png" },
-            { name: "Java", logo: "/images/tech/java.png" },
-            { name: "Python", logo: "/images/tech/python.png" }
+            { name: "Algorithms", logo: "/images/tech/algo.svg" },
+            { name: "DSA", logo: "/images/tech/dsa.jpg" }
         ]
     },
     'c-programming': {
@@ -692,7 +696,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "C Fundamentals", icon: "Code", topics: ["Variables, Data Types, Operators", "Control Structures (if, for, while)", "Functions and Arrays"] },
             { title: "Advanced C", icon: "Code", topics: ["Pointers and Memory Allocation", "Structures and Unions", "File I/O"] }
         ],
-        tools: []
+        tools: [
+            { name: "C Programming", logo: "/images/tech/c.svg" }
+        ]
     },
     'c-plus-plus': {
         title: "C++ Programming",
@@ -723,7 +729,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced Python", icon: "Code", topics: ["Object-Oriented Programming", "File Handling", "Introduction to Pandas and NumPy"] }
         ],
         tools: [
-            { name: "Python", logo: "/images/tech/python.png" }
+            { name: "Python", logo: "/images/tech/python.svg" }
         ]
     },
     'front-end-development': {
@@ -740,10 +746,10 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Frameworks", icon: "Code", topics: ["Introduction to React or Angular", "Component-based architecture"] }
         ],
         tools: [
-            { name: "HTML5", logo: "/images/tech/html.png" },
-            { name: "CSS3", logo: "/images/tech/css.png" },
-            { name: "JavaScript", logo: "/images/tech/js.png" },
-            { name: "React", logo: "/images/tech/react.png" }
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "React", logo: "/images/tech/react.svg" }
         ]
     },
     'back-end-development': {
@@ -760,10 +766,11 @@ export const courseDetails: { [key: string]: any } = {
             { title: "APIs & Security", icon: "Code", topics: ["Building RESTful APIs", "Authentication (JWT, OAuth)"] }
         ],
         tools: [
-            { name: "Node.js", logo: "/images/tech/node.png" },
-            { name: "Python", logo: "/images/tech/python.png" },
-            { name: "MySQL", logo: "/images/tech/sql.png" },
-            { name: "MongoDB", logo: "/images/tech/mongodb.png" }
+            { name: "Node.js", logo: "/images/tech/node.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "PHP", logo: "/images/tech/php.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "MongoDB", logo: "/images/tech/mongodb.svg" }
         ]
     },
     'database': {
@@ -779,8 +786,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "NoSQL Databases", icon: "Code", topics: ["Introduction to NoSQL (e.g., MongoDB)", "Document-based data modeling", "CRUD operations"] }
         ],
         tools: [
-            { name: "MySQL", logo: "/images/tech/sql.png" },
-            { name: "MongoDB", logo: "/images/tech/mongodb.png" }
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "MongoDB", logo: "/images/tech/mongodb.svg" }
         ]
     },
     'angular': {
@@ -796,7 +803,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced Angular", icon: "Code", topics: ["Services and Dependency Injection", "Routing", "Handling Forms", "HTTP Client"] }
         ],
         tools: [
-            { name: "Angular", logo: "/images/tech/angular.png" }
+            { name: "Angular", logo: "/images/tech/angular.svg" }
         ]
     },
     'html-css': {
@@ -812,8 +819,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "CSS3", icon: "Code", topics: ["Selectors and Specificity", "Box Model", "Flexbox and Grid", "Responsive Design with Media Queries"] }
         ],
         tools: [
-            { name: "HTML5", logo: "/images/tech/html.png" },
-            { name: "CSS3", logo: "/images/tech/css.png" }
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" }
         ]
     },
     'javascript': {
@@ -829,13 +836,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Browser JavaScript", icon: "Code", topics: ["DOM Manipulation and Events", "Asynchronous JavaScript (Promises, async/await)", "Fetch API"] }
         ],
         tools: [
-            { name: "JavaScript", logo: "/images/tech/js.png" }
+            { name: "JavaScript", logo: "/images/tech/js.svg" }
         ]
     },
     'core-java': {
         title: "Core Java",
         description: "Build a strong foundation in Java, one of the most widely used programming languages in the world.",
-        image: "/images/shortterm/java.png",
+        image: "/images/tech/java.svg",
         hint: "java code",
         highlights: ["Object-Oriented", "Platform Independent", "Robust & Secure", "Enterprise Standard"],
         whatYouWillLearn: ["Java fundamentals and syntax", "Object-Oriented Programming (OOP) principles", "Handling exceptions and errors", "Working with the Java Collections Framework"],
@@ -845,7 +852,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Object-Oriented Programming", icon: "Code", topics: ["Classes and Objects", "Inheritance, Polymorphism", "Exception Handling", "Collections"] }
         ],
         tools: [
-            { name: "Java", logo: "/images/tech/java.png" }
+            { name: "Java", logo: "/images/tech/java.svg" }
         ]
     },
     'c-sharp': {
@@ -877,7 +884,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced React", icon: "Code", topics: ["React Router", "State Management (Context API/Redux)", "Working with APIs"] }
         ],
         tools: [
-            { name: "React", logo: "/images/tech/react.png" }
+            { name: "React", logo: "/images/tech/react.svg" }
         ]
     },
     'advanced-java': {
@@ -893,9 +900,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Frameworks", icon: "Code", topics: ["Introduction to Spring Framework", "Introduction to Hibernate ORM"] }
         ],
         tools: [
-            { name: "Java", logo: "/images/tech/java.png" },
-            { name: "Spring", logo: "/images/tech/spring.png" },
-            { name: "Hibernate", logo: "/images/tech/hibernate.png" }
+            { name: "Java", logo: "/images/tech/java.svg" },
+            { name: "Spring", logo: "/images/tech/spring.svg" },
+            { name: "Hibernate", logo: "/images/tech/hibernate.svg" }
         ]
     },
     'seo': {
@@ -911,8 +918,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Technical & Local SEO", icon: "Code", topics: ["Technical SEO (site speed, mobile-friendliness)", "Local SEO and Google My Business"] }
         ],
         tools: [
-            { name: "Google Analytics", logo: "/images/tech/ga.png" },
-            { name: "Google Search Console", logo: "/images/tech/gsc.png" }
+            { name: "Google Analytics", logo: "/images/tech/ga.svg" },
+            { name: "SEO", logo: "/images/tech/seo.svg" },
+            { name: "Google Search Console", logo: "/images/tech/gsc.svg" }
         ]
     },
     'smm': {
@@ -928,7 +936,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advertising & Analytics", icon: "Code", topics: ["Facebook Ads Manager", "Tracking KPIs", "Reporting"] }
         ],
         tools: [
-            { name: "Facebook Ads", logo: "/images/tech/fb.png" },
+            { name: "Facebook Ads", logo: "/images/tech/fb.svg" },
+            { name: "Linkedin", logo: "/images/tech/linkedin.svg" },
             { name: "Instagram", logo: "/images/tech/ig.png" }
         ]
     },
@@ -945,7 +954,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Optimization", icon: "BarChart", topics: ["A/B Testing", "Conversion Tracking", "Performance Analysis"] }
         ],
         tools: [
-            { name: "Google Ads", logo: "/images/tech/google-ads.png" }
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" }
         ]
     },
     'wordpress': {
@@ -961,7 +970,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Customization", icon: "Brush", topics: ["Working with Themes", "Using the Customizer", "Essential Plugins"] }
         ],
         tools: [
-            { name: "WordPress", logo: "/images/tech/wordpress.png" }
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" }
         ]
     },
     'content-creation': {
@@ -977,8 +986,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Visual Content", icon: "Brush", topics: ["Basics of graphic design for social media", "Video content planning and creation"] }
         ],
         tools: [
-            { name: "Canva", logo: "/images/tech/canva.png" },
-            { name: "WordPress", logo: "/images/tech/wordpress.png" }
+            { name: "Canva", logo: "/images/tech/canva.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" }
         ]
     },
     'facebook-google-ads': {
@@ -994,8 +1003,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Google Ads", icon: "Code", topics: ["Search, Display, and YouTube campaigns", "Keyword strategy", "Conversion tracking"] }
         ],
         tools: [
-            { name: "Facebook Ads", logo: "/images/tech/fb.png" },
-            { name: "Google Ads", logo: "/images/tech/google-ads.png" }
+            { name: "Facebook Ads", logo: "/images/tech/fb.svg" },
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" }
         ]
     },
     'smo': {
@@ -1011,9 +1020,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Engagement & Growth", icon: "Code", topics: ["Strategies for increasing engagement", "Using social media for customer service"] }
         ],
         tools: [
-            { name: "Facebook", logo: "/images/tech/fb.png" },
+            { name: "Facebook", logo: "/images/tech/fb.svg" },
             { name: "Instagram", logo: "/images/tech/ig.png" },
-            { name: "LinkedIn", logo: "/images/tech/linkedin.png" }
+            { name: "LinkedIn", logo: "/images/tech/linkedin.svg" }
         ]
     },
     'google-analytics': {
@@ -1029,7 +1038,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Analysis & Reporting", icon: "BarChart", topics: ["Acquisition, Engagement, and Monetization reports", "Creating custom explorations", "Setting up conversion tracking"] }
         ],
         tools: [
-            { name: "Google Analytics", logo: "/images/tech/ga.png" }
+            { name: "Google Analytics", logo: "/images/tech/ga.svg" }
         ]
     },
     'coreldraw': {
@@ -1044,7 +1053,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "CorelDRAW Basics", icon: "Brush", topics: ["Interface and tools", "Working with shapes and lines", "Color and fills"] },
             { title: "Advanced Techniques", icon: "Brush", topics: ["Logo design process", "Creating layouts for print", "Special effects"] }
         ],
-        tools: []
+        tools: [
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" }
+        ]
     },
     'adobe-photoshop': {
         title: "Adobe Photoshop",
@@ -1059,7 +1070,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced Editing", icon: "Brush", topics: ["Photo retouching", "Color correction", "Compositing"] }
         ],
         tools: [
-            { name: "Photoshop", logo: "/images/tech/photoshop.png" }
+            { name: "Photoshop", logo: "/images/tech/photoshop.svg" }
         ]
     },
     'adobe-illustrator': {
@@ -1075,7 +1086,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced Illustration", icon: "Brush", topics: ["Pen Tool mastery", "Creating complex illustrations", "Typography and effects"] }
         ],
         tools: [
-            { name: "Illustrator", logo: "/images/tech/illustrator.png" }
+            { name: "Illustrator", logo: "/images/tech/illustrator.svg" }
         ]
     },
     'adobe-indesign': {
@@ -1091,7 +1102,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Advanced Layouts", icon: "Brush", topics: ["Master pages and styles", "Creating interactive documents", "Prepress and printing"] }
         ],
         tools: [
-            { name: "InDesign", logo: "/images/tech/indesign.png" }
+            { name: "InDesign", logo: "/images/tech/indesign.svg" }
         ]
     },
     'video-sound-editing': {
@@ -1107,8 +1118,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Audio & Motion", icon: "Code", topics: ["Sound editing basics", "Introduction to After Effects for titles"] }
         ],
         tools: [
-            { name: "Premiere Pro", logo: "/images/tech/premiere.png" },
-            { name: "After Effects", logo: "/images/tech/after-effects.png" }
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
+            { name: "After Effects", logo: "/images/tech/after-effects.svg" }
         ]
     },
     'adobe-animation': {
@@ -1124,7 +1135,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Character Animation", icon: "Brush", topics: ["Character rigging", "Walk cycles", "Lip-syncing"] }
         ],
         tools: [
-            { name: "Animate", logo: "/images/tech/animate.png" }
+            { name: "Animate", logo: "/images/tech/Adobe Animate.svg" }
         ]
     },
     '3d-max': {
@@ -1139,7 +1150,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Modeling", icon: "Brush", topics: ["Polygon and spline modeling", "Modifiers", "Creating complex objects"] },
             { title: "Rendering", icon: "Brush", topics: ["Materials and texturing", "Lighting and cameras", "Rendering with Arnold"] }
         ],
-        tools: []
+        tools: [
+            { name: "3ds Max", logo: "/images/tech/3dsMax.svg" }
+        ]
     },
     'canva-design': {
         title: "Canva Design",
@@ -1154,7 +1167,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Creating Content", icon: "Brush", topics: ["Designing for social media", "Creating presentations", "Brand kit usage"] }
         ],
         tools: [
-            { name: "Canva", logo: "/images/tech/canva.png" }
+            { name: "Canva", logo: "/images/tech/canva.svg" }
         ]
     },
     'after-effects': {
@@ -1170,7 +1183,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Visual Effects", icon: "Brush", topics: ["Masking and tracking", "Color correction", "Introduction to compositing"] }
         ],
         tools: [
-            { name: "After Effects", logo: "/images/tech/after-effects.png" }
+            { name: "After Effects", logo: "/images/tech/after-effects.svg" }
         ]
     },
     'premiere-pro': {
@@ -1186,7 +1199,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Polishing Your Edit", icon: "Brush", topics: ["Color correction and grading", "Audio mixing", "Exporting for different platforms"] }
         ],
         tools: [
-            { name: "Premiere Pro", logo: "/images/tech/premiere.png" }
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" }
         ]
     },
     'figma': {
@@ -1202,7 +1215,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Prototyping & Collaboration", icon: "Code", topics: ["Creating interactive prototypes", "Sharing and collaborating on designs"] }
         ],
         tools: [
-            { name: "Figma", logo: "/images/tech/figma.png" }
+            { name: "Figma", logo: "/images/tech/figma.svg" }
         ]
     },
     'revit': {
@@ -1217,6 +1230,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Revit Architecture", icon: "Brush", topics: ["Modeling walls, floors, and roofs", "Placing doors and windows", "Creating views and sheets"] },
             { title: "Documentation", icon: "Code", topics: ["Annotating and dimensioning", "Creating schedules", "Setting up construction documents"] }
         ],
-        tools: []
+        tools: [
+            { name: "Revit", logo: "/images/tech/Revit.svg" }
+        ]
     }
 };
