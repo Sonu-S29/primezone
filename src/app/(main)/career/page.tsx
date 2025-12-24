@@ -48,7 +48,7 @@ const jobOpenings = [
     title: "Microsoft Office Trainer",
     location: "Mumbai",
     type: "Part-time / Full-time",
-    description: "Seeking an expert trainer for Microsoft Office 365, Tally, and GST to deliver high-quality instruction to our students.",
+    description: "Seeking an expert trainer for Microsoft Office 365, Tally, and GST to deliver high-quality instruction to our students, which can take lectures and manage student properly.",
   },
 ];
 
