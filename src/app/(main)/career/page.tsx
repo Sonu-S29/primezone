@@ -50,6 +50,12 @@ const jobOpenings = [
     type: "Part-time / Full-time",
     description: "Seeking an expert trainer for Microsoft Office 365, Tally, and GST to deliver high-quality instruction to our students, which can take lectures and manage student properly.",
   },
+  {
+    title: "Data Scientist",
+    location: "Mumbai",
+    type: "Part-time / Full-time",
+    description: "We are seeking an industry expert in Data Science who can take lectures and manage students effectively.",
+  },
 ];
 
 const teamImage = imageData.find(img => img.id === 'happy-diverse-team');
