@@ -83,7 +83,7 @@ export default function ReferAndEarnPage() {
           </div>
           <div className="order-1 md:order-2">
             {referImage && <Image
-              src={referImage.src}
+              src={"/images/logo.png"}
               alt="Refer and Earn"
               width={referImage.width}
               height={referImage.height}

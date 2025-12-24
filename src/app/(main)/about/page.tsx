@@ -65,8 +65,8 @@ const teamMembers = [
     { 
         name: "Vedika Singh",
         role: "Managing Director", 
-        image: "/images/vedika.jpeg",
-        characterImage: "/images/vedika_bgremove.png",
+        image: "/images/Vedika.jpeg",
+        characterImage: "/images/vedikaremove.png",
         hint: "professional woman"
     }
 ];
