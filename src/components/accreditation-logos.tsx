@@ -36,8 +36,8 @@ const scrollingFeatures = [
                 </div>
                  <div className="relative h-10 md:h-12 w-24 md:w-32">
                     <Image
-                        src="/images/certificates/unnamed.png"
-                        alt="Unnamed logo"
+                        src="/images/certificates/msme.png"
+                        alt="MSME Ceritificate"
                         width={120}
                         height={40}
                         className="object-contain"
@@ -46,7 +46,7 @@ const scrollingFeatures = [
                 </div>
             </div>
         ),
-        link: "/about"
+        link: "/certificates"
     },
     {
         title: "Our Diploma and Short-term Courses",

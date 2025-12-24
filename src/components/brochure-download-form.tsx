@@ -45,7 +45,7 @@ export default function BrochureDownloadForm() {
         toast({ title: "Success", description: "Thank you! Your download will start shortly." });
         
         const link = document.createElement('a');
-        link.href = '/brochure.pdf';
+        link.href = '/public/Primezone-Brochure.pdf';
         link.download = 'Primezone_Brochure.pdf';
         document.body.appendChild(link);
         link.click();

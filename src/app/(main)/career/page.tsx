@@ -10,7 +10,7 @@ import imageData from "@/lib/placeholder-images.json";
 const jobOpenings = [
   {
     title: "Graphic Designer",
-    location: "Mumbai (Remote)",
+    location: "Mumbai",
     type: "Full-time",
     description: "We are looking for a creative Graphic Designer to be responsible for giving lectures and creating engaging content for daily posts and banners.",
   },
@@ -22,7 +22,7 @@ const jobOpenings = [
   },
   {
     title: "Full-Stack Developer",
-    location: "Mumbai (Remote)",
+    location: "Mumbai",
     type: "Full-time",
     description: "We are looking for a skilled Full-Stack Developer to design, develop, and maintain our web applications and internal systems.",
   },
@@ -51,16 +51,16 @@ const jobOpenings = [
     description: "Seeking an expert trainer for Microsoft Office 365, Tally, and GST to deliver high-quality instruction to our students, which can take lectures and manage student properly.",
   },
   {
-    title: "Data Scientist",
+    title: "Data Scientist Trainer",
     location: "Mumbai",
     type: "Part-time / Full-time",
-    description: "We are seeking an industry expert in Data Science who can take lectures and manage students effectively.",
+    description: "We are seeking an industry expert in Data Science Trainer who can take lectures and manage students effectively.",
   },
   {
-    title: "Data Engineer",
-    location: "Mumbai (Remote)",
+    title: "Data Engineer Trainer",
+    location: "Mumbai",
     type: "Full-time",
-    description: "We are looking for a Data Engineer to develop, construct, test, and maintain our data architectures.",
+    description: "We are seeking an industry expert in Data Engineer who can take lectures and manage students effectively.",
   },
 ];
 

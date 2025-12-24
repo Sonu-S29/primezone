@@ -1,457 +1,443 @@
 [
   {
-    "id": "education-logo",
-    "src": "https://picsum.photos/seed/educationlogo/600/600",
-    "width": 600,
+    "id": "team-photo",
+    "src": "https://picsum.photos/seed/1/800/600",
+    "width": 800,
     "height": 600,
-    "hint": "education logo"
+    "hint": "team photo"
   },
   {
     "id": "students-learning",
-    "src": "https://picsum.photos/seed/studentslearning/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/2/800/600",
+    "width": 800,
+    "height": 600,
     "hint": "students learning"
   },
   {
-    "id": "computer-education-shapes-success",
-    "src": "https://picsum.photos/seed/compedusuccess/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "computer education"
-  },
-  {
-    "id": "web-dev-future",
-    "src": "https://picsum.photos/seed/webdevfuture/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "web development future"
-  },
-  {
-    "id": "accounting-guide",
-    "src": "https://picsum.photos/seed/accountingguide/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "accounting guide"
-  },
-  {
-    "id": "python-ds",
-    "src": "https://picsum.photos/seed/pythonds/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "python data science"
-  },
-  {
-    "id": "design-trends",
-    "src": "https://picsum.photos/seed/designtrends/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "graphic design trends"
-  },
-  {
-    "id": "top-5-courses",
-    "src": "https://picsum.photos/seed/topcourses/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "job opportunities"
-  },
-  {
-    "id": "coreldraw-vs-illustrator",
-    "src": "https://picsum.photos/seed/designcompare/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "design software"
-  },
-  {
     "id": "happy-diverse-team",
-    "src": "/images/logo.png",
+    "src": "https://picsum.photos/seed/3/600/400",
     "width": 600,
     "height": 400,
-    "hint": "happy diverse team"
+    "hint": "happy team"
+  },
+  {
+    "id": "refer-earn",
+    "src": "https://picsum.photos/seed/4/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "referral program"
+  },
+  {
+    "id": "education-logo",
+    "src": "https://picsum.photos/seed/5/400/400",
+    "width": 400,
+    "height": 400,
+    "hint": "education logo"
   },
   {
     "id": "influencer-video-thumb",
-    "src": "https://picsum.photos/seed/influencer/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/101/400/225",
+    "width": 400,
+    "height": 225,
     "hint": "influencer marketing"
   },
   {
     "id": "capstone-presentation",
-    "src": "https://picsum.photos/seed/presentation/400/300",
+    "src": "https://picsum.photos/seed/102/400/300",
     "width": 400,
     "height": 300,
-    "hint": "team presentation"
+    "hint": "student presentation"
   },
   {
     "id": "viral-video-thumb",
-    "src": "https://picsum.photos/seed/viral/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "viral marketing"
+    "src": "https://picsum.photos/seed/103/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "viral video"
   },
   {
     "id": "brainstorming",
-    "src": "https://picsum.photos/seed/brainstorming/400/300",
+    "src": "https://picsum.photos/seed/104/400/300",
     "width": 400,
     "height": 300,
-    "hint": "students brainstorming"
+    "hint": "team brainstorming"
   },
   {
     "id": "launch-video-thumb",
-    "src": "https://picsum.photos/seed/launch/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/105/400/225",
+    "width": 400,
+    "height": 225,
     "hint": "product launch"
   },
   {
     "id": "prototype",
-    "src": "https://picsum.photos/seed/prototype/400/300",
+    "src": "https://picsum.photos/seed/106/400/300",
     "width": 400,
     "height": 300,
-    "hint": "project prototype"
+    "hint": "app prototype"
   },
   {
     "id": "final-award",
-    "src": "https://picsum.photos/seed/award/400/300",
+    "src": "https://picsum.photos/seed/107/400/300",
     "width": 400,
     "height": 300,
-    "hint": "final project award"
+    "hint": "award ceremony"
   },
   {
     "id": "group-photo",
-    "src": "https://picsum.photos/seed/groupphoto/400/300",
+    "src": "https://picsum.photos/seed/108/400/300",
     "width": 400,
     "height": 300,
-    "hint": "group photo"
+    "hint": "team group photo"
   },
   {
     "id": "agency-office-thumb",
-    "src": "https://picsum.photos/seed/agencyoffice/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "marketing agency office"
+    "src": "https://picsum.photos/seed/201/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "modern office"
   },
   {
     "id": "office-tour",
-    "src": "https://picsum.photos/seed/officetour/400/300",
+    "src": "https://picsum.photos/seed/202/400/300",
     "width": 400,
     "height": 300,
-    "hint": "office tour"
+    "hint": "office interior"
   },
   {
     "id": "networking-thumb",
-    "src": "https://picsum.photos/seed/networking/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "business networking event"
+    "src": "https://picsum.photos/seed/203/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "business networking"
   },
   {
     "id": "meeting-execs",
-    "src": "https://picsum.photos/seed/meeting/400/300",
+    "src": "https://picsum.photos/seed/204/400/300",
     "width": 400,
     "height": 300,
-    "hint": "meeting with executives"
+    "hint": "business meeting"
   },
   {
     "id": "ad-campaign-thumb",
-    "src": "https://picsum.photos/seed/adcampaign/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "successful ad campaign"
+    "src": "https://picsum.photos/seed/205/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "ad campaign"
   },
   {
     "id": "creative-dept",
-    "src": "https://picsum.photos/seed/creativedept/400/300",
+    "src": "https://picsum.photos/seed/206/400/300",
     "width": 400,
     "height": 300,
-    "hint": "creative department"
+    "hint": "creative team"
   },
   {
     "id": "team-collab",
-    "src": "https://picsum.photos/seed/teamcollab/400/300",
+    "src": "https://picsum.photos/seed/207/400/300",
     "width": 400,
     "height": 300,
     "hint": "team collaboration"
   },
   {
     "id": "company-logo-agency",
-    "src": "https://picsum.photos/seed/companylogo/400/300",
+    "src": "https://picsum.photos/seed/208/400/300",
     "width": 400,
     "height": 300,
     "hint": "company logo"
   },
   {
     "id": "ai-marketing-thumb",
-    "src": "https://picsum.photos/seed/aimarketing/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "artificial intelligence marketing"
+    "src": "https://picsum.photos/seed/301/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "ai marketing"
   },
   {
     "id": "expert-speaker",
-    "src": "https://picsum.photos/seed/speaker/400/300",
+    "src": "https://picsum.photos/seed/302/400/300",
     "width": 400,
     "height": 300,
     "hint": "expert speaker"
   },
   {
     "id": "content-workshop-thumb",
-    "src": "https://picsum.photos/seed/contentworkshop/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "content creation workshop"
+    "src": "https://picsum.photos/seed/303/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "content workshop"
   },
   {
     "id": "interactive-workshop",
-    "src": "https://picsum.photos/seed/workshop/400/300",
+    "src": "https://picsum.photos/seed/304/400/300",
     "width": 400,
     "height": 300,
     "hint": "interactive workshop"
   },
   {
     "id": "seo-session-thumb",
-    "src": "https://picsum.photos/seed/seosession/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "seo strategy session"
+    "src": "https://picsum.photos/seed/305/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "seo session"
   },
   {
     "id": "q-and-a",
-    "src": "https://picsum.photos/seed/qna/400/300",
+    "src": "https://picsum.photos/seed/306/400/300",
     "width": 400,
     "height": 300,
-    "hint": "students asking questions"
+    "hint": "question answer"
   },
   {
     "id": "networking-break",
-    "src": "https://picsum.photos/seed/networkingbreak/400/300",
+    "src": "https://picsum.photos/seed/307/400/300",
     "width": 400,
     "height": 300,
     "hint": "networking break"
   },
   {
     "id": "presentation-slide",
-    "src": "https://picsum.photos/seed/slide/400/300",
+    "src": "https://picsum.photos/seed/308/400/300",
     "width": 400,
     "height": 300,
     "hint": "presentation slide"
   },
   {
     "id": "student-fest-thumb",
-    "src": "https://picsum.photos/seed/studentfest/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/401/400/225",
+    "width": 400,
+    "height": 225,
     "hint": "student festival"
   },
   {
     "id": "sports-day",
-    "src": "https://picsum.photos/seed/sportsday/400/300",
+    "src": "https://picsum.photos/seed/402/400/300",
     "width": 400,
     "height": 300,
     "hint": "sports day"
   },
   {
     "id": "competition-thumb",
-    "src": "https://picsum.photos/seed/competition/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "student competition"
+    "src": "https://picsum.photos/seed/403/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "competition event"
   },
   {
     "id": "debate-competition",
-    "src": "https://picsum.photos/seed/debate/400/300",
+    "src": "https://picsum.photos/seed/404/400/300",
     "width": 400,
     "height": 300,
     "hint": "debate competition"
   },
   {
     "id": "club-activity-thumb",
-    "src": "https://picsum.photos/seed/clubactivity/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "student club meeting"
+    "src": "https://picsum.photos/seed/405/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "club activity"
   },
   {
     "id": "hackathon",
-    "src": "https://picsum.photos/seed/hackathon/400/300",
+    "src": "https://picsum.photos/seed/406/400/300",
     "width": 400,
     "height": 300,
     "hint": "hackathon event"
   },
   {
     "id": "art-exhibit",
-    "src": "https://picsum.photos/seed/artexhibit/400/300",
+    "src": "https://picsum.photos/seed/407/400/300",
     "width": 400,
     "height": 300,
-    "hint": "art exhibition"
+    "hint": "art exhibit"
   },
   {
     "id": "music-performance",
-    "src": "https://picsum.photos/seed/musicperf/400/300",
+    "src": "https://picsum.photos/seed/408/400/300",
     "width": 400,
     "height": 300,
     "hint": "music performance"
   },
   {
     "id": "fun-fair-thumb",
-    "src": "https://picsum.photos/seed/funfair/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "student fair"
-  },
-  {
-    "id": "student-fair",
-    "src": "https://picsum.photos/seed/studentfair/400/300",
+    "src": "https://picsum.photos/seed/501/400/225",
     "width": 400,
-    "height": 300,
+    "height": 225,
     "hint": "fun fair"
   },
   {
+    "id": "student-fair",
+    "src": "https://picsum.photos/seed/502/400/300",
+    "width": 400,
+    "height": 300,
+    "hint": "student fair"
+  },
+  {
     "id": "annual-day-thumb",
-    "src": "https://picsum.photos/seed/annualday/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/503/400/225",
+    "width": 400,
+    "height": 225,
     "hint": "annual day"
   },
   {
     "id": "fun-students",
-    "src": "https://picsum.photos/seed/funstudents/400/300",
+    "src": "https://picsum.photos/seed/504/400/300",
     "width": 400,
     "height": 300,
-    "hint": "students having fun"
+    "hint": "fun students"
   },
   {
     "id": "holi-thumb",
-    "src": "https://picsum.photos/seed/holi/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "holi festival"
+    "src": "https://picsum.photos/seed/505/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "holi celebration"
   },
   {
     "id": "celebration",
-    "src": "https://picsum.photos/seed/celebration/400/300",
+    "src": "https://picsum.photos/seed/506/400/300",
     "width": 400,
     "height": 300,
-    "hint": "celebration"
+    "hint": "party celebration"
   },
   {
     "id": "party",
-    "src": "https://picsum.photos/seed/party/400/300",
+    "src": "https://picsum.photos/seed/507/400/300",
     "width": 400,
     "height": 300,
-    "hint": "party"
+    "hint": "student party"
   },
   {
     "id": "dancing-students",
-    "src": "https://picsum.photos/seed/dancing/400/300",
+    "src": "https://picsum.photos/seed/508/400/300",
     "width": 400,
     "height": 300,
-    "hint": "students dancing"
+    "hint": "dancing students"
   },
   {
     "id": "grad-ceremony-thumb",
-    "src": "https://picsum.photos/seed/gradceremony/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/601/400/225",
+    "width": 400,
+    "height": 225,
     "hint": "graduation ceremony"
   },
   {
     "id": "throwing-caps",
-    "src": "https://picsum.photos/seed/gradcaps/400/300",
+    "src": "https://picsum.photos/seed/602/400/300",
     "width": 400,
     "height": 300,
     "hint": "throwing caps"
   },
   {
     "id": "alumni-speech-thumb",
-    "src": "https://picsum.photos/seed/alumnispeech/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/603/400/225",
+    "width": 400,
+    "height": 225,
     "hint": "alumni speech"
   },
   {
     "id": "receiving-degree",
-    "src": "https://picsum.photos/seed/degree/400/300",
+    "src": "https://picsum.photos/seed/604/400/300",
     "width": 400,
     "height": 300,
     "hint": "receiving degree"
   },
   {
     "id": "grad-batch-thumb",
-    "src": "https://picsum.photos/seed/gradbatch/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "graduating batch"
+    "src": "https://picsum.photos/seed/605/400/225",
+    "width": 400,
+    "height": 225,
+    "hint": "graduate batch"
   },
   {
     "id": "group-of-graduates",
-    "src": "https://picsum.photos/seed/gradgroup/400/300",
+    "src": "https://picsum.photos/seed/606/400/300",
     "width": 400,
     "height": 300,
-    "hint": "group of graduates"
+    "hint": "group graduates"
   },
   {
     "id": "happy-graduate",
-    "src": "https://picsum.photos/seed/happygrad/400/300",
+    "src": "https://picsum.photos/seed/607/400/300",
     "width": 400,
     "height": 300,
     "hint": "happy graduate"
   },
   {
     "id": "convocation",
-    "src": "https://picsum.photos/seed/convocation/400/300",
+    "src": "https://picsum.photos/seed/608/400/300",
     "width": 400,
     "height": 300,
-    "hint": "convocation ceremony"
+    "hint": "convocation"
+  },
+  {
+    "id": "web-dev-future",
+    "src": "https://picsum.photos/seed/701/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "web development"
+  },
+  {
+    "id": "accounting-guide",
+    "src": "https://picsum.photos/seed/702/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "accounting guide"
+  },
+  {
+    "id": "python-ds",
+    "src": "https://picsum.photos/seed/703/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "python data"
+  },
+  {
+    "id": "design-trends",
+    "src": "https://picsum.photos/seed/704/600/400",
+    "width": 600,
+    "height": 400,
+    "hint": "design trends"
   },
   {
     "id": "tally",
-    "src": "https://picsum.photos/seed/tally/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/801/400/600",
+    "width": 400,
+    "height": 600,
     "hint": "accounting software"
   },
   {
     "id": "video-editing",
-    "src": "https://picsum.photos/seed/videoedit/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/802/400/600",
+    "width": 400,
+    "height": 600,
     "hint": "video editing"
   },
   {
     "id": "autocad",
-    "src": "https://picsum.photos/seed/autocad/600/400",
-    "width": 600,
-    "height": 400,
+    "src": "https://picsum.photos/seed/803/400/600",
+    "width": 400,
+    "height": 600,
     "hint": "autocad drawing"
   },
   {
     "id": "smm",
-    "src": "https://picsum.photos/seed/smm/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "social media strategy"
+    "src": "https://picsum.photos/seed/804/400/600",
+    "width": 400,
+    "height": 600,
+    "hint": "social media"
   },
   {
     "id": "sem",
-    "src": "https://picsum.photos/seed/sem/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "search engine ads"
+    "src": "https://picsum.photos/seed/805/400/600",
+    "width": 400,
+    "height": 600,
+    "hint": "search engine"
   },
   {
     "id": "online-ads",
-    "src": "https://picsum.photos/seed/onlineads/600/400",
-    "width": 600,
-    "height": 400,
-    "hint": "online advertising"
-  },
-  {
-    "id": "refer-earn",
-    "src": "/images/logo.png",
-    "width": 600,
+    "src": "https://picsum.photos/seed/806/400/600",
+    "width": 400,
     "height": 600,
-    "hint": "friends celebrating"
+    "hint": "online ads"
   }
 ]
