@@ -16,20 +16,48 @@ const MemoriesGallery = () => {
 
   // Generate random layouts for each image. useMemo ensures this is done only once.
   const imageLayouts = useMemo(() => {
-    return images.map(() => {
-      // Random width between 20% and 30% of the canvas
-      const width = Math.random() * 10 + 20; 
-      // Position within the 150% x 150% canvas, ensuring it's not cut off at the edge
-      const top = Math.random() * (150 - (width * 10/16) - 5) + 5;
-      const left = Math.random() * (150 - width - 5) + 5;
-      
-      return {
-        top: `${top}%`,
-        left: `${left}%`,
-        width: `${width}%`,
-        aspectRatio: '16/10', // Keep a consistent aspect ratio
-      };
+    const numCols = 4;
+    const numRows = 4;
+    const cellWidth = 150 / numCols;
+    const cellHeight = 150 / numRows;
+
+    const imageWidthPercent = 20;
+    const imageHeightPercent = imageWidthPercent * (10 / 16);
+
+    const maxLeftOffset = cellWidth - imageWidthPercent - 2; // 2% padding
+    const maxTopOffset = cellHeight - imageHeightPercent - 2; // 2% padding
+
+    const gridCells = Array.from({ length: numCols * numRows }, (_, i) => {
+        const row = Math.floor(i / numCols);
+        const col = i % numCols;
+        return { row, col };
     });
+
+    // Shuffle cells to randomize image positions
+    for (let i = gridCells.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [gridCells[i], gridCells[j]] = [gridCells[j], gridCells[i]];
+    }
+
+    return images.map((_, index) => {
+        if (index >= gridCells.length) return null; // Should not happen if images.length <= 16
+        
+        const { row, col } = gridCells[index];
+
+        const cellLeft = col * cellWidth;
+        const cellTop = row * cellHeight;
+
+        const left = cellLeft + (Math.random() * maxLeftOffset) + 1;
+        const top = cellTop + (Math.random() * maxTopOffset) + 1;
+        
+        return {
+            top: `${top}%`,
+            left: `${left}%`,
+            width: `${imageWidthPercent}%`,
+            aspectRatio: '16/10',
+            rotation: (Math.random() - 0.5) * 15,
+        };
+    }).filter(Boolean) as { top: string; left: string; width: string; aspectRatio: string; rotation: number; }[];
   }, []);
 
   // Set initial position to center the canvas
@@ -86,44 +114,50 @@ const MemoriesGallery = () => {
         transition={{
           type: "tween",
           ease: "easeOut",
-          duration: 2, // Slower and smoother transition
+          duration: 2.5, // Slower and smoother transition
         }}
       >
-        {images.map((image, index) => (
-          <motion.div
-            key={index}
-            className="absolute rounded-lg overflow-hidden shadow-lg"
-            style={{
-                top: imageLayouts[index].top,
-                left: imageLayouts[index].left,
-                width: imageLayouts[index].width,
-                aspectRatio: imageLayouts[index].aspectRatio,
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.6,
-              ease: [0.33, 1, 0.68, 1], // Custom ease-out curve
-              delay: index * 0.1, // Staggered delay
-            }}
-          >
-            <motion.div
-                whileHover={{ scale: 1.05, boxShadow: "0px 15px 30px rgba(0,0,0,0.25)" }}
-                transition={{ duration: 0.4 }}
-                className="w-full h-full"
-            >
-                <Image
-                src={image.src}
-                alt={image.hint}
-                fill
-                className="object-cover"
-                data-ai-hint={image.hint}
-                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 20vw, 15vw"
-                priority={index < 8}
-                />
-            </motion.div>
-          </motion.div>
-        ))}
+        {images.map((image, index) => {
+            const layout = imageLayouts[index];
+            if (!layout) return null;
+
+            return (
+              <motion.div
+                key={index}
+                className="absolute rounded-lg overflow-hidden shadow-lg"
+                style={{
+                    top: layout.top,
+                    left: layout.left,
+                    width: layout.width,
+                    aspectRatio: layout.aspectRatio,
+                    transform: `rotate(${layout.rotation}deg)`,
+                }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.33, 1, 0.68, 1], // Custom ease-out curve
+                  delay: Math.random() * 0.8, // Randomize stagger for a more organic feel
+                }}
+              >
+                <motion.div
+                    whileHover={{ scale: 1.1, zIndex: 10, boxShadow: "0px 20px 40px rgba(0,0,0,0.3)" }}
+                    transition={{ duration: 0.4 }}
+                    className="w-full h-full"
+                >
+                    <Image
+                    src={image.src}
+                    alt={image.hint}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={image.hint}
+                    sizes="(max-width: 768px) 30vw, (max-width: 1200px) 20vw, 15vw"
+                    priority={index < 8}
+                    />
+                </motion.div>
+              </motion.div>
+            )
+        })}
       </motion.div>
     </div>
   );
