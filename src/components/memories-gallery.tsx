@@ -19,19 +19,19 @@ const MemoriesGallery = () => {
 
   // Generate random layouts for each image. useMemo ensures this is done only once.
   const imageLayouts = useMemo(() => {
-    const numCols = 15;
-    const numRows = 14;
+    const numCols = 6;
+    const numRows = 9;
     // The canvas is CANVAS_SIZE_PERCENT of the viewport.
     const cellWidth = 100 / numCols;
     const cellHeight = 100 / numRows;
 
     // Image size is a percentage of the canvas.
-    const imageWidthPercent = 5;
+    const imageWidthPercent = 16; // Doubled the size
     const imageHeightPercent = imageWidthPercent * (10 / 16); // Maintain aspect ratio
 
     // Max offset is the remaining space in the cell.
-    const maxLeftOffset = cellWidth - imageWidthPercent - 1;
-    const maxTopOffset = cellHeight - imageHeightPercent - 1;
+    const maxLeftOffset = cellWidth - imageWidthPercent;
+    const maxTopOffset = cellHeight - imageHeightPercent;
 
     const gridCells = Array.from({ length: numCols * numRows }, (_, i) => {
         const row = Math.floor(i / numCols);
@@ -55,8 +55,8 @@ const MemoriesGallery = () => {
         const cellTop = row * cellHeight;
         
         // Add random offset within the cell
-        const left = cellLeft + (Math.random() * maxLeftOffset) + 1;
-        const top = cellTop + (Math.random() * maxTopOffset) + 1;
+        const left = cellLeft + (Math.random() * maxLeftOffset);
+        const top = cellTop + (Math.random() * maxTopOffset);
         
         return {
             top: `${top}%`,
