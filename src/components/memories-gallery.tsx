@@ -14,9 +14,12 @@ const MemoriesGallery = () => {
     const trackRef = useRef<HTMLDivElement>(null);
     const trackControls = useAnimation();
 
-    // Store random vertical offsets for each image
-    const randomOffsets = useMemo(() =>
-        images.map(() => (Math.random() - 0.5) * 30), // Random value between -15vh and 15vh
+    const imageStyles = useMemo(() =>
+        images.map(() => ({
+            translateY: (Math.random() - 0.5) * 40, // vh
+            scale: 0.8 + Math.random() * 0.4, // Random scale from 0.8 to 1.2
+            rotate: (Math.random() - 0.5) * 15, // Random rotation from -7.5 to 7.5 deg
+        })),
         []
     );
 
@@ -35,7 +38,7 @@ const MemoriesGallery = () => {
 
             trackControls.start({
                 x: panPosition,
-                transition: { type: "tween", ease: [0.1, 0.9, 0.2, 1], duration: 1.2 }
+                transition: { type: "tween", ease: [0.1, 0.9, 0.2, 1], duration: 2.2 } // Slower transition
             });
         };
 
@@ -76,24 +79,23 @@ const MemoriesGallery = () => {
         >
             <motion.div
                 ref={trackRef}
-                className="absolute top-0 left-0 flex h-full items-center gap-10 px-12"
+                className="absolute top-0 left-0 flex h-full items-center gap-4 px-12"
                 animate={trackControls}
             >
-                {images.map((image, index) => (
-                    <motion.div
-                        key={index}
-                        className="relative h-[30vh] aspect-[3/4] shrink-0 rounded-xl overflow-hidden group shadow-2xl"
-                        style={{
-                            translateY: `${randomOffsets[index]}vh`
-                        }}
-                        variants={itemVariants}
-                        transition={{ duration: 0.4 }}
-                    >
-                        <motion.div 
-                            className="w-full h-full"
-                            initial={{ opacity: 0.2, filter: 'blur(3px) grayscale(80%)' }}
-                            whileHover={{ opacity: 1, filter: 'blur(0px) grayscale(0%)' }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
+                {images.map((image, index) => {
+                    const style = imageStyles[index];
+                    return (
+                        <motion.div
+                            key={index}
+                            className="relative h-[35vh] aspect-[4/3] shrink-0 rounded-xl overflow-hidden group shadow-2xl"
+                            style={{
+                                translateY: `${style.translateY}vh`,
+                                scale: style.scale,
+                                rotate: `${style.rotate}deg`,
+                            }}
+                            variants={itemVariants}
+                            whileHover={{ scale: style.scale * 1.05, zIndex: 10 }}
+                            transition={{ duration: 0.4 }}
                         >
                             <Image
                                 src={image.src}
@@ -101,12 +103,12 @@ const MemoriesGallery = () => {
                                 fill
                                 className="object-cover"
                                 data-ai-hint={image.hint}
-                                sizes="(max-width: 768px) 30vw, 25vh"
+                                sizes="(max-width: 768px) 30vw, 30vh"
                                 priority={index < 5}
                             />
                         </motion.div>
-                    </motion.div>
-                ))}
+                    );
+                })}
             </motion.div>
         </motion.div>
     );
