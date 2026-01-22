@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from "next/image";
@@ -98,7 +99,7 @@ export default function LinksPage() {
             <header className="flex flex-col items-center text-center pt-16">
                 <div className="mb-4">
                     <Image
-                        src="/images/logo.png"
+                        src="/images/logo.svg"
                         alt="Primezone Logo"
                         width={100}
                         height={100}

@@ -53,7 +53,7 @@ export default function EmpoweringCareer() {
                 </div>
                 <div className="md:col-span-4 row-start-1 md:row-start-auto">
                     <Image 
-                        src="/images/logo.png"
+                        src="/images/logo.svg"
                         alt="Computer lab"
                         width={400}
                         height={400}

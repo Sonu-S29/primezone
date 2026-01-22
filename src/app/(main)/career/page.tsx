@@ -104,7 +104,7 @@ export default function CareerPage() {
           </div>
           <div>
             {teamImage && <Image
-              src={"/images/logo.png"}
+              src={"/images/logo.svg"}
               alt="Team at Primezone"
               width={teamImage.width}
               height={teamImage.height}

@@ -145,7 +145,7 @@ export default function AboutUs() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg flex items-center justify-center p-8 bg-background">
               <Image 
-                src="/images/logo.png"
+                src="/images/logo.svg"
                 alt="Primezone Logo"
                 width={400}
                 height={400}
