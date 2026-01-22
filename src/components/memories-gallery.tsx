@@ -1,11 +1,10 @@
-
 "use client";
 
 import { useState, useRef, MouseEvent, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const images = Array.from({ length: 16 }, (_, i) => ({
+const images = Array.from({ length: 40 }, (_, i) => ({
   src: `/images/gallery/${i + 1}.jpeg`,
   hint: `event photo ${i + 1}`,
 }));
