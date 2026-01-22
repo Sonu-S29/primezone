@@ -14,16 +14,22 @@ const MemoriesGallery = () => {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
+  // Canvas size percentage
+  const CANVAS_SIZE_PERCENT = 200;
+
   // Generate random layouts for each image. useMemo ensures this is done only once.
   const imageLayouts = useMemo(() => {
     const numCols = 4;
     const numRows = 4;
-    const cellWidth = 150 / numCols;
-    const cellHeight = 150 / numRows;
+    // The canvas is CANVAS_SIZE_PERCENT of the viewport.
+    const cellWidth = CANVAS_SIZE_PERCENT / numCols;
+    const cellHeight = CANVAS_SIZE_PERCENT / numRows;
 
-    const imageWidthPercent = 15;
-    const imageHeightPercent = imageWidthPercent * (10 / 16);
+    // Image size is a percentage of the canvas.
+    const imageWidthPercent = 10;
+    const imageHeightPercent = imageWidthPercent * (10 / 16); // Maintain aspect ratio
 
+    // Max offset is the remaining space in the cell.
     const maxLeftOffset = cellWidth - imageWidthPercent - 2; // 2% padding
     const maxTopOffset = cellHeight - imageHeightPercent - 2; // 2% padding
 
@@ -32,21 +38,16 @@ const MemoriesGallery = () => {
         const col = i % numCols;
         return { row, col };
     });
-
-    // Shuffle cells to randomize image positions
-    for (let i = gridCells.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [gridCells[i], gridCells[j]] = [gridCells[j], gridCells[i]];
-    }
-
+    
     return images.map((_, index) => {
-        if (index >= gridCells.length) return null; // Should not happen if images.length <= 16
+        if (index >= gridCells.length) return null;
         
         const { row, col } = gridCells[index];
 
         const cellLeft = col * cellWidth;
         const cellTop = row * cellHeight;
-
+        
+        // Add random offset within the cell
         const left = cellLeft + (Math.random() * maxLeftOffset) + 1;
         const top = cellTop + (Math.random() * maxTopOffset) + 1;
         
@@ -63,9 +64,10 @@ const MemoriesGallery = () => {
   // Set initial position to center the canvas
   useEffect(() => {
     if (!viewportRef.current) return;
-    const rect = viewportRef.current.getBoundingClientRect();
-    const centerX = -(rect.width * 0.5) / 2;
-    const centerY = -(rect.height * 0.5) / 2;
+    // Overhang is (CANVAS_SIZE_PERCENT - 100) / 100. e.g., 200% canvas -> 1.0 overhang
+    const overhang = (CANVAS_SIZE_PERCENT / 100) - 1;
+    const centerX = -(viewportRef.current.offsetWidth * overhang) / 2;
+    const centerY = -(viewportRef.current.offsetHeight * overhang) / 2;
     setPosition({ x: centerX, y: centerY });
   }, []);
 
@@ -80,9 +82,10 @@ const MemoriesGallery = () => {
     const percentX = mouseX / rect.width;
     const percentY = mouseY / rect.height;
     
-    // Canvas is 150% of viewport, so overhang is 50%. Max offset is -50% of viewport size.
-    const maxOffsetX = viewportRef.current.offsetWidth * 0.5;
-    const maxOffsetY = viewportRef.current.offsetHeight * 0.5;
+    // Overhang is (CANVAS_SIZE_PERCENT - 100) / 100
+    const overhang = (CANVAS_SIZE_PERCENT / 100) - 1;
+    const maxOffsetX = viewportRef.current.offsetWidth * overhang;
+    const maxOffsetY = viewportRef.current.offsetHeight * overhang;
 
     const offsetX = -percentX * maxOffsetX;
     const offsetY = -percentY * maxOffsetY;
@@ -92,9 +95,9 @@ const MemoriesGallery = () => {
   
   const handleMouseLeave = () => {
     if (!viewportRef.current) return;
-    const rect = viewportRef.current.getBoundingClientRect();
-    const centerX = -(rect.width * 0.5) / 2;
-    const centerY = -(rect.height * 0.5) / 2;
+    const overhang = (CANVAS_SIZE_PERCENT / 100) - 1;
+    const centerX = -(viewportRef.current.offsetWidth * overhang) / 2;
+    const centerY = -(viewportRef.current.offsetHeight * overhang) / 2;
     setPosition({ x: centerX, y: centerY });
   };
 
@@ -106,7 +109,8 @@ const MemoriesGallery = () => {
       className="viewport-container relative w-full h-full overflow-hidden bg-muted"
     >
       <motion.div
-        className="image-canvas absolute w-[150%] h-[150%]"
+        className={`image-canvas absolute`}
+        style={{ width: `${CANVAS_SIZE_PERCENT}%`, height: `${CANVAS_SIZE_PERCENT}%` }}
         animate={{
           x: position.x,
           y: position.y,
@@ -114,7 +118,7 @@ const MemoriesGallery = () => {
         transition={{
           type: "tween",
           ease: "easeOut",
-          duration: 2.5, // Slower and smoother transition
+          duration: 1.5,
         }}
       >
         {images.map((image, index) => {
@@ -136,8 +140,8 @@ const MemoriesGallery = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.6,
-                  ease: [0.33, 1, 0.68, 1], // Custom ease-out curve
-                  delay: Math.random() * 0.8, // Randomize stagger for a more organic feel
+                  ease: [0.33, 1, 0.68, 1],
+                  delay: 0.1 * index,
                 }}
               >
                 <motion.div
