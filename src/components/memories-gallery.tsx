@@ -21,7 +21,7 @@ const MemoriesGallery = () => {
     const cellWidth = 150 / numCols;
     const cellHeight = 150 / numRows;
 
-    const imageWidthPercent = 20;
+    const imageWidthPercent = 15;
     const imageHeightPercent = imageWidthPercent * (10 / 16);
 
     const maxLeftOffset = cellWidth - imageWidthPercent - 2; // 2% padding
