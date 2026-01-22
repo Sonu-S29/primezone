@@ -1,8 +1,8 @@
+
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "framer-motion";
 
 const images = Array.from({ length: 72 }, (_, i) => ({
@@ -10,32 +10,42 @@ const images = Array.from({ length: 72 }, (_, i) => ({
   hint: `image ${i + 1}`,
 }));
 
-
 const MemoriesGallery = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
-    const controls = useAnimation();
+    const trackRef = useRef<HTMLDivElement>(null);
+    const trackControls = useAnimation();
+    const imageControls = useAnimation();
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (!containerRef.current || !contentRef.current) return;
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!trackRef.current) return;
 
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const mouseX = e.clientX - containerRect.left;
-        const percentX = mouseX / containerRect.width;
+            const windowWidth = window.innerWidth;
+            const mouseX = e.clientX;
+            const mousePercentage = mouseX / windowWidth;
 
-        const contentWidth = contentRef.current.scrollWidth;
-        const maxPan = -(contentWidth - containerRect.width);
-        
-        const targetX = maxPan * percentX;
+            const trackWidth = trackRef.current.scrollWidth;
+            const maxScroll = trackWidth - windowWidth;
+            
+            const panPosition = maxScroll * mousePercentage * -1;
 
-        // Use Framer Motion's animate function for smooth transitions
-        controls.start({
-            x: targetX,
-            transition: { type: "spring", stiffness: 100, damping: 20, mass: 0.5 }
-        });
-    };
-    
-    // Stagger animation for images
+            trackControls.start({
+                x: panPosition,
+                transition: { type: "tween", ease: [0.1, 0.9, 0.2, 1], duration: 1.2 }
+            });
+            
+            imageControls.start({
+                objectPosition: `${mousePercentage * 100}% 50%`,
+                transition: { type: "tween", ease: "linear", duration: 0.1 }
+            });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [trackControls, imageControls]);
+
     const containerVariants = {
         hidden: {},
         visible: {
@@ -52,41 +62,42 @@ const MemoriesGallery = () => {
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: [0.33, 1, 0.68, 1], // The user's requested ease
+                ease: [0.33, 1, 0.68, 1],
             },
         },
     };
 
     return (
         <motion.div
-            ref={containerRef}
-            onMouseMove={handleMouseMove}
-            className="relative h-[500px] sm:h-[600px] md:h-[800px] w-full overflow-hidden cursor-ew-resize"
+            className="h-full w-full flex items-center"
             variants={containerVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            animate="visible"
         >
             <motion.div
-                ref={contentRef}
-                className="absolute top-0 left-0 flex h-full items-center gap-4 px-4"
-                animate={controls}
+                ref={trackRef}
+                className="absolute top-0 left-0 flex h-full items-center gap-10 px-12"
+                animate={trackControls}
             >
                 {images.map((image, index) => (
                     <motion.div
                         key={index}
-                        className="relative h-[80%] aspect-[3/4] shrink-0 rounded-lg overflow-hidden group shadow-lg group-hover:shadow-xl"
+                        className="relative h-[60vh] aspect-[3/4] shrink-0 rounded-xl overflow-hidden group shadow-2xl"
                         variants={itemVariants}
+                        whileHover={{ scale: 1.02, zIndex: 10 }}
+                        transition={{ duration: 0.4 }}
                     >
-                        <Image
-                            src={image.src}
-                            alt={`Memory ${index + 1}`}
-                            fill
-                            className="object-cover transition-transform duration-[400ms] group-hover:scale-[1.03]"
-                            data-ai-hint={image.hint}
-                            sizes={`(max-width: 768px) 50vw, 300px`}
-                            priority={index < 10}
-                        />
+                        <motion.div className="w-full h-full" animate={imageControls}>
+                            <Image
+                                src={image.src}
+                                alt={`Memory ${index + 1}`}
+                                fill
+                                className="object-cover"
+                                data-ai-hint={image.hint}
+                                sizes="(max-width: 768px) 50vw, 40vh"
+                                priority={index < 5}
+                            />
+                        </motion.div>
                     </motion.div>
                 ))}
             </motion.div>
