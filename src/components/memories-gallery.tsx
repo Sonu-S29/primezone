@@ -1,82 +1,96 @@
 
 "use client";
 
-import Image from "next/image";
+import { useState, useRef, MouseEvent, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const images = Array.from({ length: 72 }, (_, i) => ({
+const images = Array.from({ length: 16 }, (_, i) => ({
   src: `/images/gallery/${i + 1}.jpeg`,
   hint: `event photo ${i + 1}`,
 }));
 
 const MemoriesGallery = () => {
-  const gridCells = Array.from({ length: 100 }); // 10x10 grid
-  let imageIndex = 0;
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1, // Stagger effect for each cell
-      },
-    },
+  // Set initial position to center the canvas
+  useEffect(() => {
+    if (!viewportRef.current) return;
+    const rect = viewportRef.current.getBoundingClientRect();
+    const centerX = -(rect.width * 0.5) / 2;
+    const centerY = -(rect.height * 0.5) / 2;
+    setPosition({ x: centerX, y: centerY });
+  }, []);
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!viewportRef.current) return;
+
+    const rect = viewportRef.current.getBoundingClientRect();
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const percentX = mouseX / rect.width;
+    const percentY = mouseY / rect.height;
+    
+    // Canvas is 150% of viewport, so overhang is 50%. Max offset is -50% of viewport size.
+    const maxOffsetX = viewportRef.current.offsetWidth * 0.5;
+    const maxOffsetY = viewportRef.current.offsetHeight * 0.5;
+
+    const offsetX = -percentX * maxOffsetX;
+    const offsetY = -percentY * maxOffsetY;
+    
+    setPosition({ x: offsetX, y: offsetY });
   };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
+  
+  const handleMouseLeave = () => {
+    if (!viewportRef.current) return;
+    const rect = viewportRef.current.getBoundingClientRect();
+    const centerX = -(rect.width * 0.5) / 2;
+    const centerY = -(rect.height * 0.5) / 2;
+    setPosition({ x: centerX, y: centerY });
   };
 
   return (
-    <motion.div
-      className="grid grid-cols-10 grid-rows-10 gap-4"
-      style={{ aspectRatio: '1 / 1' }}
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {gridCells.map((_, index) => {
-        const row = Math.floor(index / 10);
-        const col = index % 10;
-        const isImageCell = (row + col) % 2 === 0;
-
-        if (isImageCell && imageIndex < images.length) {
-          const currentImage = images[imageIndex];
-          imageIndex++;
-
-          return (
-            <motion.div
-              key={index}
-              className="relative aspect-square rounded-lg overflow-hidden"
-              variants={itemVariants}
-              whileHover={{ scale: 1.03, zIndex: 10, boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}
-              transition={{ duration: 0.4 }}
-            >
-              <Image
-                src={currentImage.src}
-                alt={currentImage.hint}
-                fill
-                className="object-cover"
-                data-ai-hint={currentImage.hint}
-                sizes="(max-width: 768px) 10vw, (max-width: 1200px) 10vw, 10vw"
-                priority={imageIndex <= 20}
-              />
-            </motion.div>
-          );
-        } else {
-          // This is an empty cell in the checkerboard
-          return <div key={index} />;
-        }
-      })}
-    </motion.div>
+    <div className="flex items-center justify-center w-full h-full">
+        <div
+          ref={viewportRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className="viewport-container relative w-[80vw] h-[80vh] rounded-2xl overflow-hidden shadow-2xl bg-muted border"
+        >
+          <motion.div
+            className="image-canvas absolute w-[150%] h-[150%] grid grid-cols-4 gap-4 p-4"
+            animate={{
+              x: position.x,
+              y: position.y,
+            }}
+            transition={{
+              type: "tween",
+              ease: "easeOut",
+              duration: 1,
+            }}
+          >
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="relative aspect-video rounded-lg overflow-hidden shadow-lg"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.hint}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={image.hint}
+                  sizes="(max-width: 768px) 30vw, (max-width: 1200px) 20vw, 15vw"
+                  priority={index < 8}
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+    </div>
   );
 };
 

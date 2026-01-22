@@ -13,13 +13,13 @@ export default function GalleryPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">Memories Gallery</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            A collection of moments from our journey.
+            Explore our moments by moving your mouse over the gallery below.
           </p>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16">
-        <Suspense fallback={<Skeleton className="h-[80vh] w-full bg-muted" />}>
+      <section className="container mx-auto px-4 py-16 flex items-center justify-center min-h-[90vh]">
+        <Suspense fallback={<Skeleton className="h-[80vh] w-[80vw] bg-muted" />}>
             <MemoriesGallery />
         </Suspense>
       </section>
