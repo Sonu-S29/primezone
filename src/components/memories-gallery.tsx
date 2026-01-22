@@ -170,6 +170,13 @@ const MemoriesGallery = () => {
             )
         })}
       </motion.div>
+      <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        <div className="bg-black/20 backdrop-blur-lg p-8 rounded-2xl text-center shadow-2xl border border-white/20">
+            <h1 className="text-5xl font-bold text-white tracking-wider">
+                Our Memories
+            </h1>
+        </div>
+      </div>
     </div>
   );
 };

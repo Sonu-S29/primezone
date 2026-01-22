@@ -23,7 +23,8 @@ const mainNavLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact Us" },
+  
   
 ];
 
@@ -32,7 +33,7 @@ const moreLinks = [
   { href: "/certificates", label: "Certificates" },
   { href: "/career", label: "Careers" },
   { href: "/refer-and-earn", label: "Refer & Earn" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/gallery", label: "Gallery" },
 ];
 
 const allNavLinks = [...mainNavLinks, ...moreLinks];
