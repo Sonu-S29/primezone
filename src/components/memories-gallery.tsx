@@ -1,8 +1,8 @@
 
 "use client";
 
-import { useState, useRef, MouseEvent, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, MouseEvent, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = Array.from({ length: 16 }, (_, i) => ({
@@ -13,6 +13,24 @@ const images = Array.from({ length: 16 }, (_, i) => ({
 const MemoriesGallery = () => {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // Generate random layouts for each image. useMemo ensures this is done only once.
+  const imageLayouts = useMemo(() => {
+    return images.map(() => {
+      // Random width between 20% and 30% of the canvas
+      const width = Math.random() * 10 + 20; 
+      // Position within the 150% x 150% canvas, ensuring it's not cut off at the edge
+      const top = Math.random() * (150 - (width * 10/16) - 5) + 5;
+      const left = Math.random() * (150 - width - 5) + 5;
+      
+      return {
+        top: `${top}%`,
+        left: `${left}%`,
+        width: `${width}%`,
+        aspectRatio: '16/10', // Keep a consistent aspect ratio
+      };
+    });
+  }, []);
 
   // Set initial position to center the canvas
   useEffect(() => {
@@ -60,7 +78,7 @@ const MemoriesGallery = () => {
       className="viewport-container relative w-full h-full overflow-hidden bg-muted"
     >
       <motion.div
-        className="image-canvas absolute w-[150%] h-[150%] grid grid-cols-4 gap-4 p-4"
+        className="image-canvas absolute w-[150%] h-[150%]"
         animate={{
           x: position.x,
           y: position.y,
@@ -68,23 +86,29 @@ const MemoriesGallery = () => {
         transition={{
           type: "tween",
           ease: "easeOut",
-          duration: 1,
+          duration: 2, // Slower and smoother transition
         }}
       >
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className="relative aspect-video rounded-lg overflow-hidden shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
+            className="absolute rounded-lg overflow-hidden shadow-lg"
+            style={{
+                top: imageLayouts[index].top,
+                left: imageLayouts[index].left,
+                width: imageLayouts[index].width,
+                aspectRatio: imageLayouts[index].aspectRatio,
+            }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.6,
-              ease: [0.33, 1, 0.68, 1],
-              delay: index * 0.1,
+              ease: [0.33, 1, 0.68, 1], // Custom ease-out curve
+              delay: index * 0.1, // Staggered delay
             }}
           >
             <motion.div
-                whileHover={{ scale: 1.03, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0px 15px 30px rgba(0,0,0,0.25)" }}
                 transition={{ duration: 0.4 }}
                 className="w-full h-full"
             >
