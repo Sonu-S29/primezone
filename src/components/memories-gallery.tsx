@@ -1,9 +1,10 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
 const images = Array.from({ length: 72 }, (_, i) => ({
   src: `/images/gallery/${i + 1}.jpeg`,
   hint: `image ${i + 1}`,
@@ -93,81 +94,55 @@ const MemoriesGallery = () => {
     
     const activeGridConfig = isMobile ? mobileGridConfig : gridConfig;
 
-  const [animationState, setAnimationState] = useState<('in' | 'out' | 'idle')[]>(
-    new Array(activeGridConfig.length).fill('idle')
-  );
-
-  useEffect(() => {
-    const timeouts = new Array(activeGridConfig.length).fill(null);
-
-    const scheduleAnimation = (index: number) => {
-        const randomDelay = Math.random() * 3000 + 1000; // Time spent hidden
-        const holdDuration = 2000; // Time to hold after scaling in
-
-        timeouts[index] = setTimeout(() => {
-            // Scale in
-            setAnimationState(prev => {
-                const newState = [...prev];
-                newState[index] = 'in';
-                return newState;
-            });
-
-            // Schedule scale out after animation + hold
-            timeouts[index] = setTimeout(() => {
-                setAnimationState(prev => {
-                    const newState = [...prev];
-                    newState[index] = 'out';
-                    return newState;
-                });
-                
-                // Schedule next cycle after scale out animation finishes
-                 timeouts[index] = setTimeout(() => {
-                    scheduleAnimation(index);
-                }, 500);
-
-            }, 500 + holdDuration); // 0.5s for scale-in animation + 2s hold
-
-        }, randomDelay);
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
     };
 
-    activeGridConfig.forEach((_, index) => {
-        scheduleAnimation(index);
-    });
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: [0.33, 1, 0.68, 1],
+            },
+        },
+    };
 
-    return () => timeouts.forEach(clearTimeout);
-  }, [activeGridConfig]);
-
-  return (
-    <div
-      className="relative h-[400px] sm:h-[500px] w-full max-w-4xl mx-auto bg-grid"
-      style={{
-        backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)',
-        backgroundSize: '20px 20px'
-      }}
-    >
-      {activeGridConfig.map((style, index) => (
-        <div
-          key={index}
-          className={cn(
-            "absolute rounded-lg overflow-hidden shadow-lg",
-            animationState[index] === 'in' && 'scale-in-center-normal',
-            animationState[index] === 'out' && 'scale-out-center-normal',
-            animationState[index] === 'idle' && 'opacity-0'
-          )}
-          style={{ ...style, animationDuration: '0.5s' }}
+    return (
+        <motion.div
+            className="relative h-[500px] sm:h-[600px] md:h-[800px] w-full max-w-5xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
         >
-          <Image
-            src={images[index % images.length].src}
-            alt={`Memory ${index + 1}`}
-            width={parseInt(style.width)}
-            height={parseInt(style.height)}
-            className="w-full h-full object-cover"
-            data-ai-hint={images[index % images.length].hint}
-          />
-        </div>
-      ))}
-    </div>
-  );
+            {activeGridConfig.map((style, index) => (
+                <motion.div
+                    key={index}
+                    className="absolute rounded-lg overflow-hidden shadow-lg group"
+                    style={{ ...style }}
+                    variants={itemVariants}
+                >
+                    <Image
+                        src={images[index % images.length].src}
+                        alt={`Memory ${index + 1}`}
+                        fill
+                        className="object-cover transition-transform duration-[400ms] ease-in-out group-hover:scale-[1.02] group-hover:shadow-xl"
+                        data-ai-hint={images[index % images.length].hint}
+                        sizes={`(max-width: 768px) ${style.width}, ${style.width}`}
+                        priority={index < 10}
+                    />
+                </motion.div>
+            ))}
+        </motion.div>
+    );
 };
 
 export default MemoriesGallery;
