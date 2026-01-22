@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, MouseEvent, useEffect, useMemo } from "react";
@@ -18,19 +19,19 @@ const MemoriesGallery = () => {
 
   // Generate random layouts for each image. useMemo ensures this is done only once.
   const imageLayouts = useMemo(() => {
-    const numCols = 11;
-    const numRows = 11;
+    const numCols = 14;
+    const numRows = 14;
     // The canvas is CANVAS_SIZE_PERCENT of the viewport.
-    const cellWidth = CANVAS_SIZE_PERCENT / numCols;
-    const cellHeight = CANVAS_SIZE_PERCENT / numRows;
+    const cellWidth = 100 / numCols;
+    const cellHeight = 100 / numRows;
 
     // Image size is a percentage of the canvas.
-    const imageWidthPercent = 10;
+    const imageWidthPercent = 4;
     const imageHeightPercent = imageWidthPercent * (10 / 16); // Maintain aspect ratio
 
     // Max offset is the remaining space in the cell.
-    const maxLeftOffset = cellWidth - imageWidthPercent - 2; // 2% padding
-    const maxTopOffset = cellHeight - imageHeightPercent - 2; // 2% padding
+    const maxLeftOffset = cellWidth - imageWidthPercent - 2.5; // 2.5% padding
+    const maxTopOffset = cellHeight - imageHeightPercent - 2.5; // 2.5% padding
 
     const gridCells = Array.from({ length: numCols * numRows }, (_, i) => {
         const row = Math.floor(i / numCols);
