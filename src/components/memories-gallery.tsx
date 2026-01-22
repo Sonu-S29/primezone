@@ -19,14 +19,14 @@ const MemoriesGallery = () => {
 
   // Generate random layouts for each image. useMemo ensures this is done only once.
   const imageLayouts = useMemo(() => {
-    const numCols = 6;
+    const numCols = 6; // This creates less horizontal space
     const numRows = 9;
     // The canvas is CANVAS_SIZE_PERCENT of the viewport.
     const cellWidth = 100 / numCols;
     const cellHeight = 100 / numRows;
 
     // Image size is a percentage of the canvas.
-    const imageWidthPercent = 16; // Doubled the size
+    const imageWidthPercent = 8;
     const imageHeightPercent = imageWidthPercent * (10 / 16); // Maintain aspect ratio
 
     // Max offset is the remaining space in the cell.
