@@ -38,11 +38,18 @@ const MemoriesGallery = () => {
         const col = i % numCols;
         return { row, col };
     });
+
+    // Shuffle the grid cells to get a random layout
+    const shuffledCells = [...gridCells];
+    for (let i = shuffledCells.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledCells[i], shuffledCells[j]] = [shuffledCells[j], shuffledCells[i]];
+    }
     
     return images.map((_, index) => {
-        if (index >= gridCells.length) return null;
+        if (index >= shuffledCells.length) return null;
         
-        const { row, col } = gridCells[index];
+        const { row, col } = shuffledCells[index];
 
         const cellLeft = col * cellWidth;
         const cellTop = row * cellHeight;
