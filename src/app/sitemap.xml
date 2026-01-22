@@ -1,0 +1,33 @@
+import { MetadataRoute } from 'next'
+import { courseDetails } from '@/lib/course-details';
+ 
+const siteUrl = 'https://www.primezonecomputer.com';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticRoutes = [
+    '/',
+    '/about',
+    '/courses',
+    '/courses/diploma',
+    '/courses/short-term',
+    '/contact',
+    '/blog',
+    '/certificates',
+    '/career',
+    '/refer-and-earn',
+    '/gallery',
+    '/links',
+    '/enroll',
+    '/student-projects'
+  ].map((route) => ({
+    url: `${siteUrl}${route}`,
+    lastModified: new Date(),
+  }));
+
+  const courseDetailRoutes = Object.keys(courseDetails).map((slug) => ({
+    url: `${siteUrl}/courses/details/${slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticRoutes, ...courseDetailRoutes];
+}
