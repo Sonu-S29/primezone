@@ -8,21 +8,20 @@ const MemoriesGallery = lazy(() => import("@/components/memories-gallery"));
 
 export default function GalleryPage() {
   return (
-    <div className="bg-background">
-      <section className="bg-card py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">Memories Gallery</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore our moments by moving your mouse over the gallery below.
+    <div className="relative h-screen w-screen -mt-20 overflow-hidden bg-background">
+      <Suspense fallback={<Skeleton className="h-full w-full bg-muted" />}>
+        <MemoriesGallery />
+      </Suspense>
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-10">
+        <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl">
+          <h1 className="text-4xl md:text-6xl font-bold font-headline text-white">
+            Memories Gallery
+          </h1>
+          <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto">
+            Explore our moments by moving your mouse over the gallery.
           </p>
         </div>
-      </section>
-
-      <section className="container mx-auto px-4 py-16 flex items-center justify-center min-h-[90vh]">
-        <Suspense fallback={<Skeleton className="h-[80vh] w-[80vw] bg-muted" />}>
-            <MemoriesGallery />
-        </Suspense>
-      </section>
+      </div>
     </div>
   );
 }
