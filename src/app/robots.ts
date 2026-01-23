@@ -1,12 +1,1 @@
-
-import { MetadataRoute } from 'next'
- 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: 'https://www.primezonecomputer.com/sitemap.xml',
-  }
-}
+// This file is intentionally left empty to prevent conflicts with the static robots.txt in the public folder.
