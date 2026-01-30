@@ -165,13 +165,25 @@ export default function ContactUsPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Our Locations</CardTitle>
-                <CardDescription>Click a marker for details or find the nearest branch below.</CardDescription>
+                <CardDescription>Hover a marker for details or find the nearest branch below.</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="relative w-full h-[400px] lg:h-[500px] rounded-lg overflow-hidden border">
                    <Map>
                     {locations.map((loc) => customIcon && (
-                      <Marker key={loc.title} position={[loc.latitude, loc.longitude]} icon={customIcon}>
+                      <Marker 
+                        key={loc.title} 
+                        position={[loc.latitude, loc.longitude]} 
+                        icon={customIcon}
+                        eventHandlers={{
+                            mouseover: (event) => {
+                                event.target.openPopup();
+                            },
+                            mouseout: (event) => {
+                                event.target.closePopup();
+                            },
+                        }}
+                      >
                          <Popup>
                             <div className="space-y-2 w-64">
                               <h4 className="font-semibold">{loc.title}</h4>
