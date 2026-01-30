@@ -88,6 +88,11 @@ const QuoteForm = () => {
                        <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <div className="space-y-2">
+                       <Label htmlFor="quotePhone" className="sr-only">Your Mobile Number</Label>
+                       <Input id="quotePhone" name="phone" type="tel" placeholder="Your Mobile Number" className="bg-background"/>
+                       <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-sm" />
+                    </div>
+                    <div className="space-y-2">
                         <Label htmlFor="quoteCourse" className="sr-only">Select a Course</Label>
                         <Select name="course">
                             <SelectTrigger id="quoteCourse" className="bg-background">
