@@ -1,8 +1,7 @@
-
 "use client"
 
 import * as React from "react"
-import { MapContainer, TileLayer, Marker as LeafletMarker, Popup as LeafletPopup } from "react-leaflet"
+import { MapContainer, TileLayer, Marker as LeafletMarker, Popup as LeafletPopup, Polyline as LeafletPolyline, useMap } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import { cn } from "@/lib/utils"
 import { LatLngExpression } from "leaflet"
@@ -48,6 +47,8 @@ Map.displayName = "Map"
 
 const Marker = LeafletMarker;
 const Popup = LeafletPopup;
+const Polyline = LeafletPolyline;
+
 
 // Re-exporting controls that are not used in this app but might be part of the library's common usage
 const NavigationControl = () => null;
@@ -59,6 +60,8 @@ export {
   Map,
   Marker,
   Popup,
+  Polyline,
+  useMap,
   NavigationControl,
   FullscreenControl,
   ScaleControl,

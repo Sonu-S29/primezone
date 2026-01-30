@@ -4,11 +4,13 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, ExternalLink } from "lucide-react";
+import { Phone, Mail, ExternalLink, Loader2, Map as MapIcon, User } from "lucide-react";
 import ContactForm from "@/components/contact-form";
-import { Map, Marker, Popup } from "@/components/ui/map";
-import MapRoute from "@/components/map-route";
-import L from 'leaflet';
+import { Map, Marker, Popup, Polyline, useMap } from "@/components/ui/map";
+import L, { LatLngBoundsExpression, LatLngExpression } from 'leaflet';
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { MapPin } from "lucide-react";
 
 const locations = [
   {
@@ -32,23 +34,117 @@ const locations = [
 ];
 
 const schoolIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="hsl(205 100% 14%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="m4 6 8-4 8 4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4"/><path d="M18 5v17"/><path d="M6 5v17"/><path d="M12 5v17"/></svg>`;
+const userIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="hsl(var(--destructive))" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10" /></svg>`;
+
+// Haversine formula to calculate distance between two points
+const getDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+  const R = 6371; // Radius of the earth in km
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const d = R * c; // Distance in km
+  return d;
+};
+
+function ChangeMapView({ bounds }: { bounds: LatLngBoundsExpression | null }) {
+  const map = useMap();
+  useEffect(() => {
+    if (bounds) {
+      map.fitBounds(bounds, { padding: [50, 50] });
+    }
+  }, [bounds, map]);
+
+  return null;
+}
 
 export default function ContactUsPage() {
   const [customIcon, setCustomIcon] = useState<L.DivIcon | null>(null);
+  const [userIcon, setUserIcon] = useState<L.DivIcon | null>(null);
+  const [location, setLocation] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [userLocation, setUserLocation] = useState<LatLngExpression | null>(null);
+  const [route, setRoute] = useState<LatLngExpression[] | null>(null);
+  const [bounds, setBounds] = useState<LatLngBoundsExpression | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
-    // Leaflet's L object is only available on the client.
-    // We create the icon inside useEffect to ensure it runs client-side.
     if (typeof window !== 'undefined') {
-      const icon = L.divIcon({
+      const schoolIconInstance = L.divIcon({
         html: `<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center cursor-pointer pulsating-marker">${schoolIconSvg}</div>`,
-        className: '', // This is important to override default Leaflet styles
+        className: '',
         iconSize: [40, 40],
         iconAnchor: [20, 20],
       });
-      setCustomIcon(icon);
+      setCustomIcon(schoolIconInstance);
+
+      const userIconInstance = L.divIcon({
+        html: `<div class="w-8 h-8 bg-destructive/20 rounded-full flex items-center justify-center border-2 border-white shadow-lg">${userIconSvg}</div>`,
+        className: '',
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
+      });
+      setUserIcon(userIconInstance);
     }
   }, []);
+
+  const findNearestBranch = async () => {
+    if (!location.trim()) {
+      toast({
+        title: "Location Required",
+        description: "Please enter your location.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    // Simulate geocoding API call
+    setTimeout(() => {
+      // Mock geocoding result for "Andheri Station"
+      const currentUserLocation: LatLngExpression = [19.1197, 72.8464];
+
+      let nearestBranch = locations[0];
+      let minDistance = getDistance(
+        currentUserLocation[0],
+        currentUserLocation[1],
+        locations[0].latitude,
+        locations[0].longitude
+      );
+
+      locations.slice(1).forEach((branch) => {
+        const distance = getDistance(
+          currentUserLocation[0],
+          currentUserLocation[1],
+          branch.latitude,
+          branch.longitude
+        );
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearestBranch = branch;
+        }
+      });
+      
+      const nearestBranchLocation: LatLngExpression = [nearestBranch.latitude, nearestBranch.longitude];
+      
+      setUserLocation(currentUserLocation);
+      setRoute([currentUserLocation, nearestBranchLocation]);
+      setBounds([currentUserLocation, nearestBranchLocation]);
+      setLoading(false);
+
+      toast({
+        title: "Route Found!",
+        description: `Showing the direct path to the ${nearestBranch.name}.`,
+      });
+
+    }, 1500);
+  };
 
   return (
     <div>
@@ -68,7 +164,7 @@ export default function ContactUsPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Our Locations</CardTitle>
-                <CardDescription>Click on a marker to see branch details.</CardDescription>
+                <CardDescription>Click a marker for details or find the nearest branch below.</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="relative w-full h-[400px] lg:h-[500px] rounded-lg overflow-hidden border">
@@ -96,11 +192,52 @@ export default function ContactUsPage() {
                          </Popup>
                       </Marker>
                     ))}
+                    {userLocation && userIcon && (
+                        <Marker position={userLocation} icon={userIcon}>
+                            <Popup>Your Location</Popup>
+                        </Marker>
+                    )}
+                    {route && (
+                        <Polyline pathOptions={{ color: 'hsl(var(--primary))', dashArray: '5, 10', weight: 3 }} positions={route} />
+                    )}
+                    <ChangeMapView bounds={bounds} />
                   </Map>
                 </div>
               </CardContent>
             </Card>
-            <MapRoute />
+            
+            <Card>
+                <CardHeader>
+                    <CardTitle>Find Your Nearest Branch</CardTitle>
+                    <CardDescription>
+                    Enter your location to see the route to the closest Primezone center.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="flex items-center gap-2">
+                        <MapPin className="h-5 w-5 text-muted-foreground" />
+                        <Input
+                            value={location}
+                            onChange={(e) => setLocation(e.target.value)}
+                            placeholder="e.g., Andheri Station, Mumbai"
+                            disabled={loading}
+                        />
+                    </div>
+                    <Button onClick={findNearestBranch} className="w-full" disabled={loading}>
+                    {loading ? (
+                        <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Searching...
+                        </>
+                    ) : (
+                        <>
+                            <MapIcon className="mr-2 h-4 w-4" />
+                            Show Route
+                        </>
+                    )}
+                    </Button>
+                </CardContent>
+            </Card>
           </div>
           <ContactForm />
         </div>
