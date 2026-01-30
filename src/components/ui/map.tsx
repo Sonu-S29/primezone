@@ -2,70 +2,61 @@
 "use client"
 
 import * as React from "react"
-import Map, {
-  Marker as MapMarker,
-  Popup as MapPopup,
-  NavigationControl,
-  FullscreenControl,
-  ScaleControl,
-  GeolocateControl,
-  type MarkerProps,
-  type PopupProps,
-} from "react-map-gl"
-import "mapbox-gl/dist/mapbox-gl.css"
-
+import { MapContainer, TileLayer, Marker as LeafletMarker, Popup as LeafletPopup } from "react-leaflet"
+import "leaflet/dist/leaflet.css"
 import { cn } from "@/lib/utils"
+import { LatLngExpression } from "leaflet"
 
-const MapGL = React.forwardRef<
-  React.ElementRef<typeof Map>,
-  React.ComponentProps<typeof Map>
->(({ className, ...props }, ref) => {
-  const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+const Map = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<"div"> & { children: React.ReactNode }
+>(({ className, children, ...props }, ref) => {
+  const center: LatLngExpression = [19.12, 72.848]
 
-  if (!mapboxToken) {
+  const [isClient, setIsClient] = React.useState(false)
+  React.useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
     return (
-      <div className="w-full h-full bg-muted flex items-center justify-center">
-        <p className="text-muted-foreground text-center p-4">
-          Mapbox token is not configured. Please add it to your .env file.
-        </p>
+      <div
+        className={cn("w-full h-full bg-muted flex items-center justify-center", className)}
+      >
+        <p className="text-muted-foreground">Loading map...</p>
       </div>
     )
   }
 
   return (
-    <Map
-      mapboxAccessToken={mapboxToken}
-      initialViewState={{
-        longitude: 72.848,
-        latitude: 19.12,
-        zoom: 12,
-      }}
-      mapStyle="mapbox://styles/mapbox/dark-v11"
-      className={cn("w-full h-full", className)}
+    <MapContainer
+      center={center}
+      zoom={12}
+      scrollWheelZoom={false}
+      className={cn("w-full h-full z-0", className)}
       {...props}
-      ref={ref}
-    />
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {children}
+    </MapContainer>
   )
 })
-MapGL.displayName = "Map"
+Map.displayName = "Map"
 
-const Marker = React.forwardRef<
-  React.ElementRef<typeof MapMarker>,
-  MarkerProps
->(({ className, ...props }, ref) => {
-  return <MapMarker className={cn("", className)} {...props} ref={ref} />
-})
-Marker.displayName = "Marker"
+const Marker = LeafletMarker;
+const Popup = LeafletPopup;
 
-const Popup = React.forwardRef<React.ElementRef<typeof MapPopup>, PopupProps>(
-  ({ className, ...props }, ref) => {
-    return <MapPopup className={cn("", className)} {...props} ref={ref} />
-  }
-)
-Popup.displayName = "Popup"
+// Re-exporting controls that are not used in this app but might be part of the library's common usage
+const NavigationControl = () => null;
+const FullscreenControl = () => null;
+const ScaleControl = () => null;
+const GeolocateControl = () => null;
 
 export {
-  MapGL as Map,
+  Map,
   Marker,
   Popup,
   NavigationControl,
