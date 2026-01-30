@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useRef, MouseEvent, useEffect, useMemo } from "react";
+import { useState, useRef, MouseEvent, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -13,23 +13,19 @@ const images = Array.from({ length: 40 }, (_, i) => ({
 const MemoriesGallery = () => {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [imageLayouts, setImageLayouts] = useState<{ top: string; left: string; width: string; aspectRatio: string; rotation: number; }[]>([]);
 
   // Canvas size percentage
   const CANVAS_SIZE_PERCENT = 200;
 
-  // Generate random layouts for each image. useMemo ensures this is done only once.
-  const imageLayouts = useMemo(() => {
-    const numCols = 6; // This creates less horizontal space
+  // Generate random layouts for each image on the client side to avoid hydration errors.
+  useEffect(() => {
+    const numCols = 6;
     const numRows = 9;
-    // The canvas is CANVAS_SIZE_PERCENT of the viewport.
     const cellWidth = 100 / numCols;
     const cellHeight = 100 / numRows;
-
-    // Image size is a percentage of the canvas.
     const imageWidthPercent = 8;
-    const imageHeightPercent = imageWidthPercent * (10 / 16); // Maintain aspect ratio
-
-    // Max offset is the remaining space in the cell.
+    const imageHeightPercent = imageWidthPercent * (10 / 16);
     const maxLeftOffset = cellWidth - imageWidthPercent;
     const maxTopOffset = cellHeight - imageHeightPercent;
 
@@ -39,22 +35,19 @@ const MemoriesGallery = () => {
         return { row, col };
     });
 
-    // Shuffle the grid cells to get a random layout
     const shuffledCells = [...gridCells];
     for (let i = shuffledCells.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledCells[i], shuffledCells[j]] = [shuffledCells[j], shuffledCells[i]];
     }
     
-    return images.map((_, index) => {
+    const layouts = images.map((_, index) => {
         if (index >= shuffledCells.length) return null;
         
         const { row, col } = shuffledCells[index];
-
         const cellLeft = col * cellWidth;
         const cellTop = row * cellHeight;
         
-        // Add random offset within the cell
         const left = cellLeft + (Math.random() * maxLeftOffset);
         const top = cellTop + (Math.random() * maxTopOffset);
         
@@ -66,7 +59,9 @@ const MemoriesGallery = () => {
             rotation: (Math.random() - 0.5) * 15,
         };
     }).filter(Boolean) as { top: string; left: string; width: string; aspectRatio: string; rotation: number; }[];
-  }, []);
+
+    setImageLayouts(layouts);
+  }, []); // Empty dependency array ensures this runs only once on mount.
 
   // Set initial position to center the canvas
   useEffect(() => {
