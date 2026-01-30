@@ -77,10 +77,17 @@ export default function ContactForm() {
               <Input id="lastName" name="lastName" placeholder="Doe" />
             </div>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Email Address</Label>
-            <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
-            <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
+           <div className="grid sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+                <Label htmlFor="email">Email Address</Label>
+                <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
+            </div>
+            <div className="space-y-2">
+                <Label htmlFor="phone">Mobile Number</Label>
+                <Input id="phone" name="phone" type="tel" placeholder="9876543210" />
+                <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-sm" />
+            </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="subject">Subject</Label>
