@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, ExternalLink, Loader2, Map as MapIcon, User } from "lucide-react";
 import ContactForm from "@/components/contact-form";
@@ -11,6 +11,7 @@ import L, { LatLngBoundsExpression, LatLngExpression } from 'leaflet';
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const locations = [
   {
@@ -140,7 +141,7 @@ export default function ContactUsPage() {
 
       toast({
         title: "Route Found!",
-        description: `Showing the direct path to the ${nearestBranch.name}.`,
+        description: `Showing the direct path to the ${nearestBranch.title}.`,
       });
 
     }, 1500);
@@ -204,39 +205,48 @@ export default function ContactUsPage() {
                   </Map>
                 </div>
               </CardContent>
-            </Card>
-            
-            <Card>
-                <CardHeader>
-                    <CardTitle>Find Your Nearest Branch</CardTitle>
-                    <CardDescription>
-                    Enter your location to see the route to the closest Primezone center.
-                    </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="flex items-center gap-2">
+              <CardFooter>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full">
+                      <MapIcon className="mr-2 h-4 w-4" />
+                      Find Your Nearest Branch
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Find Your Nearest Branch</DialogTitle>
+                      <DialogDescription>
+                        Enter your location to see the route to the closest Primezone center.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-4 pt-4">
+                      <div className="flex items-center gap-2">
                         <MapPin className="h-5 w-5 text-muted-foreground" />
                         <Input
-                            value={location}
-                            onChange={(e) => setLocation(e.target.value)}
-                            placeholder="e.g., Andheri Station, Mumbai"
-                            disabled={loading}
+                          value={location}
+                          onChange={(e) => setLocation(e.target.value)}
+                          placeholder="e.g., Andheri Station, Mumbai"
+                          disabled={loading}
                         />
-                    </div>
-                    <Button onClick={findNearestBranch} className="w-full" disabled={loading}>
-                    {loading ? (
-                        <>
+                      </div>
+                      <Button onClick={findNearestBranch} className="w-full" disabled={loading}>
+                        {loading ? (
+                          <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             Searching...
-                        </>
-                    ) : (
-                        <>
+                          </>
+                        ) : (
+                          <>
                             <MapIcon className="mr-2 h-4 w-4" />
                             Show Route
-                        </>
-                    )}
-                    </Button>
-                </CardContent>
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </CardFooter>
             </Card>
           </div>
           <ContactForm />
