@@ -760,6 +760,29 @@ body {
     background-position: 0 0;
   }
 }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+  }
+
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 20px hsl(var(--primary) / 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+}
+
+.pulsating-marker {
+  box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+  transform: scale(1);
+  animation: pulsate 2s infinite;
+}
     
     
 
