@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -15,18 +16,20 @@ export default function PopupForm() {
     const [isOpen, setIsOpen] = useState(false);
     const [state, handleSubmit] = useForm("xnnawrlz");
     const { toast } = useToast();
+    const pathname = usePathname();
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            const hasSeenPopup = sessionStorage.getItem('primezonePopupShown');
-            if (!hasSeenPopup) {
-                setIsOpen(true);
-                sessionStorage.setItem('primezonePopupShown', 'true');
-            }
+            setIsOpen(true);
         }, 3000); // 3 seconds delay
 
-        return () => clearTimeout(timer);
-    }, []);
+        // When the component unmounts or path changes, clear the timer
+        // and close the dialog.
+        return () => {
+            clearTimeout(timer);
+            setIsOpen(false);
+        };
+    }, [pathname]); // Re-run this effect whenever the page route changes
 
     useEffect(() => {
         if (state.succeeded) {
@@ -38,6 +41,9 @@ export default function PopupForm() {
         }
     }, [state.succeeded, toast]);
 
+    // Don't re-render the dialog if the form was just successfully submitted
+    // This will prevent it from immediately re-appearing after submission.
+    // It will reappear on the next page navigation.
     if (state.succeeded) {
         return null;
     }
