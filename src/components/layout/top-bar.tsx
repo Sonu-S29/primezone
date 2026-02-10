@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Mail, Phone, Instagram, Facebook, Youtube, Twitter, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,8 +13,8 @@ const socialLinks = [
 export default function TopBar() {
   return (
     <div className="bg-primary text-primary-foreground">
-        <div className="container flex h-auto flex-col items-center justify-center gap-2 py-2 text-xs font-medium md:h-10 md:flex-row md:justify-between md:py-0">
-             <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4 md:gap-6">
+        <div className="container flex h-auto flex-wrap items-center justify-center gap-x-6 gap-y-2 py-2 text-xs font-medium md:h-10 md:flex-nowrap md:justify-between md:py-0">
+             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
                 <a href="mailto:pzofficial123@gmail.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
                     <Mail className="h-4 w-4" />
                     <span>pzofficial123@gmail.com</span>
@@ -23,7 +24,7 @@ export default function TopBar() {
                     <span>(+91) 97697 30087</span>
                 </a>
              </div>
-             <div className="flex flex-wrap items-center justify-center gap-4">
+             <div className="flex items-center gap-4">
                 <div className="flex items-center gap-4">
                     {socialLinks.map(link => (
                          <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="hover:text-secondary transition-colors">
@@ -31,9 +32,9 @@ export default function TopBar() {
                         </a>
                     ))}
                 </div>
-                 <div className="hidden h-5 w-px bg-primary-foreground/30 sm:block"></div>
+                 <div className="hidden h-5 w-px bg-primary-foreground/30 md:block"></div>
                  <Button asChild variant="secondary" size="sm" className="h-auto py-1 px-3 text-xs">
-                    <a href="https://wa.me/919769730087" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/919769730087" target="_blank" rel="noopener noreferrer" className="flex items-center">
                         <MessageCircle className="h-4 w-4 mr-2" />
                         Connect Now
                     </a>
