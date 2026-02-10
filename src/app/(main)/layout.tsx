@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteUrl}/images/heroslider/cover.webp`,
-        width: 1280,
+        width: 1260,
         height: 720,
         alt: 'Primezone Computer Education',
       },
@@ -55,7 +55,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main className="flex-grow pt-20">{children}</main>
+        <main className="flex-grow pt-28">{children}</main>
         <Footer />
         <Toaster />
         <PopupForm />

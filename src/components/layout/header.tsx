@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -17,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import CareerGuidanceForm from "../career-guidance-form";
+import TopBar from "./top-bar";
 
 const mainNavLinks = [
   // { href: "/student-projects", label: "Student Projects" },
@@ -52,8 +52,9 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
+      <TopBar />
+      <div className="container flex h-16 items-center border-t">
         <NavbarLogo />
         
         {/* Desktop Navigation */}
