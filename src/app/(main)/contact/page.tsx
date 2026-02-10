@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail, ExternalLink, Loader2, Map as MapIcon, User } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import { Map, Marker, Popup, Polyline, useMap } from "@/components/ui/map";
-import L, { LatLngBoundsExpression, LatLngExpression } from 'leaflet';
+import type { DivIcon, LatLngBoundsExpression, LatLngExpression } from 'leaflet';
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin } from "lucide-react";
@@ -65,8 +65,8 @@ function ChangeMapView({ bounds }: { bounds: LatLngBoundsExpression | null }) {
 }
 
 export default function ContactUsPage() {
-  const [customIcon, setCustomIcon] = useState<L.DivIcon | null>(null);
-  const [userIcon, setUserIcon] = useState<L.DivIcon | null>(null);
+  const [customIcon, setCustomIcon] = useState<DivIcon | null>(null);
+  const [userIcon, setUserIcon] = useState<DivIcon | null>(null);
   const [location, setLocation] = useState("");
   const [loading, setLoading] = useState(false);
   const [userLocation, setUserLocation] = useState<LatLngExpression | null>(null);
@@ -75,7 +75,7 @@ export default function ContactUsPage() {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    import('leaflet').then(L => {
       const schoolIconInstance = L.divIcon({
         html: `<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center cursor-pointer pulsating-marker">${schoolIconSvg}</div>`,
         className: '',
@@ -91,7 +91,7 @@ export default function ContactUsPage() {
         iconAnchor: [16, 16],
       });
       setUserIcon(userIconInstance);
-    }
+    });
   }, []);
 
   const findNearestBranch = async () => {
