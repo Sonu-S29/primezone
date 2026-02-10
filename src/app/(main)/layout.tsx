@@ -55,7 +55,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main className="flex-grow pt-28">{children}</main>
+        <main className="flex-grow pt-36 md:pt-28">{children}</main>
         <Footer />
         <Toaster />
         <PopupForm />
