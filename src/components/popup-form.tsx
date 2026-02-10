@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -7,10 +6,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useForm, ValidationError } from '@formspree/react';
 import { useToast } from '@/hooks/use-toast';
-import { allCoursesList } from '@/lib/course-data';
 
 export default function PopupForm() {
     const [isOpen, setIsOpen] = useState(false);
@@ -75,16 +72,7 @@ export default function PopupForm() {
                     </div>
                     <div className="grid gap-2">
                         <Label htmlFor="popup-course">Course Interested</Label>
-                        <Select name="course">
-                            <SelectTrigger id="popup-course">
-                                <SelectValue placeholder="Select a course" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                {allCoursesList.map((course) => (
-                                    <SelectItem key={course} value={course}>{course}</SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
+                        <Input id="popup-course" name="course" placeholder="e.g., Data Analytics" required />
                          <ValidationError prefix="Course" field="course" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <Button type="submit" disabled={state.submitting} className="mt-2">
