@@ -5,6 +5,7 @@ import '../globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
+import PopupForm from '@/components/popup-form';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main className="flex-grow pt-20">{children}</main>
         <Footer />
         <Toaster />
+        <PopupForm />
       </body>
     </html>
   );
