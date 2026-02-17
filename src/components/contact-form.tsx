@@ -70,22 +70,22 @@ export default function ContactForm() {
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" name="firstName" placeholder="John" />
+              <Input id="firstName" name="firstName" placeholder="Enter your first name" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" name="lastName" placeholder="Doe" />
+              <Input id="lastName" name="lastName" placeholder="Enter your last name" />
             </div>
           </div>
            <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
+                <Input id="email" name="email" type="email" placeholder="Enter your email address" />
                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
             </div>
             <div className="space-y-2">
                 <Label htmlFor="phone">Mobile Number</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="9876543210" />
+                <Input id="phone" name="phone" type="tel" placeholder="Enter your mobile number" />
                 <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-sm" />
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function ContactForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Your Message</Label>
-            <Textarea id="message" name="message" rows={5} placeholder="Please type your message here..."/>
+            <Textarea id="message" name="message" rows={5} placeholder="Enter your message here..."/>
              <ValidationError prefix="Message" field="message" errors={state.errors} className="text-destructive text-sm" />
           </div>
           <Button type="submit" className="w-full" disabled={state.submitting}>Send Message</Button>

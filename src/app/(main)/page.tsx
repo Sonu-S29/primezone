@@ -80,16 +80,16 @@ const QuoteForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
                        <Label htmlFor="quoteName" className="sr-only">Your Name</Label>
-                       <Input id="quoteName" name="name" placeholder="Your Name" className="bg-background"/>
+                       <Input id="quoteName" name="name" placeholder="Enter your name" className="bg-background"/>
                     </div>
                      <div className="space-y-2">
                        <Label htmlFor="quoteEmail" className="sr-only">Your Email</Label>
-                       <Input id="quoteEmail" name="email" type="email" placeholder="Your Email" className="bg-background"/>
+                       <Input id="quoteEmail" name="email" type="email" placeholder="Enter your email" className="bg-background"/>
                        <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <div className="space-y-2">
                        <Label htmlFor="quotePhone" className="sr-only">Your Mobile Number</Label>
-                       <Input id="quotePhone" name="phone" type="tel" placeholder="Your Mobile Number" className="bg-background"/>
+                       <Input id="quotePhone" name="phone" type="tel" placeholder="Enter your mobile number" className="bg-background"/>
                        <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <div className="space-y-2">
@@ -107,7 +107,7 @@ const QuoteForm = () => {
                     </div>
                      <div className="space-y-2">
                        <Label htmlFor="quoteMessage" className="sr-only">Message</Label>
-                       <Textarea id="quoteMessage" name="message" placeholder="Message" rows={4} className="bg-background"/>
+                       <Textarea id="quoteMessage" name="message" placeholder="Enter your message" rows={4} className="bg-background"/>
                        <ValidationError prefix="Message" field="message" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg" disabled={state.submitting}>Request A Quote</Button>

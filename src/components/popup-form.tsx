@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -57,22 +58,22 @@ export default function PopupForm() {
                 <form onSubmit={handleSubmit} className="grid gap-4 py-4">
                     <div className="grid gap-2">
                         <Label htmlFor="popup-name">Name</Label>
-                        <Input id="popup-name" name="name" placeholder="John Doe" required />
+                        <Input id="popup-name" name="name" placeholder="Enter your name" required />
                         <ValidationError prefix="Name" field="name" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <div className="grid gap-2">
                         <Label htmlFor="popup-phone">Phone Number</Label>
-                        <Input id="popup-phone" name="phone" type="tel" placeholder="9876543210" required />
+                        <Input id="popup-phone" name="phone" type="tel" placeholder="Enter your phone number" required />
                         <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <div className="grid gap-2">
                         <Label htmlFor="popup-email">Email</Label>
-                        <Input id="popup-email" name="email" type="email" placeholder="john.doe@example.com" required />
+                        <Input id="popup-email" name="email" type="email" placeholder="Enter your email" required />
                         <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <div className="grid gap-2">
                         <Label htmlFor="popup-course">Course Interested</Label>
-                        <Input id="popup-course" name="course" placeholder="e.g., Data Analytics" required />
+                        <Input id="popup-course" name="course" placeholder="Enter course you're interested in" required />
                          <ValidationError prefix="Course" field="course" errors={state.errors} className="text-destructive text-sm" />
                     </div>
                     <Button type="submit" disabled={state.submitting} className="mt-2">

@@ -70,7 +70,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="abc" {...field} />
+                <Input placeholder="Enter your full name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -83,7 +83,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input type="tel" placeholder="9876543210" {...field} />
+                <Input type="tel" placeholder="Enter your 10-digit phone number" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -96,7 +96,7 @@ export default function ApplicationForm() {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="abc@example.com" {...field} />
+                <Input type="email" placeholder="Enter your email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -109,7 +109,7 @@ export default function ApplicationForm() {
                 <FormItem>
                 <FormLabel>LinkedIn Profile</FormLabel>
                 <FormControl>
-                    <Input placeholder="https://linkedin.com/in/priyasharma" {...field} />
+                    <Input placeholder="Enter your LinkedIn profile URL" {...field} />
                 </FormControl>
                 <FormMessage />
                 </FormItem>
@@ -122,7 +122,7 @@ export default function ApplicationForm() {
                 <FormItem>
                 <FormLabel>Resume (Google Drive Link)</FormLabel>
                 <FormControl>
-                    <Input placeholder="https://docs.google.com/document/d/..." {...field} />
+                    <Input placeholder="Enter your resume's Google Drive link" {...field} />
                 </FormControl>
                 <FormMessage />
                 </FormItem>

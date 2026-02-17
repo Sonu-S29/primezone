@@ -118,18 +118,18 @@ function EnrollmentForm() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="fullName">Full Name</Label>
-                <Input id="fullName" name="fullName" placeholder="John Doe" />
+                <Input id="fullName" name="fullName" placeholder="Enter your full name" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" name="email" type="email" placeholder="john.doe@example.com" />
+                <Input id="email" name="email" type="email" placeholder="Enter your email address" />
                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="+1 (234) 567-890" />
+                <Input id="phone" name="phone" type="tel" placeholder="Enter your phone number" />
               </div>
               <div className="space-y-2">
                   <Label htmlFor="course">Course of Interest</Label>
@@ -147,11 +147,11 @@ function EnrollmentForm() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="address">Address</Label>
-              <Textarea id="address" name="address" placeholder="123 Tech Street, Innovation City" />
+              <Textarea id="address" name="address" placeholder="Enter your address" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="background">Educational Background</Label>
-              <Textarea id="background" name="educationalBackground" placeholder="e.g., High School Diploma, Bachelor's in Arts" />
+              <Textarea id="background" name="educationalBackground" placeholder="Enter your educational background" />
             </div>
             <Button type="submit" className="w-full" size="lg" disabled={state.submitting}>Submit Enrollment</Button>
           </form>

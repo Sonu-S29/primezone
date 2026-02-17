@@ -39,22 +39,22 @@ export default function CareerGuidanceForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="guidance-name">Full Name</Label>
-        <Input id="guidance-name" name="fullName" placeholder="John Doe" required />
+        <Input id="guidance-name" name="fullName" placeholder="Enter your full name" required />
         <ValidationError prefix="Full Name" field="fullName" errors={state.errors} className="text-destructive text-sm" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="guidance-email">Email Address</Label>
-        <Input id="guidance-email" name="email" type="email" placeholder="john.doe@example.com" required />
+        <Input id="guidance-email" name="email" type="email" placeholder="Enter your email address" required />
         <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-sm" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="guidance-phone">Phone Number</Label>
-        <Input id="guidance-phone" name="phone" type="tel" placeholder="+1 (234) 567-890" required />
+        <Input id="guidance-phone" name="phone" type="tel" placeholder="Enter your phone number" required />
          <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-sm" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="guidance-message">Your Query (Optional)</Label>
-        <Textarea id="guidance-message" name="message" placeholder="Tell us what you'd like to know..." />
+        <Textarea id="guidance-message" name="message" placeholder="Enter your query here..." />
       </div>
       <Button type="submit" className="w-full" disabled={state.submitting}>
         {state.submitting ? 'Submitting...' : 'Submit Request'}

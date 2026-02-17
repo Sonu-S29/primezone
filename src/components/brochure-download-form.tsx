@@ -85,7 +85,7 @@ export default function BrochureDownloadForm() {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Enter your full name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -98,7 +98,7 @@ export default function BrochureDownloadForm() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
+                        <Input type="email" placeholder="Enter your email address" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -111,7 +111,7 @@ export default function BrochureDownloadForm() {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="9876543210" {...field} />
+                        <Input type="tel" placeholder="Enter your 10-digit phone number" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

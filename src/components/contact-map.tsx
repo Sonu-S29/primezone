@@ -224,7 +224,7 @@ export default function ContactMap() {
                     <Input
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
-                        placeholder="e.g., Andheri Station, Mumbai"
+                        placeholder="Enter your location to find the nearest branch"
                         disabled={loading}
                     />
                     </div>
