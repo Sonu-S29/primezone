@@ -6,7 +6,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu, ChevronDown, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -55,6 +55,22 @@ const NavbarLogo = () => {
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isCoursesMenuOpen, setIsCoursesMenuOpen] = useState(false);
+  const coursesTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleCoursesMouseEnter = () => {
+    if (coursesTimerRef.current) {
+      clearTimeout(coursesTimerRef.current);
+    }
+    setIsCoursesMenuOpen(true);
+  };
+
+  const handleCoursesMouseLeave = () => {
+    coursesTimerRef.current = setTimeout(() => {
+      setIsCoursesMenuOpen(false);
+    }, 200);
+  };
+  
   const pathname = usePathname();
 
   return (
@@ -86,20 +102,28 @@ export default function Header() {
               const isCoursesPage = pathname.startsWith('/courses');
               if (item.href === '/courses') {
                 return (
-                  <DropdownMenu key={item.href}>
+                  <DropdownMenu key={item.href} open={isCoursesMenuOpen} onOpenChange={setIsCoursesMenuOpen}>
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
                         className={cn(
                           "flex items-center gap-1 p-0 h-auto text-sm font-medium transition-colors hover:text-primary",
-                          isCoursesPage ? "text-primary font-semibold" : "text-foreground/70"
+                          isCoursesPage ? "text-primary font-semibold" : "text-foreground/80"
                         )}
+                        onMouseEnter={handleCoursesMouseEnter}
+                        onMouseLeave={handleCoursesMouseLeave}
+                        onClick={() => setIsCoursesMenuOpen(!isCoursesMenuOpen)}
                       >
                         {item.label}
                         <ChevronDown className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-56">
+                    <DropdownMenuContent 
+                        align="start" 
+                        className="w-56"
+                        onMouseEnter={handleCoursesMouseEnter}
+                        onMouseLeave={handleCoursesMouseLeave}
+                    >
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger>Career Courses</DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="p-2">
@@ -134,7 +158,7 @@ export default function Header() {
                       href={item.href}
                       className={cn(
                           "transition-colors hover:text-primary",
-                          isActive ? "text-primary font-semibold" : "text-foreground/70"
+                          isActive ? "text-primary font-semibold" : "text-foreground/80"
                       )}
                   >
                       {item.label}
