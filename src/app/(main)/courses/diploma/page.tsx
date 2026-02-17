@@ -3,6 +3,15 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Clock, BookOpen, CheckCircle } from "lucide-react";
 import { diplomaCourses } from "@/lib/course-data";
 import DiplomaCourseCard from "@/components/diploma-course-card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Most Popular Diploma Courses",
+  description: "Most Popular Diploma Courses After 10th, 12th, and Graduation.",
+  alternates: {
+    canonical: "/courses/diploma",
+  },
+};
 
 export default function DiplomaCoursesPage() {
   return (

@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gift, Users, Send, IndianRupee, Star, HelpCircle } from "lucide-react";
@@ -7,6 +6,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import imageData from "@/lib/placeholder-images.json";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Refer & Earn",
+  description: "Share the gift of knowledge with your friends and get rewarded for it!",
+  alternates: {
+    canonical: "/refer-and-earn",
+  },
+};
 
 const faqs = [
     {

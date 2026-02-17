@@ -1,4 +1,4 @@
-
+import type { Metadata } from "next";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
@@ -6,6 +6,14 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ApplicationForm from "@/components/application-form";
 import imageData from "@/lib/placeholder-images.json";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description: "Join our team of passionate educators and professionals dedicated to shaping the future of tech. Find your next opportunity with us.",
+  alternates: {
+    canonical: "/career",
+  },
+};
 
 const jobOpenings = [
   {

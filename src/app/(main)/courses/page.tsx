@@ -1,9 +1,17 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Courses",
+  description: "Choose from a wide range of courses designed to equip you with the skills needed for a successful career in the tech industry.",
+  alternates: {
+    canonical: "/courses",
+  },
+};
 
 const courseCategories = [
   {

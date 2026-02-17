@@ -1,5 +1,14 @@
 import ShortTermCourseGrid from "@/components/short-term-course-grid";
 import { courseData } from "@/lib/course-data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Short-Term Courses",
+  description: "Fast-track your skills with our specialized certificate programs. Perfect for professionals and students looking to upgrade their knowledge.",
+  alternates: {
+    canonical: "/courses/short-term",
+  },
+};
 
 export default function ShortTermCoursesPage() {
   return (
