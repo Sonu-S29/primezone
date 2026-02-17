@@ -2,12 +2,19 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin, ChevronUp, Clock, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronUp, Clock, ChevronRight, Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const socialLinks = [
+    { href: "https://www.instagram.com/primezone_computer_education/", icon: <Instagram className="h-5 w-5" />, name: "Instagram" },
+    { href: "https://www.facebook.com/primezonecomputerjogeshwari/", icon: <Facebook className="h-5 w-5" />, name: "Facebook" },
+    { href: "https://x.com/primezone", icon: <Twitter className="h-5 w-5" />, name: "Twitter" },
+    { href: "https://www.youtube.com", icon: <Youtube className="h-5 w-5" />, name: "YouTube" },
+  ];
 
   return (
     <footer className="bg-primary text-primary-foreground relative">
@@ -29,6 +36,13 @@ export default function Footer() {
                     <a href="tel:+919769730087" className="hover:text-primary-foreground text-sm">(+91) 97697 30087</a>
                 </li>
              </ul>
+            <div className="flex space-x-4 pt-2">
+                {socialLinks.map(link => (
+                    <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                        {link.icon}
+                    </a>
+                ))}
+            </div>
           </div>
 
           {/* Quick Links */}
