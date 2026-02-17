@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -11,12 +12,17 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import CareerGuidanceForm from "../career-guidance-form";
 import TopBar from "./top-bar";
+import { diplomaCourses, courseData } from "@/lib/course-data";
 
 const mainNavLinks = [
   // { href: "/student-projects", label: "Student Projects" },
@@ -77,6 +83,50 @@ export default function Header() {
             </Dialog>
 
           {mainNavLinks.map((item) => {
+              const isCoursesPage = pathname.startsWith('/courses');
+              if (item.href === '/courses') {
+                return (
+                  <DropdownMenu key={item.href}>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className={cn(
+                          "flex items-center gap-1 p-0 h-auto text-sm font-medium transition-colors hover:text-primary",
+                          isCoursesPage ? "text-primary font-semibold" : "text-foreground/70"
+                        )}
+                      >
+                        {item.label}
+                        <ChevronDown className="h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-56">
+                      <DropdownMenuSub>
+                        <DropdownMenuSubTrigger>Career Courses</DropdownMenuSubTrigger>
+                        <DropdownMenuSubContent className="p-2">
+                          {diplomaCourses.map((course) => (
+                            <DropdownMenuItem key={course.slug} asChild>
+                              <Link href={`/courses/details/${course.slug}`}>{course.title}</Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuSubContent>
+                      </DropdownMenuSub>
+                      <DropdownMenuSeparator />
+                      {courseData.map((category) => (
+                        <DropdownMenuSub key={category.id}>
+                          <DropdownMenuSubTrigger>{category.name}</DropdownMenuSubTrigger>
+                          <DropdownMenuSubContent className="p-2 max-h-96 overflow-y-auto">
+                            {category.courses.map((course) => (
+                              <DropdownMenuItem key={course.slug} asChild>
+                                <Link href={`/courses/details/${course.slug}`}>{course.title}</Link>
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuSubContent>
+                        </DropdownMenuSub>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )
+              }
               const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
               return (
                   <Link
