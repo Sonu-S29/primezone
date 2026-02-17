@@ -173,8 +173,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Request a Quote Section */}
-      <section className="container mx-auto px-4">
+      {/* Empowering Your Career Section */}
+      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+        <EmpoweringCareer />
+      </Suspense>
+
+
+ {/* Request a Quote Section */}
+ <section className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
                 <p className="font-semibold text-accent">REQUEST A QUOTE</p>
@@ -208,10 +214,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Empowering Your Career Section */}
-      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
-        <EmpoweringCareer />
-      </Suspense>
 
       {/* Testimonials Section */}
       <section className="w-full py-16">

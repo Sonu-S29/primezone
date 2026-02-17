@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster"
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import PopupForm from '@/components/popup-form';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -52,8 +53,22 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className} antialiased`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="google-site-verification" content="_rckfN0KDi1ig9ixrIxW-05MJQQF3RkBnyvhMDDubCU" />
       </head>
       <body>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-431373199"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-431373199');
+          `}
+        </Script>
         <Header />
         <main className="flex-grow pt-36 md:pt-28">{children}</main>
         <Footer />
