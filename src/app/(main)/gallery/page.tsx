@@ -1,8 +1,14 @@
-
-"use client";
-
+import type { Metadata } from "next";
 import { Skeleton } from '@/components/ui/skeleton';
 import dynamic from 'next/dynamic';
+
+export const metadata: Metadata = {
+  title: "Our Memories",
+  description: "A glimpse into the vibrant life at Primezone—events, workshops, and celebrations.",
+  alternates: {
+    canonical: "/gallery",
+  },
+};
 
 const MemoriesGallery = dynamic(() => import("@/components/memories-gallery"), {
   loading: () => (

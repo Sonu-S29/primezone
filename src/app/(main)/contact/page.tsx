@@ -1,11 +1,16 @@
-
-"use client";
-
-import React from "react";
-import { Card } from "@/components/ui/card";
+import type { Metadata } from "next";
 import ContactForm from "@/components/contact-form";
 import dynamic from 'next/dynamic';
+import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Primezone Computer Education. Reach out to our branches in Jogeshwari and Vile Parle for inquiries and course details.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 const ContactMap = dynamic(() => import('@/components/contact-map'), {
   ssr: false,
@@ -19,7 +24,6 @@ const ContactMap = dynamic(() => import('@/components/contact-map'), {
     </div>
   )
 });
-
 
 export default function ContactUsPage() {
   return (

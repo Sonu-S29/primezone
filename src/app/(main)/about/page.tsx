@@ -1,15 +1,18 @@
-
-"use client";
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Briefcase, Target, Users, BookOpen, Handshake, CheckCircle, Phone } from "lucide-react";
+import type { Metadata } from "next";
+import { Award, Briefcase, Target, Users, BookOpen, Handshake } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/team-card";
 import imageData from "@/lib/placeholder-images.json";
 import { Timeline } from "@/components/ui/timeline";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Dedicated to shaping the future of tech professionals through quality education and hands-on training at Primezone Computer Education.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 const services = [
     {
@@ -46,13 +49,6 @@ const whyChooseUsItems = [
       description: 'Our goal is to empower our students to become skilled professionals and leaders in the tech industry, ready to take on new challenges.'
     }
   ];
-
-const welcomeFeatures = [
-    "Award Winning",
-    "Professional Staff",
-    "Free Counseling",
-    "Fair Prices"
-];
 
 const teamMembers = [
 	{ 
@@ -103,8 +99,6 @@ const timelineData = [
         "Primezone continues to innovate with advanced diploma programs, modern teaching methods, and an expanded team. The institute remains committed to shaping future tech leaders and supporting students from every background.",
     },
   ];
-
-const educationLogo = imageData.find(img => img.id === 'education-logo');
 
 export default function AboutUs() {
   return (

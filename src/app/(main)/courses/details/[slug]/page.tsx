@@ -1,16 +1,26 @@
-
-"use client";
-
-import { useParams } from 'next/navigation';
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle, Briefcase, Star, Target, Award, Users, BookOpen, Clock, Calendar, ArrowRight, Tv, BarChart, Code, Brush, Download } from "lucide-react";
+import { CheckCircle, Briefcase, BookOpen, Tv, BarChart, Code, Brush, Download } from "lucide-react";
 import Image from "next/image";
 import Link from 'next/link';
 import { courseDetails } from '@/lib/course-details';
 import BrochureDownloadForm from '@/components/brochure-download-form';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const course = courseDetails[params.slug];
+  if (!course) return { title: "Course Not Found" };
+
+  return {
+    title: course.title,
+    description: course.description,
+    alternates: {
+      canonical: `/courses/details/${params.slug}`,
+    },
+  };
+}
 
 const KeyHighlight = ({ icon, text }: { icon: React.ReactNode, text: string }) => (
     <div className="flex items-center gap-2">
@@ -19,23 +29,11 @@ const KeyHighlight = ({ icon, text }: { icon: React.ReactNode, text: string }) =
     </div>
 );
 
-
-export default function CourseDetailPage() {
-    const params = useParams();
-    const slug = params.slug as string;
-
-    const course = courseDetails[slug];
+export default function CourseDetailPage({ params }: { params: { slug: string } }) {
+    const course = courseDetails[params.slug];
 
     if (!course) {
-        return (
-            <div className="container mx-auto px-4 py-16 text-center">
-                <h1 className="text-3xl font-bold">Course not found</h1>
-                <p className="mt-4 text-muted-foreground">The course you are looking for does not exist.</p>
-                <Button asChild className="mt-8">
-                    <Link href="/courses">Explore other courses</Link>
-                </Button>
-            </div>
-        );
+        notFound();
     }
     
     const iconMap: { [key: string]: React.ReactNode } = {
@@ -56,7 +54,7 @@ export default function CourseDetailPage() {
                             <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">{course.title}</h1>
                             <p className="text-lg text-muted-foreground">{course.description}</p>
                             <div className="grid grid-cols-2 gap-4">
-                                {course.highlights.map((highlight, index) => (
+                                {course.highlights.map((highlight: string, index: number) => (
                                     <KeyHighlight key={index} icon={<CheckCircle className="h-5 w-5 text-green-500" />} text={highlight} />
                                 ))}
                             </div>
@@ -96,7 +94,7 @@ export default function CourseDetailPage() {
                         <div className="space-y-4">
                             <h2 className="text-3xl font-bold font-headline">What You'll Learn</h2>
                              <ul className="space-y-2">
-                                {course.whatYouWillLearn.map((item, index) => (
+                                {course.whatYouWillLearn.map((item: string, index: number) => (
                                     <li key={index} className="flex items-start">
                                         <CheckCircle className="h-5 w-5 text-accent mr-3 mt-1 shrink-0" />
                                         <span>{item}</span>
@@ -107,7 +105,7 @@ export default function CourseDetailPage() {
                          <div className="space-y-4">
                             <h2 className="text-3xl font-bold font-headline">Career Opportunities</h2>
                             <ul className="space-y-2">
-                                {course.careerOpportunities.map((item, index) => (
+                                {course.careerOpportunities.map((item: string, index: number) => (
                                     <li key={index} className="flex items-start">
                                         <Briefcase className="h-5 w-5 text-accent mr-3 mt-1 shrink-0" />
                                         <span>{item}</span>
@@ -128,7 +126,7 @@ export default function CourseDetailPage() {
                     </div>
                     <div className="max-w-4xl mx-auto">
                         <Accordion type="single" collapsible className="w-full bg-background p-4 rounded-lg shadow-sm">
-                            {course.syllabus.map((module, index) => (
+                            {course.syllabus.map((module: any, index: number) => (
                                 <AccordionItem key={index} value={`item-${index}`}>
                                     <AccordionTrigger>
                                         <div className="flex items-center gap-3">
@@ -143,7 +141,7 @@ export default function CourseDetailPage() {
                                     </AccordionTrigger>
                                     <AccordionContent>
                                         <ul className="list-disc list-inside pl-4 space-y-1 text-muted-foreground">
-                                           {module.topics.map((topic, i) => <li key={i}>{topic}</li>)}
+                                           {module.topics.map((topic: string, i: number) => <li key={i}>{topic}</li>)}
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
@@ -161,7 +159,7 @@ export default function CourseDetailPage() {
                          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Get hands-on experience with industry-standard software and platforms.</p>
                     </div>
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                        {course.tools.map((tool, index) => (
+                        {course.tools.map((tool: any, index: number) => (
                             <div key={index} className="flex flex-col items-center gap-2 text-center">
                                 <Image src={tool.logo} alt={tool.name} width={64} height={64} className="h-12 w-12 md:h-16 md:w-16 object-contain" />
                                 <p className="text-sm font-medium">{tool.name}</p>
