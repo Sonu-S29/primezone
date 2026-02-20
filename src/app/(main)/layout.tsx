@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     template: '%s | Primezone Computer Education',
   },
   description: 'Unlock Your Potential in the Digital World. Primezone offers expert-led courses in programming, design, accounting, and more. Start your tech career with us today!',
+  verification: {
+    google: "_rckfN0KDi1ig9ixrIxW-05MJQQF3RkBnyvhMDDubCU",
+  },
   openGraph: {
     title: 'Primezone Computer Education',
     description: 'Unlock Your Potential in the Digital World. Primezone offers expert-led courses in programming, design, accounting, and more. Start your tech career with us today!',
@@ -53,7 +56,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className} antialiased`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="google-site-verification" content="_rckfN0KDi1ig9ixrIxW-05MJQQF3RkBnyvhMDDubCU" />
       </head>
       <body>
         <Script

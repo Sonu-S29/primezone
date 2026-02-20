@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Primezone Computer – Links & Courses',
   description: 'Your Gateway to Tech Learning. Find all our important links and featured courses in one place.',
+  verification: {
+    google: "_rckfN0KDi1ig9ixrIxW-05MJQQF3RkBnyvhMDDubCU",
+  },
   alternates: {
     canonical: '/links',
   },
@@ -47,7 +50,6 @@ export default function LinksLayout({
     <html lang="en" className={inter.className}>
        <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="google-site-verification" content="_rckfN0KDi1ig9ixrIxW-05MJQQF3RkBnyvhMDDubCU" />
       </head>
       <body className="antialiased">
         <Script
