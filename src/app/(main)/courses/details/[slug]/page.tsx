@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle, Briefcase, BookOpen, Tv, BarChart, Code, Brush, Download } from "lucide-react";
+import { CheckCircle, Briefcase, BookOpen, Tv, BarChart, Code, Brush, Download, Monitor } from "lucide-react";
 import Image from "next/image";
 import Link from 'next/link';
 import { courseDetails } from '@/lib/course-details';
@@ -53,10 +53,11 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                         <div className="space-y-6">
                             <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">{course.title}</h1>
                             <p className="text-lg text-muted-foreground">{course.description}</p>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {course.highlights.map((highlight: string, index: number) => (
                                     <KeyHighlight key={index} icon={<CheckCircle className="h-5 w-5 text-green-500" />} text={highlight} />
                                 ))}
+                                <KeyHighlight icon={<Monitor className="h-5 w-5 text-accent" />} text="Learning Mode: Offline | Hybrid | Online" />
                             </div>
                              <div className="flex flex-wrap gap-4 pt-4">
                                 <Button asChild size="lg">
@@ -128,19 +129,19 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                         <Accordion type="single" collapsible className="w-full bg-background p-4 rounded-lg shadow-sm">
                             {course.syllabus.map((module: any, index: number) => (
                                 <AccordionItem key={index} value={`item-${index}`}>
-                                    <AccordionTrigger>
-                                        <div className="flex items-center gap-3">
-                                            <div className="p-2 bg-accent/10 rounded-md">
+                                    <AccordionTrigger className="hover:no-underline">
+                                        <div className="flex items-center gap-4 text-left w-full">
+                                            <div className="p-2.5 bg-accent/10 rounded-lg shrink-0">
                                                {iconMap[module.icon] || iconMap.default}
                                             </div>
-                                            <div>
-                                                <p className="text-xs text-muted-foreground">Module {index + 1}</p>
-                                                <h4 className="font-semibold text-left">{module.title}</h4>
+                                            <div className="flex flex-col items-start">
+                                                <span className="text-[10px] uppercase tracking-wider text-accent font-bold">Module {index + 1}</span>
+                                                <h4 className="font-bold text-base md:text-lg leading-tight">{module.title}</h4>
                                             </div>
                                         </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                        <ul className="list-disc list-inside pl-4 space-y-1 text-muted-foreground">
+                                        <ul className="list-disc list-inside pl-4 space-y-1 text-muted-foreground mt-2">
                                            {module.topics.map((topic: string, i: number) => <li key={i}>{topic}</li>)}
                                         </ul>
                                     </AccordionContent>

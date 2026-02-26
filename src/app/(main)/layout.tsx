@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   verification: {
     google: "_rckfN0KDi1ig9ixrIxW-05MJQQF3RkBnyvhMDDubCU",
   },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: 'Primezone Computer Education',
     description: 'Unlock Your Potential in the Digital World. Primezone offers expert-led courses in programming, design, accounting, and more. Start your tech career with us today!',
@@ -71,7 +74,7 @@ export default function RootLayout({
           `}
         </Script>
         <Header />
-        <main className="flex-grow pt-36 md:pt-28">{children}</main>
+        <main className="flex-grow pt-24 md:pt-28">{children}</main>
         <Footer />
         <Toaster />
         <PopupForm />
