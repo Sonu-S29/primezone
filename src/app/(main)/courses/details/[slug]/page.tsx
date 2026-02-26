@@ -93,22 +93,22 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12">
                         <div className="space-y-4">
-                            <h2 className="text-3xl font-bold font-headline">What You'll Learn</h2>
-                             <ul className="space-y-2">
-                                {course.whatYouWillLearn.map((item: string, index: number) => (
-                                    <li key={index} className="flex items-start">
-                                        <CheckCircle className="h-5 w-5 text-accent mr-3 mt-1 shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                         <div className="space-y-4">
                             <h2 className="text-3xl font-bold font-headline">Career Opportunities</h2>
                             <ul className="space-y-2">
                                 {course.careerOpportunities.map((item: string, index: number) => (
                                     <li key={index} className="flex items-start">
                                         <Briefcase className="h-5 w-5 text-accent mr-3 mt-1 shrink-0" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="space-y-4">
+                            <h2 className="text-3xl font-bold font-headline">What You'll Learn</h2>
+                             <ul className="space-y-2">
+                                {course.whatYouWillLearn.map((item: string, index: number) => (
+                                    <li key={index} className="flex items-start">
+                                        <CheckCircle className="h-5 w-5 text-accent mr-3 mt-1 shrink-0" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
