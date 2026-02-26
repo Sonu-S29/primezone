@@ -45,7 +45,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
     };
 
     return (
-        <div>
+        <div className="-mt-12 md:-mt-16">
             {/* Hero Section */}
             <section className="bg-card py-16">
                 <div className="container mx-auto px-4">
@@ -61,7 +61,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                             </div>
                              <div className="flex flex-wrap gap-4 pt-4">
                                 <Button asChild size="lg">
-                                    <Link href="/enroll">Enroll Now</Link>
+                                    <Link href={`/enroll?course=${encodeURIComponent(course.title)}`}>Enroll Now</Link>
                                 </Button>
                                 <Dialog>
                                     <DialogTrigger asChild>
@@ -134,7 +134,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                                             <div className="p-2.5 bg-accent/10 rounded-lg shrink-0">
                                                {iconMap[module.icon] || iconMap.default}
                                             </div>
-                                            <div className="flex flex-col items-start">
+                                            <div className="flex flex-col items-start text-left">
                                                 <span className="text-[10px] uppercase tracking-wider text-accent font-bold">Module {index + 1}</span>
                                                 <h4 className="font-bold text-base md:text-lg leading-tight">{module.title}</h4>
                                             </div>

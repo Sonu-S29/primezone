@@ -1,7 +1,7 @@
 
 export const courseDetails: { [key: string]: any } = {
     'data-analysis': {
-        title: "Data Analysis",
+        title: "Data Analytics",
         description: "This comprehensive program is designed to equip you with the essential skills for data analysis, covering everything from foundational concepts to advanced tools. You'll learn to clean, analyze, and visualize data to drive informed business decisions.",
         image: "/images/courses/diploma/dataanalysis.webp",
         hint: "data analytics dashboard",
@@ -118,24 +118,6 @@ export const courseDetails: { [key: string]: any } = {
             { name: "MongoDB", logo: "/images/tech/mongodb.svg" }
         ]
     },
-    // 'accounting': {
-    //     title: "Diploma In Accounting",
-    //     description: "Gain comprehensive knowledge in financial, managerial, and tax accounting, preparing you for various roles in the accounting field.",
-    //     image: "/images/courses/DIA.jpg",
-    //     hint: "accounting collage",
-    //     highlights: ["Job Oriented", "Practical Training", "Expert Faculty", "Certification"],
-    //     whatYouWillLearn: ["Financial accounting principles", "Advanced Excel for accounting tasks", "Tally Prime with GST compliance", "Fundamentals of taxation and auditing"],
-    //     careerOpportunities: ["Accountant", "Finance Executive", "Tax Consultant", "MIS Executive"],
-    //     syllabus: [
-    //         { title: "Financial Accounting Basics", icon: "BarChart", topics: ["Introduction to Accounting", "Journal Entries", "Ledger and Trial Balance", "Final Accounts Preparation", "Bank Reconciliation", "and many more..."] },
-    //         { title: "Advanced Excel for Accountants", icon: "BarChart", topics: ["Advanced Formulas", "PivotTables & PivotCharts", "Data Validation & Protection", "Financial Modeling Basics", "Macros & VBA for Accountants", "and many more..."] },
-    //         { title: "Tally Prime with GST", icon: "Code", topics: ["Company Creation & Configuration", "Voucher Entry", "GST Setup and Compliance", "Inventory Management", "Payroll Processing", "and many more..."] },
-    //     ],
-    //     tools: [
-    //         { name: "MS Excel", logo: "/images/tech/excel.svg" },
-    //         { name: "Tally Prime", logo: "/images/tech/tally.png" },
-    //     ]
-    // },
     'financial-management': {
         title: "Diploma In Financial & Management",
         description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
@@ -189,37 +171,8 @@ export const courseDetails: { [key: string]: any } = {
             { name: "CSS3", logo: "/images/tech/css.svg" },
         ]
     },
-    //  "financial-management": {
-    //     title: "Diploma In Financial & Management",
-    //     description: "Develop skills in financial analysis, investment strategies, and management principles to prepare for careers in finance and business administration.",
-    //     image: "/images/courses/diploma/dfam.webp",
-    //     hint: "financial management",
-    //     highlights: ["Finance & Management", "Share Market Intro", "Practical Case Studies", "Job-Oriented"],
-    //     whatYouWillLearn: [
-    //         "Comprehensive office automation and advanced Excel skills.",
-    //         "In-depth knowledge of Tally Prime with GST and Taxation.",
-    //         "Core management skills for business finance, marketing, and operations.",
-    //         "An introduction to the share market and investment basics."
-    //     ],
-    //     careerOpportunities: ["Finance Manager", "Business Analyst", "Management Trainee", "Investment Advisor"],
-    //     syllabus: [
-    //         { title: "Office Automation", icon: "Tv", topics: ["Typing Speed", "Microsoft Word", "Microsoft Excel", "Microsoft Powerpoint", "Internet", "Windows Fundamentals"] },
-    //         { title: "Advanced Excel", icon: "BarChart", topics: ["Functions & Ribbons", "Conditional Formatting", "Pivot Tables & Charts", "Macros & MIS Reporting"] },
-    //         { title: "Tally Prime (GST)", icon: "Code", topics: ["Accounting Principles", "Vouchers & GST Compliance", "TDS", "Project Work"] },
-    //         { title: "Taxation Auditing", icon: "BarChart", topics: ["Direct & Indirect Taxes", "Income Tax Framework", "ITR & GST Return"] },
-    //         { title: "Management Skills", icon: "Code", topics: ["Business Finance", "Project Reports", "Export/Import Management", "Marketing Management"] },
-    //         { title: "Share Market", icon: "BarChart", topics: ["Primary Markets", "IPOs & Trading", "Mutual Funds", "Derivatives"] }
-    //     ],
-    //     tools: [
-    //         { name: "MS Office", logo: "/images/courses/short/account/oa.png" },
-    //         { name: "Tally Prime", logo: "/images/tech/tally.png" },
-    //         { name: "Tax", logo: "/images/tech/tax.svg" },
-    //         { name: "Gst", logo: "/images/tech/gst.jpg" },
-    //         { name: "MS Excel", logo: "/images/tech/excel.svg" },
-    //     ]
-    // },
     "programming-course": {
-        title: "Diploma In Programming",
+        title: "Diploma In Programming Course",
         description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
         image: "/images/courses/programming.webp",
         hint: "programming code",
@@ -376,7 +329,7 @@ export const courseDetails: { [key: string]: any } = {
         careerOpportunities: ["MIS Executive", "Data Analyst", "Financial Analyst", "Business Analyst"],
         syllabus: [
             { title: "Advanced Formulas", icon: "BarChart", topics: ["VLOOKUP, HLOOKUP, INDEX, MATCH", "Logical functions (IF, AND, OR, nested IFs)", "Text and Date functions"] },
-            { title: "Data Analysis Tools", icon: "BarChart", topics: ["PivotTables and PivotCharts", "What-If Analysis (Goal Seek, Scenario Manager)", "Data Validation and Conditional Formatting"] },
+            { title: "Data Analysis Tools", icon: "BarChart", topics: ["PivotTables and PivotCharts", "What-If Analysis (Goal Goal, Scenario Manager)", "Data Validation and Conditional Formatting"] },
             { title: "Macros & VBA", icon: "Code", topics: ["Recording and running macros", "Introduction to the VBA editor", "Creating user-defined functions (UDFs)"] },
         ],
         tools: [
@@ -685,7 +638,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'c-programming': {
-        title: "C Programming",
+        title: "C",
         description: "Learn the fundamentals of C, a powerful and widely used programming language that forms the basis for many other languages.",
         image: "/images/courses/short/programming/cprog.png",
         hint: "c code",
@@ -701,7 +654,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'c-plus-plus': {
-        title: "C++ Programming",
+        title: "C++",
         description: "Master C++ and its object-oriented features to build high-performance applications.",
         image: "/images/courses/short/programming/c++.png",
         hint: "c++ code",
@@ -717,7 +670,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'python': {
-        title: "Python Programming",
+        title: "Python",
         description: "Learn Python, a versatile and beginner-friendly language used in web development, data science, automation, and more.",
         image: "/images/courses/short/programming/python.png",
         hint: "python code",
@@ -774,7 +727,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'database': {
-        title: "Database Management",
+        title: "Database",
         description: "Learn to design, implement, and manage both SQL and NoSQL databases.",
         image: "/images/courses/short/programming/database.png",
         hint: "database diagram",
@@ -807,7 +760,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'html-css': {
-        title: "HTML & CSS",
+        title: "HTML-CSS",
         description: "Master the fundamental building blocks of the web: HTML for structure and CSS for styling.",
         image: "/images/courses/short/programming/htmlcss.png",
         hint: "html css code",
@@ -856,7 +809,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'c-sharp': {
-        title: "C# Programming",
+        title: "C#",
         description: "Learn C#, a modern, object-oriented language from Microsoft for building a wide range of applications.",
         image: "/images/courses/short/programming/csharp.png",
         hint: "c# code",
@@ -888,7 +841,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'advanced-java': {
-        title: "Advanced Java (Java EE)",
+        title: "Advanced Java",
         description: "Go beyond Core Java to build enterprise-level, web-based applications.",
         image: "/images/courses/short/programming/advjava.png",
         hint: "java ee code",
@@ -906,7 +859,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'seo': {
-        title: "Search Engine Optimization (SEO)",
+        title: "SEO",
         description: "Learn to optimize websites to rank higher in search engine results and drive organic traffic.",
         image: "/images/courses/short/dm/SEO.png",
         hint: "seo analysis",
@@ -924,7 +877,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'smm': {
-        title: "Social Media Marketing (SMM)",
+        title: "SMM",
         description: "Learn to manage and grow a brand's presence on social media platforms.",
         image: "/images/courses/short/dm/smm.png",
         hint: "social media marketing",
@@ -942,7 +895,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'sem': {
-        title: "Search Engine Marketing (SEM)",
+        title: "SEM",
         description: "Master paid search advertising to drive targeted traffic and conversions.",
         image: "/images/courses/short/dm/sem.png",
         hint: "search engine marketing",
@@ -958,7 +911,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'wordpress': {
-        title: "WordPress Development",
+        title: "WordPress",
         description: "Learn to build and manage dynamic websites and blogs using WordPress, the world's most popular CMS.",
         image: "/images/courses/short/dm/wordpress.png",
         hint: "wordpress dashboard",
@@ -1008,7 +961,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'smo': {
-        title: "Social Media Optimization (SMO)",
+        title: "SMO",
         description: "Optimize your social media profiles and content to increase visibility and engagement.",
         image: "/images/courses/short/dm/SMO.png",
         hint: "social media optimization",
@@ -1106,7 +1059,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'video-sound-editing': {
-        title: "Video & Sound Editing",
+        title: "Video|Sound Editing",
         description: "Learn to edit video and audio to create professional-quality productions.",
         image: "/images/courses/short/graphics/PremierePro.png",
         hint: "video editing",
@@ -1123,7 +1076,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'adobe-animation': {
-        title: "Adobe Animate",
+        title: "Adobe Animation",
         description: "Create interactive animations for web, TV, and video games.",
         image: "/images/courses/short/graphics/animates.png",
         hint: "character animation",
@@ -1139,7 +1092,7 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     '3d-max': {
-        title: "3ds Max",
+        title: "3D MAX",
         description: "Learn 3D modeling, animation, and rendering for games, film, and architectural visualization.",
         image: "/images/courses/short/graphics/3DMAX.png",
         hint: "3d modeling",

@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -17,7 +16,7 @@ import BrochureDownloadForm from "./brochure-download-form";
 const courses = [
   {
     slug: "data-analysis",
-    title: "Data Analysis",
+    title: "Data Analytics",
     description: "Unlock insights from data to drive business decisions.",
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
@@ -43,7 +42,7 @@ const courses = [
   },
   {
     slug: "digital-marketing",
-    title: "Digital Marketing",
+    title: "Diploma In Digital Marketing",
     description: "Learn SEO, SEM, and social media strategies to grow businesses online.",
     duration: "6 Months",
     idealFor: "10th, 12th, Graduates",
@@ -56,7 +55,7 @@ const courses = [
   },
   {
     slug: "ethical-hacking",
-    title: "Ethical Hacking and Cyber Security",
+    title: "Diploma In Ethical Hacking",
     description: "Protect digital assets by learning to think like a hacker.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
@@ -69,7 +68,7 @@ const courses = [
   },
   {
     slug: "financial-management",
-    title: "Diploma in Financial Accounting & Management",
+    title: "Diploma In Financial & Management",
     description: "Gain expertise in financial accounting, Tally, and GST.",
     duration: "1 Year",
     idealFor: "10th, 12th, Graduates",
@@ -82,7 +81,7 @@ const courses = [
   },
   {
     slug: "programming-course",
-    title: "Diploma in Programming",
+    title: "Diploma In Programming Course",
     description: "Build a strong foundation in programming with C, C++, Java, and Python.",
     duration: "1 Year",
     idealFor: "12th, Graduates",
@@ -200,7 +199,7 @@ export default function TrendingCourses() {
             <div key={slideIndex} className="w-full flex-shrink-0 grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-1">
               {courses.slice(slideIndex * itemsPerSlide, slideIndex * itemsPerSlide + itemsPerSlide).map((course) => (
                 <Card key={course.title} className="flex flex-col border-primary/20 hover:border-primary hover:shadow-xl transition-all duration-300">
-                    <CardHeader className="flex-row items-center justify-between pb-2">
+                    <CardHeader className="flex-row items-center justify-between pb-2 text-left">
                         <Countdown toDate={course.batchStarts} />
                         <Badge variant="destructive">{course.seatsLeft} seats left</Badge>
                     </CardHeader>
@@ -228,10 +227,10 @@ export default function TrendingCourses() {
                                 )}>{tag}</Badge>
                             ))}
                         </div>
-                        <CardTitle className="text-xl">{course.title}</CardTitle>
-                        <CardDescription className="mt-2">{course.description}</CardDescription>
+                        <CardTitle className="text-xl text-left">{course.title}</CardTitle>
+                        <CardDescription className="mt-2 text-left">{course.description}</CardDescription>
                         
-                        <div className="mt-4 space-y-2 text-sm text-muted-foreground border-t pt-4">
+                        <div className="mt-4 space-y-2 text-sm text-muted-foreground border-t pt-4 text-left">
                             <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> {course.duration} Classroom & Online Training</p>
                             <p className="flex items-center gap-2"><Calendar className="h-4 w-4" /> Weekday and Weekend Batches</p>
                         </div>
@@ -279,4 +278,3 @@ export default function TrendingCourses() {
     </div>
   );
 }
-
