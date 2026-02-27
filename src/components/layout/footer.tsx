@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Primezone Computer Education</h3>
             <p className="text-primary-foreground/70 text-sm">
-              PRIMEZONE COMPUTER EDUCATION was founded in 2020. It brings computer education within reach of common people, supporting students to add professional skills and achieve higher goals in life.
+              Primezone Computer Education was founded in 2020. It brings computer education within reach of common people, supporting students to add professional skills and achieve higher goals in life.
             </p>
             <ul className="space-y-3 text-primary-foreground/70">
                 <li className="flex items-center">

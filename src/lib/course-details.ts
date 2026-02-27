@@ -174,7 +174,7 @@ export const courseDetails: { [key: string]: any } = {
     "programming-course": {
         title: "Diploma In Programming Course",
         description: "Master various programming languages and concepts for front-end, back-end, mobile, and machine learning development to become a versatile programmer.",
-        image: "/images/courses/programming.webp",
+        image: "/images/courses/diploma/dpc.webp",
         hint: "programming code",
         highlights: ["Multi-Language Mastery", "Data Structures", "Web & DB Technologies", "Live Projects"],
         whatYouWillLearn: [
@@ -203,7 +203,7 @@ export const courseDetails: { [key: string]: any } = {
     "graphic-animation": {
         title: "Diploma In Graphic & Animation",
         description: "Explore graphic design principles, digital illustration, and animation techniques to create visually appealing content for various media platforms.",
-        image: "/images/courses/DGA.jpg",
+        image: "/images/courses/diploma/dga.webp",
         hint: "graphic animation",
         highlights: ["Complete Design Suite", "2D & 3D Animation", "Video Editing", "Portfolio Development"],
         whatYouWillLearn: [
