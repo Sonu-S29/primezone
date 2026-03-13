@@ -43,6 +43,10 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
         BarChart: <BarChart className="h-5 w-5 text-accent" />,
         Code: <Code className="h-5 w-5 text-accent" />,
         Brush: <Brush className="h-5 w-5 text-accent" />,
+        Landmark: <MapPin className="h-5 w-5 text-accent" />,
+        Palette: <Brush className="h-5 w-5 text-accent" />,
+        MonitorCheck: <Monitor className="h-5 w-5 text-accent" />,
+        FileText: <BookOpen className="h-5 w-5 text-accent" />,
         default: <BookOpen className="h-5 w-5 text-accent" />,
     };
 
@@ -53,7 +57,9 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                            <h1 className="text-3xl md:text-5xl font-bold font-headline text-primary leading-tight">{course.title}</h1>
+                            <h1 className="text-3xl md:text-5xl font-bold font-headline text-primary leading-tight">
+                                {course.title.split('|')[0].trim()}
+                            </h1>
                             <p className="text-lg text-muted-foreground leading-relaxed">{course.description}</p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {course.highlights.map((highlight: string, index: number) => (
@@ -63,7 +69,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                             </div>
                              <div className="flex flex-wrap gap-4 pt-4">
                                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
-                                    <Link href={`/enroll?course=${encodeURIComponent(course.title)}`}>Enroll Now</Link>
+                                    <Link href={`/enroll?course=${encodeURIComponent(course.title.split('|')[0].trim())}`}>Enroll Now</Link>
                                 </Button>
                                 <Dialog>
                                     <DialogTrigger asChild>
@@ -96,11 +102,11 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 </div>
             </section>
 
-            {/* Introduction & Why Learn Section */}
+            {/* Introduction Section */}
             {course.whyLearn && (
                 <section className="py-16 bg-white">
                     <div className="container mx-auto px-4 max-w-4xl text-center">
-                        <h2 className="text-3xl font-bold text-primary mb-6 font-headline">Why Learn {course.title.split('|')[0]}?</h2>
+                        <h2 className="text-3xl font-bold text-primary mb-6 font-headline">Why Learn {course.title.split('|')[0].trim()}?</h2>
                         <div className="w-20 h-1 bg-accent mx-auto mb-8"></div>
                         <p className="text-lg text-muted-foreground leading-relaxed">
                             {course.whyLearn}
@@ -191,7 +197,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                                 <MapPin className="h-8 w-8 text-accent" /> Best Classes in Mumbai
                             </h2>
                             <p className="text-lg opacity-90 leading-relaxed">
-                                Our institute is conveniently located in <strong>Jogeshwari East</strong>, making it the perfect choice for students from <strong>Andheri, Goregaon, Vile Parle, and Malad</strong>. We offer flexible batches to accommodate college students and working professionals.
+                                Our institute is conveniently located in <strong>Jogeshwari East</strong> and <strong>Vile Parle</strong>, making it the perfect choice for students from <strong>Andheri, Goregaon, and Malad</strong>. We offer flexible batches to accommodate college students and working professionals.
                             </p>
                             <div className="flex gap-4">
                                 <div className="p-4 bg-white/10 rounded-xl">
@@ -275,7 +281,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                         <RelatedCourseCard title="Digital Marketing" slug="digital-marketing" />
                         <RelatedCourseCard title="Advanced Excel" slug="advanced-excel" />
                         <RelatedCourseCard title="Full-Stack Dev" slug="full-stack-development" />
-                        <RelatedCourseCard title="Graphic Design" slug="graphic-animation" />
+                        <RelatedCourseCard title="Data Analysis" slug="data-analysis" />
                     </div>
                 </div>
             </section>
