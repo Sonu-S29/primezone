@@ -6,7 +6,7 @@ import { Star, Reply, Clock, Phone } from "lucide-react";
 import Link from "next/link";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
@@ -20,9 +20,18 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { testimonials } from "@/lib/testimonials-data";
 
-const TrendingCourses = lazy(() => import("@/components/trending-courses"));
-const FeaturedCoursesCarousel = lazy(() => import("@/components/featured-courses-carousel"));
-const EmpoweringCareer = lazy(() => import("@/components/empowering-career"));
+const TrendingCourses = dynamic(() => import("@/components/trending-courses"), {
+    loading: () => <Skeleton className="h-64 w-full" />,
+    ssr: false
+});
+const FeaturedCoursesCarousel = dynamic(() => import("@/components/featured-courses-carousel"), {
+    loading: () => <Skeleton className="h-96 w-full" />,
+    ssr: false
+});
+const EmpoweringCareer = dynamic(() => import("@/components/empowering-career"), {
+    loading: () => <Skeleton className="h-96 w-full" />,
+    ssr: false
+});
 
 const Carousel = dynamic(() => import("@/components/ui/carousel").then(module => ({ default: module.Carousel })), {
     loading: () => <Skeleton className="h-64 w-full" />,
