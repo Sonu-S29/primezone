@@ -24,7 +24,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Graphic Designing", icon: "Palette", topics: ["CorelDRAW", "Photoshop", "Illustrator", "InDesign", "Canva"] },
             { title: "Web Designing", icon: "Globe", topics: ["HTML / CSS", "JavaScript", "Adobe Animate", "Web Hosting"] }
         ],
-        tools: [{ name: "Excel", logo: "/images/tech/excel.svg" }, { name: "Tally", logo: "/images/tech/tally.png" }, { name: "Photoshop", logo: "/images/tech/photoshop.svg" }],
+        tools: [
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" }
+        ],
         faqs: [
             { q: "Is DCA a government-recognized course?", a: "Yes, Primezone provides government-recognized certification for the DCA program." },
             { q: "Who can join this course?", a: "Students who have completed 10th or 12th grade can enroll in this diploma." }
@@ -46,7 +52,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Management Skills", icon: "Users", topics: ["Business Finance", "Project Reports", "Export/Import", "Office Management"] },
             { title: "Share Market", icon: "BarChart", topics: ["IPOs", "Mutual Funds", "Derivatives", "Trading Strategies"] }
         ],
-        tools: [{ name: "Tally Prime", logo: "/images/tech/tally.png" }, { name: "Excel", logo: "/images/tech/excel.svg" }],
+        tools: [
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "Income Tax Portal", logo: "/images/tech/tax.png" },
+            { name: "GST Portal", logo: "/images/tech/gst.jpg" }
+        ],
         faqs: [{ q: "Do you teach live taxation cases?", a: "Yes, we use real-world scenarios for GST and Income Tax training." }]
     },
     'programming-course': {
@@ -65,7 +76,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Java Technologies", icon: "Code", topics: ["Core Java", "Advanced Java", "Swing", "JDBC"] },
             { title: "Stack Choice", icon: "Rocket", topics: ["MERN Stack", "ASP.NET", "Database MySQL/MongoDB"] }
         ],
-        tools: [{ name: "Python", logo: "/images/tech/python.svg" }, { name: "Java", logo: "/images/tech/java.svg" }, { name: "C++", logo: "/images/tech/cplusplus.svg" }],
+        tools: [
+            { name: "VS Code", logo: "/images/tech/vscode.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "Java", logo: "/images/tech/java.svg" },
+            { name: "C++", logo: "/images/tech/cplusplus.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" }
+        ],
         faqs: [{ q: "Which language do we start with?", a: "We start with C to build strong logic foundations before moving to advanced languages." }]
     },
     'graphic-animation': {
@@ -84,7 +101,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "3D Design", icon: "Rocket", topics: ["3DS MAX", "Interior Designing", "Materials & Lighting"] },
             { title: "Post Production", icon: "LayoutTemplate", topics: ["Video Editing", "Sound Effects", "Transitions"] }
         ],
-        tools: [{ name: "Photoshop", logo: "/images/tech/photoshop.svg" }, { name: "3ds Max", logo: "/images/tech/p.svg" }],
+        tools: [
+            { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.png" },
+            { name: "3ds Max", logo: "/images/tech/p.svg" },
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" }
+        ],
         faqs: [{ q: "Do I need a high-end PC?", a: "While learning, you can use our state-of-the-art labs equipped with high-performance systems." }]
     },
     'ethical-hacking': {
@@ -103,7 +126,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Exploitation", icon: "Bug", topics: ["System Hacking", "Malware Threats", "Sniffing"] },
             { title: "Advanced Protection", icon: "ShieldCheck", topics: ["IDS & Firewalls", "Web App Hacking", "SQL Injection"] }
         ],
-        tools: [{ name: "Linux", logo: "/images/tech/linux.svg" }, { name: "Wireshark", logo: "/images/tech/wireshark.svg" }],
+        tools: [
+            { name: "Kali Linux", logo: "/images/tech/linux.svg" },
+            { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
+            { name: "Nmap", logo: "/images/tech/nmap.svg" },
+            { name: "Metasploit", logo: "/images/tech/Metasploit.svg" },
+            { name: "Burp Suite", logo: "/images/tech/burp.png" }
+        ],
         faqs: [{ q: "Is this course legal?", a: "Yes, we teach Ethical Hacking for defense and security purposes only." }]
     },
     'digital-marketing': {
@@ -122,7 +151,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Web & Content", icon: "Globe", topics: ["WordPress", "Blogging", "Email Marketing"] },
             { title: "Analytics", icon: "BarChart", topics: ["Google Analytics", "Search Console", "Reporting"] }
         ],
-        tools: [{ name: "Google Ads", logo: "/images/tech/google-ads.svg" }, { name: "Analytics", logo: "/images/tech/ga.svg" }],
+        tools: [
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
+            { name: "Analytics", logo: "/images/tech/ga.svg" },
+            { name: "Facebook Ads", logo: "/images/tech/fb.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "SEMrush", logo: "/images/tech/seo.svg" }
+        ],
         faqs: [{ q: "Will I learn how to build a website?", a: "Yes, we include WordPress website creation as part of the course." }]
     },
     'full-stack-development': {
@@ -141,7 +176,13 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Databases", icon: "Settings", topics: ["MySQL", "MongoDB"] },
             { title: "Testing & Deploy", icon: "Rocket", topics: ["GitHub", "Hosting", "API Testing"] }
         ],
-        tools: [{ name: "React", logo: "/images/tech/react.svg" }, { name: "Node.js", logo: "/images/tech/node.svg" }],
+        tools: [
+            { name: "React", logo: "/images/tech/react.svg" },
+            { name: "Node.js", logo: "/images/tech/node.svg" },
+            { name: "MongoDB", logo: "/images/tech/mongodb.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "GitHub", logo: "/images/tech/github.svg" }
+        ],
         faqs: [{ q: "Which stack is best?", a: "We teach both MERN and Java to give you maximum career flexibility." }]
     },
     'data-analysis': {
@@ -152,14 +193,20 @@ export const courseDetails: { [key: string]: any } = {
         image: "/images/courses/diploma/dataanalysis.webp",
         hint: "data analytics",
         highlights: ["Power BI & Tableau", "Advanced Excel", "Python for Data", "Live Case Studies"],
-        whatYouWillLearn: ["Data Visualization", "Statistical Analysis", "SQL Querying", "Cleaning Messy Data", "Automating Reports"],
+         whatYouWillLearn: ["Data Visualization", "Statistical Analysis", "SQL Querying", "Cleaning Messy Data", "Automating Reports"],
         careerOpportunities: ["Data Analyst", "BI Developer", "Market Researcher", "MIS Specialist"],
         syllabus: [
             { title: "Advanced Excel", icon: "BarChart", topics: ["Lookups", "Pivots", "Macros", "Dashboards"] },
             { title: "BI Tools", icon: "BarChart", topics: ["Power BI", "Tableau", "Data Mapping"] },
             { title: "Coding & DB", icon: "Code", topics: ["Python Basics", "MySQL Queries", "Aggregation"] }
         ],
-        tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }, { name: "Tableau", logo: "/images/tech/tableau.svg" }],
+        tools: [
+            { name: "Power BI", logo: "/images/tech/powerbi.svg" },
+            { name: "Tableau", logo: "/images/tech/tableau.svg" },
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" }
+        ],
         faqs: [{ q: "Is coding required for Data Analytics?", a: "Only basic Python and SQL are needed, which we teach from scratch." }]
     },
 
@@ -179,7 +226,11 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Data Handling", icon: "BarChart", topics: ["Excel Functions", "Filtering", "Chart Basics"] },
             { title: "Web Tools", icon: "Globe", topics: ["Email Etiquette", "Cloud Storage", "Internet Security"] }
         ],
-        tools: [{ name: "MS Office", logo: "/images/tech/excel.svg" }],
+        tools: [
+            { name: "Word", logo: "/images/tech/excel.svg" },
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "PowerPoint", logo: "/images/tech/excel.svg" }
+        ],
         faqs: [{ q: "What is the duration?", a: "The course is 2 months long with flexible batch timings." }]
     },
     'ms-office': {
@@ -197,7 +248,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Excel for Work", icon: "BarChart", topics: ["Vlookup", "Countif", "Sorting & Filtering"] },
             { title: "Pro Presentations", icon: "LayoutTemplate", topics: ["Slide Masters", "Infographics", "Transitions"] }
         ],
-        tools: [{ name: "Word", logo: "/images/tech/excel.svg" }],
+        tools: [
+            { name: "Word", logo: "/images/tech/excel.svg" },
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "PowerPoint", logo: "/images/tech/excel.svg" },
+            { name: "Outlook", logo: "/images/tech/excel.svg" }
+        ],
         faqs: [{ q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate upon completion." }]
     },
     'web-designing': {
@@ -215,7 +271,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Design", icon: "Palette", topics: ["Color Theory", "Typography", "Layout Design"] },
             { title: "Advanced", icon: "Code", topics: ["Media Queries", "Flexbox", "CSS Grid"] }
         ],
-        tools: [{ name: "HTML", logo: "/images/tech/html.svg" }, { name: "CSS", logo: "/images/tech/css.svg" }],
+        tools: [
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "Figma", logo: "/images/tech/figma.svg" }
+        ],
         faqs: [{ q: "How long is the course?", a: "The Web Designing course typically takes 4 months to complete." }]
     },
     'advanced-excel': {
@@ -233,7 +294,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Analysis", icon: "BarChart", topics: ["Pivot Tables", "Power Query", "What-if Analysis"] },
             { title: "Automation", icon: "Code", topics: ["VBA Basics", "Recording Macros", "Custom Userforms"] }
         ],
-        tools: [{ name: "Excel", logo: "/images/tech/excel.svg" }],
+        tools: [
+            { name: "Excel", logo: "/images/tech/excel.svg" }
+        ],
         faqs: [{ q: "Do I need to know math?", a: "Basic arithmetic is enough; we teach the logic behind the formulas." }]
     },
     'tally-gst': {
@@ -251,26 +314,11 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Taxation", icon: "FileText", topics: ["GST Invoicing", "RCM", "GST Returns"] },
             { title: "Inventory", icon: "Settings", topics: ["Stock Groups", "Godown Management", "Purchase/Sales Orders"] }
         ],
-        tools: [{ name: "Tally Prime", logo: "/images/tech/tally.png" }],
-        faqs: [{ q: "Is the software provided?", a: "We train you on the latest Tally Prime software in our labs." }]
-    },
-    'power-bi': {
-        title: "Power BI Course in Mumbai | Data Visualization Training | Primezone",
-        metaDescription: "Master Microsoft Power BI in Mumbai. Learn data modeling, DAX, and dashboard creation. Top-rated BI training at Primezone Computer Education.",
-        description: "Learn to transform raw data into stunning interactive dashboards using Microsoft's leading business intelligence tool.",
-        whyLearn: "Businesses now demand visual insights rather than just numbers. Power BI skills are essential for modern analysts and managers.",
-        image: "/images/courses/short/programming/powerbi.png",
-        hint: "powerbi dashboard",
-        highlights: ["Interactive Dashboards", "DAX Formulas", "Data Modeling", "Publishing Reports"],
-        whatYouWillLearn: ["Connecting multiple data sources", "Writing DAX expressions", "Building interactive visuals", "Real-time data sharing"],
-        careerOpportunities: ["BI Analyst", "Report Developer", "Data Visualizer", "Senior Manager"],
-        syllabus: [
-            { title: "Querying", icon: "BarChart", topics: ["Power Query", "Data Cleaning", "Transformations"] },
-            { title: "Modeling", icon: "BarChart", topics: ["Relationships", "DAX Measures", "Calculated Columns"] },
-            { title: "Visuals", icon: "Palette", topics: ["Charts & Maps", "Slicers", "Bookmarks"] }
+        tools: [
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Excel", logo: "/images/tech/excel.svg" }
         ],
-        tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
-        faqs: [{ q: "Can Excel users learn this?", a: "Yes, Power BI is a natural next step for Advanced Excel users." }]
+        faqs: [{ q: "Is the software provided?", a: "We train you on the latest Tally Prime software in our labs." }]
     },
     'python': {
         title: "Python Programming Course in Mumbai | Beginner to Advanced Training | Primezone",
@@ -286,26 +334,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Basics", icon: "Code", topics: ["Data Types", "Loops", "Functions"] },
             { title: "Advanced", icon: "Code", topics: ["Classes", "Modules", "Exception Handling"] }
         ],
-        tools: [{ name: "Python", logo: "/images/tech/python.svg" }],
-        faqs: [{ q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." }]
-    },
-    'web-development': {
-        title: "Web Development Course in Mumbai | Full Stack MERN Training | Primezone",
-        metaDescription: "Join the best Web Development course in Mumbai. Learn HTML, CSS, JS, Node, and React. 100% practical training with job support.",
-        description: "A fast-track 6-month course to turn you into a modern web developer. Focus on real-world projects and clean coding practices.",
-        whyLearn: "The demand for web developers is at an all-time high. Building your own apps and understanding the web is a superpower in the digital age.",
-        image: "/images/courses/short/programming/webdev.png",
-        hint: "web dev",
-        highlights: ["Modern Frontend", "Backend APIs", "Database Integration", "Project Deployment"],
-        whatYouWillLearn: ["Building responsive UIs", "Writing server-side logic", "Managing databases", "Using Git for version control"],
-        careerOpportunities: ["Frontend Developer", "Backend Developer", "Jr. Web Developer", "App Creator"],
-        syllabus: [
-            { title: "Frontend", icon: "Code", topics: ["HTML5/CSS3", "JavaScript ES6", "React Basics"] },
-            { title: "Backend", icon: "ServerCrash", topics: ["Node.js", "Express", "REST APIs"] },
-            { title: "Database", icon: "Settings", topics: ["MongoDB", "SQL Queries", "Schema Design"] }
+        tools: [
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "PyCharm", logo: "/images/tech/pycharm.png" },
+            { name: "Jupyter", logo: "/images/tech/jupyter.png" }
         ],
-        tools: [{ name: "React", logo: "/images/tech/react.svg" }, { name: "Node", logo: "/images/tech/node.svg" }],
-        faqs: [{ q: "Is this course for beginners?", a: "Yes, we start from the very basics of HTML and move to advanced concepts." }]
+        faqs: [{ q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." }]
     },
     'seo': {
         title: "SEO Course in Mumbai | Search Engine Optimization Training | Primezone",
@@ -322,7 +356,11 @@ export const courseDetails: { [key: string]: any } = {
             { title: "On-Page", icon: "FileText", topics: ["Meta Tags", "Content Optimization", "Internal Linking"] },
             { title: "Technical", icon: "Settings", topics: ["Sitemaps", "Robots.txt", "Page Speed", "Schema"] }
         ],
-        tools: [{ name: "Search Console", logo: "/images/tech/ga.svg" }],
+        tools: [
+            { name: "Search Console", logo: "/images/tech/ga.svg" },
+            { name: "Ahrefs", logo: "/images/tech/seo.svg" },
+            { name: "SEMrush", logo: "/images/tech/seo.svg" }
+        ],
         faqs: [{ q: "Do I need coding for SEO?", a: "Only basic HTML knowledge is needed, which is included in the course." }]
     },
     'coreldraw': {
@@ -340,7 +378,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Designing", icon: "Brush", topics: ["Tracing", "Logo Creation", "Brochure Layout"] },
             { title: "Production", icon: "FileText", topics: ["Color CMYK", "Exporting for Print", "Post-press basics"] }
         ],
-        tools: [{ name: "CorelDRAW", logo: "/images/tech/photoshop.svg" }], // Placeholder
+        tools: [
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.png" }
+        ],
         faqs: [{ q: "Who should join this?", a: "Anyone interested in print media and graphic design should learn CorelDRAW." }]
     }
 };

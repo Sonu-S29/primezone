@@ -231,24 +231,32 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             </section>
 
             {/* Tools You'll Master */}
-            <section className="py-16">
-                 <div className="container mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Industry Tools You'll Master</h2>
-                         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Get hands-on experience with the exact software and technologies used by professionals in top companies.</p>
-                    </div>
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                        {course.tools.map((tool: any, index: number) => (
-                            <div key={index} className="flex flex-col items-center gap-3 text-center group">
-                                <div className="p-4 bg-muted/50 rounded-2xl group-hover:bg-accent/10 transition-colors">
-                                    <Image src={tool.logo} alt={tool.name} width={64} height={64} className="h-12 w-12 md:h-16 md:w-16 object-contain grayscale group-hover:grayscale-0 transition-all" />
+            {course.tools && course.tools.length > 0 && (
+                <section className="py-16">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Industry Tools You'll Master</h2>
+                            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Get hands-on experience with the exact software and technologies used by professionals in top companies.</p>
+                        </div>
+                        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                            {course.tools.map((tool: any, index: number) => (
+                                <div key={index} className="flex flex-col items-center gap-3 text-center group">
+                                    <div className="p-4 bg-muted/50 rounded-2xl group-hover:bg-accent/10 transition-all duration-300 shadow-sm hover:shadow-md">
+                                        <Image 
+                                            src={tool.logo} 
+                                            alt={tool.name} 
+                                            width={64} 
+                                            height={64} 
+                                            className="h-12 w-12 md:h-16 md:w-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300" 
+                                        />
+                                    </div>
+                                    <p className="text-sm font-bold text-primary">{tool.name}</p>
                                 </div>
-                                <p className="text-sm font-bold text-primary">{tool.name}</p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             {/* FAQ Section */}
             {course.faqs && (
