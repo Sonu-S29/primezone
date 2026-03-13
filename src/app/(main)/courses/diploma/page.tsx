@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, BookOpen, CheckCircle } from "lucide-react";
@@ -6,8 +7,8 @@ import DiplomaCourseCard from "@/components/diploma-course-card";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Most Popular Diploma Courses",
-  description: "Most Popular Diploma Courses After 10th, 12th, and Graduation.",
+  title: "Best Diploma Courses in Mumbai | Certified Career Programs | Primezone",
+  description: "Explore the most popular Diploma Courses in Mumbai after 10th, 12th, and Graduation. Primezone offers certified training in Accounting, Programming, Design, and Digital Marketing with job placement in Mumbai.",
   alternates: {
     canonical: "/courses/diploma",
   },
@@ -18,7 +19,8 @@ export default function DiplomaCoursesPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">Most Popular Diploma Courses After 10th, 12th, and Graduation.</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline leading-tight">Job-Oriented Diploma Courses in Mumbai</h1>
+          <p className="mt-4 text-lg opacity-80 max-w-3xl mx-auto">Accelerate your career with our government-recognized diploma programs designed for students and graduates.</p>
         </div>
       </section>
 

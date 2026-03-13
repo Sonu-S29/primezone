@@ -1,9 +1,10 @@
+
 import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Primezone Computer Education | Vile Parle & Jogeshwari",
-  description: "Unlock Your Potential in the Digital World. Primezone offers expert-led courses in programming, design, accounting, and more. Start your tech career with us today!",
+  title: "Primezone Computer Education | Best Computer Classes in Mumbai",
+  description: "Join the best computer classes in Mumbai at Primezone Computer Education. Expert-led training in Data Analytics, Full-Stack Dev, Graphic Design, and Digital Marketing with 100% placement assistance in Jogeshwari and Vile Parle.",
   alternates: {
     canonical: "/",
   },
