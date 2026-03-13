@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
-import { CheckCircle, Clock, BookOpen, Download, Filter } from "lucide-react";
+import { CheckCircle, Clock, BookOpen, Download, Filter, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import BrochureDownloadForm from "@/components/brochure-download-form";
@@ -98,16 +98,20 @@ export default function ShortTermCourseGrid({ courseData }: { courseData: ShortT
                       className=""
                   />
               </div>
-              <CardHeader className="space-y-1">
+              <CardHeader className="space-y-1 pb-2">
                   <div className="flex justify-between items-center">
+                       <div className="flex items-center text-xs font-medium text-muted-foreground">
+                          <Clock className="mr-1 h-3 w-3" />
+                          {course.duration}
+                      </div>
                       <Dialog>
                           <DialogTrigger asChild>
-                              <Button variant="outline" size="sm">View Topics</Button>
+                              <Button variant="ghost" size="sm" className="h-7 text-xs px-2 text-accent hover:text-accent/80">View Topics</Button>
                           </DialogTrigger>
                           <DialogContent className="bg-white/80 backdrop-blur-sm">
                               <DialogHeader>
                                   <DialogTitle>{course.title}</DialogTitle>
-                                  <DialogDescription>Key topics you will learn:</DialogDescription>
+                                  <DialogDescription>Key topics you will learn in this certification program:</DialogDescription>
                               </DialogHeader>
                               <ul className="space-y-2 pt-2">
                                   {course.topics.map(topic => (
@@ -119,11 +123,11 @@ export default function ShortTermCourseGrid({ courseData }: { courseData: ShortT
                               </ul>
                               <CardFooter className="flex-col items-stretch gap-2 p-0 pt-4">
                                    <Button asChild>
-                                      <Link href={`/courses/details/${course.slug}`}>Learn More</Link>
+                                      <Link href={`/courses/details/${course.slug}`}>Go to Detailed Page</Link>
                                   </Button>
                                   <Dialog>
                                   <DialogTrigger asChild>
-                                      <Button variant="secondary"><Download className="mr-2"/> Download Brochure</Button>
+                                      <Button variant="secondary"><Download className="mr-2 h-4 w-4"/> Download Brochure</Button>
                                   </DialogTrigger>
                                   <DialogContent>
                                       <DialogHeader>
@@ -138,24 +142,25 @@ export default function ShortTermCourseGrid({ courseData }: { courseData: ShortT
                               </CardFooter>
                           </DialogContent>
                       </Dialog>
-                       <div className="flex items-center text-xs font-medium text-muted-foreground">
-                          <Clock className="mr-1 h-3 w-3" />
-                          Duration: {course.duration}
-                      </div>
                   </div>
-                  <CardTitle className="text-xl font-bold pt-2">{course.title}</CardTitle>
-                  <CardDescription>{course.description}</CardDescription>
+                  <CardTitle className="text-xl font-bold pt-1">{course.title}</CardTitle>
+                  <CardDescription className="line-clamp-2 min-h-[40px]">{course.description}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="pt-0">
+                  <Button asChild variant="outline" size="sm" className="w-full mt-2 group border-accent text-accent hover:bg-accent hover:text-white">
+                      <Link href={`/courses/details/${course.slug}`}>
+                          Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                  </Button>
               </CardContent>
-              <CardFooter className="bg-blue-50 text-blue-900 p-3 rounded-b-2xl flex justify-between items-center text-sm font-medium">
+              <CardFooter className="bg-blue-50 text-blue-900 p-3 rounded-b-2xl flex justify-between items-center text-sm font-medium mt-auto">
                   <div className="flex items-center gap-2">
                       <BookOpen className="h-4 w-4" />
                       <span>{course.modules} Modules</span>
                   </div>
                   <div className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4" />
-                      <span>{course.topics.length} Total Topics</span>
+                      <span>{course.topics.length} Topics</span>
                   </div>
               </CardFooter>
           </Card>

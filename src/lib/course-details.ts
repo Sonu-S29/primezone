@@ -164,6 +164,42 @@ export const courseDetails: { [key: string]: any } = {
     },
 
     // --- SHORT TERM COURSES ---
+    'office-automation': {
+        title: "Office Automation Course in Mumbai | MS Office & Internet Skills | Primezone",
+        metaDescription: "Best Office Automation Course in Mumbai. Learn MS Word, Excel, PowerPoint, and Web usage. Job-oriented training in Jogeshwari East & West.",
+        description: "Master the essential software used in every office environment. Our 2-month Office Automation course turns you into a productive professional.",
+        whyLearn: "Office automation is the most basic yet vital skill for any white-collar job. Being fast with Word and Excel is non-negotiable in 2025.",
+        image: "/images/courses/short/account/oa.png",
+        hint: "office software",
+        highlights: ["MS Word Mastery", "Excel Foundations", "PPT Presentations", "Internet Productivity"],
+        whatYouWillLearn: ["Creating professional documents", "Basic data management in Excel", "Designing impact presentations", "Efficient email and web usage"],
+        careerOpportunities: ["Front Desk Executive", "Administrative Assistant", "Office Coordinator", "Data Entry Specialist"],
+        syllabus: [
+            { title: "Document Handling", icon: "MonitorCheck", topics: ["MS Word Basics", "Mail Merge", "Formatting"] },
+            { title: "Data Handling", icon: "BarChart", topics: ["Excel Functions", "Filtering", "Chart Basics"] },
+            { title: "Web Tools", icon: "Globe", topics: ["Email Etiquette", "Cloud Storage", "Internet Security"] }
+        ],
+        tools: [{ name: "MS Office", logo: "/images/tech/excel.svg" }],
+        faqs: [{ q: "What is the duration?", a: "The course is 2 months long with flexible batch timings." }]
+    },
+    'ms-office': {
+        title: "MS Office Course in Mumbai | Word, Excel, PowerPoint Training | Primezone",
+        metaDescription: "Join the best MS Office training in Mumbai. Master Microsoft Word, Excel, and PPT for business use. 100% practical classes at Primezone.",
+        description: "A deep dive into the Microsoft Office Suite. This course focuses on the advanced features of Word, Excel, and PowerPoint required for business operations.",
+        whyLearn: "MS Office is the global standard for documentation and analysis. Mastering these tools ensures you can work in any office, anywhere in the world.",
+        image: "/images/courses/short/account/msoffice.png",
+        hint: "ms office",
+        highlights: ["Business Documentation", "Data Analysis", "Presentation Skills", "Outlook & OneNote"],
+        whatYouWillLearn: ["Advanced Word Formatting", "Excel Pivot Tables", "Animated Slide Design", "Business Communication tools"],
+        careerOpportunities: ["Back Office Executive", "Secretary", "Project Coordinator", "Support Assistant"],
+        syllabus: [
+            { title: "Word for Business", icon: "FileText", topics: ["Styles", "References", "Table of Contents"] },
+            { title: "Excel for Work", icon: "BarChart", topics: ["Vlookup", "Countif", "Sorting & Filtering"] },
+            { title: "Pro Presentations", icon: "LayoutTemplate", topics: ["Slide Masters", "Infographics", "Transitions"] }
+        ],
+        tools: [{ name: "Word", logo: "/images/tech/excel.svg" }],
+        faqs: [{ q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate upon completion." }]
+    },
     'web-designing': {
         title: "Web Designing Course in Mumbai | HTML, CSS, JavaScript Training | Primezone",
         metaDescription: "Best Web Designing Course in Mumbai. Learn to create responsive websites using HTML, CSS, and JS. Practical training in Jogeshwari and Vile Parle.",
@@ -236,24 +272,6 @@ export const courseDetails: { [key: string]: any } = {
         tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
         faqs: [{ q: "Can Excel users learn this?", a: "Yes, Power BI is a natural next step for Advanced Excel users." }]
     },
-    'autocad': {
-        title: "AutoCAD 2D-3D Course in Mumbai | Design & Drafting Training | Primezone",
-        metaDescription: "Best AutoCAD Course in Mumbai. Learn 2D drafting and 3D modeling for Civil and Mechanical engineering. Practical training with certification.",
-        description: "Master the industry-standard software for engineering and architectural drafting. Learn both 2D layouts and 3D models.",
-        whyLearn: "AutoCAD is an essential skill for engineers, architects, and interior designers. It's the primary tool for creating blueprints and technical drawings.",
-        image: "/images/courses/short/graphics/AutoCAD.png",
-        hint: "autocad drawing",
-        highlights: ["2D Drafting", "3D Modeling", "Technical Drawings", "Project Assignments"],
-        whatYouWillLearn: ["Creating floor plans", "Elevation and Section views", "3D wireframes and rendering", "Plotting and scaling"],
-        careerOpportunities: ["Draftsman", "Design Engineer", "Architectural Assistant", "Interior Planner"],
-        syllabus: [
-            { title: "2D Basics", icon: "Palette", topics: ["Draw Commands", "Modify Tools", "Layers & Blocks"] },
-            { title: "Annotation", icon: "FileText", topics: ["Dimensioning", "Text Styles", "Tables"] },
-            { title: "3D Modeling", icon: "Rocket", topics: ["3D Extrude", "Materials", "Rendering"] }
-        ],
-        tools: [{ name: "AutoCAD", logo: "/images/tech/excel.svg" }], // Using a placeholder tech logo
-        faqs: [{ q: "Is it suitable for civil engineers?", a: "Yes, we have specialized modules for Civil, Mechanical, and Interior design." }]
-    },
     'python': {
         title: "Python Programming Course in Mumbai | Beginner to Advanced Training | Primezone",
         metaDescription: "Learn Python in Mumbai. Master syntax, data structures, and automation. Join the best Python coding classes at Primezone with placement assistance.",
@@ -270,7 +288,59 @@ export const courseDetails: { [key: string]: any } = {
         ],
         tools: [{ name: "Python", logo: "/images/tech/python.svg" }],
         faqs: [{ q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." }]
+    },
+    'web-development': {
+        title: "Web Development Course in Mumbai | Full Stack MERN Training | Primezone",
+        metaDescription: "Join the best Web Development course in Mumbai. Learn HTML, CSS, JS, Node, and React. 100% practical training with job support.",
+        description: "A fast-track 6-month course to turn you into a modern web developer. Focus on real-world projects and clean coding practices.",
+        whyLearn: "The demand for web developers is at an all-time high. Building your own apps and understanding the web is a superpower in the digital age.",
+        image: "/images/courses/short/programming/webdev.png",
+        hint: "web dev",
+        highlights: ["Modern Frontend", "Backend APIs", "Database Integration", "Project Deployment"],
+        whatYouWillLearn: ["Building responsive UIs", "Writing server-side logic", "Managing databases", "Using Git for version control"],
+        careerOpportunities: ["Frontend Developer", "Backend Developer", "Jr. Web Developer", "App Creator"],
+        syllabus: [
+            { title: "Frontend", icon: "Code", topics: ["HTML5/CSS3", "JavaScript ES6", "React Basics"] },
+            { title: "Backend", icon: "ServerCrash", topics: ["Node.js", "Express", "REST APIs"] },
+            { title: "Database", icon: "Settings", topics: ["MongoDB", "SQL Queries", "Schema Design"] }
+        ],
+        tools: [{ name: "React", logo: "/images/tech/react.svg" }, { name: "Node", logo: "/images/tech/node.svg" }],
+        faqs: [{ q: "Is this course for beginners?", a: "Yes, we start from the very basics of HTML and move to advanced concepts." }]
+    },
+    'seo': {
+        title: "SEO Course in Mumbai | Search Engine Optimization Training | Primezone",
+        metaDescription: "Best SEO Course in Mumbai. Learn On-Page, Off-Page, and Technical SEO. Master Google ranking factors at Primezone Computer Education.",
+        description: "Learn how to get any website to rank on the first page of Google. This course covers the science and art of Search Engine Optimization.",
+        whyLearn: "SEO is the most sustainable way to get traffic. Companies save millions in ad spend by hiring skilled SEO experts.",
+        image: "/images/courses/short/dm/SEO.png",
+        hint: "seo audit",
+        highlights: ["Google Algorithm", "Keyword Research", "Link Building", "Technical SEO"],
+        whatYouWillLearn: ["Finding high-volume keywords", "Optimizing content for users and bots", "Building high-quality backlinks", "SEO Audit techniques"],
+        careerOpportunities: ["SEO Analyst", "Digital Marketer", "Content Strategist", "Search Manager"],
+        syllabus: [
+            { title: "Foundations", icon: "Search", topics: ["How Search Works", "Keyword Discovery", "Competitor Analysis"] },
+            { title: "On-Page", icon: "FileText", topics: ["Meta Tags", "Content Optimization", "Internal Linking"] },
+            { title: "Technical", icon: "Settings", topics: ["Sitemaps", "Robots.txt", "Page Speed", "Schema"] }
+        ],
+        tools: [{ name: "Search Console", logo: "/images/tech/ga.svg" }],
+        faqs: [{ q: "Do I need coding for SEO?", a: "Only basic HTML knowledge is needed, which is included in the course." }]
+    },
+    'coreldraw': {
+        title: "CorelDRAW Course in Mumbai | Vector Graphic Design Training | Primezone",
+        metaDescription: "Learn CorelDRAW in Mumbai. Master logo design, banners, and print layouts. Top-rated design training at Primezone in Jogeshwari.",
+        description: "Master the most popular vector design software for the print industry. Ideal for creating logos, brochures, and branding material.",
+        whyLearn: "CorelDRAW is widely used in the advertising and printing industry in India. It's fast, powerful, and essential for print designers.",
+        image: "/images/courses/short/graphics/CorelDRAW.png",
+        hint: "vector art",
+        highlights: ["Logo Design", "Print Layouts", "Typography", "Vector Illustration"],
+        whatYouWillLearn: ["Creating vector graphics", "Designing for print media", "Color theory for printing", "Advanced tool mastery"],
+        careerOpportunities: ["DTP Operator", "Graphic Designer", "Logo Artist", "Print Media Specialist"],
+        syllabus: [
+            { title: "Interface", icon: "Palette", topics: ["Workspace Setup", "Tool Basics", "Object Management"] },
+            { title: "Designing", icon: "Brush", topics: ["Tracing", "Logo Creation", "Brochure Layout"] },
+            { title: "Production", icon: "FileText", topics: ["Color CMYK", "Exporting for Print", "Post-press basics"] }
+        ],
+        tools: [{ name: "CorelDRAW", logo: "/images/tech/photoshop.svg" }], // Placeholder
+        faqs: [{ q: "Who should join this?", a: "Anyone interested in print media and graphic design should learn CorelDRAW." }]
     }
-    // Note: I've populated the main ones. For any remaining minor slugs, 
-    // the dynamic page should have a fallback or we can add them as needed.
 };
