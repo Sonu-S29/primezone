@@ -8,7 +8,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "DCA is the perfect foundation for any professional career. It combines essential administrative skills with modern AI tools and creative design, making you a versatile candidate for various industries in Mumbai's competitive job market.",
         image: "/images/courses/diploma/dca.webp",
         hint: "computer application",
-        highlights: ["MS Office + AI Tools", "Tally Prime & GST", "Advanced Excel Mastery", "Graphic & Web Designing"],
+        highlights: ["MS Office + AI Tools", "Tally Prime & GST", "Advanced Excel Mastery", "Graphic & Web Designing", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: [
             "Mastery of MS Office (Word, Powerpoint, Excel) enhanced with AI Tools.",
             "Professional Accounting with Tally Prime and GST Compliance.",
@@ -41,23 +41,22 @@ export const courseDetails: { [key: string]: any } = {
             { 
                 title: "WEB DESIGNING", 
                 icon: "Globe", 
-                topics: ["Html 5, CSS", "JavaScript", "WordPress", "Web Hosting, Domain", "Assignment & Projects"] 
+                topics: ["Html 5, CSS", "JavaScript", "Web Hosting, Domain", "Assignment & Projects"] 
             }
         ],
         tools: [
-            { name: "MS Word", logo: "/images/tech/excel.svg" },
+            { name: "MS Word", logo: "/images/tech/word.svg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
             { name: "GST", logo: "/images/tech/gst.jpg" },
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
             { name: "InDesign", logo: "/images/tech/indesign.svg" },
-            { name: "CorelDRAW", logo: "/images/tech/coreldraw.png" },
-            { name: "Canva", logo: "/images/tech/canva.png" },
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
+            { name: "Canva", logo: "/images/tech/canva.svg" },
             { name: "HTML5", logo: "/images/tech/html.svg" },
             { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" },
-            { name: "WordPress", logo: "/images/tech/wordpress.svg" }
+            { name: "JavaScript", logo: "/images/tech/js.svg" }
         ],
         faqs: [
             { q: "Is DCA a government-recognized course?", a: "Yes, Primezone provides government-recognized certification for the DCA program." },
@@ -67,58 +66,126 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'financial-management': {
-        title: "Diploma In Financial & Management Course in Mumbai | Primezone",
-        metaDescription: "Master Finance and Management in Mumbai. Comprehensive training in Accounting, Tally, Taxation, and Share Market. Enroll at Primezone today.",
-        description: "This advanced diploma focuses on the financial backbone of businesses, covering accounting, taxation, auditing, and even share market fundamentals.",
-        whyLearn: "Financial management is critical for every business. Mastering Tally, GST, and investment strategies ensures high-paying roles in finance departments across Mumbai's corporate sectors.",
+        title: "Diploma In Financial Accounting & Management (DFAM) Course in Mumbai | Primezone",
+        metaDescription: "Master Financial Accounting and Management in Mumbai. Comprehensive training in Tally Prime, GST, Taxation, and Share Market. Enroll at Primezone today for job success.",
+        description: "The Diploma in Financial Accounting & Management (DFAM) is a specialized 1-year program designed to create expert accounting professionals equipped with modern taxation and management skills.",
+        whyLearn: "In Mumbai's corporate hub, every business requires skilled accountants who can handle GST, Income Tax, and financial reports. DFAM provides the practical edge needed to manage business finances and investments effectively.",
         image: "/images/courses/diploma/dfam.webp",
         hint: "financial management",
-        highlights: ["Tally Prime + GST", "Taxation Auditing", "Management Skills", "Share Market Training"],
-        whatYouWillLearn: ["Financial Accounting Principles", "Direct & Indirect Taxes", "ITR & PAN Application", "Managing Business Finance", "Stock Market Trading Basics"],
-        careerOpportunities: ["Tax Consultant", "Finance Manager", "Stock Trader", "Auditor", "Senior Accountant"],
+        highlights: ["Office Automation Basics", "Tally Prime & GST Mastery", "Share Market Trading", "Personality Development", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Advanced Financial Accounting with Tally Prime and live GST compliance.",
+            "Professional Data Analysis and MIS reporting using Excel.",
+            "Detailed understanding of Direct & Indirect Taxation (ITR, TDS, TCS).",
+            "Basics of Share Market, trading instruments, and technical analysis.",
+            "Soft skills and Personality Development for successful corporate careers."
+        ],
+        careerOpportunities: ["Accounts Executive", "GST Executive", "Finance Assistant", "Tax Assistant", "Payroll Executive", "Jnr. Accountant", "Banking Assistant"],
         syllabus: [
-            { title: "Accounting & Tally", icon: "Landmark", topics: ["Golden Rules", "Voucher Entry", "GST Compliance", "Payroll"] },
-            { title: "Taxation & Auditing", icon: "FileText", topics: ["Income Tax Framework", "ITR Filing", "GST Returns", "Audit Procedures"] },
-            { title: "Management Skills", icon: "Users", topics: ["Business Finance", "Project Reports", "Export/Import", "Office Management"] },
-            { title: "Share Market", icon: "BarChart", topics: ["IPOs", "Mutual Funds", "Derivatives", "Trading Strategies"] }
+            { 
+                title: "OFFICE AUTOMATION", 
+                icon: "MonitorCheck", 
+                topics: ["Windows Fundamentals", "Microsoft Word", "Microsoft Powerpoint", "Microsoft Excel", "Internet Resources", "Assignment & Projects"] 
+            },
+            { 
+                title: "ADVANCE EXCEL", 
+                icon: "BarChart", 
+                topics: ["Advance Formula & Functions", "Pivot Tables & Charts", "V lookup, H lookup, X lookup", "Data Analysis", "What if Analysis", "Charts & Dashboard", "MIS Reporting", "Data Protection", "Track Changes & Macros", "Assignment & Projects"] 
+            },
+            { 
+                title: "TALLY PRIME (GST)", 
+                icon: "FileText", 
+                topics: ["Accounting in Tally Prime", "Purchase, Sales, Journal Entries", "Payment, Receipt Voucher", "Contra Vouchers, Credit, Debit Notes", "Inventory Management", "GST Concept, Types of GST", "GST Transactions", "GST Returns, TDS, TCS", "Assignment & Projects"] 
+            },
+            { 
+                title: "SHARE MARKET", 
+                icon: "BarChart", 
+                topics: ["Basics of Share Market", "Stock Market Instruments", "Trading & Investment Basics", "Technical Analysis", "Risk Management", "Assignment & Projects"] 
+            },
+            { 
+                title: "TAXATION", 
+                icon: "Landmark", 
+                topics: ["Basics of Taxation", "Income Tax", "Filing of Income Tax Return (ITR)", "Goods & Services Tax (GST)", "TDS & TCS", "Assignment & Projects"] 
+            },
+            { 
+                title: "PERSONALITY DEVELOPMENT", 
+                icon: "Users", 
+                topics: ["Confidence Building", "Communication Skills", "Grooming & Etiquette", "Leadership & Team Skills", "Emotional Intelligence & Mindset", "Career & Interview Preparation", "Assignment & Projects"] 
+            }
         ],
         tools: [
+            { name: "MS Word", logo: "/images/tech/word.svg" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
+            { name: "MS Powerpoint", logo: "/images/tech/p.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "Income Tax Portal", logo: "/images/tech/tax.png" },
-            { name: "GST Portal", logo: "/images/tech/gst.jpg" }
+            { name: "GST", logo: "/images/tech/gst.jpg" },
+            { name: "Income Tax", logo: "/images/tech/tax.png" }
         ],
         faqs: [
-            { q: "Do you teach live taxation cases?", a: "Yes, we use real-world scenarios for GST and Income Tax training." },
-            { q: "Is this course suitable for commerce students?", a: "It is ideal for B.Com and BMS students looking for practical job skills." }
+            { q: "What is the duration of the DFAM course?", a: "The Diploma in Financial Accounting & Management is a 1-year comprehensive program." },
+            { q: "Does the course cover Share Market basics?", a: "Yes, Module 4 is dedicated to the basics of the share market, including technical analysis and trading instruments." },
+            { q: "Who can enroll in this accounting course?", a: "This course is ideal for 10th and 12th pass students, graduates from commerce backgrounds, and job seekers in the finance sector." },
+            { q: "Is there placement assistance for accounting roles?", a: "Yes, Primezone provides 100% placement assistance for roles like Accounts Executive, GST Executive, and Banking Assistant." }
         ]
     },
     'programming-course': {
         title: "Diploma In Programming Course in Mumbai | C, C++, Java, Python | Primezone",
         metaDescription: "Learn to code in Mumbai. Master Python, Java, C++, and Web Development. Practical coding classes with placement assistance at Primezone Computer Education.",
-        description: "Our Diploma in Programming is designed to turn beginners into expert coders by covering the world's most popular programming languages.",
-        whyLearn: "Software development is the highest-paying industry globally. Building logic in C/C++ and mastering Python and Java opens doors to top tech companies in Mumbai and Andheri's IT hubs.",
+        description: "Our Diploma in Programming is a rigorous 1-year journey designed to turn absolute beginners into proficient software developers by mastering core logic and modern stacks.",
+        whyLearn: "Coding is the language of the future. By mastering C, Python, and Java, you gain the skills to build apps, automate tasks, and enter high-paying tech roles in Mumbai's thriving IT industry.",
         image: "/images/courses/diploma/dpc.webp",
         hint: "programming course",
-        highlights: ["C & C++ with DSA", "Python & Java Mastery", "Full Stack Development", "Live Coding Projects"],
-        whatYouWillLearn: ["Algorithm Building", "Object-Oriented Programming", "Server-side scripting", "Database Management", "API Integration"],
-        careerOpportunities: ["Software Developer", "Python Developer", "Java Developer", "Web Developer", "Backend Engineer"],
+        highlights: ["Core Logic with C & C++", "Python & Java Specialization", "Database & SQL Training", "Live Project Development", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Building strong programming foundations using C and C++.",
+            "Object-Oriented Programming (OOP) concepts in depth.",
+            "Advanced application development using Python and Java.",
+            "Frontend and Backend integration for web applications.",
+            "Database management and efficient SQL querying."
+        ],
+        careerOpportunities: ["Software Developer", "Python Developer", "Java Developer", "Junior Web Developer", "Database Administrator", "Backend Engineer", "Coding Instructor"],
         syllabus: [
-            { title: "Fundamentals", icon: "Code", topics: ["C Syntax", "C++ OOPS", "Data Structures", "Algorithms"] },
-            { title: "Python Programming", icon: "Code", topics: ["Core Python", "Operators", "Functions", "File Handling"] },
-            { title: "Java Technologies", icon: "Code", topics: ["Core Java", "Advanced Java", "Swing", "JDBC"] },
-            { title: "Stack Choice", icon: "Rocket", topics: ["MERN Stack", "ASP.NET", "Database MySQL/MongoDB"] }
+            { 
+                title: "C & C++ PROGRAMMING", 
+                icon: "Code", 
+                topics: ["Introduction to Logic", "C Syntax & Operators", "Control Statements", "Functions & Pointers", "OOPS Concepts in C++", "Inheritance & Polymorphism", "File Handling", "Assignment & Projects"] 
+            },
+            { 
+                title: "PYTHON PROGRAMMING", 
+                icon: "Code", 
+                topics: ["Python Setup & Basics", "Data Types & Variables", "Control Flow & Loops", "Functions & Modules", "File I/O Operations", "Exception Handling", "Introduction to Libraries", "Assignment & Projects"] 
+            },
+            { 
+                title: "JAVA (CORE & ADVANCE)", 
+                icon: "Code", 
+                topics: ["Java Environment", "Classes & Objects", "String Handling", "Multithreading", "GUI with Swing", "JDBC & Database Connectivity", "Servlets & JSP", "Assignment & Projects"] 
+            },
+            { 
+                title: "WEB TECHNOLOGIES", 
+                icon: "Globe", 
+                topics: ["HTML5 & CSS3 Basics", "JavaScript Fundamentals", "Integrating Frontend with Backend", "Web Hosting & Deployment", "Assignment & Projects"] 
+            },
+            { 
+                title: "DATABASE MANAGEMENT", 
+                icon: "Settings", 
+                topics: ["Introduction to SQL", "MySQL Fundamentals", "DDL & DML Queries", "Joins & Constraints", "Stored Procedures", "Assignment & Projects"] 
+            }
         ],
         tools: [
             { name: "VS Code", logo: "/images/tech/vscode.svg" },
             { name: "Python", logo: "/images/tech/python.svg" },
             { name: "Java", logo: "/images/tech/java.svg" },
             { name: "C++", logo: "/images/tech/cplusplus.svg" },
-            { name: "MySQL", logo: "/images/tech/mysql.svg" }
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" }
         ],
         faqs: [
-            { q: "Which language do we start with?", a: "We start with C to build strong logic foundations before moving to advanced languages." },
-            { q: "Do you provide internship support?", a: "Yes, this diploma includes an integrated internship program." }
+            { q: "Is prior coding experience required?", a: "No, we start from Windows fundamentals and basic logic before diving into complex programming languages." },
+            { q: "Which programming languages will I master?", a: "You will master C, C++, Python, and Java (both Core and Advanced)." },
+            { q: "Do you provide real-world projects?", a: "Yes, every module ends with a project or assignment to ensure practical understanding of the concepts." },
+            { q: "What kind of jobs can I get after this course?", a: "You can apply for roles like Software Developer, Backend Developer, Python/Java Developer, and Junior Web Developer." }
         ]
     },
     'graphic-animation': {
@@ -128,19 +195,19 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "The creative economy is booming. Skilled animators and designers are needed for social media, film, architecture, and advertising industries in Mumbai.",
         image: "/images/courses/diploma/dga.webp",
         hint: "graphic animation",
-        highlights: ["Creative Suite Mastery", "3D Modeling & Animation", "Video & Sound Editing", "Portfolio Development"],
+        highlights: ["Creative Suite Mastery", "3D Modeling & Animation", "Video & Sound Editing", "Portfolio Development", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Vector Illustration", "Image Retouching", "Motion Graphics", "3D Interior Design", "Sequence Editing"],
         careerOpportunities: ["Graphic Designer", "3D Modeler", "Video Editor", "Animator", "UI Designer"],
         syllabus: [
             { title: "Graphic Design", icon: "Palette", topics: ["CorelDRAW", "Photoshop", "Illustrator", "InDesign"] },
-            { title: "Animation", icon: "Code", topics: ["Adobe Animate", "Frame by Frame", "Motion Tweens"] },
+            { title: "Animation", icon: "Bot", topics: ["Adobe Animate", "Frame by Frame", "Motion Tweens"] },
             { title: "3D Design", icon: "Rocket", topics: ["3DS MAX", "Interior Designing", "Materials & Lighting"] },
             { title: "Post Production", icon: "LayoutTemplate", topics: ["Video Editing", "Sound Effects", "Transitions"] }
         ],
         tools: [
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
-            { name: "CorelDRAW", logo: "/images/tech/coreldraw.png" },
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
             { name: "3ds Max", logo: "/images/tech/p.svg" },
             { name: "Premiere Pro", logo: "/images/tech/premiere.svg" }
         ],
@@ -156,7 +223,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Cybersecurity is a top priority for every government and corporation. Skilled ethical hackers are in massive demand to protect sensitive data worldwide.",
         image: "/images/courses/diploma/deh.webp",
         hint: "ethical hacking",
-        highlights: ["Network Scanning", "System Hacking", "Malware Analysis", "Sniffing & Social Engineering"],
+        highlights: ["Network Scanning", "System Hacking", "Malware Analysis", "Sniffing & Social Engineering", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Penetration Testing Phases", "Vulnerability Assessment", "Securing Web Servers", "SQL Injection Countermeasures", "Firewall Evasion"],
         careerOpportunities: ["Cybersecurity Analyst", "Penetration Tester", "Security Consultant", "Network Engineer"],
         syllabus: [
@@ -169,8 +236,7 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Kali Linux", logo: "/images/tech/linux.svg" },
             { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
             { name: "Nmap", logo: "/images/tech/nmap.svg" },
-            { name: "Metasploit", logo: "/images/tech/Metasploit.svg" },
-            { name: "Burp Suite", logo: "/images/tech/burp.png" }
+            { name: "Metasploit", logo: "/images/tech/Metasploit.svg" }
         ],
         faqs: [
             { q: "Is this course legal?", a: "Yes, we teach Ethical Hacking for defense and security purposes only." },
@@ -184,7 +250,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Businesses are moving online. Knowing how to drive traffic and convert leads is the most valuable business skill in 2025.",
         image: "/images/courses/diploma/ddm.webp",
         hint: "digital marketing",
-        highlights: ["100% Practical Training", "Live Ad Campaigns", "Government Certified", "Placement Assistance"],
+        highlights: ["100% Practical Training", "Live Ad Campaigns", "Government Certified", "Placement Assistance", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Search Engine Optimization (SEO)", "Social Media Marketing (SMM)", "Pay Per Click (PPC)", "WordPress Website Building", "Data Analytics"],
         careerOpportunities: ["SEO Specialist", "Social Media Manager", "Performance Marketer", "Content Strategist"],
         syllabus: [
@@ -212,7 +278,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Full-stack developers are highly sought after because they can build entire products independently. This course makes you industry-ready for Mumbai's tech jobs.",
         image: "/images/courses/diploma/fullstack.webp",
         hint: "full stack",
-        highlights: ["MERN Stack", "Java Technology", "Live Projects", "Integrated Internship"],
+        highlights: ["MERN Stack", "Java Technology", "Live Projects", "Integrated Internship", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Responsive UI Design", "Building REST APIs", "Database Architecture", "Server-side Rendering", "Deployment"],
         careerOpportunities: ["Full-Stack Developer", "Front-End Engineer", "Back-End Developer", "App Developer"],
         syllabus: [
@@ -240,7 +306,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Data is the new oil. Companies across all sectors need experts who can analyze trends and provide actionable business insights in 2025.",
         image: "/images/courses/diploma/dataanalysis.webp",
         hint: "data analytics",
-        highlights: ["Power BI & Tableau", "Advanced Excel", "Python for Data", "Live Case Studies"],
+        highlights: ["Power BI & Tableau", "Advanced Excel", "Python for Data", "Live Case Studies", "Learning Mode: Offline | Hybrid | Online"],
          whatYouWillLearn: ["Data Visualization", "Statistical Analysis", "SQL Querying", "Cleaning Messy Data", "Automating Reports"],
         careerOpportunities: ["Data Analyst", "BI Developer", "Market Researcher", "MIS Specialist"],
         syllabus: [
@@ -269,7 +335,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Office automation is the most basic yet vital skill for any white-collar job in Mumbai. Being fast with Word and Excel is non-negotiable in 2025.",
         image: "/images/courses/short/account/oa.png",
         hint: "office software",
-        highlights: ["MS Word Mastery", "Excel Foundations", "PPT Presentations", "Internet Productivity"],
+        highlights: ["MS Word Mastery", "Excel Foundations", "PPT Presentations", "Internet Productivity", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Creating professional documents", "Basic data management in Excel", "Designing impact presentations", "Efficient email and web usage"],
         careerOpportunities: ["Front Desk Executive", "Administrative Assistant", "Office Coordinator", "Data Entry Specialist"],
         syllabus: [
@@ -278,9 +344,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Web Tools", icon: "Globe", topics: ["Email Etiquette", "Cloud Storage", "Internet Security"] }
         ],
         tools: [
-            { name: "Word", logo: "/images/tech/excel.svg" },
+            { name: "Word", logo: "/images/tech/word.svg" },
             { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "PowerPoint", logo: "/images/tech/excel.svg" }
+            { name: "PowerPoint", logo: "/images/tech/p.svg" }
         ],
         faqs: [{ q: "What is the duration?", a: "The course is 2 months long with flexible batch timings." }]
     },
@@ -291,7 +357,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "MS Office is the global standard for documentation and analysis. Mastering these tools ensures you can work in any office, anywhere in Mumbai or beyond.",
         image: "/images/courses/short/account/msoffice.png",
         hint: "ms office",
-        highlights: ["Business Documentation", "Data Analysis", "Presentation Skills", "Outlook & OneNote"],
+        highlights: ["Business Documentation", "Data Analysis", "Presentation Skills", "Outlook & OneNote", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Advanced Word Formatting", "Excel Pivot Tables", "Animated Slide Design", "Business Communication tools"],
         careerOpportunities: ["Back Office Executive", "Secretary", "Project Coordinator", "Support Assistant"],
         syllabus: [
@@ -300,10 +366,9 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Pro Presentations", icon: "LayoutTemplate", topics: ["Slide Masters", "Infographics", "Transitions"] }
         ],
         tools: [
-            { name: "Word", logo: "/images/tech/excel.svg" },
+            { name: "Word", logo: "/images/tech/word.svg" },
             { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "PowerPoint", logo: "/images/tech/excel.svg" },
-            { name: "Outlook", logo: "/images/tech/excel.svg" }
+            { name: "PowerPoint", logo: "/images/tech/p.svg" }
         ],
         faqs: [{ q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate upon completion." }]
     },
@@ -314,7 +379,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Excel is the world's most common business tool. Advanced knowledge can save you hours of work and boost your salary prospects significantly.",
         image: "/images/courses/short/account/advexcel.png",
         hint: "excel spreadsheet",
-        highlights: ["Advanced Formulas", "MIS Reporting", "Macros & VBA", "Data Visualization"],
+        highlights: ["Advanced Formulas", "MIS Reporting", "Macros & VBA", "Data Visualization", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Complex logical functions", "Creating dynamic charts", "Automating tasks with Macros", "Data cleaning techniques"],
         careerOpportunities: ["MIS Executive", "Operations Analyst", "Back Office Head", "Financial Analyst"],
         syllabus: [
@@ -334,7 +399,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Every business in India needs an accountant who knows Tally and GST. This is a recession-proof skill with immediate job opportunities in Mumbai.",
         image: "/images/courses/short/account/tallygst.png",
         hint: "accounting tally",
-        highlights: ["Tally Prime Mastery", "GST Compliance", "Live Voucher Entry", "Bank Reconciliation"],
+        highlights: ["Tally Prime Mastery", "GST Compliance", "Live Voucher Entry", "Bank Reconciliation", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Day-to-day accounting entries", "Generating GST invoices", "Inventory management", "Payroll and TDS handling"],
         careerOpportunities: ["Tally Operator", "Junior Accountant", "GST Consultant", "Accounts Executive"],
         syllabus: [
@@ -344,7 +409,8 @@ export const courseDetails: { [key: string]: any } = {
         ],
         tools: [
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "Excel", logo: "/images/tech/excel.svg" }
+            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "GST", logo: "/images/tech/gst.jpg" }
         ],
         faqs: [{ q: "Is the software provided?", a: "We train you on the latest Tally Prime software in our labs." }]
     },
@@ -355,7 +421,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "The tech industry is always looking for skilled developers. This course gives you the practical experience needed to build a career in web development.",
         image: "/images/courses/short/programming/webdev.png",
         hint: "web development",
-        highlights: ["Modern Frameworks", "Full-Stack Concepts", "Deployment Mastery", "Real-world Projects"],
+        highlights: ["Modern Frameworks", "Full-Stack Concepts", "Deployment Mastery", "Real-world Projects", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Building responsive interfaces", "Managing databases", "Creating secure server-side logic", "Deploying apps to the cloud"],
         careerOpportunities: ["Frontend Developer", "Backend Developer", "Junior Web Developer", "Freelance Developer"],
         syllabus: [
@@ -366,7 +432,10 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "VS Code", logo: "/images/tech/vscode.svg" },
             { name: "Node.js", logo: "/images/tech/node.svg" },
-            { name: "React", logo: "/images/tech/react.svg" }
+            { name: "React", logo: "/images/tech/react.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" }
         ],
         faqs: [{ q: "Do I need prior experience?", a: "No, we start from the very basics of coding." }]
     },
@@ -377,7 +446,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Web design is the foundation of the internet. Every business in Mumbai needs a designer to create its digital identity.",
         image: "/images/courses/short/programming/webdesign.png",
         hint: "web design",
-        highlights: ["Responsive Design", "UI/UX Principles", "HTML/CSS Mastery", "Portfolio Building"],
+        highlights: ["Responsive Design", "UI/UX Principles", "HTML/CSS Mastery", "Portfolio Building", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Creating website layouts", "Applying CSS styling", "Making websites mobile-friendly", "Basic JavaScript interactivity"],
         careerOpportunities: ["Web Designer", "UI Designer", "Frontend Developer", "Freelance Designer"],
         syllabus: [
@@ -389,7 +458,7 @@ export const courseDetails: { [key: string]: any } = {
             { name: "HTML5", logo: "/images/tech/html.svg" },
             { name: "CSS3", logo: "/images/tech/css.svg" },
             { name: "JavaScript", logo: "/images/tech/js.svg" },
-            { name: "Figma", logo: "/images/tech/figma.svg" }
+            { name: "Canva", logo: "/images/tech/canva.svg" }
         ],
         faqs: [{ q: "How long is the course?", a: "The Web Designing course typically takes 4 months to complete." }]
     },
@@ -400,7 +469,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "DSA is the most important topic for technical interviews at companies like Google, Amazon, and Microsoft. It's essential for any serious programmer.",
         image: "/images/courses/short/programming/dsa.png",
         hint: "data structures",
-        highlights: ["Problem Solving", "Complexity Analysis", "Core Data Structures", "Interview Prep"],
+        highlights: ["Problem Solving", "Complexity Analysis", "Core Data Structures", "Interview Prep", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Implementing stacks and queues", "Sorting and searching algorithms", "Tree and Graph traversals", "Dynamic programming basics"],
         careerOpportunities: ["Software Engineer", "Algorithmic Developer", "Tech Lead"],
         syllabus: [
@@ -422,7 +491,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Python is readable, powerful, and essential for modern tech roles in 2025. It's the perfect first language for aspiring developers in Mumbai.",
         image: "/images/courses/short/programming/python.png",
         hint: "python code",
-        highlights: ["Easy Syntax", "Automation Scripts", "Data Libraries", "Coding Challenges"],
+        highlights: ["Easy Syntax", "Automation Scripts", "Data Libraries", "Coding Challenges", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Logic & Control Flow", "OOP Concepts", "Handling APIs", "Building real-world scripts"],
         careerOpportunities: ["Python Developer", "Automation Engineer", "Back-end Developer"],
         syllabus: [
@@ -431,7 +500,7 @@ export const courseDetails: { [key: string]: any } = {
         ],
         tools: [
             { name: "Python", logo: "/images/tech/python.svg" },
-            { name: "PyCharm", logo: "/images/tech/pycharm.png" }
+            { name: "VS Code", logo: "/images/tech/vscode.svg" }
         ],
         faqs: [{ q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." }]
     },
@@ -442,7 +511,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "SEO is the most sustainable way to get traffic. Companies in Mumbai save millions in ad spend by hiring skilled SEO experts.",
         image: "/images/courses/short/dm/SEO.png",
         hint: "seo audit",
-        highlights: ["Google Algorithm", "Keyword Research", "Link Building", "Technical SEO"],
+        highlights: ["Google Algorithm", "Keyword Research", "Link Building", "Technical SEO", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Finding high-volume keywords", "Optimizing content for users and bots", "Building high-quality backlinks", "SEO Audit techniques"],
         careerOpportunities: ["SEO Analyst", "Digital Marketer", "Content Strategist", "Search Manager"],
         syllabus: [
@@ -451,8 +520,8 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Technical", icon: "Settings", topics: ["Sitemaps", "Robots.txt", "Page Speed", "Schema"] }
         ],
         tools: [
-            { name: "Search Console", logo: "/images/tech/ga.svg" },
-            { name: "Ahrefs", logo: "/images/tech/seo.svg" },
+            { name: "Analytics", logo: "/images/tech/ga.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
             { name: "SEMrush", logo: "/images/tech/seo.svg" }
         ],
         faqs: [{ q: "Do I need coding for SEO?", a: "Only basic HTML knowledge is needed, which is included in the course." }]
@@ -464,7 +533,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "CorelDRAW is widely used in the advertising and printing industry in Mumbai. It's fast, powerful, and essential for print designers.",
         image: "/images/courses/short/graphics/CorelDRAW.png",
         hint: "vector art",
-        highlights: ["Logo Design", "Print Layouts", "Typography", "Vector Illustration"],
+        highlights: ["Logo Design", "Print Layouts", "Typography", "Vector Illustration", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Creating vector graphics", "Designing for print media", "Color theory for printing", "Advanced tool mastery"],
         careerOpportunities: ["DTP Operator", "Graphic Designer", "Logo Artist", "Print Media Specialist"],
         syllabus: [
@@ -473,7 +542,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Production", icon: "FileText", topics: ["Color CMYK", "Exporting for Print", "Post-press basics"] }
         ],
         tools: [
-            { name: "CorelDRAW", logo: "/images/tech/coreldraw.png" }
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" }
         ],
         faqs: [{ q: "Who should join this?", a: "Anyone interested in print media and graphic design should learn CorelDRAW." }]
     },
@@ -484,7 +553,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Photoshop is essential for almost every creative role today. It's the most powerful tool for visual creators.",
         image: "/images/courses/short/graphics/AdobePhotoshop.png",
         hint: "photoshop editing",
-        highlights: ["Photo Retouching", "Layer Management", "Compositing", "Digital Art"],
+        highlights: ["Photo Retouching", "Layer Management", "Compositing", "Digital Art", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Advanced selection tools", "Non-destructive editing", "Color correction", "Designing for web and print"],
         careerOpportunities: ["Photo Editor", "Social Media Designer", "UI Designer", "Freelance Artist"],
         syllabus: [
@@ -502,7 +571,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Companies need experts who can tell stories with data. Power BI is the most in-demand tool for business analysts in Mumbai's corporate world.",
         image: "/images/courses/short/programming/powerbi.png",
         hint: "powerbi dashboard",
-        highlights: ["Data Modeling", "DAX Formulas", "Custom Visuals", "Live Dashboards"],
+        highlights: ["Data Modeling", "DAX Formulas", "Custom Visuals", "Live Dashboards", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Connecting to data sources", "Cleaning data with Power Query", "Writing complex DAX expressions", "Publishing reports to the cloud"],
         careerOpportunities: ["Business Analyst", "BI Developer", "Data Visualization Expert"],
         syllabus: [
@@ -513,7 +582,6 @@ export const courseDetails: { [key: string]: any } = {
         tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
         faqs: [{ q: "Is Excel knowledge needed?", a: "Basic Excel is helpful but not mandatory; we cover needed concepts." }]
     },
-    // Adding more short-term courses to prevent 404s
     'taxation-auditing': {
         title: "Taxation & Auditing Course in Mumbai | Primezone",
         metaDescription: "Master Taxation and Auditing in Mumbai. Learn Income Tax, GST filing, and Audit procedures at Primezone.",
@@ -521,11 +589,14 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Compliance is a massive industry in India. Skilled tax professionals are always in high demand.",
         image: "/images/courses/short/account/TaxationAuditing.png",
         hint: "tax audit",
-        highlights: ["Income Tax Filing", "GST Returns", "Audit Reports", "Direct & Indirect Tax"],
+        highlights: ["Income Tax Filing", "GST Returns", "Audit Reports", "Direct & Indirect Tax", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["ITR forms mastery", "GST portal usage", "Bank audit basics", "Corporate audit workflows"],
         careerOpportunities: ["Tax Consultant", "Audit Assistant", "Accountant"],
         syllabus: [{ title: "Tax Laws", icon: "Landmark", topics: ["Income Tax", "GST", "TDS"] }],
-        tools: [{ name: "Income Tax Portal", logo: "/images/tech/tax.png" }],
+        tools: [
+            { name: "Income Tax", logo: "/images/tech/tax.png" },
+            { name: "GST", logo: "/images/tech/gst.jpg" }
+        ],
         faqs: [{ q: "Who can join?", a: "Commerce graduates or anyone interested in finance." }]
     },
     'share-market': {
@@ -535,11 +606,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Financial literacy is key to wealth creation. Learn the tools used by professional traders.",
         image: "/images/courses/short/account/sharemarket.png",
         hint: "stock trading",
-        highlights: ["Technical Analysis", "Fundamental Analysis", "Option Trading", "Risk Management"],
+        highlights: ["Technical Analysis", "Fundamental Analysis", "Option Trading", "Risk Management", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Reading charts", "Understanding market indicators", "Portfolio management", "Live trading sessions"],
         careerOpportunities: ["Stock Trader", "Investment Advisor", "Market Analyst"],
         syllabus: [{ title: "Trading", icon: "BarChart", topics: ["Candlesticks", "Indicators", "Psychology"] }],
-        tools: [{ name: "TradingView", logo: "/images/tech/powerbi.svg" }],
+        tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
         faqs: [{ q: "Do you give tips?", a: "No, we teach you how to analyze the market yourself." }]
     },
     'ccc': {
@@ -549,11 +620,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "CCC is often a mandatory requirement for government job applications in India.",
         image: "/images/courses/short/account/ccc.png",
         hint: "ccc certificate",
-        highlights: ["Govt Job Prep", "Basic PC Skills", "Internet Awareness", "Digital Literacy"],
+        highlights: ["Govt Job Prep", "Basic PC Skills", "Internet Awareness", "Digital Literacy", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Operating systems", "Word & Excel basics", "Digital financial services", "Cybersecurity awareness"],
         careerOpportunities: ["Govt Job Eligible", "Office Assistant"],
         syllabus: [{ title: "Basics", icon: "MonitorCheck", topics: ["Windows", "Internet", "Email", "Office"] }],
-        tools: [{ name: "Windows", logo: "/images/tech/excel.svg" }],
+        tools: [{ name: "MS Word", logo: "/images/tech/word.svg" }, { name: "MS Excel", logo: "/images/tech/excel.svg" }],
         faqs: [{ q: "Is the exam included?", a: "We prepare you for the official NIELIT CCC exam." }]
     },
     'c-programming': {
@@ -563,11 +634,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "C helps you understand how computers work at a low level, which is vital for any professional developer.",
         image: "/images/courses/short/programming/cprog.png",
         hint: "c code",
-        highlights: ["Logic Building", "Memory Management", "Syntax Clarity", "Algorithm Design"],
+        highlights: ["Logic Building", "Memory Management", "Syntax Clarity", "Algorithm Design", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Loops & Arrays", "Pointers", "File I/O", "Data Structures basics"],
         careerOpportunities: ["System Programmer", "Foundation for IT Jobs"],
         syllabus: [{ title: "C Syntax", icon: "Code", topics: ["Variables", "Operators", "Functions"] }],
-        tools: [{ name: "GCC", logo: "/images/tech/vscode.svg" }],
+        tools: [{ name: "VS Code", logo: "/images/tech/vscode.svg" }],
         faqs: [{ q: "Is it hard?", a: "It is challenging but very rewarding for your future coding career." }]
     },
     'c-plus-plus': {
@@ -577,11 +648,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "C++ is used in game development, high-performance systems, and complex software like browsers.",
         image: "/images/courses/short/programming/c++.png",
         hint: "c++ code",
-        highlights: ["OOPS Concepts", "Inheritance", "Polymorphism", "Standard Template Library"],
+        highlights: ["OOPS Concepts", "Inheritance", "Polymorphism", "Standard Template Library", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Class design", "Templates", "Exception handling", "Dynamic memory"],
         careerOpportunities: ["Game Developer", "System Architect", "Embedded Engineer"],
         syllabus: [{ title: "OOPS", icon: "Code", topics: ["Classes", "Objects", "Virtual Functions"] }],
-        tools: [{ name: "VS Code", logo: "/images/tech/vscode.svg" }],
+        tools: [{ name: "C++", logo: "/images/tech/cplusplus.svg" }, { name: "VS Code", logo: "/images/tech/vscode.svg" }],
         faqs: [{ q: "Can I join after C?", a: "Yes, it is the perfect next step after learning C." }]
     },
     'adobe-illustrator': {
@@ -591,7 +662,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Illustrator is used by every professional graphic designer for scalable artwork like logos.",
         image: "/images/courses/short/graphics/Illustrator.png",
         hint: "illustrator design",
-        highlights: ["Logo Creation", "Typography", "Branding", "Vector Tracing"],
+        highlights: ["Logo Creation", "Typography", "Branding", "Vector Tracing", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Pen tool mastery", "Gradient mesh", "Artboard management", "Output for print & web"],
         careerOpportunities: ["Logo Designer", "Illustrator", "Brand Identity Designer"],
         syllabus: [{ title: "Vectors", icon: "Palette", topics: ["Paths", "Shapes", "Colors"] }],
@@ -605,7 +676,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Content is king. Every brand needs skilled video editors for their marketing campaigns.",
         image: "/images/courses/coursetrend/Video & Sound Editing.webp",
         hint: "video editing",
-        highlights: ["Color Grading", "Audio Syncing", "Transitions", "Visual Effects"],
+        highlights: ["Color Grading", "Audio Syncing", "Transitions", "Visual Effects", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Timeline management", "Multi-camera editing", "Title design", "Exporting for social media"],
         careerOpportunities: ["Video Editor", "YouTube Content Creator", "Post-production Specialist"],
         syllabus: [{ title: "Editing", icon: "LayoutTemplate", topics: ["Cutting", "Merging", "Sound Design"] }],
@@ -619,7 +690,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "AutoCAD is an essential skill for engineers, architects, and interior designers in Mumbai's construction boom.",
         image: "/images/courses/short/graphics/AutoCAD.png",
         hint: "autocad drafting",
-        highlights: ["2D Drafting", "3D Modeling", "Building Plans", "Technical Drawing"],
+        highlights: ["2D Drafting", "3D Modeling", "Building Plans", "Technical Drawing", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Layer management", "Dimensioning", "Plotting", "Isometric views"],
         careerOpportunities: ["CAD Designer", "Draftsman", "Interior Designer", "Project Engineer"],
         syllabus: [{ title: "Drafting", icon: "LayoutTemplate", topics: ["Coordinates", "Drawing Tools", "Editing Commands"] }],
@@ -633,11 +704,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Frontend is the gateway to web development. Demand for React developers is at an all-time high.",
         image: "/images/courses/short/programming/frontend.png",
         hint: "frontend code",
-        highlights: ["Responsive UI", "React Mastery", "CSS Frameworks", "API Integration"],
+        highlights: ["Responsive UI", "React Mastery", "CSS Frameworks", "API Integration", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Building complex UI components", "State management", "Routing", "Optimizing performance"],
         careerOpportunities: ["Frontend Developer", "UI Developer", "React Specialist"],
         syllabus: [{ title: "React", icon: "Code", topics: ["Hooks", "Context API", "Props"] }],
-        tools: [{ name: "React", logo: "/images/tech/react.svg" }],
+        tools: [{ name: "React", logo: "/images/tech/react.svg" }, { name: "HTML5", logo: "/images/tech/html.svg" }, { name: "CSS3", logo: "/images/tech/css.svg" }, { name: "JavaScript", logo: "/images/tech/js.svg" }],
         faqs: [{ q: "Do I need JS?", a: "Yes, we teach JavaScript extensively before moving to React." }]
     },
     'back-end-development': {
@@ -647,11 +718,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "The backend is the brain of any application. High-scale apps rely on robust backend systems.",
         image: "/images/courses/short/programming/backend.png",
         hint: "backend code",
-        highlights: ["Server Logic", "Database Design", "Auth & Security", "REST APIs"],
+        highlights: ["Server Logic", "Database Design", "Auth & Security", "REST APIs", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Node.js architecture", "Handling requests", "JWT Authentication", "Middleware development"],
         careerOpportunities: ["Backend Developer", "Node.js Developer", "Database Administrator"],
         syllabus: [{ title: "NodeJS", icon: "Code", topics: ["Modules", "Events", "Express Server"] }],
-        tools: [{ name: "Node.js", logo: "/images/tech/node.svg" }],
+        tools: [{ name: "Node.js", logo: "/images/tech/node.svg" }, { name: "MySQL", logo: "/images/tech/mysql.svg" }],
         faqs: [{ q: "Which DB is taught?", a: "We cover MySQL and MongoDB." }]
     },
     'database': {
@@ -661,7 +732,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Every app has a database. Knowing how to write optimized SQL queries is a superpower for developers and analysts.",
         image: "/images/courses/short/programming/database.png",
         hint: "sql database",
-        highlights: ["SQL Queries", "Joins & Unions", "Indexing", "DB Normalization"],
+        highlights: ["SQL Queries", "Joins & Unions", "Indexing", "DB Normalization", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["CRUD operations", "Designing schemas", "Stored procedures", "Performance tuning"],
         careerOpportunities: ["DBA", "SQL Developer", "Data Analyst"],
         syllabus: [{ title: "SQL", icon: "Settings", topics: ["Select Statements", "Aggregates", "Constraints"] }],
@@ -675,11 +746,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Java powers millions of apps and enterprise systems. It is essential for banking and large-scale IT firms.",
         image: "/images/shortterm/java.png",
         hint: "java code",
-        highlights: ["OOPS", "Collections Framework", "Threading", "Exception Handling"],
+        highlights: ["OOPS", "Collections Framework", "Threading", "Exception Handling", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Java syntax", "Class and Objects", "Memory management", "GUI basics"],
         careerOpportunities: ["Java Developer", "Android Dev Foundation"],
         syllabus: [{ title: "Core Java", icon: "Code", topics: ["Inheritance", "Interfaces", "Packages"] }],
-        tools: [{ name: "Eclipse", logo: "/images/tech/java.svg" }],
+        tools: [{ name: "Java", logo: "/images/tech/java.svg" }],
         faqs: [{ q: "Is Java still relevant?", a: "Yes, it is the standard for corporate enterprise applications." }]
     },
     'react': {
@@ -689,11 +760,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "React developers are the highest-paid frontend engineers in the current Mumbai market.",
         image: "/images/courses/short/programming/react.png",
         hint: "react ui",
-        highlights: ["Virtual DOM", "React Hooks", "Redux", "Component Architecture"],
+        highlights: ["Virtual DOM", "React Hooks", "Redux", "Component Architecture", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["JSX", "Functional components", "Effect and State hooks", "Integration with APIs"],
         careerOpportunities: ["React Developer", "Frontend Engineer"],
         syllabus: [{ title: "Modern UI", icon: "Code", topics: ["Functional Components", "State Management"] }],
-        tools: [{ name: "React", logo: "/images/tech/react.svg" }],
+        tools: [{ name: "React", logo: "/images/tech/react.svg" }, { name: "JavaScript", logo: "/images/tech/js.svg" }],
         faqs: [{ q: "Do I need HTML/CSS?", a: "Yes, basic knowledge is required." }]
     },
     'smm': {
@@ -703,11 +774,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Every business in Mumbai is fighting for attention on social media. Learn the strategy to win.",
         image: "/images/courses/short/dm/smm.png",
         hint: "social media",
-        highlights: ["Instagram Growth", "Facebook Ads", "LinkedIn Strategy", "Content Calendars"],
+        highlights: ["Instagram Growth", "Facebook Ads", "LinkedIn Strategy", "Content Calendars", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Audience targeting", "Ad creative design", "Influencer collaboration", "Analytics tracking"],
         careerOpportunities: ["Social Media Manager", "Content Specialist"],
         syllabus: [{ title: "Strategy", icon: "Users", topics: ["Engagement", "Hashtag Research", "Paid Ads"] }],
-        tools: [{ name: "Meta Ads", logo: "/images/tech/fb.svg" }],
+        tools: [{ name: "Facebook Ads", logo: "/images/tech/fb.svg" }, { name: "Instagram", logo: "/images/tech/fb.svg" }],
         faqs: [{ q: "Do we learn content creation?", a: "Yes, we cover basic design for social posts." }]
     },
     'sem': {
@@ -717,7 +788,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "SEM gives immediate results. Companies value experts who can generate ROI-driven leads quickly.",
         image: "/images/courses/short/dm/sem.png",
         hint: "search ads",
-        highlights: ["Google Ads Mastery", "Keyword Bidding", "Conversion Tracking", "Quality Score Optimization"],
+        highlights: ["Google Ads Mastery", "Keyword Bidding", "Conversion Tracking", "Quality Score Optimization", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Setting up search campaigns", "Remarketing", "Display ads", "Budget management"],
         careerOpportunities: ["SEM Specialist", "Performance Marketer"],
         syllabus: [{ title: "PPC", icon: "Search", topics: ["Ad Groups", "Extensions", "Bidding Strategies"] }],
@@ -731,7 +802,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "40% of the web is built on WordPress. It's the fastest way to start a web design business.",
         image: "/images/courses/short/dm/wordpress.png",
         hint: "wordpress cms",
-        highlights: ["No-Code Design", "WooCommerce", "Theme Customization", "Security & SEO Plugins"],
+        highlights: ["No-Code Design", "WooCommerce", "Theme Customization", "Security & SEO Plugins", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Installation & Setup", "Page building with Elementor", "Blog management", "E-commerce store setup"],
         careerOpportunities: ["WordPress Developer", "Freelance Web Designer"],
         syllabus: [{ title: "CMS", icon: "Globe", topics: ["Plugins", "Widgets", "Custom Post Types"] }],
@@ -745,11 +816,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Content is the soul of marketing. Learn how to craft messages that resonate and convert.",
         image: "/images/courses/short/dm/Content.png",
         hint: "content creator",
-        highlights: ["Blogging", "Video Scripts", "Copywriting", "Creative Design"],
+        highlights: ["Blogging", "Video Scripts", "Copywriting", "Creative Design", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Writing for the web", "Graphic design basics", "Video storytelling", "Building a personal brand"],
         careerOpportunities: ["Content Writer", "Digital Creator", "Brand Storyteller"],
         syllabus: [{ title: "Creation", icon: "Palette", topics: ["Storyboarding", "Editing", "Publishing"] }],
-        tools: [{ name: "Canva", logo: "/images/tech/canva.png" }],
+        tools: [{ name: "Canva", logo: "/images/tech/canva.svg" }],
         faqs: [{ q: "Is it good for YouTubers?", a: "Yes, it covers the planning and creation aspects perfectly." }]
     },
     'facebook-google-ads': {
@@ -759,11 +830,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "These platforms are where the majority of marketing budget is spent. Expertise here means high employability.",
         image: "/images/courses/short/dm/facebookgoogleads.png",
         hint: "paid advertising",
-        highlights: ["Meta Ads Manager", "Google Search Ads", "Targeting & Retargeting", "Conversion Optimization"],
+        highlights: ["Meta Ads Manager", "Google Search Ads", "Targeting & Retargeting", "Conversion Optimization", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Campaign structure", "A/B testing", "Scaling budgets", "Analyzing ROI"],
         careerOpportunities: ["Performance Marketer", "Ad Specialist"],
         syllabus: [{ title: "Ads Mastery", icon: "Megaphone", topics: ["Funnel Building", "Conversion Pixels"] }],
-        tools: [{ name: "Google Ads", logo: "/images/tech/google-ads.svg" }, { name: "Meta Ads", logo: "/images/tech/fb.svg" }],
+        tools: [{ name: "Google Ads", logo: "/images/tech/google-ads.svg" }, { name: "Facebook Ads", logo: "/images/tech/fb.svg" }],
         faqs: [{ q: "Do we get hands-on?", a: "Yes, we run live demo campaigns." }]
     },
     'adobe-indesign': {
@@ -773,7 +844,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "InDesign is the industry standard for publishers, authors, and marketing departments.",
         image: "/images/courses/short/graphics/InDesign.png",
         hint: "indesign layout",
-        highlights: ["Typography", "Grid Systems", "Master Pages", "Interactive PDFs"],
+        highlights: ["Typography", "Grid Systems", "Master Pages", "Interactive PDFs", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Book design", "Magazine layouts", "Brochure creation", "Advanced text styling"],
         careerOpportunities: ["Layout Designer", "Desktop Publisher"],
         syllabus: [{ title: "Publishing", icon: "FileText", topics: ["Styles", "Packaging", "Exports"] }],
@@ -787,7 +858,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Animation is used in games, ads, and education. It's a fun and lucrative career path.",
         image: "/images/courses/short/graphics/animates.png",
         hint: "2d animation",
-        highlights: ["Frame-by-Frame", "Character Rigging", "Motion Tweens", "ActionScript basics"],
+        highlights: ["Frame-by-Frame", "Character Rigging", "Motion Tweens", "ActionScript basics", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Walk cycles", "Lip syncing", "Interactive animations", "Exporting for various formats"],
         careerOpportunities: ["2D Animator", "Cartoonist", "Ad Designer"],
         syllabus: [{ title: "Motion", icon: "Bot", topics: ["Keyframes", "Onion Skinning", "Symbols"] }],
@@ -801,7 +872,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Real estate companies in Mumbai need 3D experts to create realistic interiors and buildings before they are built.",
         image: "/images/courses/short/graphics/3DMAX.png",
         hint: "3d modeling",
-        highlights: ["V-Ray Rendering", "Interior Design", "Texturing & Lighting", "Walkthroughs"],
+        highlights: ["V-Ray Rendering", "Interior Design", "Texturing & Lighting", "Walkthroughs", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Poly modeling", "Applying materials", "Day/Night lighting", "Advanced rendering"],
         careerOpportunities: ["3D Visualizer", "Interior Designer", "Game Artist"],
         syllabus: [{ title: "Modeling", icon: "Rocket", topics: ["Modifiers", "Compound Objects", "Rendering"] }],
@@ -815,11 +886,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Canva is the most efficient tool for small business owners and social media managers.",
         image: "/images/courses/short/graphics/Canva.png",
         hint: "canva design",
-        highlights: ["Social Media Graphics", "Brand Kits", "Templates", "Presentation Design"],
+        highlights: ["Social Media Graphics", "Brand Kits", "Templates", "Presentation Design", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Color matching", "Font pairing", "Designing for printing", "Video creation in Canva"],
         careerOpportunities: ["Social Media Executive", "Freelance Designer"],
         syllabus: [{ title: "Quick Design", icon: "Palette", topics: ["Elements", "Effects", "Branding"] }],
-        tools: [{ name: "Canva", logo: "/images/tech/canva.png" }],
+        tools: [{ name: "Canva", logo: "/images/tech/canva.svg" }],
         faqs: [{ q: "Is it for professional use?", a: "Yes, Canva is widely used by marketing agencies for speed and efficiency." }]
     },
     'after-effects': {
@@ -829,7 +900,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Bring static designs to life. After Effects is essential for high-end video production and commercials.",
         image: "/images/courses/short/graphics/AfterEffects.png",
         hint: "motion graphics",
-        highlights: ["Motion Tracking", "VFX", "Compositing", "Logo Animation"],
+        highlights: ["Motion Tracking", "VFX", "Compositing", "Logo Animation", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Keyframe animation", "Masking", "3D layers", "Particle effects"],
         careerOpportunities: ["Motion Designer", "VFX Artist"],
         syllabus: [{ title: "VFX", icon: "Rocket", topics: ["Transitions", "Dynamic Link", "Rendering"] }],
@@ -843,7 +914,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Professional editing is a high-demand skill. From reels to documentaries, Premiere Pro is the go-to tool.",
         image: "/images/courses/short/graphics/PremierePro.png",
         hint: "video editing",
-        highlights: ["Timeline Workflow", "Color Correction", "Audio Editing", "Export Settings"],
+        highlights: ["Timeline Workflow", "Color Correction", "Audio Editing", "Export Settings", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Ingesting footage", "Storytelling through cuts", "Multi-cam editing", "Text and graphics"],
         careerOpportunities: ["Video Editor", "Content Creator"],
         syllabus: [{ title: "Editing Pro", icon: "LayoutTemplate", topics: ["Sequences", "Transitions", "Effects"] }],
@@ -857,7 +928,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Figma is the #1 tool for UI/UX design. Knowing Figma is your ticket into the product design industry.",
         image: "/images/courses/short/graphics/Figma.png",
         hint: "figma design",
-        highlights: ["Prototyping", "Design Systems", "Collaboration", "Auto Layout"],
+        highlights: ["Prototyping", "Design Systems", "Collaboration", "Auto Layout", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["User flow design", "Wireframing", "High-fidelity UI", "Developer handoff"],
         careerOpportunities: ["UI/UX Designer", "Product Designer"],
         syllabus: [{ title: "UI/UX", icon: "Palette", topics: ["Components", "Variants", "Interactions"] }],
@@ -871,7 +942,7 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "The construction industry is shifting to BIM. Revit is essential for modern architects and civil engineers in Mumbai.",
         image: "/images/courses/short/graphics/Revit.png",
         hint: "revit modeling",
-        highlights: ["BIM Workflow", "Floor Plans", "3D Visualization", "Families & Components"],
+        highlights: ["BIM Workflow", "Floor Plans", "3D Visualization", "Families & Components", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Creating smart building models", "Generating documentation", "Parametric design", "Rendering"],
         careerOpportunities: ["BIM Modeler", "Architectural Drafter"],
         syllabus: [{ title: "BIM", icon: "Rocket", topics: ["Walls & Roofs", "Views", "Schedules"] }],
@@ -885,11 +956,11 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "Technical skills get you the job, but management skills get you the promotion.",
         image: "/images/courses/short/account/management.png",
         hint: "leadership",
-        highlights: ["Communication", "Leadership", "Conflict Resolution", "Team Building"],
+        highlights: ["Communication", "Leadership", "Conflict Resolution", "Team Building", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Effective office management", "Public speaking", "Strategic planning", "Managing diversity"],
         careerOpportunities: ["Manager", "Team Lead", "Admin Head"],
         syllabus: [{ title: "Leadership", icon: "Users", topics: ["Time Management", "Ethics", "Decision Making"] }],
-        tools: [{ name: "Excel", logo: "/images/tech/excel.svg" }],
+        tools: [{ name: "MS Excel", logo: "/images/tech/excel.svg" }],
         faqs: [{ q: "Is it for freshers?", a: "Yes, it's great for anyone starting their career." }]
     }
 };
