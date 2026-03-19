@@ -59,9 +59,9 @@ export const courseDetails: { [key: string]: any } = {
             { name: "JavaScript", logo: "/images/tech/js.svg" }
         ],
         faqs: [
-            { q: "Is DCA a government-recognized course?", a: "Yes, Primezone provides government-recognized certification for the DCA program." },
-            { q: "Who can join this course?", a: "Students who have completed 10th or 12th grade, graduates, and working professionals can enroll in this diploma." },
-            { q: "Does the curriculum include AI tools?", a: "Yes, as per our updated curriculum, we include AI tools training to help you work faster and smarter in office environments." },
+            { q: "Which is the best DCA institute in Mumbai?", a: "Primezone Computer Education is widely considered the best DCA institute in Mumbai, offering practical training with AI tools and placement support." },
+            { q: "Who can join a DCA course in Mumbai?", a: "Students who have completed 10th or 12th grade, graduates, and working professionals can enroll in this diploma." },
+            { q: "Which tools are taught in the DCA course?", a: "The course covers MS Office, Tally Prime, Advance Excel, Graphic Designing (Photoshop, Illustrator), and Web Designing tools." },
             { q: "Is there placement support?", a: "Yes, we provide 100% placement assistance in Mumbai for our DCA students across various sectors like back office, accounting, and design." }
         ]
     },
@@ -116,15 +116,16 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "MS Word", logo: "/images/tech/word.svg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
-            { name: "MS Powerpoint", logo: "/images/tech/p.svg" },
+            { name: "MS Powerpoint", logo: "/images/tech/powerpoint.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
             { name: "GST", logo: "/images/tech/gst.jpg" },
-            { name: "Income Tax", logo: "/images/tech/tax.png" }
+            { name: "Taxation", logo: "/images/tech/tax.png" },
+            { name: "Share Market", logo: "/images/tech/share.svg" }
         ],
         faqs: [
-            { q: "What is the duration of the DFAM course?", a: "The Diploma in Financial Accounting & Management is a 1-year comprehensive program." },
-            { q: "Does the course cover Share Market basics?", a: "Yes, Module 4 is dedicated to the basics of the share market, including technical analysis and trading instruments." },
-            { q: "Who can enroll in this accounting course?", a: "This course is ideal for 10th and 12th pass students, graduates from commerce backgrounds, and job seekers in the finance sector." },
+            { q: "Which is the best Financial Accounting institute in Mumbai?", a: "Primezone Computer Education offers the best DFAM course in Mumbai with practical Tally Prime and Taxation training." },
+            { q: "Who can join this accounting course in Mumbai?", a: "This course is ideal for 10th and 12th pass students, commerce graduates, and anyone looking to start a career in finance." },
+            { q: "Does the course cover live GST filing?", a: "Yes, our curriculum includes practical training on GST transactions, returns, and portal usage." },
             { q: "Is there placement assistance for accounting roles?", a: "Yes, Primezone provides 100% placement assistance for roles like Accounts Executive, GST Executive, and Banking Assistant." }
         ]
     },
@@ -166,81 +167,150 @@ export const courseDetails: { [key: string]: any } = {
                 topics: ["HTML5 & CSS3 Basics", "JavaScript Fundamentals", "Integrating Frontend with Backend", "Web Hosting & Deployment", "Assignment & Projects"] 
             },
             { 
+                title: "ADVANCED FRAMEWORKS", 
+                icon: "Code", 
+                topics: ["Angular or React Basics", "State Management", "API Integration", "Single Page Applications", "Assignment & Projects"] 
+            },
+            { 
                 title: "DATABASE MANAGEMENT", 
                 icon: "Settings", 
-                topics: ["Introduction to SQL", "MySQL Fundamentals", "DDL & DML Queries", "Joins & Constraints", "Stored Procedures", "Assignment & Projects"] 
+                topics: ["Introduction to SQL", "MySQL Fundamentals", "DDL & DML Queries", "Joins & Constraints", "Assignment & Projects"] 
             }
         ],
         tools: [
             { name: "VS Code", logo: "/images/tech/vscode.svg" },
             { name: "Python", logo: "/images/tech/python.svg" },
             { name: "Java", logo: "/images/tech/java.svg" },
+            { name: "C Programming", logo: "/images/tech/c.svg" },
             { name: "C++", logo: "/images/tech/cplusplus.svg" },
             { name: "MySQL", logo: "/images/tech/mysql.svg" },
             { name: "HTML5", logo: "/images/tech/html.svg" },
             { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" }
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "React", logo: "/images/tech/react.svg" }
         ],
         faqs: [
-            { q: "Is prior coding experience required?", a: "No, we start from Windows fundamentals and basic logic before diving into complex programming languages." },
-            { q: "Which programming languages will I master?", a: "You will master C, C++, Python, and Java (both Core and Advanced)." },
-            { q: "Do you provide real-world projects?", a: "Yes, every module ends with a project or assignment to ensure practical understanding of the concepts." },
-            { q: "What kind of jobs can I get after this course?", a: "You can apply for roles like Software Developer, Backend Developer, Python/Java Developer, and Junior Web Developer." }
+            { q: "Which is the best programming institute in Mumbai?", a: "Primezone Computer Education is a top-rated coding institute in Mumbai, known for its practical approach to languages like Python, Java, and C++." },
+            { q: "Do I need prior coding experience?", a: "No, we start from absolute logic building and basic syntax to ensure a strong foundation." },
+            { q: "Which programming languages are taught?", a: "You will master C, C++, Python, Java, JavaScript, and SQL as part of this comprehensive diploma." },
+            { q: "Is there placement assistance for developers?", a: "Yes, we provide 100% placement support and help students build portfolios to land jobs in top IT companies." }
         ]
     },
     'graphic-animation': {
-        title: "Diploma In Graphic & Animation Course in Mumbai | Photoshop, 3ds Max | Primezone",
-        metaDescription: "Best Graphic Design and Animation Course in Mumbai. Learn Photoshop, Illustrator, 3ds Max, and Video Editing. Job-oriented creative training.",
-        description: "Explore the world of visual storytelling. From logo design to 3D architectural walkthroughs, this course covers it all.",
-        whyLearn: "The creative economy is booming. Skilled animators and designers are needed for social media, film, architecture, and advertising industries in Mumbai.",
+        title: "Diploma In Graphic & Animation (DGA) Course in Mumbai | Photoshop, 3ds Max | Primezone",
+        metaDescription: "Best Graphic Design and Animation Course in Mumbai. Learn Photoshop, Illustrator, 3ds Max, and After Effects. Job-oriented creative training at Primezone.",
+        description: "The Diploma in Graphic & Animation (DGA) is a powerhouse program designed for creative minds. From high-end branding to professional VFX and 3D architectural modeling, this course covers the entire creative spectrum.",
+        whyLearn: "The creative economy is booming. Mumbai's film, advertising, and real estate sectors are in constant need of skilled visual storytellers who can handle design, video editing, and 3D visualization.",
         image: "/images/courses/diploma/dga.webp",
         hint: "graphic animation",
-        highlights: ["Creative Suite Mastery", "3D Modeling & Animation", "Video & Sound Editing", "Portfolio Development", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Vector Illustration", "Image Retouching", "Motion Graphics", "3D Interior Design", "Sequence Editing"],
-        careerOpportunities: ["Graphic Designer", "3D Modeler", "Video Editor", "Animator", "UI Designer"],
+        highlights: ["Graphic & Web Designing", "Video & Sound Editing", "After Effects (VFX)", "3Ds MAX (2D-3D)", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Mastery of Adobe Creative Suite (Photoshop, Illustrator, InDesign).",
+            "Professional Web Design with HTML5, CSS, and WordPress.",
+            "High-end Video and Sound editing with Premiere Pro.",
+            "Cinematic VFX and Motion Graphics using After Effects.",
+            "3D Architectural Modeling and Interior Design with 3Ds MAX."
+        ],
+        careerOpportunities: ["Graphic Designer", "3D Modeler", "Video Editor", "VFX Artist", "UI Designer", "Web Designer", "Motion Graphic Artist"],
         syllabus: [
-            { title: "Graphic Design", icon: "Palette", topics: ["CorelDRAW", "Photoshop", "Illustrator", "InDesign"] },
-            { title: "Animation", icon: "Bot", topics: ["Adobe Animate", "Frame by Frame", "Motion Tweens"] },
-            { title: "3D Design", icon: "Rocket", topics: ["3DS MAX", "Interior Designing", "Materials & Lighting"] },
-            { title: "Post Production", icon: "LayoutTemplate", topics: ["Video Editing", "Sound Effects", "Transitions"] }
+            { 
+                title: "GRAPHIC DESIGNING", 
+                icon: "Palette", 
+                topics: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Pro", "Assignment & Projects"] 
+            },
+            { 
+                title: "WEB DESIGNING", 
+                icon: "Globe", 
+                topics: ["Html 5", "CSS", "JavaScript", "WordPress", "Web Hosting & Domain", "Assignment & Projects"] 
+            },
+            { 
+                title: "VIDEO SOUND EDITING", 
+                icon: "LayoutTemplate", 
+                topics: ["Introduction Premiere Pro", "Interface & Panels", "Basic Editing Tools", "Video Motion & Opacity", "Slow/Fast Motion", "Movie Titles", "Video Transitions & Effects", "Green Screen Chroma Editing", "Assignment & Projects"] 
+            },
+            { 
+                title: "AFTER EFFECTS (VFX)", 
+                icon: "Rocket", 
+                topics: ["Overview Motion Graphics", "Composition & Timeline", "Working With Layers", "Animation Basics & Keyframes", "Green Screen Chroma", "Camera & 3D Layer Basics", "Shape & Mask Animation", "Assignment & Projects"] 
+            },
+            { 
+                title: "3Ds MAX (2D-3D)", 
+                icon: "Rocket", 
+                topics: ["Introduction 3Ds Max", "Interface & Navigation", "2D Drafting to 3D", "3D Modeling & Modifiers", "Architectural Design", "Materials & Texturing", "Lighting & Cameras", "Animation Basics", "Environment & Effects", "Tendering Techniques", "Assignment & Projects"] 
+            }
         ],
         tools: [
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
+            { name: "InDesign", logo: "/images/tech/indesign.svg" },
             { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
-            { name: "3ds Max", logo: "/images/tech/p.svg" },
-            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" }
+            { name: "Canva", logo: "/images/tech/canva.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
+            { name: "After Effects", logo: "/images/tech/aftereffects.svg" },
+            { name: "3Ds Max", logo: "/images/tech/p.svg" }
         ],
         faqs: [
-            { q: "Do I need a high-end PC?", a: "While learning, you can use our state-of-the-art labs equipped with high-performance systems." },
-            { q: "Will I learn video editing too?", a: "Yes, professional video and sound editing is a core module of this course." }
+            { q: "Which is the best Graphic Design institute in Mumbai?", a: "Primezone Computer Education is considered the best for Graphic & Animation training, offering all industry-standard Adobe tools and 3Ds MAX." },
+            { q: "Does this course include 3D modeling?", a: "Yes, Module 5 is entirely dedicated to 3Ds MAX, covering both 2D drafting and advanced 3D architectural modeling." },
+            { q: "Will I learn video editing and VFX?", a: "Absolutely. The course includes professional video editing with Premiere Pro and VFX/Motion Graphics with After Effects." },
+            { q: "What are the job opportunities after DGA?", a: "Graduates can work as Graphic Designers, Video Editors, 3D Visualizers, or VFX Artists in top creative agencies." }
         ]
     },
     'ethical-hacking': {
         title: "Diploma In Ethical Hacking Course in Mumbai | Cybersecurity Training | Primezone",
         metaDescription: "Learn Cybersecurity in Mumbai. Master Penetration Testing, Network Security, and Hacking Countermeasures. Join the best Ethical Hacking course.",
-        description: "Protect the digital world. Our Ethical Hacking diploma teaches you how to identify and patch vulnerabilities before malicious hackers find them.",
-        whyLearn: "Cybersecurity is a top priority for every government and corporation. Skilled ethical hackers are in massive demand to protect sensitive data worldwide.",
+        description: "Protect the digital world. Our Ethical Hacking diploma is a high-level security program that teaches you how to identify, analyze, and patch vulnerabilities before malicious hackers can exploit them.",
+        whyLearn: "Cybersecurity is a top priority for every government and corporation in 2025. Skilled ethical hackers are in massive demand to protect sensitive financial and personal data from global threats.",
         image: "/images/courses/diploma/deh.webp",
         hint: "ethical hacking",
-        highlights: ["Network Scanning", "System Hacking", "Malware Analysis", "Sniffing & Social Engineering", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Penetration Testing Phases", "Vulnerability Assessment", "Securing Web Servers", "SQL Injection Countermeasures", "Firewall Evasion"],
-        careerOpportunities: ["Cybersecurity Analyst", "Penetration Tester", "Security Consultant", "Network Engineer"],
+        highlights: ["Vulnerability Analysis", "System Hacking Mastery", "Network Scanning", "Web App Security", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Comprehensive Penetration Testing methodologies.",
+            "Network Scanning and Vulnerability Assessment.",
+            "Techniques for securing Web Servers and Applications.",
+            "Countermeasures for Malware, Sniffing, and SQL Injection.",
+            "Advanced firewall evasion and IDS detection techniques."
+        ],
+        careerOpportunities: ["Cybersecurity Analyst", "Penetration Tester", "Security Consultant", "Network Security Engineer", "Information Security Officer"],
         syllabus: [
-            { title: "Reconnaissance", icon: "Search", topics: ["Footprinting", "Search Engines", "DNS Footprinting"] },
-            { title: "Scanning & Enumeration", icon: "Code", topics: ["Network Scanning", "Enumeration", "Vulnerability Analysis"] },
-            { title: "Exploitation", icon: "Bug", topics: ["System Hacking", "Malware Threats", "Sniffing"] },
-            { title: "Advanced Protection", icon: "ShieldCheck", topics: ["IDS & Firewalls", "Web App Hacking", "SQL Injection"] }
+            { 
+                title: "RECONNAISSANCE", 
+                icon: "Search", 
+                topics: ["Intro to Ethical Hacking", "Footprinting using Search Engines", "Website Footprinting", "Email & DNS Footprinting", "Network Footprinting", "Social Engineering", "Assignment & Projects"] 
+            },
+            { 
+                title: "SCANNING & ENUMERATION", 
+                icon: "Code", 
+                topics: ["Network Scanning Techniques", "Checking for Live Systems", "Vulnerability Scanning", "Banner Grabbing", "Enumeration (SNMP, LDAP, SMTP)", "Assignment & Projects"] 
+            },
+            { 
+                title: "EXPLOITATION", 
+                icon: "Bug", 
+                topics: ["System Hacking & Access", "Escalating Privileges", "Maintaining Access", "Malware Analysis", "Sniffing & MAC Attacks", "Session Hijacking", "Assignment & Projects"] 
+            },
+            { 
+                title: "ADVANCED SECURITY", 
+                icon: "ShieldCheck", 
+                topics: ["Denial-of-Service (DoS/DDoS)", "Evading IDS, Firewalls & Honeypots", "Hacking Web Servers", "Hacking Web Applications", "SQL Injection Countermeasures", "Cryptography", "Assignment & Projects"] 
+            }
         ],
         tools: [
             { name: "Kali Linux", logo: "/images/tech/linux.svg" },
             { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
             { name: "Nmap", logo: "/images/tech/nmap.svg" },
-            { name: "Metasploit", logo: "/images/tech/Metasploit.svg" }
+            { name: "Metasploit", logo: "/images/tech/Metasploit.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" }
         ],
         faqs: [
-            { q: "Is this course legal?", a: "Yes, we teach Ethical Hacking for defense and security purposes only." },
-            { q: "What are the job prospects?", a: "Security is a high-growth field with opportunities in IT firms, banks, and govt agencies." }
+            { q: "Which is the best Ethical Hacking institute in Mumbai?", a: "Primezone Computer Education provides the most practical and comprehensive Ethical Hacking course in Mumbai, featuring real-world penetration testing labs." },
+            { q: "Is this course legal?", a: "Yes, we teach Ethical Hacking for defense and security purposes only, adhering to strict ethical guidelines." },
+            { q: "Do I need coding for Ethical Hacking?", a: "Basic knowledge of Python and SQL is very helpful, both of which are touched upon during the course." },
+            { q: "What are the job prospects?", a: "Cybersecurity is a high-growth field. Graduates find roles in IT firms, banks, and government security agencies." }
         ]
     },
     'digital-marketing': {
@@ -267,63 +337,10 @@ export const courseDetails: { [key: string]: any } = {
             { name: "SEMrush", logo: "/images/tech/seo.svg" }
         ],
         faqs: [
+            { q: "Which is the best Digital Marketing institute in Mumbai?", a: "Primezone Computer Education is top-rated for Digital Marketing, offering live campaign training and placement support." },
+            { q: "Who can join a Digital Marketing course in Mumbai?", a: "Students, graduates, business owners, and career switchers can join this versatile program." },
             { q: "Will I learn how to build a website?", a: "Yes, we include WordPress website creation as part of the course." },
-            { q: "Does it include practical training?", a: "Yes, you will work on live ad budgets and real-world projects." }
-        ]
-    },
-    'full-stack-development': {
-        title: "Full-Stack Development Course in Mumbai | MERN & Java Training | Primezone",
-        metaDescription: "Become a Full-Stack Developer in Mumbai. Learn React, Node.js, Python, and Java. 100% placement assistance and live project training.",
-        description: "From front-end UI to back-end databases, master the entire web development lifecycle at Primezone.",
-        whyLearn: "Full-stack developers are highly sought after because they can build entire products independently. This course makes you industry-ready for Mumbai's tech jobs.",
-        image: "/images/courses/diploma/fullstack.webp",
-        hint: "full stack",
-        highlights: ["MERN Stack", "Java Technology", "Live Projects", "Integrated Internship", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Responsive UI Design", "Building REST APIs", "Database Architecture", "Server-side Rendering", "Deployment"],
-        careerOpportunities: ["Full-Stack Developer", "Front-End Engineer", "Back-End Developer", "App Developer"],
-        syllabus: [
-            { title: "Front-End", icon: "Code", topics: ["HTML5 / CSS3", "JavaScript", "ReactJS", "Bootstrap"] },
-            { title: "Back-End", icon: "Code", topics: ["Node.js", "Express.js", "Python", "Java"] },
-            { title: "Databases", icon: "Settings", topics: ["MySQL", "MongoDB"] },
-            { title: "Testing & Deploy", icon: "Rocket", topics: ["GitHub", "Hosting", "API Testing"] }
-        ],
-        tools: [
-            { name: "React", logo: "/images/tech/react.svg" },
-            { name: "Node.js", logo: "/images/tech/node.svg" },
-            { name: "MongoDB", logo: "/images/tech/mongodb.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" },
-            { name: "GitHub", logo: "/images/tech/github.svg" }
-        ],
-        faqs: [
-            { q: "Which stack is best?", a: "We teach both MERN and Java to give you maximum career flexibility." },
-            { q: "Is placement guaranteed?", a: "We provide 100% placement assistance and interview preparation." }
-        ]
-    },
-    'data-analysis': {
-        title: "Data Analytics Course in Mumbai | Excel, Power BI, SQL Training | Primezone",
-        metaDescription: "Join the best Data Analytics Course in Mumbai. Master Power BI, Tableau, Advanced Excel, and SQL. Practical training with placement guidance.",
-        description: "Turn data into decisions. Master the most powerful data tools and become a high-demand data analyst.",
-        whyLearn: "Data is the new oil. Companies across all sectors need experts who can analyze trends and provide actionable business insights in 2025.",
-        image: "/images/courses/diploma/dataanalysis.webp",
-        hint: "data analytics",
-        highlights: ["Power BI & Tableau", "Advanced Excel", "Python for Data", "Live Case Studies", "Learning Mode: Offline | Hybrid | Online"],
-         whatYouWillLearn: ["Data Visualization", "Statistical Analysis", "SQL Querying", "Cleaning Messy Data", "Automating Reports"],
-        careerOpportunities: ["Data Analyst", "BI Developer", "Market Researcher", "MIS Specialist"],
-        syllabus: [
-            { title: "Advanced Excel", icon: "BarChart", topics: ["Lookups", "Pivots", "Macros", "Dashboards"] },
-            { title: "BI Tools", icon: "BarChart", topics: ["Power BI", "Tableau", "Data Mapping"] },
-            { title: "Coding & DB", icon: "Code", topics: ["Python Basics", "MySQL Queries", "Aggregation"] }
-        ],
-        tools: [
-            { name: "Power BI", logo: "/images/tech/powerbi.svg" },
-            { name: "Tableau", logo: "/images/tech/tableau.svg" },
-            { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "MySQL", logo: "/images/tech/mysql.svg" },
-            { name: "Python", logo: "/images/tech/python.svg" }
-        ],
-        faqs: [
-            { q: "Is coding required for Data Analytics?", a: "Only basic Python and SQL are needed, which we teach from scratch." },
-            { q: "Can non-IT students join?", a: "Yes, students from Commerce and Science backgrounds are welcome." }
+            { q: "Is placement assistance provided?", a: "Yes, we provide 100% placement support for our digital marketing students in Mumbai." }
         ]
     },
 
@@ -348,7 +365,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Excel", logo: "/images/tech/excel.svg" },
             { name: "PowerPoint", logo: "/images/tech/p.svg" }
         ],
-        faqs: [{ q: "What is the duration?", a: "The course is 2 months long with flexible batch timings." }]
+        faqs: [
+            { q: "Which is the best Office Automation institute in Mumbai?", a: "Primezone Computer Education is the leading choice for office skills training in Mumbai." },
+            { q: "Who can join an office course in Mumbai?", a: "Anyone looking to improve their daily productivity and documentation skills." },
+            { q: "Is this course practical?", a: "Yes, it is 100% hands-on with real office document templates." },
+            { q: "What is the duration?", a: "The course is 2 months long with flexible batch timings." }
+        ]
     },
     'ms-office': {
         title: "MS Office Course in Mumbai | Word, Excel, PowerPoint Training | Primezone",
@@ -370,7 +392,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Excel", logo: "/images/tech/excel.svg" },
             { name: "PowerPoint", logo: "/images/tech/p.svg" }
         ],
-        faqs: [{ q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate upon completion." }]
+        faqs: [
+            { q: "Which is the best MS Office institute in Mumbai?", a: "Primezone is highly recommended for its detailed and job-focused MS Office training." },
+            { q: "Who should join an MS Office course in Mumbai?", a: "Students and professionals wanting to excel in administrative and analyst roles." },
+            { q: "What tools are covered?", a: "Word, Excel, PowerPoint, and Outlook." },
+            { q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate upon completion." }
+        ]
     },
     'advanced-excel': {
         title: "Advanced Excel Course in Mumbai | MIS Reporting & Macros Training | Primezone",
@@ -390,7 +417,12 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "Excel", logo: "/images/tech/excel.svg" }
         ],
-        faqs: [{ q: "Do I need to know math?", a: "Basic arithmetic is enough; we teach the logic behind the formulas." }]
+        faqs: [
+            { q: "Which is the best Advanced Excel institute in Mumbai?", a: "Primezone is known for the most advanced Excel and VBA curriculum in Mumbai." },
+            { q: "Do I need to know math?", a: "Basic arithmetic is enough; we teach the logic behind the formulas." },
+            { q: "Will I learn Macros?", a: "Yes, our advanced course includes Macro recording and VBA basics." },
+            { q: "Is there placement assistance?", a: "Yes, we help students find MIS and analyst roles in Mumbai." }
+        ]
     },
     'tally-gst': {
         title: "Tally Prime with GST Course in Mumbai | Accounting Training | Primezone",
@@ -412,7 +444,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Excel", logo: "/images/tech/excel.svg" },
             { name: "GST", logo: "/images/tech/gst.jpg" }
         ],
-        faqs: [{ q: "Is the software provided?", a: "We train you on the latest Tally Prime software in our labs." }]
+        faqs: [
+            { q: "Which is the best Tally institute in Mumbai?", a: "Primezone offers the most comprehensive Tally Prime with GST training in Mumbai." },
+            { q: "Who can join a Tally course in Mumbai?", a: "Anyone interested in accounting, especially commerce students." },
+            { q: "Is the software provided?", a: "We train you on the latest Tally Prime software in our labs." },
+            { q: "Do you teach GST returns?", a: "Yes, practical GST return filing is a key part of the syllabus." }
+        ]
     },
     'web-development': {
         title: "Web Development Course in Mumbai | Frontend & Backend Training | Primezone",
@@ -437,7 +474,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "CSS3", logo: "/images/tech/css.svg" },
             { name: "JavaScript", logo: "/images/tech/js.svg" }
         ],
-        faqs: [{ q: "Do I need prior experience?", a: "No, we start from the very basics of coding." }]
+        faqs: [
+            { q: "Which is the best Web Dev institute in Mumbai?", a: "Primezone is a top choice for practical web development training in Mumbai." },
+            { q: "Do I need prior experience?", a: "No, we start from the very basics of coding." },
+            { q: "Which tools are taught?", a: "VS Code, Node.js, React, HTML, CSS, and JS." },
+            { q: "Is there placement support?", a: "Yes, we help students find roles in Mumbai's tech companies." }
+        ]
     },
     'web-designing': {
         title: "Web Designing Course in Mumbai | HTML, CSS, JavaScript Training | Primezone",
@@ -460,7 +502,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "JavaScript", logo: "/images/tech/js.svg" },
             { name: "Canva", logo: "/images/tech/canva.svg" }
         ],
-        faqs: [{ q: "How long is the course?", a: "The Web Designing course typically takes 4 months to complete." }]
+        faqs: [
+            { q: "Which is the best Web Design institute in Mumbai?", a: "Primezone offers top-tier web design training with a focus on UI/UX and responsive design." },
+            { q: "How long is the course?", a: "The Web Designing course typically takes 4 months to complete." },
+            { q: "Will I learn mobile-friendly design?", a: "Yes, responsive web design is a core part of the curriculum." },
+            { q: "Is there a certificate?", a: "Yes, you get a government-recognized certificate upon completion." }
+        ]
     },
     'dsa': {
         title: "Data Structures & Algorithms Course in Mumbai | DSA Training | Primezone",
@@ -482,7 +529,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Java", logo: "/images/tech/java.svg" },
             { name: "C++", logo: "/images/tech/cplusplus.svg" }
         ],
-        faqs: [{ q: "Which language is used?", a: "We primarily use Java or C++ for DSA implementations." }]
+        faqs: [
+            { q: "Which is the best DSA institute in Mumbai?", a: "Primezone is highly recommended for its structured and interview-focused DSA course." },
+            { q: "Which language is used?", a: "We primarily use Java or C++ for DSA implementations." },
+            { q: "Is this for beginners?", a: "Basic coding knowledge is recommended, but we review the fundamentals." },
+            { q: "Does it help with interviews?", a: "Yes, the course is specifically designed to help students clear technical coding rounds." }
+        ]
     },
     'python': {
         title: "Python Programming Course in Mumbai | Beginner to Advanced Training | Primezone",
@@ -502,7 +554,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Python", logo: "/images/tech/python.svg" },
             { name: "VS Code", logo: "/images/tech/vscode.svg" }
         ],
-        faqs: [{ q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." }]
+        faqs: [
+            { q: "Which is the best Python institute in Mumbai?", a: "Primezone provides excellent hands-on Python training for all levels." },
+            { q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." },
+            { q: "What is the course duration?", a: "The Python course typically takes 3 months." },
+            { q: "Are there projects?", a: "Yes, you will build several real-world automation scripts." }
+        ]
     },
     'seo': {
         title: "SEO Course in Mumbai | Search Engine Optimization Training | Primezone",
@@ -524,7 +581,12 @@ export const courseDetails: { [key: string]: any } = {
             { name: "WordPress", logo: "/images/tech/wordpress.svg" },
             { name: "SEMrush", logo: "/images/tech/seo.svg" }
         ],
-        faqs: [{ q: "Do I need coding for SEO?", a: "Only basic HTML knowledge is needed, which is included in the course." }]
+        faqs: [
+            { q: "Which is the best SEO institute in Mumbai?", a: "Primezone is a leader in SEO training with a focus on ranking results." },
+            { q: "Do I need coding for SEO?", a: "Only basic HTML knowledge is needed, which is included in the course." },
+            { q: "Is it a practical course?", a: "Yes, you will optimize a live website during the training." },
+            { q: "How long is the SEO course?", a: "It is a 2-month intensive program." }
+        ]
     },
     'coreldraw': {
         title: "CorelDRAW Course in Mumbai | Vector Graphic Design Training | Primezone",
@@ -544,7 +606,12 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" }
         ],
-        faqs: [{ q: "Who should join this?", a: "Anyone interested in print media and graphic design should learn CorelDRAW." }]
+        faqs: [
+            { q: "Which is the best CorelDRAW institute in Mumbai?", a: "Primezone offers the most industry-relevant CorelDRAW training in Mumbai." },
+            { q: "Who should join this?", a: "Anyone interested in print media and graphic design should learn CorelDRAW." },
+            { q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate." },
+            { q: "Is the course practical?", a: "Yes, it is 100% project-based." }
+        ]
     },
     'adobe-photoshop': {
         title: "Adobe Photoshop Course in Mumbai | Image Editing Training | Primezone",
@@ -562,7 +629,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Output", icon: "FileText", topics: ["File Formats", "Web Optimization", "Print Prep"] }
         ],
         tools: [{ name: "Photoshop", logo: "/images/tech/photoshop.svg" }],
-        faqs: [{ q: "Is this course practical?", a: "Yes, 100% practical with hands-on projects." }]
+        faqs: [
+            { q: "Which is the best Photoshop institute in Mumbai?", a: "Primezone is highly rated for its practical Photoshop training." },
+            { q: "Is this course practical?", a: "Yes, 100% practical with hands-on projects." },
+            { q: "What is the duration?", a: "The Photoshop course takes 2 months." },
+            { q: "Can I join as a beginner?", a: "Yes, we start from the absolute basics." }
+        ]
     },
     'power-bi': {
         title: "Power BI Course in Mumbai | Data Visualization Training | Primezone",
@@ -580,7 +652,12 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Reporting", icon: "Palette", topics: ["Visuals", "Formatting", "Slicers", "Dashboards"] }
         ],
         tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
-        faqs: [{ q: "Is Excel knowledge needed?", a: "Basic Excel is helpful but not mandatory; we cover needed concepts." }]
+        faqs: [
+            { q: "Which is the best Power BI institute in Mumbai?", a: "Primezone provides top-tier Power BI training with real-world business cases." },
+            { q: "Is Excel knowledge needed?", a: "Basic Excel is helpful but not mandatory; we cover needed concepts." },
+            { q: "What is the duration?", a: "The course is 3 months long." },
+            { q: "Do you teach DAX?", a: "Yes, DAX is a core part of the modeling module." }
+        ]
     },
     'taxation-auditing': {
         title: "Taxation & Auditing Course in Mumbai | Primezone",
@@ -891,7 +968,9 @@ export const courseDetails: { [key: string]: any } = {
         careerOpportunities: ["Social Media Executive", "Freelance Designer"],
         syllabus: [{ title: "Quick Design", icon: "Palette", topics: ["Elements", "Effects", "Branding"] }],
         tools: [{ name: "Canva", logo: "/images/tech/canva.svg" }],
-        faqs: [{ q: "Is it for professional use?", a: "Yes, Canva is widely used by marketing agencies for speed and efficiency." }]
+        faqs: [
+            { q: "Is it for professional use?", a: "Yes, Canva is widely used by marketing agencies for speed and efficiency." }
+        ]
     },
     'after-effects': {
         title: "After Effects Course in Mumbai | Motion Graphics Training | Primezone",
