@@ -72,45 +72,45 @@ export const courseDetails: { [key: string]: any } = {
         whyLearn: "In Mumbai's corporate hub, every business requires skilled accountants who can handle GST, Income Tax, and financial reports. DFAM provides the practical edge needed to manage business finances and investments effectively.",
         image: "/images/courses/diploma/dfam.webp",
         hint: "financial management",
-        highlights: ["Office Automation Basics", "Tally Prime & GST Mastery", "Share Market Trading", "Personality Development", "Learning Mode: Offline | Hybrid | Online"],
+        highlights: ["Office Automation Basics", "Tally Prime & GST Mastery", "Share Market Trading", "Taxation & Auditing", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: [
             "Advanced Financial Accounting with Tally Prime and live GST compliance.",
             "Professional Data Analysis and MIS reporting using Excel.",
             "Detailed understanding of Direct & Indirect Taxation (ITR, TDS, TCS).",
             "Basics of Share Market, trading instruments, and technical analysis.",
-            "Soft skills and Personality Development for successful corporate careers."
+            "Advanced Office Automation and Management skills for corporate roles."
         ],
-        careerOpportunities: ["Accounts Executive", "GST Executive", "Finance Assistant", "Tax Assistant", "Payroll Executive", "Jnr. Accountant", "Banking Assistant"],
+        careerOpportunities: ["Accounts Executive", "GST Executive", "Finance Assistant", "Tax Assistant", "Payroll Executive", "Junior Accountant", "Banking Assistant"],
         syllabus: [
             { 
                 title: "OFFICE AUTOMATION", 
                 icon: "MonitorCheck", 
-                topics: ["Windows Fundamentals", "Microsoft Word", "Microsoft Powerpoint", "Microsoft Excel", "Internet Resources", "Assignment & Projects"] 
+                topics: ["Windows Fundamentals", "Microsoft Word", "Microsoft Powerpoint", "Microsoft Excel", "Internet - Upload, Download, Booking", "Assignment & Projects"] 
             },
             { 
                 title: "ADVANCE EXCEL", 
                 icon: "BarChart", 
-                topics: ["Advance Formula & Functions", "Pivot Tables & Charts", "V lookup, H lookup, X lookup", "Data Analysis", "What if Analysis", "Charts & Dashboard", "MIS Reporting", "Data Protection", "Track Changes & Macros", "Assignment & Projects"] 
+                topics: ["Advance Formula & Functions", "Pivot Tables & Pivot Charts", "V lookup, H lookup, X lookup", "Data Analysis", "Charts & Dashboard", "What if Analysis", "MIS Reporting", "Track Changes & Macros", "Assignment & Projects"] 
             },
             { 
                 title: "TALLY PRIME (GST)", 
                 icon: "FileText", 
-                topics: ["Accounting in Tally Prime", "Purchase, Sales, Journal Entries", "Payment, Receipt Voucher", "Contra Vouchers, Credit, Debit Notes", "Inventory Management", "GST Concept, Types of GST", "GST Transactions", "GST Returns, TDS, TCS", "Assignment & Projects"] 
+                topics: ["Basics of Accounting", "Accounting Principal", "Golden Rules", "Voucher Entries (Receipt, Journal, Contra)", "Inventory Management", "GST Setup & Transactions", "GST Returns, TDS, TCS", "Assignment & Projects"] 
+            },
+            { 
+                title: "TAXATION AUDITING", 
+                icon: "Landmark", 
+                topics: ["Direct & Indirect Taxes", "Framework of Income Tax", "Heads of Income", "ITR & Pan Application", "Invoicing Formats", "GST Return filing", "Assignment & Projects"] 
+            },
+            { 
+                title: "MANAGEMENT SKILL", 
+                icon: "Users", 
+                topics: ["Understanding Management Skills", "Managing Business Finance", "Project Reports", "Export / Import Management", "Case Study of Successful Employees", "Office & Marketing Management", "Assignment & Projects"] 
             },
             { 
                 title: "SHARE MARKET", 
                 icon: "BarChart", 
-                topics: ["Basics of Share Market", "Stock Market Instruments", "Trading & Investment Basics", "Technical Analysis", "Risk Management", "Assignment & Projects"] 
-            },
-            { 
-                title: "TAXATION", 
-                icon: "Landmark", 
-                topics: ["Basics of Taxation", "Income Tax", "Filing of Income Tax Return (ITR)", "Goods & Services Tax (GST)", "TDS & TCS", "Assignment & Projects"] 
-            },
-            { 
-                title: "PERSONALITY DEVELOPMENT", 
-                icon: "Users", 
-                topics: ["Confidence Building", "Communication Skills", "Grooming & Etiquette", "Leadership & Team Skills", "Emotional Intelligence & Mindset", "Career & Interview Preparation", "Assignment & Projects"] 
+                topics: ["Primary Markets", "Book Building", "IPOS & Listings Trading", "Clearance & Settlements", "Mutual Funds", "Depositories & Derivatives", "Assignment & Projects"] 
             }
         ],
         tools: [
@@ -119,8 +119,8 @@ export const courseDetails: { [key: string]: any } = {
             { name: "MS Powerpoint", logo: "/images/tech/powerpoint.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
             { name: "GST", logo: "/images/tech/gst.jpg" },
-            { name: "Taxation", logo: "/images/tech/tax.png" },
-            { name: "Share Market", logo: "/images/tech/share.svg" }
+            { name: "Income Tax", logo: "/images/tech/tax.png" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" }
         ],
         faqs: [
             { q: "Which is the best Financial Accounting institute in Mumbai?", a: "Primezone Computer Education offers the best DFAM course in Mumbai with practical Tally Prime and Taxation training." },
@@ -147,29 +147,29 @@ export const courseDetails: { [key: string]: any } = {
         careerOpportunities: ["Software Developer", "Python Developer", "Java Developer", "Junior Web Developer", "Database Administrator", "Backend Engineer", "Coding Instructor"],
         syllabus: [
             { 
-                title: "C & C++ PROGRAMMING", 
+                title: "C, C++ & DSA", 
                 icon: "Code", 
-                topics: ["Introduction to Logic", "C Syntax & Operators", "Control Statements", "Functions & Pointers", "OOPS Concepts in C++", "Inheritance & Polymorphism", "File Handling", "Assignment & Projects"] 
-            },
-            { 
-                title: "PYTHON PROGRAMMING", 
-                icon: "Code", 
-                topics: ["Python Setup & Basics", "Data Types & Variables", "Control Flow & Loops", "Functions & Modules", "File I/O Operations", "Exception Handling", "Introduction to Libraries", "Assignment & Projects"] 
-            },
-            { 
-                title: "JAVA (CORE & ADVANCE)", 
-                icon: "Code", 
-                topics: ["Java Environment", "Classes & Objects", "String Handling", "Multithreading", "GUI with Swing", "JDBC & Database Connectivity", "Servlets & JSP", "Assignment & Projects"] 
+                topics: ["Intro Flow Algorithm", "C Syntax, Operators & Data Types", "C++ with OOPS Concepts", "Control Statements & Loops", "Data Structures & Algorithms", "File Handling & Preprocessor", "Assignment & Projects"] 
             },
             { 
                 title: "WEB TECHNOLOGIES", 
                 icon: "Globe", 
-                topics: ["HTML5 & CSS3 Basics", "JavaScript Fundamentals", "Integrating Frontend with Backend", "Web Hosting & Deployment", "Assignment & Projects"] 
+                topics: ["HTML5 & CSS3 Basics", "JavaScript Fundamentals", "PHP for server-side scripting", "WordPress basics", "Web Hosting & Deployment", "Assignment & Projects"] 
             },
             { 
-                title: "ADVANCED FRAMEWORKS", 
+                title: "PYTHON PROGRAMMING", 
                 icon: "Code", 
-                topics: ["Angular or React Basics", "State Management", "API Integration", "Single Page Applications", "Assignment & Projects"] 
+                topics: ["Python Setup & Basics", "Data Types & Variables", "Control Flow & Loops", "Functions & Modules", "File Handling", "Exception Handling", "Introduction to Libraries", "Assignment & Projects"] 
+            },
+            { 
+                title: "JAVA (CORE & ADVANCED)", 
+                icon: "Code", 
+                topics: ["Introduction to Java", "Classes, Inheritances, Polymorphism", "GUI with Swing Controls", "Multithreading & Exception Handling", "Servlet, JSP, JDBC", "Assignment & Projects"] 
+            },
+            { 
+                title: ".NET or MERN Stack", 
+                icon: "Rocket", 
+                topics: ["ASP.NET with C#", "Angular or React", "State Management", "Handling HTTP requests", "Server-side Rendering (SSR)", "API Integration", "Assignment & Projects"] 
             },
             { 
                 title: "DATABASE MANAGEMENT", 
@@ -221,7 +221,12 @@ export const courseDetails: { [key: string]: any } = {
             { 
                 title: "WEB DESIGNING", 
                 icon: "Globe", 
-                topics: ["Html 5", "CSS", "JavaScript", "WordPress", "Web Hosting & Domain", "Assignment & Projects"] 
+                topics: ["Introduction to Web Design", "Html 5 & CSS", "Adobe Animate", "Web Hosting & Domain", "Adobe Dreamweaver", "Assignment & Projects"] 
+            },
+            { 
+                title: "ADOBE ANIMATE", 
+                icon: "Bot", 
+                topics: ["Frame By Frame Animation", "Movie Clips, Symbols, Buttons", "Shape Tweening", "Walk Through Animation", "Smoke Animation", "Action Script 2.0", "Assignment & Projects"] 
             },
             { 
                 title: "VIDEO SOUND EDITING", 
@@ -229,14 +234,9 @@ export const courseDetails: { [key: string]: any } = {
                 topics: ["Introduction Premiere Pro", "Interface & Panels", "Basic Editing Tools", "Video Motion & Opacity", "Slow/Fast Motion", "Movie Titles", "Video Transitions & Effects", "Green Screen Chroma Editing", "Assignment & Projects"] 
             },
             { 
-                title: "AFTER EFFECTS (VFX)", 
-                icon: "Rocket", 
-                topics: ["Overview Motion Graphics", "Composition & Timeline", "Working With Layers", "Animation Basics & Keyframes", "Green Screen Chroma", "Camera & 3D Layer Basics", "Shape & Mask Animation", "Assignment & Projects"] 
-            },
-            { 
                 title: "3Ds MAX (2D-3D)", 
                 icon: "Rocket", 
-                topics: ["Introduction 3Ds Max", "Interface & Navigation", "2D Drafting to 3D", "3D Modeling & Modifiers", "Architectural Design", "Materials & Texturing", "Lighting & Cameras", "Animation Basics", "Environment & Effects", "Tendering Techniques", "Assignment & Projects"] 
+                topics: ["Interface & Navigation", "2D Drafting to 3D", "3D Modeling & Modifiers", "Architectural Design", "Materials & Texturing", "Lighting & Cameras", "Animation Basics", "Environment & Effects", "Assignment & Projects"] 
             }
         ],
         tools: [
@@ -247,11 +247,9 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Canva", logo: "/images/tech/canva.svg" },
             { name: "HTML5", logo: "/images/tech/html.svg" },
             { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" },
-            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
             { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
-            { name: "After Effects", logo: "/images/tech/aftereffects.svg" },
-            { name: "3Ds Max", logo: "/images/tech/p.svg" }
+            { name: "After Effects", logo: "/images/tech/after-effects.svg" },
+            { name: "3Ds Max", logo: "/images/tech/3dsMax.svg" }
         ],
         faqs: [
             { q: "Which is the best Graphic Design institute in Mumbai?", a: "Primezone Computer Education is considered the best for Graphic & Animation training, offering all industry-standard Adobe tools and 3Ds MAX." },
@@ -261,41 +259,51 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'ethical-hacking': {
-        title: "Diploma In Ethical Hacking Course in Mumbai | Cybersecurity Training | Primezone",
-        metaDescription: "Learn Cybersecurity in Mumbai. Master Penetration Testing, Network Security, and Hacking Countermeasures. Join the best Ethical Hacking course.",
-        description: "Protect the digital world. Our Ethical Hacking diploma is a high-level security program that teaches you how to identify, analyze, and patch vulnerabilities before malicious hackers can exploit them.",
-        whyLearn: "Cybersecurity is a top priority for every government and corporation in 2025. Skilled ethical hackers are in massive demand to protect sensitive financial and personal data from global threats.",
+        title: "Cyber Security & Ethical Hacking Course in Mumbai | Primezone",
+        metaDescription: "Best Cyber Security & Ethical Hacking Course in Mumbai. Learn Linux, Networking, Web App Security, and Malware Analysis. Job-oriented training with placement.",
+        description: "Become a certified Cyber Security professional. Our Diploma in Ethical Hacking is a comprehensive program that covers everything from networking fundamentals and Linux security to advanced web application exploitation and malware analysis.",
+        whyLearn: "Cybersecurity is one of the fastest-growing careers globally. With digital threats on the rise, companies in Mumbai and beyond are actively hiring experts to protect their data. This course equips you with the mindset and tools of a professional ethical hacker.",
         image: "/images/courses/diploma/deh.webp",
-        hint: "ethical hacking",
-        highlights: ["Vulnerability Analysis", "System Hacking Mastery", "Network Scanning", "Web App Security", "Learning Mode: Offline | Hybrid | Online"],
+        hint: "cyber security",
+        highlights: ["Networking & OSI Model", "Linux & System Security", "Web App Penetration Testing", "Malware Analysis Basics", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: [
-            "Comprehensive Penetration Testing methodologies.",
-            "Network Scanning and Vulnerability Assessment.",
-            "Techniques for securing Web Servers and Applications.",
-            "Countermeasures for Malware, Sniffing, and SQL Injection.",
-            "Advanced firewall evasion and IDS detection techniques."
+            "Mastery of Networking Fundamentals, IP Addressing, and TCP/IP models.",
+            "Advanced Linux system security, file commands, and virtual lab setup.",
+            "Conducting professional Footprinting, Scanning, and Enumeration.",
+            "Exploiting Web Application vulnerabilities like SQLi and XSS (OWASP Top 10).",
+            "Understanding Malware types, DDoS concepts, and Incident Response basics."
         ],
-        careerOpportunities: ["Cybersecurity Analyst", "Penetration Tester", "Security Consultant", "Network Security Engineer", "Information Security Officer"],
+        careerOpportunities: ["Cyber Security Analyst", "Ethical Hacker", "Digital Forensics Expert", "SOC Analyst", "Malware Analyst", "Forensics Expert", "Network Security Engineer"],
         syllabus: [
             { 
-                title: "RECONNAISSANCE", 
+                title: "C.S & NETWORKING FUNDAMENTALS", 
+                icon: "MonitorCheck", 
+                topics: ["Introduction to Cyber Security", "Types of Hackers (White, Black, Grey Hat)", "Cyber Laws & Ethics", "Common Cyber Attacks", "Networking Basics", "OSI & TCP/IP Model", "IP Addressing & Subnetting", "Ports & Protocols", "Assignment & Projects"] 
+            },
+            { 
+                title: "LINUX & SYSTEM SECURITY", 
+                icon: "TerminalSquare", 
+                topics: ["Introduction to Linux", "File System & Commands", "User & Permission Management", "Windows Security Basics", "Installing & Setting up Virtual Lab", "Security Hardening Basics", "Assignment & Projects"] 
+            },
+            { 
+                title: "ETHICAL HACKING CONCEPTS", 
                 icon: "Search", 
-                topics: ["Intro to Ethical Hacking", "Footprinting using Search Engines", "Website Footprinting", "Email & DNS Footprinting", "Network Footprinting", "Social Engineering", "Assignment & Projects"] 
+                topics: ["Footprinting & Reconnaissance", "Scanning & Enumeration", "Vulnerability Assessment", "Social Engineering Concepts", "Password Cracking Concepts", "Wireless Network Basics", "Nmap, Wireshark Mastery", "Assignment & Projects"] 
             },
             { 
-                title: "SCANNING & ENUMERATION", 
+                title: "WEB APPLICATION SECURITY", 
                 icon: "Code", 
-                topics: ["Network Scanning Techniques", "Checking for Live Systems", "Vulnerability Scanning", "Banner Grabbing", "Enumeration (SNMP, LDAP, SMTP)", "Assignment & Projects"] 
+                topics: ["SQL Injection", "Cross-Site Scripting (XSS)", "OWASP Top 10", "Firewall Concepts", "IDS & IPS", "VPN & Network Defense", "Burp Suite", "Metasploit", "Assignment & Projects"] 
             },
             { 
-                title: "EXPLOITATION", 
-                icon: "Bug", 
-                topics: ["System Hacking & Access", "Escalating Privileges", "Maintaining Access", "Malware Analysis", "Sniffing & MAC Attacks", "Session Hijacking", "Assignment & Projects"] 
+                title: "MALWARE CONCEPTS", 
+                icon: "BugPlay", 
+                topics: ["Malware Types", "Basic Malware Analysis", "DoS & DDoS Concepts", "Cloud Security Basics", "Mobile Security Introduction", "Incident Response Basics", "Assignment & Projects"] 
             },
             { 
-                title: "ADVANCED SECURITY", 
-                icon: "ShieldCheck", 
-                topics: ["Denial-of-Service (DoS/DDoS)", "Evading IDS, Firewalls & Honeypots", "Hacking Web Servers", "Hacking Web Applications", "SQL Injection Countermeasures", "Cryptography", "Assignment & Projects"] 
+                title: "REAL-WORLD PROJECTS", 
+                icon: "Rocket", 
+                topics: ["Website Security Testing", "Network Vulnerability Assessment", "WiFi Security Testing", "Security Audit Simulation", "Final Capstone Project", "Assignment & Projects"] 
             }
         ],
         tools: [
@@ -303,14 +311,14 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
             { name: "Nmap", logo: "/images/tech/nmap.svg" },
             { name: "Metasploit", logo: "/images/tech/Metasploit.svg" },
-            { name: "Python", logo: "/images/tech/python.svg" },
-            { name: "MySQL", logo: "/images/tech/mysql.svg" }
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" }
         ],
         faqs: [
-            { q: "Which is the best Ethical Hacking institute in Mumbai?", a: "Primezone Computer Education provides the most practical and comprehensive Ethical Hacking course in Mumbai, featuring real-world penetration testing labs." },
-            { q: "Is this course legal?", a: "Yes, we teach Ethical Hacking for defense and security purposes only, adhering to strict ethical guidelines." },
-            { q: "Do I need coding for Ethical Hacking?", a: "Basic knowledge of Python and SQL is very helpful, both of which are touched upon during the course." },
-            { q: "What are the job prospects?", a: "Cybersecurity is a high-growth field. Graduates find roles in IT firms, banks, and government security agencies." }
+            { q: "Which is the best Cyber Security institute in Mumbai?", a: "Primezone Computer Education offers the most practical Ethical Hacking and Cyber Security course in Mumbai, featuring real-world lab environments." },
+            { q: "Do I need coding for Ethical Hacking?", a: "Basic understanding of HTML, JS, and SQL is helpful for Web Security, and Python is great for automation—all of which are touched upon in our course." },
+            { q: "Is there placement assistance for Cyber Security?", a: "Yes, we provide 100% placement support for roles like SOC Analyst, Security Engineer, and Malware Analyst in Mumbai." },
+            { q: "Who can join this course?", a: "Students from IT, Science, or Commerce backgrounds, as well as working professionals looking to transition into cybersecurity, can enroll." }
         ]
     },
     'digital-marketing': {
@@ -419,7 +427,7 @@ export const courseDetails: { [key: string]: any } = {
         ],
         faqs: [
             { q: "Which is the best Advanced Excel institute in Mumbai?", a: "Primezone is known for the most advanced Excel and VBA curriculum in Mumbai." },
-            { q: "Do I need to know math?", a: "Basic arithmetic is enough; we teach the logic behind the formulas." },
+            { q: "Who can join?", a: "Commerce students, graduates, and working professionals." },
             { q: "Will I learn Macros?", a: "Yes, our advanced course includes Macro recording and VBA basics." },
             { q: "Is there placement assistance?", a: "Yes, we help students find MIS and analyst roles in Mumbai." }
         ]
@@ -745,20 +753,6 @@ export const courseDetails: { [key: string]: any } = {
         syllabus: [{ title: "Vectors", icon: "Palette", topics: ["Paths", "Shapes", "Colors"] }],
         tools: [{ name: "Illustrator", logo: "/images/tech/illustrator.svg" }],
         faqs: [{ q: "Is it better than Photoshop?", a: "It is different; Illustrator is for vectors while Photoshop is for pixels." }]
-    },
-    'video-sound-editing': {
-        title: "Video & Sound Editing Course in Mumbai | Primezone",
-        metaDescription: "Learn Video Editing in Mumbai. Master Premiere Pro and After Effects. Professional editing classes at Primezone.",
-        description: "Turn raw footage into cinematic stories with our professional editing course.",
-        whyLearn: "Content is king. Every brand needs skilled video editors for their marketing campaigns.",
-        image: "/images/courses/coursetrend/Video & Sound Editing.webp",
-        hint: "video editing",
-        highlights: ["Color Grading", "Audio Syncing", "Transitions", "Visual Effects", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Timeline management", "Multi-camera editing", "Title design", "Exporting for social media"],
-        careerOpportunities: ["Video Editor", "YouTube Content Creator", "Post-production Specialist"],
-        syllabus: [{ title: "Editing", icon: "LayoutTemplate", topics: ["Cutting", "Merging", "Sound Design"] }],
-        tools: [{ name: "Premiere Pro", logo: "/images/tech/premiere.svg" }],
-        faqs: [{ q: "Which software is used?", a: "We primarily use Adobe Premiere Pro and After Effects." }]
     },
     'autocad': {
         title: "AutoCAD 2D & 3D Course in Mumbai | Drafting Training | Primezone",
