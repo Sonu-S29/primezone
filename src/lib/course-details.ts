@@ -3,21 +3,22 @@ export const courseDetails: { [key: string]: any } = {
     // --- DIPLOMA COURSES ---
     'itcg-graduation': {
         title: "ITCG - Information Technology Computer Graduation Course in Mumbai | Primezone",
-        metaDescription: "Enroll in the best ITCG Graduation Course in Mumbai at Primezone. 5-semester comprehensive program covering Office AI, Tally, Graphics, Web Dev, Programming, and Data Analytics.",
-        description: "The Information Technology Computer Graduation (ITCG) is a professional multi-semester career program. It combines essential office productivity with AI tools, financial accounting, creative design, full-stack web development, and data science foundations.",
-        whyLearn: "ITCG is designed to make you a complete tech professional. In today's market, employers look for candidates who can handle office work, accounting, design, and high-end development. This comprehensive program provides the multi-skilled edge required for top-tier corporate and technical roles in Mumbai's competitive job market.",
+        metaDescription: "Enroll in the best 2.5-Year ITCG Graduation Course in Mumbai at Primezone. Comprehensive program covering Office AI, Tally, Graphics, Web Dev, Digital Marketing, and specializations.",
+        description: "The Information Technology Computer Graduation (ITCG) is a professional multi-semester career program. It combines essential office productivity with AI tools, financial accounting, creative design, full-stack web development, digital marketing, and advanced specializations.",
+        whyLearn: "ITCG is designed to make you a complete tech professional. In today's market, employers look for candidates who can handle office work, accounting, design, high-end development, and digital presence. This comprehensive program provides the multi-skilled edge required for top-tier corporate and technical roles in Mumbai's competitive job market.",
         image: "/images/courses/diploma/itcg.webp",
         hint: "computer graduation",
-        highlights: ["Office AI & Advanced Excel", "Tally Prime & GST Mastery", "Graphic & Web Designing", "Full-Stack Development", "Python & Data Science", "Learning Mode: Offline | Hybrid | Online"],
+        highlights: ["2.5 Year Professional Track", "Office AI & Advanced Excel", "Tally Prime & GST Mastery", "Graphic & Web Designing", "Advanced Digital Marketing", "Specialized Elective Track", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: [
             "Advanced Office Productivity with Artificial Intelligence (AI) integration.",
             "Complete Excel mastery from basic formulas to complex MIS dashboards.",
             "Professional Accounting, Inventory, and GST compliance using Tally Prime.",
             "Creative visual designing and branding using Adobe & Corel tools.",
-            "Full-Stack Web Development including Frontend, Backend, and Deployment.",
-            "Programming foundations with Python/Java and Data Visualization with Power BI."
+            "Full-Stack Web Development and Professional E-Commerce setup.",
+            "Digital Marketing strategies (SEO, SEM, SMM) for global brands.",
+            "Specialized track in either Finance, Data Analytics, or Animation/Video Editing."
         ],
-        careerOpportunities: ["Senior Accountant", "Full-Stack Developer", "Graphic Designer", "Data Analyst", "MIS Manager", "UI/UX Designer", "Software Engineer"],
+        careerOpportunities: ["Senior Accountant", "Full-Stack Developer", "Digital Marketing Manager", "Graphic Designer", "Data Analyst", "MIS Manager", "UI/UX Designer", "Video Editor", "VFX Artist"],
         syllabus: [
             // SEMESTER 1
             { 
@@ -87,84 +88,90 @@ export const courseDetails: { [key: string]: any } = {
                 icon: "Users", 
                 topics: ["Communication Skills", "Professional Etiquette", "Resume Building", "Interview Techniques", "Body Language", "Time Management", "Leadership Skills", "Confidence Building"] 
             },
-            // SEMESTER 3 (Updated from Image)
+            // SEMESTER 3 (Intermediate ITCG)
             {
                 semester: 3,
                 title: "Web Designing",
                 icon: "Globe",
-                topics: ["Html 5", "CSS 3", "Javascript", "Web Hosting", "Domain / Sub Domain"]
+                topics: ["Html 5", "CSS 3", "Javascript", "Web Hosting", "Domain / Sub Domain", "UI/UX Basics", "Responsive Layouts"]
             },
             {
                 semester: 3,
                 title: "Web Development",
                 icon: "Code",
-                topics: ["Front-End Development", "Back-End Development", "Database Management", "Javascript (Core + Advance)", "Deployment"]
+                topics: ["Front-End Development", "Back-End Development", "Database Management", "JavaScript (Core + Advance)", "Node.js Basics", "Deployment Strategies"]
             },
-            // SEMESTER 4
+            // SEMESTER 4 (Professional ITCG)
             {
                 semester: 4,
-                title: "Programming Essentials",
-                icon: "Code",
-                topics: ["Introduction to Programming Logic", "Python Setup & Basics", "Control Structures & Loops", "Functions & Modules", "File Handling in Python", "Intro to Libraries (Numpy, Pandas)"]
-            },
-            {
-                semester: 4,
-                title: "Java Technologies",
-                icon: "Code",
-                topics: ["Core Java Foundations", "Classes & Objects", "Inheritance & Polymorphism", "Exception Handling", "Java Database Connectivity (JDBC)", "Servlets & JSP"]
+                title: "Search Engine Optimization (SEO)",
+                icon: "Search",
+                topics: ["Keyword Research", "On-Page SEO", "Technical SEO", "Off-Page SEO", "SEO Tools & Analytics", "Advanced SEO Reporting"]
             },
             {
                 semester: 4,
-                title: "C, C++ & DSA",
-                icon: "Code",
-                topics: ["C Syntax & Operators", "C++ with OOPS", "Linear Data Structures", "Algorithms & Problem Solving"]
+                title: "Social Media Marketing (SMM)",
+                icon: "Users",
+                topics: ["Platforms Overview", "Content Strategy", "Paid Ads", "Campaign Management", "Performance Tracking", "Advanced SMM Strategy"]
             },
-            // SEMESTER 5
+            {
+                semester: 4,
+                title: "Search Engine Marketing (SEM)",
+                icon: "Megaphone",
+                topics: ["Google Ads Fundamentals", "Search Ads (PPC)", "Display & Video Advertising", "Shopping & E-commerce Ads", "Analytics & Optimization", "Advanced SEM Campaigns"]
+            },
+            {
+                semester: 4,
+                title: "WordPress Mastery",
+                icon: "Globe",
+                topics: ["Themes Customization", "Plugin Management", "E-Commerce Integration", "Website Security", "Dynamic Website Creation"]
+            },
+            // SEMESTER 5 (Final Elective Tracks)
+            // Option 1
             {
                 semester: 5,
-                title: "Modern Stacks (MERN or .NET)",
-                icon: "Rocket",
-                topics: ["ReactJS Components", "State Management", "Node.js & Express.js", "MongoDB NoSQL", "RESTful API Integration", "ASP.NET with C# (Optional)"]
+                title: "Option A: Accounting & Finance",
+                icon: "Landmark",
+                topics: ["Basics of Taxation System", "Income Tax (Direct/Indirect)", "Practical Taxation", "Auditing Fundamentals", "Share Market Fundamentals", "Fundamental & Technical Analysis", "Trading Strategies", "Mutual Funds & Investment", "Management Skills (Team/Workplace)"]
             },
+            // Option 2
             {
                 semester: 5,
-                title: "Data Intelligence",
+                title: "Option B: Programming & Data Analytics",
                 icon: "BarChart",
-                topics: ["SQL Fundamentals", "MySQL Advanced Queries", "Power BI Desktop Mastery", "DAX Formulas", "Interactive Dashboards", "Tableau Basics"]
+                topics: ["Data Analysis Libraries (Numpy, Pandas, Polars)", "Data Visualization (Matplotlib, Seaborn, Plotly)", "ML & AI Libraries (Scikit-learn, TensorFlow)", "Web Libraries (Django, Flask, FastAPI)", "Automation & Utility Libraries", "Tableau & Power BI Mastery"]
             },
+            // Option 3
             {
                 semester: 5,
-                title: "Graduation Capstone Project",
-                icon: "GraduationCap",
-                topics: ["Industry Project Selection", "System Architecture Design", "Full-Stack Implementation", "Testing & Debugging", "Portfolio Documentation", "Final Presentation & Viva"]
+                title: "Option C: Animation & Video Editing",
+                icon: "LayoutTemplate",
+                topics: ["Basics of Animation", "Types of Animation", "Premiere Pro (Basics to Advance)", "Frame Rate & Aspect Ratio", "Transitions & Effects", "Color Correction", "Music & Sound Effects", "Green Screen Editing", "Thumbnail Designing"]
             }
         ],
         tools: [
             { name: "MS Word", logo: "/images/tech/word.svg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
-            { name: "MS PowerPoint", logo: "/images/tech/powerpoint.svg" },
-            { name: "Claude", logo: "/images/tech/ai1.svg" },
-            { name: "ChatGPT", logo: "/images/tech/ai2.svg" },
+            { name: "ChatGPT/AI", logo: "/images/tech/ai2.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
-            { name: "GST", logo: "/images/tech/gst.jpg" },
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
             { name: "InDesign", logo: "/images/tech/indesign.svg" },
             { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
-            { name: "HTML5", logo: "/images/tech/html.svg" },
-            { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" },
-            { name: "React", logo: "/images/tech/react.svg" },
-            { name: "Node.js", logo: "/images/tech/node.svg" },
+            { name: "HTML5/CSS3", logo: "/images/tech/html.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
+            { name: "Meta Ads", logo: "/images/tech/fb.svg" },
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
             { name: "Python", logo: "/images/tech/python.svg" },
-            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "Tableau", logo: "/images/tech/tableau.svg" },
             { name: "Power BI", logo: "/images/tech/powerbi.svg" }
         ],
         faqs: [
-            { q: "What is ITCG Graduation Course?", a: "ITCG is a comprehensive graduation-level program at Primezone that covers Office AI, Accounting, Graphic Design, Web Development, Programming, and Data Analytics across 5 semesters." },
-            { q: "What is the duration of ITCG?", a: "The course is typically 2.5 years long, divided into five semesters of 6 months each." },
-            { q: "Is this course recognized?", a: "Yes, Primezone provides government-recognized certification for the ITCG program." },
-            { q: "Is there job placement for ITCG?", a: "Yes, we provide 100% placement assistance for roles in finance, IT, design, and data analytics sectors." }
+            { q: "What is the total duration of the ITCG course?", a: "The Information Technology Computer Graduation (ITCG) is a comprehensive 2.5-year program (5 Semesters)." },
+            { q: "What are the specialization options in Semester 5?", a: "Students can choose from three tracks: Accounting & Finance, Programming & Data Analytics, or Animation & Video Editing." },
+            { q: "Does the course cover Digital Marketing?", a: "Yes, Semester 4 is entirely focused on Professional Digital Marketing, covering SEO, SEM, SMM, and WordPress." },
+            { q: "Is job placement guaranteed?", a: "We provide 100% job placement assistance after the completion of the ITCG graduation program in top Mumbai firms." }
         ]
     },
     'computer-application': {

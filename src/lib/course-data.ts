@@ -21,18 +21,18 @@ export const diplomaCourses: DiplomaCourse[] = [
   {
     slug: "itcg-graduation",
     title: "Information Technology Computer Graduation (ITCG)",
-    duration: "2 Years",
-    description: "The ultimate 4-semester graduation program covering Advance MS with AI, Tally Prime, Graphic Design, Web Design, and Programming Foundations.",
+    duration: "2.5 Years",
+    description: "The ultimate 5-semester graduation program covering Advance MS with AI, Tally Prime, Graphic Design, Web Development, Digital Marketing, and elective specializations in Data or Finance.",
     image: "/images/courses/diploma/itcg.webp",
     hint: "computer graduation",
-    totalTopics: "450+",
+    totalTopics: "550+",
     modules: [
         { title: "Advance MS with AI Tools", icon: "Bot", subTopics: ["Windows Fundamentals", "Microsoft Word, Excel, PPT", "AI Chatbots & Content Tools", "AI for Design & Marketing"] },
         { title: "Advanced Excel Mastery", icon: "BarChart", subTopics: ["Advanced Formulas & Functions", "Lookup Mastery (V, H, X)", "MIS Reporting", "Dashboard Creation"] },
         { title: "Tally Prime (Advanced + GST)", icon: "FileText", subTopics: ["Advanced Accounting", "Inventory & BOM", "Payroll, TDS & TCS", "GST Returns & E-Invoicing"] },
         { title: "Graphic Designing", icon: "Palette", subTopics: ["Adobe Illustrator & Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Pro Templates"] },
         { title: "Web Technologies", icon: "Globe", subTopics: ["HTML5 & CSS3", "JavaScript Fundamentals", "Bootstrap Framework", "Figma Prototyping"] },
-        { title: "Programming & Data", icon: "Code", subTopics: ["Python Essentials", "SQL Database", "Power BI Dashboards", "Final Project"] }
+        { title: "Digital Marketing (SEO/SEM)", icon: "Megaphone", subTopics: ["Search Engine Optimization", "Social Media Marketing", "Google Ads (PPC)", "WordPress E-Commerce"] }
     ],
   },
   {
@@ -116,7 +116,7 @@ export const diplomaCourses: DiplomaCourse[] = [
       { title: "Vulnerability Analysis", icon: "Bug", subTopics: ["Vulnerability classification", "Vulnerability assessment", "Vulnerability-assessment tools"] },
       { title: "System Hacking", icon: "TerminalSquare", subTopics: ["Gaining access", "Escalating privileges", "Maintaining access", "Hiding files", "Covering tracks"] },
       { title: "Malware Threats", icon: "BugPlay", subTopics: ["Trojan concepts", "Virus and worm concepts", "Malware analysis", "Countermeasures"] },
-      { title: "Sniffing", icon: "Wifi", subTopics: ["MAC attacks", "DHCP attacks", "ARP poisoning", "Spoofing attacks", "DNS poisoning"] },
+      { title: "Sniffing", icon: "Wifi", subTopics: ["MAC attacks", "DHCP attacks", "ARP poisoning", "攻擊ing attacks", "DNS poisoning"] },
       { title: "Social Engineering", icon: "Users", subTopics: ["Social engineering concepts", "Social engineering techniques", "Insider threats", "Impersonation on social networking sites"] },
       { title: "Denial-of-Service", icon: "ShieldOff", subTopics: ["DoS/DDoS concepts", "DoS/DDoS attack techniques", "Botnets", "DDoS case study", "DoS/DDoS attack tools"] },
       { title: "Session Hijacking", icon: "ServerCrash", subTopics: ["Session hijacking concepts", "Application-level session hijacking", "Network-level session hijacking", "Session hijacking tools"] },
