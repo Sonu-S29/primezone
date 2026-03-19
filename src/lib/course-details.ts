@@ -3,20 +3,21 @@ export const courseDetails: { [key: string]: any } = {
     // --- DIPLOMA COURSES ---
     'itcg-graduation': {
         title: "ITCG - Information Technology Computer Graduation Course in Mumbai | Primezone",
-        metaDescription: "Enroll in the best ITCG Course in Mumbai at Primezone. 1-year comprehensive program covering Advance MS + AI, Excel Mastery, Tally Prime (Advanced + GST), and Graphic Design.",
-        description: "The Information Technology Computer Graduation (ITCG) is a professional 1-year career program. It combines essential office productivity with AI tools, advanced financial accounting, and creative graphic design.",
-        whyLearn: "ITCG is designed to make you an all-rounder. In today's market, employers look for candidates who can handle office work, accounting, and design efficiently. This course provides the multi-skilled edge required for top-tier corporate roles.",
+        metaDescription: "Enroll in the best 2-year ITCG Course in Mumbai at Primezone. 4-semester comprehensive program covering Advance MS + AI, Excel, Tally, Graphic Design, Web Design and Programming.",
+        description: "The Information Technology Computer Graduation (ITCG) is a professional 2-year career program. It combines essential office productivity with AI tools, financial accounting, creative design, and programming foundations.",
+        whyLearn: "ITCG is designed to make you a complete tech professional. In today's market, employers look for candidates who can handle office work, accounting, design, and basic development. This 4-semester course provides the multi-skilled edge required for top-tier corporate and technical roles.",
         image: "/images/courses/diploma/itcg.webp",
         hint: "computer graduation",
-        highlights: ["Advance MS with AI Tools", "Excel & MIS Reporting", "Tally Prime Advance & GST", "Graphic Design & Branding", "Learning Mode: Offline | Hybrid | Online"],
+        highlights: ["Office AI & Advanced Excel", "Tally Prime & GST Mastery", "Graphic & Web Designing", "Python & Data visualization", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: [
             "Advanced Office Productivity with Artificial Intelligence (AI) integration.",
             "Complete Excel mastery from basic formulas to complex MIS dashboards.",
             "Professional Accounting, Inventory, and GST compliance using Tally Prime.",
             "Creative visual designing and branding using Adobe & Corel tools.",
-            "Professional soft skills and personality development for career success."
+            "Modern Web Designing using HTML5, CSS3, JavaScript and Bootstrap.",
+            "Programming foundations with Python and Data Visualisation with Power BI."
         ],
-        careerOpportunities: ["Senior Accountant", "Accounts Executive", "MIS Manager", "Graphic Designer", "Back Office Head", "Operations Executive", "Freelance Consultant"],
+        careerOpportunities: ["Senior Accountant", "MIS Manager", "Graphic Designer", "Web Designer", "Junior Python Developer", "Operations Executive", "Freelance Consultant"],
         syllabus: [
             // SEMESTER 1
             { 
@@ -33,7 +34,7 @@ export const courseDetails: { [key: string]: any } = {
             },
             { 
                 semester: 1,
-                title: "Advanced Excel", 
+                title: "Advanced Excel Mastery", 
                 icon: "BarChart", 
                 topics: ["Date & Time Functions", "Text Functions", "Statistical Functions", "Financial Functions", "Logical Functions", "Conditional Functions", "V-Look Up, H-Look Up, X-Look UP", "Array Functions", "DashBoard Creation", "MIS Reporting"] 
             },
@@ -85,6 +86,56 @@ export const courseDetails: { [key: string]: any } = {
                 title: "Personality Development", 
                 icon: "Users", 
                 topics: ["Communication Skills", "Professional Etiquette", "Resume Building", "Interview Techniques", "Body Language", "Time Management", "Leadership Skills", "Confidence Building"] 
+            },
+            // SEMESTER 3
+            {
+                semester: 3,
+                title: "Web Designing Foundations",
+                icon: "Globe",
+                topics: ["HTML5 Structure", "CSS3 Styling", "Responsive Web Design", "Web Color Theory", "Typography for Web", "Layout Planning", "Hosting & Domain Basics"]
+            },
+            {
+                semester: 3,
+                title: "JavaScript & Interactivity",
+                icon: "Code",
+                topics: ["Variables & Data Types", "DOM Manipulation", "Event Handling", "Form Validation", "Basic Animations", "jQuery Fundamentals", "API Integration Intro"]
+            },
+            {
+                semester: 3,
+                title: "Frameworks & CMS",
+                icon: "LayoutTemplate",
+                topics: ["Bootstrap 5 Grid System", "Bootstrap Components", "WordPress Installation", "WordPress Themes & Plugins", "Elementor Page Builder", "SEO for WordPress"]
+            },
+            {
+                semester: 3,
+                title: "UI/UX Prototyping",
+                icon: "Palette",
+                topics: ["Introduction to UI/UX", "User Research & Personas", "Wireframing", "High Fidelity Prototyping", "Figma Tool Mastery", "User Flow & Testing"]
+            },
+            // SEMESTER 4
+            {
+                semester: 4,
+                title: "Programming Essentials",
+                icon: "Code",
+                topics: ["Introduction to Programming Logic", "Python Basics", "Control Structures", "Data Types in Python", "Functions & Modules", "File Handling in Python"]
+            },
+            {
+                semester: 4,
+                title: "Database Management",
+                icon: "Settings",
+                topics: ["SQL Fundamentals", "MySQL Installation", "CRUD Operations", "Joins & Subqueries", "Database Normalization", "Data Export/Import"]
+            },
+            {
+                semester: 4,
+                title: "Data Intelligence",
+                icon: "BarChart",
+                topics: ["Introduction to Data Visualization", "Power BI Desktop Mastery", "Connecting to Data Sources", "DAX Basic Formulas", "Creating Interactive Dashboards", "Publishing to Power BI Service"]
+            },
+            {
+                semester: 4,
+                title: "Capstone Project",
+                icon: "Rocket",
+                topics: ["Project Planning", "Development Phase", "Testing & Debugging", "Portfolio Documentation", "Final Presentation", "Mock Viva/Interview"]
             }
         ],
         tools: [
@@ -98,13 +149,22 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
             { name: "InDesign", logo: "/images/tech/indesign.svg" },
             { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
-            { name: "Canva", logo: "/images/tech/canva.svg" }
+            { name: "Canva", logo: "/images/tech/canva.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "Bootstrap", logo: "/images/tech/bootstrap.svg" },
+            { name: "Figma", logo: "/images/tech/figma.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "Power BI", logo: "/images/tech/powerbi.svg" }
         ],
         faqs: [
-            { q: "What is ITCG - Information Technology Computer Graduation?", a: "ITCG is a 1-year professional computer graduation program at Primezone that covers Office AI, Advanced Accounting, Graphic Design, and Personality Development." },
-            { q: "What is the duration of ITCG?", a: "The course is 1 year long, divided into two semesters of 6 months each." },
-            { q: "Who is eligible for ITCG in Mumbai?", a: "Anyone after 10th or 12th, or graduates looking for professional multi-skilling, can join this course." },
-            { q: "Is there placement assistance for ITCG?", a: "Yes, Primezone provides 100% placement assistance for roles in accounting, design, and corporate administration." }
+            { q: "What is ITCG - Information Technology Computer Graduation?", a: "ITCG is a 2-year professional computer graduation program at Primezone that covers Office AI, Accounting, Graphic Design, Web Design, and Programming foundations across 4 semesters." },
+            { q: "What is the duration of ITCG?", a: "The course is 2 years long, divided into four semesters of 6 months each." },
+            { q: "Who is eligible for ITCG in Mumbai?", a: "Anyone after 10th or 12th, or graduates looking for comprehensive tech graduation, can join this course." },
+            { q: "Is there placement assistance for ITCG?", a: "Yes, Primezone provides 100% placement assistance for roles in accounting, design, web development, and data analysis." }
         ]
     },
     'computer-application': {
