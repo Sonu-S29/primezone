@@ -47,8 +47,20 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
         Palette: <Brush className="h-5 w-5 text-accent" />,
         MonitorCheck: <Monitor className="h-5 w-5 text-accent" />,
         FileText: <BookOpen className="h-5 w-5 text-accent" />,
+        Bot: <Code className="h-5 w-5 text-accent" />,
+        Users: <GraduationCap className="h-5 w-5 text-accent" />,
         default: <BookOpen className="h-5 w-5 text-accent" />,
     };
+
+    // Group syllabus by semester if applicable
+    const groupedSyllabus = course.syllabus.reduce((acc: any, module: any) => {
+        const semester = module.semester || 'Course Modules';
+        if (!acc[semester]) acc[semester] = [];
+        acc[semester].push(module);
+        return acc;
+    }, {});
+
+    const semesterKeys = Object.keys(groupedSyllabus).sort();
 
     return (
         <div className="-mt-12 md:-mt-16 pb-16">
@@ -156,34 +168,44 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                         <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Course Curriculum</h2>
                         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">A detailed, step-by-step breakdown of the modules covered in this training program.</p>
                     </div>
-                    <div className="max-w-4xl mx-auto">
-                        <Accordion type="single" collapsible className="w-full space-y-4">
-                            {course.syllabus.map((module: any, index: number) => (
-                                <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl px-4 bg-white shadow-sm overflow-hidden">
-                                    <AccordionTrigger className="hover:no-underline py-6">
-                                        <div className="flex items-center gap-4 text-left w-full">
-                                            <div className="p-3 bg-accent/10 rounded-xl shrink-0">
-                                               {iconMap[module.icon] || iconMap.default}
-                                            </div>
-                                            <div className="flex flex-col items-start text-left">
-                                                <span className="text-[10px] uppercase tracking-widest text-accent font-bold mb-1">Module {index + 1}</span>
-                                                <h4 className="font-bold text-lg md:text-xl text-primary leading-tight">{module.title}</h4>
-                                            </div>
-                                        </div>
-                                    </AccordionTrigger>
-                                    <AccordionContent className="pb-6">
-                                        <div className="pl-16 grid sm:grid-cols-2 gap-2">
-                                           {module.topics.map((topic: string, i: number) => (
-                                               <div key={i} className="flex items-center gap-2 text-muted-foreground">
-                                                   <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                                                   <span className="text-sm">{topic}</span>
-                                               </div>
-                                           ))}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
+                    <div className="max-w-4xl mx-auto space-y-12">
+                        {semesterKeys.map((key) => (
+                            <div key={key} className="space-y-6">
+                                {key !== 'Course Modules' && (
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <h3 className="text-2xl font-bold text-accent uppercase tracking-widest">Semester {key}</h3>
+                                        <div className="h-px bg-accent/20 flex-grow"></div>
+                                    </div>
+                                )}
+                                <Accordion type="single" collapsible className="w-full space-y-4">
+                                    {groupedSyllabus[key].map((module: any, index: number) => (
+                                        <AccordionItem key={index} value={`item-${key}-${index}`} className="border rounded-xl px-4 bg-white shadow-sm overflow-hidden">
+                                            <AccordionTrigger className="hover:no-underline py-6">
+                                                <div className="flex items-center gap-4 text-left w-full">
+                                                    <div className="p-3 bg-accent/10 rounded-xl shrink-0">
+                                                    {iconMap[module.icon] || iconMap.default}
+                                                    </div>
+                                                    <div className="flex flex-col items-start text-left">
+                                                        <span className="text-[10px] uppercase tracking-widest text-accent font-bold mb-1">Module {index + 1}</span>
+                                                        <h4 className="font-bold text-lg md:text-xl text-primary leading-tight">{module.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </AccordionTrigger>
+                                            <AccordionContent className="pb-6">
+                                                <div className="pl-16 grid sm:grid-cols-2 gap-2">
+                                                {module.topics.map((topic: string, i: number) => (
+                                                    <div key={i} className="flex items-center gap-2 text-muted-foreground">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
+                                                        <span className="text-sm">{topic}</span>
+                                                    </div>
+                                                ))}
+                                                </div>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    ))}
+                                </Accordion>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -218,7 +240,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                                     <div className="p-2 bg-accent text-white rounded-lg"><Phone className="h-5 w-5"/></div>
                                     <div>
                                         <p className="text-xs text-muted-foreground font-bold uppercase">Call for Demo</p>
-                                        <a href="tel:+919619529867" className="text-xl font-bold hover:text-accent transition-colors">+91 9619529867</a>
+                                        <a href="tel:+91 9619529867" className="text-xl font-bold hover:text-accent transition-colors">+91 9619529867</a>
                                     </div>
                                 </div>
                                 <Button asChild className="w-full" size="lg">

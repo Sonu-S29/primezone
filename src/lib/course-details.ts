@@ -19,31 +19,37 @@ export const courseDetails: { [key: string]: any } = {
         careerOpportunities: ["Senior Accountant", "Accounts Manager", "Graphic Designer", "Accounts Executive", "Bookkeeper", "Freelancing", "Administrative Head"],
         syllabus: [
             { 
+                semester: 1,
                 title: "ADVANCE MS WITH AI TOOLS", 
                 icon: "Bot", 
                 topics: ["Windows Fundamentals", "MS Word, Excel, PowerPoint", "Artificial Intelligence (AI) Basics", "AI Chatbots & Content Tools", "AI for Design & Creativity", "AI for Video & Audio", "AI for Marketing & Business", "Assignment & Projects"] 
             },
             { 
+                semester: 1,
                 title: "EXCEL MASTERY (BASIC TO ADVANCED)", 
                 icon: "BarChart", 
                 topics: ["Basic Formulas & Formatting", "Data Tab & Filtrations", "Working with Charts", "Macros & Track Changes", "Date, Time & Text Functions", "V-Look Up, H-Look Up, X-Look Up", "DashBoard Creation", "MIS Reporting", "Assignment & Projects"] 
             },
             { 
+                semester: 1,
                 title: "TALLY PRIME (OPERATING & ADVANCE)", 
                 icon: "FileText", 
                 topics: ["Installation & Masters Creation", "Voucher Entry & Transactions", "Multi-Company Management", "Inventory Management (BOM)", "Consumption Analysis", "Cost Centres & Budgeting", "Advanced Banking", "Payroll Management", "Assignment & Projects"] 
             },
             { 
+                semester: 2,
                 title: "TALLY PRIME (GST)", 
                 icon: "Landmark", 
                 topics: ["Basics of GST & Registration", "Activating GST in Tally", "GST Purchase & Sales Trans", "Debit/Credit Notes (GST)", "GST Reports in Tally Prime", "E-Way Bill & E-Invoicing", "GST Payment & Adjustment", "Assignment & Projects"] 
             },
             { 
+                semester: 2,
                 title: "GRAPHIC DESIGNING", 
                 icon: "Palette", 
                 topics: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Templates Pro", "Branding & Visual Identity", "Assignment & Projects"] 
             },
             { 
+                semester: 2,
                 title: "PERSONALITY DEVELOPMENT", 
                 icon: "Users", 
                 topics: ["Self-Development", "Communication Skills", "Professional & Soft Skills", "Emotional Intelligence", "Career & Life Skills", "Interview Preparation"] 
@@ -68,7 +74,6 @@ export const courseDetails: { [key: string]: any } = {
             { q: "Which tools are covered in ITCG?", a: "The course covers the full MS Office suite, AI tools, Tally Prime (Advanced), Adobe Photoshop, Illustrator, InDesign, and CorelDRAW." }
         ]
     },
-    // --- DIPLOMA COURSES ---
     'computer-application': {
         title: "Diploma In Computer Application (DCA) Course in Mumbai | Primezone",
         metaDescription: "Best DCA Course in Mumbai. Learn MS Office, AI Tools, Tally, Graphic Design, and Web Design. Job-oriented training in Jogeshwari and Vile Parle with placement.",
