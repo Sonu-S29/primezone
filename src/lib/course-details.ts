@@ -1,6 +1,74 @@
 
 export const courseDetails: { [key: string]: any } = {
     // --- DIPLOMA COURSES ---
+    'itcg-graduation': {
+        title: "ITCG - Information Technology Computer Graduation Course in Mumbai | Primezone",
+        metaDescription: "Enroll in the best ITCG Course in Mumbai at Primezone. 1-year comprehensive program covering Advance MS + AI, Advanced Excel, Tally Prime (Advanced), Graphic Design, and Personality Development.",
+        description: "The Information Technology Computer Graduation (ITCG) is Primezone's flagship 1-year career program. It combines advanced technical proficiency with AI productivity, financial accounting, creative design, and soft skills development.",
+        whyLearn: "In today's competitive job market, being a specialist in just one tool isn't enough. ITCG turns you into a multi-skilled professional ready for senior roles. You'll master everything from AI-driven office work to professional accounting and branding.",
+        image: "/images/courses/diploma/itcg.webp",
+        hint: "computer graduation",
+        highlights: ["Advance MS with AI Tools", "Tally Prime Advanced Mastery", "Graphic Design & Branding", "Personality Development", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Advanced Office Productivity enhanced with Artificial Intelligence (AI) tools.",
+            "Complete mastery of Excel from basic formulas to MIS Dashboards.",
+            "Advanced Tally Prime operations including Inventory, Payroll, and GST Compliance.",
+            "Professional visual design using the complete Adobe Creative Suite.",
+            "Soft skills, emotional intelligence, and career preparation for corporate success."
+        ],
+        careerOpportunities: ["Senior Accountant", "Accounts Manager", "Graphic Designer", "Accounts Executive", "Bookkeeper", "Freelancing", "Administrative Head"],
+        syllabus: [
+            { 
+                title: "ADVANCE MS WITH AI TOOLS", 
+                icon: "Bot", 
+                topics: ["Windows Fundamentals", "MS Word, Excel, PowerPoint", "Artificial Intelligence (AI) Basics", "AI Chatbots & Content Tools", "AI for Design & Creativity", "AI for Video & Audio", "AI for Marketing & Business", "Assignment & Projects"] 
+            },
+            { 
+                title: "EXCEL MASTERY (BASIC TO ADVANCED)", 
+                icon: "BarChart", 
+                topics: ["Basic Formulas & Formatting", "Data Tab & Filtrations", "Working with Charts", "Macros & Track Changes", "Date, Time & Text Functions", "V-Look Up, H-Look Up, X-Look Up", "DashBoard Creation", "MIS Reporting", "Assignment & Projects"] 
+            },
+            { 
+                title: "TALLY PRIME (OPERATING & ADVANCE)", 
+                icon: "FileText", 
+                topics: ["Installation & Masters Creation", "Voucher Entry & Transactions", "Multi-Company Management", "Inventory Management (BOM)", "Consumption Analysis", "Cost Centres & Budgeting", "Advanced Banking", "Payroll Management", "Assignment & Projects"] 
+            },
+            { 
+                title: "TALLY PRIME (GST)", 
+                icon: "Landmark", 
+                topics: ["Basics of GST & Registration", "Activating GST in Tally", "GST Purchase & Sales Trans", "Debit/Credit Notes (GST)", "GST Reports in Tally Prime", "E-Way Bill & E-Invoicing", "GST Payment & Adjustment", "Assignment & Projects"] 
+            },
+            { 
+                title: "GRAPHIC DESIGNING", 
+                icon: "Palette", 
+                topics: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Templates Pro", "Branding & Visual Identity", "Assignment & Projects"] 
+            },
+            { 
+                title: "PERSONALITY DEVELOPMENT", 
+                icon: "Users", 
+                topics: ["Self-Development", "Communication Skills", "Professional & Soft Skills", "Emotional Intelligence", "Career & Life Skills", "Interview Preparation"] 
+            }
+        ],
+        tools: [
+            { name: "MS Word", logo: "/images/tech/word.svg" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
+            { name: "MS PowerPoint", logo: "/images/tech/powerpoint.svg" },
+            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "GST", logo: "/images/tech/gst.jpg" },
+            { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
+            { name: "InDesign", logo: "/images/tech/indesign.svg" },
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
+            { name: "Canva", logo: "/images/tech/canva.svg" }
+        ],
+        faqs: [
+            { q: "What is ITCG Graduation?", a: "ITCG is a 1-year comprehensive computer graduation program at Primezone that covers Office AI, Advanced Accounting, Graphic Design, and Personality Development." },
+            { q: "Who is eligible for ITCG in Mumbai?", a: "Anyone after 10th or 12th, or graduates looking for professional multi-skilling, can join this course." },
+            { q: "Is there placement assistance for ITCG?", a: "Yes, Primezone provides 100% placement assistance for roles in accounting, design, and corporate administration." },
+            { q: "Which tools are covered in ITCG?", a: "The course covers the full MS Office suite, AI tools, Tally Prime (Advanced), Adobe Photoshop, Illustrator, InDesign, and CorelDRAW." }
+        ]
+    },
+    // --- DIPLOMA COURSES ---
     'computer-application': {
         title: "Diploma In Computer Application (DCA) Course in Mumbai | Primezone",
         metaDescription: "Best DCA Course in Mumbai. Learn MS Office, AI Tools, Tally, Graphic Design, and Web Design. Job-oriented training in Jogeshwari and Vile Parle with placement.",
@@ -266,7 +334,7 @@ export const courseDetails: { [key: string]: any } = {
         image: "/images/courses/diploma/deh.webp",
         hint: "cyber security",
         highlights: ["Networking & OSI Model", "Linux & System Security", "Web App Penetration Testing", "Malware Analysis Basics", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: [
+         whatYouWillLearn: [
             "Mastery of Networking Fundamentals, IP Addressing, and TCP/IP models.",
             "Advanced Linux system security, file commands, and virtual lab setup.",
             "Conducting professional Footprinting, Scanning, and Enumeration.",
@@ -360,7 +428,7 @@ export const courseDetails: { [key: string]: any } = {
             { 
                 title: "WEB DESIGNING", 
                 icon: "Globe", 
-                topics: ["Html 5, CSS, Javascript", "BootStrap", "Javasript, Wordpress", "Web Hosting, Domain", "Assignment & Projects"] 
+                topics: ["Html 5, CSS, Javascript", "BootStrap", "Web Hosting, Domain", "Assignment & Projects"] 
             },
             { 
                 title: "VIDEO & SOUND EDITING", 
@@ -371,8 +439,14 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
             { name: "Analytics", logo: "/images/tech/ga.svg" },
+            { name: "SEO", logo: "/images/tech/seo.svg" },
+            { name: "Google Search Console", logo: "/images/tech/gsc.svg" },
+            { name: "Meta Advertising", logo: "/images/tech/meta.svg" },
             { name: "Facebook Ads", logo: "/images/tech/fb.svg" },
-            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+            { name: "Instagram", logo: "/images/tech/instagram.svg" },
+            { name: "HTML", logo: "/images/tech/html.svg" },
+            { name: "CSS", logo: "/images/tech/css.svg" },
+            { name: "BootStrap", logo: "/images/tech/bootstrap.svg" },
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
             { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
@@ -421,15 +495,23 @@ export const courseDetails: { [key: string]: any } = {
             { 
                 title: "DATABASE & DEPLOYMENT", 
                 icon: "Settings", 
-                topics: ["MySQL (Relational)", "MongoDB (NoSQL)", "Data Modeling", "Git & GitHub", "Cloud Hosting & AWS Basics", "Assignment & Projects"] 
+                topics: ["MySQL (Relational)", "MongoDB (NoSQL)", "Git & GitHub", "Assignment & Projects"] 
             }
         ],
         tools: [
             { name: "VS Code", logo: "/images/tech/vscode.svg" },
             { name: "React", logo: "/images/tech/react.svg" },
+            { name: "Angular", logo: "/images/tech/angular.svg" },
             { name: "Node.js", logo: "/images/tech/node.svg" },
+            { name: "Express JS", logo: "/images/tech/express.svg" },
             { name: "Java", logo: "/images/tech/java.svg" },
+            { name: "SpringBoot", logo: "/images/tech/spring.svg" },
+            { name: "Hibernate", logo: "/images/tech/hibernate.svg" },
+            { name: "PHP", logo: "/images/tech/php.svg" },
+            { name: "Django", logo: "/images/tech/django.svg" },
             { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "MongoDB", logo: "/images/tech/mongodb.svg" },
+            { name: "Github", logo: "/images/tech/github.svg" },
             { name: "HTML5", logo: "/images/tech/html.svg" },
             { name: "CSS3", logo: "/images/tech/css.svg" },
             { name: "JavaScript", logo: "/images/tech/js.svg" }
@@ -474,9 +556,9 @@ export const courseDetails: { [key: string]: any } = {
                 topics: ["SQL Fundamentals", "DDL & DML Commands", "Complex Joins & Subqueries", "Aggregates & Constraints", "Stored Procedures", "Assignment & Projects"] 
             },
             { 
-                title: "PYTHON FOR DATA SCIENCE", 
+                title: "PYTHON", 
                 icon: "Bot", 
-                topics: ["Python Syntax & Basics", "Numpy & Pandas Libraries", "Matplotlib & Seaborn Visualization", "Data Cleaning Techniques", "Assignment & Projects"] 
+                topics: ["Python Syntax & Basics", "Control Flow & Data Structures", "Functions & Modules & Exception Handling", "Numpy & Pandas Libraries", "Matplotlib & Seaborn Visualization", "Data Cleaning Techniques", "Assignment & Projects"] 
             },
             { 
                 title: "TABLEAU", 

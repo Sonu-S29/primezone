@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useSearchParams } from 'next/navigation';
@@ -13,6 +14,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useToast } from '@/hooks/use-toast';
 
 const courses = [
+  "Information Technology Computer Graduation (ITCG)",
   "Diploma In Accounting",
   "Diploma In Financial Accounting",
   "Diploma In Computer Application",

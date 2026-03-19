@@ -19,6 +19,22 @@ export interface DiplomaCourse {
 
 export const diplomaCourses: DiplomaCourse[] = [
   {
+    slug: "itcg-graduation",
+    title: "Information Technology Computer Graduation (ITCG)",
+    duration: "1 Year",
+    description: "The ultimate 1-year graduation program covering Advance MS with AI, Advanced Excel, Tally Prime (Advanced + GST), Graphic Designing, and Personality Development.",
+    image: "/images/courses/diploma/itcg.webp",
+    hint: "computer graduation",
+    totalTopics: "280+",
+    modules: [
+        { title: "Advance MS with AI Tools", icon: "Bot", subTopics: ["Windows Fundamentals", "Microsoft Word, Excel, PPT", "AI Chatbots & Content Tools", "AI for Design & Marketing"] },
+        { title: "Advanced Excel Mastery", icon: "BarChart", subTopics: ["Advanced Formulas & Functions", "Lookup Mastery (V, H, X)", "MIS Reporting", "Dashboard Creation"] },
+        { title: "Tally Prime (Advanced + GST)", icon: "FileText", subTopics: ["Advanced Accounting", "Inventory & BOM", "Payroll, TDS & TCS", "GST Returns & E-Invoicing"] },
+        { title: "Graphic Designing", icon: "Palette", subTopics: ["Adobe Illustrator & Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Pro Templates"] },
+        { title: "Personality Development", icon: "Users", subTopics: ["Communication Skills", "Emotional Intelligence", "Professional Skills", "Career & Life Skills"] }
+    ],
+  },
+  {
     slug: "computer-application",
     title: "Diploma In Computer Application",
     duration: "1 Year",
@@ -680,6 +696,7 @@ export const courseData: ShortTermCourseCategory[] = [
 ];
 
 export const allCoursesList = [
+    "Information Technology Computer Graduation (ITCG)",
     "Diploma In Accounting",
     "Diploma In Financial Accounting",
     "Diploma In Computer Application",
