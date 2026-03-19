@@ -3,38 +3,67 @@ export const courseDetails: { [key: string]: any } = {
     // --- DIPLOMA COURSES ---
     'computer-application': {
         title: "Diploma In Computer Application (DCA) Course in Mumbai | Primezone",
-        metaDescription: "Best DCA Course in Mumbai. Learn MS Office, Tally, Graphic Design, and Web Design in one comprehensive diploma. Job-oriented training in Jogeshwari and Vile Parle.",
-        description: "The Diploma in Computer Application (DCA) at Primezone is a comprehensive 1-year program covering everything from basic office tools to advanced graphic and web design.",
-        whyLearn: "DCA is the perfect foundation for any office-based career. It combines administrative skills with creative design, making you a versatile candidate for various industries in Mumbai's competitive job market.",
+        metaDescription: "Best DCA Course in Mumbai. Learn MS Office, AI Tools, Tally, Graphic Design, and Web Design. Job-oriented training in Jogeshwari and Vile Parle with placement.",
+        description: "The Diploma in Computer Application (DCA) at Primezone is a comprehensive 1-year program covering everything from basic office tools and AI productivity to advanced graphic and web design.",
+        whyLearn: "DCA is the perfect foundation for any professional career. It combines essential administrative skills with modern AI tools and creative design, making you a versatile candidate for various industries in Mumbai's competitive job market.",
         image: "/images/courses/diploma/dca.webp",
         hint: "computer application",
-        highlights: ["Office Automation Mastery", "Advanced Excel Reporting", "Graphic & Web Designing", "Government Recognized Certificate"],
+        highlights: ["MS Office + AI Tools", "Tally Prime & GST", "Advanced Excel Mastery", "Graphic & Web Designing"],
         whatYouWillLearn: [
-            "Proficiency in MS Office (Word, Excel, PowerPoint).",
-            "Accounting basics with Tally Prime and GST.",
-            "Graphic design using Photoshop and Illustrator.",
-            "Web layout and coding fundamentals.",
-            "Internet and Windows management."
+            "Mastery of MS Office (Word, Powerpoint, Excel) enhanced with AI Tools.",
+            "Professional Accounting with Tally Prime and GST Compliance.",
+            "Advanced Data Analysis and MIS Reporting using Excel.",
+            "Creative Graphic Design with Adobe Creative Cloud and CorelDRAW.",
+            "Modern Web Designing using HTML5, CSS, JS, and WordPress."
         ],
-        careerOpportunities: ["Office Administrator", "Graphic Designer", "Data Entry Operator", "Web Designer", "Accountant Assistant"],
+        careerOpportunities: ["Computer Operator", "Office Assistant", "Accounts Assistant", "Back Office Executive", "Corporate Office Admin", "Web Designer", "Freelancing"],
         syllabus: [
-            { title: "Office Automation", icon: "MonitorCheck", topics: ["Typing Speed", "MS Word", "MS Excel", "MS PowerPoint", "Internet usage"] },
-            { title: "Advanced Excel", icon: "BarChart", topics: ["V-Lookup", "H-Lookup", "Pivot Tables", "Macros", "MIS Reporting"] },
-            { title: "Tally Prime (GST)", icon: "FileText", topics: ["Basics of Accounting", "GST Setup", "TDS", "Inventory Management"] },
-            { title: "Graphic Designing", icon: "Palette", topics: ["CorelDRAW", "Photoshop", "Illustrator", "InDesign", "Canva"] },
-            { title: "Web Designing", icon: "Globe", topics: ["HTML / CSS", "JavaScript", "Adobe Animate", "Web Hosting"] }
+            { 
+                title: "MS OFFICE + AI TOOLS", 
+                icon: "MonitorCheck", 
+                topics: ["Windows Fundamentals", "Microsoft Word", "Microsoft Powerpoint", "Microsoft Excel", "AI Tools", "Assignment & Projects"] 
+            },
+            { 
+                title: "TALLY PRIME (GST)", 
+                icon: "FileText", 
+                topics: ["Basics of Accounting", "Accounting in Tally Prime", "Purchase, Sales, Journal Entries", "Payment, Receipt, Contra Vouchers", "Credit & Debit Notes", "Inventory Management", "GST Concept, Types of GST", "GST Setup, GST Transactions", "GST Returns, TDS, TCS", "Financial Statements", "Security & Backup", "Assignment & Projects"] 
+            },
+            { 
+                title: "ADVANCE EXCEL", 
+                icon: "BarChart", 
+                topics: ["Advance Formula & Functions", "Pivot Tables & Charts", "V lookup, H lookup, X lookup", "Data Analysis", "Charts & Dashboard", "What if Analysis", "MIS Reporting", "Data Protection", "Track Changes & Macros", "Assignment & Projects"] 
+            },
+            { 
+                title: "GRAPHIC DESIGNING", 
+                icon: "Palette", 
+                topics: ["Adobe Illustrator (Logo, Banner etc)", "Adobe Photoshop (Image Editing, Filters)", "Adobe InDesign (Newspaper, Books)", "CorelDRAW (Logo, Card, Flyer etc)", "Canva Designing Pro", "Assignment & Projects"] 
+            },
+            { 
+                title: "WEB DESIGNING", 
+                icon: "Globe", 
+                topics: ["Html 5, CSS", "JavaScript", "WordPress", "Web Hosting, Domain", "Assignment & Projects"] 
+            }
         ],
         tools: [
-            { name: "Excel", logo: "/images/tech/excel.svg" },
+            { name: "MS Word", logo: "/images/tech/excel.svg" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "GST", logo: "/images/tech/gst.jpg" },
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
-            { name: "HTML5", logo: "/images/tech/html.svg" }
+            { name: "InDesign", logo: "/images/tech/indesign.svg" },
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.png" },
+            { name: "Canva", logo: "/images/tech/canva.png" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" },
+            { name: "WordPress", logo: "/images/tech/wordpress.svg" }
         ],
         faqs: [
             { q: "Is DCA a government-recognized course?", a: "Yes, Primezone provides government-recognized certification for the DCA program." },
-            { q: "Who can join this course?", a: "Students who have completed 10th or 12th grade can enroll in this diploma." },
-            { q: "Is there placement support?", a: "Yes, we provide 100% placement assistance in Mumbai for our DCA students." }
+            { q: "Who can join this course?", a: "Students who have completed 10th or 12th grade, graduates, and working professionals can enroll in this diploma." },
+            { q: "Does the curriculum include AI tools?", a: "Yes, as per our updated curriculum, we include AI tools training to help you work faster and smarter in office environments." },
+            { q: "Is there placement support?", a: "Yes, we provide 100% placement assistance in Mumbai for our DCA students across various sectors like back office, accounting, and design." }
         ]
     },
     'financial-management': {
