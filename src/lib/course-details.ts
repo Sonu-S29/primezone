@@ -3,62 +3,95 @@ export const courseDetails: { [key: string]: any } = {
     // --- DIPLOMA COURSES ---
     'itcg-graduation': {
         title: "ITCG - Information Technology Computer Graduation Course in Mumbai | Primezone",
-        metaDescription: "Enroll in the best ITCG Course in Mumbai at Primezone. 1-year comprehensive program covering Advance MS + AI, Advanced Excel, Tally Prime (Advanced), Graphic Design, and Personality Development.",
-        description: "The Information Technology Computer Graduation (ITCG) is Primezone's flagship 1-year career program. It combines advanced technical proficiency with AI productivity, financial accounting, creative design, and soft skills development.",
-        whyLearn: "In today's competitive job market, being a specialist in just one tool isn't enough. ITCG turns you into a multi-skilled professional ready for senior roles. You'll master everything from AI-driven office work to professional accounting and branding.",
+        metaDescription: "Enroll in the best ITCG Course in Mumbai at Primezone. 1-year comprehensive program covering Advance MS + AI, Excel Mastery, Tally Prime (Advanced + GST), and Graphic Design.",
+        description: "The Information Technology Computer Graduation (ITCG) is a professional 1-year career program. It combines essential office productivity with AI tools, advanced financial accounting, and creative graphic design.",
+        whyLearn: "ITCG is designed to make you an all-rounder. In today's market, employers look for candidates who can handle office work, accounting, and design efficiently. This course provides the multi-skilled edge required for top-tier corporate roles.",
         image: "/images/courses/diploma/itcg.webp",
         hint: "computer graduation",
-        highlights: ["Advance MS with AI Tools", "Tally Prime Advanced Mastery", "Graphic Design & Branding", "Personality Development", "Learning Mode: Offline | Hybrid | Online"],
+        highlights: ["Advance MS with AI Tools", "Excel & MIS Reporting", "Tally Prime Advance & GST", "Graphic Design & Branding", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: [
-            "Advanced Office Productivity enhanced with Artificial Intelligence (AI) tools.",
-            "Complete mastery of Excel from basic formulas to MIS Dashboards.",
-            "Advanced Tally Prime operations including Inventory, Payroll, and GST Compliance.",
-            "Professional visual design using the complete Adobe Creative Suite.",
-            "Soft skills, emotional intelligence, and career preparation for corporate success."
+            "Advanced Office Productivity with Artificial Intelligence (AI) integration.",
+            "Complete Excel mastery from basic formulas to complex MIS dashboards.",
+            "Professional Accounting, Inventory, and GST compliance using Tally Prime.",
+            "Creative visual designing and branding using Adobe & Corel tools.",
+            "Professional soft skills and personality development for career success."
         ],
-        careerOpportunities: ["Senior Accountant", "Accounts Manager", "Graphic Designer", "Accounts Executive", "Bookkeeper", "Freelancing", "Administrative Head"],
+        careerOpportunities: ["Senior Accountant", "Accounts Executive", "MIS Manager", "Graphic Designer", "Back Office Head", "Operations Executive", "Freelance Consultant"],
         syllabus: [
+            // SEMESTER 1
             { 
                 semester: 1,
-                title: "ADVANCE MS WITH AI TOOLS", 
+                title: "Advance MS with AI Tools", 
                 icon: "Bot", 
-                topics: ["Windows Fundamentals", "MS Word, Excel, PowerPoint", "Artificial Intelligence (AI) Basics", "AI Chatbots & Content Tools", "AI for Design & Creativity", "AI for Video & Audio", "AI for Marketing & Business", "Assignment & Projects"] 
+                topics: ["Windows Fundamentals", "Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Artificial Intelligence (AI)", "AI Chatbots", "Content Creation Tools", "AI for Design & Creativity", "AI for Data & Office Work", "AI for Video & Audio Editing", "AI for Marketing & Business"] 
             },
             { 
                 semester: 1,
-                title: "EXCEL MASTERY (BASIC TO ADVANCED)", 
+                title: "Microsoft Excel", 
                 icon: "BarChart", 
-                topics: ["Basic Formulas & Formatting", "Data Tab & Filtrations", "Working with Charts", "Macros & Track Changes", "Date, Time & Text Functions", "V-Look Up, H-Look Up, X-Look Up", "DashBoard Creation", "MIS Reporting", "Assignment & Projects"] 
+                topics: ["Basic Formulas", "Number Formatting", "Conditional Formatting", "Paste Special", "Insert Tab", "Page Layout Tab", "Data tab/data filtrations", "Working with Charts", "Macros", "Track Changes", "Sheet Protection"] 
             },
             { 
                 semester: 1,
-                title: "TALLY PRIME (OPERATING & ADVANCE)", 
+                title: "Advanced Excel", 
+                icon: "BarChart", 
+                topics: ["Date & Time Functions", "Text Functions", "Statistical Functions", "Financial Functions", "Logical Functions", "Conditional Functions", "V-Look Up, H-Look Up, X-Look UP", "Array Functions", "DashBoard Creation", "MIS Reporting"] 
+            },
+            { 
+                semester: 1,
+                title: "Tally Prime (Operating)", 
                 icon: "FileText", 
-                topics: ["Installation & Masters Creation", "Voucher Entry & Transactions", "Multi-Company Management", "Inventory Management (BOM)", "Consumption Analysis", "Cost Centres & Budgeting", "Advanced Banking", "Payroll Management", "Assignment & Projects"] 
+                topics: ["Installation & Company Creation", "Features & Configuration", "Creating Company", "Company Settings & Security", "Masters Creation", "Creating Groups", "Units of Measure", "Stock Groups & Categories", "Voucher Entry & Transactions", "Payment, Receipt, Contra", "Journal, Purchase & Sales"] 
             },
             { 
-                semester: 2,
-                title: "TALLY PRIME (GST)", 
+                semester: 1,
+                title: "Tally Prime (Advance)", 
+                icon: "FileText", 
+                topics: ["Multi-Company Creation", "Data Backup & Restore", "E-Way Bill & E-Invoicing", "Inventory Management", "Bill of Materials (BOM)", "Consumption Analysis", "Cost Centres & Budgeting", "Advanced Banking", "TDS & TCS Configuration", "Payroll", "Data Import & Audit"] 
+            },
+            { 
+                semester: 1,
+                title: "Tally Prime (GST)", 
                 icon: "Landmark", 
-                topics: ["Basics of GST & Registration", "Activating GST in Tally", "GST Purchase & Sales Trans", "Debit/Credit Notes (GST)", "GST Reports in Tally Prime", "E-Way Bill & E-Invoicing", "GST Payment & Adjustment", "Assignment & Projects"] 
+                topics: ["Basics of GST", "Types of GST", "GST Registration Process", "Activating GST in Tally Prime", "GST Masters Creation", "GST Purchase Transactions", "GST Sales Transactions", "Debit Note/Credit Note(GST)", "GST Reports in Tally Prime", "E-Way Bill & E-Invoicing", "GST Payment & Adjustment"] 
             },
+            // SEMESTER 2
             { 
                 semester: 2,
-                title: "GRAPHIC DESIGNING", 
+                title: "Graphic Designing (CorelDRAW)", 
                 icon: "Palette", 
-                topics: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Templates Pro", "Branding & Visual Identity", "Assignment & Projects"] 
+                topics: ["Introduction to Vector", "UI Interface & Tool Basics", "Logo Creation", "Object Management", "Flyer & Brochure", "Poster & Social Media Ad", "Brand Identity Design", "Vector Tracing", "Book Cover Design", "Typography", "Exporting for Printing"] 
             },
             { 
                 semester: 2,
-                title: "PERSONALITY DEVELOPMENT", 
+                title: "Graphic Designing (Adobe Photoshop)", 
+                icon: "Palette", 
+                topics: ["Raster Graphics Basics", "Selection Tools & Techniques", "Layer Masking", "Photo Retouching", "Color Correction", "Photo Manipulation", "Social Media Ads", "GIF Animation", "Mockup Design"] 
+            },
+            { 
+                semester: 2,
+                title: "Graphic Designing (Adobe Illustrator)", 
+                icon: "Palette", 
+                topics: ["Advanced UI & Workspace", "Pen Tool Mastery", "Gradient & Mesh Tool", "Typography & Effects", "Logo Design", "Icon Design", "Infographic Creation", "Character Illustration", "3D Effects", "File Preparation"] 
+            },
+            { 
+                semester: 2,
+                title: "Graphic Designing (Adobe InDesign)", 
+                icon: "Palette", 
+                topics: ["Master Page Setup", "Text Flow & Styles", "Multi-Page Layout", "Newspaper & Magazine", "Interactive PDF", "Table of Contents", "Character & Paragraph Styles", "Printing & Packaging"] 
+            },
+            { 
+                semester: 2,
+                title: "Personality Development", 
                 icon: "Users", 
-                topics: ["Self-Development", "Communication Skills", "Professional & Soft Skills", "Emotional Intelligence", "Career & Life Skills", "Interview Preparation"] 
+                topics: ["Communication Skills", "Professional Etiquette", "Resume Building", "Interview Techniques", "Body Language", "Time Management", "Leadership Skills", "Confidence Building"] 
             }
         ],
         tools: [
             { name: "MS Word", logo: "/images/tech/word.svg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
-            { name: "MS PowerPoint", logo: "/images/tech/powerpoint.svg" },
+            { name: "MS PowerPoint", logo: "/images/tech/p.svg" },
+            { name: "AI Tools", logo: "/images/tech/bot.png" },
             { name: "Tally Prime", logo: "/images/tech/tally.png" },
             { name: "GST", logo: "/images/tech/gst.jpg" },
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
@@ -68,10 +101,10 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Canva", logo: "/images/tech/canva.svg" }
         ],
         faqs: [
-            { q: "What is ITCG Graduation?", a: "ITCG is a 1-year comprehensive computer graduation program at Primezone that covers Office AI, Advanced Accounting, Graphic Design, and Personality Development." },
+            { q: "What is ITCG - Information Technology Computer Graduation?", a: "ITCG is a 1-year professional computer graduation program at Primezone that covers Office AI, Advanced Accounting, Graphic Design, and Personality Development." },
+            { q: "What is the duration of ITCG?", a: "The course is 1 year long, divided into two semesters of 6 months each." },
             { q: "Who is eligible for ITCG in Mumbai?", a: "Anyone after 10th or 12th, or graduates looking for professional multi-skilling, can join this course." },
-            { q: "Is there placement assistance for ITCG?", a: "Yes, Primezone provides 100% placement assistance for roles in accounting, design, and corporate administration." },
-            { q: "Which tools are covered in ITCG?", a: "The course covers the full MS Office suite, AI tools, Tally Prime (Advanced), Adobe Photoshop, Illustrator, InDesign, and CorelDRAW." }
+            { q: "Is there placement assistance for ITCG?", a: "Yes, Primezone provides 100% placement assistance for roles in accounting, design, and corporate administration." }
         ]
     },
     'computer-application': {
