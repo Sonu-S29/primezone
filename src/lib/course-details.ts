@@ -311,8 +311,7 @@ export const courseDetails: { [key: string]: any } = {
             { name: "Wireshark", logo: "/images/tech/wireshark.svg" },
             { name: "Nmap", logo: "/images/tech/nmap.svg" },
             { name: "Metasploit", logo: "/images/tech/Metasploit.svg" },
-            { name: "MySQL", logo: "/images/tech/mysql.svg" },
-            { name: "Python", logo: "/images/tech/python.svg" }
+            { name: "Hacking", logo: "/images/tech/hacker.svg" }
         ],
         faqs: [
             { q: "Which is the best Cyber Security institute in Mumbai?", a: "Primezone Computer Education offers the most practical Ethical Hacking and Cyber Security course in Mumbai, featuring real-world lab environments." },
@@ -322,33 +321,181 @@ export const courseDetails: { [key: string]: any } = {
         ]
     },
     'digital-marketing': {
-        title: "Digital Marketing Course in Mumbai | SEO, SMM, Google Ads Training | Primezone",
-        metaDescription: "Best Digital Marketing Course in Mumbai. Learn SEO, Social Media Marketing, PPC, and Analytics with 100% placement support in Jogeshwari and Vile Parle.",
-        description: "Master the art of online growth. Our practical Digital Marketing course covers everything from ranking on Google to running viral ad campaigns.",
-        whyLearn: "Businesses are moving online. Knowing how to drive traffic and convert leads is the most valuable business skill in 2025.",
+        title: "Diploma In Digital Marketing (DDM) Course in Mumbai | Primezone",
+        metaDescription: "Join the best Digital Marketing Course in Mumbai at Primezone Computer Education. Learn SEO, SEM, SMM, and Web Design with practical training and placement.",
+        description: "The Diploma in Digital Marketing (DDM) is an extensive program covering the entire digital ecosystem—from search engines and social media to professional creative design and video production.",
+        whyLearn: "Digital Marketing is the heartbeat of modern business. In Mumbai's fast-paced market, businesses are shifting budgets online. Mastering DDM ensures you become a highly valued asset for any brand or agency.",
         image: "/images/courses/diploma/ddm.webp",
         hint: "digital marketing",
-        highlights: ["100% Practical Training", "Live Ad Campaigns", "Government Certified", "Placement Assistance", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Search Engine Optimization (SEO)", "Social Media Marketing (SMM)", "Pay Per Click (PPC)", "WordPress Website Building", "Data Analytics"],
-        careerOpportunities: ["SEO Specialist", "Social Media Manager", "Performance Marketer", "Content Strategist"],
+        highlights: ["S.E.O & S.E.M Mastery", "S.M.M & Content Strategy", "Graphic & Web Designing", "Video & Sound Editing", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Ranking websites on Google using On-Page, Off-Page, and Technical SEO.",
+            "Managing viral social media campaigns on Facebook, Instagram, and LinkedIn.",
+            "Running high-ROI paid ads using Google Ads and Search Engine Marketing.",
+            "Professional creative designing with Adobe suite and CorelDRAW.",
+            "Building business websites with WordPress and editing viral video content."
+        ],
+        careerOpportunities: ["Google Ads Specialist", "SEO Executive", "SMM Executive", "Content Marketer", "YouTube Executive", "Web Designer", "SEM Executive"],
         syllabus: [
-            { title: "SEO & SEM", icon: "Search", topics: ["On-Page SEO", "Off-Page SEO", "Google Ads", "PPC"] },
-            { title: "Social Media", icon: "Users", topics: ["Facebook Ads", "Instagram Growth", "LinkedIn Marketing"] },
-            { title: "Web & Content", icon: "Globe", topics: ["WordPress", "Blogging", "Email Marketing"] },
-            { title: "Analytics", icon: "BarChart", topics: ["Google Analytics", "Search Console", "Reporting"] }
+            { 
+                title: "S.E.O (Search Engine Optimization)", 
+                icon: "Search", 
+                topics: ["S.E.O Fundamentals", "Keyword Research", "On-Page S.E.O", "Content Optimization", "Technical S.E.O", "Off-Page S.E.O, Local S.E.O", "S.E.O Tools & Analytics", "S.E.O Errors & Penalties", "Assignment & Projects"] 
+            },
+            { 
+                title: "S.M.M (Social Media Marketing)", 
+                icon: "Users", 
+                topics: ["Introduction to S.M.M", "Social Media Strategy", "Platform Wise Marketing", "Facebook, Instagram, LinkedIn", "Youtube & Email Marketing", "Content Creation", "Paid Social Media Advertising", "Growth & Optimization", "Assignment & Projects"] 
+            },
+            { 
+                title: "S.E.M (Search Engine Marketing)", 
+                icon: "Megaphone", 
+                topics: ["Keyword Research", "Google Ads Setup", "Ad Creation & Copywriting", "Bidding & Budget Strategy", "Targeting Audience", "Conversion Tracking", "Advance S.E.M", "Campaign Optimization", "Assignment & Projects"] 
+            },
+            { 
+                title: "GRAPHIC DESIGNING", 
+                icon: "Palette", 
+                topics: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "CorelDRAW", "Canva Pro", "Assignment & Projects"] 
+            },
+            { 
+                title: "WEB DESIGNING", 
+                icon: "Globe", 
+                topics: ["Html 5, CSS, Javascript", "BootStrap", "Javasript, Wordpress", "Web Hosting, Domain", "Assignment & Projects"] 
+            },
+            { 
+                title: "VIDEO & SOUND EDITING", 
+                icon: "LayoutTemplate", 
+                topics: ["Interface & Panel (Workspace)", "Basic Editing Tools, Razer", "Slow Fast Motion", "Titles, Movie Titles", "Lower Third Motions", "Transition & Video Effects", "Green Screen Chroma Editing", "Assignment & Projects"] 
+            }
         ],
         tools: [
             { name: "Google Ads", logo: "/images/tech/google-ads.svg" },
             { name: "Analytics", logo: "/images/tech/ga.svg" },
             { name: "Facebook Ads", logo: "/images/tech/fb.svg" },
             { name: "WordPress", logo: "/images/tech/wordpress.svg" },
-            { name: "SEMrush", logo: "/images/tech/seo.svg" }
+            { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
+            { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
+            { name: "Premiere Pro", logo: "/images/tech/premiere.svg" },
+            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" },
+            { name: "Canva", logo: "/images/tech/canva.svg" }
         ],
         faqs: [
-            { q: "Which is the best Digital Marketing institute in Mumbai?", a: "Primezone Computer Education is top-rated for Digital Marketing, offering live campaign training and placement support." },
-            { q: "Who can join a Digital Marketing course in Mumbai?", a: "Students, graduates, business owners, and career switchers can join this versatile program." },
-            { q: "Will I learn how to build a website?", a: "Yes, we include WordPress website creation as part of the course." },
-            { q: "Is placement assistance provided?", a: "Yes, we provide 100% placement support for our digital marketing students in Mumbai." }
+            { q: "Which is the best Digital Marketing institute in Mumbai?", a: "Primezone Computer Education is widely recognized for its practical DDM course, offering live campaign experience and placement." },
+            { q: "Who can join a DDM course in Mumbai?", a: "Graduates, students after 12th, business owners, and working professionals can join this course." },
+            { q: "Does the course include graphic design and video editing?", a: "Yes, our DDM is unique as it integrates professional graphic design and video editing to make you a complete digital marketer." },
+            { q: "Is placement support provided?", a: "Yes, we provide 100% placement assistance for roles in top marketing agencies and corporate offices." }
+        ]
+    },
+    'full-stack-development': {
+        title: "Full-Stack Development Course in Mumbai | Frontend & Backend | Primezone",
+        metaDescription: "Master Full-Stack Web Development in Mumbai. Learn React, Node.js, Java, and Databases. Professional coding classes with placement assistance at Primezone.",
+        description: "The Full-Stack Development program at Primezone is a 1-year career-defining course that takes you from basic web layouts to building complex, data-driven enterprise applications.",
+        whyLearn: "Full-stack developers are the most sought-after professionals in the tech industry. Mastering both frontend and backend makes you highly versatile and command top salaries in Mumbai's IT sector.",
+        image: "/images/courses/diploma/fullstack.webp",
+        hint: "full stack",
+        highlights: ["React & Angular Mastery", "Node.js & Python Backend", "Java Enterprise Tech", "Database & Cloud Setup", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Building responsive, high-performance user interfaces with React.",
+            "Creating scalable server-side logic using Node.js and Python.",
+            "Developing enterprise-grade applications with Java, Hibernate, and Spring.",
+            "Managing complex datasets with MySQL and MongoDB.",
+            "Full project lifecycle from development to cloud hosting."
+        ],
+        careerOpportunities: ["Full-Stack Developer", "Frontend Engineer", "Backend Developer", "Node.js Specialist", "Java Developer", "Software Engineer"],
+        syllabus: [
+            { 
+                title: "FRONTEND TECHNOLOGIES", 
+                icon: "Code", 
+                topics: ["HTML5 & CSS3", "Bootstrap & Tailwind", "JavaScript ES6+", "ReactJS / AngularJS", "State Management", "API Integration", "Assignment & Projects"] 
+            },
+            { 
+                title: "BACKEND TECHNOLOGIES", 
+                icon: "Code", 
+                topics: ["Node.js & Express.js", "Python / PHP / Laravel", "RESTful API Development", "Authentication & JWT", "Middleware & Security", "Assignment & Projects"] 
+            },
+            { 
+                title: "JAVA TECHNOLOGY", 
+                icon: "Code", 
+                topics: ["Core Java Foundations", "Advanced Java", "Hibernate Framework", "Spring Boot", "Microservices Architecture", "Assignment & Projects"] 
+            },
+            { 
+                title: "DATABASE & DEPLOYMENT", 
+                icon: "Settings", 
+                topics: ["MySQL (Relational)", "MongoDB (NoSQL)", "Data Modeling", "Git & GitHub", "Cloud Hosting & AWS Basics", "Assignment & Projects"] 
+            }
+        ],
+        tools: [
+            { name: "VS Code", logo: "/images/tech/vscode.svg" },
+            { name: "React", logo: "/images/tech/react.svg" },
+            { name: "Node.js", logo: "/images/tech/node.svg" },
+            { name: "Java", logo: "/images/tech/java.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" },
+            { name: "HTML5", logo: "/images/tech/html.svg" },
+            { name: "CSS3", logo: "/images/tech/css.svg" },
+            { name: "JavaScript", logo: "/images/tech/js.svg" }
+        ],
+        faqs: [
+            { q: "Which is the best Full-Stack institute in Mumbai?", a: "Primezone Computer Education is a top choice for practical Full-Stack training, covering the MERN stack and Java enterprise tech." },
+            { q: "What is the duration of the Full-Stack course?", a: "This is a comprehensive 1-year diploma program designed for job readiness." },
+            { q: "Is there placement assistance?", a: "Yes, we provide 100% placement support and help build a professional GitHub portfolio." },
+            { q: "Who should join this course?", a: "IT graduates, engineers, and coding enthusiasts looking for a serious career in software development." }
+        ]
+    },
+    'data-analysis': {
+        title: "Data Analytics Course in Mumbai | Excel, Power BI, Python Training | Primezone",
+        metaDescription: "Best Data Analytics Course in Mumbai. Learn Excel, Power BI, SQL, Python, and Tableau. Practical training with placement assistance in Jogeshwari and Vile Parle.",
+        description: "Primezone Computer Education offers one of the best Data Analytics Courses in Mumbai designed for students and working professionals. Our course covers industry tools like Excel, Power BI, SQL, and Python to help you become a skilled data analyst.",
+        whyLearn: "Data analytics is one of the fastest-growing careers in India. Companies rely on data to make important business decisions. By joining a data analytics training program, you can learn how to collect, analyze, and visualize data using modern tools.",
+        image: "/images/courses/diploma/dataanalysis.webp",
+        hint: "data analytics",
+        highlights: ["Advanced Excel & MIS", "Power BI Dashboards", "MySQL Data Management", "Python for Analytics", "Learning Mode: Offline | Hybrid | Online"],
+        whatYouWillLearn: [
+            "Advanced Data Analysis and MIS Reporting using Excel.",
+            "Creating high-impact business dashboards with Power BI and Tableau.",
+            "Managing and querying large datasets with MySQL.",
+            "Automating data processing and analysis using Python.",
+            "Statistical modeling and data storytelling techniques."
+        ],
+        careerOpportunities: ["Data Analyst", "Business Analyst", "MIS Executive", "Data Visualizer", "Operations Analyst", "Reporting Manager"],
+        syllabus: [
+            { 
+                title: "ADVANCED EXCEL", 
+                icon: "BarChart", 
+                topics: ["Pivot Tables & Pivot Charts", "Advanced Conditional Formatting", "V-Lookup, H-Lookup, X-Lookup", "What-if Analysis", "Macros & MIS Reporting", "Dynamic Dashboards", "Assignment & Projects"] 
+            },
+            { 
+                title: "POWER BI", 
+                icon: "BarChart", 
+                topics: ["ETL with Power Query", "Data Modeling & Relationships", "DAX Formulas", "Interactive Reports", "Publishing to Cloud", "Assignment & Projects"] 
+            },
+            { 
+                title: "MYSQL", 
+                icon: "Code", 
+                topics: ["SQL Fundamentals", "DDL & DML Commands", "Complex Joins & Subqueries", "Aggregates & Constraints", "Stored Procedures", "Assignment & Projects"] 
+            },
+            { 
+                title: "PYTHON FOR DATA SCIENCE", 
+                icon: "Bot", 
+                topics: ["Python Syntax & Basics", "Numpy & Pandas Libraries", "Matplotlib & Seaborn Visualization", "Data Cleaning Techniques", "Assignment & Projects"] 
+            },
+            { 
+                title: "TABLEAU", 
+                icon: "BarChart", 
+                topics: ["Tableau Basics", "Deep Diving with Data", "Mapping in Tableau", "Calculations & Workbooks", "Advanced Dashboards", "Assignment & Projects"] 
+            }
+        ],
+        tools: [
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
+            { name: "Power BI", logo: "/images/tech/powerbi.svg" },
+            { name: "Tableau", logo: "/images/tech/tableau.svg" },
+            { name: "Python", logo: "/images/tech/python.svg" },
+            { name: "MySQL", logo: "/images/tech/mysql.svg" }
+        ],
+        faqs: [
+            { q: "Which is the best data analytics institute in Mumbai?", a: "Primezone Computer Education offers one of the best data analytics courses with practical training and placement guidance." },
+            { q: "Who can join a data analyst course in Mumbai?", a: "Students from commerce, science, IT, and working professionals can join this program." },
+            { q: "Which tools are taught in this course?", a: "You will master Excel, Power BI, SQL, Python, and Tableau." },
+            { q: "Is there placement support?", a: "Yes, we provide 100% placement assistance after completing the data analyst course in Mumbai." }
         ]
     },
 
@@ -565,7 +712,7 @@ export const courseDetails: { [key: string]: any } = {
         faqs: [
             { q: "Which is the best Python institute in Mumbai?", a: "Primezone provides excellent hands-on Python training for all levels." },
             { q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." },
-            { q: "What is the course duration?", a: "The Python course typically takes 3 months." },
+            { q: "What is the duration?", a: "The Python course typically takes 3 months." },
             { q: "Are there projects?", a: "Yes, you will build several real-world automation scripts." }
         ]
     },
