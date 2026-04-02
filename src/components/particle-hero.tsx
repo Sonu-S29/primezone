@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
@@ -12,6 +11,33 @@ const courseLogos = allCoursesList.map(course => ({
   node: <span className="text-sm font-semibold text-foreground/60">{course}</span>,
   title: course,
 }));
+
+const techLogos = [
+    { src: "/images/tech/word.svg", alt: "MS Word" },
+    { src: "/images/tech/excel.svg", alt: "MS Excel" },
+    { src: "/images/tech/powerpoint.svg", alt: "MS PowerPoint" },
+    { src: "/images/tech/tally.png", alt: "Tally Prime" },
+    { src: "/images/tech/photoshop.svg", alt: "Adobe Photoshop" },
+    { src: "/images/tech/illustrator.svg", alt: "Adobe Illustrator" },
+    { src: "/images/tech/indesign.svg", alt: "Adobe InDesign" },
+    { src: "/images/tech/coreldraw.svg", alt: "CorelDRAW" },
+    { src: "/images/tech/canva.svg", alt: "Canva" },
+    { src: "/images/tech/python.svg", alt: "Python" },
+    { src: "/images/tech/java.svg", alt: "Java" },
+    { src: "/images/tech/mysql.svg", alt: "MySQL" },
+    { src: "/images/tech/html.svg", alt: "HTML5" },
+    { src: "/images/tech/css.svg", alt: "CSS3" },
+    { src: "/images/tech/js.svg", alt: "JavaScript" },
+    { src: "/images/tech/react.svg", alt: "React" },
+    { src: "/images/tech/node.svg", alt: "Node.js" },
+    { src: "/images/tech/wordpress.svg", alt: "WordPress" },
+    { src: "/images/tech/google-ads.svg", alt: "Google Ads" },
+    { src: "/images/tech/ga.svg", alt: "Google Analytics" },
+    { src: "/images/tech/powerbi.svg", alt: "Power BI" },
+    { src: "/images/tech/tableau.svg", alt: "Tableau" },
+    { src: "/images/tech/premiere.svg", alt: "Premiere Pro" },
+    { src: "/images/tech/after-effects.svg", alt: "After Effects" },
+];
 
 const ParticleHero = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -198,13 +224,22 @@ const ParticleHero = () => {
                  <div className="mt-8 w-[85%]">
                     <AccreditationLogos />
                 </div>
-                 <div className="absolute bottom-0 left-0 w-full h-24 overflow-hidden">
+                 <div className="absolute bottom-0 left-0 w-full flex flex-col gap-4 pb-6 overflow-hidden">
                   <LogoLoop
                     logos={courseLogos}
-                    speed={80}
+                    speed={60}
                     direction="left"
                     logoHeight={20}
                     gap={40}
+                    fadeOut
+                    fadeOutColor="hsl(var(--background))"
+                  />
+                  <LogoLoop
+                    logos={techLogos}
+                    speed={60}
+                    direction="right"
+                    logoHeight={35}
+                    gap={50}
                     fadeOut
                     fadeOutColor="hsl(var(--background))"
                   />
