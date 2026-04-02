@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
@@ -205,9 +206,12 @@ const ParticleHero = () => {
         <section ref={heroRef} id="heroContainer" className="relative h-auto md:min-h-screen -mt-24 w-full bg-background overflow-hidden pb-8 md:pb-0">
             <canvas ref={canvasRef} id="particle-canvas" />
             <div className="hero-content pt-12 md:pt-40">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-foreground px-4">
-                    Unlock Your Potential with Primezone
+                <h1 className="text-4xl md:text-6xl font-bold font-headline mb-2 text-foreground px-4 leading-tight">
+                    Unlock Your Potential <br /> with Primezone
                 </h1>
+                <p className="text-xl md:text-4xl font-black uppercase text-red-600 tracking-tighter px-4 drop-shadow-sm">
+                    Build Your Future Right Here
+                </p>
                 <div className="mt-8 flex justify-center gap-4">
                     <Button asChild>
                         <Link href="/courses">Explore Courses</Link>
