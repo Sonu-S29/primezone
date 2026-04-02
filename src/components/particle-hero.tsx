@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
@@ -202,10 +203,10 @@ const ParticleHero = () => {
     }, []);
 
     return (
-        <section ref={heroRef} id="heroContainer" className="relative min-h-screen -mt-24 w-full bg-background overflow-hidden">
+        <section ref={heroRef} id="heroContainer" className="relative h-auto md:min-h-screen -mt-24 w-full bg-background overflow-hidden pb-8 md:pb-0">
             <canvas ref={canvasRef} id="particle-canvas" />
-            <div className="hero-content">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-foreground">
+            <div className="hero-content pt-32 md:pt-40">
+                <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-foreground px-4">
                     Unlock Your Potential with Primezone
                 </h1>
                 <div className="mt-8 flex justify-center gap-4">
@@ -219,7 +220,7 @@ const ParticleHero = () => {
                  <div className="mt-8 w-[90%] md:w-[85%]">
                     <AccreditationLogos />
                 </div>
-                 <div className="mt-10 w-full flex flex-col gap-4 overflow-hidden">
+                 <div className="mt-6 w-full flex flex-col gap-4 overflow-hidden">
                   <LogoLoop
                     logos={courseLogos}
                     speed={60}
