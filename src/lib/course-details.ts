@@ -233,7 +233,7 @@ export const courseDetails: { [key: string]: any } = {
         tools: [
             { name: "MS Word", logo: "/images/tech/word.svg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
-            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.svg" },
             { name: "GST", logo: "/images/tech/gst.jpg" },
             { name: "Photoshop", logo: "/images/tech/photoshop.svg" },
             { name: "Illustrator", logo: "/images/tech/illustrator.svg" },
@@ -303,7 +303,7 @@ export const courseDetails: { [key: string]: any } = {
             { name: "MS Word", logo: "/images/tech/word.svg" },
             { name: "MS Excel", logo: "/images/tech/excel.svg" },
             { name: "MS Powerpoint", logo: "/images/tech/powerpoint.svg" },
-            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.svg" },
             { name: "GST", logo: "/images/tech/gst.jpg" },
             { name: "Income Tax", logo: "/images/tech/tax.png" },
             { name: "MySQL", logo: "/images/tech/mysql.svg" }
@@ -784,7 +784,7 @@ export const courseDetails: { [key: string]: any } = {
         metaDescription: "Learn Tally Prime and GST in Mumbai. Practical accounting training with voucher entry and tax returns. Join the best Tally institute in Mumbai.",
         description: "Master India's most popular accounting software. This course covers everything from company creation to filing GST returns.",
         whyLearn: "Every business in India needs an accountant who knows Tally and GST. This is a recession-proof skill with immediate job opportunities in Mumbai.",
-        image: "/images/courses/short/account/tallygst.png",
+        image: "/images/courses/short/account/tally.svg",
         hint: "accounting tally",
         highlights: ["Tally Prime Mastery", "GST Compliance", "Live Voucher Entry", "Bank Reconciliation", "Learning Mode: Offline | Hybrid | Online"],
         whatYouWillLearn: ["Day-to-day accounting entries", "Generating GST invoices", "Inventory management", "Payroll and TDS handling"],
@@ -795,7 +795,7 @@ export const courseDetails: { [key: string]: any } = {
             { title: "Inventory", icon: "Settings", topics: ["Stock Groups", "Godown Management", "Purchase/Sales Orders"] }
         ],
         tools: [
-            { name: "Tally Prime", logo: "/images/tech/tally.png" },
+            { name: "Tally Prime", logo: "/images/tech/tally.svg" },
             { name: "Excel", logo: "/images/tech/excel.svg" },
             { name: "GST", logo: "/images/tech/gst.jpg" }
         ],

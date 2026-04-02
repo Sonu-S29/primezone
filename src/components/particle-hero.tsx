@@ -16,7 +16,7 @@ const techLogos = [
     { src: "/images/tech/word.svg", alt: "MS Word" },
     { src: "/images/tech/excel.svg", alt: "MS Excel" },
     { src: "/images/tech/powerpoint.svg", alt: "MS PowerPoint" },
-    { src: "/images/tech/tally.png", alt: "Tally Prime" },
+    { src: "/images/tech/tally.svg", alt: "Tally Prime" },
     { src: "/images/tech/photoshop.svg", alt: "Adobe Photoshop" },
     { src: "/images/tech/illustrator.svg", alt: "Adobe Illustrator" },
     { src: "/images/tech/indesign.svg", alt: "Adobe InDesign" },

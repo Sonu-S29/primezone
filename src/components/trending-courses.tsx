@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -73,7 +72,7 @@ const courses = [
     duration: "1 Year",
     idealFor: "10th, 12th, Graduates",
     tags: ["100% Job Placement Assistance", "Government Recognized Certification"],
-    technologies: ["/images/tech/tally.png", "/images/tech/excel.svg", "/images/tech/gst.jpg", "/images/tech/tax.png", "/images/tech/p.svg"],
+    technologies: ["/images/tech/tally.svg", "/images/tech/excel.svg", "/images/tech/gst.jpg", "/images/tech/tax.png", "/images/tech/p.svg"],
     batchStarts: new Date(new Date().getTime() + 200 * 60 * 60 * 1000),
     seatsLeft: 6,
     image: "/images/courses/diploma/dfam.webp",
