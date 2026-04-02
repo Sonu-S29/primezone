@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
@@ -7,6 +6,7 @@ import Link from 'next/link';
 import { allCoursesList } from '@/lib/course-data';
 import LogoLoop from './LogoLoop';
 import AccreditationLogos from './accreditation-logos';
+import { motion } from "framer-motion";
 
 const courseLogos = allCoursesList.map(course => ({
   node: <span className="text-sm font-semibold text-foreground/60">{course}</span>,
@@ -209,9 +209,21 @@ const ParticleHero = () => {
                 <h1 className="text-4xl md:text-6xl font-bold font-headline mb-2 text-foreground px-4 leading-tight">
                     Unlock Your Potential <br /> with Primezone
                 </h1>
-                <p className="text-xl md:text-4xl font-black uppercase text-red-600 tracking-tighter px-4 drop-shadow-sm">
+                <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ 
+                        opacity: 1, 
+                        y: [0, -5, 0] 
+                    }}
+                    transition={{ 
+                        y: { repeat: Infinity, duration: 3, ease: "easeInOut" },
+                        opacity: { duration: 0.8 } 
+                    }}
+                    className="text-sm md:text-xl font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 px-4 drop-shadow-sm"
+                    style={{ fontFamily: 'cursive' }}
+                >
                     Build Your Future Right Here
-                </p>
+                </motion.p>
                 <div className="mt-8 flex justify-center gap-4">
                     <Button asChild>
                         <Link href="/courses">Explore Courses</Link>
