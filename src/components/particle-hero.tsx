@@ -126,7 +126,8 @@ const ParticleHero = () => {
             for (let i = 0; i < particlesToSpawn; i++) {
                 if (particles.length >= MAX_PARTICLES) break;
 
-                let x = mouseX + (Math.random() - 0.5) * width * spawnRange;                let y = mouseY + (Math.random() - 0.5) * height * spawnRange;
+                let x = mouseX + (Math.random() - 0.5) * width * spawnRange;
+                let y = mouseY + (Math.random() - 0.5) * height * spawnRange;
 
                 const p = new Particle(x, y);
 
@@ -201,7 +202,7 @@ const ParticleHero = () => {
     }, []);
 
     return (
-        <section ref={heroRef} id="heroContainer" className="relative h-screen -mt-24 w-full bg-background overflow-hidden">
+        <section ref={heroRef} id="heroContainer" className="relative min-h-screen -mt-24 w-full bg-background overflow-hidden">
             <canvas ref={canvasRef} id="particle-canvas" />
             <div className="hero-content">
                 <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-foreground">
@@ -215,10 +216,10 @@ const ParticleHero = () => {
                         <Link href="/enroll">Enroll Now</Link>
                     </Button>
                 </div>
-                 <div className="mt-8 w-[85%]">
+                 <div className="mt-8 w-[90%] md:w-[85%]">
                     <AccreditationLogos />
                 </div>
-                 <div className="absolute bottom-16 left-0 w-full flex flex-col gap-4 overflow-hidden">
+                 <div className="mt-10 w-full flex flex-col gap-4 overflow-hidden">
                   <LogoLoop
                     logos={courseLogos}
                     speed={60}
