@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
@@ -224,7 +225,7 @@ const ParticleHero = () => {
                  <div className="mt-8 w-[85%]">
                     <AccreditationLogos />
                 </div>
-                 <div className="absolute bottom-0 left-0 w-full flex flex-col gap-4 pb-6 overflow-hidden">
+                 <div className="absolute bottom-16 left-0 w-full flex flex-col gap-4 overflow-hidden">
                   <LogoLoop
                     logos={courseLogos}
                     speed={60}
