@@ -51,7 +51,7 @@ const ParticleHero = () => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        let particles: Particle[] = [];
+        let particles: any[] = [];
         let width: number, height: number;
         const PARTICLE_COLOR = 'hsl(var(--accent))';
         const MAX_PARTICLES = 4500;
@@ -206,7 +206,7 @@ const ParticleHero = () => {
         <section ref={heroRef} id="heroContainer" className="relative h-auto md:min-h-screen -mt-24 w-full bg-background overflow-hidden pb-8 md:pb-0">
             <canvas ref={canvasRef} id="particle-canvas" />
             <div className="hero-content pt-12 md:pt-40">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline mb-2 text-foreground px-4 leading-tight">
+                <h1 className="text-3xl md:text-6xl font-bold font-headline mb-2 text-foreground px-4 leading-tight">
                     Unlock Your Potential <br /> with Primezone
                 </h1>
                 <motion.p 
