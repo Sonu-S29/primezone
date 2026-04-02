@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useRef } from 'react';
 import './particle-hero.css';
@@ -127,8 +126,7 @@ const ParticleHero = () => {
             for (let i = 0; i < particlesToSpawn; i++) {
                 if (particles.length >= MAX_PARTICLES) break;
 
-                let x = mouseX + (Math.random() - 0.5) * width * spawnRange;
-                let y = mouseY + (Math.random() - 0.5) * height * spawnRange;
+                let x = mouseX + (Math.random() - 0.5) * width * spawnRange;                let y = mouseY + (Math.random() - 0.5) * height * spawnRange;
 
                 const p = new Particle(x, y);
 
@@ -209,11 +207,6 @@ const ParticleHero = () => {
                 <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-foreground">
                     Unlock Your Potential with Primezone
                 </h1>
-                <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
-                    Access our collection of premium, meticulously crafted courses. Save
-                    time and focus on what matters—building standout skills that
-                    captivate employers.
-                </p>
                 <div className="mt-8 flex justify-center gap-4">
                     <Button asChild>
                         <Link href="/courses">Explore Courses</Link>
