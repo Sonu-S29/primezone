@@ -341,20 +341,6 @@ export default function LandingPage() {
                     <p className="text-sm opacity-60">Placement Support</p>
                 </div>
             </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="relative aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-white/10">
-                        <Image 
-                            src={`https://picsum.photos/seed/lp-${i}/400/225`}
-                            alt="Classroom Environment"
-                            fill
-                            className="object-cover"
-                            data-ai-hint="computer classroom"
-                        />
-                    </div>
-                ))}
-            </div>
             
             <div className="mt-16 space-y-6">
                 <h3 className="text-2xl font-bold">Start Your Journey Today</h3>
