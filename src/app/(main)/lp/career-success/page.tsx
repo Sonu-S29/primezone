@@ -89,66 +89,114 @@ export default function LandingPage() {
             <div className="w-20 h-1 bg-accent mx-auto mt-4"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
              {/* DCA */}
-             <Card className="border-t-4 border-t-blue-500 shadow-md hover:shadow-xl transition-shadow h-full flex flex-col">
-                <CardHeader className="pb-4">
-                    <div className="p-3 bg-blue-50 rounded-lg w-fit mb-4">
-                        <Laptop className="h-6 w-6 text-blue-500" />
+             <div className="group relative bg-blue-50/50 backdrop-blur-sm border border-blue-100 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/30 flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white rounded-2xl shadow-sm text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                        <Laptop className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-xl">DCA – Diploma in Computer Applications</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4 flex-grow">
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Basic to Advanced Computer Skills</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> MS Office (Word, Excel, PowerPoint)</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Internet & Email Usage</li>
+                    <div className="h-1.5 w-12 bg-blue-500 rounded-full opacity-30 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-4 leading-tight">DCA – Diploma in Computer Applications</h3>
+                <div className="space-y-3 flex-grow">
+                    <ul className="space-y-2.5 text-muted-foreground text-sm">
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Basic to Advanced Computer Skills</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>MS Office (Word, Excel, PowerPoint)</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Internet & Email Usage</span>
+                        </li>
                     </ul>
-                </CardContent>
-                <CardContent className="pt-0 pb-6">
-                    <Badge variant="secondary" className="w-full justify-center py-1">Perfect for Students & Beginners</Badge>
-                </CardContent>
-             </Card>
+                </div>
+                <div className="mt-6 pt-4 border-t border-blue-100">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-blue-600/60 text-center">Perfect for Students & Beginners</p>
+                </div>
+             </div>
 
              {/* Data Analyst */}
-             <Card className="border-t-4 border-t-amber-500 shadow-md hover:shadow-xl transition-shadow h-full flex flex-col">
-                <CardHeader className="pb-4">
-                    <div className="p-3 bg-amber-50 rounded-lg w-fit mb-4">
-                        <Database className="h-6 w-6 text-amber-500" />
+             <div className="group relative bg-amber-50/50 backdrop-blur-sm border border-amber-100 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/30 flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white rounded-2xl shadow-sm text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                        <Database className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-xl">Data Analyst Course</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4 flex-grow">
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Advanced Excel + Data Visualization</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Basic SQL & Data Handling</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Real-time Projects</li>
+                    <div className="h-1.5 w-12 bg-amber-500 rounded-full opacity-30 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-4 leading-tight">Data Analyst Course</h3>
+                <div className="space-y-3 flex-grow">
+                    <ul className="space-y-2.5 text-muted-foreground text-sm">
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Advanced Excel + Data Visualization</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Basic SQL & Data Handling</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Real-time Projects</span>
+                        </li>
                     </ul>
-                </CardContent>
-                <CardContent className="pt-0 pb-6">
-                    <Badge variant="secondary" className="w-full justify-center py-1">Ideal for Job Seekers</Badge>
-                </CardContent>
-             </Card>
+                </div>
+                <div className="mt-6 pt-4 border-t border-amber-100">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-amber-600/60 text-center">Ideal for Job Seekers</p>
+                </div>
+             </div>
 
              {/* Cyber Security */}
-             <Card className="border-t-4 border-t-red-500 shadow-md hover:shadow-xl transition-shadow h-full flex flex-col">
-                <CardHeader className="pb-4">
-                    <div className="p-3 bg-red-50 rounded-lg w-fit mb-4">
-                        <ShieldCheck className="h-6 w-6 text-red-500" />
+             <div className="group relative bg-red-50/50 backdrop-blur-sm border border-red-100 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-500/10 hover:border-red-500/30 flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white rounded-2xl shadow-sm text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                        <ShieldCheck className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-xl">Cyber Security / Ethical Hacking</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4 flex-grow">
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Network Security Basics</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Ethical Hacking Techniques</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 shrink-0 mt-0.5" /> Cyber Threat Protection</li>
+                    <div className="h-1.5 w-12 bg-red-500 rounded-full opacity-30 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-4 leading-tight">Cyber Security / Ethical Hacking</h3>
+                <div className="space-y-3 flex-grow">
+                    <ul className="space-y-2.5 text-muted-foreground text-sm">
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Network Security Basics</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Ethical Hacking Techniques</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                            <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                                <CheckCircle className="h-3 w-3 text-green-600" />
+                            </div>
+                            <span>Cyber Threat Protection</span>
+                        </li>
                     </ul>
-                </CardContent>
-                <CardContent className="pt-0 pb-6">
-                    <Badge variant="secondary" className="w-full justify-center py-1">High-demand career field</Badge>
-                </CardContent>
-             </Card>
+                </div>
+                <div className="mt-6 pt-4 border-t border-red-100">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-red-600/60 text-center">High-demand career field</p>
+                </div>
+             </div>
           </div>
         </div>
       </section>
@@ -180,7 +228,7 @@ export default function LandingPage() {
                     <div className="p-6 bg-primary text-primary-foreground rounded-2xl">
                         <MapPin className="h-8 w-8 text-accent mb-4" />
                         <h3 className="text-xl font-bold">Jogeshwari Branch</h3>
-                        <p className="text-sm opacity-80 mt-2">Opp. S.V. Road, Jogeshwari West</p>
+                        <p className="text-sm opacity-80 mt-2">Opp. JES College, Jogeshwari East</p>
                     </div>
                     <div className="p-6 bg-primary text-primary-foreground rounded-2xl">
                         <MapPin className="h-8 w-8 text-accent mb-4" />
