@@ -711,381 +711,1372 @@ export const courseDetails: { [key: string]: any } = {
         whatYouWillLearn: ["Creating professional documents", "Basic data management in Excel", "Designing impact presentations", "Efficient email and web usage"],
         careerOpportunities: ["Front Desk Executive", "Administrative Assistant", "Office Coordinator", "Data Entry Specialist"],
         syllabus: [
-            { title: "Document Handling", icon: "MonitorCheck", topics: ["MS Word Basics", "Mail Merge", "Formatting"] },
-            { title: "Data Handling", icon: "BarChart", topics: ["Excel Functions", "Filtering", "Chart Basics"] },
-            { title: "Web Tools", icon: "Globe", topics: ["Email Etiquette", "Cloud Storage", "Internet Security"] }
+            { 
+                title: "Computer Fundamentals", 
+                icon: "Cpu", 
+                topics: ["Introduction to Computer", "Windows Basics", "Typing Practice"] 
+            },
+            { 
+                title: "MS Word & Documentation", 
+                icon: "FileText", 
+                topics: ["Word Basics", "Formatting Documents", "Mail Merge", "Professional Letters"] 
+            },
+            { 
+                title: "MS Excel & Data Handling", 
+                icon: "BarChart", 
+                topics: ["Excel Basics", "Basic Functions", "Sorting & Filtering", "Charts"] 
+            },
+            { 
+                title: "PowerPoint & Presentation", 
+                icon: "Presentation", 
+                topics: ["Slide Design", "Animations", "Business Presentations"] 
+            },
+            { 
+                title: "Internet & Email Skills", 
+                icon: "Globe", 
+                topics: ["Internet Usage", "Email Writing", "Online Safety"] 
+            }
         ],
         tools: [
-            { name: "Word", logo: "/images/tech/word.svg" },
-            { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "PowerPoint", logo: "/images/tech/p.svg" }
+            { name: "MS Word", logo: "/images/tech/word.svg" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
+            { name: "MS PowerPoint", logo: "/images/tech/powerpoint.svg" },
+            { name: "Windows OS", logo: "/images/tech/windows.svg" },
+            { name: "Internet & Email Tools", logo: "/images/tech/browser.svg" },
+            { name: "Ai Tool", logo: "/images/tech/ai4.svg" }
         ],
         faqs: [
-            { q: "Which is the best Office Automation institute in Mumbai?", a: "Primezone Computer Education is the leading choice for office skills training in Mumbai." },
-            { q: "Who can join an office course in Mumbai?", a: "Anyone looking to improve their daily productivity and documentation skills." },
-            { q: "Is this course practical?", a: "Yes, it is 100% hands-on with real office document templates." },
-            { q: "What is the duration?", a: "The course is 2 months long with flexible batch timings." }
+            { 
+                q: "Which Computer Class is the best for Office Automation course in Mumbai?", 
+                a: "Primezone Computer Education offers one of the best Office Automation courses in Mumbai with practical training in MS Word, Excel, PowerPoint, and Internet skills." 
+            },
+            { 
+                q: "What is included in an Office Automation course?", 
+                a: "The course includes MS Word, MS Excel, PowerPoint, Windows basics, typing practice, and internet/email usage." 
+            },
+            { 
+                q: "Who should join this course?", 
+                a: "Students, job seekers, and professionals looking to improve computer skills and office productivity can join this course." 
+            },
+            { 
+                q: "Is this MS Office course beginner-friendly?", 
+                a: "Yes, this course is designed for beginners with no prior computer knowledge." 
+            },
+            { 
+                q: "What is the duration of the Office Automation course?", 
+                a: "The course duration is typically 2 to 3 months depending on the batch and learning mode." 
+            }
         ]
     },
     'ms-office': {
-        title: "MS Office Course in Mumbai | Word, Excel, PowerPoint Training | Primezone",
-        metaDescription: "Join the best MS Office training in Mumbai. Master Microsoft Word, Excel, and PPT for business use. 100% practical classes at Primezone.",
-        description: "A deep dive into the Microsoft Office Suite. This course focuses on the advanced features of Word, Excel, and PowerPoint required for business operations.",
-        whyLearn: "MS Office is the global standard for documentation and analysis. Mastering these tools ensures you can work in any office, anywhere in Mumbai or beyond.",
-        image: "/images/courses/short/account/msoffice.png",
+        title: "MS Office Course in Mumbai | Basic to Advanced Word, Excel, PowerPoint Training",
+    
+        metaDescription: "Enroll in the best MS Office course in Mumbai. Learn MS Word, Excel, PowerPoint from basic to advanced with 100% practical training at Primezone.",
+        
+        description: "This comprehensive MS Office course covers everything from basic computer skills to advanced features of Word, Excel, and PowerPoint. Designed for beginners and professionals, it ensures complete mastery of office productivity tools.",
+        
+        whyLearn: "MS Office skills are essential for every job role in Mumbai. From basic documentation to advanced Excel data analysis, this course prepares you for real-world office work.",
+        
+        image: "/images/courses/short/account/ms.png",
+    
         hint: "ms office",
-        highlights: ["Business Documentation", "Data Analysis", "Presentation Skills", "Outlook & OneNote", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Advanced Word Formatting", "Excel Pivot Tables", "Animated Slide Design", "Business Communication tools"],
-        careerOpportunities: ["Back Office Executive", "Secretary", "Project Coordinator", "Support Assistant"],
+        highlights: [
+            "Basic to Advanced Training",
+            "Business Documentation Skills",
+            "AI Tools for Office Automation",
+            "Excel Data Analysis with AI Support",
+            "Smart Document & Email Writing",
+            "Presentation & Communication Skills",
+            "Learning Mode: Offline | Hybrid | Online"
+        ],
+        
+        whatYouWillLearn: [
+            "MS Word, Excel & PowerPoint from basic to advanced",
+            "Using ChatGPT for document creation and automation",
+            "Excel formulas, pivot tables & AI-assisted analysis",
+            "Creating presentations faster using AI tools",
+            "Professional email writing with AI support"
+        ],
+        
+        careerOpportunities: [
+            "Back Office Executive",
+            "Office Assistant",
+            "Data Entry Operator",
+            "Project Coordinator",
+            "Administrative Executive"
+        ],
+        
         syllabus: [
-            { title: "Word for Business", icon: "FileText", topics: ["Styles", "References", "Table of Contents"] },
-            { title: "Excel for Work", icon: "BarChart", topics: ["Vlookup", "Countif", "Sorting & Filtering"] },
-            { title: "Pro Presentations", icon: "LayoutTemplate", topics: ["Slide Masters", "Infographics", "Transitions"] }
+            { 
+                title: "Computer Basics", 
+                icon: "Cpu", 
+                topics: ["Introduction to Computers", "Windows Basics", "Typing Practice"] 
+            },
+            { 
+                title: "MS Word + AI", 
+                icon: "FileText", 
+                topics: ["Formatting & Styles", "Mail Merge", "AI Document Writing", "Report Creation"] 
+            },
+            { 
+                title: "MS Excel + AI", 
+                icon: "BarChart", 
+                topics: ["Basic Formulas", "IF, VLOOKUP", "Pivot Tables", "AI Data Analysis"] 
+            },
+            { 
+                title: "PowerPoint + AI", 
+                icon: "Presentation", 
+                topics: ["Slide Design", "Animations", "AI Presentation Creation"] 
+            },
+            { 
+                title: "AI Tools for Office Work", 
+                icon: "Bot", 
+                topics: ["ChatGPT Basics", "Prompt Writing", "Email Automation", "Content Generation"] 
+            }
         ],
+        
         tools: [
-            { name: "Word", logo: "/images/tech/word.svg" },
-            { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "PowerPoint", logo: "/images/tech/p.svg" }
+            { name: "MS Word", logo: "/images/tech/word.svg" },
+            { name: "MS Excel", logo: "/images/tech/excel.svg" },
+            { name: "MS PowerPoint", logo: "/images/tech/powerpoint.svg" },
+            { name: "MS Outlook", logo: "/images/tech/outlook.svg" },
+            { name: "Ai Tools", logo: "/images/tech/ai4.svg" }
         ],
+        
         faqs: [
-            { q: "Which is the best MS Office institute in Mumbai?", a: "Primezone is highly recommended for its detailed and job-focused MS Office training." },
-            { q: "Who should join an MS Office course in Mumbai?", a: "Students and professionals wanting to excel in administrative and analyst roles." },
-            { q: "What tools are covered?", a: "Word, Excel, PowerPoint, and Outlook." },
-            { q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate upon completion." }
+            { 
+                q: "Which is the best MS Office + AI course in Mumbai?", 
+                a: "Primezone Computer Education offers one of the best MS Office + AI courses in Mumbai with practical training in Word, Excel, PowerPoint, and ChatGPT." 
+            },
+            { 
+                q: "What is included in the MS Office + AI course?", 
+                a: "The course includes MS Word, Excel, PowerPoint, and AI tools like ChatGPT for automation, document creation, and data analysis." 
+            },
+            { 
+                q: "Is this course suitable for beginners?", 
+                a: "Yes, the course starts from basic computer knowledge and progresses to advanced MS Office and AI skills." 
+            },
+            { 
+                q: "How is AI used in this course?", 
+                a: "AI is used to automate document writing, Excel analysis, presentations, and email communication using ChatGPT." 
+            },
+            { 
+                q: "Will I get a certificate after completion?", 
+                a: "Yes, you will receive a recognized certificate after successfully completing the course." 
+            }
         ]
     },
     'advanced-excel': {
-        title: "Advanced Excel Course in Mumbai | MIS Reporting & Macros Training | Primezone",
-        metaDescription: "Master Advanced Excel in Mumbai. Learn VLOOKUP, Pivot Tables, and VBA Macros. Industry-oriented training for MIS roles at Primezone.",
-        description: "Go beyond basic spreadsheets. Learn the powerful functions that office professionals use to handle large datasets efficiently.",
-        whyLearn: "Excel is the world's most common business tool. Advanced knowledge can save you hours of work and boost your salary prospects significantly.",
+        title: "Advanced Excel Course in Mumbai | MIS Reporting, Dashboards & VBA with AI",
+    
+        metaDescription: "Join the best Advanced Excel course in Mumbai. Learn MIS reporting, dashboards, Pivot Tables, VBA Macros & AI tools for data analysis.",
+        
+        description: "Master Advanced Excel skills used in real jobs. This course covers formulas, Pivot Tables, dashboards, VBA automation, and AI tools to handle large datasets efficiently.",
+        
+        whyLearn: "Advanced Excel is one of the most in-demand skills in Mumbai for MIS, operations, and analyst roles. Adding automation and AI skills can significantly increase your productivity and salary.",
+        
         image: "/images/courses/short/account/advexcel.png",
-        hint: "excel spreadsheet",
-        highlights: ["Advanced Formulas", "MIS Reporting", "Macros & VBA", "Data Visualization", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Complex logical functions", "Creating dynamic charts", "Automating tasks with Macros", "Data cleaning techniques"],
-        careerOpportunities: ["MIS Executive", "Operations Analyst", "Back Office Head", "Financial Analyst"],
+        hint: "advanced excel",
+        highlights: [
+            "Advanced Excel Formulas & Functions",
+            "MIS Reporting & Dashboard Creation",
+            "Macros & VBA Automation",
+            "Data Cleaning & Analysis",
+            "AI Tools for Excel Productivity",
+            "Learning Mode: Offline | Hybrid | Online"
+        ],
+        
+        whatYouWillLearn: [
+            "Advanced formulas like INDEX-MATCH, IF, SUMIFS",
+            "Creating interactive dashboards",
+            "Pivot Tables & data analysis techniques",
+            "Automating reports using Macros & VBA",
+            "Using AI tools for faster Excel work"
+        ],
+        
+        careerOpportunities: [
+            "MIS Executive",
+            "Data Analyst (Entry-Level)",
+            "Operations Analyst",
+            "Reporting Executive",
+            "Financial Analyst"
+        ],
+        
         syllabus: [
-            { title: "Functions", icon: "BarChart", topics: ["Lookups", "Index Match", "Sumifs/Countifs"] },
-            { title: "Analysis", icon: "BarChart", topics: ["Pivot Tables", "Power Query", "What-if Analysis"] },
-            { title: "Automation", icon: "Code", topics: ["VBA Basics", "Recording Macros", "Custom Userforms"] }
+            { 
+                title: "Advanced Excel Functions", 
+                icon: "BarChart", 
+                topics: ["VLOOKUP, HLOOKUP", "INDEX-MATCH", "IF, Nested IF", "SUMIFS, COUNTIFS"] 
+            },
+            { 
+                title: "Data Analysis & MIS Reporting", 
+                icon: "TrendingUp", 
+                topics: ["Pivot Tables", "Data Cleaning", "What-if Analysis", "MIS Report Creation"] 
+            },
+            { 
+                title: "Dashboard & Visualization", 
+                icon: "LayoutDashboard", 
+                topics: ["Dynamic Dashboards", "Charts & Graphs", "Data Visualization"] 
+            },
+            { 
+                title: "Automation with VBA", 
+                icon: "Code", 
+                topics: ["Macro Recording", "VBA Basics", "Automation Scripts"] 
+            },
+            { 
+                title: "Excel with AI Tools", 
+                icon: "Bot", 
+                topics: ["Using ChatGPT for Excel", "Formula Generation", "Data Insights with AI"] 
+            }
         ],
+        
         tools: [
-            { name: "Excel", logo: "/images/tech/excel.svg" }
+            { name: "Microsoft Excel", logo: "/images/tech/excel.svg" },
+            { name: "ChatGPT", logo: "/images/tech/ai4.svg" }
         ],
+        
         faqs: [
-            { q: "Which is the best Advanced Excel institute in Mumbai?", a: "Primezone is known for the most advanced Excel and VBA curriculum in Mumbai." },
-            { q: "Who can join?", a: "Commerce students, graduates, and working professionals." },
-            { q: "Will I learn Macros?", a: "Yes, our advanced course includes Macro recording and VBA basics." },
-            { q: "Is there placement assistance?", a: "Yes, we help students find MIS and analyst roles in Mumbai." }
+            { 
+                q: "Which is the best Advanced Excel course in Mumbai?", 
+                a: "Primezone Computer Education offers one of the best Advanced Excel courses in Mumbai with MIS reporting, dashboards, VBA, and AI training." 
+            },
+            { 
+                q: "What will I learn in Advanced Excel?", 
+                a: "You will learn advanced formulas, Pivot Tables, dashboards, MIS reporting, and automation using VBA macros." 
+            },
+            { 
+                q: "Is this course useful for MIS jobs?", 
+                a: "Yes, this course is specifically designed for MIS Executive and data analyst roles." 
+            },
+            { 
+                q: "Do you teach VBA and Macros?", 
+                a: "Yes, the course includes Macro recording and VBA programming for automation." 
+            },
+            { 
+                q: "How is AI used in this course?", 
+                a: "AI tools like ChatGPT are used to generate formulas, automate tasks, and analyze data faster." 
+            }
         ]
     },
     'tally-gst': {
-        title: "Tally Prime with GST Course in Mumbai | Accounting Training | Primezone",
-        metaDescription: "Learn Tally Prime and GST in Mumbai. Practical accounting training with voucher entry and tax returns. Join the best Tally institute in Mumbai.",
-        description: "Master India's most popular accounting software. This course covers everything from company creation to filing GST returns.",
-        whyLearn: "Every business in India needs an accountant who knows Tally and GST. This is a recession-proof skill with immediate job opportunities in Mumbai.",
-        image: "/images/courses/short/account/tally.svg",
-        hint: "accounting tally",
-        highlights: ["Tally Prime Mastery", "GST Compliance", "Live Voucher Entry", "Bank Reconciliation", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Day-to-day accounting entries", "Generating GST invoices", "Inventory management", "Payroll and TDS handling"],
-        careerOpportunities: ["Tally Operator", "Junior Accountant", "GST Consultant", "Accounts Executive"],
-        syllabus: [
-            { title: "Accounting", icon: "Landmark", topics: ["Journal Vouchers", "Ledger Groups", "Final Accounts"] },
-            { title: "Taxation", icon: "FileText", topics: ["GST Invoicing", "RCM", "GST Returns"] },
-            { title: "Inventory", icon: "Settings", topics: ["Stock Groups", "Godown Management", "Purchase/Sales Orders"] }
-        ],
-        tools: [
-            { name: "Tally Prime", logo: "/images/tech/tally.svg" },
-            { name: "Excel", logo: "/images/tech/excel.svg" },
-            { name: "GST", logo: "/images/tech/gst.jpg" }
-        ],
-        faqs: [
-            { q: "Which is the best Tally institute in Mumbai?", a: "Primezone offers the most comprehensive Tally Prime with GST training in Mumbai." },
-            { q: "Who can join a Tally course in Mumbai?", a: "Anyone interested in accounting, especially commerce students." },
-            { q: "Is the software provided?", a: "We train you on the latest Tally Prime software in our labs." },
-            { q: "Do you teach GST returns?", a: "Yes, practical GST return filing is a key part of the syllabus." }
-        ]
+    title: "Tally Prime with GST Course in Mumbai | Accounting, Taxation & Returns Training",
+    
+    metaDescription: "Enroll in the best Tally Prime with GST course in Mumbai. Learn accounting, GST returns, TDS, payroll & Excel with practical training.",
+    
+    description: "Become a job-ready accountant with our Tally Prime with GST course. Learn practical accounting, taxation, GST return filing, and real business transactions using industry-standard tools.",
+    
+    whyLearn: "Tally with GST is one of the most in-demand skills in Mumbai for accounting jobs. Businesses require professionals who can handle accounts, taxation, and compliance efficiently.",
+    
+    image: "/images/courses/short/account/tallygst.png",
+    hint: "tally gst course",
+    
+    highlights: [
+        "Tally Prime with Practical Accounting",
+        "GST Returns & Compliance",
+        "Live Voucher Entry & Real Transactions",
+        "Bank Reconciliation & Payroll",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Recording day-to-day accounting transactions",
+        "GST invoicing and return filing process",
+        "Inventory and stock management",
+        "Payroll, TDS, and business accounting",
+        "Bank reconciliation and financial reports"
+    ],
+    
+    careerOpportunities: [
+        "Tally Operator",
+        "Accounts Executive",
+        "Junior Accountant",
+        "GST Executive",
+        "Billing Executive"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Accounting Fundamentals", 
+            icon: "Landmark", 
+            topics: ["Accounting Basics", "Ledger Creation", "Journal Entries", "Final Accounts"] 
+        },
+        { 
+            title: "Tally Prime Practical Training", 
+            icon: "Calculator", 
+            topics: ["Company Creation", "Voucher Entry", "Sales & Purchase", "Bank Reconciliation"] 
+        },
+        { 
+            title: "GST & Taxation", 
+            icon: "FileText", 
+            topics: ["GST Registration", "GST Invoicing", "RCM", "GST Returns (GSTR-1, GSTR-3B)"] 
+        },
+        { 
+            title: "Inventory Management", 
+            icon: "Boxes", 
+            topics: ["Stock Groups", "Godown Management", "Order Processing"] 
+        },
+        { 
+            title: "Payroll & TDS", 
+            icon: "Users", 
+            topics: ["Salary Processing", "PF/ESI Basics", "TDS Calculation"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Tally Prime", logo: "/images/tech/tally.svg" },
+        { name: "GST Portal", logo: "/images/tech/gst.jpg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best Tally course in Mumbai?", 
+            a: "Primezone Computer Education offers one of the best Tally Prime with GST courses in Mumbai with practical accounting and taxation training." 
+        },
+        { 
+            q: "What is included in the Tally with GST course?", 
+            a: "The course includes accounting basics, Tally Prime, GST returns, inventory management, payroll, and TDS." 
+        },
+        { 
+            q: "Is this course suitable for beginners?", 
+            a: "Yes, this course starts from basic accounting concepts and progresses to advanced Tally and GST training." 
+        },
+        { 
+            q: "Will I learn GST return filing?", 
+            a: "Yes, you will learn practical GST return filing including GSTR-1 and GSTR-3B." 
+        },
+        { 
+            q: "What jobs can I get after this course?", 
+            a: "You can work as a Tally Operator, Accounts Executive, Junior Accountant, or GST Executive." 
+        }
+    ]
     },
     'web-development': {
-        title: "Web Development Course in Mumbai | Frontend & Backend Training | Primezone",
-        metaDescription: "Master Web Development in Mumbai. Learn HTML, CSS, JS, and backend tech. Practical coding classes with placement assistance at Primezone.",
-        description: "Learn to build complete, functional web applications from scratch using modern frameworks and technologies.",
-        whyLearn: "The tech industry is always looking for skilled developers. This course gives you the practical experience needed to build a career in web development.",
-        image: "/images/courses/short/programming/webdev.png",
-        hint: "web development",
-        highlights: ["Modern Frameworks", "Full-Stack Concepts", "Deployment Mastery", "Real-world Projects", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Building responsive interfaces", "Managing databases", "Creating secure server-side logic", "Deploying apps to the cloud"],
-        careerOpportunities: ["Frontend Developer", "Backend Developer", "Junior Web Developer", "Freelance Developer"],
-        syllabus: [
-            { title: "Frontend", icon: "Code", topics: ["HTML5 & CSS3", "JavaScript ES6", "React Basics"] },
-            { title: "Backend", icon: "Code", topics: ["Node.js Intro", "Express.js", "RESTful APIs"] },
-            { title: "Database", icon: "Settings", topics: ["MySQL Fundamentals", "Data Modeling"] }
-        ],
-        tools: [
-            { name: "VS Code", logo: "/images/tech/vscode.svg" },
-            { name: "Node.js", logo: "/images/tech/node.svg" },
-            { name: "React", logo: "/images/tech/react.svg" },
-            { name: "HTML5", logo: "/images/tech/html.svg" },
-            { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" }
-        ],
-        faqs: [
-            { q: "Which is the best Web Dev institute in Mumbai?", a: "Primezone is a top choice for practical web development training in Mumbai." },
-            { q: "Do I need prior experience?", a: "No, we start from the very basics of coding." },
-            { q: "Which tools are taught?", a: "VS Code, Node.js, React, HTML, CSS, and JS." },
-            { q: "Is there placement support?", a: "Yes, we help students find roles in Mumbai's tech companies." }
-        ]
+    title: "Full Stack Web Development Course in Mumbai | HTML, CSS, JavaScript, React, Node.js + AI",
+    
+    metaDescription: "Join the best Web Development course in Mumbai. Learn Full Stack development with HTML, CSS, JavaScript, React, Node.js, Git & AI tools.",
+    
+    description: "Become a job-ready full stack developer by learning frontend, backend, databases, and deployment. This course also includes AI tools to speed up coding and development.",
+    
+    whyLearn: "Web development is one of the highest-paying and in-demand skills in Mumbai. Learning full stack development with AI tools gives you a strong advantage in tech careers.",
+    
+    image: "/images/courses/short/programming/webdev.png",
+    hint: "full stack web development",
+    
+    highlights: [
+        "Full Stack Development (Frontend + Backend)",
+        "Live Projects & Portfolio Building",
+        "GitHub & Version Control",
+        "Deployment & Hosting",
+        "AI Tools for Coding",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Build responsive websites using HTML, CSS, JavaScript",
+        "Create dynamic web apps using React",
+        "Develop backend APIs using Node.js & Express",
+        "Work with databases like MySQL",
+        "Deploy websites on live servers",
+        "Use AI tools to write and debug code faster"
+    ],
+    
+    careerOpportunities: [
+        "Frontend Developer",
+        "Backend Developer",
+        "Full Stack Developer",
+        "Web Designer",
+        "Freelance Developer"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Frontend Development", 
+            icon: "Code", 
+            topics: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Design", "React.js Basics"] 
+        },
+        { 
+            title: "Backend Development", 
+            icon: "Server", 
+            topics: ["Node.js", "Express.js", "REST APIs", "Authentication Basics"] 
+        },
+        { 
+            title: "Database Management", 
+            icon: "Database", 
+            topics: ["MySQL", "CRUD Operations", "Data Modeling"] 
+        },
+        { 
+            title: "Version Control & Deployment", 
+            icon: "GitBranch", 
+            topics: ["Git & GitHub", "Hosting Websites", "Deployment (Netlify / Vercel)"] 
+        },
+        { 
+            title: "AI for Developers", 
+            icon: "Bot", 
+            topics: ["Using ChatGPT for Coding", "Debugging with AI", "Code Optimization"] 
+        }
+    ],
+    
+    tools: [
+        { name: "VS Code", logo: "/images/tech/vscode.svg" },
+        { name: "HTML5", logo: "/images/tech/html.svg" },
+        { name: "CSS3", logo: "/images/tech/css.svg" },
+        { name: "JavaScript", logo: "/images/tech/js.svg" },
+        { name: "React", logo: "/images/tech/react.svg" },
+        { name: "Node.js", logo: "/images/tech/node.svg" },
+        { name: "GitHub", logo: "/images/tech/github.svg" },
+        { name: "GitHub", logo: "/images/tech/ai2.svg" },
+        { name: "Claude", logo: "/images/tech/ai1.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is Computer Class if the best for web development course in Mumbai?", 
+            a: "Primezone Computer Education offers one of the best full stack web development courses in Mumbai with practical training and live projects." 
+        },
+        { 
+            q: "Do I need coding experience to join?", 
+            a: "No, this course starts from basic HTML and progresses to advanced full stack development." 
+        },
+        { 
+            q: "Will I build real projects?", 
+            a: "Yes, you will work on live projects and create a portfolio for job interviews." 
+        },
+        { 
+            q: "What technologies will I learn?", 
+            a: "You will learn HTML, CSS, JavaScript, React, Node.js, MySQL, and GitHub." 
+        },
+        { 
+            q: "How is AI used in this course?", 
+            a: "AI tools like ChatGPT are used to assist in coding, debugging, and improving development speed." 
+        }
+    ]
     },
     'web-designing': {
-        title: "Web Designing Course in Mumbai | HTML, CSS, JavaScript Training | Primezone",
-        metaDescription: "Best Web Designing Course in Mumbai. Learn to create responsive websites using HTML, CSS, and JS. Practical training in Jogeshwari and Vile Parle.",
-        description: "Learn to build visually stunning and responsive websites. This short-term course is perfect for creative individuals looking to enter the tech field.",
-        whyLearn: "Web design is the foundation of the internet. Every business in Mumbai needs a designer to create its digital identity.",
-        image: "/images/courses/short/programming/webdesign.png",
-        hint: "web design",
-        highlights: ["Responsive Design", "UI/UX Principles", "HTML/CSS Mastery", "Portfolio Building", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Creating website layouts", "Applying CSS styling", "Making websites mobile-friendly", "Basic JavaScript interactivity"],
-        careerOpportunities: ["Web Designer", "UI Designer", "Frontend Developer", "Freelance Designer"],
-        syllabus: [
-            { title: "Fundamentals", icon: "Code", topics: ["HTML5 Structure", "CSS3 Styling", "Box Model"] },
-            { title: "Design", icon: "Palette", topics: ["Color Theory", "Typography", "Layout Design"] },
-            { title: "Advanced", icon: "Code", topics: ["Media Queries", "Flexbox", "CSS Grid"] }
-        ],
-        tools: [
-            { name: "HTML5", logo: "/images/tech/html.svg" },
-            { name: "CSS3", logo: "/images/tech/css.svg" },
-            { name: "JavaScript", logo: "/images/tech/js.svg" },
-            { name: "Canva", logo: "/images/tech/canva.svg" }
-        ],
-        faqs: [
-            { q: "Which is the best Web Design institute in Mumbai?", a: "Primezone offers top-tier web design training with a focus on UI/UX and responsive design." },
-            { q: "How long is the course?", a: "The Web Designing course typically takes 4 months to complete." },
-            { q: "Will I learn mobile-friendly design?", a: "Yes, responsive web design is a core part of the curriculum." },
-            { q: "Is there a certificate?", a: "Yes, you get a government-recognized certificate upon completion." }
-        ]
+    title: "Web Designing Course in Mumbai | UI/UX, HTML, CSS, JavaScript & Figma Training",
+    
+    metaDescription: "Join the best Web Designing course in Mumbai. Learn UI/UX design, HTML, CSS, JavaScript, and Figma with practical training and portfolio projects.",
+    
+    description: "Start your career in web design by learning UI/UX principles, responsive design, and frontend basics. This course includes tools like Figma and AI to create modern, user-friendly websites.",
+    
+    whyLearn: "Web design is one of the most in-demand creative skills in Mumbai. Businesses need visually appealing and user-friendly websites to grow online.",
+    
+    image: "/images/courses/short/programming/webdesign.png",
+    hint: "web designing ui ux",
+    
+    highlights: [
+        "UI/UX Design Fundamentals",
+        "Responsive Website Design",
+        "HTML, CSS & JavaScript Basics",
+        "Portfolio & Freelancing Skills",
+        "AI Tools for Design",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Design modern website layouts using UI/UX principles",
+        "Create responsive websites using HTML and CSS",
+        "Add interactivity using JavaScript",
+        "Design wireframes and prototypes using Figma",
+        "Use AI tools for faster design and content creation"
+    ],
+    
+    careerOpportunities: [
+        "Web Designer",
+        "UI/UX Designer",
+        "Frontend Developer (Beginner)",
+        "Freelance Web Designer"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Web Design Fundamentals", 
+            icon: "Code", 
+            topics: ["HTML5 Structure", "CSS3 Styling", "Box Model", "Basic JavaScript"] 
+        },
+        { 
+            title: "UI/UX Design", 
+            icon: "Palette", 
+            topics: ["Design Principles", "Color Theory", "Typography", "User Experience Basics"] 
+        },
+        { 
+            title: "Responsive Design", 
+            icon: "Smartphone", 
+            topics: ["Media Queries", "Flexbox", "CSS Grid", "Mobile-Friendly Design"] 
+        },
+        { 
+            title: "Design Tools", 
+            icon: "PenTool", 
+            topics: ["Figma Basics", "Wireframing", "Prototyping"] 
+        },
+        { 
+            title: "Portfolio & AI Tools", 
+            icon: "Bot", 
+            topics: ["Portfolio Creation", "Freelancing Basics", "Using ChatGPT for Design Content"] 
+        }
+    ],
+    
+    tools: [
+        { name: "HTML5", logo: "/images/tech/html.svg" },
+        { name: "CSS3", logo: "/images/tech/css.svg" },
+        { name: "JavaScript", logo: "/images/tech/js.svg" },
+        { name: "Figma", logo: "/images/tech/figma.svg" },
+        { name: "Canva", logo: "/images/tech/canva.svg" },
+        { name: "ChatGPT", logo: "/images/tech/ai2.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best web designing course in Mumbai?", 
+            a: "Primezone Computer Education offers one of the best web designing courses in Mumbai with UI/UX, Figma, and practical project training." 
+        },
+        { 
+            q: "Do I need coding knowledge to join?", 
+            a: "No, this course starts from basic HTML and CSS, making it perfect for beginners." 
+        },
+        { 
+            q: "Will I learn UI/UX design?", 
+            a: "Yes, the course includes UI/UX fundamentals, wireframing, and prototyping using Figma." 
+        },
+        { 
+            q: "Can I start freelancing after this course?", 
+            a: "Yes, you will build a portfolio and learn freelancing basics to start earning." 
+        },
+        { 
+            q: "Is responsive design included?", 
+            a: "Yes, creating mobile-friendly and responsive websites is a core part of the course." 
+        }
+    ]
     },
     'dsa': {
-        title: "Data Structures & Algorithms Course in Mumbai | DSA Training | Primezone",
-        metaDescription: "Master DSA in Mumbai. Learn Arrays, Linked Lists, Trees, and Algorithms. Prepare for top tech interviews at Primezone Computer Education.",
-        description: "The core of computer science. Learn how to organize data and solve complex problems efficiently using algorithms.",
-        whyLearn: "DSA is the most important topic for technical interviews at companies like Google, Amazon, and Microsoft. It's essential for any serious programmer.",
-        image: "/images/courses/short/programming/dsa.png",
-        hint: "data structures",
-        highlights: ["Problem Solving", "Complexity Analysis", "Core Data Structures", "Interview Prep", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Implementing stacks and queues", "Sorting and searching algorithms", "Tree and Graph traversals", "Dynamic programming basics"],
-        careerOpportunities: ["Software Engineer", "Algorithmic Developer", "Tech Lead"],
-        syllabus: [
-            { title: "Linear Structures", icon: "Code", topics: ["Arrays", "Linked Lists", "Stacks", "Queues"] },
-            { title: "Non-Linear", icon: "Code", topics: ["Binary Trees", "Heaps", "Graphs"] },
-            { title: "Algorithms", icon: "Code", topics: ["Sorting", "Searching", "Recursion", "Big O"] }
-        ],
-        tools: [
-            { name: "VS Code", logo: "/images/tech/vscode.svg" },
-            { name: "Java", logo: "/images/tech/java.svg" },
-            { name: "C++", logo: "/images/tech/cplusplus.svg" }
-        ],
-        faqs: [
-            { q: "Which is the best DSA institute in Mumbai?", a: "Primezone is highly recommended for its structured and interview-focused DSA course." },
-            { q: "Which language is used?", a: "We primarily use Java or C++ for DSA implementations." },
-            { q: "Is this for beginners?", a: "Basic coding knowledge is recommended, but we review the fundamentals." },
-            { q: "Does it help with interviews?", a: "Yes, the course is specifically designed to help students clear technical coding rounds." }
-        ]
+    title: "Data Structures & Algorithms Course in Mumbai | DSA + Interview Preparation with Java/C++",
+    
+    metaDescription: "Join the best DSA course in Mumbai. Learn Data Structures, Algorithms, problem solving & coding interview preparation with Java/C++ and AI tools.",
+    
+    description: "Master Data Structures and Algorithms with a strong focus on problem solving and coding interviews. This course prepares you for top tech companies with structured learning and real coding practice.",
+    
+    whyLearn: "DSA is essential for cracking technical interviews at top companies like Google, Amazon, and Microsoft. Strong problem-solving skills can significantly boost your career in software development.",
+    
+    image: "/images/courses/short/programming/dsa.png",
+    hint: "dsa interview prep",
+    
+    highlights: [
+        "Problem Solving & Coding Practice",
+        "DSA for Interview Preparation",
+        "Time & Space Complexity Analysis",
+        "Real Coding Questions",
+        "AI Tools for Learning",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Master core data structures like arrays, stacks, queues, trees, and graphs",
+        "Solve coding problems using optimized algorithms",
+        "Understand time and space complexity",
+        "Practice interview-level questions",
+        "Use AI tools to debug and improve code"
+    ],
+    
+    careerOpportunities: [
+        "Software Engineer",
+        "Backend Developer",
+        "Full Stack Developer",
+        "Algorithm Engineer"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Programming Fundamentals", 
+            icon: "Code", 
+            topics: ["Basic Syntax (Java/C++)", "Loops & Functions", "Problem Solving Basics"] 
+        },
+        { 
+            title: "Linear Data Structures", 
+            icon: "Layers", 
+            topics: ["Arrays", "Strings", "Linked Lists", "Stacks", "Queues"] 
+        },
+        { 
+            title: "Non-Linear Data Structures", 
+            icon: "Share2", 
+            topics: ["Trees", "Binary Search Trees", "Heaps", "Graphs"] 
+        },
+        { 
+            title: "Algorithms & Problem Solving", 
+            icon: "Cpu", 
+            topics: ["Sorting Algorithms", "Searching", "Recursion", "Backtracking"] 
+        },
+        { 
+            title: "AI for Coding", 
+            icon: "Bot", 
+            topics: ["Using ChatGPT for Debugging", "Code Optimization", "Understanding Concepts Faster"] 
+        }
+    ],
+    
+    tools: [
+        { name: "VS Code", logo: "/images/tech/vscode.svg" },
+        { name: "Java", logo: "/images/tech/java.svg" },
+        { name: "C++", logo: "/images/tech/cplusplus.svg" },
+        { name: "ChatGPT", logo: "/images/tech/ai2.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best DSA course in Mumbai?", 
+            a: "Primezone Computer Education offers one of the best DSA courses in Mumbai with structured learning and interview preparation." 
+        },
+        { 
+            q: "Which programming language is used in this course?", 
+            a: "You can learn DSA using Java or C++, depending on your preference." 
+        },
+        { 
+            q: "Is this course suitable for beginners?", 
+            a: "Basic programming knowledge is recommended, but we revise fundamentals before starting DSA." 
+        },
+        { 
+            q: "Will this course help me crack coding interviews?", 
+            a: "Yes, the course includes problem-solving practice, mock interviews, and real coding questions." 
+        },
+        { 
+            q: "How is AI used in this course?", 
+            a: "AI tools like ChatGPT are used to debug code, understand algorithms, and improve problem-solving speed." 
+        }
+    ]
     },
     'python': {
-        title: "Python Programming Course in Mumbai | Beginner to Advanced Training | Primezone",
-        metaDescription: "Learn Python in Mumbai. Master syntax, data structures, and automation. Join the best Python coding classes at Primezone with placement assistance.",
-        description: "Learn Python, the world's most versatile and beginner-friendly programming language. Used in web dev, AI, and data science.",
-        whyLearn: "Python is readable, powerful, and essential for modern tech roles in 2025. It's the perfect first language for aspiring developers in Mumbai.",
-        image: "/images/courses/short/programming/python.png",
-        hint: "python code",
-        highlights: ["Easy Syntax", "Automation Scripts", "Data Libraries", "Coding Challenges", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Logic & Control Flow", "OOP Concepts", "Handling APIs", "Building real-world scripts"],
-        careerOpportunities: ["Python Developer", "Automation Engineer", "Back-end Developer"],
-        syllabus: [
-            { title: "Basics", icon: "Code", topics: ["Data Types", "Loops", "Functions"] },
-            { title: "Advanced", icon: "Code", topics: ["Classes", "Modules", "Exception Handling"] }
-        ],
-        tools: [
-            { name: "Python", logo: "/images/tech/python.svg" },
-            { name: "VS Code", logo: "/images/tech/vscode.svg" }
-        ],
-        faqs: [
-            { q: "Which is the best Python institute in Mumbai?", a: "Primezone provides excellent hands-on Python training for all levels." },
-            { q: "Is Python good for non-IT students?", a: "Absolutely! It's very easy to pick up and great for data analysis in any field." },
-            { q: "What is the duration?", a: "The Python course typically takes 3 months." },
-            { q: "Are there projects?", a: "Yes, you will build several real-world automation scripts." }
-        ]
+    title: "Python Programming Course in Mumbai | Beginner to Advanced + AI & Automation",
+    
+    metaDescription: "Join the best Python course in Mumbai. Learn Python programming, automation, data handling, and AI basics with real projects and placement support.",
+    
+    description: "Master Python from basics to advanced with real-world applications. This course includes automation, data handling, APIs, and AI tools to prepare you for modern tech careers.",
+    
+    whyLearn: "Python is one of the most in-demand programming languages used in web development, data science, and automation. Learning Python opens multiple career opportunities in Mumbai.",
+    
+    image: "/images/courses/short/programming/python.png",
+    hint: "python programming",
+    
+    highlights: [
+        "Beginner to Advanced Python",
+        "Real-World Projects",
+        "Automation & Scripting",
+        "API Integration",
+        "AI Tools for Coding",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Python programming fundamentals and logic building",
+        "Object-Oriented Programming (OOP)",
+        "Automation scripts for real tasks",
+        "Working with APIs and data",
+        "Using AI tools to write and debug Python code"
+    ],
+    
+    careerOpportunities: [
+        "Python Developer",
+        "Automation Engineer",
+        "Backend Developer (Beginner)",
+        "Data Analyst (Entry-Level)"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Python Fundamentals", 
+            icon: "Code", 
+            topics: ["Variables & Data Types", "Loops & Conditions", "Functions"] 
+        },
+        { 
+            title: "Intermediate Python", 
+            icon: "Layers", 
+            topics: ["Lists, Tuples, Dictionaries", "File Handling", "Error Handling"] 
+        },
+        { 
+            title: "Advanced Python", 
+            icon: "Cpu", 
+            topics: ["OOP Concepts", "Modules & Packages"] 
+        },
+        { 
+            title: "Python with Data", 
+            icon: "BarChart", 
+            topics: ["Intro to NumPy", "Pandas Basics", "Data Handling"] 
+        },
+        { 
+            title: "AI Tools for Python", 
+            icon: "Bot", 
+            topics: ["Using ChatGPT for Coding", "Debugging Code", "Code Optimization"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Python", logo: "/images/tech/python.svg" },
+        { name: "VS Code", logo: "/images/tech/vscode.svg" },
+        { name: "Jupyter Notebook", logo: "/images/tech/jupyter.svg" },
+        { name: "ChatGPT", logo: "/images/tech/ai2.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best Python course in Mumbai?", 
+            a: "Primezone Computer Education offers one of the best Python courses in Mumbai with practical training and real-world projects." 
+        },
+        { 
+            q: "Is Python suitable for beginners?", 
+            a: "Yes, Python is one of the easiest programming languages and is perfect for beginners." 
+        },
+        { 
+            q: "What can I do after learning Python?", 
+            a: "You can work in web development, automation, data analysis, or continue into AI and machine learning." 
+        },
+        { 
+            q: "Does this course include projects?", 
+            a: "Yes, you will work on real-world projects and automation scripts." 
+        },
+        { 
+            q: "How is AI used in this course?", 
+            a: "AI tools like ChatGPT are used to help write code, debug errors, and improve learning speed." 
+        }
+    ]
     },
     'seo': {
-        title: "SEO Course in Mumbai | Search Engine Optimization Training | Primezone",
-        metaDescription: "Best SEO Course in Mumbai. Learn On-Page, Off-Page, and Technical SEO. Master Google ranking factors at Primezone Computer Education.",
-        description: "Learn how to get any website to rank on the first page of Google. This course covers the science and art of Search Engine Optimization.",
-        whyLearn: "SEO is the most sustainable way to get traffic. Companies in Mumbai save millions in ad spend by hiring skilled SEO experts.",
-        image: "/images/courses/short/dm/SEO.png",
-        hint: "seo audit",
-        highlights: ["Google Algorithm", "Keyword Research", "Link Building", "Technical SEO", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Finding high-volume keywords", "Optimizing content for users and bots", "Building high-quality backlinks", "SEO Audit techniques"],
-        careerOpportunities: ["SEO Analyst", "Digital Marketer", "Content Strategist", "Search Manager"],
-        syllabus: [
-            { title: "Foundations", icon: "Search", topics: ["How Search Works", "Keyword Discovery", "Competitor Analysis"] },
-            { title: "On-Page", icon: "FileText", topics: ["Meta Tags", "Content Optimization", "Internal Linking"] },
-            { title: "Technical", icon: "Settings", topics: ["Sitemaps", "Robots.txt", "Page Speed", "Schema"] }
-        ],
-        tools: [
-            { name: "Analytics", logo: "/images/tech/ga.svg" },
-            { name: "WordPress", logo: "/images/tech/wordpress.svg" },
-            { name: "SEMrush", logo: "/images/tech/seo.svg" }
-        ],
-        faqs: [
-            { q: "Which is the best SEO institute in Mumbai?", a: "Primezone is a leader in SEO training with a focus on ranking results." },
-            { q: "Do I need coding for SEO?", a: "Only basic HTML knowledge is needed, which is included in the course." },
-            { q: "Is it a practical course?", a: "Yes, you will optimize a live website during the training." },
-            { q: "How long is the SEO course?", a: "It is a 2-month intensive program." }
-        ]
+    title: "SEO Course in Mumbai | On-Page, Off-Page & Technical SEO Training | Primezone",
+    
+    metaDescription: "Learn SEO in Mumbai with Primezone. Master On-Page, Off-Page, Technical SEO, Google Analytics, and AI-powered SEO strategies. Hands-on training with placement support.",
+    
+    description: "Become an expert in Search Engine Optimization (SEO). Learn to increase website visibility, drive organic traffic, and rank on Google using modern SEO strategies and AI tools.",
+    
+    whyLearn: "SEO is one of the most in-demand digital skills in Mumbai. Skilled SEO professionals help companies save millions in ads and improve online presence sustainably.",
+    
+    image: "/images/courses/short/dm/SEO.png",
+    hint: "seo training",
+    
+    highlights: [
+        "Google Algorithm Mastery",
+        "Keyword Research & Strategy",
+        "On-Page & Off-Page SEO",
+        "Technical SEO & Audit",
+        "AI SEO Tools",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Perform keyword research for high-volume, low-competition terms",
+        "Optimize website content for users and search engines",
+        "Build high-quality backlinks and improve domain authority",
+        "Conduct technical SEO audits and fix site issues",
+        "Leverage AI tools for SEO content creation and optimization"
+    ],
+    
+    careerOpportunities: [
+        "SEO Analyst",
+        "Digital Marketing Specialist",
+        "Content Strategist",
+        "Search Engine Manager",
+        "SEO Consultant"
+    ],
+    
+    syllabus: [
+        { 
+            title: "SEO Foundations", 
+            icon: "Search", 
+            topics: ["How Search Engines Work", "Keyword Discovery", "Competitor Analysis", "Google Algorithm Basics"] 
+        },
+        { 
+            title: "On-Page SEO", 
+            icon: "FileText", 
+            topics: ["Meta Tags & Headings", "Content Optimization", "Internal Linking", "Mobile SEO"] 
+        },
+        { 
+            title: "Off-Page SEO", 
+            icon: "Link", 
+            topics: ["Link Building Strategies", "Guest Posting", "Social Signals", "Reputation Management"] 
+        },
+        { 
+            title: "Technical SEO", 
+            icon: "Settings", 
+            topics: ["Sitemaps & Robots.txt", "Page Speed Optimization", "Schema Markup", "Core Web Vitals"] 
+        },
+        { 
+            title: "AI & SEO Tools", 
+            icon: "Bot", 
+            topics: ["Using SEMrush, Ahrefs, Analytics", "AI content optimization", "SEO automation workflows"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Google Analytics", logo: "/images/tech/ga.svg" },
+        { name: "WordPress", logo: "/images/tech/wordpress.svg" },
+        { name: "SEMrush", logo: "/images/tech/seo.svg" },
+        { name: "ChatGPT", logo: "/images/tech/ai2.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best SEO institute in Mumbai?", 
+            a: "Primezone provides expert SEO training with a hands-on approach and AI tools for modern SEO strategies." 
+        },
+        { 
+            q: "Do I need coding knowledge for SEO?", 
+            a: "Only basic HTML/CSS is required, which is covered during the course." 
+        },
+        { 
+            q: "Is this a practical course?", 
+            a: "Yes, students optimize live websites and perform real SEO audits during training." 
+        },
+        { 
+            q: "How long is the SEO course?", 
+            a: "The course is 2 months long with flexible batches (Offline | Hybrid | Online)." 
+        },
+        { 
+            q: "Will I learn AI-based SEO?", 
+            a: "Yes, we integrate AI tools like ChatGPT to help with content optimization and SEO automation." 
+        }
+    ]
     },
     'coreldraw': {
-        title: "CorelDRAW Course in Mumbai | Vector Graphic Design Training | Primezone",
-        metaDescription: "Learn CorelDRAW in Mumbai. Master logo design, banners, and print layouts. Top-rated design training at Primezone in Jogeshwari.",
-        description: "Master the most popular vector design software for the print industry. Ideal for creating logos, brochures, and branding material.",
-        whyLearn: "CorelDRAW is widely used in the advertising and printing industry in Mumbai. It's fast, powerful, and essential for print designers.",
-        image: "/images/courses/short/graphics/CorelDRAW.png",
-        hint: "vector art",
-        highlights: ["Logo Design", "Print Layouts", "Typography", "Vector Illustration", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Creating vector graphics", "Designing for print media", "Color theory for printing", "Advanced tool mastery"],
-        careerOpportunities: ["DTP Operator", "Graphic Designer", "Logo Artist", "Print Media Specialist"],
-        syllabus: [
-            { title: "Interface", icon: "Palette", topics: ["Workspace Setup", "Tool Basics", "Object Management"] },
-            { title: "Designing", icon: "Brush", topics: ["Tracing", "Logo Creation", "Brochure Layout"] },
-            { title: "Production", icon: "FileText", topics: ["Color CMYK", "Exporting for Print", "Post-press basics"] }
-        ],
-        tools: [
-            { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" }
-        ],
-        faqs: [
-            { q: "Which is the best CorelDRAW institute in Mumbai?", a: "Primezone offers the most industry-relevant CorelDRAW training in Mumbai." },
-            { q: "Who should join this?", a: "Anyone interested in print media and graphic design should learn CorelDRAW." },
-            { q: "Do I get a certificate?", a: "Yes, you receive a government-recognized certificate." },
-            { q: "Is the course practical?", a: "Yes, it is 100% project-based." }
-        ]
+    title: "CorelDRAW Course in Mumbai | Vector Graphic Design & Logo Training | Primezone",
+    
+    metaDescription: "Learn CorelDRAW in Mumbai. Master vector graphics, logo design, brochures, and print layouts. Hands-on design training at Primezone with certificate.",
+    
+    description: "Become a professional vector graphic designer using CorelDRAW. This course covers logos, brochures, banners, and all essential print and digital media design skills.",
+    
+    whyLearn: "CorelDRAW is the industry standard for vector-based design in advertising, branding, and print media in Mumbai. Mastery of CorelDRAW opens multiple career opportunities.",
+    
+    image: "/images/courses/short/graphics/CorelDRAW.png",
+    hint: "vector graphic design",
+    
+    highlights: [
+        "Vector & Logo Design",
+        "Print & Digital Layouts",
+        "Typography & Color Theory",
+        "Illustrations & Branding",
+        "Project-Based Learning: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Creating vector illustrations and logos",
+        "Designing brochures, flyers, and banners",
+        "Applying color theory and typography for professional layouts",
+        "Advanced CorelDRAW tools and effects for print-ready designs",
+        "Preparing files for print and digital media"
+    ],
+    
+    careerOpportunities: [
+        "Graphic Designer",
+        "Logo Designer",
+        "DTP Operator",
+        "Print Media Specialist",
+        "Branding & Marketing Designer"
+    ],
+    
+    syllabus: [
+        { 
+            title: "CorelDRAW Interface", 
+            icon: "Palette", 
+            topics: ["Workspace Setup", "Tool Overview", "Object & Layer Management"] 
+        },
+        { 
+            title: "Design Essentials", 
+            icon: "Brush", 
+            topics: ["Vector Tracing", "Logo & Icon Design", "Flyer and Brochure Layouts"] 
+        },
+        { 
+            title: "Advanced Design & Production", 
+            icon: "FileText", 
+            topics: ["Typography Techniques", "Color Management (CMYK/RGB)", "Exporting & Print Prep"] 
+        },
+        { 
+            title: "Branding Projects", 
+            icon: "Star", 
+            topics: ["Real Client Project Simulations", "Branding Collaterals", "Portfolio Building"] 
+        }
+    ],
+    
+    tools: [
+        { name: "CorelDRAW", logo: "/images/tech/coreldraw.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best CorelDRAW institute in Mumbai?", 
+            a: "Primezone provides industry-relevant CorelDRAW training with hands-on projects for practical learning." 
+        },
+        { 
+            q: "Who should join this course?", 
+            a: "Anyone interested in graphic design, print media, branding, or advertising." 
+        },
+        { 
+            q: "Is it practical?", 
+            a: "Yes, the course is 100% project-based with real-world design exercises." 
+        },
+        { 
+            q: "Do I get a certificate?", 
+            a: "Yes, students receive a government-recognized certificate upon completion." 
+        },
+        { 
+            q: "Will I build a portfolio?", 
+            a: "Yes, you will create a professional portfolio ready for job applications or freelance work." 
+        }
+    ]
     },
     'adobe-photoshop': {
-        title: "Adobe Photoshop Course in Mumbai | Image Editing Training | Primezone",
-        metaDescription: "Master Photoshop in Mumbai. Learn photo retouching, digital art, and UI assets. Job-oriented creative training at Primezone Computer Education.",
-        description: "The industry standard for image editing. Learn everything from basic cropping to advanced digital painting and photo manipulation.",
-        whyLearn: "Photoshop is essential for almost every creative role today. It's the most powerful tool for visual creators.",
-        image: "/images/courses/short/graphics/AdobePhotoshop.png",
-        hint: "photoshop editing",
-        highlights: ["Photo Retouching", "Layer Management", "Compositing", "Digital Art", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Advanced selection tools", "Non-destructive editing", "Color correction", "Designing for web and print"],
-        careerOpportunities: ["Photo Editor", "Social Media Designer", "UI Designer", "Freelance Artist"],
-        syllabus: [
-            { title: "Basics", icon: "Palette", topics: ["Workspace", "Layers", "Selections"] },
-            { title: "Editing", icon: "Brush", topics: ["Masking", "Retouching", "Filters"] },
-            { title: "Output", icon: "FileText", topics: ["File Formats", "Web Optimization", "Print Prep"] }
-        ],
-        tools: [{ name: "Photoshop", logo: "/images/tech/photoshop.svg" }],
-        faqs: [
-            { q: "Which is the best Photoshop institute in Mumbai?", a: "Primezone is highly rated for its practical Photoshop training." },
-            { q: "Is this course practical?", a: "Yes, 100% practical with hands-on projects." },
-            { q: "What is the duration?", a: "The Photoshop course takes 2 months." },
-            { q: "Can I join as a beginner?", a: "Yes, we start from the absolute basics." }
-        ]
+    title: "Adobe Photoshop Course in Mumbai | Photo Editing & Digital Art Training | Primezone",
+    
+    metaDescription: "Learn Adobe Photoshop in Mumbai. Master photo editing, retouching, digital art, and UI design. Hands-on creative training with AI tools at Primezone.",
+    
+    description: "Become a professional Photoshop user. From basic photo editing to advanced digital painting, compositing, and UI asset creation, this course covers all essential skills for modern creatives.",
+    
+    whyLearn: "Photoshop is the industry-standard tool for photo editing, digital art, and UI/UX design. Mastering it opens careers in creative studios, social media, freelancing, and marketing agencies.",
+    
+    image: "/images/courses/short/graphics/AdobePhotoshop.png",
+    hint: "photoshop editing",
+    
+    highlights: [
+        "Photo Retouching & Manipulation",
+        "Layer & Mask Management",
+        "Compositing & Digital Art",
+        "Web & Print Design",
+        "AI-Powered Editing Techniques",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Advanced selection and masking tools",
+        "Non-destructive editing workflows",
+        "Color correction and grading",
+        "Creating web and print-ready designs",
+        "Digital painting and illustration techniques",
+        "AI-assisted editing and content generation"
+    ],
+    
+    careerOpportunities: [
+        "Photo Editor",
+        "Digital Artist",
+        "Social Media Designer",
+        "UI/UX Designer",
+        "Freelance Graphic Designer"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Photoshop Basics", 
+            icon: "Palette", 
+            topics: ["Workspace Overview", "Layer Management", "Selection Tools", "Basic Editing"] 
+        },
+        { 
+            title: "Photo Editing & Retouching", 
+            icon: "Brush", 
+            topics: ["Masking Techniques", "Healing & Retouching", "Filters & Effects", "Color Correction"] 
+        },
+        { 
+            title: "Design for Web & Print", 
+            icon: "FileText", 
+            topics: ["File Formats & Optimization", "Web & UI Assets", "Print Layout Prep", "Typography & Layout Design"] 
+        },
+        { 
+            title: "Advanced Digital Art & AI Tools", 
+            icon: "Star", 
+            topics: ["Digital Painting", "Compositing Techniques", "AI-Assisted Editing", "Portfolio Project Creation"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Adobe Photoshop", logo: "/images/tech/photoshop.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best Computer Class for Photoshop in Mumbai?", 
+            a: "Primezone is highly rated for hands-on, practical Photoshop training with AI-assisted techniques." 
+        },
+        { 
+            q: "Is this course practical?", 
+            a: "Yes, it is 100% project-based, including photo editing, digital art, and UI design projects." 
+        },
+        { 
+            q: "Can beginners join?", 
+            a: "Absolutely! The course starts from basics and progresses to advanced creative techniques." 
+        },
+        { 
+            q: "How long is the course?", 
+            a: "The Photoshop course typically takes 2 months, with flexible offline, hybrid, and online batches." 
+        },
+        { 
+            q: "Will I build a portfolio?", 
+            a: "Yes, you will create a professional portfolio ready for jobs or freelance projects." 
+        }
+    ]
     },
     'power-bi': {
-        title: "Power BI Course in Mumbai | Data Visualization Training | Primezone",
-        metaDescription: "Learn Power BI in Mumbai. Master interactive dashboards and data reporting. Top-rated BI training at Primezone in Jogeshwari and Vile Parle.",
-        description: "Transform raw data into beautiful, interactive insights. Power BI is the leader in business intelligence and reporting.",
-        whyLearn: "Companies need experts who can tell stories with data. Power BI is the most in-demand tool for business analysts in Mumbai's corporate world.",
-        image: "/images/courses/short/programming/powerbi.png",
-        hint: "powerbi dashboard",
-        highlights: ["Data Modeling", "DAX Formulas", "Custom Visuals", "Live Dashboards", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Connecting to data sources", "Cleaning data with Power Query", "Writing complex DAX expressions", "Publishing reports to the cloud"],
-        careerOpportunities: ["Business Analyst", "BI Developer", "Data Visualization Expert"],
-        syllabus: [
-            { title: "Data Prep", icon: "BarChart", topics: ["ETL Process", "Power Query", "Merging Data"] },
-            { title: "Modeling", icon: "BarChart", topics: ["Relationships", "DAX Basics", "Measures & Columns"] },
-            { title: "Reporting", icon: "Palette", topics: ["Visuals", "Formatting", "Slicers", "Dashboards"] }
-        ],
-        tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
-        faqs: [
-            { q: "Which is the best Power BI institute in Mumbai?", a: "Primezone provides top-tier Power BI training with real-world business cases." },
-            { q: "Is Excel knowledge needed?", a: "Basic Excel is helpful but not mandatory; we cover needed concepts." },
-            { q: "What is the duration?", a: "The course is 3 months long." },
-            { q: "Do you teach DAX?", a: "Yes, DAX is a core part of the modeling module." }
-        ]
+    title: "Power BI Course in Mumbai | Data Visualization & Analytics Training | Primezone",
+    
+    metaDescription: "Master Power BI in Mumbai. Learn interactive dashboards, data modeling, and DAX for business intelligence. Practical BI training at Primezone.",
+    
+    description: "Turn raw data into actionable insights with Power BI. Learn to build interactive dashboards, automate reporting, and deliver business intelligence like a pro.",
+    
+    whyLearn: "Data-driven decision making is the future. Companies in Mumbai need professionals who can analyze data, create insights, and present them visually using Power BI.",
+    
+    image: "/images/courses/short/programming/powerbi.png",
+    hint: "powerbi dashboard",
+    
+    highlights: [
+        "Data Modeling & Transformation",
+        "Advanced DAX Formulas",
+        "Interactive Dashboards",
+        "Power Query & ETL",
+        "AI-Powered Analytics",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Connecting to multiple data sources",
+        "Cleaning and transforming data with Power Query",
+        "Writing advanced DAX measures and calculated columns",
+        "Creating interactive visuals and custom dashboards",
+        "Publishing and sharing reports via Power BI Service",
+        "Leveraging AI visuals and insights in Power BI"
+    ],
+    
+    careerOpportunities: [
+        "Business Analyst",
+        "BI Developer",
+        "Data Visualization Specialist",
+        "Reporting Analyst",
+        "Power BI Consultant"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Data Preparation & ETL", 
+            icon: "BarChart", 
+            topics: ["ETL Concepts", "Power Query Transformations", "Data Merging & Cleaning"] 
+        },
+        { 
+            title: "Data Modeling & DAX", 
+            icon: "BarChart", 
+            topics: ["Relationships & Star Schema", "Basic to Advanced DAX", "Calculated Columns & Measures"] 
+        },
+        { 
+            title: "Visualization & Reporting", 
+            icon: "Palette", 
+            topics: ["Interactive Charts & Custom Visuals", "Slicers & Filters", "Dashboard Layouts & Formatting"] 
+        },
+        { 
+            title: "Advanced Analytics & AI", 
+            icon: "Star", 
+            topics: ["AI Insights in Power BI", "Quick Measures", "Forecasting & Trend Analysis"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Power BI Desktop", logo: "/images/tech/powerbi.svg" }
+    ],
+    
+    faqs: [
+        { 
+            q: "Which is the best Computer Class for Power BI in Mumbai?", 
+            a: "Primezone offers hands-on Power BI training with real-world business cases and dashboard projects." 
+        },
+        { 
+            q: "Do I need prior Excel knowledge?", 
+            a: "Basic Excel is helpful, but all required concepts are taught during the course." 
+        },
+        { 
+            q: "Can beginners join?", 
+            a: "Yes, the course starts with basics and progresses to advanced analytics." 
+        },
+        { 
+            q: "How long is the course?", 
+            a: "The Power BI course duration is 3 months with flexible batch options." 
+        },
+        { 
+            q: "Do we learn advanced DAX?", 
+            a: "Yes, advanced DAX, measures, calculated columns, and AI-powered insights are included." 
+        }
+    ]
     },
     'taxation-auditing': {
-        title: "Taxation & Auditing Course in Mumbai | Primezone",
-        metaDescription: "Master Taxation and Auditing in Mumbai. Learn Income Tax, GST filing, and Audit procedures at Primezone.",
-        description: "A specialized course for those looking to excel in tax consultancy and corporate auditing.",
-        whyLearn: "Compliance is a massive industry in India. Skilled tax professionals are always in high demand.",
-        image: "/images/courses/short/account/TaxationAuditing.png",
-        hint: "tax audit",
-        highlights: ["Income Tax Filing", "GST Returns", "Audit Reports", "Direct & Indirect Tax", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["ITR forms mastery", "GST portal usage", "Bank audit basics", "Corporate audit workflows"],
-        careerOpportunities: ["Tax Consultant", "Audit Assistant", "Accountant"],
-        syllabus: [{ title: "Tax Laws", icon: "Landmark", topics: ["Income Tax", "GST", "TDS"] }],
-        tools: [
-            { name: "Income Tax", logo: "/images/tech/tax.png" },
-            { name: "GST", logo: "/images/tech/gst.jpg" }
-        ],
-        faqs: [{ q: "Who can join?", a: "Commerce graduates or anyone interested in finance." }]
+    title: "Taxation & Auditing Course in Mumbai | GST, Income Tax & Audit Training | Primezone",
+    
+    metaDescription: "Master Taxation and Auditing in Mumbai. Learn Income Tax, GST filing, TDS, and corporate audit procedures at Primezone with practical training.",
+    
+    description: "Gain practical knowledge of taxation and auditing to excel as a tax consultant or audit professional. Learn real-world filing, reporting, and audit workflows used by Indian businesses.",
+    
+    whyLearn: "Taxation and auditing skills are highly sought after in Mumbai's corporate and finance sectors. Expertise in GST, Income Tax, and audit compliance ensures stable career opportunities.",
+    
+    image: "/images/courses/short/account/TaxationAuditing.png",
+    hint: "tax audit",
+    
+    highlights: [
+        "Income Tax Filing & ITR Preparation",
+        "GST Compliance & Returns",
+        "Corporate Audit Procedures",
+        "Direct & Indirect Tax Laws",
+        "Practical Case Studies",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Preparation and filing of ITR forms",
+        "GST portal operations and tax compliance",
+        "Basics of bank and corporate audits",
+        "TDS calculations and reporting",
+        "Audit report preparation and workflows"
+    ],
+    
+    careerOpportunities: [
+        "Tax Consultant",
+        "Audit Assistant",
+        "Accounts Executive",
+        "GST Compliance Officer",
+        "Corporate Accountant"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Taxation", 
+            icon: "Landmark", 
+            topics: ["Income Tax Laws & Filing", "GST Returns & Compliance", "TDS/TCS Accounting", "Direct & Indirect Tax Concepts"] 
+        },
+        { 
+            title: "Auditing", 
+            icon: "FileText", 
+            topics: ["Bank & Cash Audits", "Corporate Audit Procedures", "Audit Report Preparation", "Internal Controls & Compliance"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Income Tax Portal", logo: "/images/tech/tax.png" },
+        { name: "GST Portal", logo: "/images/tech/gst.jpg" },
+        { name: "Tally Prime", logo: "/images/tech/tally.svg" }
+    ],
+    
+    faqs: [
+        { q: "Who can join this course?", a: "Commerce graduates, finance students, or anyone interested in accounting, taxation, and auditing." },
+        { q: "Is this course practical?", a: "Yes, the course includes hands-on filing, GST compliance, and audit exercises." },
+        { q: "Do I get a certificate?", a: "Yes, Primezone provides a government-recognized certificate upon completion." },
+        { q: "How long is the course?", a: "The Taxation & Auditing course is typically 2–3 months, with flexible batch timings." }
+    ]
     },
     'share-market': {
-        title: "Share Market Course in Mumbai | Trading & Investment | Primezone",
-        metaDescription: "Learn Share Market in Mumbai. Master Technical Analysis, IPOs, and Trading strategies at Primezone Computer Education.",
-        description: "Understand the mechanics of the stock market and learn how to invest wisely.",
-        whyLearn: "Financial literacy is key to wealth creation. Learn the tools used by professional traders.",
-        image: "/images/courses/short/account/sharemarket.png",
-        hint: "stock trading",
-        highlights: ["Technical Analysis", "Fundamental Analysis", "Option Trading", "Risk Management", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Reading charts", "Understanding market indicators", "Portfolio management", "Live trading sessions"],
-        careerOpportunities: ["Stock Trader", "Investment Advisor", "Market Analyst"],
-        syllabus: [{ title: "Trading", icon: "BarChart", topics: ["Candlesticks", "Indicators", "Psychology"] }],
-        tools: [{ name: "Power BI", logo: "/images/tech/powerbi.svg" }],
-        faqs: [{ q: "Do you give tips?", a: "No, we teach you how to analyze the market yourself." }]
+    title: "Share Market Course in Mumbai | Trading, Investment & Technical Analysis | Primezone",
+    
+    metaDescription: "Learn Share Market in Mumbai. Master stock trading, technical and fundamental analysis, IPOs, and portfolio management at Primezone Computer Education.",
+    
+    description: "Gain practical knowledge of the stock market and trading strategies. Learn to analyze stocks, manage a portfolio, and execute trades confidently.",
+    
+    whyLearn: "Financial literacy and market knowledge are essential for wealth creation. Mumbai’s finance sector values skilled traders and investment advisors.",
+    
+    image: "/images/courses/short/account/sharemarket.png",
+    hint: "stock trading",
+    
+    highlights: [
+        "Technical Analysis & Chart Reading",
+        "Fundamental Analysis of Companies",
+        "Options and Derivatives Trading",
+        "Risk Management Strategies",
+        "Portfolio Creation & Management",
+        "Live Market Trading Sessions",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Analyzing candlestick patterns and technical indicators",
+        "Evaluating stocks using fundamental data",
+        "Creating and managing a diversified portfolio",
+        "Understanding derivatives and options trading",
+        "Risk mitigation and trading psychology",
+        "Hands-on live market simulations"
+    ],
+    
+    careerOpportunities: [
+        "Stock Trader",
+        "Investment Advisor",
+        "Equity Analyst",
+        "Portfolio Manager",
+        "Financial Consultant"
+    ],
+    
+    syllabus: [
+        { 
+            title: "Technical Analysis", 
+            icon: "BarChart", 
+            topics: ["Candlestick Patterns", "Trend Lines & Support/Resistance", "Indicators (RSI, MACD, Moving Averages)", "Charting Tools"] 
+        },
+        { 
+            title: "Fundamental Analysis", 
+            icon: "FileText", 
+            topics: ["Company Financials", "Balance Sheet Analysis", "PE Ratios & Valuation", "IPO Analysis"] 
+        },
+        { 
+            title: "Trading & Risk Management", 
+            icon: "Settings", 
+            topics: ["Options & Futures Basics", "Trading Strategies", "Portfolio Diversification", "Risk Management Techniques"] 
+        }
+    ],
+    
+    tools: [
+        { name: "Trading Platforms", logo: "/images/tech/groww.svg" },
+        { name: "MS Excel", logo: "/images/tech/excel.svg" },
+        { name: "Technical Analysis Software", logo: "/images/tech/tradingview.svg" }
+    ],
+    
+    faqs: [
+        { q: "Do you give stock tips?", a: "No, the course teaches you how to analyze and make your own trading decisions." },
+        { q: "Is prior experience needed?", a: "No, beginners can join; we start with fundamentals and gradually advance." },
+        { q: "Can I practice live trading?", a: "Yes, the course includes live market simulations for practical experience." },
+        { q: "Do I get a certificate?", a: "Yes, Primezone provides a government-recognized certificate on completion." }
+    ]
     },
     'ccc': {
-        title: "CCC Course in Mumbai | Course on Computer Concepts | Primezone",
-        metaDescription: "Best CCC Course in Mumbai. Learn computer fundamentals for govt jobs and general proficiency at Primezone.",
-        description: "A foundational course designed to impart basic level computer appreciation for common people.",
-        whyLearn: "CCC is often a mandatory requirement for government job applications in India.",
-        image: "/images/courses/short/account/ccc.png",
-        hint: "ccc certificate",
-        highlights: ["Govt Job Prep", "Basic PC Skills", "Internet Awareness", "Digital Literacy", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Operating systems", "Word & Excel basics", "Digital financial services", "Cybersecurity awareness"],
-        careerOpportunities: ["Govt Job Eligible", "Office Assistant"],
-        syllabus: [{ title: "Basics", icon: "MonitorCheck", topics: ["Windows", "Internet", "Email", "Office"] }],
-        tools: [{ name: "MS Word", logo: "/images/tech/word.svg" }, { name: "MS Excel", logo: "/images/tech/excel.svg" }],
-        faqs: [{ q: "Is the exam included?", a: "We prepare you for the official NIELIT CCC exam." }]
+    title: "CCC Course in Mumbai | Certificate in Computer Concepts | Primezone",
+    
+    metaDescription: "Join the best CCC Course in Mumbai. Learn basic computer concepts, MS Office, Internet usage, and digital literacy for govt jobs at Primezone.",
+    
+    description: "The Certificate in Computer Concepts (CCC) is a foundational course that equips learners with essential computer knowledge, digital skills, and office productivity tools required for academics, government jobs, and day-to-day professional work.",
+    
+    whyLearn: "CCC is a mandatory qualification for many government jobs in India. Mastering computer basics enhances your employability and digital literacy in Mumbai or anywhere in India.",
+    
+    image: "/images/courses/short/account/ccc.png",
+    hint: "ccc certificate",
+    
+    highlights: [
+        "Government Job Preparation",
+        "Basic Computer Skills",
+        "MS Office & Internet Proficiency",
+        "Digital Literacy & Cybersecurity",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Operating systems basics (Windows)",
+        "Word processing with MS Word",
+        "Spreadsheet fundamentals with MS Excel",
+        "PowerPoint presentation basics",
+        "Internet browsing and email communication",
+        "Digital financial services and cybersecurity awareness"
+    ],
+    
+    careerOpportunities: [
+        "Government Job Eligibility",
+        "Office Assistant",
+        "Data Entry Operator",
+        "Administrative Support"
+    ],
+    
+    syllabus: [
+        { title: "Computer Fundamentals", icon: "MonitorCheck", topics: ["Windows OS", "File Management", "Basic Troubleshooting"] },
+        { title: "Office Applications", icon: "FileText", topics: ["MS Word", "MS Excel", "PowerPoint"] },
+        { title: "Internet & Email", icon: "Globe", topics: ["Email Usage", "Browsing Skills", "Digital Transactions"] },
+        { title: "Cybersecurity & Digital Literacy", icon: "Shield", topics: ["Safe Internet Practices", "Password Security", "Digital Payment Awareness"] }
+    ],
+    
+    tools: [
+        { name: "MS Word", logo: "/images/tech/word.svg" },
+        { name: "MS Excel", logo: "/images/tech/excel.svg" },
+        { name: "MS PowerPoint", logo: "/images/tech/powerpoint.svg" }
+    ],
+    
+    faqs: [
+        { q: "Is the official CCC exam included?", a: "Yes, we prepare you thoroughly for the NIELIT CCC exam with practice tests and guidance." },
+        { q: "Who can join?", a: "Students, job seekers, and professionals who want to strengthen their computer basics." },
+        { q: "What is the course duration?", a: "Typically 1-2 months depending on learning mode." },
+        { q: "Is it beginner-friendly?", a: "Absolutely, no prior computer knowledge is required." }
+    ]
     },
     'c-programming': {
-        title: "C Programming Course in Mumbai | Logic Building | Primezone",
-        metaDescription: "Learn C Programming in Mumbai. The best course for logic building and coding foundations at Primezone.",
-        description: "Start your coding journey with the 'mother of all languages'.",
-        whyLearn: "C helps you understand how computers work at a low level, which is vital for any professional developer.",
-        image: "/images/courses/short/programming/cprog.png",
-        hint: "c code",
-        highlights: ["Logic Building", "Memory Management", "Syntax Clarity", "Algorithm Design", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Loops & Arrays", "Pointers", "File I/O", "Data Structures basics"],
-        careerOpportunities: ["System Programmer", "Foundation for IT Jobs"],
-        syllabus: [{ title: "C Syntax", icon: "Code", topics: ["Variables", "Operators", "Functions"] }],
-        tools: [{ name: "VS Code", logo: "/images/tech/vscode.svg" }],
-        faqs: [{ q: "Is it hard?", a: "It is challenging but very rewarding for your future coding career." }]
+    title: "C Programming Course in Mumbai | Logic Building & Coding Fundamentals | Primezone",
+    
+    metaDescription: "Learn C Programming in Mumbai at Primezone. Build strong coding foundations, master memory management, loops, pointers, and file handling.",
+    
+    description: "Start your programming journey with C, the foundation of all modern languages. This course emphasizes logic building, memory management, and understanding how computers work at a low level.",
+    
+    whyLearn: "C programming is essential for anyone aiming to become a professional developer. Understanding C gives you a strong foundation for system programming, embedded systems, and advanced languages.",
+    
+    image: "/images/courses/short/programming/cprog.png",
+    hint: "c code",
+    
+    highlights: [
+        "Logic & Algorithm Building",
+        "Memory Management & Pointers",
+        "File I/O Handling",
+        "Strong Coding Foundations",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Loops, arrays, and conditional statements",
+        "Pointers and memory allocation",
+        "File input/output operations",
+        "Basic data structures like stacks and queues"
+    ],
+    
+    careerOpportunities: [
+        "System Programmer",
+        "Embedded Systems Developer",
+        "Software Developer",
+        "Foundation for IT Jobs"
+    ],
+    
+    syllabus: [
+        { title: "C Programming", icon: "Code", topics: ["Variables & Data Types", "Operators", "Control Structures", "Functions", "Pointers", "Arrays", "File Handling", "Structure"] }
+    ],
+    
+    tools: [
+        { name: "VS Code", logo: "/images/tech/vscode.svg" },
+        { name: "C Programming", logo: "/images/tech/c.svg" }
+    ],
+    
+    faqs: [
+        { q: "Is C programming hard?", a: "It can be challenging initially, but learning C builds a strong foundation for your coding career." },
+        { q: "Do I need prior experience?", a: "No, this course starts from the basics of programming logic." },
+        { q: "Can I learn advanced topics here?", a: "Yes, we cover pointers, memory management, file handling, and basic data structures." }
+    ]
     },
     'c-plus-plus': {
-        title: "C++ Programming Course in Mumbai | OOPS Training | Primezone",
-        metaDescription: "Master C++ in Mumbai. Learn Object Oriented Programming and build fast applications at Primezone.",
-        description: "Move from C to C++ and master the concepts of classes and objects.",
-        whyLearn: "C++ is used in game development, high-performance systems, and complex software like browsers.",
-        image: "/images/courses/short/programming/c++.png",
-        hint: "c++ code",
-        highlights: ["OOPS Concepts", "Inheritance", "Polymorphism", "Standard Template Library", "Learning Mode: Offline | Hybrid | Online"],
-        whatYouWillLearn: ["Class design", "Templates", "Exception handling", "Dynamic memory"],
-        careerOpportunities: ["Game Developer", "System Architect", "Embedded Engineer"],
-        syllabus: [{ title: "OOPS", icon: "Code", topics: ["Classes", "Objects", "Virtual Functions"] }],
-        tools: [{ name: "C++", logo: "/images/tech/cplusplus.svg" }, { name: "VS Code", logo: "/images/tech/vscode.svg" }],
-        faqs: [{ q: "Can I join after C?", a: "Yes, it is the perfect next step after learning C." }]
+    title: "C++ Programming Course in Mumbai | OOPS & Advanced Programming | Primezone",
+    
+    metaDescription: "Master C++ in Mumbai. Learn Object-Oriented Programming, STL, and advanced software development at Primezone with real-world projects.",
+    
+    description: "Transition from C to C++ and become proficient in object-oriented programming. Build real-world applications using classes, objects, inheritance, and templates.",
+    
+    whyLearn: "C++ powers game development, high-performance applications, and complex software. Mastering it opens up career paths in system programming, embedded systems, and software architecture.",
+    
+    image: "/images/courses/short/programming/c++.png",
+    hint: "c++ code",
+    
+    highlights: [
+        "Object-Oriented Programming (OOPS)",
+        "Inheritance & Polymorphism",
+        "Standard Template Library (STL)",
+        "Exception Handling & Dynamic Memory",
+        "Learning Mode: Offline | Hybrid | Online"
+    ],
+    
+    whatYouWillLearn: [
+        "Designing classes and objects",
+        "Working with templates and STL",
+        "Exception handling and debugging",
+        "Dynamic memory management and file handling"
+    ],
+    
+    careerOpportunities: [
+        "Game Developer",
+        "System Architect",
+        "Embedded Systems Engineer",
+        "Software Developer"
+    ],
+    
+    syllabus: [
+        { title: "C++", icon: "Code", topics: ["Variables & Data Types", "Operators", "Control Structures", "Functions", "Pointers", "Arrays","Classes & Objects", "Constructors & Destructors", "Exception Handling", "Inheritance", "Polymorphism"] }
+    ],
+    
+    tools: [
+        { name: "C++", logo: "/images/tech/cplusplus.svg" },
+        { name: "VS Code", logo: "/images/tech/vscode.svg" }
+    ],
+    
+    faqs: [
+        { q: "Can I join after learning C?", a: "Yes, C++ is the natural next step after C programming." },
+        { q: "Do I need prior C++ knowledge?", a: "No, basic programming knowledge helps, and we start from fundamental concepts." },
+        { q: "Will I learn real-world applications?", a: "Yes, we focus on practical coding and projects using C++." }
+    ]
     },
     'adobe-illustrator': {
         title: "Adobe Illustrator Course in Mumbai | Vector Design Training | Primezone",
