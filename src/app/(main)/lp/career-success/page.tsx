@@ -1,14 +1,11 @@
 
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Phone, MessageCircle, Users, Award, MapPin, Star, Clock, GraduationCap, ArrowRight, ShieldCheck, Database, Laptop } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import LpLeadForm from "@/components/lp-lead-form";
 
 export const metadata: Metadata = {
   title: "Become Job-Ready with Industry-Focused Computer Courses | Primezone",
@@ -246,19 +243,19 @@ export default function LandingPage() {
                                 <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                                     <Phone className="h-6 w-6" />
                                 </div>
-                                <div>
+                                {<div>
                                     <p className="text-xs text-muted-foreground uppercase font-bold">Vile Parle</p>
                                     <p className="text-xl font-bold">+91 97025 70087</p>
-                                </div>
+                                </div>}
                             </a>
                             <a href="tel:+919769730087" className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all">
                                 <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                                     <Phone className="h-6 w-6" />
                                 </div>
-                                <div>
+                                {<div>
                                     <p className="text-xs text-muted-foreground uppercase font-bold">Jogeshwari</p>
                                     <p className="text-xl font-bold">+91 97697 30087</p>
-                                </div>
+                                </div>}
                             </a>
                         </div>
                         <Button size="lg" className="w-full h-14 bg-green-600 hover:bg-green-700 text-white rounded-xl text-lg" asChild>
@@ -269,49 +266,7 @@ export default function LandingPage() {
                     </div>
                 </div>
 
-                <Card className="p-8 shadow-2xl border-none">
-                    <CardHeader className="p-0 mb-6 text-center">
-                        <CardTitle className="text-2xl">LEAD FORM</CardTitle>
-                        <CardDescription>Fill in your details and get a free demo class today!</CardDescription>
-                    </CardHeader>
-                    <form className="space-y-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="lp-name">Name</Label>
-                            <Input id="lp-name" placeholder="Enter your full name" required />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="lp-phone">Mobile Number</Label>
-                            <Input id="lp-phone" type="tel" placeholder="10-digit mobile number" required />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="lp-course">Course Interested In</Label>
-                            <Select>
-                                <SelectTrigger id="lp-course">
-                                    <SelectValue placeholder="Select a course" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="dca">DCA - Diploma in Computer Applications</SelectItem>
-                                    <SelectItem value="data">Data Analyst Course</SelectItem>
-                                    <SelectItem value="cyber">Cyber Security / Ethical Hacking</SelectItem>
-                                    <SelectItem value="other">Other Professional Courses</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="lp-location">Preferred Location</Label>
-                            <Select>
-                                <SelectTrigger id="lp-location">
-                                    <SelectValue placeholder="Select branch" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="jogeshwari">Jogeshwari Branch</SelectItem>
-                                    <SelectItem value="vileparle">Vile Parle Branch</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                        <Button type="submit" className="w-full h-12 text-lg bg-accent hover:bg-accent/90">Get Free Demo</Button>
-                    </form>
-                </Card>
+                <LpLeadForm />
             </div>
         </div>
       </section>
