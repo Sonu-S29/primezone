@@ -279,22 +279,22 @@ export default function LandingPage() {
                     </div>
                     
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
-                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-4 lg:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all overflow-hidden">
-                            <div className="h-7 w-7 sm:h-12 lg:h-14 sm:w-12 lg:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-3 w-3 sm:h-6 lg:h-7 sm:w-6 lg:w-7" />
+                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-4 lg:px-6 lg:py-5 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all overflow-hidden">
+                            <div className="h-7 w-7 sm:h-12 lg:h-12 sm:w-12 lg:w-12 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                                <Phone className="h-3 w-3 sm:h-6 lg:h-6 sm:w-6 lg:w-6" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[7px] sm:text-[9px] lg:text-[11px] text-muted-foreground uppercase font-black tracking-widest">VILE PARLE</p>
-                                <p className="text-[9px] sm:text-base lg:text-lg xl:text-2xl font-bold text-primary whitespace-nowrap">+91 97025 70087</p>
+                                <p className="text-[7px] sm:text-[9px] lg:text-[10px] text-muted-foreground uppercase font-black tracking-widest">VILE PARLE</p>
+                                <p className="text-[9px] sm:text-base lg:text-lg font-bold text-primary whitespace-nowrap">+91 97025 70087</p>
                             </div>
                         </a>
-                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-4 lg:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all overflow-hidden">
-                            <div className="h-7 w-7 sm:h-12 lg:h-14 sm:w-12 lg:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-3 w-3 sm:h-6 lg:h-7 sm:w-6 lg:w-7" />
+                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-4 lg:px-6 lg:py-5 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all overflow-hidden">
+                            <div className="h-7 w-7 sm:h-12 lg:h-12 sm:w-12 lg:w-12 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                                <Phone className="h-3 w-3 sm:h-6 lg:h-6 sm:w-6 lg:w-6" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[7px] sm:text-[9px] lg:text-[11px] text-muted-foreground uppercase font-black tracking-widest">JOGESHWARI</p>
-                                <p className="text-[9px] sm:text-base lg:text-lg xl:text-2xl font-bold text-primary whitespace-nowrap">+91 97697 30087</p>
+                                <p className="text-[7px] sm:text-[9px] lg:text-[10px] text-muted-foreground uppercase font-black tracking-widest">JOGESHWARI</p>
+                                <p className="text-[9px] sm:text-base lg:text-lg font-bold text-primary whitespace-nowrap">+91 97697 30087</p>
                             </div>
                         </a>
                     </div>
