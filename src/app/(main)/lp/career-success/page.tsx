@@ -34,17 +34,16 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen -mt-24">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-8 bg-[#EAF2F8] overflow-hidden min-h-[400px] flex items-center">
-        <div className="container mx-auto px-4 flex justify-center">
-            <div className="relative w-full max-w-6xl aspect-[16/7]">
-                <Image 
-                    src="/images/landingpage/landing1.svg"
-                    alt="Become Job-Ready in 3-6 Months with Industry-Focused Computer Courses"
-                    fill
-                    className="object-contain"
-                    priority
-                />
-            </div>
+      <section className="relative pt-24 bg-[#EAF2F8] overflow-hidden flex items-center w-full">
+        <div className="w-full">
+            <Image 
+                src="/images/landingpage/landing1.svg"
+                alt="Become Job-Ready in 3-6 Months with Industry-Focused Computer Courses"
+                width={1920}
+                height={800}
+                className="w-full h-auto block"
+                priority
+            />
         </div>
       </section>
 
