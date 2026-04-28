@@ -6,6 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import LpLeadForm from "@/components/lp-lead-form";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 export const metadata: Metadata = {
   title: "Become Job-Ready with Industry-Focused Computer Courses | Primezone",
@@ -32,7 +37,7 @@ const features = [
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen -mt-24 scrollbar-hide">
+    <div className="flex flex-col min-h-screen -mt-24 scrollbar-hide bg-white">
       {/* Hero Section */}
       <section className="relative pt-0 bg-[#EAF2F8] overflow-hidden flex items-center w-full">
         <div className="w-full">
@@ -51,8 +56,8 @@ export default function LandingPage() {
       <section className="py-12 sm:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-bold font-headline text-primary uppercase tracking-tight">COURSES WE OFFER</h2>
-            <div className="w-20 h-1.5 bg-accent mx-auto mt-4 rounded-full"></div>
+            <h2 className="text-2xl sm:text-4xl font-bold font-headline text-primary uppercase tracking-tight">COURSES WE OFFER</h2>
+            <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-accent mx-auto mt-4 rounded-full"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
@@ -150,23 +155,29 @@ export default function LandingPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 sm:py-20 bg-muted/40">
+      <section className="py-12 sm:py-20 bg-muted/40 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl font-bold font-headline text-primary mb-4 uppercase tracking-tight">WHY CHOOSE US</h2>
-            <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">We provide the highest quality computer education in Mumbai with a focus on practical results.</p>
+            <h2 className="text-xl sm:text-3xl font-bold font-headline text-primary mb-4 uppercase tracking-tight">WHY CHOOSE US</h2>
+            <p className="text-muted-foreground text-xs sm:text-base max-w-xl mx-auto">We provide the highest quality computer education in Mumbai with a focus on practical results.</p>
           </div>
           
-          {/* Mobile Discrete Scroll */}
-          <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide pb-4">
-              {features.map((feature, i) => (
-                  <div key={i} className="flex-shrink-0 w-[80%] snap-center group p-6 bg-white rounded-3xl border border-transparent shadow-md flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-xl bg-accent/5 flex items-center justify-center shrink-0">
-                          <CheckCircle className="h-5 w-5 text-accent" />
-                      </div>
-                      <span className="font-bold text-primary text-sm">{feature}</span>
-                  </div>
-              ))}
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+              <Carousel opts={{ loop: true, align: "center" }} className="w-full">
+                  <CarouselContent>
+                      {features.map((feature, i) => (
+                          <CarouselItem key={i} className="basis-[80%] pl-4">
+                              <div className="p-5 bg-white rounded-3xl border border-transparent shadow-md flex items-center gap-3 h-full">
+                                  <div className="h-9 w-9 rounded-xl bg-accent/5 flex items-center justify-center shrink-0">
+                                      <CheckCircle className="h-4 w-4 text-accent" />
+                                  </div>
+                                  <span className="font-bold text-primary text-xs leading-tight">{feature}</span>
+                              </div>
+                          </CarouselItem>
+                      ))}
+                  </CarouselContent>
+              </Carousel>
           </div>
 
           {/* Desktop Grid */}
@@ -188,21 +199,21 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 items-center max-w-6xl mx-auto">
                 <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
-                    <Badge variant="secondary" className="bg-primary/5 text-primary border-none px-4 py-1">OUR PRESENCE</Badge>
-                    <h2 className="text-3xl sm:text-5xl font-bold font-headline text-primary leading-tight">Serving students <br className="hidden md:block" /> across Mumbai</h2>
-                    <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                    <Badge variant="secondary" className="bg-primary/5 text-primary border-none px-4 py-1 text-[10px] sm:text-xs">OUR PRESENCE</Badge>
+                    <h2 className="text-2xl sm:text-5xl font-bold font-headline text-primary leading-tight">Serving students <br className="hidden md:block" /> across Mumbai</h2>
+                    <p className="text-sm sm:text-lg text-muted-foreground leading-relaxed">
                         Find us at our two major hubs in Mumbai. Both branches are strategically located for easy access.
                     </p>
                 </div>
-                <div className="grid grid-cols-2 gap-2 sm:gap-6">
-                    <div className="p-3 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
+                <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                    <div className="p-4 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
                         <MapPin className="h-5 w-5 sm:h-10 sm:w-10 text-accent" />
                         <div>
                             <h3 className="text-sm sm:text-2xl font-bold">Jogeshwari</h3>
                             <p className="text-[9px] sm:text-sm opacity-60 mt-0.5 leading-tight">Opp. JES College, <br className="hidden sm:block" /> Jogeshwari East</p>
                         </div>
                     </div>
-                    <div className="p-3 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
+                    <div className="p-4 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
                         <MapPin className="h-5 w-5 sm:h-10 sm:w-10 text-accent" />
                         <div>
                             <h3 className="text-sm sm:text-2xl font-bold">Vile Parle</h3>
@@ -215,41 +226,47 @@ export default function LandingPage() {
       </section>
 
       {/* Student Reviews Section */}
-      <section className="py-12 sm:py-20 bg-muted/20">
+      <section className="py-12 sm:py-20 bg-muted/20 overflow-hidden">
         <div className="container mx-auto px-4">
             <div className="text-center mb-10 sm:mb-16">
-                <h2 className="text-2xl sm:text-3xl font-bold font-headline text-primary mb-4">STUDENT REVIEWS</h2>
+                <h2 className="text-xl sm:text-3xl font-bold font-headline text-primary mb-4">STUDENT REVIEWS</h2>
                 <div className="flex justify-center gap-1">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400" />)}
                 </div>
             </div>
 
-            {/* Mobile Discrete Review Scroll */}
-            <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide pb-4">
-                 {reviews.map((review, i) => (
-                    <Card key={i} className="flex-shrink-0 w-[85%] snap-center bg-white/80 backdrop-blur-xl border-none shadow-lg rounded-[2rem] overflow-hidden">
-                        <CardContent className="p-6">
-                            <div className="flex mb-3">
-                                {[...Array(review.stars)].map((_, index) => (
-                                    <Star key={index} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
-                                ))}
-                            </div>
-                            <p className="italic text-muted-foreground mb-4 text-xs leading-relaxed line-clamp-3">"{review.text}"</p>
-                            <div className="flex items-center gap-3">
-                                <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">
-                                    {review.name.charAt(0)}
-                                </div>
-                                <p className="font-bold text-primary text-xs">{review.name}</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                 ))}
+            {/* Mobile Carousel */}
+            <div className="md:hidden">
+                 <Carousel opts={{ loop: true, align: "center" }} className="w-full">
+                    <CarouselContent>
+                        {reviews.map((review, i) => (
+                            <CarouselItem key={i} className="basis-[85%] pl-4">
+                                <Card className="bg-white border-none shadow-lg rounded-[2rem] h-full">
+                                    <CardContent className="p-6">
+                                        <div className="flex mb-3">
+                                            {[...Array(review.stars)].map((_, index) => (
+                                                <Star key={index} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
+                                            ))}
+                                        </div>
+                                        <p className="italic text-muted-foreground mb-4 text-xs leading-relaxed line-clamp-3">"{review.text}"</p>
+                                        <div className="flex items-center gap-2">
+                                            <div className="h-7 w-7 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-[10px]">
+                                                {review.name.charAt(0)}
+                                            </div>
+                                            <p className="font-bold text-primary text-[10px]">{review.name}</p>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                 </Carousel>
             </div>
 
             {/* Desktop Grid */}
             <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                 {reviews.map((review, i) => (
-                    <Card key={i} className="bg-white/80 backdrop-blur-xl border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
+                    <Card key={i} className="bg-white border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
                         <CardContent className="p-6 sm:p-8">
                             <div className="flex mb-4 sm:mb-6">
                                 {[...Array(review.stars)].map((_, index) => (
@@ -271,16 +288,16 @@ export default function LandingPage() {
       </section>
 
       {/* Limited Offer Banner */}
-      <section className="bg-accent py-8 sm:py-10 relative overflow-hidden">
+      <section className="bg-accent py-6 sm:py-10 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-white text-center">
-                <div className="flex items-center gap-4">
-                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-white/20 flex items-center justify-center animate-pulse">
-                        <Clock className="h-5 w-5 sm:h-6 sm:w-6" />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-16 text-white text-center">
+                <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 sm:h-12 sm:w-12 rounded-full bg-white/20 flex items-center justify-center animate-pulse">
+                        <Clock className="h-4 w-4 sm:h-6 sm:w-6" />
                     </div>
-                    <span className="text-xl sm:text-2xl font-black uppercase tracking-tighter">LIMITED TIME OFFER</span>
+                    <span className="text-lg sm:text-2xl font-black uppercase tracking-tighter">LIMITED TIME OFFER</span>
                 </div>
-                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-lg font-bold">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-[10px] sm:text-lg font-bold">
                     <span className="flex items-center gap-2 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl backdrop-blur-md">👉 Free Demo Class</span>
                     <span className="flex items-center gap-2 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl backdrop-blur-md">👉 Special Discount</span>
                 </div>
@@ -290,41 +307,41 @@ export default function LandingPage() {
       </section>
 
       {/* Form & CTA Section */}
-      <section id="lead-form" className="py-12 sm:py-32 bg-background relative overflow-hidden">
+      <section id="lead-form" className="py-12 sm:py-32 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start max-w-6xl mx-auto">
-                <div className="space-y-8 sm:space-y-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start max-w-6xl mx-auto">
+                <div className="space-y-6 sm:space-y-10">
                     <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
-                        <h2 className="text-3xl sm:text-6xl font-bold font-headline text-primary leading-tight tracking-tighter">
+                        <h2 className="text-2xl sm:text-6xl font-bold font-headline text-primary leading-tight tracking-tighter">
                             Ready to Upgrade Your Career?
                         </h2>
-                        <p className="text-lg sm:text-xl text-muted-foreground">Join the elite league of certified professionals. Get instant support from our senior counselors.</p>
+                        <p className="text-sm sm:text-xl text-muted-foreground">Join the elite league of certified professionals. Get instant support from our senior counselors.</p>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-2 sm:gap-4">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
                         <a href="tel:+919702570087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
                             <div className="h-7 w-7 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-4 w-4 sm:h-7 sm:w-7" />
+                                <Phone className="h-3 w-3 sm:h-7 sm:w-7" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">VILE PARLE</p>
-                                <p className="text-[10px] sm:text-2xl font-bold text-primary truncate">+91 97025</p>
+                                <p className="text-[6px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">VILE PARLE</p>
+                                <p className="text-[9px] sm:text-2xl font-bold text-primary truncate">+91 97025</p>
                             </div>
                         </a>
                         <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
                             <div className="h-7 w-7 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-4 w-4 sm:h-7 sm:w-7" />
+                                <Phone className="h-3 w-3 sm:h-7 sm:w-7" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">JOGESHWARI</p>
-                                <p className="text-[10px] sm:text-2xl font-bold text-primary truncate">+91 97697</p>
+                                <p className="text-[6px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">JOGESHWARI</p>
+                                <p className="text-[9px] sm:text-2xl font-bold text-primary truncate">+91 97697</p>
                             </div>
                         </a>
                     </div>
                     
-                    <Button size="lg" className="w-full h-14 sm:h-16 bg-green-600 hover:bg-green-700 text-white rounded-[1.25rem] sm:rounded-[1.5rem] text-lg sm:text-xl font-bold shadow-xl shadow-green-500/20" asChild>
+                    <Button size="lg" className="w-full h-12 sm:h-16 bg-green-600 hover:bg-green-700 text-white rounded-[1.25rem] sm:rounded-[1.5rem] text-sm sm:text-xl font-bold shadow-xl shadow-green-500/20" asChild>
                         <a href="https://wa.me/919769730087" target="_blank" rel="noopener noreferrer">
-                            <MessageCircle className="mr-2 sm:mr-3 h-6 w-6 sm:h-7 sm:w-7 shrink-0" /> WhatsApp for Details
+                            <MessageCircle className="mr-2 h-4 w-4 sm:h-7 sm:w-7 shrink-0" /> WhatsApp for Details
                         </a>
                     </Button>
                 </div>
@@ -342,39 +359,39 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 text-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
                 <div className="space-y-2 sm:space-y-3">
-                    <div className="h-12 w-12 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
-                        <Award className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+                    <div className="h-10 w-10 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
+                        <Award className="h-5 w-5 sm:h-8 sm:w-8 text-accent" />
                     </div>
-                    <p className="text-lg sm:text-2xl font-bold">ISO Certified</p>
-                    <p className="text-[10px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Quality Education</p>
+                    <p className="text-sm sm:text-2xl font-bold">ISO Certified</p>
+                    <p className="text-[8px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Quality Education</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
-                    <div className="h-12 w-12 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
-                        <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+                    <div className="h-10 w-10 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
+                        <Clock className="h-5 w-5 sm:h-8 sm:w-8 text-accent" />
                     </div>
-                    <p className="text-lg sm:text-2xl font-bold">5+ Years</p>
-                    <p className="text-[10px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Teaching Excellence</p>
+                    <p className="text-sm sm:text-2xl font-bold">5+ Years</p>
+                    <p className="text-[8px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Teaching Excellence</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
-                    <div className="h-12 w-12 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
-                        <Users className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+                    <div className="h-10 w-10 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
+                        <Users className="h-5 w-5 sm:h-8 sm:w-8 text-accent" />
                     </div>
-                    <p className="text-lg sm:text-2xl font-bold">10k+</p>
-                    <p className="text-[10px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Students Trained</p>
+                    <p className="text-sm sm:text-2xl font-bold">10k+</p>
+                    <p className="text-[8px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Students Trained</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
-                    <div className="h-12 w-12 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
-                        <ShieldCheck className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+                    <div className="h-10 w-10 sm:h-16 sm:w-16 bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 backdrop-blur-sm">
+                        <ShieldCheck className="h-5 w-5 sm:h-8 sm:w-8 text-accent" />
                     </div>
-                    <p className="text-lg sm:text-2xl font-bold">100%</p>
-                    <p className="text-[10px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Placement Support</p>
+                    <p className="text-sm sm:text-2xl font-bold">100%</p>
+                    <p className="text-[8px] sm:text-xs opacity-50 tracking-widest uppercase font-bold">Placement Support</p>
                 </div>
             </div>
             
             <div className="mt-8 sm:mt-16 space-y-6 sm:space-y-8">
-                <h3 className="text-xl sm:text-3xl font-bold font-headline">Start Your Journey Today</h3>
-                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-accent/90 h-12 sm:h-14 px-8 sm:px-12 text-base sm:text-lg font-bold shadow-2xl shadow-accent/20">
-                    <Link href="#lead-form">Enroll Now <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5"/></Link>
+                <h3 className="text-lg sm:text-3xl font-bold font-headline">Start Your Journey Today</h3>
+                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-accent/90 h-10 sm:h-14 px-6 sm:px-12 text-sm sm:text-lg font-bold shadow-2xl shadow-accent/20">
+                    <Link href="#lead-form">Enroll Now <ArrowRight className="ml-2 h-3 w-3 sm:h-5 sm:w-5"/></Link>
                 </Button>
             </div>
         </div>
