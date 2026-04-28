@@ -34,7 +34,7 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen -mt-24">
       {/* Hero Section */}
-      <section className="relative pt-24 bg-[#EAF2F8] overflow-hidden flex items-center w-full">
+      <section className="relative pt-0 bg-[#EAF2F8] overflow-hidden flex items-center w-full">
         <div className="w-full">
             <Image 
                 src="/images/landingpage/landing1.svg"
