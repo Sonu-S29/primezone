@@ -156,9 +156,9 @@ export default function LandingPage() {
             <h2 className="text-3xl font-bold font-headline text-primary mb-4 uppercase tracking-tight">WHY CHOOSE US</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">We provide the highest quality computer education in Mumbai with a focus on practical results.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
               {features.map((feature, i) => (
-                  <div key={i} className="group p-6 bg-white rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex items-center gap-4">
+                  <div key={i} className="flex-shrink-0 w-[80vw] md:w-auto group p-6 bg-white rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex items-center gap-4 snap-center">
                       <div className="h-12 w-12 rounded-2xl bg-accent/5 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                           <CheckCircle className="h-6 w-6 text-accent group-hover:text-white" />
                       </div>
@@ -180,22 +180,22 @@ export default function LandingPage() {
                         Find us at our two major hubs in Mumbai. Both branches are strategically located for easy access via public transport.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="p-8 bg-primary rounded-[2.5rem] text-primary-foreground space-y-4 shadow-2xl shadow-primary/20 relative overflow-hidden group">
-                        <MapPin className="h-10 w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                    <div className="p-4 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-2xl shadow-primary/20 relative overflow-hidden group">
+                        <MapPin className="h-6 w-6 sm:h-10 sm:w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
                         <div>
-                            <h3 className="text-2xl font-bold">Jogeshwari</h3>
-                            <p className="text-sm opacity-60 mt-1 leading-relaxed">Opp. JES College, <br /> Jogeshwari East</p>
+                            <h3 className="text-lg sm:text-2xl font-bold">Jogeshwari</h3>
+                            <p className="text-[10px] sm:text-sm opacity-60 mt-1 leading-tight sm:leading-relaxed">Opp. JES College, <br className="hidden sm:block" /> Jogeshwari East</p>
                         </div>
-                        <div className="absolute -bottom-4 -right-4 h-24 w-24 bg-white/5 rounded-full blur-2xl" />
+                        <div className="absolute -bottom-4 -right-4 h-12 w-12 sm:h-24 sm:w-24 bg-white/5 rounded-full blur-xl sm:blur-2xl" />
                     </div>
-                    <div className="p-8 bg-primary rounded-[2.5rem] text-primary-foreground space-y-4 shadow-2xl shadow-primary/20 relative overflow-hidden group">
-                        <MapPin className="h-10 w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
+                    <div className="p-4 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-2xl shadow-primary/20 relative overflow-hidden group">
+                        <MapPin className="h-6 w-6 sm:h-10 sm:w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
                         <div>
-                            <h3 className="text-2xl font-bold">Vile Parle</h3>
-                            <p className="text-sm opacity-60 mt-1 leading-relaxed">Near Station, <br /> Vile Parle East</p>
+                            <h3 className="text-lg sm:text-2xl font-bold">Vile Parle</h3>
+                            <p className="text-[10px] sm:text-sm opacity-60 mt-1 leading-tight sm:leading-relaxed">Near Station, <br className="hidden sm:block" /> Vile Parle East</p>
                         </div>
-                        <div className="absolute -bottom-4 -right-4 h-24 w-24 bg-white/5 rounded-full blur-2xl" />
+                        <div className="absolute -bottom-4 -right-4 h-12 w-12 sm:h-24 sm:w-24 bg-white/5 rounded-full blur-xl sm:blur-2xl" />
                     </div>
                 </div>
             </div>
@@ -211,16 +211,16 @@ export default function LandingPage() {
                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />)}
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="flex md:grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto overflow-x-auto pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
                 {reviews.map((review, i) => (
-                    <Card key={i} className="bg-white/80 backdrop-blur-xl border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
-                        <CardContent className="p-8">
-                            <div className="flex mb-6">
+                    <Card key={i} className="flex-shrink-0 w-[85vw] md:w-auto bg-white/80 backdrop-blur-xl border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 snap-center">
+                        <CardContent className="p-6 sm:p-8">
+                            <div className="flex mb-4 sm:mb-6">
                                 {[...Array(review.stars)].map((_, index) => (
                                     <Star key={index} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                                 ))}
                             </div>
-                            <p className="italic text-muted-foreground mb-8 text-lg leading-relaxed">"{review.text}"</p>
+                            <p className="italic text-muted-foreground mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed line-clamp-4">"{review.text}"</p>
                             <div className="flex items-center gap-4">
                                 <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">
                                     {review.name.charAt(0)}
@@ -265,26 +265,24 @@ export default function LandingPage() {
                         <p className="text-xl text-muted-foreground">Join the elite league of certified professionals. Get instant support from our senior counselors.</p>
                     </div>
                     
-                    <div className="grid gap-4">
-                        <a href="tel:+919702570087" className="flex items-center gap-5 p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 border border-muted group">
-                            <div className="h-14 w-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-7 w-7" />
+                    <div className="grid grid-cols-2 gap-2 sm:gap-4">
+                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5 p-4 sm:p-6 bg-white rounded-[1.5rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 border border-muted group">
+                            <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                                <Phone className="h-5 w-5 sm:h-7 sm:w-7" />
                             </div>
-                            <div>
-                                <p className="text-[11px] text-muted-foreground uppercase font-black tracking-widest">VILE PARLE CENTER</p>
-                                <p className="text-2xl font-bold text-primary">+91 97025 70087</p>
+                            <div className="min-w-0">
+                                <p className="text-[9px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">VILE PARLE</p>
+                                <p className="text-xs sm:text-2xl font-bold text-primary truncate">+91 97025 70087</p>
                             </div>
-                            <ArrowRight className="ml-auto h-5 w-5 text-muted/30 group-hover:text-accent group-hover:translate-x-1 transition-all" />
                         </a>
-                        <a href="tel:+919769730087" className="flex items-center gap-5 p-6 bg-white rounded-[2rem] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 border border-muted group">
-                            <div className="h-14 w-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-7 w-7" />
+                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5 p-4 sm:p-6 bg-white rounded-[1.5rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 border border-muted group">
+                            <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                                <Phone className="h-5 w-5 sm:h-7 sm:w-7" />
                             </div>
-                            <div>
-                                <p className="text-[11px] text-muted-foreground uppercase font-black tracking-widest">JOGESHWARI CENTER</p>
-                                <p className="text-2xl font-bold text-primary">+91 97697 30087</p>
+                            <div className="min-w-0">
+                                <p className="text-[9px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">JOGESHWARI</p>
+                                <p className="text-xs sm:text-2xl font-bold text-primary truncate">+91 97697 30087</p>
                             </div>
-                            <ArrowRight className="ml-auto h-5 w-5 text-muted/30 group-hover:text-accent group-hover:translate-x-1 transition-all" />
                         </a>
                     </div>
                     
