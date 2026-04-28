@@ -324,8 +324,8 @@ export default function LandingPage() {
                                 <Phone className="h-3 w-3 sm:h-7 sm:w-7" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[6px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">VILE PARLE</p>
-                                <p className="text-[9px] sm:text-2xl font-bold text-primary truncate">+91 97025</p>
+                                <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest">VILE PARLE</p>
+                                <p className="text-[10px] sm:text-2xl font-bold text-primary whitespace-nowrap">+91 97025 70087</p>
                             </div>
                         </a>
                         <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
@@ -333,8 +333,8 @@ export default function LandingPage() {
                                 <Phone className="h-3 w-3 sm:h-7 sm:w-7" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[6px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">JOGESHWARI</p>
-                                <p className="text-[9px] sm:text-2xl font-bold text-primary truncate">+91 97697</p>
+                                <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest">JOGESHWARI</p>
+                                <p className="text-[10px] sm:text-2xl font-bold text-primary whitespace-nowrap">+91 97697 30087</p>
                             </div>
                         </a>
                     </div>
