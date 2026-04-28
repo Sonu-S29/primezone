@@ -69,12 +69,12 @@ export default function LandingPage() {
                     </div>
                     <div className="h-1 w-10 sm:w-12 bg-blue-500/20 rounded-full" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-primary mb-4 sm:mb-5 leading-tight">DCA – Diploma in Computer Applications</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-primary mb-4 sm:mb-5 leading-tight">Diploma in Computer Applications</h3>
                 <div className="space-y-3 sm:space-y-4 flex-grow">
                     <ul className="space-y-2 sm:space-y-3 text-muted-foreground text-xs sm:text-sm">
                         <li className="flex items-start gap-3">
                             <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
-                            <span>Basic to Advanced Computer Skills</span>
+                            <span>Basic to Advanced Computer Skills with Ai</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
@@ -82,7 +82,11 @@ export default function LandingPage() {
                         </li>
                         <li className="flex items-start gap-3">
                             <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
-                            <span>Internet & Email Usage</span>
+                            <span>Web Designing</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
+                            <span>Graphic Designing</span>
                         </li>
                     </ul>
                 </div>
@@ -108,11 +112,15 @@ export default function LandingPage() {
                         </li>
                         <li className="flex items-start gap-3">
                             <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
-                            <span>Basic SQL & Data Handling</span>
+                            <span>SQL</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
-                            <span>Industry-standard Live Projects</span>
+                            <span>Data Handling Using Python</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 shrink-0 mt-0.5" />
+                            <span>Power BI | Tableau</span>
                         </li>
                     </ul>
                 </div>
