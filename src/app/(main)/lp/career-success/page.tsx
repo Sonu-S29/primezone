@@ -1,9 +1,9 @@
-
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Phone, MessageCircle, Users, Award, MapPin, Star, Clock, GraduationCap, ArrowRight, ShieldCheck, Database, Laptop } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import LpLeadForm from "@/components/lp-lead-form";
 
@@ -34,49 +34,18 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen -mt-24">
       {/* Hero Section */}
-      <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-48 md:pb-24 bg-gradient-to-b from-primary/5 to-background overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
-            <Badge className="px-4 py-1 text-xs sm:text-sm bg-accent/10 text-accent border-accent/20 mb-2 sm:mb-4">
-              #1 Computer Institute in Mumbai
-            </Badge>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold font-headline text-primary tracking-tight leading-tight">
-              Become Job-Ready in <span className="text-accent">3–6 Months</span> with Industry-Focused Computer Courses
-            </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Learn DCA, Data Analyst & Cyber Security from Experts. 
-              Mumbai | 100% Practical Training | Certification Included.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-6">
-              <Button size="lg" className="h-12 px-8 bg-accent hover:bg-accent/90 text-white rounded-full w-full sm:w-auto shadow-lg shadow-accent/20" asChild>
-                <Link href="#lead-form">Book Free Demo Class</Link>
-              </Button>
-              <div className="flex gap-2 w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="h-12 px-6 rounded-full flex-1 sm:flex-none border-primary/20" asChild>
-                   <a href="tel:+919769730087"><Phone className="mr-2 h-4 w-4" /> Call</a>
-                </Button>
-                <Button size="lg" variant="outline" className="h-12 px-6 rounded-full border-green-500 text-green-600 hover:bg-green-50 flex-1 sm:flex-none" asChild>
-                   <a href="https://wa.me/919769730087" target="_blank" rel="noopener noreferrer"><MessageCircle className="mr-2 h-4 w-4" /> WhatsApp</a>
-                </Button>
-              </div>
+      <section className="relative pt-24 pb-8 bg-[#EAF2F8] overflow-hidden min-h-[400px] flex items-center">
+        <div className="container mx-auto px-4 flex justify-center">
+            <div className="relative w-full max-w-6xl aspect-[16/7]">
+                <Image 
+                    src="/images/landingpage/landing1.svg"
+                    alt="Become Job-Ready in 3-6 Months with Industry-Focused Computer Courses"
+                    fill
+                    className="object-contain"
+                    priority
+                />
             </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-8 text-sm font-semibold text-muted-foreground border-t mt-10 sm:mt-12 border-primary/10">
-               <div className="flex items-center gap-2">
-                   <Users className="h-5 w-5 text-accent" />
-                   <span>1000+ Students Trained</span>
-               </div>
-               <div className="hidden sm:block h-4 w-px bg-border" />
-               <div className="flex items-center gap-2">
-                   <GraduationCap className="h-5 w-5 text-accent" />
-                   <span>Placement Support Available</span>
-               </div>
-            </div>
-          </div>
         </div>
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-accent/10 rounded-full blur-3xl -z-0" />
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-primary/5 rounded-full blur-3xl -z-0" />
       </section>
 
       {/* Courses Section */}
