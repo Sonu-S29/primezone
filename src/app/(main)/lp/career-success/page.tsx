@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import LpLeadForm from "@/components/lp-lead-form";
-import LogoLoop from "@/components/LogoLoop";
 
 export const metadata: Metadata = {
   title: "Become Job-Ready with Industry-Focused Computer Courses | Primezone",
@@ -32,38 +31,6 @@ const features = [
 ];
 
 export default function LandingPage() {
-  const featureLogos = features.map(feature => ({
-    node: (
-        <div className="group p-5 bg-white rounded-2xl border border-transparent hover:border-accent/10 hover:shadow-lg transition-all duration-300 flex items-center gap-4 min-w-[240px]">
-            <div className="h-10 w-10 rounded-xl bg-accent/5 flex items-center justify-center shrink-0">
-                <CheckCircle className="h-5 w-5 text-accent" />
-            </div>
-            <span className="font-bold text-primary group-hover:text-accent transition-colors text-sm">{feature}</span>
-        </div>
-    )
-  }));
-
-  const reviewLogos = reviews.map(review => ({
-    node: (
-        <Card className="w-[300px] bg-white/80 backdrop-blur-xl border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden">
-            <CardContent className="p-6">
-                <div className="flex mb-4">
-                    {[...Array(review.stars)].map((_, index) => (
-                        <Star key={index} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
-                    ))}
-                </div>
-                <p className="italic text-muted-foreground mb-6 text-sm leading-relaxed line-clamp-3">"{review.text}"</p>
-                <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">
-                        {review.name.charAt(0)}
-                    </div>
-                    <p className="font-bold text-primary text-xs">{review.name}</p>
-                </div>
-            </CardContent>
-        </Card>
-    )
-  }));
-
   return (
     <div className="flex flex-col min-h-screen -mt-24 scrollbar-hide">
       {/* Hero Section */}
@@ -84,7 +51,7 @@ export default function LandingPage() {
       <section className="py-12 sm:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-bold font-headline text-primary">COURSES WE OFFER</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold font-headline text-primary uppercase tracking-tight">COURSES WE OFFER</h2>
             <div className="w-20 h-1.5 bg-accent mx-auto mt-4 rounded-full"></div>
           </div>
           
@@ -183,23 +150,23 @@ export default function LandingPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 sm:py-20 bg-muted/40 overflow-hidden">
+      <section className="py-12 sm:py-20 bg-muted/40">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold font-headline text-primary mb-4 uppercase tracking-tight">WHY CHOOSE US</h2>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">We provide the highest quality computer education in Mumbai with a focus on practical results.</p>
           </div>
           
-          {/* Mobile Loop */}
-          <div className="md:hidden">
-              <LogoLoop 
-                logos={featureLogos}
-                speed={40}
-                direction="left"
-                logoHeight={60}
-                gap={24}
-                className="scrollbar-hide"
-              />
+          {/* Mobile Discrete Scroll */}
+          <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide pb-4">
+              {features.map((feature, i) => (
+                  <div key={i} className="flex-shrink-0 w-[80%] snap-center group p-6 bg-white rounded-3xl border border-transparent shadow-md flex items-center gap-4">
+                      <div className="h-10 w-10 rounded-xl bg-accent/5 flex items-center justify-center shrink-0">
+                          <CheckCircle className="h-5 w-5 text-accent" />
+                      </div>
+                      <span className="font-bold text-primary text-sm">{feature}</span>
+                  </div>
+              ))}
           </div>
 
           {/* Desktop Grid */}
@@ -224,25 +191,23 @@ export default function LandingPage() {
                     <Badge variant="secondary" className="bg-primary/5 text-primary border-none px-4 py-1">OUR PRESENCE</Badge>
                     <h2 className="text-3xl sm:text-5xl font-bold font-headline text-primary leading-tight">Serving students <br className="hidden md:block" /> across Mumbai</h2>
                     <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                        Find us at our two major hubs in Mumbai. Both branches are strategically located for easy access via public transport.
+                        Find us at our two major hubs in Mumbai. Both branches are strategically located for easy access.
                     </p>
                 </div>
-                <div className="grid grid-cols-2 gap-3 sm:gap-6">
-                    <div className="p-4 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
-                        <MapPin className="h-6 w-6 sm:h-10 sm:w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
+                <div className="grid grid-cols-2 gap-2 sm:gap-6">
+                    <div className="p-3 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
+                        <MapPin className="h-5 w-5 sm:h-10 sm:w-10 text-accent" />
                         <div>
-                            <h3 className="text-base sm:text-2xl font-bold">Jogeshwari</h3>
-                            <p className="text-[10px] sm:text-sm opacity-60 mt-1 leading-tight sm:leading-relaxed">Opp. JES College, <br className="hidden sm:block" /> Jogeshwari East</p>
+                            <h3 className="text-sm sm:text-2xl font-bold">Jogeshwari</h3>
+                            <p className="text-[9px] sm:text-sm opacity-60 mt-0.5 leading-tight">Opp. JES College, <br className="hidden sm:block" /> Jogeshwari East</p>
                         </div>
-                        <div className="absolute -bottom-4 -right-4 h-12 w-12 sm:h-24 sm:w-24 bg-white/5 rounded-full blur-xl sm:blur-2xl" />
                     </div>
-                    <div className="p-4 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
-                        <MapPin className="h-6 w-6 sm:h-10 sm:w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
+                    <div className="p-3 sm:p-8 bg-primary rounded-[1.5rem] sm:rounded-[2.5rem] text-primary-foreground space-y-2 sm:space-y-4 shadow-xl shadow-primary/20 relative overflow-hidden group">
+                        <MapPin className="h-5 w-5 sm:h-10 sm:w-10 text-accent" />
                         <div>
-                            <h3 className="text-base sm:text-2xl font-bold">Vile Parle</h3>
-                            <p className="text-[10px] sm:text-sm opacity-60 mt-1 leading-tight sm:leading-relaxed">Near Station, <br className="hidden sm:block" /> Vile Parle East</p>
+                            <h3 className="text-sm sm:text-2xl font-bold">Vile Parle</h3>
+                            <p className="text-[9px] sm:text-sm opacity-60 mt-0.5 leading-tight">Near Station, <br className="hidden sm:block" /> Vile Parle East</p>
                         </div>
-                        <div className="absolute -bottom-4 -right-4 h-12 w-12 sm:h-24 sm:w-24 bg-white/5 rounded-full blur-xl sm:blur-2xl" />
                     </div>
                 </div>
             </div>
@@ -259,16 +224,26 @@ export default function LandingPage() {
                 </div>
             </div>
 
-            {/* Mobile Carousel Loop */}
-            <div className="md:hidden">
-                 <LogoLoop 
-                    logos={reviewLogos}
-                    speed={30}
-                    direction="left"
-                    logoHeight={200}
-                    gap={20}
-                    className="scrollbar-hide"
-                 />
+            {/* Mobile Discrete Review Scroll */}
+            <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide pb-4">
+                 {reviews.map((review, i) => (
+                    <Card key={i} className="flex-shrink-0 w-[85%] snap-center bg-white/80 backdrop-blur-xl border-none shadow-lg rounded-[2rem] overflow-hidden">
+                        <CardContent className="p-6">
+                            <div className="flex mb-3">
+                                {[...Array(review.stars)].map((_, index) => (
+                                    <Star key={index} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
+                                ))}
+                            </div>
+                            <p className="italic text-muted-foreground mb-4 text-xs leading-relaxed line-clamp-3">"{review.text}"</p>
+                            <div className="flex items-center gap-3">
+                                <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">
+                                    {review.name.charAt(0)}
+                                </div>
+                                <p className="font-bold text-primary text-xs">{review.name}</p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                 ))}
             </div>
 
             {/* Desktop Grid */}
@@ -327,20 +302,20 @@ export default function LandingPage() {
                     </div>
                     
                     <div className="grid grid-cols-2 gap-2 sm:gap-4">
-                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row sm:items-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 border border-muted group">
-                            <div className="h-8 w-8 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
+                            <div className="h-7 w-7 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
                                 <Phone className="h-4 w-4 sm:h-7 sm:w-7" />
                             </div>
-                            <div className="min-w-0">
+                            <div className="min-w-0 text-center sm:text-left">
                                 <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">VILE PARLE</p>
                                 <p className="text-[10px] sm:text-2xl font-bold text-primary truncate">+91 97025</p>
                             </div>
                         </a>
-                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row sm:items-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 border border-muted group">
-                            <div className="h-8 w-8 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
+                            <div className="h-7 w-7 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
                                 <Phone className="h-4 w-4 sm:h-7 sm:w-7" />
                             </div>
-                            <div className="min-w-0">
+                            <div className="min-w-0 text-center sm:text-left">
                                 <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest truncate">JOGESHWARI</p>
                                 <p className="text-[10px] sm:text-2xl font-bold text-primary truncate">+91 97697</p>
                             </div>
@@ -357,7 +332,6 @@ export default function LandingPage() {
                 <div className="relative mt-8 lg:mt-0">
                     <LpLeadForm />
                     <div className="absolute -z-10 -top-10 sm:-top-20 -right-10 sm:-right-20 h-32 sm:h-64 w-32 sm:w-64 bg-accent/10 rounded-full blur-2xl sm:blur-3xl opacity-50" />
-                    <div className="absolute -z-10 -bottom-10 sm:-bottom-20 -left-10 sm:-left-20 h-32 sm:h-64 w-32 sm:w-64 bg-primary/5 rounded-full blur-2xl sm:blur-3xl opacity-50" />
                 </div>
             </div>
         </div>
