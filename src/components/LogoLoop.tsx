@@ -1,3 +1,4 @@
+"use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
 import './LogoLoop.css';
@@ -8,6 +9,7 @@ const toCssLength = (value: number | string | undefined) => (typeof value === 'n
 
 const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLElement>[], dependencies: any[]) => {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     if (!window.ResizeObserver) {
       const handleResize = () => callback();
       window.addEventListener('resize', handleResize);
