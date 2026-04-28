@@ -27,12 +27,12 @@ const reviews = [
 ];
 
 const features = [
-    "100% Practical Training",
-    "Experienced Trainers",
-    "Small Batch Size",
-    "Flexible Timings",
-    "Global Certification",
-    "Placement Assistance"
+    { title: "100% Practical Training", icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" /> },
+    { title: "Experienced Trainers", icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" /> },
+    { title: "Small Batch Size", icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" /> },
+    { title: "Flexible Timings", icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" /> },
+    { title: "Global Certification", icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" /> },
+    { title: "Placement Assistance", icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" /> }
 ];
 
 export default function LandingPage() {
@@ -162,35 +162,20 @@ export default function LandingPage() {
             <p className="text-muted-foreground text-xs sm:text-base max-w-xl mx-auto">We provide the highest quality computer education in Mumbai with a focus on practical results.</p>
           </div>
           
-          {/* Mobile Carousel */}
-          <div className="md:hidden">
-              <Carousel opts={{ loop: true, align: "center" }} className="w-full">
-                  <CarouselContent>
-                      {features.map((feature, i) => (
-                          <CarouselItem key={i} className="basis-[80%] pl-4">
-                              <div className="p-5 bg-white rounded-3xl border border-transparent shadow-md flex items-center gap-3 h-full">
-                                  <div className="h-9 w-9 rounded-xl bg-accent/5 flex items-center justify-center shrink-0">
-                                      <CheckCircle className="h-4 w-4 text-accent" />
-                                  </div>
-                                  <span className="font-bold text-primary text-xs leading-tight">{feature}</span>
+          <Carousel opts={{ loop: true, align: "start" }} className="w-full max-w-5xl mx-auto">
+              <CarouselContent className="-ml-4">
+                  {features.map((feature, i) => (
+                      <CarouselItem key={i} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                          <div className="group p-6 bg-white rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex items-center gap-4 h-full">
+                              <div className="h-12 w-12 rounded-2xl bg-accent/5 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                                  {feature.icon}
                               </div>
-                          </CarouselItem>
-                      ))}
-                  </CarouselContent>
-              </Carousel>
-          </div>
-
-          {/* Desktop Grid */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {features.map((feature, i) => (
-                  <div key={i} className="group p-6 bg-white rounded-3xl border border-transparent hover:border-accent/10 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-2xl bg-accent/5 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                          <CheckCircle className="h-6 w-6 text-accent group-hover:text-white" />
-                      </div>
-                      <span className="font-bold text-primary group-hover:text-accent transition-colors">{feature}</span>
-                  </div>
-              ))}
-          </div>
+                              <span className="font-bold text-primary group-hover:text-accent transition-colors">{feature.title}</span>
+                          </div>
+                      </CarouselItem>
+                  ))}
+              </CarouselContent>
+          </Carousel>
         </div>
       </section>
 
@@ -235,55 +220,30 @@ export default function LandingPage() {
                 </div>
             </div>
 
-            {/* Mobile Carousel */}
-            <div className="md:hidden">
-                 <Carousel opts={{ loop: true, align: "center" }} className="w-full">
-                    <CarouselContent>
-                        {reviews.map((review, i) => (
-                            <CarouselItem key={i} className="basis-[85%] pl-4">
-                                <Card className="bg-white border-none shadow-lg rounded-[2rem] h-full">
-                                    <CardContent className="p-6">
-                                        <div className="flex mb-3">
-                                            {[...Array(review.stars)].map((_, index) => (
-                                                <Star key={index} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
-                                            ))}
+            <Carousel opts={{ loop: true, align: "start" }} className="w-full max-w-6xl mx-auto">
+                <CarouselContent className="-ml-4">
+                    {reviews.map((review, i) => (
+                        <CarouselItem key={i} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                            <Card className="bg-white border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 h-full">
+                                <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+                                    <div className="flex mb-4 sm:mb-6">
+                                        {[...Array(review.stars)].map((_, index) => (
+                                            <Star key={index} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                        ))}
+                                    </div>
+                                    <p className="italic text-muted-foreground mb-6 sm:mb-8 text-base leading-relaxed line-clamp-4 flex-grow">"{review.text}"</p>
+                                    <div className="flex items-center gap-4 mt-auto">
+                                        <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">
+                                            {review.name.charAt(0)}
                                         </div>
-                                        <p className="italic text-muted-foreground mb-4 text-xs leading-relaxed line-clamp-3">"{review.text}"</p>
-                                        <div className="flex items-center gap-2">
-                                            <div className="h-7 w-7 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-[10px]">
-                                                {review.name.charAt(0)}
-                                            </div>
-                                            <p className="font-bold text-primary text-[10px]">{review.name}</p>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                 </Carousel>
-            </div>
-
-            {/* Desktop Grid */}
-            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-                {reviews.map((review, i) => (
-                    <Card key={i} className="bg-white border-none shadow-xl shadow-primary/5 rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
-                        <CardContent className="p-6 sm:p-8">
-                            <div className="flex mb-4 sm:mb-6">
-                                {[...Array(review.stars)].map((_, index) => (
-                                    <Star key={index} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                                ))}
-                            </div>
-                            <p className="italic text-muted-foreground mb-6 sm:mb-8 text-base leading-relaxed line-clamp-4">"{review.text}"</p>
-                            <div className="flex items-center gap-4">
-                                <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">
-                                    {review.name.charAt(0)}
-                                </div>
-                                <p className="font-bold text-primary">{review.name}</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+                                        <p className="font-bold text-primary">{review.name}</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
         </div>
       </section>
 
@@ -318,23 +278,23 @@ export default function LandingPage() {
                         <p className="text-sm sm:text-xl text-muted-foreground">Join the elite league of certified professionals. Get instant support from our senior counselors.</p>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
-                            <div className="h-7 w-7 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-3 w-3 sm:h-7 sm:w-7" />
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                        <a href="tel:+919702570087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-4 lg:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all overflow-hidden">
+                            <div className="h-7 w-7 sm:h-12 lg:h-14 sm:w-12 lg:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                                <Phone className="h-3 w-3 sm:h-6 lg:h-7 sm:w-6 lg:w-7" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest">VILE PARLE</p>
-                                <p className="text-[10px] sm:text-2xl font-bold text-primary whitespace-nowrap">+91 97025 70087</p>
+                                <p className="text-[7px] sm:text-[9px] lg:text-[11px] text-muted-foreground uppercase font-black tracking-widest">VILE PARLE</p>
+                                <p className="text-[9px] sm:text-base lg:text-lg xl:text-2xl font-bold text-primary whitespace-nowrap">+91 97025 70087</p>
                             </div>
                         </a>
-                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all">
-                            <div className="h-7 w-7 sm:h-14 sm:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                                <Phone className="h-3 w-3 sm:h-7 sm:w-7" />
+                        <a href="tel:+919769730087" className="flex flex-col sm:flex-row items-center justify-center gap-2 p-3 sm:p-4 lg:p-6 bg-white rounded-[1.25rem] sm:rounded-[2rem] shadow-sm hover:shadow-2xl border border-muted group transition-all overflow-hidden">
+                            <div className="h-7 w-7 sm:h-12 lg:h-14 sm:w-12 lg:w-14 rounded-lg sm:rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                                <Phone className="h-3 w-3 sm:h-6 lg:h-7 sm:w-6 lg:w-7" />
                             </div>
                             <div className="min-w-0 text-center sm:text-left">
-                                <p className="text-[7px] sm:text-[11px] text-muted-foreground uppercase font-black tracking-widest">JOGESHWARI</p>
-                                <p className="text-[10px] sm:text-2xl font-bold text-primary whitespace-nowrap">+91 97697 30087</p>
+                                <p className="text-[7px] sm:text-[9px] lg:text-[11px] text-muted-foreground uppercase font-black tracking-widest">JOGESHWARI</p>
+                                <p className="text-[9px] sm:text-base lg:text-lg xl:text-2xl font-bold text-primary whitespace-nowrap">+91 97697 30087</p>
                             </div>
                         </a>
                     </div>
