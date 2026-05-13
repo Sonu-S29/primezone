@@ -1,7 +1,7 @@
-
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useForm, ValidationError } from '@formspree/react';
 import { useToast } from "@/hooks/use-toast";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,7 @@ import { CheckCircle } from "lucide-react";
 export default function CareerGuidanceForm() {
   const [state, handleSubmit] = useForm("xnnawrlz");
   const { toast } = useToast();
+  const router = useRouter();
 
   useEffect(() => {
     if (state.succeeded) {
@@ -20,17 +21,22 @@ export default function CareerGuidanceForm() {
         title: "Request Sent!",
         description: "Thank you for your interest. We will be in touch shortly.",
       });
+      const timer = setTimeout(() => {
+        router.push('/courses/diploma');
+      }, 10000);
+      return () => clearTimeout(timer);
     }
-  }, [state.succeeded, toast]);
+  }, [state.succeeded, toast, router]);
 
   if (state.succeeded) {
     return (
-      <div className="text-center p-8 space-y-4">
+      <div className="text-center p-12 space-y-4">
         <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
-        <h3 className="text-xl font-semibold">Thank You!</h3>
-        <p className="text-muted-foreground">
-          Your request for career guidance has been submitted successfully. Our team will contact you soon.
+        <h3 className="text-2xl font-bold font-headline">Thank You!</h3>
+        <p className="text-muted-foreground text-lg">
+          Your request for career guidance has been submitted successfully. Our expert counselors will contact you within 24 hours.
         </p>
+        <p className="text-sm text-muted-foreground mt-8 italic">Redirecting you to our courses in 10 seconds...</p>
       </div>
     );
   }

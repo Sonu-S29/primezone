@@ -1,18 +1,20 @@
-
 "use client";
 
 import { useForm, ValidationError } from '@formspree/react';
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { CheckCircle } from "lucide-react";
 
 export default function LpLeadForm() {
   const [state, handleSubmit] = useForm("xnnawrlz");
   const { toast } = useToast();
+  const router = useRouter();
 
   useEffect(() => {
     if (state.succeeded) {
@@ -20,17 +22,23 @@ export default function LpLeadForm() {
         title: "Inquiry Sent!",
         description: "Thank you for your interest. We will get back to you shortly.",
       });
+      const timer = setTimeout(() => {
+        router.push('/courses/diploma');
+      }, 10000);
+      return () => clearTimeout(timer);
     }
-  }, [state.succeeded, toast]);
+  }, [state.succeeded, toast, router]);
 
   if (state.succeeded) {
     return (
-      <Card className="p-6 sm:p-8 shadow-2xl border-none text-center bg-white">
-        <CardHeader>
-          <CardTitle className="text-xl sm:text-2xl text-primary">Thank You!</CardTitle>
+      <Card className="p-6 sm:p-12 shadow-2xl border-none text-center bg-white flex flex-col items-center justify-center min-h-[400px]">
+        <CardHeader className="p-0 mb-6">
+          <CheckCircle className="h-16 w-16 text-green-500 mb-4 mx-auto" />
+          <CardTitle className="text-2xl sm:text-3xl text-primary font-headline">Thank You!</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground text-sm sm:text-base">Your request for a free demo class has been sent. Our counselors will contact you soon.</p>
+        <CardContent className="p-0">
+          <p className="text-muted-foreground text-base sm:text-lg">Your request for a free demo class has been sent successfully. Our senior counselors will contact you shortly.</p>
+          <p className="text-sm text-muted-foreground mt-8">Redirecting you to our main courses in 10 seconds...</p>
         </CardContent>
       </Card>
     );
@@ -39,7 +47,7 @@ export default function LpLeadForm() {
   return (
     <Card className="p-4 sm:p-8 shadow-2xl border-none bg-white">
       <CardHeader className="p-0 mb-6 text-center">
-        <CardTitle className="text-lg sm:text-2xl leading-tight">Fill in your details and get a free demo class today!</CardTitle>
+        <CardTitle className="text-lg sm:text-2xl leading-tight font-headline">Fill in your details and get a free demo class today!</CardTitle>
       </CardHeader>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">

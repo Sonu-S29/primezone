@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useSearchParams } from 'next/navigation';
@@ -12,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useForm, ValidationError } from '@formspree/react';
 import { useToast } from '@/hooks/use-toast';
+import { CheckCircle } from 'lucide-react';
 
 const courses = [
   "Information Technology Computer Graduation (ITCG)",
@@ -87,20 +87,23 @@ function EnrollmentForm() {
             title: "Enrollment Submitted!",
             description: "Thank you for your interest. We will contact you shortly.",
           });
-          setTimeout(() => {
+          const timer = setTimeout(() => {
             router.push('/courses/diploma');
-          }, 2000);
+          }, 10000);
+          return () => clearTimeout(timer);
         }
       }, [state.succeeded, router, toast]);
 
     if (state.succeeded) {
         return (
-             <Card className="max-w-3xl mx-auto">
+             <Card className="max-w-3xl mx-auto text-center p-12">
                 <CardHeader>
-                    <CardTitle>Thank You!</CardTitle>
+                    <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                    <CardTitle className="text-3xl">Enrollment Submitted!</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <p>Your enrollment request has been submitted. Redirecting...</p>
+                    <p className="text-lg text-muted-foreground">Thank you for choosing Primezone. Our admissions team will reach out to you within 24 hours.</p>
+                    <p className="text-sm text-muted-foreground mt-8">Redirecting you to our diploma courses in 10 seconds...</p>
                 </CardContent>
             </Card>
         );

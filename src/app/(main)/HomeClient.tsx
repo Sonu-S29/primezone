@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Star, Reply, Clock, Phone } from "lucide-react";
+import { Star, Reply, Clock, Phone, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
@@ -61,20 +61,23 @@ const QuoteForm = () => {
             title: "Quote Request Sent!",
             description: "Thank you for your interest. We will get back to you shortly.",
           });
-          setTimeout(() => {
+          const timer = setTimeout(() => {
             router.push('/courses/diploma');
-          }, 2000);
+          }, 10000);
+          return () => clearTimeout(timer);
         }
       }, [state.succeeded, router, toast]);
 
     if (state.succeeded) {
         return (
-            <Card className="bg-accent/20 p-8 rounded-2xl text-center">
+            <Card className="bg-accent/20 p-8 rounded-2xl text-center flex flex-col items-center justify-center min-h-[300px]">
                  <CardHeader>
-                    <CardTitle>Thank You!</CardTitle>
+                    <CheckCircle className="h-12 w-12 text-green-500 mb-4 mx-auto" />
+                    <CardTitle className="text-2xl">Thank You!</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <p>Your quote request has been sent. Redirecting...</p>
+                    <p className="text-lg">Your quote request has been sent successfully.</p>
+                    <p className="text-muted-foreground mt-4">Redirecting you to our courses in 10 seconds...</p>
                 </CardContent>
             </Card>
         )

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -8,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import { X, CheckCircle } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { allCoursesList } from "@/lib/course-data";
@@ -27,20 +26,23 @@ export default function ContactForm() {
         title: "Message Sent!",
         description: "Thank you for contacting us. We will get back to you shortly.",
       });
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         router.push('/courses/diploma');
-      }, 2000);
+      }, 10000);
+      return () => clearTimeout(timer);
     }
   }, [state.succeeded, router, toast]);
 
   if (state.succeeded) {
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>Thank You!</CardTitle>
+        <Card className="text-center p-12 flex flex-col items-center justify-center min-h-[400px]">
+            <CardHeader className="p-0">
+                <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                <CardTitle className="text-3xl font-headline">Thank You!</CardTitle>
             </CardHeader>
-            <CardContent>
-                <p>Your message has been sent successfully. Redirecting you to our diploma courses...</p>
+            <CardContent className="p-0 pt-4">
+                <p className="text-lg text-muted-foreground">Your message has been sent successfully. Our team will contact you within 24 hours.</p>
+                <p className="text-sm text-muted-foreground mt-8 italic">Redirecting to our diploma courses in 10 seconds...</p>
             </CardContent>
         </Card>
     );

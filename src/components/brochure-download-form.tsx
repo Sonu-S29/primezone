@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -51,9 +50,10 @@ export default function BrochureDownloadForm() {
         link.click();
         document.body.removeChild(link);
         
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             router.push('/courses/diploma');
-        }, 3000);
+        }, 10000);
+        return () => clearTimeout(timer);
     }
   }, [formspreeState.succeeded, isSuccess, toast, router]);
 
@@ -63,10 +63,11 @@ export default function BrochureDownloadForm() {
         <CheckCircle className="h-16 w-16 mx-auto text-green-500 mb-4" />
         <h3 className="text-xl font-semibold">Download Started!</h3>
         <p className="text-muted-foreground mt-2">
-            Your brochure is downloading. Please check your browser downloads. Redirecting...
+            Thank you for your interest. Your brochure is downloading.
         </p>
+        <p className="text-xs text-muted-foreground mt-6 italic">Redirecting to courses in 10 seconds...</p>
         <DialogClose asChild>
-            <Button className="mt-6">Close</Button>
+            <Button className="mt-6">Close Now</Button>
         </DialogClose>
       </div>
     )
@@ -77,7 +78,6 @@ export default function BrochureDownloadForm() {
       <CardContent className="p-0">
         <Form {...form}>
           <form onSubmit={form.handleSubmit((data) => handleFormspreeSubmit(data))} className="space-y-6 pt-4">
-              <>
                 <FormField
                   control={form.control}
                   name="name"
@@ -117,8 +117,6 @@ export default function BrochureDownloadForm() {
                     </FormItem>
                   )}
                 />
-              </>
-            
 
             <Button type="submit" disabled={formspreeState.submitting} className="w-full">
               {formspreeState.submitting ? (

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -12,7 +11,7 @@ import { useForm } from '@formspree/react';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Loader2, Send } from "lucide-react";
+import { Loader2, Send, CheckCircle } from "lucide-react";
 import { DialogClose } from "./ui/dialog";
 
 const formSchema = z.object({
@@ -44,18 +43,20 @@ export default function ApplicationForm() {
   useEffect(() => {
     if (formspreeState.succeeded) {
       toast({ title: "Success", description: "Your application has been submitted successfully!" });
-      form.reset();
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         router.push('/courses/diploma');
-      }, 2000);
+      }, 10000);
+      return () => clearTimeout(timer);
     }
-  }, [formspreeState.succeeded, form, router, toast]);
+  }, [formspreeState.succeeded, router, toast]);
 
   if (formspreeState.succeeded) {
       return (
-          <div className="text-center p-8">
-              <h3 className="text-xl font-semibold">Thank You!</h3>
-              <p className="text-muted-foreground mt-2">Your application has been sent. Redirecting...</p>
+          <div className="text-center p-12">
+              <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold font-headline">Thank You!</h3>
+              <p className="text-muted-foreground mt-4 text-lg">Your application has been sent successfully. We will review your profile and get back to you.</p>
+              <p className="text-sm text-muted-foreground mt-8 italic">Redirecting to courses in 10 seconds...</p>
           </div>
       )
   }
