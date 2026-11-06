@@ -29,7 +29,7 @@ export default function Footer() {
             <ul className="space-y-3 text-primary-foreground/70">
                 <li className="flex items-center">
                     <Mail className="h-4 w-4 mr-3 shrink-0"/>
-                    <a href="mailto:pzofficial123@gmail.com" className="hover:text-primary-foreground text-sm">pzofficial123@gmail.com</a>
+                    <a href="mailto:primezonecomputer@gmail.com" className="hover:text-primary-foreground text-sm">primezonecomputer@gmail.com</a>
                 </li>
                  <li className="flex items-center">
                     <Phone className="h-4 w-4 mr-3 shrink-0"/>
